@@ -6,17 +6,13 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
+name: Deploy to Maven
+
 on:
   workflow_dispatch:
-  pull_request:
-    branches:
-      - master
-    types:
-      - closed
 
 jobs:
-  if_merged:
-    if: github.event.pull_request.merged == true
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
