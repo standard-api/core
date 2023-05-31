@@ -11,20 +11,6 @@
     </parent>
     <artifactId>graph</artifactId>
     <name>Stapi.ai Graph</name>
-
-    <repositories>
-        <repository>
-            <id>central</id>
-            <url>https://repo1.maven.org/maven2</url>
-        </repository>
-        <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/standard-api/StapiFramework</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
     
     <dependencies>
         <dependency>

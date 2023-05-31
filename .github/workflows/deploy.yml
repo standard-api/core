@@ -40,6 +40,6 @@ jobs:
         run: mvn sonar:sonar -Dsonar.branch.name=${GITHUB_REF_NAME} -Dsonar.qualitygate.wait=true --file pom.xml
         
       - name: Publish to GitHub Packages Apache Maven
-        run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+        run: mvn deploy -DskipTests -s $GITHUB_WORKSPACE/settings.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

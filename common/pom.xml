@@ -12,20 +12,6 @@
     <artifactId>common</artifactId>
     <name>Stapi.ai Common</name>
     
-    <repositories>
-        <repository>
-            <id>central</id>
-            <url>https://repo1.maven.org/maven2</url>
-        </repository>
-        <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/standard-api/StapiFramework</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-    
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
