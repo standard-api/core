@@ -1,0 +1,140 @@
+{
+  "structureSchema" : {
+    "definitions" : { }
+  },
+  "successfullyMappedTypes" : [ ],
+  "unresolvableTypes" : [ {
+    "missingDependencies" : [ "missingType" ],
+    "structureDefinitionData" : {
+      "id" : "Element",
+      "abstract" : false,
+      "description" : "Structure Definition for Element",
+      "kind" : "complex-type",
+      "status" : "draft",
+      "type" : "Element",
+      "url" : "http://test.url/for/Element",
+      "baseDefinition" : null,
+      "baseDefinitionReference" : null,
+      "differential" : {
+        "parent" : "Element",
+        "element" : [ {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "Element.failingField",
+          "short" : "Field with failing type",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "DeeperType",
+            "targetProfile" : [ ]
+          } ]
+        } ]
+      }
+    }
+  }, {
+    "missingDependencies" : [ "missingType" ],
+    "structureDefinitionData" : {
+      "id" : "testPrimitive",
+      "abstract" : false,
+      "description" : "Structure Definition for test primitive",
+      "kind" : "primitive-type",
+      "status" : "draft",
+      "type" : "testPrimitive",
+      "url" : "http://test.url/for/testPrimitive",
+      "baseDefinition" : null,
+      "baseDefinitionReference" : null,
+      "differential" : {
+        "parent" : "testPrimitive",
+        "element" : [ ]
+      }
+    }
+  }, {
+    "missingDependencies" : [ "missingType" ],
+    "structureDefinitionData" : {
+      "id" : "DeeperType",
+      "abstract" : false,
+      "description" : "Structure Definition for DeeperType",
+      "kind" : "complex-type",
+      "status" : "draft",
+      "type" : "DeeperType",
+      "url" : "http://test.url/for/DeeperType",
+      "baseDefinition" : null,
+      "baseDefinitionReference" : null,
+      "differential" : {
+        "parent" : "DeeperType",
+        "element" : [ {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "DeeperType.failingField",
+          "short" : "Field with failing type",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "SuperDeepType",
+            "targetProfile" : [ ]
+          } ]
+        } ]
+      }
+    }
+  }, {
+    "missingDependencies" : [ "missingType" ],
+    "structureDefinitionData" : {
+      "id" : "HorseCockDeepType",
+      "abstract" : false,
+      "description" : "Structure Definition for HorseCockDeepType",
+      "kind" : "complex-type",
+      "status" : "draft",
+      "type" : "HorseCockDeepType",
+      "url" : "http://test.url/for/HorseCockDeepType",
+      "baseDefinition" : null,
+      "baseDefinitionReference" : null,
+      "differential" : {
+        "parent" : "HorseCockDeepType",
+        "element" : [ {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "HorseCockDeepType.failingField",
+          "short" : "Field with failing type",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "missingType",
+            "targetProfile" : [ ]
+          } ]
+        } ]
+      }
+    }
+  }, {
+    "missingDependencies" : [ "missingType" ],
+    "structureDefinitionData" : {
+      "id" : "SuperDeepType",
+      "abstract" : false,
+      "description" : "Structure Definition for SuperDeepType",
+      "kind" : "complex-type",
+      "status" : "draft",
+      "type" : "SuperDeepType",
+      "url" : "http://test.url/for/SuperDeepType",
+      "baseDefinition" : null,
+      "baseDefinitionReference" : null,
+      "differential" : {
+        "parent" : "SuperDeepType",
+        "element" : [ {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "SuperDeepType.failingField",
+          "short" : "Field with failing type",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "HorseCockDeepType",
+            "targetProfile" : [ ]
+          } ]
+        } ]
+      }
+    }
+  } ]
+}

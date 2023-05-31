@@ -1,0 +1,93 @@
+{
+  "structureSchema" : {
+    "definitions" : { }
+  },
+  "successfullyMappedTypes" : [ ],
+  "unresolvableTypes" : [ {
+    "missingDependencies" : [ "missingPrimitiveType" ],
+    "structureDefinitionData" : {
+      "id" : "primitiveTop",
+      "abstract" : false,
+      "baseDefinition" : "http://test.url/for/Element",
+      "description" : "Structure Definition for top primitive type with no parent",
+      "kind" : "primitive-type",
+      "status" : "draft",
+      "type" : "primitiveTop",
+      "url" : "http://test.url/for/primitiveTopParent",
+      "baseDefinitionReference" : {
+        "id" : "Element"
+      },
+      "differential" : {
+        "parent" : "primitiveTop",
+        "element" : [ ]
+      }
+    }
+  }, {
+    "missingDependencies" : [ "missingPrimitiveType" ],
+    "structureDefinitionData" : {
+      "id" : "Element",
+      "abstract" : false,
+      "description" : "Structure Definition for Element",
+      "kind" : "complex-type",
+      "status" : "draft",
+      "type" : "Element",
+      "url" : "http://test.url/for/Element",
+      "baseDefinition" : null,
+      "baseDefinitionReference" : null,
+      "differential" : {
+        "parent" : "Element",
+        "element" : [ {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "TestComplex1.missingPrimitiveField",
+          "short" : "Missing Primitive Example Field on Test Complex 1",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "missingPrimitiveType",
+            "targetProfile" : [ ]
+          } ]
+        } ]
+      }
+    }
+  }, {
+    "missingDependencies" : [ "missingPrimitiveType" ],
+    "structureDefinitionData" : {
+      "id" : "primitiveMiddle",
+      "abstract" : false,
+      "baseDefinition" : "http://test.url/for/primitiveTop",
+      "description" : "Structure Definition for primitive which parent and also has parent",
+      "kind" : "primitive-type",
+      "status" : "draft",
+      "type" : "primitiveMiddle",
+      "url" : "http://test.url/for/primitiveMiddle",
+      "baseDefinitionReference" : {
+        "id" : "primitiveTop"
+      },
+      "differential" : {
+        "parent" : "primitiveMiddle",
+        "element" : [ ]
+      }
+    }
+  }, {
+    "missingDependencies" : [ "missingPrimitiveType" ],
+    "structureDefinitionData" : {
+      "id" : "primitiveBottom",
+      "abstract" : false,
+      "baseDefinition" : "http://test.url/for/primitiveMiddle",
+      "description" : "Structure Definition for primitive",
+      "kind" : "primitive-type",
+      "status" : "draft",
+      "type" : "primitiveBottom",
+      "url" : "http://test.url/for/primitiveBottom",
+      "baseDefinitionReference" : {
+        "id" : "primitiveMiddle"
+      },
+      "differential" : {
+        "parent" : "primitiveBottom",
+        "element" : [ ]
+      }
+    }
+  } ]
+}

@@ -1,0 +1,115 @@
+{
+  "structureSchema" : {
+    "definitions" : {
+      "BackboneElement" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "BackboneElement",
+        "description" : "Structure Definition for Element",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      },
+      "Element" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Element",
+        "description" : "Structure Definition for Element",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      }
+    }
+  },
+  "successfullyMappedTypes" : [ "BackboneElement", "Element" ],
+  "unresolvableTypes" : [ {
+    "missingDependencies" : [ "missinElement" ],
+    "structureDefinitionData" : {
+      "id" : "primitiveWithMissingParent",
+      "abstract" : false,
+      "baseDefinition" : "http://test.url/for/missinElement",
+      "description" : "Structure Definition for test primitive",
+      "kind" : "primitive-type",
+      "status" : "draft",
+      "type" : "primitiveWithMissingParent",
+      "url" : "http://test.url/for/primitiveWithMissingParent",
+      "baseDefinitionReference" : {
+        "id" : "missinElement"
+      },
+      "differential" : {
+        "parent" : "primitiveWithMissingParent",
+        "element" : [ ]
+      }
+    }
+  }, {
+    "missingDependencies" : [ "missinElement" ],
+    "structureDefinitionData" : {
+      "id" : "TestComplexWithAnonymousType",
+      "abstract" : false,
+      "description" : "Structure Definition with anonymous type",
+      "kind" : "complex-type",
+      "status" : "draft",
+      "type" : "TestComplexWithAnonymousType",
+      "url" : "http://test.url/for/TestComplexWithAnonymousType",
+      "baseDefinition" : null,
+      "baseDefinitionReference" : null,
+      "differential" : {
+        "parent" : "TestComplexWithAnonymousType",
+        "element" : [ {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "TestComplexWithAnonymousType.testedType",
+          "short" : "Anonymous type subjected to test",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "BackboneElement",
+            "targetProfile" : [ ]
+          } ]
+        }, {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "TestComplexWithAnonymousType.testedType.complexField",
+          "short" : "Field with complex type which has missing dependency",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "ComplexTypeWithPrimitive",
+            "targetProfile" : [ ]
+          } ]
+        } ]
+      }
+    }
+  }, {
+    "missingDependencies" : [ "missinElement" ],
+    "structureDefinitionData" : {
+      "id" : "ComplexTypeWithPrimitive",
+      "abstract" : false,
+      "description" : "Structure Definition for complex type with missing primitive",
+      "kind" : "complex-type",
+      "status" : "draft",
+      "type" : "ComplexTypeWithMissingPrimitive",
+      "url" : "http://test.url/for/ComplexTypeWithMissingPrimitive",
+      "baseDefinition" : null,
+      "baseDefinitionReference" : null,
+      "differential" : {
+        "parent" : "ComplexTypeWithPrimitive",
+        "element" : [ {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "ComplexTypeWithMissingPrimitive.primitiveField",
+          "short" : "Primitive field which definition is missing",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "primitiveWithMissingParent",
+            "targetProfile" : [ ]
+          } ]
+        } ]
+      }
+    }
+  } ]
+}

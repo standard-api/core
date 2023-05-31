@@ -1,0 +1,24 @@
+{
+  "serializationType" : "ComplexStructureType",
+  "definitionType" : "TestComplex",
+  "description" : "Structure Definition for test complex",
+  "isAbstract" : false,
+  "kind" : "complex-type",
+  "parent" : "",
+  "fields" : {
+    "someField" : {
+      "serializationType" : "FieldDefinition",
+      "description" : "",
+      "max" : "1",
+      "min" : 0,
+      "name" : "someField",
+      "parentDefinitionType" : "TestComplex",
+      "types" : [ {
+        "isContentReferenced" : false,
+        "originalType" : "testPrimitive",
+        "type" : "testPrimitive",
+        "typeGroup" : "STANDARD"
+      } ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+nodes:
+	node_type: merged_node_type
+	node_hash: 1A9CE
+	node_edges:
+		merged_node_type -> edge_type -> node_type_to (1A9CE -> 5BF34 -> 3F5B2)
+	attributes:
+		new -> new value
+		original -> original value
+		updated -> old value
+		updated -> updated value
+
+	node_type: node_type_to
+	node_hash: 3F5B2
+	node_edges:
+		merged_node_type -> edge_type -> node_type_to (1A9CE -> 5BF34 -> 3F5B2)
+	attributes:
+
+edges:
+	edge_type: edge_type
+	edge_hash: 5BF34
+	merged_node_type -> edge_type -> node_type_to (1A9CE -> 5BF34 -> 3F5B2)
+	attributes:
+		new -> new value
+		original -> original value
+		updated -> old value
+		updated -> updated value

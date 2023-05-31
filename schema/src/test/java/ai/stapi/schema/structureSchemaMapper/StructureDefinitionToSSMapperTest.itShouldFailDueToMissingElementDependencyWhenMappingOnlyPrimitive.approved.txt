@@ -1,0 +1,24 @@
+{
+  "structureSchema" : {
+    "definitions" : { }
+  },
+  "successfullyMappedTypes" : [ ],
+  "unresolvableTypes" : [ {
+    "missingDependencies" : [ "Element" ],
+    "structureDefinitionData" : {
+      "id" : "testPrimitive",
+      "abstract" : false,
+      "description" : "Structure Definition for test primitive",
+      "kind" : "primitive-type",
+      "status" : "draft",
+      "type" : "testPrimitive",
+      "url" : "http://test.url/for/primitive",
+      "baseDefinition" : null,
+      "baseDefinitionReference" : null,
+      "differential" : {
+        "parent" : "testPrimitive",
+        "element" : [ ]
+      }
+    }
+  } ]
+}

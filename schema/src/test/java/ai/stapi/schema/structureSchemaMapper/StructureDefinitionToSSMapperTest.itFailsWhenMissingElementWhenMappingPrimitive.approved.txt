@@ -1,0 +1,43 @@
+{
+  "structureSchema" : {
+    "definitions" : { }
+  },
+  "successfullyMappedTypes" : [ ],
+  "unresolvableTypes" : [ {
+    "missingDependencies" : [ "Element" ],
+    "structureDefinitionData" : {
+      "id" : "primitive",
+      "abstract" : false,
+      "baseDefinition" : "http://test.url/for/parentPrimitive",
+      "description" : "Just primitive",
+      "kind" : "primitive-type",
+      "status" : "draft",
+      "type" : "primitive",
+      "url" : "http://test.url/for/primitive",
+      "baseDefinitionReference" : {
+        "id" : "parentPrimitive"
+      },
+      "differential" : {
+        "parent" : "primitive",
+        "element" : [ ]
+      }
+    }
+  }, {
+    "missingDependencies" : [ "Element" ],
+    "structureDefinitionData" : {
+      "id" : "parentPrimitive",
+      "abstract" : false,
+      "description" : "Parent of primitive primitive",
+      "kind" : "primitive-type",
+      "status" : "draft",
+      "type" : "parentPrimitive",
+      "url" : "http://test.url/for/parentPrimitive",
+      "baseDefinition" : null,
+      "baseDefinitionReference" : null,
+      "differential" : {
+        "parent" : "parentPrimitive",
+        "element" : [ ]
+      }
+    }
+  } ]
+}

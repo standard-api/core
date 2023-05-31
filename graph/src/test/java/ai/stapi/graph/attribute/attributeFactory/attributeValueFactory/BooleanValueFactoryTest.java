@@ -1,0 +1,31 @@
+package ai.stapi.graph.attribute.attributeFactory.attributeValueFactory;
+
+import ai.stapi.graph.attribute.attributeValue.Base64BinaryAttributeValue;
+import ai.stapi.graph.attribute.attributeValue.BooleanAttributeValue;
+import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
+import java.util.List;
+import org.junit.jupiter.api.Test;
+
+class BooleanValueFactoryTest extends AbstractAttributeValueFactoryTest {
+  public static final String TESTED_ATTRIBUTE_TYPE = BooleanAttributeValue.SERIALIZATION_TYPE;
+  public static final Class TESTED_ATTRIBUTE_CLASS = BooleanAttributeValue.class;
+  public static final Class EXPECTED_RAW_VALUE_TYPE = Boolean.class;
+
+  @Test
+  void itCanCreateAttribute() {
+    this.testItCanCorrectlyCreateAttributeOfVariousDataStructureType(
+        EXPECTED_RAW_VALUE_TYPE,
+        TESTED_ATTRIBUTE_TYPE,
+        TESTED_ATTRIBUTE_CLASS,
+        List.of(true, false)
+    );
+  }
+
+  @Test
+  void itCanFailsToCreateAttributeWithBadValueType() {
+    this.testItFailsToCreateIncorrectValueType(
+        TESTED_ATTRIBUTE_TYPE,
+        List.of(666)
+    );
+  }
+}

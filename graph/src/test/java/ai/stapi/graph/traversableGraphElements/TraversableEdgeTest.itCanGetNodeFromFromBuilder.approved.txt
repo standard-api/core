@@ -1,0 +1,6 @@
+node_type: from_node_type
+node_hash: C094C
+node_edges:
+	from_node_type -> edge_type -> to_node_type (C094C -> FD142 -> 70F19)
+attributes:
+	test_string -> NodeFrom attribute value

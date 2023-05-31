@@ -1,0 +1,26 @@
+{
+  "structureSchema" : {
+    "definitions" : {
+      "Element" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Element",
+        "description" : "New description",
+        "isAbstract" : true,
+        "kind" : "complex-type",
+        "parent" : "ElementsParent",
+        "fields" : { }
+      },
+      "ElementsParent" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "ElementsParent",
+        "description" : "Old desctiption",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      }
+    }
+  },
+  "successfullyMappedTypes" : [ "Element" ],
+  "unresolvableTypes" : [ ]
+}

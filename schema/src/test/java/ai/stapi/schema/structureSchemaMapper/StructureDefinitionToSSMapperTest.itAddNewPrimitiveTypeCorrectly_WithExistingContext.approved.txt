@@ -1,0 +1,81 @@
+{
+  "structureSchema" : {
+    "definitions" : {
+      "BoxedNewPrimitive" : {
+        "serializationType" : "BoxedPrimitiveStructureType",
+        "definitionType" : "BoxedNewPrimitive",
+        "description" : "Structure Definition for test complex 1",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "BoxedPrimitive",
+        "fields" : {
+          "value" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "Primitive value for BoxedNewPrimitive",
+            "max" : "1",
+            "min" : 0,
+            "name" : "value",
+            "parentDefinitionType" : "BoxedNewPrimitive",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "newPrimitive",
+              "type" : "newPrimitive",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "BoxedPrimitive" : {
+        "serializationType" : "BoxedPrimitiveStructureType",
+        "definitionType" : "BoxedPrimitive",
+        "description" : "",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "Element",
+        "fields" : {
+          "value" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "Primitive value for BoxedPrimitive",
+            "max" : "1",
+            "min" : 0,
+            "name" : "value",
+            "parentDefinitionType" : "BoxedPrimitive",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "primitive",
+              "type" : "primitive",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "Element" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Element",
+        "description" : "",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      },
+      "newPrimitive" : {
+        "serializationType" : "PrimitiveStructureType",
+        "definitionType" : "newPrimitive",
+        "description" : "Structure Definition for test complex 1",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "primitive"
+      },
+      "primitive" : {
+        "serializationType" : "PrimitiveStructureType",
+        "definitionType" : "primitive",
+        "description" : "",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : ""
+      }
+    }
+  },
+  "successfullyMappedTypes" : [ "newPrimitive" ],
+  "unresolvableTypes" : [ ]
+}

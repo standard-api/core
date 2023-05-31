@@ -1,0 +1,7 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  ai.stapi.graph.configuration.AttributeFactoryConfiguration,\
+  ai.stapi.graph.configuration.renderer.ApiRendererConfiguration,\
+  ai.stapi.graph.configuration.renderer.IdLessTextRendererConfiguration,\
+  ai.stapi.graph.configuration.renderer.ResponseGraphRendererConfiguration,\
+  ai.stapi.graph.configuration.renderer.TextRendererConfiguration,\
+  ai.stapi.graph.configuration.renderer.RendererConfiguration

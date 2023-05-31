@@ -1,0 +1,1 @@
+Field 'any' not found at structure with serializationType 'primitive', because serializationType is primitive.

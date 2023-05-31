@@ -1,0 +1,58 @@
+{
+  "structureSchema" : {
+    "definitions" : {
+      "Element" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Element",
+        "description" : "Structure Definition for Element",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      }
+    }
+  },
+  "successfullyMappedTypes" : [ "Element" ],
+  "unresolvableTypes" : [ {
+    "missingDependencies" : [ "testPrimitive" ],
+    "structureDefinitionData" : {
+      "id" : "TestComplexWithAnonymousType",
+      "abstract" : false,
+      "description" : "Structure Definition with anonymous type",
+      "kind" : "complex-type",
+      "status" : "draft",
+      "type" : "TestComplexWithAnonymousType",
+      "url" : "http://test.url/for/TestComplexWithAnonymousType",
+      "baseDefinition" : null,
+      "baseDefinitionReference" : null,
+      "differential" : {
+        "parent" : "TestComplexWithAnonymousType",
+        "element" : [ {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "TestComplexWithAnonymousType.testedType",
+          "short" : "Anonymous type subjected to test",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "Element",
+            "targetProfile" : [ ]
+          } ]
+        }, {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "TestComplexWithAnonymousType.testedType.field1",
+          "short" : "Random primitive field",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "testPrimitive",
+            "targetProfile" : [ ]
+          } ]
+        } ]
+      }
+    }
+  } ]
+}

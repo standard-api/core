@@ -1,0 +1,110 @@
+{
+  "structureSchema" : {
+    "definitions" : {
+      "BoxedDecimalPrimitive" : {
+        "serializationType" : "BoxedPrimitiveStructureType",
+        "definitionType" : "BoxedDecimalPrimitive",
+        "description" : "Structure Definition for test decimal primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "Element",
+        "fields" : {
+          "value" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "Primitive value for BoxedDecimalPrimitive",
+            "max" : "1",
+            "min" : 0,
+            "name" : "value",
+            "parentDefinitionType" : "BoxedDecimalPrimitive",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "decimalPrimitive",
+              "type" : "decimalPrimitive",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "BoxedStringPrimitive" : {
+        "serializationType" : "BoxedPrimitiveStructureType",
+        "definitionType" : "BoxedStringPrimitive",
+        "description" : "Structure Definition for test string primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "Element",
+        "fields" : {
+          "value" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "Primitive value for BoxedStringPrimitive",
+            "max" : "1",
+            "min" : 0,
+            "name" : "value",
+            "parentDefinitionType" : "BoxedStringPrimitive",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "stringPrimitive",
+              "type" : "stringPrimitive",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "Element" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Element",
+        "description" : "Structure Definition for Element",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      },
+      "TestComplex" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "TestComplex",
+        "description" : "Structure Definition for test complex",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : {
+          "someField" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "",
+            "max" : "1",
+            "min" : 0,
+            "name" : "someField",
+            "parentDefinitionType" : "TestComplex",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "decimalPrimitive",
+              "type" : "BoxedDecimalPrimitive",
+              "typeGroup" : "BOXED"
+            }, {
+              "isContentReferenced" : false,
+              "originalType" : "stringPrimitive",
+              "type" : "BoxedStringPrimitive",
+              "typeGroup" : "BOXED"
+            } ]
+          }
+        }
+      },
+      "decimalPrimitive" : {
+        "serializationType" : "PrimitiveStructureType",
+        "definitionType" : "decimalPrimitive",
+        "description" : "Structure Definition for test decimal primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : ""
+      },
+      "stringPrimitive" : {
+        "serializationType" : "PrimitiveStructureType",
+        "definitionType" : "stringPrimitive",
+        "description" : "Structure Definition for test string primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : ""
+      }
+    }
+  },
+  "successfullyMappedTypes" : [ "TestComplex", "decimalPrimitive", "stringPrimitive", "Element" ],
+  "unresolvableTypes" : [ ]
+}

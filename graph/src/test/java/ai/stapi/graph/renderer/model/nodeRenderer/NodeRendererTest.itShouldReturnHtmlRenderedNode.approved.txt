@@ -1,0 +1,93 @@
+{
+  "nodeId" : "b800d6e3-fd98-436f-9a5c-b4568fa7e2f0",
+  "type" : "test_type",
+  "primaryName" : "primary name",
+  "attributes" : [ {
+    "type" : "another_attribute_type",
+    "values" : [ {
+      "value" : "testValue",
+      "createdAt" : xxxxxxxx
+    } ]
+  }, {
+    "type" : "attribute_type",
+    "values" : [ {
+      "value" : "newTestValue",
+      "createdAt" : xxxxxxxx
+    } ]
+  }, {
+    "type" : "name",
+    "values" : [ {
+      "value" : "primary name",
+      "createdAt" : xxxxxxxx
+    } ]
+  } ],
+  "edges" : [ {
+    "edgeId" : "160dc265-631c-4f05-854e-87db0fec0699",
+    "type" : "is_also_testing",
+    "compactNodeFrom" : {
+      "nodeId" : "b800d6e3-fd98-436f-9a5c-b4568fa7e2f0",
+      "type" : "test_type",
+      "primaryName" : "primary name",
+      "attributes" : [ {
+        "type" : "name",
+        "values" : [ {
+          "value" : "primary name",
+          "createdAt" : xxxxxxxx
+        } ]
+      }, {
+        "type" : "attribute_type",
+        "values" : [ {
+          "value" : "newTestValue",
+          "createdAt" : xxxxxxxx
+        } ]
+      }, {
+        "type" : "another_attribute_type",
+        "values" : [ {
+          "value" : "testValue",
+          "createdAt" : xxxxxxxx
+        } ]
+      } ]
+    },
+    "compactNodeTo" : {
+      "nodeId" : "a648a53c-32dd-4649-8c33-f942fef14646",
+      "type" : "another_test_type",
+      "primaryName" : "a648a53c-32dd-4649-8c33-f942fef14646",
+      "attributes" : [ ]
+    },
+    "attributes" : [ ]
+  }, {
+    "edgeId" : "654dfc5f-58fb-4d9f-8d1d-eaba842f4854",
+    "type" : "is_testing",
+    "compactNodeFrom" : {
+      "nodeId" : "b800d6e3-fd98-436f-9a5c-b4568fa7e2f0",
+      "type" : "test_type",
+      "primaryName" : "primary name",
+      "attributes" : [ {
+        "type" : "name",
+        "values" : [ {
+          "value" : "primary name",
+          "createdAt" : xxxxxxxx
+        } ]
+      }, {
+        "type" : "attribute_type",
+        "values" : [ {
+          "value" : "newTestValue",
+          "createdAt" : xxxxxxxx
+        } ]
+      }, {
+        "type" : "another_attribute_type",
+        "values" : [ {
+          "value" : "testValue",
+          "createdAt" : xxxxxxxx
+        } ]
+      } ]
+    },
+    "compactNodeTo" : {
+      "nodeId" : "a648a53c-32dd-4649-8c33-f942fef14646",
+      "type" : "another_test_type",
+      "primaryName" : "a648a53c-32dd-4649-8c33-f942fef14646",
+      "attributes" : [ ]
+    },
+    "attributes" : [ ]
+  } ]
+}

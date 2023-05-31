@@ -1,0 +1,28 @@
+{
+  "definitions" : {
+    "otherPrimitive" : {
+      "serializationType" : "PrimitiveStructureType",
+      "definitionType" : "otherPrimitive",
+      "description" : "This is primitive",
+      "isAbstract" : false,
+      "kind" : "primitive-type",
+      "parent" : "primitive"
+    },
+    "primitive" : {
+      "serializationType" : "PrimitiveStructureType",
+      "definitionType" : "primitive",
+      "description" : "This is primitive",
+      "isAbstract" : false,
+      "kind" : "primitive-type",
+      "parent" : "primitiveParent"
+    },
+    "primitiveParent" : {
+      "serializationType" : "PrimitiveStructureType",
+      "definitionType" : "primitiveParent",
+      "description" : "This is primitive",
+      "isAbstract" : false,
+      "kind" : "primitive-type",
+      "parent" : ""
+    }
+  }
+}

@@ -1,0 +1,1 @@
+Some fields not found at structure with serializationType 'nonExistingType', because serializationType does not exist in schema.

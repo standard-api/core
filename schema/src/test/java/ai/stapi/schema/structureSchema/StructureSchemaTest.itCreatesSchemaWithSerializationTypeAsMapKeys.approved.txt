@@ -1,0 +1,21 @@
+{
+  "definitions" : {
+    "Element" : {
+      "serializationType" : "ComplexStructureType",
+      "definitionType" : "Element",
+      "description" : "Required type for primitive",
+      "isAbstract" : false,
+      "kind" : "complex-type",
+      "parent" : "",
+      "fields" : { }
+    },
+    "primitive" : {
+      "serializationType" : "PrimitiveStructureType",
+      "definitionType" : "primitive",
+      "description" : "This is primitive",
+      "isAbstract" : false,
+      "kind" : "primitive-type",
+      "parent" : ""
+    }
+  }
+}

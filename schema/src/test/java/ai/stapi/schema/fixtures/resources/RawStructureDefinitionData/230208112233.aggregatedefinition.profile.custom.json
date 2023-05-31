@@ -1,0 +1,91 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "AggregateDefinition",
+  "type": "AggregateDefinition",
+  "url": "http://conception.tech/fhir/StructureDefinition/AggregateDefinition",
+  "name": "AggregateDefinition",
+  "status": "draft",
+  "kind": "resource",
+  "abstract": false,
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Resource",
+  "differential": {
+    "element": [
+      {
+        "id": "AggregateDefinition",
+        "path": "AggregateDefinition",
+        "short": "Definition of an aggregate resource",
+        "definition": "Definition of an aggregate resource.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "AggregateDefinition.id",
+        "path": "AggregateDefinition.id",
+        "short": "Unique id for inter-element referencing",
+        "definition": "Unique id for inter-element referencing",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "http://hl7.org/fhirpath/System.String"
+          }
+        ]
+      },
+      {
+        "id": "AggregateDefinition.name",
+        "path": "AggregateDefinition.name",
+        "short": "Name for this aggregate definition (computer friendly)",
+        "definition": "Name for this aggregate definition (computer friendly).",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "http://hl7.org/fhirpath/System.String"
+          }
+        ]
+      },
+      {
+        "id": "AggregateDefinition.description",
+        "path": "AggregateDefinition.description",
+        "short": "A description of the aggregate resource",
+        "definition": "A description of the aggregate resource.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "http://hl7.org/fhirpath/System.String"
+          }
+        ]
+      },
+      {
+        "id": "AggregateDefinition.command",
+        "path": "AggregateDefinition.command",
+        "short": "Commands for this aggregate resource",
+        "definition": "Commands for this aggregate resource.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "CommandHandlerDefinition"
+          }
+        ]
+      },
+      {
+        "id": "AggregateDefinition.structure",
+        "path": "AggregateDefinition.structure",
+        "short": "Structure Definition of state of this Aggregate",
+        "definition": "Structure Definition of state of this Aggregate",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

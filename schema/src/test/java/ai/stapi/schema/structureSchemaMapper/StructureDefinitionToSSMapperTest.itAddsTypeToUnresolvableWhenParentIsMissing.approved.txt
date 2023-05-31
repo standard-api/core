@@ -1,0 +1,80 @@
+{
+  "structureSchema" : {
+    "definitions" : {
+      "BoxedTestPrimitive" : {
+        "serializationType" : "BoxedPrimitiveStructureType",
+        "definitionType" : "BoxedTestPrimitive",
+        "description" : "Structure Definition for test primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "Element",
+        "fields" : {
+          "value" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "Primitive value for BoxedTestPrimitive",
+            "max" : "1",
+            "min" : 0,
+            "name" : "value",
+            "parentDefinitionType" : "BoxedTestPrimitive",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "testPrimitive",
+              "type" : "testPrimitive",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "Element" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Element",
+        "description" : "Structure Definition for Element",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      },
+      "testPrimitive" : {
+        "serializationType" : "PrimitiveStructureType",
+        "definitionType" : "testPrimitive",
+        "description" : "Structure Definition for test primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : ""
+      }
+    }
+  },
+  "successfullyMappedTypes" : [ "testPrimitive", "Element" ],
+  "unresolvableTypes" : [ {
+    "missingDependencies" : [ "TestComplex2" ],
+    "structureDefinitionData" : {
+      "id" : "TestComplex1",
+      "abstract" : false,
+      "baseDefinition" : "http://test.url/for/TestComplex2",
+      "description" : "Structure Definition for test complex 1",
+      "kind" : "complex-type",
+      "status" : "draft",
+      "type" : "TestComplex1",
+      "url" : "http://test.url/for/complex",
+      "baseDefinitionReference" : {
+        "id" : "TestComplex2"
+      },
+      "differential" : {
+        "parent" : "TestComplex1",
+        "element" : [ {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "TestComplex1.somePrimitiveField",
+          "short" : "Primitive Example Field on Test Complex 1",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "testPrimitive",
+            "targetProfile" : [ ]
+          } ]
+        } ]
+      }
+    }
+  } ]
+}

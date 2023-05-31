@@ -1,0 +1,59 @@
+{
+  "definitions" : {
+    "Element" : {
+      "serializationType" : "ComplexStructureType",
+      "definitionType" : "Element",
+      "description" : "Required type for primitive",
+      "isAbstract" : false,
+      "kind" : "complex-type",
+      "parent" : "",
+      "fields" : { }
+    },
+    "TestComplex" : {
+      "serializationType" : "ComplexStructureType",
+      "definitionType" : "TestComplex",
+      "description" : "This is old complex type",
+      "isAbstract" : false,
+      "kind" : "complex-type",
+      "parent" : "",
+      "fields" : {
+        "originalField" : {
+          "serializationType" : "FieldDefinition",
+          "description" : "this is parent's field",
+          "max" : "*",
+          "min" : 0,
+          "name" : "originalField",
+          "parentDefinitionType" : "TestComplex",
+          "types" : [ {
+            "isContentReferenced" : false,
+            "originalType" : "primitive",
+            "type" : "primitive",
+            "typeGroup" : "STANDARD"
+          } ]
+        },
+        "otherField" : {
+          "serializationType" : "FieldDefinition",
+          "description" : "this is parent's field",
+          "max" : "*",
+          "min" : 0,
+          "name" : "otherField",
+          "parentDefinitionType" : "TestComplex",
+          "types" : [ {
+            "isContentReferenced" : false,
+            "originalType" : "primitive",
+            "type" : "primitive",
+            "typeGroup" : "STANDARD"
+          } ]
+        }
+      }
+    },
+    "primitive" : {
+      "serializationType" : "PrimitiveStructureType",
+      "definitionType" : "primitive",
+      "description" : "This is primitive",
+      "isAbstract" : false,
+      "kind" : "primitive-type",
+      "parent" : ""
+    }
+  }
+}

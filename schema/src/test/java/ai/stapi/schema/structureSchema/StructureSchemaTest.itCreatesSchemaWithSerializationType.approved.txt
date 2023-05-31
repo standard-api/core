@@ -1,0 +1,12 @@
+{
+  "definitions" : {
+    "primitive" : {
+      "serializationType" : "PrimitiveStructureType",
+      "definitionType" : "primitive",
+      "description" : "This is primitive",
+      "isAbstract" : false,
+      "kind" : "primitive-type",
+      "parent" : ""
+    }
+  }
+}

@@ -1,0 +1,3 @@
+Structure schema for serialization type 'testPrimitive' not found.
+Current pending unresolvable types: 
+Failed type: 'testPrimitive', missing dependencies: [Element]

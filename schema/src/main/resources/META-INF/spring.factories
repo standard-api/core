@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  ai.stapi.schema.configuration.AdHocLoaderConfiguration,\
+  ai.stapi.schema.configuration.ScopeProviderConfiguration,\
+  ai.stapi.schema.configuration.StructureSchemaConfiguration

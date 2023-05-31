@@ -1,0 +1,81 @@
+{
+  "structureSchema" : {
+    "definitions" : {
+      "BoxedStringPrimitive" : {
+        "serializationType" : "BoxedPrimitiveStructureType",
+        "definitionType" : "BoxedStringPrimitive",
+        "description" : "Structure Definition for test string primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "Element",
+        "fields" : {
+          "value" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "Primitive value for BoxedStringPrimitive",
+            "max" : "1",
+            "min" : 0,
+            "name" : "value",
+            "parentDefinitionType" : "BoxedStringPrimitive",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "stringPrimitive",
+              "type" : "stringPrimitive",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "Element" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Element",
+        "description" : "Structure Definition for Element",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      },
+      "stringPrimitive" : {
+        "serializationType" : "PrimitiveStructureType",
+        "definitionType" : "stringPrimitive",
+        "description" : "Structure Definition for test string primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : ""
+      }
+    }
+  },
+  "successfullyMappedTypes" : [ "stringPrimitive", "Element" ],
+  "unresolvableTypes" : [ {
+    "missingDependencies" : [ "decimalPrimitive" ],
+    "structureDefinitionData" : {
+      "id" : "TestComplex",
+      "abstract" : false,
+      "description" : "Structure Definition for test complex",
+      "kind" : "complex-type",
+      "status" : "draft",
+      "type" : "TestComplex",
+      "url" : "http://test.url/for/complex",
+      "baseDefinition" : null,
+      "baseDefinitionReference" : null,
+      "differential" : {
+        "parent" : "TestComplex",
+        "element" : [ {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "TestComplex.someField",
+          "short" : "Example Field",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "decimalPrimitive",
+            "targetProfile" : [ ]
+          }, {
+            "code" : "stringPrimitive",
+            "targetProfile" : [ ]
+          } ]
+        } ]
+      }
+    }
+  } ]
+}

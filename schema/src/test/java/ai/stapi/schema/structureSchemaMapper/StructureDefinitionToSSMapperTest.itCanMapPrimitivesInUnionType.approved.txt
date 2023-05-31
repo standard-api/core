@@ -1,0 +1,110 @@
+{
+  "structureSchema" : {
+    "definitions" : {
+      "BoxedCode" : {
+        "serializationType" : "BoxedPrimitiveStructureType",
+        "definitionType" : "BoxedCode",
+        "description" : "Structure Definition for test decimal primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "BoxedString",
+        "fields" : {
+          "value" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "Primitive value for BoxedCode",
+            "max" : "1",
+            "min" : 0,
+            "name" : "value",
+            "parentDefinitionType" : "BoxedCode",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "code",
+              "type" : "code",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "BoxedString" : {
+        "serializationType" : "BoxedPrimitiveStructureType",
+        "definitionType" : "BoxedString",
+        "description" : "Structure Definition for test string primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "Element",
+        "fields" : {
+          "value" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "Primitive value for BoxedString",
+            "max" : "1",
+            "min" : 0,
+            "name" : "value",
+            "parentDefinitionType" : "BoxedString",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "string",
+              "type" : "string",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "Element" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Element",
+        "description" : "Structure Definition for Element",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      },
+      "TestComplex" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "TestComplex",
+        "description" : "Structure Definition for test complex",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : {
+          "someField" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "",
+            "max" : "1",
+            "min" : 0,
+            "name" : "someField",
+            "parentDefinitionType" : "TestComplex",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "code",
+              "type" : "BoxedCode",
+              "typeGroup" : "BOXED"
+            }, {
+              "isContentReferenced" : false,
+              "originalType" : "string",
+              "type" : "BoxedString",
+              "typeGroup" : "BOXED"
+            } ]
+          }
+        }
+      },
+      "code" : {
+        "serializationType" : "PrimitiveStructureType",
+        "definitionType" : "code",
+        "description" : "Structure Definition for test decimal primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "string"
+      },
+      "string" : {
+        "serializationType" : "PrimitiveStructureType",
+        "definitionType" : "string",
+        "description" : "Structure Definition for test string primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : ""
+      }
+    }
+  },
+  "successfullyMappedTypes" : [ "TestComplex", "code", "string", "Element" ],
+  "unresolvableTypes" : [ ]
+}

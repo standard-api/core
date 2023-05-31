@@ -1,0 +1,73 @@
+{
+  "structureSchema" : {
+    "definitions" : {
+      "BoxedPrimitive" : {
+        "serializationType" : "BoxedPrimitiveStructureType",
+        "definitionType" : "BoxedPrimitive",
+        "description" : "Existing Primitive type",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "Element",
+        "fields" : {
+          "value" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "Primitive value for BoxedPrimitive",
+            "max" : "1",
+            "min" : 0,
+            "name" : "value",
+            "parentDefinitionType" : "BoxedPrimitive",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "Primitive",
+              "type" : "Primitive",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "Element" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Element",
+        "description" : "Element in context",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      },
+      "Primitive" : {
+        "serializationType" : "PrimitiveStructureType",
+        "definitionType" : "Primitive",
+        "description" : "Existing Primitive type",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "Element"
+      },
+      "TestComplex" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "TestComplex",
+        "description" : "Structure Definition to test field which has type already defined in context",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : {
+          "primitiveField" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "",
+            "max" : "1",
+            "min" : 0,
+            "name" : "primitiveField",
+            "parentDefinitionType" : "TestComplex",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "Primitive",
+              "type" : "Primitive",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      }
+    }
+  },
+  "successfullyMappedTypes" : [ "TestComplex" ],
+  "unresolvableTypes" : [ ]
+}

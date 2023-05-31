@@ -1,0 +1,6 @@
+edge_id: b800d6e3-fd98-436f-9a5c-b4568fa7e2f0
+edge_type: is_based_on
+edge_hash: 89756
+statement -> is_based_on -> research (E52AC -> 89756 -> 3A834)
+attributes:
+	attribute_name -> test_value

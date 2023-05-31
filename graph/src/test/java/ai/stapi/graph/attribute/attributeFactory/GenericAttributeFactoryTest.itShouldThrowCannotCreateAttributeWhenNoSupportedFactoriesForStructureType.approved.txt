@@ -1,0 +1,4 @@
+Cannot create attribute, because provided structure type is not supported by any factory.
+Attribute name: exampleName
+Structure type: unsupported_structure_type
+No supported factories found.

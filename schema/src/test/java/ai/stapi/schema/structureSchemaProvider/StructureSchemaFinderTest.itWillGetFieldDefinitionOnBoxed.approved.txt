@@ -1,0 +1,14 @@
+{
+  "serializationType" : "FieldDefinition",
+  "description" : "",
+  "max" : "1",
+  "min" : 0,
+  "name" : "exampleLeafField",
+  "parentDefinitionType" : "Element",
+  "types" : [ {
+    "isContentReferenced" : false,
+    "originalType" : "testPrimitive",
+    "type" : "testPrimitive",
+    "typeGroup" : "STANDARD"
+  } ]
+}

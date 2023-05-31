@@ -1,0 +1,10 @@
+More values were provided, when creating Leaf Attribute, but it should have exactly one.
+Attribute name: exampleName
+Choosing value at first position.
+Values: {
+  "value" : "ExampleValue1",
+  "dataType" : "string"
+}, {
+  "value" : "ExampleValue2",
+  "dataType" : "string"
+}

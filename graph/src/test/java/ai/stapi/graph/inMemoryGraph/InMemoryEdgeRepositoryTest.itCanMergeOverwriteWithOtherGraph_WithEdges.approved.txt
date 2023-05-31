@@ -1,0 +1,56 @@
+nodes:
+	node_type: already_saved_from
+	node_hash: 1E913
+	node_edges:
+		already_saved_from -> already_saved_edge -> already_saved_to (1E913 -> B061C -> 4EAE1)
+	attributes:
+
+	node_type: already_saved_to
+	node_hash: 4EAE1
+	node_edges:
+		already_saved_from -> already_saved_edge -> already_saved_to (1E913 -> B061C -> 4EAE1)
+	attributes:
+
+	node_type: merged_node_from_type
+	node_hash: 9EB06
+	node_edges:
+		merged_node_from_type -> same_type -> merged_node_to_type (9EB06 -> C11C3 -> 0628F)
+	attributes:
+
+	node_type: merged_node_to_type
+	node_hash: 0628F
+	node_edges:
+		merged_node_from_type -> same_type -> merged_node_to_type (9EB06 -> C11C3 -> 0628F)
+	attributes:
+
+	node_type: new_saved_from
+	node_hash: DBD1A
+	node_edges:
+		new_saved_from -> new_edge -> new_saved_to (DBD1A -> 8D3FC -> E7CBB)
+	attributes:
+
+	node_type: new_saved_to
+	node_hash: E7CBB
+	node_edges:
+		new_saved_from -> new_edge -> new_saved_to (DBD1A -> 8D3FC -> E7CBB)
+	attributes:
+
+edges:
+	edge_type: already_saved_edge
+	edge_hash: B061C
+	already_saved_from -> already_saved_edge -> already_saved_to (1E913 -> B061C -> 4EAE1)
+	attributes:
+
+	edge_type: new_edge
+	edge_hash: 8D3FC
+	new_saved_from -> new_edge -> new_saved_to (DBD1A -> 8D3FC -> E7CBB)
+	attributes:
+
+	edge_type: same_type
+	edge_hash: C11C3
+	merged_node_from_type -> same_type -> merged_node_to_type (9EB06 -> C11C3 -> 0628F)
+	attributes:
+		new -> new value
+		original -> original value
+		updated -> old value
+		updated -> updated value

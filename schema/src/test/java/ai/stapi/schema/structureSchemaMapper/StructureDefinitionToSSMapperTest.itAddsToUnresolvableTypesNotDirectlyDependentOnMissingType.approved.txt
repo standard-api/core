@@ -1,0 +1,65 @@
+{
+  "structureSchema" : {
+    "definitions" : { }
+  },
+  "successfullyMappedTypes" : [ ],
+  "unresolvableTypes" : [ {
+    "missingDependencies" : [ "testPrimitive" ],
+    "structureDefinitionData" : {
+      "id" : "TestComplex2",
+      "abstract" : false,
+      "description" : "This type should be consequently also unresolvable",
+      "kind" : "complex-type",
+      "status" : "draft",
+      "type" : "TestComplex2",
+      "url" : "http://test.url/for/complex2",
+      "baseDefinition" : null,
+      "baseDefinitionReference" : null,
+      "differential" : {
+        "parent" : "TestComplex2",
+        "element" : [ {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "TestComplex2.otherComplexTypeField",
+          "short" : "Dependency on indirectly unresolvable type",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "TestComplex1",
+            "targetProfile" : [ ]
+          } ]
+        } ]
+      }
+    }
+  }, {
+    "missingDependencies" : [ "testPrimitive" ],
+    "structureDefinitionData" : {
+      "id" : "TestComplex1",
+      "abstract" : false,
+      "description" : "This type should be unresolvable",
+      "kind" : "complex-type",
+      "status" : "draft",
+      "type" : "TestComplex1",
+      "url" : "http://test.url/for/complex",
+      "baseDefinition" : null,
+      "baseDefinitionReference" : null,
+      "differential" : {
+        "parent" : "TestComplex1",
+        "element" : [ {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "TestComplex1.someUnresolvableField",
+          "short" : "Field with missing dependency",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "testPrimitive",
+            "targetProfile" : [ ]
+          } ]
+        } ]
+      }
+    }
+  } ]
+}

@@ -1,0 +1,113 @@
+{
+  "structureSchema" : {
+    "definitions" : {
+      "BoxedPrimitiveBottom" : {
+        "serializationType" : "BoxedPrimitiveStructureType",
+        "definitionType" : "BoxedPrimitiveBottom",
+        "description" : "Structure Definition for primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "BoxedPrimitiveMiddle",
+        "fields" : {
+          "value" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "Primitive value for BoxedPrimitiveBottom",
+            "max" : "1",
+            "min" : 0,
+            "name" : "value",
+            "parentDefinitionType" : "BoxedPrimitiveBottom",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "primitiveBottom",
+              "type" : "primitiveBottom",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "BoxedPrimitiveMiddle" : {
+        "serializationType" : "BoxedPrimitiveStructureType",
+        "definitionType" : "BoxedPrimitiveMiddle",
+        "description" : "Structure Definition for primitive which parent and also has parent",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "BoxedPrimitiveTop",
+        "fields" : {
+          "value" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "Primitive value for BoxedPrimitiveMiddle",
+            "max" : "1",
+            "min" : 0,
+            "name" : "value",
+            "parentDefinitionType" : "BoxedPrimitiveMiddle",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "primitiveMiddle",
+              "type" : "primitiveMiddle",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "BoxedPrimitiveTop" : {
+        "serializationType" : "BoxedPrimitiveStructureType",
+        "definitionType" : "BoxedPrimitiveTop",
+        "description" : "Structure Definition for top primitive type with no parent",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "Element",
+        "fields" : {
+          "value" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "Primitive value for BoxedPrimitiveTop",
+            "max" : "1",
+            "min" : 0,
+            "name" : "value",
+            "parentDefinitionType" : "BoxedPrimitiveTop",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "primitiveTop",
+              "type" : "primitiveTop",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "Element" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Element",
+        "description" : "Structure Definition for Element",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      },
+      "primitiveBottom" : {
+        "serializationType" : "PrimitiveStructureType",
+        "definitionType" : "primitiveBottom",
+        "description" : "Structure Definition for primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "primitiveMiddle"
+      },
+      "primitiveMiddle" : {
+        "serializationType" : "PrimitiveStructureType",
+        "definitionType" : "primitiveMiddle",
+        "description" : "Structure Definition for primitive which parent and also has parent",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "primitiveTop"
+      },
+      "primitiveTop" : {
+        "serializationType" : "PrimitiveStructureType",
+        "definitionType" : "primitiveTop",
+        "description" : "Structure Definition for top primitive type with no parent",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : ""
+      }
+    }
+  },
+  "successfullyMappedTypes" : [ "primitiveTop", "primitiveMiddle", "primitiveBottom", "Element" ],
+  "unresolvableTypes" : [ ]
+}

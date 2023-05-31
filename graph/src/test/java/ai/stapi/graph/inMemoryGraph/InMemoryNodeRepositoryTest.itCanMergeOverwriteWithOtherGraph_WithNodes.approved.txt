@@ -1,0 +1,21 @@
+nodes:
+	node_type: already saved node
+	node_hash: 6CD2D
+	node_edges:
+	attributes:
+
+	node_type: merged_node_type
+	node_hash: 85133
+	node_edges:
+	attributes:
+		new -> new value
+		original -> original value
+		updated -> old value
+		updated -> updated value
+
+	node_type: node from other graph
+	node_hash: D140C
+	node_edges:
+	attributes:
+
+edges:

@@ -1,0 +1,10 @@
+node_id: b800d6e3-fd98-436f-9a5c-b4568fa7e2f0
+node_type: test_type
+node_hash: A95C9
+node_edges:
+	test_type -> is_also_testing -> another_test_type (A95C9 -> 95BBF -> 681ED)
+	test_type -> is_testing -> another_test_type (A95C9 -> 7D715 -> 681ED)
+attributes:
+	another_attribute_type -> testValue
+	attribute_type -> newTestValue
+	name -> primary name

@@ -1,0 +1,84 @@
+{
+  "structureSchema" : {
+    "definitions" : {
+      "Element" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Element",
+        "description" : "Structure Definition for Element",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      }
+    }
+  },
+  "successfullyMappedTypes" : [ "Element" ],
+  "unresolvableTypes" : [ {
+    "missingDependencies" : [ "missingPrimitiveType" ],
+    "structureDefinitionData" : {
+      "id" : "TestComplex2",
+      "abstract" : false,
+      "baseDefinition" : "http://test.url/for/TestComplex1",
+      "description" : "Structure Definition for test complex 2",
+      "kind" : "complex-type",
+      "status" : "draft",
+      "type" : "TestComplex2",
+      "url" : "http://test.url/for/complex2",
+      "baseDefinitionReference" : {
+        "id" : "TestComplex1"
+      },
+      "differential" : {
+        "parent" : "TestComplex2",
+        "element" : [ ]
+      }
+    }
+  }, {
+    "missingDependencies" : [ "missingPrimitiveType" ],
+    "structureDefinitionData" : {
+      "id" : "TestComplex3",
+      "abstract" : false,
+      "baseDefinition" : "http://test.url/for/TestComplex2",
+      "description" : "Structure Definition for test complex 3",
+      "kind" : "complex-type",
+      "status" : "draft",
+      "type" : "TestComplex3",
+      "url" : "http://test.url/for/complex3",
+      "baseDefinitionReference" : {
+        "id" : "TestComplex2"
+      },
+      "differential" : {
+        "parent" : "TestComplex3",
+        "element" : [ ]
+      }
+    }
+  }, {
+    "missingDependencies" : [ "missingPrimitiveType" ],
+    "structureDefinitionData" : {
+      "id" : "TestComplex1",
+      "abstract" : false,
+      "description" : "Structure Definition for test complex 1",
+      "kind" : "complex-type",
+      "status" : "draft",
+      "type" : "TestComplex1",
+      "url" : "http://test.url/for/complex",
+      "baseDefinition" : null,
+      "baseDefinitionReference" : null,
+      "differential" : {
+        "parent" : "TestComplex1",
+        "element" : [ {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "TestComplex1.missingPrimitiveField",
+          "short" : "Missing Primitive Example Field on Test Complex 1",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "missingPrimitiveType",
+            "targetProfile" : [ ]
+          } ]
+        } ]
+      }
+    }
+  } ]
+}

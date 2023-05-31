@@ -1,0 +1,49 @@
+{
+  "structureSchema" : {
+    "definitions" : {
+      "BoxedTestPrimitive" : {
+        "serializationType" : "BoxedPrimitiveStructureType",
+        "definitionType" : "BoxedTestPrimitive",
+        "description" : "Structure Definition for test primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "Element",
+        "fields" : {
+          "value" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "Primitive value for BoxedTestPrimitive",
+            "max" : "1",
+            "min" : 0,
+            "name" : "value",
+            "parentDefinitionType" : "BoxedTestPrimitive",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "testPrimitive",
+              "type" : "testPrimitive",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "Element" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Element",
+        "description" : "Element in context",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      },
+      "testPrimitive" : {
+        "serializationType" : "PrimitiveStructureType",
+        "definitionType" : "testPrimitive",
+        "description" : "Structure Definition for test primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : ""
+      }
+    }
+  },
+  "successfullyMappedTypes" : [ "testPrimitive" ],
+  "unresolvableTypes" : [ ]
+}

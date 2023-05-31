@@ -1,0 +1,59 @@
+{
+  "structureSchema" : {
+    "definitions" : {
+      "Element" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Element",
+        "description" : "Structure Definition for Element",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      },
+      "Reference" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Reference",
+        "description" : "Structure Definition for Reference",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      },
+      "ReferencedType" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "ReferencedType",
+        "description" : "Structure Definition for ReferencedType",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      },
+      "TestComplex" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "TestComplex",
+        "description" : "Structure Definition for TestComplex",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : {
+          "fieldWithReference" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "",
+            "max" : "1",
+            "min" : 0,
+            "name" : "fieldWithReference",
+            "parentDefinitionType" : "TestComplex",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "Reference",
+              "type" : "ReferencedType",
+              "typeGroup" : "REFERENCE"
+            } ]
+          }
+        }
+      }
+    }
+  },
+  "successfullyMappedTypes" : [ "TestComplex", "ReferencedType", "Reference", "Element" ],
+  "unresolvableTypes" : [ ]
+}

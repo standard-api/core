@@ -1,0 +1,82 @@
+{
+  "structureSchema" : {
+    "definitions" : {
+      "BoxedPrimitive" : {
+        "serializationType" : "BoxedPrimitiveStructureType",
+        "definitionType" : "BoxedPrimitive",
+        "description" : "",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "Element",
+        "fields" : {
+          "value" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "Primitive value for BoxedPrimitive",
+            "max" : "1",
+            "min" : 0,
+            "name" : "value",
+            "parentDefinitionType" : "BoxedPrimitive",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "primitive",
+              "type" : "primitive",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "Element" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Element",
+        "description" : "",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      },
+      "TestComplex1" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "TestComplex1",
+        "description" : "Structure Definition for test complex 1",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "TestComplex2",
+        "fields" : {
+          "somePrimitiveField" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "",
+            "max" : "1",
+            "min" : 0,
+            "name" : "somePrimitiveField",
+            "parentDefinitionType" : "TestComplex1",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "primitive",
+              "type" : "primitive",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "TestComplex2" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "TestComplex2",
+        "description" : "",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      },
+      "primitive" : {
+        "serializationType" : "PrimitiveStructureType",
+        "definitionType" : "primitive",
+        "description" : "",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : ""
+      }
+    }
+  },
+  "successfullyMappedTypes" : [ "TestComplex1" ],
+  "unresolvableTypes" : [ ]
+}

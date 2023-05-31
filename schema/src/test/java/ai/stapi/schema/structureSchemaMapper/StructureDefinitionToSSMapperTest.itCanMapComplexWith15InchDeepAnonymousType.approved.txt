@@ -1,0 +1,159 @@
+{
+  "structureSchema" : {
+    "definitions" : {
+      "BoxedTestPrimitive" : {
+        "serializationType" : "BoxedPrimitiveStructureType",
+        "definitionType" : "BoxedTestPrimitive",
+        "description" : "Structure Definition for test primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "Element",
+        "fields" : {
+          "value" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "Primitive value for BoxedTestPrimitive",
+            "max" : "1",
+            "min" : 0,
+            "name" : "value",
+            "parentDefinitionType" : "BoxedTestPrimitive",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "testPrimitive",
+              "type" : "testPrimitive",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "Element" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Element",
+        "description" : "Structure Definition for Element",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      },
+      "TestComplexWithAnonymousType" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "TestComplexWithAnonymousType",
+        "description" : "Structure Definition with anonymous type",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : {
+          "firstLevelAnonymous" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "",
+            "max" : "1",
+            "min" : 0,
+            "name" : "firstLevelAnonymous",
+            "parentDefinitionType" : "TestComplexWithAnonymousType",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "Element",
+              "type" : "TestComplexWithAnonymousTypeFirstLevelAnonymous",
+              "typeGroup" : "ANONYMOUS"
+            } ]
+          }
+        }
+      },
+      "TestComplexWithAnonymousTypeFirstLevelAnonymous" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "TestComplexWithAnonymousTypeFirstLevelAnonymous",
+        "description" : "Type for anonymous field contained in TestComplexWithAnonymousType",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "Element",
+        "fields" : {
+          "secondLevelAnonymous" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "",
+            "max" : "1",
+            "min" : 0,
+            "name" : "secondLevelAnonymous",
+            "parentDefinitionType" : "TestComplexWithAnonymousTypeFirstLevelAnonymous",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "Element",
+              "type" : "TestComplexWithAnonymousTypeFirstLevelAnonymousSecondLevelAnonymous",
+              "typeGroup" : "ANONYMOUS"
+            } ]
+          }
+        }
+      },
+      "TestComplexWithAnonymousTypeFirstLevelAnonymousSecondLevelAnonymous" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "TestComplexWithAnonymousTypeFirstLevelAnonymousSecondLevelAnonymous",
+        "description" : "Type for anonymous field contained in TestComplexWithAnonymousType",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "Element",
+        "fields" : {
+          "field1" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "",
+            "max" : "1",
+            "min" : 0,
+            "name" : "field1",
+            "parentDefinitionType" : "TestComplexWithAnonymousTypeFirstLevelAnonymousSecondLevelAnonymous",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "testPrimitive",
+              "type" : "testPrimitive",
+              "typeGroup" : "STANDARD"
+            } ]
+          },
+          "thirdLevelAnonymous" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "",
+            "max" : "1",
+            "min" : 0,
+            "name" : "thirdLevelAnonymous",
+            "parentDefinitionType" : "TestComplexWithAnonymousTypeFirstLevelAnonymousSecondLevelAnonymous",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "Element",
+              "type" : "TestComplexWithAnonymousTypeFirstLevelAnonymousSecondLevelAnonymousThirdLevelAnonymous",
+              "typeGroup" : "ANONYMOUS"
+            } ]
+          }
+        }
+      },
+      "TestComplexWithAnonymousTypeFirstLevelAnonymousSecondLevelAnonymousThirdLevelAnonymous" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "TestComplexWithAnonymousTypeFirstLevelAnonymousSecondLevelAnonymousThirdLevelAnonymous",
+        "description" : "Type for anonymous field contained in TestComplexWithAnonymousType",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "Element",
+        "fields" : {
+          "field1" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "",
+            "max" : "1",
+            "min" : 0,
+            "name" : "field1",
+            "parentDefinitionType" : "TestComplexWithAnonymousTypeFirstLevelAnonymousSecondLevelAnonymousThirdLevelAnonymous",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "testPrimitive",
+              "type" : "testPrimitive",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "testPrimitive" : {
+        "serializationType" : "PrimitiveStructureType",
+        "definitionType" : "testPrimitive",
+        "description" : "Structure Definition for test primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : ""
+      }
+    }
+  },
+  "successfullyMappedTypes" : [ "testPrimitive", "TestComplexWithAnonymousType", "Element" ],
+  "unresolvableTypes" : [ ]
+}

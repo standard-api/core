@@ -1,0 +1,8 @@
+{
+  "serializationType" : "PrimitiveStructureType",
+  "definitionType" : "testPrimitive",
+  "description" : "Structure Definition for test primitive",
+  "isAbstract" : false,
+  "kind" : "primitive-type",
+  "parent" : ""
+}

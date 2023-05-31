@@ -1,0 +1,81 @@
+{
+  "structureSchema" : {
+    "definitions" : {
+      "BoxedParentPrimitive" : {
+        "serializationType" : "BoxedPrimitiveStructureType",
+        "definitionType" : "BoxedParentPrimitive",
+        "description" : "",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "Element",
+        "fields" : {
+          "value" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "Primitive value for BoxedParentPrimitive",
+            "max" : "1",
+            "min" : 0,
+            "name" : "value",
+            "parentDefinitionType" : "BoxedParentPrimitive",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "parentPrimitive",
+              "type" : "parentPrimitive",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "BoxedPrimitive" : {
+        "serializationType" : "BoxedPrimitiveStructureType",
+        "definitionType" : "BoxedPrimitive",
+        "description" : "Overridden primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "BoxedParentPrimitive",
+        "fields" : {
+          "value" : {
+            "serializationType" : "FieldDefinition",
+            "description" : "Primitive value for BoxedPrimitive",
+            "max" : "1",
+            "min" : 0,
+            "name" : "value",
+            "parentDefinitionType" : "BoxedPrimitive",
+            "types" : [ {
+              "isContentReferenced" : false,
+              "originalType" : "primitive",
+              "type" : "primitive",
+              "typeGroup" : "STANDARD"
+            } ]
+          }
+        }
+      },
+      "Element" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Element",
+        "description" : "",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      },
+      "parentPrimitive" : {
+        "serializationType" : "PrimitiveStructureType",
+        "definitionType" : "parentPrimitive",
+        "description" : "",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : ""
+      },
+      "primitive" : {
+        "serializationType" : "PrimitiveStructureType",
+        "definitionType" : "primitive",
+        "description" : "Overridden primitive",
+        "isAbstract" : false,
+        "kind" : "primitive-type",
+        "parent" : "parentPrimitive"
+      }
+    }
+  },
+  "successfullyMappedTypes" : [ "primitive" ],
+  "unresolvableTypes" : [ ]
+}

@@ -1,0 +1,87 @@
+{
+  "structureSchema" : {
+    "definitions" : {
+      "Element" : {
+        "serializationType" : "ComplexStructureType",
+        "definitionType" : "Element",
+        "description" : "Structure Definition for Element",
+        "isAbstract" : false,
+        "kind" : "complex-type",
+        "parent" : "",
+        "fields" : { }
+      }
+    }
+  },
+  "successfullyMappedTypes" : [ "Element" ],
+  "unresolvableTypes" : [ {
+    "missingDependencies" : [ "missingPrimitive" ],
+    "structureDefinitionData" : {
+      "id" : "TestComplexWithAnonymousType",
+      "abstract" : false,
+      "description" : "Structure Definition with anonymous type",
+      "kind" : "complex-type",
+      "status" : "draft",
+      "type" : "TestComplexWithAnonymousType",
+      "url" : "http://test.url/for/TestComplexWithAnonymousType",
+      "baseDefinition" : null,
+      "baseDefinitionReference" : null,
+      "differential" : {
+        "parent" : "TestComplexWithAnonymousType",
+        "element" : [ {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "TestComplexWithAnonymousType.testedType",
+          "short" : "Anonymous type subjected to test",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "Element",
+            "targetProfile" : [ ]
+          } ]
+        }, {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "TestComplexWithAnonymousType.testedType.complexField",
+          "short" : "Field with complex type which has missing dependency",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "ComplexTypeWithMissingPrimitive",
+            "targetProfile" : [ ]
+          } ]
+        } ]
+      }
+    }
+  }, {
+    "missingDependencies" : [ "missingPrimitive" ],
+    "structureDefinitionData" : {
+      "id" : "ComplexTypeWithMissingPrimitive",
+      "abstract" : false,
+      "description" : "Structure Definition for complex type with missing primitive",
+      "kind" : "complex-type",
+      "status" : "draft",
+      "type" : "ComplexTypeWithMissingPrimitive",
+      "url" : "http://test.url/for/ComplexTypeWithMissingPrimitive",
+      "baseDefinition" : null,
+      "baseDefinitionReference" : null,
+      "differential" : {
+        "parent" : "ComplexTypeWithMissingPrimitive",
+        "element" : [ {
+          "comment" : "",
+          "definition" : "",
+          "max" : "1",
+          "min" : 0,
+          "path" : "ComplexTypeWithMissingPrimitive.primitiveField",
+          "short" : "Primitive field which definition is missing",
+          "contentReference" : null,
+          "type" : [ {
+            "code" : "missingPrimitive",
+            "targetProfile" : [ ]
+          } ]
+        } ]
+      }
+    }
+  } ]
+}

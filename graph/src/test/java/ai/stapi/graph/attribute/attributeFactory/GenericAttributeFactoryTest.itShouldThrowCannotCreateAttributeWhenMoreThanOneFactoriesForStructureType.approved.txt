@@ -1,0 +1,4 @@
+Cannot create attribute, because provided structure type is supported by more than one factory.
+Attribute name: exampleName
+Structure type: LeafAttribute
+Found Factories: LeafAttributeFactory, LeafAttributeFactory
