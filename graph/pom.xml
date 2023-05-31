@@ -10,6 +10,7 @@
         <version>0.0.3</version>
     </parent>
     <artifactId>graph</artifactId>
+    <name>Stapi.ai Graph</name>
 
     <repositories>
         <repository>

@@ -10,7 +10,8 @@
     </parent>
 
     <artifactId>common</artifactId>
-
+    <name>Stapi.ai Common</name>
+    
     <repositories>
         <repository>
             <id>central</id>

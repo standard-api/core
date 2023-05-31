@@ -10,6 +10,7 @@
         <version>0.0.3</version>
     </parent>
     <artifactId>schema</artifactId>
+    <name>Stapi.ai Schema</name>
     
     <dependencies>
         <dependency>
