@@ -10,7 +10,8 @@
     </parent>
 
     <artifactId>base-test</artifactId>
-
+    <name>Stapi.ai Base-Test</name>
+    
     <repositories>
         <repository>
             <id>central</id>
