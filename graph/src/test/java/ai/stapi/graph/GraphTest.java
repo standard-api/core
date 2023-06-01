@@ -3,19 +3,207 @@ package ai.stapi.graph;
 import ai.stapi.graph.attribute.LeafAttribute;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
 import ai.stapi.graph.exceptions.EdgeNotFound;
+import ai.stapi.graph.exceptions.MoreThanOneNodeOfTypeFoundException;
 import ai.stapi.graph.exceptions.NodeNotFound;
+import ai.stapi.graph.exceptions.NodeOfTypeNotFoundException;
 import ai.stapi.graph.graphElementForRemoval.EdgeForRemoval;
 import ai.stapi.graph.graphElementForRemoval.NodeForRemoval;
 import ai.stapi.graph.inMemoryGraph.DeduplicateOptions;
+import ai.stapi.graph.inMemoryGraph.exceptions.CannotCreateGraphWithOtherThanInputElements;
 import ai.stapi.graph.inMemoryGraph.exceptions.GraphEdgesCannotBeMerged;
 import ai.stapi.graph.inputGraphElements.InputEdge;
 import ai.stapi.graph.inputGraphElements.InputNode;
 import ai.stapi.graph.test.base.UnitTestCase;
+import ai.stapi.graph.traversableGraphElements.TraversableNode;
+import ai.stapi.identity.UniversallyUniqueIdentifier;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
 class GraphTest extends UnitTestCase {
+
+  @Test
+  void itCanCreateWithNodes() {
+    var actualGraph = new Graph(
+        new InputNode("A"),
+        new InputNode("B")
+    );
+  }
+
+  @Test
+  void itCannotCreateWithTraversableNodes() {
+    Executable executable = () -> new Graph(
+        new TraversableNode("A")
+    );
+
+    Assertions.assertThrows(
+        CannotCreateGraphWithOtherThanInputElements.class,
+        executable
+    );
+  }
+
+  @Test
+  void itCanMergeOverwriteWithOtherGraph_WithNodes() {
+    var nodeInGraph1 = new InputNode(
+        "merged_node_type",
+        new LeafAttribute<>("original", new StringAttributeValue("original value")),
+        new LeafAttribute<>("updated", new StringAttributeValue("old value"))
+    );
+
+    var nodeInGraph2 = new InputNode(
+        nodeInGraph1.getId(),
+        "merged_node_type",
+        new LeafAttribute<>("original", new StringAttributeValue("original value")),
+        new LeafAttribute<>("updated", new StringAttributeValue("updated value")),
+        new LeafAttribute<>("new", new StringAttributeValue("new value"))
+    );
+
+    var graphG1 = new Graph(
+        nodeInGraph1,
+        new InputNode("already saved node")
+    );
+
+    var graphG2 = new Graph(
+        nodeInGraph2,
+        new InputNode("node from other graph")
+    );
+
+    graphG1 = graphG1.merge(graphG2);
+    this.thenGraphApproved(graphG1);
+  }
+
+  @Test
+  void itCanLoadNodesByNodeType() {
+    var nodeA = new InputNode(
+        "type_A",
+        new LeafAttribute<>("original", new StringAttributeValue("original value")),
+        new LeafAttribute<>("updated", new StringAttributeValue("old value"))
+    );
+
+    var nodeB = new InputNode(
+        "type_A",
+        new LeafAttribute<>("original", new StringAttributeValue("original value")),
+        new LeafAttribute<>("updated", new StringAttributeValue("updated value")),
+        new LeafAttribute<>("new", new StringAttributeValue("new value"))
+    );
+
+    var graph = new Graph(
+        nodeA,
+        nodeB
+    );
+
+    Assertions.assertEquals(2, graph.getAllNodes("type_A").size());
+
+  }
+
+  @Test
+  void itThrowsExceptionWhenLoadingExactlyOneNodeOfTypeButMorePresent() {
+    var nodeA = new InputNode("type_A");
+    var nodeB = new InputNode("type_A");
+
+    var graph = new Graph(
+        nodeA,
+        nodeB
+    );
+    //When
+    Executable executable = () -> graph.getExactlyOneNodeOfType("type_A");
+    //Then
+    Assertions.assertThrows(MoreThanOneNodeOfTypeFoundException.class, executable);
+  }
+
+  @Test
+  void itThrowsExceptionWhenLoadingExactlyOneNodeOfTypeButNonePresent() {
+    var nodeA = new InputNode("type_A");
+    var nodeB = new InputNode("type_A");
+
+    var graph = new Graph(
+        nodeA,
+        nodeB
+    );
+    //When
+    Executable executable = () -> graph.getExactlyOneNodeOfType("type_B");
+    //Then
+    Assertions.assertThrows(NodeOfTypeNotFoundException.class, executable);
+  }
+
+  @Test
+  void itLoadsExactlyOneNodeOfType() {
+    var nodeA = new InputNode("type_A");
+    var nodeB = new InputNode("type_B");
+
+    var graph = new Graph(
+        nodeA,
+        nodeB
+    );
+    //When
+    var actualNode = graph.getExactlyOneNodeOfType("type_A");
+    //Then
+    Assertions.assertEquals("type_A", actualNode.getType());
+    Assertions.assertEquals(nodeA.getId(), actualNode.getId());
+  }
+
+  @Test
+  void itCanTellWhetherSomeNodeOfTypeExists() {
+    var node = new InputNode("type_A");
+    var graph = new Graph(node);
+    Assertions.assertTrue(graph.containsNodeOfType("type_A"));
+    Assertions.assertFalse(graph.containsNodeOfType("type_B"));
+  }
+
+  @Test
+  void itCanCreateWithEdges() {
+    var nodeA = new InputNode("nodeA");
+    var nodeB = new InputNode("nodeB");
+    var nodeC = new InputNode("nodeC");
+    var nodeD = new InputNode("nodeD");
+    var actualGraph = new Graph(
+        nodeA,
+        nodeB,
+        nodeC,
+        nodeD,
+        new InputEdge(
+            nodeA,
+            "edgeA",
+            nodeB
+        ),
+        new InputEdge(
+            nodeC,
+            "edgeB",
+            nodeD
+        )
+    );
+  }
+
+  @Test
+  void itCanLoadEdgesOfType() {
+    var nodeA = new InputNode("nodeA");
+    var nodeB = new InputNode("nodeB");
+    var nodeC = new InputNode("nodeC");
+    var nodeD = new InputNode("nodeD");
+    var actualGraph = new Graph(
+        nodeA,
+        nodeB,
+        nodeC,
+        nodeD,
+        new InputEdge(
+            nodeA,
+            "edgeA",
+            nodeB
+        ),
+        new InputEdge(
+            nodeC,
+            "edgeB",
+            nodeD
+        ),
+        new InputEdge(
+            nodeC,
+            "edgeA",
+            nodeD
+        )
+    );
+    var edgesOfType = actualGraph.loadAllEdges("edgeA");
+    Assertions.assertEquals(2, edgesOfType.size());
+  }
 
   @Test
   void itShouldMergeTwoGraphsByIds() {
@@ -65,6 +253,57 @@ class GraphTest extends UnitTestCase {
     var actualGraph = graphG1.merge(graphG2);
 
     this.thenGraphApproved(actualGraph);
+  }
+
+  @Test
+  void itCanMergeOverwriteWithOtherGraph_WithEdges() {
+    var mergedNodeFrom = new InputNode("merged_node_from_type");
+    var mergedNodeTo = new InputNode("merged_node_to_type");
+
+    var mergedEdge = new InputEdge(
+        UniversallyUniqueIdentifier.randomUUID(),
+        mergedNodeFrom,
+        "same_type",
+        mergedNodeTo,
+        new LeafAttribute<>("original", new StringAttributeValue("original value")),
+        new LeafAttribute<>("updated", new StringAttributeValue("old value"))
+    );
+
+    var otherEdge = new InputEdge(
+        mergedEdge.getId(),
+        mergedNodeFrom,
+        "same_type",
+        mergedNodeTo,
+        new LeafAttribute<>("original", new StringAttributeValue("original value")),
+        new LeafAttribute<>("updated", new StringAttributeValue("updated value")),
+        new LeafAttribute<>("new", new StringAttributeValue("new value"))
+    );
+
+    var alreadySavedNodeFrom = new InputNode("already_saved_from");
+    var alreadySavedNodeTo = new InputNode("already_saved_to");
+
+    var graphG1 = new Graph(
+        mergedNodeFrom,
+        mergedNodeTo,
+        mergedEdge,
+        alreadySavedNodeFrom,
+        alreadySavedNodeTo,
+        new InputEdge(alreadySavedNodeFrom, "already_saved_edge", alreadySavedNodeTo)
+    );
+
+    var newSavedNodeFrom = new InputNode("new_saved_from");
+    var newSavedNodeTo = new InputNode("new_saved_to");
+    var graphG2 = new Graph(
+        mergedNodeFrom,
+        mergedNodeTo,
+        otherEdge,
+        newSavedNodeFrom,
+        newSavedNodeTo,
+        new InputEdge(newSavedNodeFrom, "new_edge", newSavedNodeTo)
+    );
+
+    graphG1 = graphG1.merge(graphG2);
+    this.thenGraphApproved(graphG1);
   }
   
 //    

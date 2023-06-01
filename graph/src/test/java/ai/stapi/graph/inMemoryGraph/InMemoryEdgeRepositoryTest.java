@@ -45,61 +45,6 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
   }
 
   @Test
-  void itCanCreateWithEdges() {
-    var nodeA = new InputNode("nodeA");
-    var nodeB = new InputNode("nodeB");
-    var nodeC = new InputNode("nodeC");
-    var nodeD = new InputNode("nodeD");
-    var actualGraph = new Graph(
-        nodeA,
-        nodeB,
-        nodeC,
-        nodeD,
-        new InputEdge(
-            nodeA,
-            "edgeA",
-            nodeB
-        ),
-        new InputEdge(
-            nodeC,
-            "edgeB",
-            nodeD
-        )
-    );
-  }
-
-  @Test
-  void itCanLoadEdgesOfType() {
-    var nodeA = new InputNode("nodeA");
-    var nodeB = new InputNode("nodeB");
-    var nodeC = new InputNode("nodeC");
-    var nodeD = new InputNode("nodeD");
-    var actualGraph = new Graph(
-        nodeA,
-        nodeB,
-        nodeC,
-        nodeD,
-        new InputEdge(
-            nodeA,
-            "edgeA",
-            nodeB
-        ),
-        new InputEdge(
-            nodeC,
-            "edgeB",
-            nodeD
-        ),
-        new InputEdge(
-            nodeC,
-            "edgeA",
-            nodeD
-        )
-    );
-    var edgesOfType = actualGraph.loadAllEdges("edgeA");
-    Assertions.assertEquals(2, edgesOfType.size());
-  }
-
-  @Test
   void itShouldNotLoadEdge_WhenEmpty() {
     Executable runnable =
         () -> getEdgeRepository().loadEdge(UniversallyUniqueIdentifier.randomUUID(), "irrelevant");
@@ -524,56 +469,5 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
         finalAlreadySavedEdge.getType()
     );
     Assertions.assertThrows(EdgeNotFound.class, executable);
-  }
-
-  @Test
-  void itCanMergeOverwriteWithOtherGraph_WithEdges() {
-    var mergedNodeFrom = new InputNode("merged_node_from_type");
-    var mergedNodeTo = new InputNode("merged_node_to_type");
-
-    var mergedEdge = new InputEdge(
-        UniversallyUniqueIdentifier.randomUUID(),
-        mergedNodeFrom,
-        "same_type",
-        mergedNodeTo,
-        new LeafAttribute<>("original", new StringAttributeValue("original value")),
-        new LeafAttribute<>("updated", new StringAttributeValue("old value"))
-    );
-
-    var otherEdge = new InputEdge(
-        mergedEdge.getId(),
-        mergedNodeFrom,
-        "same_type",
-        mergedNodeTo,
-        new LeafAttribute<>("original", new StringAttributeValue("original value")),
-        new LeafAttribute<>("updated", new StringAttributeValue("updated value")),
-        new LeafAttribute<>("new", new StringAttributeValue("new value"))
-    );
-
-    var alreadySavedNodeFrom = new InputNode("already_saved_from");
-    var alreadySavedNodeTo = new InputNode("already_saved_to");
-
-    var graphG1 = new Graph(
-        mergedNodeFrom,
-        mergedNodeTo,
-        mergedEdge,
-        alreadySavedNodeFrom,
-        alreadySavedNodeTo,
-        new InputEdge(alreadySavedNodeFrom, "already_saved_edge", alreadySavedNodeTo)
-    );
-
-    var newSavedNodeFrom = new InputNode("new_saved_from");
-    var newSavedNodeTo = new InputNode("new_saved_to");
-    var graphG2 = new Graph(
-        mergedNodeFrom,
-        mergedNodeTo,
-        otherEdge,
-        newSavedNodeFrom,
-        newSavedNodeTo,
-        new InputEdge(newSavedNodeFrom, "new_edge", newSavedNodeTo)
-    );
-
-    graphG1 = graphG1.merge(graphG2);
-    this.thenGraphApproved(graphG1);
   }
 }

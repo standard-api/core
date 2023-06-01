@@ -507,8 +507,10 @@ public class Graph {
     }
   }
 
-  public Graph merge(Graph otherGraph,
-                                      DeduplicateOptions options) {
+  public Graph merge(
+      Graph otherGraph,
+      DeduplicateOptions options
+  ) {
     if (options.equals(DeduplicateOptions.SAME_EDGE_TYPES_BETWEEN_SAME_NODES)) {
       return this.mergeWithEdgeDeduplication(otherGraph);
     }
@@ -545,6 +547,7 @@ public class Graph {
     }
     return newGraph;
   }
+
   public Graph mergeNodeById(
       InputNode otherNode
   ) {
