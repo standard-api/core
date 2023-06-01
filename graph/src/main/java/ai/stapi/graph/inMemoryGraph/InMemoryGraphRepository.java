@@ -14,8 +14,8 @@ import ai.stapi.graph.exceptions.GraphElementNotFound;
 import ai.stapi.graph.graphElementForRemoval.EdgeForRemoval;
 import ai.stapi.graph.graphElementForRemoval.GraphElementForRemoval;
 import ai.stapi.graph.graphElementForRemoval.NodeForRemoval;
-import ai.stapi.graph.inputGraphElements.InputEdge;
-import ai.stapi.graph.inputGraphElements.InputNode;
+import ai.stapi.graph.graphelements.Edge;
+import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.traversableGraphElements.TraversableEdge;
 import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
@@ -40,16 +40,14 @@ public class InMemoryGraphRepository implements NodeRepository, EdgeRepository {
     this.recalculateNodesEdgesMap();
   }
 
-  public InMemoryGraphRepository(AttributeContainer... inputGraphElements) {
-    this(
-        new Graph(inputGraphElements)
-    );
+  public InMemoryGraphRepository(AttributeContainer... graphElements) {
+    this(new Graph(graphElements));
   }
 
   @Override
-  public void save(InputEdge inputEdge) {
-    this.graph = this.graph.with(inputEdge);
-    NodeEdgesMapOperation.upsertEdge(this.nodesEdgesMap, this.toTraversableEdge(inputEdge));
+  public void save(Edge edge) {
+    this.graph = this.graph.with(edge);
+    NodeEdgesMapOperation.upsertEdge(this.nodesEdgesMap, this.toTraversableEdge(edge));
   }
 
   @Override
@@ -63,12 +61,12 @@ public class InMemoryGraphRepository implements NodeRepository, EdgeRepository {
   }
 
   @Override
-  public void replace(InputEdge inputEdge) {
-    var edgeToRemove = this.graph.getEdge(inputEdge.getId(), inputEdge.getType());
+  public void replace(Edge edge) {
+    var edgeToRemove = this.graph.getEdge(edge.getId(), edge.getType());
 
     var oldGraph = this.graph;
-    this.graph = oldGraph.replace(inputEdge);
-    var newEdge = this.loadEdge(inputEdge.getId(), inputEdge.getType());
+    this.graph = oldGraph.replace(edge);
+    var newEdge = this.loadEdge(edge.getId(), edge.getType());
     NodeEdgesMapOperation.removeEdge(this.nodesEdgesMap, edgeToRemove);
     NodeEdgesMapOperation.upsertEdge(this.nodesEdgesMap, newEdge);
   }
@@ -79,7 +77,7 @@ public class InMemoryGraphRepository implements NodeRepository, EdgeRepository {
   }
 
   @Override
-  public void replace(InputNode node) {
+  public void replace(Node node) {
     this.graph = this.graph.replace(node);
   }
 
@@ -97,25 +95,25 @@ public class InMemoryGraphRepository implements NodeRepository, EdgeRepository {
     this.graph = new Graph();
   }
 
-  private TraversableNode toTraversableNode(InputNode inputNode) {
+  private TraversableNode toTraversableNode(Node node) {
     return new TraversableNode(
-        inputNode.getId(),
-        inputNode.getType(),
-        inputNode.getVersionedAttributes(),
+        node.getId(),
+        node.getType(),
+        node.getVersionedAttributes(),
         new RepositoryEdgeLoader(this)
     );
   }
 
-  private TraversableEdge toTraversableEdge(InputEdge inputEdge) {
-    if (inputEdge == null) {
+  private TraversableEdge toTraversableEdge(Edge edge) {
+    if (edge == null) {
       return null;
     }
     return new TraversableEdge(
-        inputEdge.getId(),
-        this.loadNode(inputEdge.getNodeFromId()),
-        inputEdge.getType(),
-        this.loadNode(inputEdge.getNodeToId()),
-        inputEdge.getVersionedAttributes(),
+        edge.getId(),
+        this.loadNode(edge.getNodeFromId()),
+        edge.getType(),
+        this.loadNode(edge.getNodeToId()),
+        edge.getVersionedAttributes(),
         new RepositoryNodeLoader(this)
     );
   }
@@ -171,7 +169,7 @@ public class InMemoryGraphRepository implements NodeRepository, EdgeRepository {
   }
 
   @Override
-  public void save(InputNode node) {
+  public void save(Node node) {
     this.graph = this.graph.with(node);
   }
 
@@ -210,7 +208,7 @@ public class InMemoryGraphRepository implements NodeRepository, EdgeRepository {
 
   public List<TraversableNode> loadAllNodes(String nodeType) {
     return this.graph.getAllNodes().stream().filter(
-        inputNode -> inputNode.getType().equals(nodeType)
+        node -> node.getType().equals(nodeType)
     ).map(this::toTraversableNode).toList();
   }
 
@@ -231,14 +229,14 @@ public class InMemoryGraphRepository implements NodeRepository, EdgeRepository {
   }
 
   public List<TraversableEdge> loadAllEdges() {
-    List<InputEdge> allEdges = this.graph.getAllEdges();
+    List<Edge> allEdges = this.graph.getAllEdges();
     return allEdges.stream()
         .map(this::toTraversableEdge).toList();
   }
 
   public List<TraversableEdge> loadAllEdges(String edgeType) {
     return this.graph.getAllEdges().stream()
-        .filter(inputEdge -> inputEdge.getType().equals(edgeType))
+        .filter(edge -> edge.getType().equals(edgeType))
         .map(this::toTraversableEdge).toList();
   }
 

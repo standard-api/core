@@ -12,12 +12,12 @@ import ai.stapi.graph.graphElementForRemoval.GraphElementForRemoval;
 import ai.stapi.graph.graphElementForRemoval.NodeForRemoval;
 import ai.stapi.graph.inMemoryGraph.DeduplicateOptions;
 import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
-import ai.stapi.graph.inMemoryGraph.exceptions.CannotCreateGraphWithOtherThanInputElements;
+import ai.stapi.graph.inMemoryGraph.exceptions.CannotCreateGraphWithOtherThanGraphElements;
 import ai.stapi.graph.inMemoryGraph.exceptions.GraphEdgesCannotBeMerged;
 import ai.stapi.graph.inMemoryGraph.exceptions.MoreThanOneNodeWithAttributeFoundException;
 import ai.stapi.graph.inMemoryGraph.exceptions.NodeWithAttributeNotFound;
-import ai.stapi.graph.inputGraphElements.InputEdge;
-import ai.stapi.graph.inputGraphElements.InputNode;
+import ai.stapi.graph.graphelements.Edge;
+import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.traversableGraphElements.TraversableEdge;
 import ai.stapi.identity.UniqueIdentifier;
 import com.google.common.collect.ImmutableMap;
@@ -33,8 +33,8 @@ import org.apache.commons.collections4.map.LinkedMap;
 
 public class Graph {
 
-  private ImmutableMap<UniqueIdentifier, InputNode> nodeMap;
-  private ImmutableMap<UniqueIdentifier, InputEdge> edgeMap;
+  private ImmutableMap<UniqueIdentifier, Node> nodeMap;
+  private ImmutableMap<UniqueIdentifier, Edge> edgeMap;
 
   private ImmutableMap<String, Long> nodeTypeCounts;
 
@@ -48,8 +48,8 @@ public class Graph {
   }
 
   private Graph(
-      Map<UniqueIdentifier, InputNode> nodeMap,
-      Map<UniqueIdentifier, InputEdge> edgeMap,
+      Map<UniqueIdentifier, Node> nodeMap,
+      Map<UniqueIdentifier, Edge> edgeMap,
       Map<String, Long> nodeTypeCounts,
       Map<String, Long> edgeTypeCounts
   ) {
@@ -59,9 +59,9 @@ public class Graph {
     this.edgeTypeCounts = ImmutableMap.copyOf(edgeTypeCounts);
   }
 
-  public Graph(AttributeContainer... inputGraphElements) {
+  public Graph(AttributeContainer... graphElements) {
     this();
-    var newInMemoryGraph = this.withAll(inputGraphElements);
+    var newInMemoryGraph = this.withAll(graphElements);
     this.nodeMap = ImmutableMap.copyOf(newInMemoryGraph.nodeMap);
     this.edgeMap = ImmutableMap.copyOf(newInMemoryGraph.edgeMap);
     this.nodeTypeCounts = ImmutableMap.copyOf(newInMemoryGraph.nodeTypeCounts);
@@ -69,40 +69,40 @@ public class Graph {
   }
 
   public Graph(
-      Map<UniqueIdentifier, InputNode> nodeMap,
-      Map<UniqueIdentifier, InputEdge> edgeMap
+      Map<UniqueIdentifier, Node> nodeMap,
+      Map<UniqueIdentifier, Edge> edgeMap
   ) {
-    HashMap<String, Long> nodeTypeCounts = new HashMap<>();
-    HashMap<String, Long> edgeTypeCounts = new HashMap<>();
+    HashMap<String, Long> newNodeTypeCounts = new HashMap<>();
+    HashMap<String, Long> newEdgeTypeCounts = new HashMap<>();
 
-    nodeMap.values().stream().forEach(
-        inputNode -> nodeTypeCounts.put(
-            inputNode.getType(),
-            nodeTypeCounts.getOrDefault(inputNode.getType(), 0L) + 1
+    nodeMap.values().forEach(
+        node -> newNodeTypeCounts.put(
+            node.getType(),
+            newNodeTypeCounts.getOrDefault(node.getType(), 0L) + 1
         )
     );
-    edgeMap.values().stream().forEach(
-        inputNode -> edgeTypeCounts.put(
-            inputNode.getType(),
-            edgeTypeCounts.getOrDefault(inputNode.getType(), 0L) + 1
+    edgeMap.values().forEach(
+        edge -> newEdgeTypeCounts.put(
+            edge.getType(),
+            newEdgeTypeCounts.getOrDefault(edge.getType(), 0L) + 1
         )
     );
     this.nodeMap = ImmutableMap.copyOf(nodeMap);
     this.edgeMap = ImmutableMap.copyOf(edgeMap);
-    this.nodeTypeCounts = ImmutableMap.copyOf(nodeTypeCounts);
-    this.edgeTypeCounts = ImmutableMap.copyOf(edgeTypeCounts);
+    this.nodeTypeCounts = ImmutableMap.copyOf(newNodeTypeCounts);
+    this.edgeTypeCounts = ImmutableMap.copyOf(newEdgeTypeCounts);
   }
 
   public InMemoryGraphRepository traversable() {
     return new InMemoryGraphRepository(this);
   }
 
-  public Graph with(InputNode node) {
+  public Graph with(Node node) {
     if (this.nodeExists(node.getId())) {
       throw new NodeWithSameIdAlreadyExists(node.getId(), node.getType());
     }
 
-    Map<UniqueIdentifier, InputNode> newNodeMap = new LinkedMap<>(this.nodeMap);
+    Map<UniqueIdentifier, Node> newNodeMap = new LinkedMap<>(this.nodeMap);
     newNodeMap.put(
         node.getId(),
         node
@@ -125,17 +125,17 @@ public class Graph {
     );
   }
 
-  public Graph with(InputEdge inputEdge) {
-    this.ensureEdgeWithSameIdDoesNotExistsAlready(inputEdge.getId(), inputEdge.getType());
-    this.ensureContainsBothNodesOnEdge(inputEdge);
+  public Graph with(Edge edge) {
+    this.ensureEdgeWithSameIdDoesNotExistsAlready(edge.getId(), edge.getType());
+    this.ensureContainsBothNodesOnEdge(edge);
 
     var newEdgeMap = new LinkedMap<>(this.edgeMap);
-    newEdgeMap.put(inputEdge.getId(), inputEdge);
+    newEdgeMap.put(edge.getId(), edge);
 
     var newEdgeTypeCounts = new LinkedMap<>(this.edgeTypeCounts);
     newEdgeTypeCounts.put(
-        inputEdge.getType(),
-        newEdgeTypeCounts.getOrDefault(inputEdge.getType(), 0L) + 1
+        edge.getType(),
+        newEdgeTypeCounts.getOrDefault(edge.getType(), 0L) + 1
     );
 
     return new Graph(
@@ -152,28 +152,28 @@ public class Graph {
     }
   }
 
-  public Graph withAll(AttributeContainer... inputGraphElements) {
+  public Graph withAll(AttributeContainer... graphElements) {
     Graph newGraph = this;
-    var invalidObjects = Arrays.stream(inputGraphElements)
-        .filter(inputGraphElement ->
-            !(inputGraphElement instanceof InputNode)
-                && !(inputGraphElement instanceof InputEdge))
+    var invalidObjects = Arrays.stream(graphElements)
+        .filter(graphElement ->
+            !(graphElement instanceof Node)
+                && !(graphElement instanceof Edge))
         .count();
     if (invalidObjects > 0) {
-      throw new CannotCreateGraphWithOtherThanInputElements();
+      throw new CannotCreateGraphWithOtherThanGraphElements();
     }
-    for (AttributeContainer inputGraphElement : inputGraphElements) {
-      if (inputGraphElement instanceof InputNode inputNode) {
-        newGraph = newGraph.with(inputNode);
+    for (AttributeContainer graphElement : graphElements) {
+      if (graphElement instanceof Node node) {
+        newGraph = newGraph.with(node);
       }
-      if (inputGraphElement instanceof InputEdge inputEdge) {
-        newGraph = newGraph.with(inputEdge);
+      if (graphElement instanceof Edge edge) {
+        newGraph = newGraph.with(edge);
       }
     }
     return newGraph;
   }
 
-  public InputNode getNode(UniqueIdentifier uniqueIdentifier, String nodeType) {
+  public Node getNode(UniqueIdentifier uniqueIdentifier, String nodeType) {
     if (!this.nodeMap.containsKey(uniqueIdentifier)) {
       throw new NodeNotFound(uniqueIdentifier);
     }
@@ -184,21 +184,21 @@ public class Graph {
     return foundNode;
   }
 
-  public InputNode getNode(UniqueIdentifier uniqueIdentifier) {
+  public Node getNode(UniqueIdentifier uniqueIdentifier) {
     if (!this.nodeMap.containsKey(uniqueIdentifier)) {
       throw new NodeNotFound(uniqueIdentifier);
     }
     return this.nodeMap.get(uniqueIdentifier);
   }
 
-  public InputEdge getEdge(UniqueIdentifier uniqueIdentifier) {
+  public Edge getEdge(UniqueIdentifier uniqueIdentifier) {
     if (!this.edgeMap.containsKey(uniqueIdentifier)) {
       throw new EdgeNotFound(uniqueIdentifier);
     }
     return this.edgeMap.get(uniqueIdentifier);
   }
 
-  public InputEdge getEdge(UniqueIdentifier id, String edgeType) {
+  public Edge getEdge(UniqueIdentifier id, String edgeType) {
     if (!this.edgeMap.containsKey(id)) {
       throw new EdgeNotFound(id);
     }
@@ -210,7 +210,7 @@ public class Graph {
   }
 
 
-  public InputNode getExactlyOneNodeOfType(String nodeType) {
+  public Node getExactlyOneNodeOfType(String nodeType) {
     var foundNodes = this.getAllNodes(nodeType);
     if (foundNodes.isEmpty()) {
       throw new NodeOfTypeNotFoundException(nodeType);
@@ -221,17 +221,17 @@ public class Graph {
     return foundNodes.get(0);
   }
 
-  public List<InputNode> getAllNodes() {
+  public List<Node> getAllNodes() {
     return this.nodeMap.values().stream().toList();
   }
 
-  public List<InputNode> getAllNodes(String nodeType) {
+  public List<Node> getAllNodes(String nodeType) {
     return this.nodeMap.values().stream()
         .filter(node -> node.getType().equals(nodeType))
         .toList();
   }
 
-  public InputNode getExactlyOneNodeByAttribute(String attributeName, Object attributeValue) {
+  public Node getExactlyOneNodeByAttribute(String attributeName, Object attributeValue) {
     var foundNodesByAttribute = this.nodeMap.values().stream()
         .filter(node -> node.containsAttribute(attributeName, attributeValue))
         .toList();
@@ -244,25 +244,25 @@ public class Graph {
     return foundNodesByAttribute.get(0);
   }
 
-  public List<InputEdge> getAllEdges() {
+  public List<Edge> getAllEdges() {
     return this.edgeMap.values().stream().toList();
   }
 
-  public List<InputEdge> loadAllEdges() {
+  public List<Edge> loadAllEdges() {
     return this.edgeMap.values().stream().toList();
   }
 
-  public List<InputEdge> loadAllEdges(String edgeType) {
+  public List<Edge> loadAllEdges(String edgeType) {
     return this.edgeMap.values().stream()
         .filter(edge -> edge.getType().equals(edgeType))
         .toList();
   }
 
-  public Graph replace(InputNode node) {
-    Map<UniqueIdentifier, InputNode> newNodeMap = new LinkedMap<>(this.nodeMap);
+  public Graph replace(Node node) {
+    Map<UniqueIdentifier, Node> newNodeMap = new LinkedMap<>(this.nodeMap);
     Map<String, Long> newNodeTypeCounts = new LinkedMap<>(this.nodeTypeCounts);
 
-    InputNode oldNode = this.nodeMap.get(node.getId());
+    Node oldNode = this.nodeMap.get(node.getId());
 
     newNodeMap.put(node.getId(), node);
 
@@ -291,7 +291,7 @@ public class Graph {
       return this;
     }
 
-    Map<UniqueIdentifier, InputEdge> newEdgeMap = new LinkedMap<>(this.edgeMap);
+    Map<UniqueIdentifier, Edge> newEdgeMap = new LinkedMap<>(this.edgeMap);
     Set<TraversableEdge> inAndOutEdgesForNode = this.traversable().findInAndOutEdgesForNode(
         id,
         nodeType
@@ -300,7 +300,7 @@ public class Graph {
         traversableEdge -> newEdgeMap.remove(traversableEdge.getId())
     );
 
-    Map<UniqueIdentifier, InputNode> newNodeMap = new LinkedMap<>(this.nodeMap);
+    Map<UniqueIdentifier, Node> newNodeMap = new LinkedMap<>(this.nodeMap);
     newNodeMap.remove(id);
 
     return new Graph(
@@ -362,9 +362,9 @@ public class Graph {
         .collect(Collectors.toList());
   }
 
-  public Graph replace(InputEdge inputEdge) {
-    Map<UniqueIdentifier, InputEdge> newEdgeMap = new LinkedMap<>(this.edgeMap);
-    newEdgeMap.put(inputEdge.getId(), inputEdge);
+  public Graph replace(Edge edge) {
+    Map<UniqueIdentifier, Edge> newEdgeMap = new LinkedMap<>(this.edgeMap);
+    newEdgeMap.put(edge.getId(), edge);
 
     return new Graph(
         this.nodeMap,
@@ -379,7 +379,7 @@ public class Graph {
       return this;
     }
 
-    Map<UniqueIdentifier, InputEdge> newEdgeMap = new LinkedMap<>(this.edgeMap);
+    Map<UniqueIdentifier, Edge> newEdgeMap = new LinkedMap<>(this.edgeMap);
     newEdgeMap.remove(edgeId);
 
     Map<String, Long> newEdgeTypeCounts = new LinkedMap<>(this.edgeTypeCounts);
@@ -401,7 +401,7 @@ public class Graph {
         edgeForRemoval.getGraphElementType());
   }
 
-  public InputEdge findEdgeByTypeAndNodes(
+  public Edge findEdgeByTypeAndNodes(
       String edgeType,
       NodeIdAndType nodeFromIdAndType,
       NodeIdAndType nodeToIdAndType
@@ -418,11 +418,11 @@ public class Graph {
 
   public Graph merge(Graph otherGraph) {
     var newGraph = this;
-    for (InputNode inputNode : otherGraph.nodeMap.values()) {
-      newGraph = newGraph.mergeNodeById(inputNode);
+    for (Node node : otherGraph.nodeMap.values()) {
+      newGraph = newGraph.mergeNodeById(node);
     }
-    for (InputEdge inputEdge : otherGraph.edgeMap.values()) {
-      newGraph = newGraph.merge(inputEdge);
+    for (Edge edge : otherGraph.edgeMap.values()) {
+      newGraph = newGraph.merge(edge);
     }
     return newGraph;
   }
@@ -455,7 +455,7 @@ public class Graph {
   }
 
 
-  public Graph merge(InputEdge otherEdge) {
+  public Graph merge(Edge otherEdge) {
     if (!this.nodeExists(
         otherEdge.getNodeFromId(),
         otherEdge.getNodeFromType()
@@ -468,7 +468,7 @@ public class Graph {
     var graph = this;
     var foundEdge = graph.edgeMap.get(otherEdge.getId());
     if (foundEdge == null) {
-      Map<UniqueIdentifier, InputEdge> newEdgeMap = new LinkedMap<>(graph.edgeMap);
+      Map<UniqueIdentifier, Edge> newEdgeMap = new LinkedMap<>(graph.edgeMap);
       newEdgeMap.put(otherEdge.getId(), otherEdge);
 
       Map<String, Long> newEdgeTypeCounts = new LinkedMap<>(graph.edgeTypeCounts);
@@ -485,7 +485,7 @@ public class Graph {
       );
     } else {
       var newMergedEdge = foundEdge.mergeOverwrite(otherEdge);
-      Map<UniqueIdentifier, InputEdge> newEdgeMap = new LinkedMap<>(graph.edgeMap);
+      Map<UniqueIdentifier, Edge> newEdgeMap = new LinkedMap<>(graph.edgeMap);
       newEdgeMap.put(newMergedEdge.getId(), newMergedEdge);
 
       return new Graph(
@@ -497,7 +497,7 @@ public class Graph {
     }
   }
 
-  private void ensureContainsBothNodesOnEdge(InputEdge edge) {
+  private void ensureContainsBothNodesOnEdge(Edge edge) {
     if (
         !this.nodeExists(edge.getNodeFromId())
             || !this.nodeExists(edge.getNodeToId())
@@ -518,13 +518,13 @@ public class Graph {
 
   private Graph mergeWithEdgeDeduplication(Graph otherGraph) {
     var newGraph = this;
-    for (InputNode inputNode : otherGraph.getAllNodes()) {
-      newGraph = newGraph.mergeNodeById(inputNode);
+    for (Node node : otherGraph.getAllNodes()) {
+      newGraph = newGraph.mergeNodeById(node);
     }
 
-    for (InputEdge otherGraphEdge : otherGraph.getAllEdges()) {
+    for (Edge otherGraphEdge : otherGraph.getAllEdges()) {
 
-      List<InputEdge> localGraphEdges = newGraph.getAllEdges().stream().filter(processedEdge ->
+      List<Edge> localGraphEdges = newGraph.getAllEdges().stream().filter(processedEdge ->
           processedEdge.getNodeFromId().equals(otherGraphEdge.getNodeFromId()) &&
               processedEdge.getNodeToId().equals(otherGraphEdge.getNodeToId()) &&
               processedEdge.getType().equals(otherGraphEdge.getType())
@@ -532,7 +532,7 @@ public class Graph {
 
       if (localGraphEdges.size() > 1) {
         throw GraphEdgesCannotBeMerged.becauseThereIsMultipleEdgesGivenEdgeCouldBeMergeWith(
-            localGraphEdges.stream().map(InputEdge::getId).toList()
+            localGraphEdges.stream().map(Edge::getId).toList()
         );
       }
       if (localGraphEdges.isEmpty()) {
@@ -540,19 +540,19 @@ public class Graph {
       }
       if (localGraphEdges.size() == 1) {
         var newEdge =
-            (InputEdge) localGraphEdges.get(0).mergeAttributesWithAttributesOf(otherGraphEdge);
+            (Edge) localGraphEdges.get(0).mergeAttributesWithAttributesOf(otherGraphEdge);
         newGraph = newGraph.merge(newEdge);
       }
     }
     return newGraph;
   }
 
-  public Graph mergeNodeById(InputNode otherNode) {
+  public Graph mergeNodeById(Node otherNode) {
     var newNodeMap = new LinkedMap<>(this.nodeMap);
     var newNodeTypeCounts = new LinkedMap<>(this.nodeTypeCounts);
 
     var foundNode = newNodeMap.get(otherNode.getId());
-    InputNode newNode;
+    Node newNode;
     if (foundNode == null) {
       newNode = otherNode;
       newNodeTypeCounts.put(

@@ -1,6 +1,5 @@
 package ai.stapi.graph.inMemoryGraph;
 
-import ai.stapi.graph.Graph;
 import ai.stapi.graph.attribute.ListAttribute;
 import ai.stapi.graph.attribute.MetaData;
 import ai.stapi.graph.attribute.attributeValue.BooleanAttributeValue;
@@ -13,17 +12,13 @@ import ai.stapi.graph.exceptions.NodeNotFound;
 import ai.stapi.graph.exceptions.NodeWithSameIdAlreadyExists;
 import ai.stapi.graph.graphElementForRemoval.NodeForRemoval;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
-import ai.stapi.graph.inputGraphElements.InputEdge;
+import ai.stapi.graph.graphelements.Edge;
 import ai.stapi.graph.test.base.UnitTestCase;
 import ai.stapi.graph.EdgeRepository;
 import ai.stapi.graph.NodeRepository;
 import ai.stapi.graph.attribute.LeafAttribute;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
-import ai.stapi.graph.exceptions.MoreThanOneNodeOfTypeFoundException;
-import ai.stapi.graph.exceptions.NodeOfTypeNotFoundException;
-import ai.stapi.graph.inMemoryGraph.exceptions.CannotCreateGraphWithOtherThanInputElements;
-import ai.stapi.graph.inputGraphElements.InputNode;
-import ai.stapi.graph.traversableGraphElements.TraversableNode;
+import ai.stapi.graph.graphelements.Node;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.Map;
@@ -68,7 +63,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
   @Test
   void itShouldNotLoadNode_ByIdAndType_WhenNodeTypeDiffers() throws NodeNotFound {
     var sameId = UniversallyUniqueIdentifier.randomUUID();
-    var alreadySavedNode = new InputNode(sameId, "Already_saved_type");
+    var alreadySavedNode = new Node(sameId, "Already_saved_type");
     getNodeRepository().save(alreadySavedNode);
     Executable runnable = () -> getNodeRepository().loadNode(sameId, "not_matching_type");
 
@@ -88,7 +83,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
   void itShouldTellWhetherExists_ByIdAndType_WhenNodeExistsWithSameIdButDifferentType()
       throws NodeNotFound {
     var sameId = UniversallyUniqueIdentifier.randomUUID();
-    var alreadySavedNode = new InputNode(sameId, "Some_type");
+    var alreadySavedNode = new Node(sameId, "Some_type");
     getNodeRepository().save(alreadySavedNode);
     var actuallyExists = getNodeRepository().nodeExists(
         sameId,
@@ -101,7 +96,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
   void itShouldTellWhetherExists_ByIdAndType_WhenNodeExistsWithSameTypeButDifferentId()
       throws NodeNotFound {
     var sameType = "Same_type";
-    var alreadySavedNode = new InputNode(UniversallyUniqueIdentifier.randomUUID(), sameType);
+    var alreadySavedNode = new Node(UniversallyUniqueIdentifier.randomUUID(), sameType);
     getNodeRepository().save(alreadySavedNode);
     var actuallyExists = getNodeRepository().nodeExists(
         UniversallyUniqueIdentifier.randomUUID(),
@@ -114,7 +109,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
   void itShouldTellWhetherExists_ByIdAndType_WhenNodeExists() throws NodeNotFound {
     var sameType = "Same_type";
     var sameId = UniversallyUniqueIdentifier.randomUUID();
-    var alreadySavedNode = new InputNode(sameId, sameType);
+    var alreadySavedNode = new Node(sameId, sameType);
     getNodeRepository().save(alreadySavedNode);
     var actuallyExists = getNodeRepository().nodeExists(
         sameId,
@@ -126,7 +121,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldSaveAndLoadNode_ByIdAndType() throws NodeNotFound {
-    var expectedNode = new InputNode("Test_node_type");
+    var expectedNode = new Node("Test_node_type");
     getNodeRepository().save(expectedNode);
 
     var actualNode = getNodeRepository().loadNode(
@@ -141,7 +136,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
   @Test
   void itShouldSaveAndLoadNode_ById() throws NodeNotFound {
     var sameId = UniversallyUniqueIdentifier.randomUUID();
-    var expectedNode = new InputNode(sameId, "Already_saved_type");
+    var expectedNode = new Node(sameId, "Already_saved_type");
     getNodeRepository().save(expectedNode);
 
     var actualNode = getNodeRepository().loadNode(sameId);
@@ -153,10 +148,10 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
   @Test
   void itShouldNotSaveNodeWhenNodeWithSameIdAlreadySaved() {
     var sameId = UniversallyUniqueIdentifier.randomUUID();
-    var alreadySavedNode = new InputNode(sameId, "Irrelevant_type");
+    var alreadySavedNode = new Node(sameId, "Irrelevant_type");
     getNodeRepository().save(alreadySavedNode);
 
-    var newNode = new InputNode(sameId, "Irrelevant_type");
+    var newNode = new Node(sameId, "Irrelevant_type");
     Executable executable = () -> getNodeRepository().save(newNode);
 
     Assertions.assertThrows(NodeWithSameIdAlreadyExists.class, executable);
@@ -164,7 +159,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldSaveNodeWithVariousAttributes() throws NodeNotFound {
-    var expectedNode = new InputNode("Test_node_type");
+    var expectedNode = new Node("Test_node_type");
     expectedNode = expectedNode.add(
         new LeafAttribute<>("test_attribute_name", new StringAttributeValue("testValueA"))
     );
@@ -194,7 +189,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldSaveNodeWithManyAttributes() throws NodeNotFound {
-    var expectedNode = new InputNode("Test_node_type");
+    var expectedNode = new Node("Test_node_type");
 
     var expectedVersion1 = new LeafAttribute<>("test_name", new StringAttributeValue("version1"));
     var expectedVersion2 = new LeafAttribute<>("test_name", new StringAttributeValue("versionZ"));
@@ -222,7 +217,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldSaveNodeTypeToNodeTypesCollection() throws NodeNotFound {
-    var expectedNode = new InputNode("Test_node_type");
+    var expectedNode = new Node("Test_node_type");
     getNodeRepository().save(expectedNode);
 
     var nodeTypeInfoList = this.getNodeRepository().getNodeTypeInfos();
@@ -235,9 +230,9 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldSaveNodeTypeToNodeTypesCollectionNTimes() throws NodeNotFound {
-    var nodeTypeA1 = new InputNode("Type_A");
-    var nodeTypeA2 = new InputNode("Type_A");
-    var nodeTypeB1 = new InputNode("Type_B");
+    var nodeTypeA1 = new Node("Type_A");
+    var nodeTypeA2 = new Node("Type_A");
+    var nodeTypeB1 = new Node("Type_B");
 
     getNodeRepository().save(nodeTypeA1);
     getNodeRepository().save(nodeTypeA2);
@@ -269,13 +264,13 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldProperlyReturnNodeInfo() throws NodeNotFound {
-    var nodeTypeA1 = new InputNode("Type_A");
+    var nodeTypeA1 = new Node("Type_A");
     nodeTypeA1 = nodeTypeA1.add(
         new LeafAttribute<>("name", new StringAttributeValue("oldName")));
     nodeTypeA1 = nodeTypeA1.add(
         new LeafAttribute<>("name", new StringAttributeValue("newName")));
-    var nodeTypeA2 = new InputNode("Type_A");
-    var nodeTypeB1 = new InputNode("Type_B");
+    var nodeTypeA2 = new Node("Type_A");
+    var nodeTypeB1 = new Node("Type_B");
 
     getNodeRepository().save(nodeTypeA1);
     getNodeRepository().save(nodeTypeA2);
@@ -299,15 +294,15 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldLoadNodeWithEdges() throws NodeNotFound {
-    var expectedNode = new InputNode("Expected_node_type");
-    var node2 = new InputNode("Test_node1_type");
-    var node3 = new InputNode("Test_node2_type");
-    var edge = new InputEdge(
+    var expectedNode = new Node("Expected_node_type");
+    var node2 = new Node("Test_node1_type");
+    var node3 = new Node("Test_node2_type");
+    var edge = new Edge(
         expectedNode,
         "has",
         node2
     );
-    var edge2 = new InputEdge(
+    var edge2 = new Edge(
         expectedNode,
         "has",
         node3
@@ -332,10 +327,10 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldReplaceNode() {
-    var alreadySavedNode = new InputNode("Same");
+    var alreadySavedNode = new Node("Same");
     alreadySavedNode = alreadySavedNode.add(
         new LeafAttribute<>("name", new StringAttributeValue("name")));
-    var replacingNode = new InputNode(alreadySavedNode.getId(), "Same");
+    var replacingNode = new Node(alreadySavedNode.getId(), "Same");
     replacingNode = replacingNode.add(
         new LeafAttribute<>("alias", new StringAttributeValue("alias")));
     getNodeRepository().save(alreadySavedNode);
@@ -349,7 +344,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldRemoveNode() {
-    var alreadySavedNode = new InputNode("Test_node");
+    var alreadySavedNode = new Node("Test_node");
     alreadySavedNode = alreadySavedNode.add(
         new LeafAttribute<>("name", new StringAttributeValue("name")));
 
@@ -357,7 +352,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
     //When
     getNodeRepository().removeNode(alreadySavedNode.getId(), "Test_node");
     //Then
-    InputNode finalAlreadySavedNode = alreadySavedNode;
+    Node finalAlreadySavedNode = alreadySavedNode;
     Executable executable =
         () -> getNodeRepository().loadNode(finalAlreadySavedNode.getId(), "Test_node");
     Assertions.assertThrows(NodeNotFound.class, executable);
@@ -365,7 +360,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldRemoveNodeForRemoval() {
-    var alreadySavedNode = new InputNode("Test_node");
+    var alreadySavedNode = new Node("Test_node");
     alreadySavedNode = alreadySavedNode.add(
         new LeafAttribute<>("name", new StringAttributeValue("name")));
 
@@ -375,7 +370,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
     //When
     getNodeRepository().removeNode(nodeForRemoval);
     //Then
-    InputNode finalAlreadySavedNode = alreadySavedNode;
+    Node finalAlreadySavedNode = alreadySavedNode;
     Executable executable =
         () -> getNodeRepository().loadNode(finalAlreadySavedNode.getId(), "Test_node");
     Assertions.assertThrows(NodeNotFound.class, executable);
@@ -383,9 +378,9 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldRemoveEdgesContainedInRemovedNode() {
-    var alreadySavedNode = new InputNode("Test_node");
-    var someOtherNode = new InputNode("Other_node");
-    var alreadySaveEdge = new InputEdge(
+    var alreadySavedNode = new Node("Test_node");
+    var someOtherNode = new Node("Other_node");
+    var alreadySaveEdge = new Edge(
         alreadySavedNode,
         "test_edge",
         someOtherNode
@@ -404,7 +399,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldSaveNodeWithListAttributeWithMoreVersions() throws NodeNotFound {
-    var expectedNode = new InputNode("Test_node_type");
+    var expectedNode = new Node("Test_node_type");
     expectedNode = expectedNode.add(
         new ListAttribute(
             "test_list_attribute_name",
@@ -461,7 +456,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldSaveAndLoadNodeWithUnionTypeAttribute() throws NodeNotFound {
-    var expectedNode = new InputNode("Test_node_type");
+    var expectedNode = new Node("Test_node_type");
     expectedNode = expectedNode.add(
         new ListAttribute(
             "test_union_type_attribute",
@@ -472,7 +467,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
     );
     getNodeRepository().save(expectedNode);
 
-    var secondExpectedNode = new InputNode("Test_node_type");
+    var secondExpectedNode = new Node("Test_node_type");
     secondExpectedNode = secondExpectedNode.add(
         new ListAttribute(
             "test_union_type_attribute",
@@ -483,7 +478,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
     );
     getNodeRepository().save(secondExpectedNode);
 
-    var thirdExpectedNode = new InputNode("Test_node_type");
+    var thirdExpectedNode = new Node("Test_node_type");
     thirdExpectedNode = thirdExpectedNode.add(
         new ListAttribute(
             "test_union_type_attribute",
@@ -518,7 +513,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldSaveAndLoadNode_WithAttributeWithMetaData() throws NodeNotFound {
-    var expectedNode = new InputNode("Test_node_type");
+    var expectedNode = new Node("Test_node_type");
     var expectedLeafMetadataValue = "Example Meta Data Value";
     var expectedListMetaDataValue = "Example Meta Data List Value";
     var exampleLeafAttributeName = "exampleLeafAttributeName";

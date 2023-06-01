@@ -1,4 +1,4 @@
-package ai.stapi.graph.inputGraphElements;
+package ai.stapi.graph.graphelements;
 
 import ai.stapi.graph.AttributeContainer;
 import ai.stapi.graph.NodeIdAndType;
@@ -10,14 +10,14 @@ import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
 import java.util.Objects;
 
-public class InputEdge extends AbstractGraphElement {
+public class Edge extends AbstractGraphElement {
 
   private final UniqueIdentifier nodeFromId;
   private final UniqueIdentifier nodeToId;
   private final String nodeFromType;
   private final String nodeToType;
 
-  public InputEdge(
+  public Edge(
       UniqueIdentifier id,
       String type,
       VersionedAttributeGroup versionedAttributes,
@@ -31,87 +31,87 @@ public class InputEdge extends AbstractGraphElement {
     this.nodeToType = nodeToIdAndType.getType();
   }
 
-  public InputEdge(
+  public Edge(
       UniqueIdentifier edgeId,
-      InputNode inputNodeFrom,
+      Node nodeFrom,
       String edgeType,
-      InputNode inputNodeTo
+      Node nodeTo
   ) {
     super(edgeId, edgeType);
-    this.nodeFromId = inputNodeFrom.getId();
-    this.nodeFromType = inputNodeFrom.getType();
-    this.nodeToId = inputNodeTo.getId();
-    this.nodeToType = inputNodeTo.getType();
+    this.nodeFromId = nodeFrom.getId();
+    this.nodeFromType = nodeFrom.getType();
+    this.nodeToId = nodeTo.getId();
+    this.nodeToType = nodeTo.getType();
   }
 
-  public InputEdge(
+  public Edge(
       UniqueIdentifier edgeId,
       String edgeType,
-      InputNode inputNodeFrom,
-      InputNode inputNodeTo,
+      Node nodeFrom,
+      Node nodeTo,
       VersionedAttributeGroup attributeGroup
   ) {
     super(edgeId, edgeType, attributeGroup);
-    this.nodeFromId = inputNodeFrom.getId();
-    this.nodeFromType = inputNodeFrom.getType();
-    this.nodeToId = inputNodeTo.getId();
-    this.nodeToType = inputNodeTo.getType();
+    this.nodeFromId = nodeFrom.getId();
+    this.nodeFromType = nodeFrom.getType();
+    this.nodeToId = nodeTo.getId();
+    this.nodeToType = nodeTo.getType();
   }
 
-  public InputEdge(
+  public Edge(
       UniqueIdentifier edgeId,
-      InputNode inputNodeFrom,
+      Node nodeFrom,
       String edgeType,
-      InputNode inputNodeTo,
+      Node nodeTo,
       Attribute<?>... attributes
   ) {
     super(edgeId, edgeType, attributes);
-    this.nodeFromId = inputNodeFrom.getId();
-    this.nodeFromType = inputNodeFrom.getType();
-    this.nodeToId = inputNodeTo.getId();
-    this.nodeToType = inputNodeTo.getType();
+    this.nodeFromId = nodeFrom.getId();
+    this.nodeFromType = nodeFrom.getType();
+    this.nodeToId = nodeTo.getId();
+    this.nodeToType = nodeTo.getType();
   }
 
-  public InputEdge(TraversableEdge traversableEdge) {
+  public Edge(TraversableEdge traversableEdge) {
     this(
         traversableEdge.getId(),
         traversableEdge.getType(),
-        new InputNode(traversableEdge.getNodeFrom()),
-        new InputNode(traversableEdge.getNodeTo()),
+        new Node(traversableEdge.getNodeFrom()),
+        new Node(traversableEdge.getNodeTo()),
         traversableEdge.getVersionedAttributes()
     );
   }
 
-  public InputEdge(InputNode inputNodeFrom, String edgeType, InputNode inputNodeTo) {
+  public Edge(Node nodeFrom, String edgeType, Node nodeTo) {
     this(
         UniversallyUniqueIdentifier.randomUUID(),
-        inputNodeFrom,
+        nodeFrom,
         edgeType,
-        inputNodeTo
+        nodeTo
     );
   }
 
-  public InputEdge(
-      InputNode inputNodeFrom,
+  public Edge(
+      Node nodeFrom,
       String edgeType,
-      InputNode inputNodeTo,
+      Node nodeTo,
       VersionedAttributeGroup attributeGroup
   ) {
-    this(UniversallyUniqueIdentifier.randomUUID(), edgeType, inputNodeFrom, inputNodeTo,
+    this(UniversallyUniqueIdentifier.randomUUID(), edgeType, nodeFrom, nodeTo,
         attributeGroup);
   }
 
-  public InputEdge(
-      InputNode inputNodeFrom,
+  public Edge(
+      Node nodeFrom,
       String edgeType,
-      InputNode inputNodeTo,
+      Node nodeTo,
       Attribute<?>... attributes
   ) {
-    this(UniversallyUniqueIdentifier.randomUUID(), inputNodeFrom, edgeType, inputNodeTo,
+    this(UniversallyUniqueIdentifier.randomUUID(), nodeFrom, edgeType, nodeTo,
         attributes);
   }
 
-  public InputEdge(
+  public Edge(
       UniqueIdentifier edgeId,
       String edgeType,
       UniqueIdentifier nodeFromId,
@@ -145,7 +145,7 @@ public class InputEdge extends AbstractGraphElement {
 
   @Override
   protected AttributeContainer withNewAttributes(VersionedAttributeGroup newAttributes) {
-    return new InputEdge(
+    return new Edge(
         this.getId(),
         this.getType(),
         this.getNodeFromId(),
@@ -157,8 +157,8 @@ public class InputEdge extends AbstractGraphElement {
   }
 
   @Override
-  public InputEdge add(Attribute<?> attribute) {
-    return (InputEdge) super.add(attribute);
+  public Edge add(Attribute<?> attribute) {
+    return (Edge) super.add(attribute);
   }
 
   @Override
@@ -179,11 +179,11 @@ public class InputEdge extends AbstractGraphElement {
     return new NodeIdAndType(this.nodeToId, this.nodeToType);
   }
 
-  public InputEdge getCopy() {
+  public Edge getCopy() {
     return this;
   }
 
-  public InputEdge mergeOverwrite(InputEdge otherEdge) {
+  public Edge mergeOverwrite(Edge otherEdge) {
     if (!this.getId().equals(otherEdge.getId())) {
       throw GraphEdgesCannotBeMerged.becauseTheyHaveDifferentIds();
     }
@@ -194,6 +194,6 @@ public class InputEdge extends AbstractGraphElement {
         || !(this.getNodeToId().equals(otherEdge.getNodeToId()))) {
       throw GraphEdgesCannotBeMerged.becauseTheyHaveDifferentNodeIds();
     }
-    return (InputEdge) this.mergeAttributesWithAttributesOf(otherEdge);
+    return (Edge) this.mergeAttributesWithAttributesOf(otherEdge);
   }
 }

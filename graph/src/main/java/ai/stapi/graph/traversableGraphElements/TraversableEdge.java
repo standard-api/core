@@ -7,8 +7,8 @@ import ai.stapi.graph.NullNodeLoader;
 import ai.stapi.graph.RepositoryNodeLoader;
 import ai.stapi.graph.attribute.AbstractAttributeContainer;
 import ai.stapi.graph.attribute.Attribute;
-import ai.stapi.graph.inputGraphElements.InputEdge;
-import ai.stapi.graph.inputGraphElements.InputNode;
+import ai.stapi.graph.graphelements.Edge;
+import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.versionedAttributes.VersionedAttributeGroup;
 import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
@@ -25,67 +25,67 @@ public class TraversableEdge extends AbstractAttributeContainer implements Trave
   private final String nodeToType;
   private final NodeLoader nodeLoader;
 
-  public static TraversableEdge fromInput(
-      InputEdge inputEdge,
+  public static TraversableEdge from(
+      Edge edge,
       NodeRepository nodeRepository
   ) {
     return new TraversableEdge(
-        inputEdge.getId(),
-        inputEdge.getType(),
-        inputEdge.getNodeFromId(),
-        inputEdge.getNodeFromType(),
-        inputEdge.getNodeToId(),
-        inputEdge.getNodeToType(),
-        inputEdge.getVersionedAttributes(),
+        edge.getId(),
+        edge.getType(),
+        edge.getNodeFromId(),
+        edge.getNodeFromType(),
+        edge.getNodeToId(),
+        edge.getNodeToType(),
+        edge.getVersionedAttributes(),
         new RepositoryNodeLoader(nodeRepository)
     );
   }
 
-  public TraversableEdge(InputNode inputNodeFrom, String edgeType, InputNode inputNodeTo) {
+  public TraversableEdge(Node nodeFrom, String edgeType, Node nodeTo) {
     this.edgeId = UniversallyUniqueIdentifier.randomUUID();
     this.edgeType = edgeType;
-    this.nodeFromId = inputNodeFrom.getId();
-    this.nodeFromType = inputNodeFrom.getType();
-    this.nodeToId = inputNodeTo.getId();
-    this.nodeToType = inputNodeTo.getType();
+    this.nodeFromId = nodeFrom.getId();
+    this.nodeFromType = nodeFrom.getType();
+    this.nodeToId = nodeTo.getId();
+    this.nodeToType = nodeTo.getType();
     this.nodeLoader = new NullNodeLoader();
   }
 
   public TraversableEdge(
       UniqueIdentifier edgeId,
-      TraversableNode traversableNodeFrom,
+      TraversableNode nodeFrom,
       String edgeType,
-      TraversableNode inputNodeTo,
+      TraversableNode nodeTo,
       VersionedAttributeGroup attributeGroup,
       NodeLoader nodeLoader
   ) {
     super(attributeGroup);
     this.edgeId = edgeId;
     this.edgeType = edgeType;
-    this.nodeFromId = traversableNodeFrom.getId();
-    this.nodeFromType = traversableNodeFrom.getType();
-    this.nodeToId = inputNodeTo.getId();
-    this.nodeToType = inputNodeTo.getType();
+    this.nodeFromId = nodeFrom.getId();
+    this.nodeFromType = nodeFrom.getType();
+    this.nodeToId = nodeTo.getId();
+    this.nodeToType = nodeTo.getType();
     this.nodeLoader = nodeLoader;
   }
 
   public TraversableEdge(
       UniqueIdentifier edgeId,
       String edgeType,
-      UniqueIdentifier traversableNodeFromId,
-      String traversableNodeFromType,
-      UniqueIdentifier inputNodeToId,
-      String inputNodeToType,
+      UniqueIdentifier nodeFromId,
+      String nodeFromType,
+      UniqueIdentifier nodeToId,
+      String nodeToType,
       VersionedAttributeGroup attributeGroup,
       NodeLoader nodeLoader
   ) {
     super(attributeGroup);
     this.edgeId = edgeId;
     this.edgeType = edgeType;
-    this.nodeFromId = traversableNodeFromId;
-    this.nodeFromType = traversableNodeFromType;
-    this.nodeToId = inputNodeToId;
-    this.nodeToType = inputNodeToType;
+    this.nodeFromId = nodeFromId;
+    this.nodeFromType = nodeFromType;
+    this.nodeToId = nodeToId;
+    this.nodeToType = nodeToType;
     this.nodeLoader = nodeLoader;
   }
 

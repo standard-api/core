@@ -8,8 +8,8 @@ import ai.stapi.graph.NullEdgeLoader;
 import ai.stapi.graph.RepositoryEdgeLoader;
 import ai.stapi.graph.attribute.AbstractAttributeContainer;
 import ai.stapi.graph.attribute.Attribute;
-import ai.stapi.graph.inputGraphElements.InputEdge;
-import ai.stapi.graph.inputGraphElements.InputNode;
+import ai.stapi.graph.graphelements.Edge;
+import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.versionedAttributes.VersionedAttributeGroup;
 import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
@@ -24,14 +24,14 @@ public class TraversableNode extends AbstractAttributeContainer implements Trave
   private final String nodeType;
   private final EdgeLoader edgeLoader;
 
-  public static TraversableNode fromInput(
-      InputNode inputNode,
+  public static TraversableNode from(
+      Node node,
       EdgeRepository edgeRepository
   ) {
     return new TraversableNode(
-        inputNode.getId(),
-        inputNode.getType(),
-        inputNode.getVersionedAttributes(),
+        node.getId(),
+        node.getType(),
+        node.getVersionedAttributes(),
         new RepositoryEdgeLoader(edgeRepository)
     );
   }
@@ -190,7 +190,7 @@ public class TraversableNode extends AbstractAttributeContainer implements Trave
 
   public Graph getNeighborhoodGraph(int maxLimit) {
     if (maxLimit == 0) {
-      return new Graph(new InputNode(
+      return new Graph(new Node(
           this.id,
           this.nodeType,
           this.getVersionedAttributes()
@@ -199,15 +199,15 @@ public class TraversableNode extends AbstractAttributeContainer implements Trave
     var nodesFrom = this.getEdges()
         .stream()
         .limit(maxLimit)
-        .map(traversableEdge -> new InputNode(traversableEdge.getNodeFrom()));
+        .map(traversableEdge -> new Node(traversableEdge.getNodeFrom()));
     var nodesTo = this.getEdges()
         .stream()
         .limit(maxLimit)
-        .map(traversableEdge -> new InputNode(traversableEdge.getNodeTo()));
+        .map(traversableEdge -> new Node(traversableEdge.getNodeTo()));
     var edges = this.getEdges()
         .stream()
         .limit(maxLimit)
-        .map(InputEdge::new);
+        .map(Edge::new);
 
     var nodesStream = Stream.concat(
         nodesFrom,

@@ -1,4 +1,4 @@
-package ai.stapi.graph.inputGraphElements;
+package ai.stapi.graph.graphelements;
 
 import ai.stapi.graph.attribute.AbstractAttributeContainer;
 import ai.stapi.graph.attribute.Attribute;

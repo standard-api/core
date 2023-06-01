@@ -1,7 +1,7 @@
 package ai.stapi.graph;
 
-import ai.stapi.graph.inputGraphElements.InputEdge;
-import ai.stapi.graph.inputGraphElements.InputNode;
+import ai.stapi.graph.graphelements.Edge;
+import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.test.base.UnitTestCase;
 import java.util.ArrayList;
 import org.junit.jupiter.api.Assertions;
@@ -27,15 +27,15 @@ class GraphPerformanceTest extends UnitTestCase {
 
   private Graph getGraphWithMaximumEdges(int nodeCount) {
     var graph = new Graph();
-    var addedNodes = new ArrayList<InputNode>();
+    var addedNodes = new ArrayList<Node>();
 
     for (int i = 0; i < nodeCount; i++) {
-      var newNode = new InputNode("node");
+      var newNode = new Node("node");
       graph = graph.with(newNode);
       addedNodes.add(newNode);
 
-      for (InputNode addedNode : addedNodes) {
-        graph = graph.with(new InputEdge(newNode, "connects", addedNode));
+      for (Node addedNode : addedNodes) {
+        graph = graph.with(new Edge(newNode, "connects", addedNode));
       }
     }
     return graph;

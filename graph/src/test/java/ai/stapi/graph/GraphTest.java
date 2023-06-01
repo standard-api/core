@@ -6,14 +6,13 @@ import ai.stapi.graph.exceptions.EdgeNotFound;
 import ai.stapi.graph.exceptions.MoreThanOneNodeOfTypeFoundException;
 import ai.stapi.graph.exceptions.NodeNotFound;
 import ai.stapi.graph.exceptions.NodeOfTypeNotFoundException;
-import ai.stapi.graph.exceptions.UnableToReplaceNode;
 import ai.stapi.graph.graphElementForRemoval.EdgeForRemoval;
 import ai.stapi.graph.graphElementForRemoval.NodeForRemoval;
 import ai.stapi.graph.inMemoryGraph.DeduplicateOptions;
-import ai.stapi.graph.inMemoryGraph.exceptions.CannotCreateGraphWithOtherThanInputElements;
+import ai.stapi.graph.inMemoryGraph.exceptions.CannotCreateGraphWithOtherThanGraphElements;
 import ai.stapi.graph.inMemoryGraph.exceptions.GraphEdgesCannotBeMerged;
-import ai.stapi.graph.inputGraphElements.InputEdge;
-import ai.stapi.graph.inputGraphElements.InputNode;
+import ai.stapi.graph.graphelements.Edge;
+import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.test.base.UnitTestCase;
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
@@ -26,8 +25,8 @@ class GraphTest extends UnitTestCase {
   @Test
   void itCanCreateWithNodes() {
     var actualGraph = new Graph(
-        new InputNode("A"),
-        new InputNode("B")
+        new Node("A"),
+        new Node("B")
     );
   }
 
@@ -38,20 +37,20 @@ class GraphTest extends UnitTestCase {
     );
 
     Assertions.assertThrows(
-        CannotCreateGraphWithOtherThanInputElements.class,
+        CannotCreateGraphWithOtherThanGraphElements.class,
         executable
     );
   }
 
   @Test
   void itCanMergeOverwriteWithOtherGraph_WithNodes() {
-    var nodeInGraph1 = new InputNode(
+    var nodeInGraph1 = new Node(
         "merged_node_type",
         new LeafAttribute<>("original", new StringAttributeValue("original value")),
         new LeafAttribute<>("updated", new StringAttributeValue("old value"))
     );
 
-    var nodeInGraph2 = new InputNode(
+    var nodeInGraph2 = new Node(
         nodeInGraph1.getId(),
         "merged_node_type",
         new LeafAttribute<>("original", new StringAttributeValue("original value")),
@@ -61,12 +60,12 @@ class GraphTest extends UnitTestCase {
 
     var graphG1 = new Graph(
         nodeInGraph1,
-        new InputNode("already saved node")
+        new Node("already saved node")
     );
 
     var graphG2 = new Graph(
         nodeInGraph2,
-        new InputNode("node from other graph")
+        new Node("node from other graph")
     );
 
     graphG1 = graphG1.merge(graphG2);
@@ -75,13 +74,13 @@ class GraphTest extends UnitTestCase {
 
   @Test
   void itCanLoadNodesByNodeType() {
-    var nodeA = new InputNode(
+    var nodeA = new Node(
         "type_A",
         new LeafAttribute<>("original", new StringAttributeValue("original value")),
         new LeafAttribute<>("updated", new StringAttributeValue("old value"))
     );
 
-    var nodeB = new InputNode(
+    var nodeB = new Node(
         "type_A",
         new LeafAttribute<>("original", new StringAttributeValue("original value")),
         new LeafAttribute<>("updated", new StringAttributeValue("updated value")),
@@ -99,8 +98,8 @@ class GraphTest extends UnitTestCase {
 
   @Test
   void itThrowsExceptionWhenLoadingExactlyOneNodeOfTypeButMorePresent() {
-    var nodeA = new InputNode("type_A");
-    var nodeB = new InputNode("type_A");
+    var nodeA = new Node("type_A");
+    var nodeB = new Node("type_A");
 
     var graph = new Graph(
         nodeA,
@@ -114,8 +113,8 @@ class GraphTest extends UnitTestCase {
 
   @Test
   void itThrowsExceptionWhenLoadingExactlyOneNodeOfTypeButNonePresent() {
-    var nodeA = new InputNode("type_A");
-    var nodeB = new InputNode("type_A");
+    var nodeA = new Node("type_A");
+    var nodeB = new Node("type_A");
 
     var graph = new Graph(
         nodeA,
@@ -129,8 +128,8 @@ class GraphTest extends UnitTestCase {
 
   @Test
   void itLoadsExactlyOneNodeOfType() {
-    var nodeA = new InputNode("type_A");
-    var nodeB = new InputNode("type_B");
+    var nodeA = new Node("type_A");
+    var nodeB = new Node("type_B");
 
     var graph = new Graph(
         nodeA,
@@ -145,7 +144,7 @@ class GraphTest extends UnitTestCase {
 
   @Test
   void itCanTellWhetherSomeNodeOfTypeExists() {
-    var node = new InputNode("type_A");
+    var node = new Node("type_A");
     var graph = new Graph(node);
     Assertions.assertTrue(graph.containsNodeOfType("type_A"));
     Assertions.assertFalse(graph.containsNodeOfType("type_B"));
@@ -153,21 +152,21 @@ class GraphTest extends UnitTestCase {
 
   @Test
   void itCanCreateWithEdges() {
-    var nodeA = new InputNode("nodeA");
-    var nodeB = new InputNode("nodeB");
-    var nodeC = new InputNode("nodeC");
-    var nodeD = new InputNode("nodeD");
+    var nodeA = new Node("nodeA");
+    var nodeB = new Node("nodeB");
+    var nodeC = new Node("nodeC");
+    var nodeD = new Node("nodeD");
     var actualGraph = new Graph(
         nodeA,
         nodeB,
         nodeC,
         nodeD,
-        new InputEdge(
+        new Edge(
             nodeA,
             "edgeA",
             nodeB
         ),
-        new InputEdge(
+        new Edge(
             nodeC,
             "edgeB",
             nodeD
@@ -177,26 +176,26 @@ class GraphTest extends UnitTestCase {
 
   @Test
   void itCanLoadEdgesOfType() {
-    var nodeA = new InputNode("nodeA");
-    var nodeB = new InputNode("nodeB");
-    var nodeC = new InputNode("nodeC");
-    var nodeD = new InputNode("nodeD");
+    var nodeA = new Node("nodeA");
+    var nodeB = new Node("nodeB");
+    var nodeC = new Node("nodeC");
+    var nodeD = new Node("nodeD");
     var actualGraph = new Graph(
         nodeA,
         nodeB,
         nodeC,
         nodeD,
-        new InputEdge(
+        new Edge(
             nodeA,
             "edgeA",
             nodeB
         ),
-        new InputEdge(
+        new Edge(
             nodeC,
             "edgeB",
             nodeD
         ),
-        new InputEdge(
+        new Edge(
             nodeC,
             "edgeA",
             nodeD
@@ -208,23 +207,23 @@ class GraphTest extends UnitTestCase {
 
   @Test
   void itShouldMergeTwoGraphsByIds() {
-    var nodeFromInGraphG1 = new InputNode("merged_node_type");
-    var nodeToInGraphG1 = new InputNode("node_type_to");
-    var edgeE1InGraphG1 = new InputEdge(
+    var nodeFromInGraphG1 = new Node("merged_node_type");
+    var nodeToInGraphG1 = new Node("node_type_to");
+    var edgeE1InGraphG1 = new Edge(
         nodeFromInGraphG1,
         "edge_type",
         nodeToInGraphG1
     );
 
-    var nodeFromInGraphG2 = new InputNode(
+    var nodeFromInGraphG2 = new Node(
         nodeFromInGraphG1.getId(),
         nodeFromInGraphG1.getType()
     );
-    var nodeToInGraphG2 = new InputNode(
+    var nodeToInGraphG2 = new Node(
         nodeToInGraphG1.getId(),
         nodeToInGraphG1.getType()
     );
-    var edgeE1InGraphG2 = new InputEdge(
+    var edgeE1InGraphG2 = new Edge(
         edgeE1InGraphG1.getId(),
         nodeFromInGraphG2,
         edgeE1InGraphG1.getType(),
@@ -258,10 +257,10 @@ class GraphTest extends UnitTestCase {
 
   @Test
   void itCanMergeOverwriteWithOtherGraph_WithEdges() {
-    var mergedNodeFrom = new InputNode("merged_node_from_type");
-    var mergedNodeTo = new InputNode("merged_node_to_type");
+    var mergedNodeFrom = new Node("merged_node_from_type");
+    var mergedNodeTo = new Node("merged_node_to_type");
 
-    var mergedEdge = new InputEdge(
+    var mergedEdge = new Edge(
         UniversallyUniqueIdentifier.randomUUID(),
         mergedNodeFrom,
         "same_type",
@@ -270,7 +269,7 @@ class GraphTest extends UnitTestCase {
         new LeafAttribute<>("updated", new StringAttributeValue("old value"))
     );
 
-    var otherEdge = new InputEdge(
+    var otherEdge = new Edge(
         mergedEdge.getId(),
         mergedNodeFrom,
         "same_type",
@@ -280,8 +279,8 @@ class GraphTest extends UnitTestCase {
         new LeafAttribute<>("new", new StringAttributeValue("new value"))
     );
 
-    var alreadySavedNodeFrom = new InputNode("already_saved_from");
-    var alreadySavedNodeTo = new InputNode("already_saved_to");
+    var alreadySavedNodeFrom = new Node("already_saved_from");
+    var alreadySavedNodeTo = new Node("already_saved_to");
 
     var graphG1 = new Graph(
         mergedNodeFrom,
@@ -289,18 +288,18 @@ class GraphTest extends UnitTestCase {
         mergedEdge,
         alreadySavedNodeFrom,
         alreadySavedNodeTo,
-        new InputEdge(alreadySavedNodeFrom, "already_saved_edge", alreadySavedNodeTo)
+        new Edge(alreadySavedNodeFrom, "already_saved_edge", alreadySavedNodeTo)
     );
 
-    var newSavedNodeFrom = new InputNode("new_saved_from");
-    var newSavedNodeTo = new InputNode("new_saved_to");
+    var newSavedNodeFrom = new Node("new_saved_from");
+    var newSavedNodeTo = new Node("new_saved_to");
     var graphG2 = new Graph(
         mergedNodeFrom,
         mergedNodeTo,
         otherEdge,
         newSavedNodeFrom,
         newSavedNodeTo,
-        new InputEdge(newSavedNodeFrom, "new_edge", newSavedNodeTo)
+        new Edge(newSavedNodeFrom, "new_edge", newSavedNodeTo)
     );
 
     graphG1 = graphG1.merge(graphG2);
@@ -311,8 +310,8 @@ class GraphTest extends UnitTestCase {
   @Test
   void itShouldReplaceNodes() {
     var nodeId = UniversallyUniqueIdentifier.randomUUID();
-    var nodeA = new InputNode(nodeId, "SameType");
-    var nodeB = new InputNode(nodeId, "SameType");
+    var nodeA = new Node(nodeId, "SameType");
+    var nodeB = new Node(nodeId, "SameType");
 
     nodeA = nodeA.add(
         new LeafAttribute<>("A_attribute", new StringAttributeValue("A_value"))
@@ -330,12 +329,12 @@ class GraphTest extends UnitTestCase {
   @Test
   void itShouldAllowToReplaceNodeOfDifferentType() {
     var nodeId = UniversallyUniqueIdentifier.randomUUID();
-    var nodeA = new InputNode(
+    var nodeA = new Node(
         nodeId,
         "type"
     );
 
-    var nodeB = new InputNode(
+    var nodeB = new Node(
         nodeId,
         "different_type"
     );
@@ -352,10 +351,10 @@ class GraphTest extends UnitTestCase {
 
   @Test
   void itShouldRemoveEdge_AsGraphElementForRemoval() {
-    var nodeFrom = new InputNode("node_from");
-    var nodeTo = new InputNode("node_to");
+    var nodeFrom = new Node("node_from");
+    var nodeTo = new Node("node_to");
 
-    var alreadySavedEdge = new InputEdge(
+    var alreadySavedEdge = new Edge(
         nodeFrom,
         "test_edge",
         nodeTo
@@ -369,7 +368,7 @@ class GraphTest extends UnitTestCase {
     var actualGraph = givenGraph.removeGraphElement(edgeForRemoval);
 
     //Then
-    InputEdge finalAlreadySavedEdge = alreadySavedEdge;
+    Edge finalAlreadySavedEdge = alreadySavedEdge;
     Executable executable = () -> actualGraph.getEdge(
         finalAlreadySavedEdge.getId(),
         finalAlreadySavedEdge.getType()
@@ -379,7 +378,7 @@ class GraphTest extends UnitTestCase {
 
   @Test
   void itShouldRemoveNode_AsGraphElementForRemoval() {
-    var alreadySavedNode = new InputNode("test_node");
+    var alreadySavedNode = new Node("test_node");
     alreadySavedNode = alreadySavedNode.add(
         new LeafAttribute<>("name", new StringAttributeValue("name")));
 
@@ -389,7 +388,7 @@ class GraphTest extends UnitTestCase {
     //When
     var actualGraph = givenGraph.removeNode(nodeForRemoval);
     //Then
-    InputNode finalAlreadySavedNode = alreadySavedNode;
+    Node finalAlreadySavedNode = alreadySavedNode;
     Executable executable = () -> actualGraph.getNode(finalAlreadySavedNode.getId(), "test_node");
     Assertions.assertThrows(NodeNotFound.class, executable);
   }
@@ -397,15 +396,15 @@ class GraphTest extends UnitTestCase {
   @Test
   void itShouldMergeEdgesOfSameTypeBetweenSameNodes() {
     var originalGraph = new Graph();
-    var firstOriginalNode = new InputNode("original_first_node");
-    var secondOriginalNode = new InputNode("original_second_node");
-    var firstOriginalEdge = new InputEdge(firstOriginalNode, "original_edge", secondOriginalNode);
+    var firstOriginalNode = new Node("original_first_node");
+    var secondOriginalNode = new Node("original_second_node");
+    var firstOriginalEdge = new Edge(firstOriginalNode, "original_edge", secondOriginalNode);
     firstOriginalEdge = firstOriginalEdge.add(
         new LeafAttribute<>("original_attribute", new StringAttributeValue("anyValue")));
     originalGraph = originalGraph.withAll(firstOriginalNode, secondOriginalNode, firstOriginalEdge);
 
     var graphToBeMerged = new Graph();
-    var edgeToBeMerged = new InputEdge(firstOriginalNode, "original_edge", secondOriginalNode);
+    var edgeToBeMerged = new Edge(firstOriginalNode, "original_edge", secondOriginalNode);
     edgeToBeMerged = edgeToBeMerged.add(
         new LeafAttribute<>("merged_attribute", new StringAttributeValue("anyValue")));
     graphToBeMerged =
@@ -418,10 +417,10 @@ class GraphTest extends UnitTestCase {
   @Test
   void itThrowsErrorWhenEdgeCouldBeMergerWithMultipleEdges() {
     var originalGraph = new Graph();
-    var firstOriginalNode = new InputNode("original_first_node");
-    var secondOriginalNode = new InputNode("original_second_node");
-    var firstOriginalEdge = new InputEdge(firstOriginalNode, "original_edge", secondOriginalNode);
-    var secondOriginalEdge = new InputEdge(firstOriginalNode, "original_edge", secondOriginalNode);
+    var firstOriginalNode = new Node("original_first_node");
+    var secondOriginalNode = new Node("original_second_node");
+    var firstOriginalEdge = new Edge(firstOriginalNode, "original_edge", secondOriginalNode);
+    var secondOriginalEdge = new Edge(firstOriginalNode, "original_edge", secondOriginalNode);
     firstOriginalEdge = firstOriginalEdge.add(
         new LeafAttribute<>("original_attribute", new StringAttributeValue("anyValue")));
     secondOriginalEdge = secondOriginalEdge.add(
@@ -430,7 +429,7 @@ class GraphTest extends UnitTestCase {
         secondOriginalEdge);
 
     var graphToBeMerged = new Graph();
-    var edgeToBeMerged = new InputEdge(firstOriginalNode, "original_edge", secondOriginalNode);
+    var edgeToBeMerged = new Edge(firstOriginalNode, "original_edge", secondOriginalNode);
     edgeToBeMerged = edgeToBeMerged.add(
         new LeafAttribute<>("merged_attribute", new StringAttributeValue("anyValue")));
     graphToBeMerged =

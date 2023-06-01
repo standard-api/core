@@ -2,8 +2,8 @@ package ai.stapi.graph.test.base;
 
 import ai.stapi.graph.Graph;
 import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
-import ai.stapi.graph.inputGraphElements.InputEdge;
-import ai.stapi.graph.inputGraphElements.InputNode;
+import ai.stapi.graph.graphelements.Edge;
+import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.renderer.infrastructure.idLessTextRenderer.IdLessTextGraphRenderer;
 import ai.stapi.graph.renderer.infrastructure.idLessTextRenderer.IdLessTextRendererOptions;
 import ai.stapi.graph.renderer.infrastructure.idLessTextRenderer.attribute.TextAttributeContainerRenderer;
@@ -205,7 +205,7 @@ public abstract class AbstractUnitTestCase implements FixtureFileLoadableTestTra
     );
   }
 
-  protected void thenNodesAreSame(InputNode expectedNode, TraversableNode actualNode) {
+  protected void thenNodesAreSame(Node expectedNode, TraversableNode actualNode) {
     var traversableExpectedNode = new Graph(expectedNode)
         .traversable()
         .loadNode(expectedNode.getId());
@@ -218,10 +218,10 @@ public abstract class AbstractUnitTestCase implements FixtureFileLoadableTestTra
     );
   }
 
-  protected void thenEdgesAreSame(InputEdge expectedEdge, TraversableEdge actualEdge) {
+  protected void thenEdgesAreSame(Edge expectedEdge, TraversableEdge actualEdge) {
     var traversableExpectedEdge = new Graph(
-        new InputNode(expectedEdge.getNodeFromId(), expectedEdge.getNodeFromType()),
-        new InputNode(expectedEdge.getNodeToId(), expectedEdge.getNodeToType()),
+        new Node(expectedEdge.getNodeFromId(), expectedEdge.getNodeFromType()),
+        new Node(expectedEdge.getNodeToId(), expectedEdge.getNodeToType()),
         expectedEdge
     ).traversable().loadEdge(expectedEdge.getId(), expectedEdge.getType());
 
@@ -262,8 +262,8 @@ public abstract class AbstractUnitTestCase implements FixtureFileLoadableTestTra
     );
   }
 
-  protected void thenEdgesHaveSameIdAndTypeAndNodeIds(InputEdge expectedEdge,
-      TraversableEdge actualEdge) {
+  protected void thenEdgesHaveSameIdAndTypeAndNodeIds(Edge expectedEdge,
+                                                      TraversableEdge actualEdge) {
     Assertions.assertEquals(
         expectedEdge.getId(),
         actualEdge.getId(),

@@ -9,8 +9,8 @@ import ai.stapi.graph.attribute.attributeValue.BooleanAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.DecimalAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.IntegerAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
-import ai.stapi.graph.inputGraphElements.InputEdge;
-import ai.stapi.graph.inputGraphElements.InputNode;
+import ai.stapi.graph.graphelements.Edge;
+import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.versionedAttributes.ImmutableVersionedAttributeGroup;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
 import org.junit.jupiter.api.Assertions;
@@ -21,34 +21,34 @@ class TraversableEdgeTest extends AttributeContainerTest {
   @Override
   protected AbstractAttributeContainer getAttributeContainer() {
     return new TraversableEdge(
-        new InputNode("test_node_from"),
+        new Node("test_node_from"),
         "edge_type",
-        new InputNode("test_node_to")
+        new Node("test_node_to")
     );
   }
 
   @Test
-  public void itCanCreateEdge_WithInputNodes() {
+  void itCanCreateEdge_WithNodes() {
     //Given
     var expectedEdgeType = "edge_type";
     //When
-    var inputNodeFrom = new InputNode("input_node_from");
-    var inputNodeTo = new InputNode("input_node_to");
+    var nodeFrom = new Node("node_from");
+    var nodeTo = new Node("node_to");
     var edge = new TraversableEdge(
-        inputNodeFrom,
+        nodeFrom,
         expectedEdgeType,
-        inputNodeTo
+        nodeTo
     );
     //Then
     Assertions.assertEquals(expectedEdgeType, edge.getType());
-    Assertions.assertEquals(inputNodeFrom.getId(), edge.getNodeFromId());
-    Assertions.assertEquals(inputNodeTo.getId(), edge.getNodeToId());
-    Assertions.assertEquals(inputNodeFrom.getType(), edge.getNodeFromType());
-    Assertions.assertEquals(inputNodeTo.getType(), edge.getNodeToType());
+    Assertions.assertEquals(nodeFrom.getId(), edge.getNodeFromId());
+    Assertions.assertEquals(nodeTo.getId(), edge.getNodeToId());
+    Assertions.assertEquals(nodeFrom.getType(), edge.getNodeFromType());
+    Assertions.assertEquals(nodeTo.getType(), edge.getNodeToType());
   }
 
   @Test
-  public void itCanCreateEdge_WithVersionedAttributes() {
+  void itCanCreateEdge_WithVersionedAttributes() {
     //Given
     var expectedEdgeType = "edge_type";
     var expectedNodeFrom = new TraversableNode("irrelevant");
@@ -95,7 +95,7 @@ class TraversableEdgeTest extends AttributeContainerTest {
   }
 
   @Test
-  public void itHasDeterministicHashCode() {
+  void itHasDeterministicHashCode() {
 
     var versionedAttributeGroup = new ImmutableVersionedAttributeGroup(
         new LeafAttribute<>("test_boolean", new BooleanAttributeValue(true)),
@@ -103,9 +103,9 @@ class TraversableEdgeTest extends AttributeContainerTest {
         new LeafAttribute<>("test_integer", new IntegerAttributeValue(15))
     );
 
-    var node1 = new InputNode("irrelevant");
-    var node2 = new InputNode("irrelevant");
-    var savedEdge = new InputEdge(
+    var node1 = new Node("irrelevant");
+    var node2 = new Node("irrelevant");
+    var savedEdge = new Edge(
         UniversallyUniqueIdentifier.fromString("0bac1abc-660e-4e92-94e2-3e8953873c58"),
         "edge_type",
         node1,
@@ -142,19 +142,19 @@ class TraversableEdgeTest extends AttributeContainerTest {
   }
 
   @Test
-  public void itCanGetNodeFromFromBuilder() {
+  void itCanGetNodeFromFromBuilder() {
     //Given
     var expectedEdgeType = "edge_type";
-    var expectedNodeFrom = new InputNode(
+    var expectedNodeFrom = new Node(
         "from_node_type",
         new LeafAttribute<>("test_string", new StringAttributeValue("NodeFrom attribute value"))
     );
-    var expectedNodeTo = new InputNode(
+    var expectedNodeTo = new Node(
         "to_node_type",
         new LeafAttribute<>("test_string", new StringAttributeValue("NodeTo attribute value"))
     );
     //When
-    var edge = new InputEdge(
+    var edge = new Edge(
         expectedNodeFrom,
         expectedEdgeType,
         expectedNodeTo
@@ -171,26 +171,26 @@ class TraversableEdgeTest extends AttributeContainerTest {
         edge.getType()
     );
 
-    TraversableNode nodeFrom = traversableEdge.getNodeFrom();
+    var nodeFrom = traversableEdge.getNodeFrom();
     this.thenNodeApproved(nodeFrom);
   }
 
   @Test
-  public void itCanGetNodeToFromBuilder() {
+  void itCanGetNodeToFromBuilder() {
     //Given
     var expectedEdgeType = "edge_type";
-    var expectedNodeFrom = new InputNode(
+    var expectedNodeFrom = new Node(
         "from_node_type",
         new LeafAttribute<>("test_string", new StringAttributeValue("NodeFrom attribute value"
         ))
     );
-    var expectedNodeTo = new InputNode(
+    var expectedNodeTo = new Node(
         "to_node_type",
         new LeafAttribute<>("test_string", new StringAttributeValue("NodeTo attribute value"
         ))
     );
     //When
-    var edge = new InputEdge(
+    var edge = new Edge(
         expectedNodeFrom,
         expectedEdgeType,
         expectedNodeTo

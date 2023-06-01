@@ -1,6 +1,6 @@
 package ai.stapi.graph.graphElementForRemoval;
 
-import ai.stapi.graph.inputGraphElements.InputNode;
+import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
 import ai.stapi.identity.UniqueIdentifier;
 
@@ -20,7 +20,7 @@ public class NodeForRemoval implements GraphElementForRemoval {
     this.nodeType = node.getType();
   }
 
-  public NodeForRemoval(InputNode node) {
+  public NodeForRemoval(Node node) {
     this.nodeId = node.getId();
     this.nodeType = node.getType();
   }
