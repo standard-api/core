@@ -97,7 +97,7 @@ public class Graph {
     return new InMemoryGraphRepository(this);
   }
 
-  public Graph withNode(InputNode node) {
+  public Graph with(InputNode node) {
     if (this.nodeExists(node.getId())) {
       throw new NodeWithSameIdAlreadyExists(node.getId(), node.getType());
     }
@@ -125,15 +125,14 @@ public class Graph {
     );
   }
 
-  public Graph withEdge(InputEdge inputEdge) {
-    ensureEdgeWithSameIdDoesNotExistsAlready(inputEdge.getId(), inputEdge.getType());
+  public Graph with(InputEdge inputEdge) {
+    this.ensureEdgeWithSameIdDoesNotExistsAlready(inputEdge.getId(), inputEdge.getType());
     this.ensureContainsBothNodesOnEdge(inputEdge);
 
-    Map<UniqueIdentifier, InputEdge> newEdgeMap = new LinkedMap<>(this.edgeMap);
-    InputEdge graphEdge = inputEdge;
-    newEdgeMap.put(inputEdge.getId(), graphEdge);
+    var newEdgeMap = new LinkedMap<>(this.edgeMap);
+    newEdgeMap.put(inputEdge.getId(), inputEdge);
 
-    Map<String, Long> newEdgeTypeCounts = new LinkedMap<>(this.edgeTypeCounts);
+    var newEdgeTypeCounts = new LinkedMap<>(this.edgeTypeCounts);
     newEdgeTypeCounts.put(
         inputEdge.getType(),
         newEdgeTypeCounts.getOrDefault(inputEdge.getType(), 0L) + 1
@@ -165,38 +164,38 @@ public class Graph {
     }
     for (AttributeContainer inputGraphElement : inputGraphElements) {
       if (inputGraphElement instanceof InputNode inputNode) {
-        newGraph = newGraph.withNode(inputNode);
+        newGraph = newGraph.with(inputNode);
       }
       if (inputGraphElement instanceof InputEdge inputEdge) {
-        newGraph = newGraph.withEdge(inputEdge);
+        newGraph = newGraph.with(inputEdge);
       }
     }
     return newGraph;
   }
 
-  public InputNode getNode(UniqueIdentifier UniqueIdentifier, String nodeType) {
-    if (!this.nodeMap.containsKey(UniqueIdentifier)) {
-      throw new NodeNotFound(UniqueIdentifier);
+  public InputNode getNode(UniqueIdentifier uniqueIdentifier, String nodeType) {
+    if (!this.nodeMap.containsKey(uniqueIdentifier)) {
+      throw new NodeNotFound(uniqueIdentifier);
     }
-    var foundNode = this.nodeMap.get(UniqueIdentifier);
+    var foundNode = this.nodeMap.get(uniqueIdentifier);
     if (foundNode == null || !foundNode.getType().equals(nodeType)) {
-      throw new NodeNotFound(UniqueIdentifier, nodeType);
+      throw new NodeNotFound(uniqueIdentifier, nodeType);
     }
     return foundNode;
   }
 
-  public InputNode getNode(UniqueIdentifier UniqueIdentifier) {
-    if (!this.nodeMap.containsKey(UniqueIdentifier)) {
-      throw new NodeNotFound(UniqueIdentifier);
+  public InputNode getNode(UniqueIdentifier uniqueIdentifier) {
+    if (!this.nodeMap.containsKey(uniqueIdentifier)) {
+      throw new NodeNotFound(uniqueIdentifier);
     }
-    return this.nodeMap.get(UniqueIdentifier);
+    return this.nodeMap.get(uniqueIdentifier);
   }
 
-  public InputEdge getEdge(UniqueIdentifier UniqueIdentifier) {
-    if (!this.edgeMap.containsKey(UniqueIdentifier)) {
-      throw new EdgeNotFound(UniqueIdentifier);
+  public InputEdge getEdge(UniqueIdentifier uniqueIdentifier) {
+    if (!this.edgeMap.containsKey(uniqueIdentifier)) {
+      throw new EdgeNotFound(uniqueIdentifier);
     }
-    return this.edgeMap.get(UniqueIdentifier);
+    return this.edgeMap.get(uniqueIdentifier);
   }
 
   public InputEdge getEdge(UniqueIdentifier id, String edgeType) {
@@ -423,7 +422,7 @@ public class Graph {
       newGraph = newGraph.mergeNodeById(inputNode);
     }
     for (InputEdge inputEdge : otherGraph.edgeMap.values()) {
-      newGraph = newGraph.mergeEdge(inputEdge);
+      newGraph = newGraph.merge(inputEdge);
     }
     return newGraph;
   }
@@ -456,7 +455,7 @@ public class Graph {
   }
 
 
-  public Graph mergeEdge(InputEdge otherEdge) {
+  public Graph merge(InputEdge otherEdge) {
     if (!this.nodeExists(
         otherEdge.getNodeFromId(),
         otherEdge.getNodeFromType()
@@ -537,40 +536,38 @@ public class Graph {
         );
       }
       if (localGraphEdges.isEmpty()) {
-        newGraph = newGraph.mergeEdge(otherGraphEdge);
+        newGraph = newGraph.merge(otherGraphEdge);
       }
       if (localGraphEdges.size() == 1) {
         var newEdge =
             (InputEdge) localGraphEdges.get(0).mergeAttributesWithAttributesOf(otherGraphEdge);
-        newGraph = newGraph.mergeEdge(newEdge);
+        newGraph = newGraph.merge(newEdge);
       }
     }
     return newGraph;
   }
 
-  public Graph mergeNodeById(
-      InputNode otherNode
-  ) {
-    var nodeMap = new LinkedMap<>(this.nodeMap);
-    var nodeTypeCounts = new LinkedMap<>(this.nodeTypeCounts);
+  public Graph mergeNodeById(InputNode otherNode) {
+    var newNodeMap = new LinkedMap<>(this.nodeMap);
+    var newNodeTypeCounts = new LinkedMap<>(this.nodeTypeCounts);
 
-    var foundNode = nodeMap.get(otherNode.getId());
+    var foundNode = newNodeMap.get(otherNode.getId());
     InputNode newNode;
     if (foundNode == null) {
       newNode = otherNode;
-      nodeTypeCounts.put(
+      newNodeTypeCounts.put(
           newNode.getType(),
-          nodeTypeCounts.getOrDefault(newNode.getType(), 0L) + 1
+          newNodeTypeCounts.getOrDefault(newNode.getType(), 0L) + 1
       );
     } else {
       newNode = foundNode.mergeOverwrite(otherNode);
     }
-    nodeMap.put(newNode.getId(), newNode);
+    newNodeMap.put(newNode.getId(), newNode);
 
     return new Graph(
-        nodeMap,
+        newNodeMap,
         this.edgeMap,
-        nodeTypeCounts,
+        newNodeTypeCounts,
         this.edgeTypeCounts
     );
   }

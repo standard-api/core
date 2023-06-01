@@ -48,7 +48,7 @@ public class InMemoryGraphRepository implements NodeRepository, EdgeRepository {
 
   @Override
   public void save(InputEdge inputEdge) {
-    this.graph = this.graph.withEdge(inputEdge);
+    this.graph = this.graph.with(inputEdge);
     NodeEdgesMapOperation.upsertEdge(this.nodesEdgesMap, this.toTraversableEdge(inputEdge));
   }
 
@@ -172,7 +172,7 @@ public class InMemoryGraphRepository implements NodeRepository, EdgeRepository {
 
   @Override
   public void save(InputNode node) {
-    this.graph = this.graph.withNode(node);
+    this.graph = this.graph.with(node);
   }
 
   @Override
