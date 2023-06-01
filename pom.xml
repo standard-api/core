@@ -244,22 +244,38 @@
                     </releases>
                 </repository>
             </repositories>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>sonatype</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                    <uniqueVersion>true</uniqueVersion>
+                </snapshotRepository>
+                <repository>
+                    <id>sonatype</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+                    <uniqueVersion>false</uniqueVersion>
+                </repository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>github</id>
+            <repositories>
+                <repository>
+                    <id>github</id>
+                    <name>GitHub Packages Repository</name>
+                    <url>https://maven.pkg.github.com/standard-api/core</url>
+                </repository>
+            </repositories>
+            <distributionManagement>
+                <repository>
+                    <id>github</id>
+                    <name>GitHub Packages Repository</name>
+                    <url>https://maven.pkg.github.com/standard-api/core</url>
+                </repository>
+            </distributionManagement>
         </profile>
     </profiles>
 
-    <!-- deploy and release configuration -->
-    <distributionManagement>
-        <snapshotRepository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <uniqueVersion>true</uniqueVersion>
-        </snapshotRepository>
-        <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-            <uniqueVersion>false</uniqueVersion>
-        </repository>
-    </distributionManagement>
     <scm>
         <connection>scm:git:git://github.com/standard-api/core.git</connection>
         <developerConnection>scm:git:git@github.com:standard-api/core.git</developerConnection>
