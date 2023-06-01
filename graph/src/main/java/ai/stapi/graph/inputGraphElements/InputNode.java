@@ -63,8 +63,9 @@ public class InputNode extends AbstractGraphElement {
     return Objects.hash(this.getType());
   }
 
-  public <T extends Attribute<?>> InputNode addToNode(T attribute) {
-    return (InputNode) this.add(attribute);
+  @Override
+  public InputNode add(Attribute<?> attribute) {
+    return (InputNode) super.add(attribute);
   }
 
   public InputNode mergeOverwrite(InputNode otherNode) {

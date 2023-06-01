@@ -14,7 +14,6 @@ public class Configuration {
         return new InMemoryGraphRepository();
     }
     
-    
     @Bean
     public NodeRepository nodeRepository(
         InMemoryGraphRepository inMemoryGraphRepository

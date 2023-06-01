@@ -165,19 +165,19 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
   @Test
   void itShouldSaveNodeWithVariousAttributes() throws NodeNotFound {
     var expectedNode = new InputNode("Test_node_type");
-    expectedNode = expectedNode.addToNode(
+    expectedNode = expectedNode.add(
         new LeafAttribute<>("test_attribute_name", new StringAttributeValue("testValueA"))
     );
-    expectedNode = expectedNode.addToNode(
+    expectedNode = expectedNode.add(
         new LeafAttribute<>("test_boolean", new BooleanAttributeValue(true))
     );
-    expectedNode = expectedNode.addToNode(
+    expectedNode = expectedNode.add(
         new LeafAttribute<>("test_double", new DecimalAttributeValue(10d))
     );
-    expectedNode = expectedNode.addToNode(
+    expectedNode = expectedNode.add(
         new LeafAttribute<>("test_integer", new IntegerAttributeValue(15))
     );
-    expectedNode = expectedNode.addToNode(
+    expectedNode = expectedNode.add(
         new LeafAttribute<>(
             "test_timestamp",
             new InstantAttributeValue(Timestamp.from(Instant.now())))
@@ -203,11 +203,11 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
     var expectedVersion5 =
         new LeafAttribute<>("test_name", new StringAttributeValue("versionLast"));
 
-    expectedNode = expectedNode.addToNode(expectedVersion1);
-    expectedNode = expectedNode.addToNode(expectedVersion2);
-    expectedNode = expectedNode.addToNode(expectedVersion3);
-    expectedNode = expectedNode.addToNode(expectedVersion4);
-    expectedNode = expectedNode.addToNode(expectedVersion5);
+    expectedNode = expectedNode.add(expectedVersion1);
+    expectedNode = expectedNode.add(expectedVersion2);
+    expectedNode = expectedNode.add(expectedVersion3);
+    expectedNode = expectedNode.add(expectedVersion4);
+    expectedNode = expectedNode.add(expectedVersion5);
 
     getNodeRepository().save(expectedNode);
 
@@ -270,9 +270,9 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
   @Test
   void itShouldProperlyReturnNodeInfo() throws NodeNotFound {
     var nodeTypeA1 = new InputNode("Type_A");
-    nodeTypeA1 = nodeTypeA1.addToNode(
+    nodeTypeA1 = nodeTypeA1.add(
         new LeafAttribute<>("name", new StringAttributeValue("oldName")));
-    nodeTypeA1 = nodeTypeA1.addToNode(
+    nodeTypeA1 = nodeTypeA1.add(
         new LeafAttribute<>("name", new StringAttributeValue("newName")));
     var nodeTypeA2 = new InputNode("Type_A");
     var nodeTypeB1 = new InputNode("Type_B");
@@ -333,10 +333,10 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
   @Test
   void itShouldReplaceNode() {
     var alreadySavedNode = new InputNode("Same");
-    alreadySavedNode = alreadySavedNode.addToNode(
+    alreadySavedNode = alreadySavedNode.add(
         new LeafAttribute<>("name", new StringAttributeValue("name")));
     var replacingNode = new InputNode(alreadySavedNode.getId(), "Same");
-    replacingNode = replacingNode.addToNode(
+    replacingNode = replacingNode.add(
         new LeafAttribute<>("alias", new StringAttributeValue("alias")));
     getNodeRepository().save(alreadySavedNode);
     //When
@@ -350,7 +350,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
   @Test
   void itShouldRemoveNode() {
     var alreadySavedNode = new InputNode("Test_node");
-    alreadySavedNode = alreadySavedNode.addToNode(
+    alreadySavedNode = alreadySavedNode.add(
         new LeafAttribute<>("name", new StringAttributeValue("name")));
 
     getNodeRepository().save(alreadySavedNode);
@@ -366,7 +366,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
   @Test
   void itShouldRemoveNodeForRemoval() {
     var alreadySavedNode = new InputNode("Test_node");
-    alreadySavedNode = alreadySavedNode.addToNode(
+    alreadySavedNode = alreadySavedNode.add(
         new LeafAttribute<>("name", new StringAttributeValue("name")));
 
     var nodeForRemoval = new NodeForRemoval(alreadySavedNode.getId(), alreadySavedNode.getType());
@@ -405,35 +405,35 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
   @Test
   void itShouldSaveNodeWithListAttributeWithMoreVersions() throws NodeNotFound {
     var expectedNode = new InputNode("Test_node_type");
-    expectedNode = expectedNode.addToNode(
+    expectedNode = expectedNode.add(
         new ListAttribute(
             "test_list_attribute_name",
             new StringAttributeValue("testValueA"),
             new StringAttributeValue("testValueB")
         )
     );
-//        expectedNode = expectedNode.addToNode(
+//        expectedNode = expectedNode.add(
 //            new SetAttribute<>(
 //                "test_set_attribute_name",
 //                new StringAttributeValue("testValueA"),
 //                new StringAttributeValue("testValueB")
 //            )
 //        );
-    expectedNode = expectedNode.addToNode(
+    expectedNode = expectedNode.add(
         new ListAttribute(
             "test_list_attribute_name",
             new StringAttributeValue("testValueB"),
             new StringAttributeValue("testValueA")
         )
     );
-//        expectedNode = expectedNode.addToNode(
+//        expectedNode = expectedNode.add(
 //            new SetAttribute<>(
 //                "test_set_attribute_name",
 //                new StringAttributeValue("testValueB"),
 //                new StringAttributeValue("testValueA")
 //            )
 //        );
-    expectedNode = expectedNode.addToNode(
+    expectedNode = expectedNode.add(
         new ListAttribute(
             "test_list_attribute_name",
             new StringAttributeValue("testValueA"),
@@ -441,7 +441,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
             new StringAttributeValue("testValueC")
         )
     );
-//        expectedNode = expectedNode.addToNode(
+//        expectedNode = expectedNode.add(
 //            new SetAttribute<>(
 //                "test_set_attribute_name",
 //                new StringAttributeValue("testValueA"),
@@ -462,7 +462,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
   @Test
   void itShouldSaveAndLoadNodeWithUnionTypeAttribute() throws NodeNotFound {
     var expectedNode = new InputNode("Test_node_type");
-    expectedNode = expectedNode.addToNode(
+    expectedNode = expectedNode.add(
         new ListAttribute(
             "test_union_type_attribute",
             new StringAttributeValue("testValueA"),
@@ -473,7 +473,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
     getNodeRepository().save(expectedNode);
 
     var secondExpectedNode = new InputNode("Test_node_type");
-    secondExpectedNode = secondExpectedNode.addToNode(
+    secondExpectedNode = secondExpectedNode.add(
         new ListAttribute(
             "test_union_type_attribute",
             new IntegerAttributeValue(0),
@@ -484,7 +484,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
     getNodeRepository().save(secondExpectedNode);
 
     var thirdExpectedNode = new InputNode("Test_node_type");
-    thirdExpectedNode = thirdExpectedNode.addToNode(
+    thirdExpectedNode = thirdExpectedNode.add(
         new ListAttribute(
             "test_union_type_attribute",
             new DateAttributeValue(Timestamp.from(Instant.now())),
@@ -546,8 +546,8 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
 
     getNodeRepository().save(
         expectedNode
-            .addToNode(expectedAttribute)
-            .addToNode(expectedListAttribute)
+            .add(expectedAttribute)
+            .add(expectedListAttribute)
     );
 
     var actualNode = getNodeRepository().loadNode(

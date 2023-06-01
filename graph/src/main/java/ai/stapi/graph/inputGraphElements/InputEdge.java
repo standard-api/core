@@ -156,8 +156,9 @@ public class InputEdge extends AbstractGraphElement {
     );
   }
 
-  public <T extends Attribute<?>> InputEdge addToEdge(T attribute) {
-    return (InputEdge) this.add(attribute);
+  @Override
+  public InputEdge add(Attribute<?> attribute) {
+    return (InputEdge) super.add(attribute);
   }
 
   @Override

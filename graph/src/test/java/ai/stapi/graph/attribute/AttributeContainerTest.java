@@ -51,12 +51,15 @@ public abstract class AttributeContainerTest extends UnitTestCase {
     var actualAttributeContainer = attributeContainer.add(attribute);
     //Then
     Assertions.assertTrue(
-        actualAttributeContainer.containsAttribute(expectedAttributeName, expectedAttributeValue));
+        actualAttributeContainer.containsAttribute(expectedAttributeName, expectedAttributeValue)
+    );
     var actualAttribute = actualAttributeContainer.getAttribute(expectedAttributeName);
     Assertions.assertEquals(expectedAttributeName, actualAttribute.getName());
     Assertions.assertEquals(expectedAttributeValue, actualAttribute.getValue());
-    Assertions.assertEquals(expectedAttributeValue,
-        actualAttributeContainer.getAttributeValue(expectedAttributeName));
+    Assertions.assertEquals(
+        expectedAttributeValue,
+        actualAttributeContainer.getAttributeValue(expectedAttributeName)
+    );
   }
 
   @Test

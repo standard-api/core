@@ -6,6 +6,7 @@ import ai.stapi.graph.NodeRepository;
 import ai.stapi.graph.NullNodeLoader;
 import ai.stapi.graph.RepositoryNodeLoader;
 import ai.stapi.graph.attribute.AbstractAttributeContainer;
+import ai.stapi.graph.attribute.Attribute;
 import ai.stapi.graph.inputGraphElements.InputEdge;
 import ai.stapi.graph.inputGraphElements.InputNode;
 import ai.stapi.graph.versionedAttributes.VersionedAttributeGroup;
@@ -86,6 +87,11 @@ public class TraversableEdge extends AbstractAttributeContainer implements Trave
     this.nodeToId = inputNodeToId;
     this.nodeToType = inputNodeToType;
     this.nodeLoader = nodeLoader;
+  }
+
+  @Override
+  public TraversableEdge add(Attribute<?> attribute) {
+    return (TraversableEdge) super.add(attribute);
   }
 
   public UniqueIdentifier getId() {

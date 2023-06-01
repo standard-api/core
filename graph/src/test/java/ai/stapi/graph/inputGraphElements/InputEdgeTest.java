@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
-public class InputEdgeTest extends AttributeContainerTest {
+class InputEdgeTest extends AttributeContainerTest {
 
   @Override
   protected AbstractAttributeContainer getAttributeContainer() {
@@ -27,7 +27,7 @@ public class InputEdgeTest extends AttributeContainerTest {
   }
 
   @Test
-  public void itCanCreateEdge_WithInputNodes() {
+  void itCanCreateEdge_WithInputNodes() {
     //Given
     var expectedEdgeType = "edge_type";
     //When
@@ -47,7 +47,7 @@ public class InputEdgeTest extends AttributeContainerTest {
   }
 
   @Test
-  public void itCanCreateEdgeWithDefaultAttributeMap() {
+  void itCanCreateEdgeWithDefaultAttributeMap() {
     //Given
     var expectedEdgeType = "edge_type";
     var expectedNodeFromId = UniversallyUniqueIdentifier.randomUUID();
@@ -80,7 +80,7 @@ public class InputEdgeTest extends AttributeContainerTest {
 
 
   @Test
-  public void itCannotMergeWithOtherEdgeOfDifferentType() {
+  void itCannotMergeWithOtherEdgeOfDifferentType() {
     //Given
     var edge1 = InputEdgeBuilder.withAny()
         .setEdgeType("edge_type")
@@ -98,7 +98,7 @@ public class InputEdgeTest extends AttributeContainerTest {
   }
 
   @Test
-  public void itCannotMergeWithOtherEdgeOfDifferentIds() {
+  void itCannotMergeWithOtherEdgeOfDifferentIds() {
     //Given
     var edge1 = InputEdgeBuilder.withAny()
         .setEdgeId(UniversallyUniqueIdentifier.randomUUID())
@@ -115,7 +115,7 @@ public class InputEdgeTest extends AttributeContainerTest {
   }
 
   @Test
-  public void itCannotMergeWithOtherEdgeOfDifferentNodeIds() {
+  void itCannotMergeWithOtherEdgeOfDifferentNodeIds() {
     //Given
     var edge1 = InputEdgeBuilder.withAny()
         .setNodeFromId(UniversallyUniqueIdentifier.randomUUID())
@@ -133,7 +133,7 @@ public class InputEdgeTest extends AttributeContainerTest {
   }
 
   @Test
-  public void itCanMergeWithOtherEdge() {
+  void itCanMergeWithOtherEdge() {
     //Given
     var mergedEdge = InputEdgeBuilder.withAny()
         .setVersionedAttributes(

@@ -10,10 +10,10 @@ import ai.stapi.graph.test.base.UnitTestCase;
 import org.approvaltests.Approvals;
 import org.junit.jupiter.api.Test;
 
-public class EdgeRendererTest extends UnitTestCase {
+class EdgeRendererTest extends UnitTestCase {
 
   @Test
-  public void itShouldRenderEdge() {
+  void itShouldRenderEdge() {
     var nodeFrom = new InputNode("statement");
     var nodeTo = new InputNode("research");
     var edge = new InputEdge(UniversallyUniqueIdentifier.fromString(
@@ -22,7 +22,7 @@ public class EdgeRendererTest extends UnitTestCase {
         "is_based_on",
         nodeTo
     );
-    edge = edge.addToEdge(
+    edge = edge.add(
         new LeafAttribute<>("attribute_name", new StringAttributeValue("test_value")));
 
     var inMemoryGraph = new Graph(

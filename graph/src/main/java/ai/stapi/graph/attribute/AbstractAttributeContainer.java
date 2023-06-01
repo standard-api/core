@@ -26,7 +26,7 @@ public abstract class AbstractAttributeContainer implements AttributeContainer {
   }
 
   @Override
-  public <T extends Attribute<?>> AttributeContainer add(T attribute) {
+  public AttributeContainer add(Attribute<?> attribute) {
     var newAttributes = this.versionedAttributes.add(attribute);
     return this.withNewAttributes(newAttributes);
   }

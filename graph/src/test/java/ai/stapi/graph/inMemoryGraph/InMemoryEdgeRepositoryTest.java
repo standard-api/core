@@ -1,6 +1,5 @@
 package ai.stapi.graph.inMemoryGraph;
 
-import ai.stapi.graph.Graph;
 import ai.stapi.graph.NodeIdAndType;
 import ai.stapi.graph.attribute.attributeValue.BooleanAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.DecimalAttributeValue;
@@ -213,22 +212,22 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
         nodeFrom, "test_edge_type",
         nodeTo
     );
-    expectedEdge = expectedEdge.addToEdge(
+    expectedEdge = expectedEdge.add(
         new LeafAttribute<>("test_attribute_name", new StringAttributeValue("testValueA"
         ))
     );
-    expectedEdge = expectedEdge.addToEdge(
+    expectedEdge = expectedEdge.add(
         new LeafAttribute<>("test_boolean", new BooleanAttributeValue(true
         ))
     );
-    expectedEdge = expectedEdge.addToEdge(
+    expectedEdge = expectedEdge.add(
         new LeafAttribute<>("test_double", new DecimalAttributeValue(10d
         ))
     );
-    expectedEdge = expectedEdge.addToEdge(
+    expectedEdge = expectedEdge.add(
         new LeafAttribute<>("test_integer", new IntegerAttributeValue(15))
     );
-    expectedEdge = expectedEdge.addToEdge(
+    expectedEdge = expectedEdge.add(
         new LeafAttribute<>("test_timestamp",
             new InstantAttributeValue(Timestamp.valueOf(
                 new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S")
@@ -394,7 +393,7 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
         "same",
         nodeTo
     );
-    alreadySavedEdge = alreadySavedEdge.addToEdge(
+    alreadySavedEdge = alreadySavedEdge.add(
         new LeafAttribute<>("name", new StringAttributeValue("name")));
     var replacingEdge = new InputEdge(
         alreadySavedEdge.getId(),
@@ -402,7 +401,7 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
         "same",
         nodeTo
     );
-    replacingEdge = replacingEdge.addToEdge(
+    replacingEdge = replacingEdge.add(
         new LeafAttribute<>("alias", new StringAttributeValue("alias")));
     getEdgeRepository().save(alreadySavedEdge);
     //When
@@ -428,7 +427,7 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
         "test_edge",
         nodeTo
     );
-    alreadySavedEdge = alreadySavedEdge.addToEdge(
+    alreadySavedEdge = alreadySavedEdge.add(
         new LeafAttribute<>("name", new StringAttributeValue("name")));
 
     getEdgeRepository().save(alreadySavedEdge);
@@ -455,7 +454,7 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
         "test_edge",
         nodeTo
     );
-    alreadySavedEdge = alreadySavedEdge.addToEdge(
+    alreadySavedEdge = alreadySavedEdge.add(
         new LeafAttribute<>("name", new StringAttributeValue("name")));
     var edgeForRemoval = new EdgeForRemoval(alreadySavedEdge.getId(), alreadySavedEdge.getType());
 

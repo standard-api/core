@@ -108,9 +108,9 @@ class NodeRendererTest extends IntegrationTestCase {
     var anotherTestAttribute =
         new LeafAttribute<>("another_attribute_type", new StringAttributeValue("testValue"));
 
-    testNode = testNode.addToNode(testAttribute);
-    testNode = testNode.addToNode(newTestAttribute);
-    testNode = testNode.addToNode(anotherTestAttribute);
+    testNode = testNode.add(testAttribute);
+    testNode = testNode.add(newTestAttribute);
+    testNode = testNode.add(anotherTestAttribute);
 
     var graph = new Graph(
         testNode,

@@ -385,7 +385,7 @@ class GraphTest extends UnitTestCase {
         "test_edge",
         nodeTo
     );
-    alreadySavedEdge = alreadySavedEdge.addToEdge(
+    alreadySavedEdge = alreadySavedEdge.add(
         new LeafAttribute<>("name", new StringAttributeValue("name")));
     var givenGraph = new Graph(nodeFrom, nodeTo, alreadySavedEdge);
     var edgeForRemoval = new EdgeForRemoval(alreadySavedEdge.getId(), alreadySavedEdge.getType());
@@ -405,7 +405,7 @@ class GraphTest extends UnitTestCase {
   @Test
   void itShouldRemoveNode_AsGraphElementForRemoval() {
     var alreadySavedNode = new InputNode("test_node");
-    alreadySavedNode = alreadySavedNode.addToNode(
+    alreadySavedNode = alreadySavedNode.add(
         new LeafAttribute<>("name", new StringAttributeValue("name")));
 
     var nodeForRemoval = new NodeForRemoval(alreadySavedNode.getId(), alreadySavedNode.getType());
@@ -425,13 +425,13 @@ class GraphTest extends UnitTestCase {
     var firstOriginalNode = new InputNode("original_first_node");
     var secondOriginalNode = new InputNode("original_second_node");
     var firstOriginalEdge = new InputEdge(firstOriginalNode, "original_edge", secondOriginalNode);
-    firstOriginalEdge = firstOriginalEdge.addToEdge(
+    firstOriginalEdge = firstOriginalEdge.add(
         new LeafAttribute<>("original_attribute", new StringAttributeValue("anyValue")));
     originalGraph = originalGraph.withAll(firstOriginalNode, secondOriginalNode, firstOriginalEdge);
 
     var graphToBeMerged = new Graph();
     var edgeToBeMerged = new InputEdge(firstOriginalNode, "original_edge", secondOriginalNode);
-    edgeToBeMerged = edgeToBeMerged.addToEdge(
+    edgeToBeMerged = edgeToBeMerged.add(
         new LeafAttribute<>("merged_attribute", new StringAttributeValue("anyValue")));
     graphToBeMerged =
         graphToBeMerged.withAll(firstOriginalNode, secondOriginalNode, edgeToBeMerged);
@@ -447,16 +447,16 @@ class GraphTest extends UnitTestCase {
     var secondOriginalNode = new InputNode("original_second_node");
     var firstOriginalEdge = new InputEdge(firstOriginalNode, "original_edge", secondOriginalNode);
     var secondOriginalEdge = new InputEdge(firstOriginalNode, "original_edge", secondOriginalNode);
-    firstOriginalEdge = firstOriginalEdge.addToEdge(
+    firstOriginalEdge = firstOriginalEdge.add(
         new LeafAttribute<>("original_attribute", new StringAttributeValue("anyValue")));
-    secondOriginalEdge = secondOriginalEdge.addToEdge(
+    secondOriginalEdge = secondOriginalEdge.add(
         new LeafAttribute<>("second_original_attribute", new StringAttributeValue("anyValue")));
     originalGraph = originalGraph.withAll(firstOriginalNode, secondOriginalNode, firstOriginalEdge,
         secondOriginalEdge);
 
     var graphToBeMerged = new Graph();
     var edgeToBeMerged = new InputEdge(firstOriginalNode, "original_edge", secondOriginalNode);
-    edgeToBeMerged = edgeToBeMerged.addToEdge(
+    edgeToBeMerged = edgeToBeMerged.add(
         new LeafAttribute<>("merged_attribute", new StringAttributeValue("anyValue")));
     graphToBeMerged =
         graphToBeMerged.withAll(firstOriginalNode, secondOriginalNode, edgeToBeMerged);
