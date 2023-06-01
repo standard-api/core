@@ -520,27 +520,6 @@ public abstract class AttributeContainerTest extends UnitTestCase {
       AttributeValue<?> value1,
       AttributeValue<?> value2
   ) {
-//    var otherAttributeValues = List.of(
-//        new Base64BinaryAttributeValue("ZXhhbXBsZVdyb25nVmFsdWU="),
-//        new BooleanAttributeValue(false),
-//        new CanonicalAttributeValue("http://hl7.org/fhir/exampleType.html"),
-//        new CodeAttributeValue("exampleValue"),
-//        new DateAttributeValue(Timestamp.valueOf("2016-05-21 00:00:00")),
-//        new DateTimeAttributeValue(Timestamp.valueOf("2016-05-21 12:53:40")),
-//        new DecimalAttributeValue(5.0d),
-//        new IdAttributeValue("exampleId"),
-//        new InstantAttributeValue(Timestamp.from(Instant.now())),
-//        new IntegerAttributeValue(-5),
-//        new MarkdownAttributeValue("# Heading level 1"),
-//        new OidAttributeValue("1.2.3.4.5.6.7"),
-//        new PositiveIntegerAttributeValue(15),
-//        new StringAttributeValue("exampleValue"),
-//        new TimeAttributeValue(Timestamp.valueOf("2016-05-21 12:53:40")),
-//        new UnsignedIntegerAttributeValue(14),
-//        new UriAttributeValue("http://hl7.org/fhir/exampleType.html"),
-//        new UrlAttributeValue("http://geniolab.io/fhir/exampleType.html"),
-//        new UuidAttributeValue("ff7c0dc2-22da-423d-bf19-cf9d6fd9ddbd")
-//    );
     var attributeContainer = this.getAttributeContainer();
     attributeContainer = attributeContainer.add(
         new LeafAttribute<>(

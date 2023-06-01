@@ -6,6 +6,7 @@ import ai.stapi.graph.exceptions.EdgeNotFound;
 import ai.stapi.graph.exceptions.MoreThanOneNodeOfTypeFoundException;
 import ai.stapi.graph.exceptions.NodeNotFound;
 import ai.stapi.graph.exceptions.NodeOfTypeNotFoundException;
+import ai.stapi.graph.exceptions.UnableToReplaceNode;
 import ai.stapi.graph.graphElementForRemoval.EdgeForRemoval;
 import ai.stapi.graph.graphElementForRemoval.NodeForRemoval;
 import ai.stapi.graph.inMemoryGraph.DeduplicateOptions;
@@ -305,75 +306,49 @@ class GraphTest extends UnitTestCase {
     graphG1 = graphG1.merge(graphG2);
     this.thenGraphApproved(graphG1);
   }
-  
-//    
-//    @Test
-//    void itShouldNotAllowToReplaceNodeOfDifferentType()
-//    {
-//        var nodeA = new InputNode("type");
-//        nodeA = nodeA.addIdentificator(new AttributeNodeIdentificator(
-//            nodeA,
-//            "identifying_attribute"
-//        ));
-//
-//        var nodeB = new InputNode("different_type");
-//        nodeB = nodeB.addIdentificator(new AttributeNodeIdentificator(
-//            nodeB,
-//            "identifying_attribute"
-//        ));
-//
-//        nodeA = (InputNode) nodeA.add(new LeafAttribute<>("A_attribute", new StringAttributeValue("A_value")));
-//        nodeB = (InputNode) nodeB.add(new LeafAttribute<>("B_attribute", new StringAttributeValue("B_value")));
-//
-//        var graph = new Graph(
-//            nodeA
-//        );
-//
-//        InputNode finalNodeA = nodeA;
-//        InputNode finalNodeB = nodeB;
-//        Executable executable = () -> graph.replaceNodeAndKeepEdges(
-//            finalNodeA.getId(),
-//            finalNodeB
-//        );
-//        Assertions.assertThrows(UnableToReplaceNode.class, executable);
-//    }
-//    
-//    @Test
-//    void itShouldReplaceNodes()
-//    {
-//        var nodeA = new InputNode("type");
-//        nodeA = nodeA.addIdentificator(new AttributeNodeIdentificator(
-//            nodeA,
-//            "identifying_attribute"
-//        ));
-//
-//        var nodeB = new InputNode("type");
-//        nodeB = nodeB.addIdentificator(new AttributeNodeIdentificator(
-//            nodeB,
-//            "identifying_attribute"
-//        ));
-//
-//        var nodeC = new InputNode("type");
-//        nodeC = nodeC.addIdentificator(new AttributeNodeIdentificator(
-//            nodeC,
-//            "identifying_attribute"
-//        ));
-//
-//        nodeA = (InputNode) nodeA.add(new LeafAttribute<>("A_attribute", new StringAttributeValue("A_value")));
-//        nodeB = (InputNode) nodeB.add(new LeafAttribute<>("B_attribute", new StringAttributeValue("B_value")));
-//        nodeC = (InputNode) nodeC.add(new LeafAttribute<>("irrelevant_attribute", new StringAttributeValue("irrelevant_value")));
-//
-//        var graph = new Graph(
-//            nodeA,
-//            nodeC
-//        );
-//
-//        var actualGraph = graph.replaceNodeAndKeepEdges(nodeA.getId(), nodeB);
-//
-//        this.thenGraphApproved(
-//            actualGraph
-//        );
-//    }
+
+
+  @Test
+  void itShouldReplaceNodes() {
+    var nodeId = UniversallyUniqueIdentifier.randomUUID();
+    var nodeA = new InputNode(nodeId, "SameType");
+    var nodeB = new InputNode(nodeId, "SameType");
+
+    nodeA = nodeA.add(
+        new LeafAttribute<>("A_attribute", new StringAttributeValue("A_value"))
+    );
+    nodeB = nodeB.add(
+        new LeafAttribute<>("B_attribute", new StringAttributeValue("B_value"))
+    );
+
+    var graph = new Graph(nodeA);
+
+    var actualGraph = graph.replace(nodeB);
+    this.thenGraphApproved(actualGraph);
+  }
+
+  @Test
+  void itShouldAllowToReplaceNodeOfDifferentType() {
+    var nodeId = UniversallyUniqueIdentifier.randomUUID();
+    var nodeA = new InputNode(
+        nodeId,
+        "type"
+    );
+
+    var nodeB = new InputNode(
+        nodeId,
+        "different_type"
+    );
+
+    nodeA = nodeA.add(new LeafAttribute<>("A_attribute", new StringAttributeValue("A_value")));
+    nodeB = nodeB.add(new LeafAttribute<>("B_attribute", new StringAttributeValue("B_value")));
+
+    var graph = new Graph(nodeA);
+
+    var finalNodeB = nodeB;
+    var actualGraph = graph.replace(finalNodeB);
+    this.thenGraphApproved(actualGraph);
+  }
 
   @Test
   void itShouldRemoveEdge_AsGraphElementForRemoval() {
