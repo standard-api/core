@@ -1,0 +1,8 @@
+nodes:
+	node_type: different_type
+	node_hash: ED94A
+	node_edges:
+	attributes:
+		B_attribute -> B_value
+
+edges:

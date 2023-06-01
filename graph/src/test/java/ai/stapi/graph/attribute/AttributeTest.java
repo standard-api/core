@@ -17,10 +17,10 @@ import java.util.List;
 import java.util.Set;
 import org.junit.jupiter.api.Test;
 
-public class AttributeTest extends UnitTestCase {
+class AttributeTest extends UnitTestCase {
 
   @Test
-  public void itCanCreateDoubleAttribute() {
+  void itCanCreateDoubleAttribute() {
     //Given
     var expectedName = "name";
     var expectedValue = 5.0d;
@@ -35,7 +35,7 @@ public class AttributeTest extends UnitTestCase {
   }
 
   @Test
-  public void itCanCreateStringAttribute() {
+  void itCanCreateStringAttribute() {
     //Given
     var expectedName = "name";
     var expectedValue = "value";
@@ -50,7 +50,7 @@ public class AttributeTest extends UnitTestCase {
   }
 
   @Test
-  public void itCanCreateIntegerAttribute() {
+  void itCanCreateIntegerAttribute() {
     //Given
     var expectedName = "name";
     var expectedValue = 1;
@@ -65,7 +65,7 @@ public class AttributeTest extends UnitTestCase {
   }
 
   @Test
-  public void itCanCreateBooleanAttribute() {
+  void itCanCreateBooleanAttribute() {
     //Given
     var expectedName = "name";
     var expectedValue = false;
@@ -80,7 +80,7 @@ public class AttributeTest extends UnitTestCase {
   }
 
   @Test
-  public void itCanCreateDateTimeAttribute() {
+  void itCanCreateDateTimeAttribute() {
     //Given
     var expectedName = "name";
     var expectedValue = new Timestamp(Timestamp.valueOf(LocalDateTime.now()).getTime());
@@ -95,7 +95,7 @@ public class AttributeTest extends UnitTestCase {
   }
 
   @Test
-  public void itCanCreateListAttribute() {
+  void itCanCreateListAttribute() {
     //Given
     var expectedName = "name";
     //When
@@ -112,7 +112,7 @@ public class AttributeTest extends UnitTestCase {
   }
 
   @Test
-  public void itCanCreateSetAttribute() {
+  void itCanCreateSetAttribute() {
     //Given
     var expectedName = "name";
     //When

@@ -11,8 +11,8 @@ import ai.stapi.graph.attribute.attributeValue.IntegerAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
 import ai.stapi.graph.exceptions.GraphException;
 import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
-import ai.stapi.graph.inputGraphElements.InputEdge;
-import ai.stapi.graph.inputGraphElements.InputNode;
+import ai.stapi.graph.graphelements.Edge;
+import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.versionedAttributes.ImmutableVersionedAttributeGroup;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
 import org.junit.jupiter.api.Assertions;
@@ -78,16 +78,16 @@ public class TraversableNodeTest extends AttributeContainerTest {
   public void itCanGetEdges() throws GraphException {
     //Given
 
-    var nodeFrom1 = new InputNode("nodeFrom1");
-    var nodeFrom2 = new InputNode("nodeFrom2");
-    var nodeTo = new InputNode("nodeTo");
+    var nodeFrom1 = new Node("nodeFrom1");
+    var nodeFrom2 = new Node("nodeFrom2");
+    var nodeTo = new Node("nodeTo");
 
-    var firstTypeEdge = new InputEdge(
+    var firstTypeEdge = new Edge(
         nodeFrom1,
         "firstType",
         nodeTo
     );
-    var otherTypeEdge = new InputEdge(
+    var otherTypeEdge = new Edge(
         nodeFrom2,
         "otherType",
         nodeTo
@@ -136,21 +136,21 @@ public class TraversableNodeTest extends AttributeContainerTest {
     var expectedNodeFromType2 = "nodeFrom2";
     var expectedNodeToType = "nodeTo";
 
-    var nodeFrom1 = new InputNode(expectedNodeFromType1);
-    var nodeFrom2 = new InputNode(expectedNodeFromType2);
-    var nodeTo = new InputNode(expectedNodeToType);
+    var nodeFrom1 = new Node(expectedNodeFromType1);
+    var nodeFrom2 = new Node(expectedNodeFromType2);
+    var nodeTo = new Node(expectedNodeToType);
 
-    var edge1 = new InputEdge(
+    var edge1 = new Edge(
         nodeFrom1,
         expectedEdgeType,
         nodeTo
     );
-    var edge2 = new InputEdge(
+    var edge2 = new Edge(
         nodeFrom2,
         expectedEdgeType,
         nodeTo
     );
-    var otherTypeEdge = new InputEdge(
+    var otherTypeEdge = new Edge(
         nodeFrom2,
         "otherType",
         nodeTo

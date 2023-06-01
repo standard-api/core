@@ -1,12 +1,12 @@
 package ai.stapi.graph.inMemoryGraph;
 
-import ai.stapi.graph.inputGraphElements.InputEdge;
+import ai.stapi.graph.graphelements.Edge;
 import ai.stapi.graph.versionedAttributes.ImmutableVersionedAttributeGroup;
 import ai.stapi.graph.versionedAttributes.VersionedAttributeGroup;
 import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
 
-public class InputEdgeBuilder {
+public class EdgeBuilder {
 
   private UniqueIdentifier edgeId = UniversallyUniqueIdentifier.randomUUID();
   private String edgeType;
@@ -16,8 +16,8 @@ public class InputEdgeBuilder {
   private String nodeToType;
   private VersionedAttributeGroup versionedAttributes;
 
-  public static InputEdgeBuilder withAny() {
-    return new InputEdgeBuilder()
+  public static EdgeBuilder withAny() {
+    return new EdgeBuilder()
         .setEdgeId(UniversallyUniqueIdentifier.randomUUID())
         .setEdgeType("any_edge_type")
         .setNodeFromId(UniversallyUniqueIdentifier.randomUUID())
@@ -27,43 +27,43 @@ public class InputEdgeBuilder {
         .setVersionedAttributes(new ImmutableVersionedAttributeGroup());
   }
 
-  public InputEdgeBuilder setNodeFromId(UniqueIdentifier nodeFromId) {
+  public EdgeBuilder setNodeFromId(UniqueIdentifier nodeFromId) {
     this.nodeFromId = nodeFromId;
     return this;
   }
 
-  public InputEdgeBuilder setEdgeType(String edgeType) {
+  public EdgeBuilder setEdgeType(String edgeType) {
     this.edgeType = edgeType;
     return this;
   }
 
-  public InputEdgeBuilder setNodeToId(UniqueIdentifier nodeToId) {
+  public EdgeBuilder setNodeToId(UniqueIdentifier nodeToId) {
     this.nodeToId = nodeToId;
     return this;
   }
 
-  public InputEdgeBuilder setNodeFromType(String nodeFromType) {
+  public EdgeBuilder setNodeFromType(String nodeFromType) {
     this.nodeFromType = nodeFromType;
     return this;
   }
 
-  public InputEdgeBuilder setNodeToType(String nodeToType) {
+  public EdgeBuilder setNodeToType(String nodeToType) {
     this.nodeToType = nodeToType;
     return this;
   }
 
-  public InputEdgeBuilder setEdgeId(UniqueIdentifier edgeId) {
+  public EdgeBuilder setEdgeId(UniqueIdentifier edgeId) {
     this.edgeId = edgeId;
     return this;
   }
 
-  public InputEdgeBuilder setVersionedAttributes(VersionedAttributeGroup versionedAttributes) {
+  public EdgeBuilder setVersionedAttributes(VersionedAttributeGroup versionedAttributes) {
     this.versionedAttributes = versionedAttributes;
     return this;
   }
 
-  public InputEdge createInputEdge() {
-    return new InputEdge(
+  public Edge create() {
+    return new Edge(
         edgeId,
         edgeType,
         nodeFromId,

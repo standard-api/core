@@ -1,4 +1,4 @@
-package ai.stapi.graph.inputGraphElements;
+package ai.stapi.graph.graphelements;
 
 import ai.stapi.graph.AttributeContainer;
 import ai.stapi.graph.attribute.Attribute;
@@ -9,14 +9,14 @@ import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
 import java.util.Objects;
 
-public class InputNode extends AbstractGraphElement {
+public class Node extends AbstractGraphElement {
 
 
-  public InputNode(UniqueIdentifier id, String nodeType) {
+  public Node(UniqueIdentifier id, String nodeType) {
     super(id, nodeType);
   }
 
-  public InputNode(
+  public Node(
       UniqueIdentifier id,
       String type,
       VersionedAttributeGroup versionedAttributes
@@ -24,29 +24,29 @@ public class InputNode extends AbstractGraphElement {
     super(id, type, versionedAttributes);
   }
 
-  public InputNode(UniqueIdentifier id, String nodeType, Attribute<?>... attributes) {
+  public Node(UniqueIdentifier id, String nodeType, Attribute<?>... attributes) {
     super(id, nodeType, attributes);
   }
 
-  public InputNode(String nodeType) {
+  public Node(String nodeType) {
     this(UniversallyUniqueIdentifier.randomUUID(), nodeType);
   }
 
-  public InputNode(TraversableNode node) {
+  public Node(TraversableNode node) {
     this(node.getId(), node.getType(), node.getVersionedAttributes());
   }
 
-  public InputNode(InputNode node) {
+  public Node(Node node) {
     this(node.getId(), node.getType(), node.getVersionedAttributes());
   }
 
-  public InputNode(String nodeType, Attribute<?>... attributes) {
+  public Node(String nodeType, Attribute<?>... attributes) {
     this(UniversallyUniqueIdentifier.randomUUID(), nodeType, attributes);
   }
 
   @Override
   protected AttributeContainer withNewAttributes(VersionedAttributeGroup newAttributes) {
-    return new InputNode(
+    return new Node(
         this.getId(),
         this.getType(),
         newAttributes
@@ -63,11 +63,12 @@ public class InputNode extends AbstractGraphElement {
     return Objects.hash(this.getType());
   }
 
-  public <T extends Attribute<?>> InputNode addToNode(T attribute) {
-    return (InputNode) this.add(attribute);
+  @Override
+  public Node add(Attribute<?> attribute) {
+    return (Node) super.add(attribute);
   }
 
-  public InputNode mergeOverwrite(InputNode otherNode) {
+  public Node mergeOverwrite(Node otherNode) {
     if (!this.getId().equals(otherNode.getId())) {
       throw GraphNodesCannotBeMerged.becauseTheyHaveDifferentIds();
     }
@@ -77,7 +78,7 @@ public class InputNode extends AbstractGraphElement {
           otherNode.getType()
       );
     }
-    return (InputNode) this.mergeAttributesWithAttributesOf(otherNode);
+    return (Node) this.mergeAttributesWithAttributesOf(otherNode);
   }
 
 }

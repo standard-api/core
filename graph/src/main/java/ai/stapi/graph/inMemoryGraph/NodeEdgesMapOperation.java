@@ -1,6 +1,6 @@
 package ai.stapi.graph.inMemoryGraph;
 
-import ai.stapi.graph.inputGraphElements.InputEdge;
+import ai.stapi.graph.graphelements.Edge;
 import ai.stapi.graph.traversableGraphElements.TraversableEdge;
 import ai.stapi.identity.UniqueIdentifier;
 import java.util.concurrent.ConcurrentHashMap;
@@ -42,7 +42,7 @@ public class NodeEdgesMapOperation {
 
   public static ConcurrentHashMap<UniqueIdentifier, ConcurrentSkipListSet<TraversableEdge>> removeEdge(
       ConcurrentHashMap<UniqueIdentifier, ConcurrentSkipListSet<TraversableEdge>> map,
-      InputEdge edge
+      Edge edge
   ) {
     map = NodeEdgesMapOperation.removeEdgeFromNodeInRelationMap(map, edge.getId(),
         edge.getNodeFromId());

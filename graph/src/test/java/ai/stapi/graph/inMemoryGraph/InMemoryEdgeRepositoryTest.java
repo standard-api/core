@@ -1,6 +1,5 @@
 package ai.stapi.graph.inMemoryGraph;
 
-import ai.stapi.graph.Graph;
 import ai.stapi.graph.NodeIdAndType;
 import ai.stapi.graph.attribute.attributeValue.BooleanAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.DecimalAttributeValue;
@@ -15,8 +14,8 @@ import ai.stapi.graph.EdgeRepository;
 import ai.stapi.graph.NodeRepository;
 import ai.stapi.graph.attribute.LeafAttribute;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
-import ai.stapi.graph.inputGraphElements.InputEdge;
-import ai.stapi.graph.inputGraphElements.InputNode;
+import ai.stapi.graph.graphelements.Edge;
+import ai.stapi.graph.graphelements.Node;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -45,61 +44,6 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
   }
 
   @Test
-  void itCanCreateWithEdges() {
-    var nodeA = new InputNode("nodeA");
-    var nodeB = new InputNode("nodeB");
-    var nodeC = new InputNode("nodeC");
-    var nodeD = new InputNode("nodeD");
-    var actualGraph = new Graph(
-        nodeA,
-        nodeB,
-        nodeC,
-        nodeD,
-        new InputEdge(
-            nodeA,
-            "edgeA",
-            nodeB
-        ),
-        new InputEdge(
-            nodeC,
-            "edgeB",
-            nodeD
-        )
-    );
-  }
-
-  @Test
-  void itCanLoadEdgesOfType() {
-    var nodeA = new InputNode("nodeA");
-    var nodeB = new InputNode("nodeB");
-    var nodeC = new InputNode("nodeC");
-    var nodeD = new InputNode("nodeD");
-    var actualGraph = new Graph(
-        nodeA,
-        nodeB,
-        nodeC,
-        nodeD,
-        new InputEdge(
-            nodeA,
-            "edgeA",
-            nodeB
-        ),
-        new InputEdge(
-            nodeC,
-            "edgeB",
-            nodeD
-        ),
-        new InputEdge(
-            nodeC,
-            "edgeA",
-            nodeD
-        )
-    );
-    var edgesOfType = actualGraph.loadAllEdges("edgeA");
-    Assertions.assertEquals(2, edgesOfType.size());
-  }
-
-  @Test
   void itShouldNotLoadEdge_WhenEmpty() {
     Executable runnable =
         () -> getEdgeRepository().loadEdge(UniversallyUniqueIdentifier.randomUUID(), "irrelevant");
@@ -109,12 +53,12 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldNotSaveEdge_WhenNodeFromDoesNotExist() {
-    var existingNodeTo = new InputNode("Test_node_type");
+    var existingNodeTo = new Node("Test_node_type");
     getNodeRepository().save(existingNodeTo);
-    var expectedEdge = new InputEdge(
+    var expectedEdge = new Edge(
         existingNodeTo,
         "test_edge_type",
-        new InputNode("Test_node_type")
+        new Node("Test_node_type")
     );
 
     Executable runnable = () -> getEdgeRepository().save(expectedEdge);
@@ -123,10 +67,10 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldNotSaveEdge_WhenNodeToDoesNotExist() {
-    var existingNodeFrom = new InputNode("Test_node_type");
+    var existingNodeFrom = new Node("Test_node_type");
     getNodeRepository().save(existingNodeFrom);
-    var expectedEdge = new InputEdge(
-        new InputNode("Test_node_type"),
+    var expectedEdge = new Edge(
+        new Node("Test_node_type"),
         "test_edge_type",
         existingNodeFrom
     );
@@ -137,12 +81,12 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldSaveEdgeWithoutAttributes() throws OneOrBothNodesOnEdgeDoesNotExist {
-    var nodeFrom = new InputNode("Test_node_type");
-    var nodeTo = new InputNode("Test_node_type2");
+    var nodeFrom = new Node("Test_node_type");
+    var nodeTo = new Node("Test_node_type2");
     getNodeRepository().save(nodeFrom);
     getNodeRepository().save(nodeTo);
 
-    var expectedEdge = new InputEdge(
+    var expectedEdge = new Edge(
         nodeFrom,
         "test_edge_type",
         nodeTo
@@ -174,11 +118,11 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
   @Test
   void itShouldTellWhetherExists_ByIdAndType_WhenEdgeExistsWithSameIdButDifferentType()
       throws EdgeNotFound {
-    var nodeFrom = new InputNode("Node_from");
-    var nodeTo = new InputNode("Node_to");
+    var nodeFrom = new Node("Node_from");
+    var nodeTo = new Node("Node_to");
     getNodeRepository().save(nodeFrom);
     getNodeRepository().save(nodeTo);
-    var alreadySavedEdge = new InputEdge(
+    var alreadySavedEdge = new Edge(
         nodeFrom,
         "some_type",
         nodeTo
@@ -195,11 +139,11 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
   void itShouldTellWhetherExists_ByIdAndType_WhenEdgeExistsWithSameTypeButDifferentId()
       throws EdgeNotFound {
     var sameType = "same_type";
-    var nodeFrom = new InputNode("Node_from");
-    var nodeTo = new InputNode("Node_to");
+    var nodeFrom = new Node("Node_from");
+    var nodeTo = new Node("Node_to");
     getNodeRepository().save(nodeFrom);
     getNodeRepository().save(nodeTo);
-    var alreadySavedEdge = new InputEdge(
+    var alreadySavedEdge = new Edge(
         nodeFrom,
         sameType,
         nodeTo
@@ -215,11 +159,11 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
   @Test
   void itShouldTellWhetherExists_ByIdAndType_WhenEdgeExists() throws EdgeNotFound {
     var sameType = "same_type";
-    var nodeFrom = new InputNode("Node_from");
-    var nodeTo = new InputNode("Node_to");
+    var nodeFrom = new Node("Node_from");
+    var nodeTo = new Node("Node_to");
     getNodeRepository().save(nodeFrom);
     getNodeRepository().save(nodeTo);
-    var alreadySavedEdge = new InputEdge(
+    var alreadySavedEdge = new Edge(
         nodeFrom,
         sameType,
         nodeTo
@@ -234,19 +178,19 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldNotSaveEdgeWhenEdgeWithSameIdAlreadySaved() {
-    var nodeFrom = new InputNode("Irrelevant_type");
-    var nodeTo = new InputNode("Irrelevant_type");
+    var nodeFrom = new Node("Irrelevant_type");
+    var nodeTo = new Node("Irrelevant_type");
     getNodeRepository().save(nodeFrom);
     getNodeRepository().save(nodeTo);
 
-    var alreadySavedNode = new InputEdge(
+    var alreadySavedNode = new Edge(
         nodeFrom,
         "irrelevant_type",
         nodeTo
     );
     getEdgeRepository().save(alreadySavedNode);
 
-    var newEdge = new InputEdge(
+    var newEdge = new Edge(
         alreadySavedNode.getId(),
         nodeFrom,
         "irrelevant_type",
@@ -259,31 +203,31 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldSaveEdgeWithVariousAttributes() throws OneOrBothNodesOnEdgeDoesNotExist {
-    var nodeFrom = new InputNode("Test_node_type");
-    var nodeTo = new InputNode("Test_node_type2");
+    var nodeFrom = new Node("Test_node_type");
+    var nodeTo = new Node("Test_node_type2");
     getNodeRepository().save(nodeFrom);
     getNodeRepository().save(nodeTo);
 
-    var expectedEdge = new InputEdge(
+    var expectedEdge = new Edge(
         nodeFrom, "test_edge_type",
         nodeTo
     );
-    expectedEdge = expectedEdge.addToEdge(
+    expectedEdge = expectedEdge.add(
         new LeafAttribute<>("test_attribute_name", new StringAttributeValue("testValueA"
         ))
     );
-    expectedEdge = expectedEdge.addToEdge(
+    expectedEdge = expectedEdge.add(
         new LeafAttribute<>("test_boolean", new BooleanAttributeValue(true
         ))
     );
-    expectedEdge = expectedEdge.addToEdge(
+    expectedEdge = expectedEdge.add(
         new LeafAttribute<>("test_double", new DecimalAttributeValue(10d
         ))
     );
-    expectedEdge = expectedEdge.addToEdge(
+    expectedEdge = expectedEdge.add(
         new LeafAttribute<>("test_integer", new IntegerAttributeValue(15))
     );
-    expectedEdge = expectedEdge.addToEdge(
+    expectedEdge = expectedEdge.add(
         new LeafAttribute<>("test_timestamp",
             new InstantAttributeValue(Timestamp.valueOf(
                 new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S")
@@ -302,20 +246,20 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldSaveEdgeTypeToEdgeTypesCollectionNTimes() throws EdgeNotFound {
-    var node1 = new InputNode("Irrelevant");
-    var node2 = new InputNode("Irrelevant");
+    var node1 = new Node("Irrelevant");
+    var node2 = new Node("Irrelevant");
 
-    var edgeTypeA1 = new InputEdge(
+    var edgeTypeA1 = new Edge(
         node1,
         "type_A",
         node2
     );
-    var edgeTypeA2 = new InputEdge(
+    var edgeTypeA2 = new Edge(
         node2,
         "type_A",
         node1
     );
-    var edgeTypeB1 = new InputEdge(
+    var edgeTypeB1 = new Edge(
         node1,
         "type_B",
         node2
@@ -353,24 +297,24 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldFindEdgesByNode() throws OneOrBothNodesOnEdgeDoesNotExist {
-    var examinationNode = new InputNode("Examination");
-    var atlasNode = new InputNode("Lab_atlas");
-    var rangeNode = new InputNode("Examination_range");
+    var examinationNode = new Node("Examination");
+    var atlasNode = new Node("Lab_atlas");
+    var rangeNode = new Node("Examination_range");
     getNodeRepository().save(examinationNode);
     getNodeRepository().save(atlasNode);
     getNodeRepository().save(rangeNode);
 
-    var foundEdge1 = new InputEdge(
+    var foundEdge1 = new Edge(
         examinationNode,
         "has",
         rangeNode
     );
-    var foundEdge2 = new InputEdge(
+    var foundEdge2 = new Edge(
         atlasNode,
         "contains",
         examinationNode
     );
-    var notFoundEdge3 = new InputEdge(
+    var notFoundEdge3 = new Edge(
         rangeNode,
         "comes_from",
         atlasNode
@@ -407,12 +351,12 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldFindEdgeByTypeAndNodes() {
-    var nodeFrom = new InputNode("Test_node_type");
-    var nodeTo = new InputNode("Test_node_type2");
+    var nodeFrom = new Node("Test_node_type");
+    var nodeTo = new Node("Test_node_type2");
     getNodeRepository().save(nodeFrom);
     getNodeRepository().save(nodeTo);
 
-    var notMatchedEdge = new InputEdge(
+    var notMatchedEdge = new Edge(
         nodeFrom,
         "not_matched_edge",
         nodeTo
@@ -420,7 +364,7 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
 
     getEdgeRepository().save(notMatchedEdge);
 
-    var matchedEdge = new InputEdge(
+    var matchedEdge = new Edge(
         nodeFrom,
         "matched_edge",
         nodeTo
@@ -439,25 +383,25 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldReplaceEdge() {
-    var nodeFrom = new InputNode("Node_from");
-    var nodeTo = new InputNode("Node_to");
+    var nodeFrom = new Node("Node_from");
+    var nodeTo = new Node("Node_to");
     getNodeRepository().save(nodeFrom);
     getNodeRepository().save(nodeTo);
 
-    var alreadySavedEdge = new InputEdge(
+    var alreadySavedEdge = new Edge(
         nodeFrom,
         "same",
         nodeTo
     );
-    alreadySavedEdge = alreadySavedEdge.addToEdge(
+    alreadySavedEdge = alreadySavedEdge.add(
         new LeafAttribute<>("name", new StringAttributeValue("name")));
-    var replacingEdge = new InputEdge(
+    var replacingEdge = new Edge(
         alreadySavedEdge.getId(),
         nodeFrom,
         "same",
         nodeTo
     );
-    replacingEdge = replacingEdge.addToEdge(
+    replacingEdge = replacingEdge.add(
         new LeafAttribute<>("alias", new StringAttributeValue("alias")));
     getEdgeRepository().save(alreadySavedEdge);
     //When
@@ -473,24 +417,24 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldRemoveEdge() {
-    var nodeFrom = new InputNode("Node_from");
-    var nodeTo = new InputNode("Node_to");
+    var nodeFrom = new Node("Node_from");
+    var nodeTo = new Node("Node_to");
     getNodeRepository().save(nodeFrom);
     getNodeRepository().save(nodeTo);
 
-    var alreadySavedEdge = new InputEdge(
+    var alreadySavedEdge = new Edge(
         nodeFrom,
         "test_edge",
         nodeTo
     );
-    alreadySavedEdge = alreadySavedEdge.addToEdge(
+    alreadySavedEdge = alreadySavedEdge.add(
         new LeafAttribute<>("name", new StringAttributeValue("name")));
 
     getEdgeRepository().save(alreadySavedEdge);
     //When
     getEdgeRepository().removeEdge(alreadySavedEdge.getId(), alreadySavedEdge.getType());
     //Then
-    InputEdge finalAlreadySavedEdge = alreadySavedEdge;
+    Edge finalAlreadySavedEdge = alreadySavedEdge;
     Executable executable = () -> getEdgeRepository().loadEdge(
         finalAlreadySavedEdge.getId(),
         finalAlreadySavedEdge.getType()
@@ -500,17 +444,17 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
 
   @Test
   void itShouldRemoveEdgeForRemoval() {
-    var nodeFrom = new InputNode("Node_from");
-    var nodeTo = new InputNode("Node_to");
+    var nodeFrom = new Node("Node_from");
+    var nodeTo = new Node("Node_to");
     getNodeRepository().save(nodeFrom);
     getNodeRepository().save(nodeTo);
 
-    var alreadySavedEdge = new InputEdge(
+    var alreadySavedEdge = new Edge(
         nodeFrom,
         "test_edge",
         nodeTo
     );
-    alreadySavedEdge = alreadySavedEdge.addToEdge(
+    alreadySavedEdge = alreadySavedEdge.add(
         new LeafAttribute<>("name", new StringAttributeValue("name")));
     var edgeForRemoval = new EdgeForRemoval(alreadySavedEdge.getId(), alreadySavedEdge.getType());
 
@@ -518,62 +462,11 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
     //When
     getEdgeRepository().removeEdge(edgeForRemoval);
     //Then
-    InputEdge finalAlreadySavedEdge = alreadySavedEdge;
+    Edge finalAlreadySavedEdge = alreadySavedEdge;
     Executable executable = () -> getEdgeRepository().loadEdge(
         finalAlreadySavedEdge.getId(),
         finalAlreadySavedEdge.getType()
     );
     Assertions.assertThrows(EdgeNotFound.class, executable);
-  }
-
-  @Test
-  void itCanMergeOverwriteWithOtherGraph_WithEdges() {
-    var mergedNodeFrom = new InputNode("merged_node_from_type");
-    var mergedNodeTo = new InputNode("merged_node_to_type");
-
-    var mergedEdge = new InputEdge(
-        UniversallyUniqueIdentifier.randomUUID(),
-        mergedNodeFrom,
-        "same_type",
-        mergedNodeTo,
-        new LeafAttribute<>("original", new StringAttributeValue("original value")),
-        new LeafAttribute<>("updated", new StringAttributeValue("old value"))
-    );
-
-    var otherEdge = new InputEdge(
-        mergedEdge.getId(),
-        mergedNodeFrom,
-        "same_type",
-        mergedNodeTo,
-        new LeafAttribute<>("original", new StringAttributeValue("original value")),
-        new LeafAttribute<>("updated", new StringAttributeValue("updated value")),
-        new LeafAttribute<>("new", new StringAttributeValue("new value"))
-    );
-
-    var alreadySavedNodeFrom = new InputNode("already_saved_from");
-    var alreadySavedNodeTo = new InputNode("already_saved_to");
-
-    var graphG1 = new Graph(
-        mergedNodeFrom,
-        mergedNodeTo,
-        mergedEdge,
-        alreadySavedNodeFrom,
-        alreadySavedNodeTo,
-        new InputEdge(alreadySavedNodeFrom, "already_saved_edge", alreadySavedNodeTo)
-    );
-
-    var newSavedNodeFrom = new InputNode("new_saved_from");
-    var newSavedNodeTo = new InputNode("new_saved_to");
-    var graphG2 = new Graph(
-        mergedNodeFrom,
-        mergedNodeTo,
-        otherEdge,
-        newSavedNodeFrom,
-        newSavedNodeTo,
-        new InputEdge(newSavedNodeFrom, "new_edge", newSavedNodeTo)
-    );
-
-    graphG1 = graphG1.merge(graphG2);
-    this.thenGraphApproved(graphG1);
   }
 }

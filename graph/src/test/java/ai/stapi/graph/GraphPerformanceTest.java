@@ -1,20 +1,19 @@
 package ai.stapi.graph;
 
-import ai.stapi.graph.Graph;
-import ai.stapi.graph.inputGraphElements.InputEdge;
-import ai.stapi.graph.inputGraphElements.InputNode;
+import ai.stapi.graph.graphelements.Edge;
+import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.test.base.UnitTestCase;
 import java.util.ArrayList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.util.StopWatch;
 
-public class GraphPerformanceTest extends UnitTestCase {
+class GraphPerformanceTest extends UnitTestCase {
 
   private StopWatch stopWatch = new StopWatch();
 
   @Test
-  public void itCanRenderGraphFast() {
+  void itCanRenderGraphFast() {
     var maximumSeconds = 15;
     var graph = this.getGraphWithMaximumEdges(10);
 
@@ -28,15 +27,15 @@ public class GraphPerformanceTest extends UnitTestCase {
 
   private Graph getGraphWithMaximumEdges(int nodeCount) {
     var graph = new Graph();
-    var addedNodes = new ArrayList<InputNode>();
+    var addedNodes = new ArrayList<Node>();
 
     for (int i = 0; i < nodeCount; i++) {
-      var newNode = new InputNode("node");
-      graph = graph.withNode(newNode);
+      var newNode = new Node("node");
+      graph = graph.with(newNode);
       addedNodes.add(newNode);
 
-      for (InputNode addedNode : addedNodes) {
-        graph = graph.withEdge(new InputEdge(newNode, "connects", addedNode));
+      for (Node addedNode : addedNodes) {
+        graph = graph.with(new Edge(newNode, "connects", addedNode));
       }
     }
     return graph;

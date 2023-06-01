@@ -6,8 +6,8 @@ import ai.stapi.graph.Graph;
 import ai.stapi.graph.attribute.LeafAttribute;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
-import ai.stapi.graph.inputGraphElements.InputEdge;
-import ai.stapi.graph.inputGraphElements.InputNode;
+import ai.stapi.graph.graphelements.Edge;
+import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.renderer.infrastructure.apiRenderer.ApiRendererOptions;
 import ai.stapi.graph.renderer.infrastructure.apiRenderer.reponseGraph.NodeResponse;
 import ai.stapi.graph.renderer.infrastructure.idLessTextRenderer.IdLessTextRendererOptions;
@@ -82,21 +82,21 @@ class NodeRendererTest extends IntegrationTestCase {
 
   @NotNull
   private TraversableNode getTestNode() {
-    var testNode = new InputNode(
+    var testNode = new Node(
         UniversallyUniqueIdentifier.fromString("b800d6e3-fd98-436f-9a5c-b4568fa7e2f0"),
         "test_type"
     );
-    var anotherTestNode = new InputNode(
+    var anotherTestNode = new Node(
         UniversallyUniqueIdentifier.fromString("a648a53c-32dd-4649-8c33-f942fef14646"),
         "another_test_type"
     );
-    var testEdge = new InputEdge(
+    var testEdge = new Edge(
         UniversallyUniqueIdentifier.fromString("654dfc5f-58fb-4d9f-8d1d-eaba842f4854"),
         testNode,
         "is_testing",
         anotherTestNode
     );
-    var anotherTestEdge = new InputEdge(
+    var anotherTestEdge = new Edge(
         UniversallyUniqueIdentifier.fromString("160dc265-631c-4f05-854e-87db0fec0699"),
         testNode,
         "is_also_testing",
@@ -108,9 +108,9 @@ class NodeRendererTest extends IntegrationTestCase {
     var anotherTestAttribute =
         new LeafAttribute<>("another_attribute_type", new StringAttributeValue("testValue"));
 
-    testNode = testNode.addToNode(testAttribute);
-    testNode = testNode.addToNode(newTestAttribute);
-    testNode = testNode.addToNode(anotherTestAttribute);
+    testNode = testNode.add(testAttribute);
+    testNode = testNode.add(newTestAttribute);
+    testNode = testNode.add(anotherTestAttribute);
 
     var graph = new Graph(
         testNode,

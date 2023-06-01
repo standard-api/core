@@ -1,4 +1,4 @@
-package ai.stapi.graph.inputGraphElements;
+package ai.stapi.graph.graphelements;
 
 import ai.stapi.graph.attribute.AbstractAttributeContainer;
 import ai.stapi.graph.attribute.AttributeContainerTest;
@@ -7,7 +7,7 @@ import ai.stapi.graph.attribute.attributeValue.BooleanAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.DecimalAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.IntegerAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
-import ai.stapi.graph.inMemoryGraph.InputEdgeBuilder;
+import ai.stapi.graph.inMemoryGraph.EdgeBuilder;
 import ai.stapi.graph.inMemoryGraph.exceptions.GraphEdgesCannotBeMerged;
 import ai.stapi.graph.versionedAttributes.ImmutableVersionedAttributeGroup;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
@@ -15,39 +15,39 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
-public class InputEdgeTest extends AttributeContainerTest {
+class EdgeTest extends AttributeContainerTest {
 
   @Override
   protected AbstractAttributeContainer getAttributeContainer() {
-    return new InputEdge(
-        new InputNode("test_node_from"),
+    return new Edge(
+        new Node("test_node_from"),
         "edge_type",
-        new InputNode("test_node_to")
+        new Node("test_node_to")
     );
   }
 
   @Test
-  public void itCanCreateEdge_WithInputNodes() {
+  void itCanCreateEdge_WithNodes() {
     //Given
     var expectedEdgeType = "edge_type";
     //When
-    var inputNodeFrom = new InputNode("input_node_from");
-    var inputNodeTo = new InputNode("input_node_to");
-    var edge = new InputEdge(
-        inputNodeFrom,
+    var nodeFrom = new Node("node_from");
+    var nodeTo = new Node("node_to");
+    var edge = new Edge(
+        nodeFrom,
         expectedEdgeType,
-        inputNodeTo
+        nodeTo
     );
     //Then
     Assertions.assertEquals(expectedEdgeType, edge.getType());
-    Assertions.assertEquals(inputNodeFrom.getId(), edge.getNodeFromId());
-    Assertions.assertEquals(inputNodeTo.getId(), edge.getNodeToId());
-    Assertions.assertEquals(inputNodeFrom.getType(), edge.getNodeFromType());
-    Assertions.assertEquals(inputNodeTo.getType(), edge.getNodeToType());
+    Assertions.assertEquals(nodeFrom.getId(), edge.getNodeFromId());
+    Assertions.assertEquals(nodeTo.getId(), edge.getNodeToId());
+    Assertions.assertEquals(nodeFrom.getType(), edge.getNodeFromType());
+    Assertions.assertEquals(nodeTo.getType(), edge.getNodeToType());
   }
 
   @Test
-  public void itCanCreateEdgeWithDefaultAttributeMap() {
+  void itCanCreateEdgeWithDefaultAttributeMap() {
     //Given
     var expectedEdgeType = "edge_type";
     var expectedNodeFromId = UniversallyUniqueIdentifier.randomUUID();
@@ -60,14 +60,14 @@ public class InputEdgeTest extends AttributeContainerTest {
         new LeafAttribute<>("test_integer", new IntegerAttributeValue(15))
     );
     //When
-    var edge = InputEdgeBuilder.withAny()
+    var edge = EdgeBuilder.withAny()
         .setEdgeType(expectedEdgeType)
         .setNodeFromId(expectedNodeFromId)
         .setNodeFromType(expectedNodeFromType)
         .setNodeToId(expectedNodeToId)
         .setNodeToType(expectedNodeToType)
         .setVersionedAttributes(expectedVersionAttributes)
-        .createInputEdge();
+        .create();
 
     //Then
     Assertions.assertEquals(expectedEdgeType, edge.getType());
@@ -80,17 +80,17 @@ public class InputEdgeTest extends AttributeContainerTest {
 
 
   @Test
-  public void itCannotMergeWithOtherEdgeOfDifferentType() {
+  void itCannotMergeWithOtherEdgeOfDifferentType() {
     //Given
-    var edge1 = InputEdgeBuilder.withAny()
+    var edge1 = EdgeBuilder.withAny()
         .setEdgeType("edge_type")
-        .createInputEdge();
-    var edge2 = InputEdgeBuilder.withAny()
+        .create();
+    var edge2 = EdgeBuilder.withAny()
         .setEdgeId(edge1.getId())
         .setEdgeType("wrong_edge_type")
         .setNodeFromId(edge1.getNodeFromId())
         .setNodeToId(edge1.getNodeToId())
-        .createInputEdge();
+        .create();
     //When
     Executable executable = () -> edge1.mergeOverwrite(edge2);
     //Then
@@ -98,16 +98,16 @@ public class InputEdgeTest extends AttributeContainerTest {
   }
 
   @Test
-  public void itCannotMergeWithOtherEdgeOfDifferentIds() {
+  void itCannotMergeWithOtherEdgeOfDifferentIds() {
     //Given
-    var edge1 = InputEdgeBuilder.withAny()
+    var edge1 = EdgeBuilder.withAny()
         .setEdgeId(UniversallyUniqueIdentifier.randomUUID())
-        .createInputEdge();
-    var edge2 = InputEdgeBuilder.withAny()
+        .create();
+    var edge2 = EdgeBuilder.withAny()
         .setEdgeId(UniversallyUniqueIdentifier.randomUUID())
         .setNodeFromId(edge1.getNodeFromId())
         .setNodeToId(edge1.getNodeToId())
-        .createInputEdge();
+        .create();
     //When
     Executable executable = () -> edge1.mergeOverwrite(edge2);
     //Then
@@ -115,17 +115,17 @@ public class InputEdgeTest extends AttributeContainerTest {
   }
 
   @Test
-  public void itCannotMergeWithOtherEdgeOfDifferentNodeIds() {
+  void itCannotMergeWithOtherEdgeOfDifferentNodeIds() {
     //Given
-    var edge1 = InputEdgeBuilder.withAny()
+    var edge1 = EdgeBuilder.withAny()
         .setNodeFromId(UniversallyUniqueIdentifier.randomUUID())
         .setNodeToId(UniversallyUniqueIdentifier.randomUUID())
-        .createInputEdge();
-    var edge2 = InputEdgeBuilder.withAny()
+        .create();
+    var edge2 = EdgeBuilder.withAny()
         .setEdgeId(edge1.getId())
         .setNodeFromId(UniversallyUniqueIdentifier.randomUUID())
         .setNodeToId(UniversallyUniqueIdentifier.randomUUID())
-        .createInputEdge();
+        .create();
     //When
     Executable executable = () -> edge1.mergeOverwrite(edge2);
     //Then
@@ -133,17 +133,17 @@ public class InputEdgeTest extends AttributeContainerTest {
   }
 
   @Test
-  public void itCanMergeWithOtherEdge() {
+  void itCanMergeWithOtherEdge() {
     //Given
-    var mergedEdge = InputEdgeBuilder.withAny()
+    var mergedEdge = EdgeBuilder.withAny()
         .setVersionedAttributes(
             new ImmutableVersionedAttributeGroup(
                 new LeafAttribute<>("original", new StringAttributeValue("original value")),
                 new LeafAttribute<>("updated", new StringAttributeValue("old value"))
             )
-        ).createInputEdge();
+        ).create();
 
-    var otherEdge = InputEdgeBuilder.withAny()
+    var otherEdge = EdgeBuilder.withAny()
         .setEdgeId(mergedEdge.getId())
         .setNodeFromId(mergedEdge.getNodeFromId())
         .setNodeToId(mergedEdge.getNodeToId())
@@ -153,12 +153,12 @@ public class InputEdgeTest extends AttributeContainerTest {
                 new LeafAttribute<>("updated", new StringAttributeValue("updated value")),
                 new LeafAttribute<>("new", new StringAttributeValue("new value"))
             )
-        ).createInputEdge();
+        ).create();
 
     //When
     mergedEdge = mergedEdge.mergeOverwrite(otherEdge);
     //Then
-    var expectedEdge = InputEdgeBuilder.withAny()
+    var expectedEdge = EdgeBuilder.withAny()
         .setEdgeId(mergedEdge.getId())
         .setNodeFromId(mergedEdge.getNodeFromId())
         .setNodeToId(mergedEdge.getNodeToId())
@@ -169,7 +169,7 @@ public class InputEdgeTest extends AttributeContainerTest {
                 new LeafAttribute<>("updated", new StringAttributeValue("updated value")),
                 new LeafAttribute<>("new", new StringAttributeValue("new value"))
             )
-        ).createInputEdge();
+        ).create();
     Assertions.assertEquals(mergedEdge, expectedEdge);
   }
 }

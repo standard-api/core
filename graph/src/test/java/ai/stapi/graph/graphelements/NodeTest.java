@@ -1,4 +1,4 @@
-package ai.stapi.graph.inputGraphElements;
+package ai.stapi.graph.graphelements;
 
 import ai.stapi.graph.attribute.AbstractAttributeContainer;
 import ai.stapi.graph.attribute.AttributeContainerTest;
@@ -14,39 +14,39 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
-public class InputNodeTest extends AttributeContainerTest {
+class NodeTest extends AttributeContainerTest {
 
   @Override
   protected AbstractAttributeContainer getAttributeContainer() {
-    return new InputNode("test_node_type");
+    return new Node("test_node_type");
   }
 
   @Test
-  public void itCanCreateNode() {
+  void itCanCreateNode() {
     //Given
     var expectedNodeType = "nodeType";
     //When
-    var node = new InputNode(expectedNodeType);
+    var node = new Node(expectedNodeType);
     //Then
     Assertions.assertEquals(expectedNodeType, node.getType());
   }
 
   @Test
-  public void itCanCreateNodeWithCustomId() {
+  void itCanCreateNodeWithCustomId() {
     //Given
     var expectedId = UniversallyUniqueIdentifier.randomUUID();
     var expectedNodeType = "node_type";
     //When
-    var node = new InputNode(expectedId, expectedNodeType);
+    var node = new Node(expectedId, expectedNodeType);
     //Then
     Assertions.assertEquals(expectedId, node.getId());
     Assertions.assertEquals(expectedNodeType, node.getType());
   }
 
   @Test
-  public void itCanCreateNodeWithAttributes() {
+  void itCanCreateNodeWithAttributes() {
     //When
-    var node = new InputNode(
+    var node = new Node(
         "node_type",
         new LeafAttribute<>("test_boolean", new BooleanAttributeValue(true)),
         new LeafAttribute<>("test_double", new DecimalAttributeValue(10d)),
@@ -59,10 +59,10 @@ public class InputNodeTest extends AttributeContainerTest {
   }
 
   @Test
-  public void itCannotMergeWithOtherNodeOfDifferentType() {
+  void itCannotMergeWithOtherNodeOfDifferentType() {
     //Given
-    var node1 = new InputNode("first_node_type");
-    var node2 = new InputNode("different_type");
+    var node1 = new Node("first_node_type");
+    var node2 = new Node("different_type");
     //When
     Executable executable = () -> node1.mergeOverwrite(node2);
     //Then
@@ -70,10 +70,10 @@ public class InputNodeTest extends AttributeContainerTest {
   }
 
   @Test
-  public void itCannotMergeWithOtherNodeOfDifferentIds() {
+  void itCannotMergeWithOtherNodeOfDifferentIds() {
     //Given
-    var node1 = new InputNode(UniversallyUniqueIdentifier.randomUUID(), "first_node_type");
-    var node2 = new InputNode(node1.getId(), "irrelevant_type");
+    var node1 = new Node(UniversallyUniqueIdentifier.randomUUID(), "first_node_type");
+    var node2 = new Node(node1.getId(), "irrelevant_type");
     //When
     Executable executable = () -> node1.mergeOverwrite(node2);
     //Then
@@ -81,15 +81,15 @@ public class InputNodeTest extends AttributeContainerTest {
   }
 
   @Test
-  public void itCanMergeWithOtherNode() {
+  void itCanMergeWithOtherNode() {
     //Given
-    var firstNode = new InputNode(
+    var firstNode = new Node(
         "merged_node_type",
         new LeafAttribute<>("original", new StringAttributeValue("original value")),
         new LeafAttribute<>("updated", new StringAttributeValue("old value"))
     );
 
-    var otherNode = new InputNode(
+    var otherNode = new Node(
         firstNode.getId(),
         "merged_node_type",
         new ImmutableVersionedAttributeGroup(
@@ -99,7 +99,7 @@ public class InputNodeTest extends AttributeContainerTest {
         )
     );
 
-    var expectedNode = new InputNode(
+    var expectedNode = new Node(
         firstNode.getId(),
         "merged_node_type",
         new ImmutableVersionedAttributeGroup(

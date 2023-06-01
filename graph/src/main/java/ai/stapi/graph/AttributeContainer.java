@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 public interface AttributeContainer extends Serializable {
 
-  <T extends Attribute<?>> AttributeContainer add(T attribute);
+  AttributeContainer add(Attribute<?> attribute);
 
   VersionedAttribute<?> getVersionedAttribute(String name);
 
