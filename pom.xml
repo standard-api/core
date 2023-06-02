@@ -5,7 +5,7 @@
 
     <groupId>ai.stapi</groupId>
     <artifactId>core</artifactId>
-    <version>0.0.5-SNAPSHOT</version>
+    <version>0.0.6</version>
     <modules>
         <module>common</module>
         <module>graph</module>
@@ -33,7 +33,7 @@
     </issueManagement>
 
     <properties>
-        <stapi.version>0.0.5-SNAPSHOT</stapi.version>
+        <stapi.version>0.0.6</stapi.version>
         <java.version>17</java.version>
         <maven-dependency-plugin.version>3.5.0</maven-dependency-plugin.version>
         <surefire-junit-platform.version>2.22.2</surefire-junit-platform.version>
@@ -206,8 +206,15 @@
                                 <id>sign-artifacts</id>
                                 <phase>verify</phase>
                                 <goals>
+                                    <!--suppress MavenModelInspection -->
                                     <goal>sign</goal>
                                 </goals>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
@@ -219,7 +226,7 @@
             <id>ossrh</id>
             <repositories>
                 <repository>
-                    <id>sonatype</id>
+                    <id>ossrh</id>
                     <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
                     <snapshots>
                         <enabled>true</enabled>
@@ -248,14 +255,12 @@
             </build>
             <distributionManagement>
                 <snapshotRepository>
-                    <id>sonatype</id>
-                    <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
-                    <uniqueVersion>true</uniqueVersion>
+                    <id>ossrh</id>
+                    <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
                 </snapshotRepository>
                 <repository>
-                    <id>sonatype</id>
+                    <id>ossrh</id>
                     <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                    <uniqueVersion>false</uniqueVersion>
                 </repository>
             </distributionManagement>
         </profile>
