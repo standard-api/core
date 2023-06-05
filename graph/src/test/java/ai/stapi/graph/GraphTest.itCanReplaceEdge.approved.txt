@@ -1,0 +1,21 @@
+nodes:
+	node_type: ArbitraryNodeType
+	node_hash: 8E3F6
+	node_edges:
+		ArbitraryNodeType -> test_edge -> ArbitraryNodeType (BAD0B -> CCF8C -> 8E3F6)
+	attributes:
+		B_attribute -> B_value
+
+	node_type: ArbitraryNodeType
+	node_hash: BAD0B
+	node_edges:
+		ArbitraryNodeType -> test_edge -> ArbitraryNodeType (BAD0B -> CCF8C -> 8E3F6)
+	attributes:
+		A_attribute -> A_value
+
+edges:
+	edge_type: test_edge
+	edge_hash: CCF8C
+	ArbitraryNodeType -> test_edge -> ArbitraryNodeType (BAD0B -> CCF8C -> 8E3F6)
+	attributes:
+		Edge_attribute_new_type -> Edge_attribute_value_value_new

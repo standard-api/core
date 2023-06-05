@@ -1,0 +1,7 @@
+[ {
+  "count" : 1,
+  "type" : "edgeA"
+}, {
+  "count" : 2,
+  "type" : "edgeB"
+} ]

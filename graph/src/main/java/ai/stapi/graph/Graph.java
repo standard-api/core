@@ -10,14 +10,12 @@ import ai.stapi.graph.exceptions.OneOrBothNodesOnEdgeDoesNotExist;
 import ai.stapi.graph.graphElementForRemoval.EdgeForRemoval;
 import ai.stapi.graph.graphElementForRemoval.GraphElementForRemoval;
 import ai.stapi.graph.graphElementForRemoval.NodeForRemoval;
+import ai.stapi.graph.graphelements.Edge;
+import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.inMemoryGraph.DeduplicateOptions;
 import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.inMemoryGraph.exceptions.CannotCreateGraphWithOtherThanGraphElements;
 import ai.stapi.graph.inMemoryGraph.exceptions.GraphEdgesCannotBeMerged;
-import ai.stapi.graph.inMemoryGraph.exceptions.MoreThanOneNodeWithAttributeFoundException;
-import ai.stapi.graph.inMemoryGraph.exceptions.NodeWithAttributeNotFound;
-import ai.stapi.graph.graphelements.Edge;
-import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.traversableGraphElements.TraversableEdge;
 import ai.stapi.identity.UniqueIdentifier;
 import com.google.common.collect.ImmutableMap;
@@ -68,7 +66,7 @@ public class Graph {
     this.edgeTypeCounts = ImmutableMap.copyOf(newInMemoryGraph.edgeTypeCounts);
   }
 
-  public Graph(
+  private Graph(
       Map<UniqueIdentifier, Node> nodeMap,
       Map<UniqueIdentifier, Edge> edgeMap
   ) {
@@ -231,24 +229,7 @@ public class Graph {
         .toList();
   }
 
-  public Node getExactlyOneNodeByAttribute(String attributeName, Object attributeValue) {
-    var foundNodesByAttribute = this.nodeMap.values().stream()
-        .filter(node -> node.containsAttribute(attributeName, attributeValue))
-        .toList();
-    if (foundNodesByAttribute.size() > 1) {
-      throw new MoreThanOneNodeWithAttributeFoundException();
-    }
-    if (foundNodesByAttribute.isEmpty()) {
-      throw new NodeWithAttributeNotFound();
-    }
-    return foundNodesByAttribute.get(0);
-  }
-
   public List<Edge> getAllEdges() {
-    return this.edgeMap.values().stream().toList();
-  }
-
-  public List<Edge> loadAllEdges() {
     return this.edgeMap.values().stream().toList();
   }
 

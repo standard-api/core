@@ -1,0 +1,19 @@
+nodes:
+	node_type: AnotherType
+	node_hash: 0F104
+	node_edges:
+		TestNode -> should_keep -> AnotherType (D3D10 -> FF826 -> 0F104)
+	attributes:
+
+	node_type: TestNode
+	node_hash: D3D10
+	node_edges:
+		TestNode -> should_keep -> AnotherType (D3D10 -> FF826 -> 0F104)
+	attributes:
+		name -> irrelevant
+
+edges:
+	edge_type: should_keep
+	edge_hash: FF826
+	TestNode -> should_keep -> AnotherType (D3D10 -> FF826 -> 0F104)
+	attributes:

@@ -1,5 +1,8 @@
 package ai.stapi.graph.inMemoryGraph;
 
+import ai.stapi.graph.EdgeRepository;
+import ai.stapi.graph.NodeRepository;
+import ai.stapi.graph.attribute.LeafAttribute;
 import ai.stapi.graph.attribute.ListAttribute;
 import ai.stapi.graph.attribute.MetaData;
 import ai.stapi.graph.attribute.attributeValue.BooleanAttributeValue;
@@ -7,18 +10,15 @@ import ai.stapi.graph.attribute.attributeValue.DateAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.DecimalAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.InstantAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.IntegerAttributeValue;
+import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
 import ai.stapi.graph.exceptions.EdgeNotFound;
 import ai.stapi.graph.exceptions.NodeNotFound;
 import ai.stapi.graph.exceptions.NodeWithSameIdAlreadyExists;
 import ai.stapi.graph.graphElementForRemoval.NodeForRemoval;
-import ai.stapi.identity.UniversallyUniqueIdentifier;
 import ai.stapi.graph.graphelements.Edge;
-import ai.stapi.graph.test.base.UnitTestCase;
-import ai.stapi.graph.EdgeRepository;
-import ai.stapi.graph.NodeRepository;
-import ai.stapi.graph.attribute.LeafAttribute;
-import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
 import ai.stapi.graph.graphelements.Node;
+import ai.stapi.graph.test.base.UnitTestCase;
+import ai.stapi.identity.UniversallyUniqueIdentifier;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.Map;
@@ -285,6 +285,14 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
     Assertions.assertEquals(
         "Type_A",
         nodeInfoList.get(0).getName()
+    );
+    Assertions.assertEquals(
+        "Type_A",
+        nodeInfoList.get(0).getType()
+    );
+    Assertions.assertEquals(
+        nodeTypeA2.getId().toString(),
+        nodeInfoList.get(0).getId()
     );
     Assertions.assertEquals(
         "newName",

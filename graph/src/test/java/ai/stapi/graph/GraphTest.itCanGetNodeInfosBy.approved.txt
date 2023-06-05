@@ -1,0 +1,13 @@
+[ {
+  "id" : {
+    "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx"
+  },
+  "name" : "nodeA",
+  "type" : "nodeA"
+}, {
+  "id" : {
+    "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx"
+  },
+  "name" : "nodeA",
+  "type" : "nodeA"
+} ]

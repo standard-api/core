@@ -1,0 +1,13 @@
+[ {
+  "count" : 2,
+  "type" : "nodeA"
+}, {
+  "count" : 1,
+  "type" : "nodeB"
+}, {
+  "count" : 1,
+  "type" : "nodeC"
+}, {
+  "count" : 2,
+  "type" : "nodeD"
+} ]

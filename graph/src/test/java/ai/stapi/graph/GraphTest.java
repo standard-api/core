@@ -3,18 +3,21 @@ package ai.stapi.graph;
 import ai.stapi.graph.attribute.LeafAttribute;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
 import ai.stapi.graph.exceptions.EdgeNotFound;
+import ai.stapi.graph.exceptions.EdgeWithSameIdAlreadyExists;
 import ai.stapi.graph.exceptions.MoreThanOneNodeOfTypeFoundException;
 import ai.stapi.graph.exceptions.NodeNotFound;
 import ai.stapi.graph.exceptions.NodeOfTypeNotFoundException;
+import ai.stapi.graph.exceptions.NodeWithSameIdAlreadyExists;
 import ai.stapi.graph.graphElementForRemoval.EdgeForRemoval;
 import ai.stapi.graph.graphElementForRemoval.NodeForRemoval;
+import ai.stapi.graph.graphelements.Edge;
+import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.inMemoryGraph.DeduplicateOptions;
 import ai.stapi.graph.inMemoryGraph.exceptions.CannotCreateGraphWithOtherThanGraphElements;
 import ai.stapi.graph.inMemoryGraph.exceptions.GraphEdgesCannotBeMerged;
-import ai.stapi.graph.graphelements.Edge;
-import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.test.base.UnitTestCase;
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
+import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -25,8 +28,8 @@ class GraphTest extends UnitTestCase {
   @Test
   void itCanCreateWithNodes() {
     var actualGraph = new Graph(
-        new Node("A"),
-        new Node("B")
+        new Node("arbitraty_type_A"),
+        new Node("arbitraty_type_B")
     );
   }
 
@@ -40,6 +43,163 @@ class GraphTest extends UnitTestCase {
         CannotCreateGraphWithOtherThanGraphElements.class,
         executable
     );
+  }
+
+  @Test
+  void itThrowsExceptionWhenAddingNodeOfSameId() {
+    var initialGraph = new Graph();
+    var node = new Node("original_first_node");
+    var testedGraph = initialGraph.with(node);
+
+    Executable when = () -> testedGraph.with(node);
+
+    //Then
+    Assertions.assertThrows(NodeWithSameIdAlreadyExists.class, when);
+  }
+
+  @Test
+  void itThrowsExceptionWhenAddingEdgeOfSameId() {
+    var nodeA = new Node("IrrelevantNodeType");
+    var nodeB = new Node("IrrelevantNodeType");
+    var initialGraph = new Graph(
+        nodeA, nodeB
+    );
+
+    var testedEdge = new Edge(nodeA, "edgeType", nodeB);
+    var testedGraph = initialGraph.with(testedEdge);
+
+    Executable when = () -> testedGraph.with(testedEdge);
+
+    //Then
+    Assertions.assertThrows(EdgeWithSameIdAlreadyExists.class, when);
+  }
+
+  @Test
+  void itThrowsExceptionWhenGettingNonExistentNodeById() {
+    var nodeA = new Node("MatchingNodeType");
+    var nodeB = new Node("NotMatchingNodeType");
+    var testedGraph = new Graph(
+        nodeA, nodeB
+    );
+
+    Executable when = () -> testedGraph.getNode(new UniqueIdentifier("nonexistentId"));
+
+    //Then
+    Assertions.assertThrows(NodeNotFound.class, when);
+  }
+
+  @Test
+  void itCanGetNodeById() {
+    var nodeA = new Node("MatchingNodeType");
+    var nodeB = new Node("NotMatchingNodeType");
+    var testedGraph = new Graph(
+        nodeA, nodeB
+    );
+
+    var returnedNode = testedGraph.getNode(nodeA.getId());
+
+    //Then
+    Assertions.assertEquals(nodeA.getId(), returnedNode.getId());
+  }
+
+  @Test
+  void itThrowsExceptionWhenGettingNonExistentNodeByIdAndType() {
+    var nodeA = new Node("MatchingNodeType");
+    var nodeB = new Node("IrrelevantNodeType");
+    var testedGraph = new Graph(
+        nodeA, nodeB
+    );
+
+    Executable when = () -> testedGraph.getNode(
+        new UniqueIdentifier("nonexistentId"), "MatchingNodeType");
+    //Then
+    Assertions.assertThrows(NodeNotFound.class, when);
+
+    Executable when2 = () -> testedGraph.getNode(nodeA.getId(), "NotMatchingNodeType");
+    //Then
+    Assertions.assertThrows(NodeNotFound.class, when2);
+  }
+
+  @Test
+  void itCanGetNodeByIdAndType() {
+    var nodeA = new Node("MatchingNodeType");
+    var nodeB = new Node("NotMatchingNodeType");
+    var testedGraph = new Graph(
+        nodeA, nodeB
+    );
+
+    var returnedNode = testedGraph.getNode(nodeA.getId(), "MatchingNodeType");
+
+    //Then
+    Assertions.assertEquals(nodeA.getId(), returnedNode.getId());
+  }
+
+  @Test
+  void itThrowsExceptionWhenGettingNonExistentEdgeById() {
+    var nodeA = new Node("MatchingNodeType");
+    var nodeB = new Node("NotMatchingNodeType");
+    var edgeA = new Edge(nodeA, "edgeType", nodeB);
+    var edgeB = new Edge(nodeA, "irrelevantEdgeType", nodeB);
+    var testedGraph = new Graph(
+        nodeA, nodeB, edgeA, edgeB
+    );
+
+    Executable when = () -> testedGraph.getEdge(new UniqueIdentifier("nonexistentId"));
+
+    //Then
+    Assertions.assertThrows(EdgeNotFound.class, when);
+  }
+
+  @Test
+  void itCanGetEdgeById() {
+    var nodeA = new Node("MatchingNodeType");
+    var nodeB = new Node("NotMatchingNodeType");
+    var edgeA = new Edge(nodeA, "edgeType", nodeB);
+    var edgeB = new Edge(nodeA, "irrelevantEdgeType", nodeB);
+    var testedGraph = new Graph(
+        nodeA, nodeB, edgeA, edgeB
+    );
+
+    var returnedEdge = testedGraph.getEdge(edgeA.getId());
+
+    //Then
+    Assertions.assertEquals(edgeA.getId(), returnedEdge.getId());
+  }
+
+  @Test
+  void itThrowsExceptionWhenGettingNonExistentEdgeByIdAndType() {
+    var nodeA = new Node("MatchingNodeType");
+    var nodeB = new Node("IrrelevantNodeType");
+    var edgeA = new Edge(nodeA, "matchingEdgeType", nodeB);
+    var edgeB = new Edge(nodeA, "irrelevantEdgeType", nodeB);
+    var testedGraph = new Graph(
+        nodeA, nodeB, edgeA, edgeB
+    );
+
+    Executable when = () -> testedGraph.getEdge(
+        new UniqueIdentifier("nonexistentId"), "matchingEdgeType");
+    //Then
+    Assertions.assertThrows(EdgeNotFound.class, when);
+
+    Executable when2 = () -> testedGraph.getEdge(edgeA.getId(), "notMatchingEdgeType");
+    //Then
+    Assertions.assertThrows(EdgeNotFound.class, when2);
+  }
+
+  @Test
+  void itCanGetEdgeByIdAndType() {
+    var nodeA = new Node("MatchingNodeType");
+    var nodeB = new Node("NotMatchingNodeType");
+    var edgeA = new Edge(nodeA, "edgeType", nodeB);
+    var edgeB = new Edge(nodeA, "irrelevantEdgeType", nodeB);
+    var testedGraph = new Graph(
+        nodeA, nodeB, edgeA, edgeB
+    );
+
+    var returnedEdge = testedGraph.getEdge(edgeA.getId(), "edgeType");
+
+    //Then
+    Assertions.assertEquals(edgeA.getId(), returnedEdge.getId());
   }
 
   @Test
@@ -69,26 +229,34 @@ class GraphTest extends UnitTestCase {
     );
 
     graphG1 = graphG1.merge(graphG2);
+
     this.thenGraphApproved(graphG1);
   }
 
   @Test
   void itCanLoadNodesByNodeType() {
-    var nodeA = new Node(
+    var nodeA1 = new Node(
         "type_A",
         new LeafAttribute<>("original", new StringAttributeValue("original value")),
         new LeafAttribute<>("updated", new StringAttributeValue("old value"))
     );
 
-    var nodeB = new Node(
+    var nodeA2 = new Node(
         "type_A",
         new LeafAttribute<>("original", new StringAttributeValue("original value")),
         new LeafAttribute<>("updated", new StringAttributeValue("updated value")),
         new LeafAttribute<>("new", new StringAttributeValue("new value"))
     );
 
+    var nodeB = new Node(
+        "type_B",
+        new LeafAttribute<>("original", new StringAttributeValue("original value")),
+        new LeafAttribute<>("updated", new StringAttributeValue("old value"))
+    );
+
     var graph = new Graph(
-        nodeA,
+        nodeA1,
+        nodeA2,
         nodeB
     );
 
@@ -97,7 +265,7 @@ class GraphTest extends UnitTestCase {
   }
 
   @Test
-  void itThrowsExceptionWhenLoadingExactlyOneNodeOfTypeButMorePresent() {
+  void itThrowsExceptionWhenLoadingExactlyOneNodeOfTypeButMoreThanOneIsPresent() {
     var nodeA = new Node("type_A");
     var nodeB = new Node("type_A");
 
@@ -152,24 +320,58 @@ class GraphTest extends UnitTestCase {
 
   @Test
   void itCanCreateWithEdges() {
-    var nodeA = new Node("nodeA");
+    basicTestGraph();
+  }
+
+  @Test
+  void itCanGetNodeTypeInfos() {
+    var graph = basicTestGraph();
+
+    this.thenObjectApproved(graph.getNodeTypeInfos());
+  }
+
+  @Test
+  void itCanGetEdgeTypeInfos() {
+    var graph = basicTestGraph();
+
+    this.thenObjectApproved(graph.getEdgeTypeInfos());
+  }
+
+  @Test
+  void itCanGetNodeInfosBy() {
+    var graph = basicTestGraph();
+
+    this.thenObjectApproved(graph.getNodeInfosBy("nodeA"));
+  }
+
+  private static Graph basicTestGraph() {
+    var nodeA1 = new Node("nodeA");
+    var nodeA2 = new Node("nodeA");
     var nodeB = new Node("nodeB");
     var nodeC = new Node("nodeC");
-    var nodeD = new Node("nodeD");
-    var actualGraph = new Graph(
-        nodeA,
+    var nodeD1 = new Node("nodeD");
+    var nodeD2 = new Node("nodeD");
+    return new Graph(
+        nodeA1,
+        nodeA2,
         nodeB,
         nodeC,
-        nodeD,
+        nodeD1,
+        nodeD2,
         new Edge(
-            nodeA,
+            nodeA1,
             "edgeA",
             nodeB
         ),
         new Edge(
             nodeC,
             "edgeB",
-            nodeD
+            nodeD1
+        ),
+        new Edge(
+            nodeA1,
+            "edgeB",
+            nodeD2
         )
     );
   }
@@ -206,7 +408,7 @@ class GraphTest extends UnitTestCase {
   }
 
   @Test
-  void itShouldMergeTwoGraphsByIds() {
+  void itCanMergeTwoGraphsByIds() {
     var nodeFromInGraphG1 = new Node("merged_node_type");
     var nodeToInGraphG1 = new Node("node_type_to");
     var edgeE1InGraphG1 = new Edge(
@@ -308,7 +510,7 @@ class GraphTest extends UnitTestCase {
 
 
   @Test
-  void itShouldReplaceNodes() {
+  void itCanReplaceNode() {
     var nodeId = UniversallyUniqueIdentifier.randomUUID();
     var nodeA = new Node(nodeId, "SameType");
     var nodeB = new Node(nodeId, "SameType");
@@ -327,7 +529,7 @@ class GraphTest extends UnitTestCase {
   }
 
   @Test
-  void itShouldAllowToReplaceNodeOfDifferentType() {
+  void itCanAllowToReplaceNodeOfDifferentType() {
     var nodeId = UniversallyUniqueIdentifier.randomUUID();
     var nodeA = new Node(
         nodeId,
@@ -350,7 +552,128 @@ class GraphTest extends UnitTestCase {
   }
 
   @Test
-  void itShouldRemoveEdge_AsGraphElementForRemoval() {
+  void itCanReplaceEdge() {
+    var nodeA = new Node("ArbitraryNodeType");
+    var nodeB = new Node("ArbitraryNodeType");
+
+    var alreadySavedEdge = new Edge(
+        nodeA,
+        "test_edge",
+        nodeB
+    );
+    var replacingEdge = new Edge(
+        alreadySavedEdge.getId(),
+        nodeA,
+        "test_edge",
+        nodeB
+    );
+
+    nodeA = nodeA.add(
+        new LeafAttribute<>("A_attribute", new StringAttributeValue("A_value"))
+    );
+    nodeB = nodeB.add(
+        new LeafAttribute<>("B_attribute", new StringAttributeValue("B_value"))
+    );
+    alreadySavedEdge = alreadySavedEdge.add(
+        new LeafAttribute<>(
+            "Edge_attribute_original_type",
+            new StringAttributeValue("Edge_attribute_value_original")
+        )
+    );
+    replacingEdge = replacingEdge.add(
+        new LeafAttribute<>(
+            "Edge_attribute_new_type",
+            new StringAttributeValue("Edge_attribute_value_value_new")
+        )
+    );
+
+    var graph = new Graph(nodeA, nodeB, alreadySavedEdge);
+
+    var actualGraph = graph.replace(replacingEdge);
+    this.thenGraphApproved(actualGraph);
+  }
+
+  @Test
+  void itCanReplaceEdgeWithSameIdButDifferentNodes() {
+    var nodeA = new Node("ArbitraryNodeType1");
+    var nodeB = new Node("ArbitraryNodeType2");
+    var nodeC = new Node("ArbitraryNodeType3");
+
+    var alreadySavedEdge = new Edge(
+        nodeA,
+        "test_edge",
+        nodeB
+    );
+    var replacingEdge = new Edge(
+        alreadySavedEdge.getId(),
+        nodeA,
+        "test_edge",
+        nodeC
+    );
+
+    nodeA = nodeA.add(
+        new LeafAttribute<>("A_attribute", new StringAttributeValue("A_value"))
+    );
+    nodeB = nodeB.add(
+        new LeafAttribute<>("B_attribute", new StringAttributeValue("B_value"))
+    );
+    alreadySavedEdge = alreadySavedEdge.add(
+        new LeafAttribute<>(
+            "Edge_attribute_original_type",
+            new StringAttributeValue("Edge_attribute_value_original")
+        )
+    );
+    replacingEdge = replacingEdge.add(
+        new LeafAttribute<>(
+            "Edge_attribute_new_type",
+            new StringAttributeValue("Edge_attribute_value_value_new")
+        )
+    );
+
+    var graph = new Graph(nodeA, nodeB, nodeC, alreadySavedEdge);
+
+    var actualGraph = graph.replace(replacingEdge);
+    this.thenGraphApproved(actualGraph);
+  }
+
+  @Test
+  void itCanRemoveNode() {
+    var testNodeToRemove = new Node("test_node");
+    testNodeToRemove = testNodeToRemove.add(
+        new LeafAttribute<>("name", new StringAttributeValue("name")));
+
+    var nodeForRemoval = new NodeForRemoval(testNodeToRemove.getId(), testNodeToRemove.getType());
+
+    var givenGraph = new Graph(testNodeToRemove);
+
+    //When
+    var actualGraph = givenGraph.removeNode(nodeForRemoval);
+
+    //Then
+    this.thenGraphApproved(actualGraph);
+  }
+
+  @Test
+  void itCanRemoveNodeIdempotently() {
+    var testNodeToRemove = new Node("test_node");
+    testNodeToRemove = testNodeToRemove.add(
+        new LeafAttribute<>("name", new StringAttributeValue("name")));
+
+    var nodeForRemoval = new NodeForRemoval(testNodeToRemove.getId(), testNodeToRemove.getType());
+
+    var givenGraph = new Graph(testNodeToRemove);
+
+    var actualGraph = givenGraph.removeNode(nodeForRemoval);
+
+    //When
+    actualGraph = actualGraph.removeNode(nodeForRemoval);
+
+    //Then
+    this.thenGraphApproved(actualGraph);
+  }
+
+  @Test
+  void itCanRemoveEdge() {
     var nodeFrom = new Node("node_from");
     var nodeTo = new Node("node_to");
 
@@ -367,34 +690,103 @@ class GraphTest extends UnitTestCase {
     //When
     var actualGraph = givenGraph.removeGraphElement(edgeForRemoval);
 
-    //Then
-    Edge finalAlreadySavedEdge = alreadySavedEdge;
-    Executable executable = () -> actualGraph.getEdge(
-        finalAlreadySavedEdge.getId(),
-        finalAlreadySavedEdge.getType()
-    );
-    Assertions.assertThrows(EdgeNotFound.class, executable);
+    this.thenGraphApproved(actualGraph);
   }
 
   @Test
-  void itShouldRemoveNode_AsGraphElementForRemoval() {
-    var alreadySavedNode = new Node("test_node");
-    alreadySavedNode = alreadySavedNode.add(
+  void itCanRemoveEdgeIdempotently() {
+    var nodeFrom = new Node("node_from");
+    var nodeTo = new Node("node_to");
+
+    var alreadySavedEdge = new Edge(
+        nodeFrom,
+        "test_edge",
+        nodeTo
+    );
+    alreadySavedEdge = alreadySavedEdge.add(
         new LeafAttribute<>("name", new StringAttributeValue("name")));
+    var givenGraph = new Graph(nodeFrom, nodeTo, alreadySavedEdge);
+    var edgeForRemoval = new EdgeForRemoval(alreadySavedEdge.getId(), alreadySavedEdge.getType());
 
-    var nodeForRemoval = new NodeForRemoval(alreadySavedNode.getId(), alreadySavedNode.getType());
+    //When
+    var intermitentGraph = givenGraph.removeGraphElement(edgeForRemoval);
+    var actualGraph = intermitentGraph.removeGraphElement(edgeForRemoval);
 
-    var givenGraph = new Graph(alreadySavedNode);
+    this.thenGraphApproved(actualGraph);
+  }
+
+  @Test
+  void itCanRemoveEdgeAndNode() {
+    var nodeA = new Node("ArbitratyNodeType1");
+    var nodeB = new Node("ArbitratyNodeType2");
+    var nodeC = new Node("ArbitratyNodeType3");
+    var nodeD = new Node("ArbitratyNodeType4");
+
+    var edgeA = new Edge(
+        nodeA,
+        "arbitratyEdgeType1",
+        nodeB
+    );
+    var edgeB = new Edge(
+        nodeB,
+        "arbitratyEdgeType2",
+        nodeC
+    );
+    var edgeC = new Edge(
+        nodeC,
+        "arbitratyEdgeType3",
+        nodeD
+    );
+    var givenGraph = new Graph(
+        nodeA,
+        nodeB,
+        nodeC,
+        nodeD,
+        edgeA,
+        edgeB,
+        edgeC
+    );
+
+    var nodeForRemoval = new NodeForRemoval(nodeA.getId(), nodeA.getType());
+    var edgeForRemoval = new EdgeForRemoval(edgeC.getId(), edgeC.getType());
+
+    //When
+    var actualGraph = givenGraph.removeGraphElements(nodeForRemoval, edgeForRemoval);
+
+    this.thenGraphApproved(actualGraph);
+  }
+
+  @Test
+  void itCanRemoveNode_AndNotAffectOthers() {
+    var testNodeToRemove = new Node("TestNode");
+    var anotherNodeOfSameType = new Node("TestNode").add(
+        new LeafAttribute<>("name", new StringAttributeValue("irrelevant"))
+    );
+    var anotherNodeOfAnotherType = new Node("AnotherType");
+    testNodeToRemove = testNodeToRemove.add(
+        new LeafAttribute<>("name", new StringAttributeValue("irrelevant")));
+
+    var nodeForRemoval = new NodeForRemoval(testNodeToRemove.getId(), testNodeToRemove.getType());
+
+    var givenGraph = new Graph(
+        testNodeToRemove,
+        anotherNodeOfSameType,
+        anotherNodeOfAnotherType,
+        new Edge(testNodeToRemove, "should_remove", anotherNodeOfSameType),
+        new Edge(anotherNodeOfSameType, "should_remove", testNodeToRemove),
+        new Edge(testNodeToRemove, "should_remove", anotherNodeOfAnotherType),
+        new Edge(anotherNodeOfAnotherType, "should_remove", testNodeToRemove),
+        new Edge(anotherNodeOfSameType, "should_keep", anotherNodeOfAnotherType)
+    );
     //When
     var actualGraph = givenGraph.removeNode(nodeForRemoval);
+
     //Then
-    Node finalAlreadySavedNode = alreadySavedNode;
-    Executable executable = () -> actualGraph.getNode(finalAlreadySavedNode.getId(), "test_node");
-    Assertions.assertThrows(NodeNotFound.class, executable);
+    this.thenGraphApproved(actualGraph);
   }
 
   @Test
-  void itShouldMergeEdgesOfSameTypeBetweenSameNodes() {
+  void itCanMergeEdgesOfSameTypeBetweenSameNodes() {
     var originalGraph = new Graph();
     var firstOriginalNode = new Node("original_first_node");
     var secondOriginalNode = new Node("original_second_node");
@@ -415,7 +807,7 @@ class GraphTest extends UnitTestCase {
   }
 
   @Test
-  void itThrowsErrorWhenEdgeCouldBeMergerWithMultipleEdges() {
+  void itThrowsErrorWhenEdgeCouldBeMergedWithMultipleEdges() {
     var originalGraph = new Graph();
     var firstOriginalNode = new Node("original_first_node");
     var secondOriginalNode = new Node("original_second_node");

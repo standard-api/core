@@ -1,0 +1,23 @@
+nodes:
+	node_type: ArbitratyNodeType2
+	node_hash: 72059
+	node_edges:
+		ArbitratyNodeType2 -> arbitratyEdgeType2 -> ArbitratyNodeType3 (72059 -> C6248 -> F1993)
+	attributes:
+
+	node_type: ArbitratyNodeType3
+	node_hash: F1993
+	node_edges:
+		ArbitratyNodeType2 -> arbitratyEdgeType2 -> ArbitratyNodeType3 (72059 -> C6248 -> F1993)
+	attributes:
+
+	node_type: ArbitratyNodeType4
+	node_hash: 72ECF
+	node_edges:
+	attributes:
+
+edges:
+	edge_type: arbitratyEdgeType2
+	edge_hash: C6248
+	ArbitratyNodeType2 -> arbitratyEdgeType2 -> ArbitratyNodeType3 (72059 -> C6248 -> F1993)
+	attributes:
