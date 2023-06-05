@@ -4,11 +4,11 @@ import ai.stapi.schema.scopeProvider.ScopeCacher;
 import ai.stapi.schema.structureSchema.AbstractStructureType;
 import ai.stapi.schema.structureSchema.StructureSchema;
 import ai.stapi.schema.structureSchemaMapper.MappingOutcome;
-import ai.stapi.schema.structureSchemaMapper.StructureDefinitionDTOMerger;
 import ai.stapi.schema.structureSchemaMapper.StructureDefinitionToSSMapper;
 import ai.stapi.schema.structureSchemaMapper.UnresolvableType;
 import ai.stapi.schema.structureSchemaProvider.exception.CannotProvideStructureSchema;
 import ai.stapi.schema.structuredefinition.StructureDefinitionData;
+import ai.stapi.schema.structuredefinition.StructureDefinitionDataMerger;
 import ai.stapi.schema.structuredefinition.loader.StructureDefinitionLoader;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -134,7 +134,7 @@ public class DefaultStructureSchemaProvider implements StructureSchemaProvider {
         structureDefinitionDTO -> {
           if (joinedStructures.containsKey(structureDefinitionDTO.getId())) {
             joinedStructures.put(structureDefinitionDTO.getId(),
-                StructureDefinitionDTOMerger.merge(
+                StructureDefinitionDataMerger.merge(
                     joinedStructures.get(structureDefinitionDTO.getId()),
                     structureDefinitionDTO
                 )

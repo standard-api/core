@@ -1,13 +1,11 @@
-package ai.stapi.schema.structureSchemaMapper;
+package ai.stapi.schema.structuredefinition;
 
-import ai.stapi.schema.structuredefinition.ElementDefinition;
-import ai.stapi.schema.structuredefinition.StructureDefinitionData;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StructureDefinitionDTOMerger {
+public class StructureDefinitionDataMerger {
 
-  private StructureDefinitionDTOMerger() {
+  private StructureDefinitionDataMerger() {
   }
 
   public static StructureDefinitionData merge(
@@ -27,8 +25,10 @@ public class StructureDefinitionDTOMerger {
     var mergedDifferential = new ArrayList<>(masterDifferential);
     slaveDifferential.stream()
         .filter(
-            slaveElement -> !StructureDefinitionDTOMerger.isContainedInMaster(masterDifferential,
-                slaveElement))
+            slaveElement -> !StructureDefinitionDataMerger.isContainedInMaster(
+                masterDifferential,
+                slaveElement
+            ))
         .forEach(mergedDifferential::add);
 
     return new StructureDefinitionData(
@@ -46,8 +46,10 @@ public class StructureDefinitionDTOMerger {
     );
   }
 
-  private static boolean isContainedInMaster(List<ElementDefinition> masterDifferential,
-      ElementDefinition slaveElement) {
+  private static boolean isContainedInMaster(
+      List<ElementDefinition> masterDifferential,
+      ElementDefinition slaveElement
+  ) {
     return masterDifferential.stream().anyMatch(
         masterElement -> masterElement.getPath().equals(slaveElement.getPath())
     );

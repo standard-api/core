@@ -12,6 +12,7 @@ import ai.stapi.schema.structureSchemaMapper.exception.UnresolvableTypeException
 import ai.stapi.schema.structuredefinition.ElementDefinition;
 import ai.stapi.schema.structuredefinition.ElementDefinitionType;
 import ai.stapi.schema.structuredefinition.StructureDefinitionData;
+import ai.stapi.schema.structuredefinition.StructureDefinitionDataMerger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -68,7 +69,7 @@ public class StructureDefinitionToSSMapper {
                   definition -> definition.getId()
                       .equals(unresolvableSerializationType.serializationType())
               )
-              .reduce(StructureDefinitionDTOMerger::merge)
+              .reduce(StructureDefinitionDataMerger::merge)
               .orElse(null);
 
           return new UnresolvableType(
