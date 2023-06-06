@@ -3,6 +3,7 @@ package ai.stapi.graphoperations.graphLoader.inmemory.filter;
 import ai.stapi.graph.attribute.attributeValue.AttributeValue;
 import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
 import ai.stapi.graphoperations.graphLoader.inmemory.InMemorySearchResolvingContext;
+import ai.stapi.graphoperations.graphLoader.search.exceptions.SearchOptionNotSupportedByExactlyOneResolver;
 import ai.stapi.graphoperations.graphLoader.search.filterOption.AbstractOneValueFilterOption;
 import ai.stapi.graphoperations.graphLoader.search.filterOption.FilterOption;
 import java.util.List;
@@ -23,7 +24,7 @@ public class GenericInMemoryFilterOptionResolver {
     var supported = this.inMemoryFilterResolvers.stream()
         .filter(resolver -> resolver.supports(option))
         .findFirst()
-        .get();
+        .orElseThrow(() -> new SearchOptionNotSupportedByExactlyOneResolver(0, option));
     
     return supported.resolveElement(option, element, context);
   }
@@ -37,7 +38,7 @@ public class GenericInMemoryFilterOptionResolver {
         .map(InMemoryOneValueFilterResolver.class::cast)
         .filter(resolver -> resolver.supports(option))
         .findFirst()
-        .get();
+        .orElseThrow(() -> new SearchOptionNotSupportedByExactlyOneResolver(0, option));
 
     return supported.resolveValue(option, attributeValue);
   }

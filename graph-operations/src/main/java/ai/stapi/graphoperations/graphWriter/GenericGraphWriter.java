@@ -94,14 +94,17 @@ public class GenericGraphWriter {
   }
 
   private void ensureGraphDescriptionContainsOnlyPositiveDescriptions(
-      PositiveGraphDescription graphDescription) {
+      PositiveGraphDescription graphDescription
+  ) {
     var removalDescription = GraphDescriptionBuilder.getGraphDescriptionAsStream(graphDescription)
-        .filter(description -> description instanceof RemovalGraphDescription)
+        .filter(RemovalGraphDescription.class::isInstance)
         .findAny();
+    
     removalDescription.ifPresent(
         description -> {
           throw GenericGraphWriterException.becauseGraphDescriptionContainsRemovalGraphDescription(
-              description);
+              description
+          );
         }
     );
   }
@@ -112,7 +115,7 @@ public class GenericGraphWriter {
         .filter(specificGraphWriter -> specificGraphWriter.supports(graphDescription));
 
     var listOfSupportingResolvers = supportingGraphWriters.toList();
-    if (listOfSupportingResolvers.size() == 0) {
+    if (listOfSupportingResolvers.isEmpty()) {
       throw GenericGraphWriterException.becauseNoSupportingSpecificResolverForGivenDeclaration(
           graphDescription);
     }

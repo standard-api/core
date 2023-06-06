@@ -13,49 +13,51 @@ import ai.stapi.graphoperations.graphbuilder.GraphBuilder;
 
 public class AttributeGraphWriter implements SpecificGraphWriter {
 
-    @Override
-    public GraphBuilder write(
-        GraphDescription graphDescription,
-        GraphBuilder builder
-    ) {
-        var attributeDescription = (AbstractAttributeDescription) graphDescription;
-        var parameters = (AttributeDescriptionParameters) attributeDescription.getParameters();
-        var attributeBuilder = builder.addAttributeToLastElement();
-        attributeBuilder
-            .setAttributeName(parameters.getAttributeName())
-            .setAttributeStructureType(attributeDescription.getDescribedAttributeStructureType());
-
-        var attributeValuesDescriptions = attributeDescription.getChildGraphDescriptions()
-            .stream()
-            .filter(AbstractAttributeValueDescription.class::isInstance)
-            .map(AbstractAttributeValueDescription.class::cast)
-            .toList();
-
-        attributeValuesDescriptions.forEach(valueDescription -> {
-            var constant = valueDescription.getChildGraphDescriptions().stream()
-                .filter(ConstantDescription.class::isInstance)
-                .findAny()
-                .orElseThrow(
-                    () -> SpecificGraphWriterException.becauseProvidedAttributeValueDoesNotContainAnyConstantDescription(
-                        valueDescription
-                    )
-                );
-
-            var constantParameters = (ConstantDescriptionParameters) constant.getParameters();
-            var value = constantParameters.getValue();
-            attributeBuilder.addAttributeValue(
-                new AttributeValueFactoryInput(
-                    value,
-                    valueDescription.getDescribedAttributeDataTypeId()
-                )
-            );
-        });
-
-        return builder;
+  @Override
+  public GraphBuilder write(
+      GraphDescription graphDescription,
+      GraphBuilder builder
+  ) {
+    if (!(graphDescription instanceof AbstractAttributeDescription attributeDescription)) {
+      throw new RuntimeException("Should not ever happen, because of supports.");
     }
+    var parameters = (AttributeDescriptionParameters) attributeDescription.getParameters();
+    var attributeBuilder = builder.addAttributeToLastElement();
+    attributeBuilder
+        .setAttributeName(parameters.getAttributeName())
+        .setAttributeStructureType(attributeDescription.getDescribedAttributeStructureType());
 
-    @Override
-    public boolean supports(GraphDescription graphDescription) {
-        return graphDescription instanceof AbstractAttributeDescription;
-    }
+    var attributeValuesDescriptions = attributeDescription.getChildGraphDescriptions()
+        .stream()
+        .filter(AbstractAttributeValueDescription.class::isInstance)
+        .map(AbstractAttributeValueDescription.class::cast)
+        .toList();
+
+    attributeValuesDescriptions.forEach(valueDescription -> {
+      var constant = valueDescription.getChildGraphDescriptions().stream()
+          .filter(ConstantDescription.class::isInstance)
+          .findAny()
+          .orElseThrow(
+              () -> SpecificGraphWriterException.becauseProvidedAttributeValueDoesNotContainAnyConstantDescription(
+                  valueDescription
+              )
+          );
+
+      var constantParameters = (ConstantDescriptionParameters) constant.getParameters();
+      var value = constantParameters.getValue();
+      attributeBuilder.addAttributeValue(
+          new AttributeValueFactoryInput(
+              value,
+              valueDescription.getDescribedAttributeDataTypeId()
+          )
+      );
+    });
+
+    return builder;
+  }
+
+  @Override
+  public boolean supports(GraphDescription graphDescription) {
+    return graphDescription instanceof AbstractAttributeDescription;
+  }
 }
