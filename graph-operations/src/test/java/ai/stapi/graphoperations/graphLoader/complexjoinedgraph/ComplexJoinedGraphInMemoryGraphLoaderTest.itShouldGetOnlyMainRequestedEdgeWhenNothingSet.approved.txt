@@ -1,0 +1,21 @@
+nodes:
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: EBC13
+	node_edges:
+		ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType2 (EBC13 -> 844C4 -> 530FA)
+	attributes:
+
+	node_type: ExampleComplexJoinedGraphNodeType2
+	node_hash: 530FA
+	node_edges:
+		ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType2 (EBC13 -> 844C4 -> 530FA)
+	attributes:
+
+edges:
+	edge_type: exampleComplexJoinedGraphEdgeType1
+	edge_hash: 844C4
+	ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType2 (EBC13 -> 844C4 -> 530FA)
+	attributes:
+		exampleName -> Example Edge Name 1
+		exampleQuantity -> 0
+		exampleStringAttribute -> default

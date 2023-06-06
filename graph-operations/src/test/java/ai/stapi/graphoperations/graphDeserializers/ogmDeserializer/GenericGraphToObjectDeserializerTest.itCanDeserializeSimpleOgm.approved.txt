@@ -1,0 +1,12 @@
+{
+  "serializationType" : "ObjectObjectGraphMapping",
+  "fields" : { },
+  "graphDescription" : {
+    "serializationType" : "NodeDescription",
+    "childGraphDescriptions" : [ ],
+    "parameters" : {
+      "nodeType" : "example_node"
+    },
+    "traversingType" : null
+  }
+}

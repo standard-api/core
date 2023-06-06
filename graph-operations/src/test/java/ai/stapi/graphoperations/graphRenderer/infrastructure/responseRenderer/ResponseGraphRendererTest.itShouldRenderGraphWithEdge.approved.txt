@@ -1,0 +1,37 @@
+{
+  "edges" : {
+    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx" : {
+      "type" : "example_edge_type",
+      "uuid" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "attributes" : {
+        "exampleAttributeName" : {
+          "name" : "exampleAttributeName",
+          "values" : [ {
+            "createdAt" : hidden_date,
+            "value" : "exampleAttributeValue"
+          } ]
+        }
+      },
+      "nodeFrom" : {
+        "nodeId" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+        "nodeType" : "example_node_from_type"
+      },
+      "nodeTo" : {
+        "nodeId" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+        "nodeType" : "example_node_from_type"
+      }
+    }
+  },
+  "nodes" : {
+    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx" : {
+      "type" : "example_node_to_type",
+      "uuid" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "attributes" : { }
+    },
+    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx" : {
+      "type" : "example_node_from_type",
+      "uuid" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "attributes" : { }
+    }
+  }
+}

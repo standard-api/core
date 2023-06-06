@@ -1,0 +1,12 @@
+Node identificator was invalid, because path to identification value is not ending with uuid identity or attribute description. Invalid paths: 
+{
+  "serializationType" : "OutgoingEdgeDescription",
+  "childGraphDescriptions" : [ ],
+  "parameters" : {
+    "edgeType" : "irrelevantEdge"
+  },
+  "outgoing" : true,
+  "ingoing" : false,
+  "declarationType" : "PositiveGraphDescription",
+  "graphTraversingType" : "edge"
+}

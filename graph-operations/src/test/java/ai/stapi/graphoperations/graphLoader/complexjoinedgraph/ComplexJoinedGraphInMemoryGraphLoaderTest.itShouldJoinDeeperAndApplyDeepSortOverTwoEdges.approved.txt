@@ -1,0 +1,39 @@
+[ {
+  "exampleName" : "Example Name 2",
+  "exampleComplexJoinedGraphEdgeType1" : {
+    "exampleComplexJoinedGraphEdgeType2" : [ {
+      "exampleName" : "Example Name 14",
+      "exampleQuantity" : 65,
+      "exampleStringAttribute" : "Deep From Last"
+    } ]
+  }
+}, {
+  "exampleName" : "Example Name 1",
+  "exampleComplexJoinedGraphEdgeType1" : {
+    "exampleComplexJoinedGraphEdgeType2" : [ {
+      "exampleName" : "Example Name 13",
+      "exampleQuantity" : 60,
+      "exampleStringAttribute" : "Deep From Last"
+    } ]
+  }
+}, {
+  "exampleName" : "Example Name 7",
+  "exampleComplexJoinedGraphEdgeType1" : null
+}, {
+  "exampleName" : "Example Name 3",
+  "exampleComplexJoinedGraphEdgeType1" : {
+    "exampleComplexJoinedGraphEdgeType2" : [ ]
+  }
+}, {
+  "exampleName" : "Example Name 6",
+  "exampleComplexJoinedGraphEdgeType1" : null
+}, {
+  "exampleName" : "Example Name 16",
+  "exampleComplexJoinedGraphEdgeType1" : { }
+}, {
+  "exampleName" : "Example Name 4",
+  "exampleComplexJoinedGraphEdgeType1" : null
+}, {
+  "exampleName" : "Example Name 5",
+  "exampleComplexJoinedGraphEdgeType1" : null
+} ]

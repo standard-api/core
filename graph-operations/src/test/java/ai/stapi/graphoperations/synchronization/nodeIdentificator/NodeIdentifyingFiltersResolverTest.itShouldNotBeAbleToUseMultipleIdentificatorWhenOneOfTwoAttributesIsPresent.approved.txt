@@ -1,0 +1,37 @@
+{
+  "serializationType" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "traversingType" : "node",
+  "childGraphDescriptions" : [ {
+    "serializationType" : "AllAttributesDescription",
+    "traversingType" : "value",
+    "allAttributesDescriptionParameters" : null,
+    "childGraphDescriptions" : [ ]
+  } ],
+  "parameters" : {
+    "nodeType" : "test_node_type"
+  },
+  "searchQueryParameters" : {
+    "filterOptions" : [ {
+      "optionType" : "filter",
+      "strategy" : "equals",
+      "parameters" : {
+        "attributeValue" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+        "attributeNamePath" : {
+          "serializationType" : "UuidIdentityDescription",
+          "traversingType" : "value",
+          "childGraphDescriptions" : [ ],
+          "parameters" : { }
+        }
+      }
+    } ],
+    "paginationOption" : {
+      "optionType" : "paging",
+      "strategy" : "offset",
+      "parameters" : {
+        "limit" : 2,
+        "offset" : 0
+      }
+    },
+    "sortOptions" : [ ]
+  }
+}

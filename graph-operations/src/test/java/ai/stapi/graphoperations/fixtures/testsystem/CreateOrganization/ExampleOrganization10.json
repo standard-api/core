@@ -1,0 +1,36 @@
+{
+  "resourceType": "Organization",
+  "id": "hradecKraloveCardiology",
+  "name": "Hradec Kralove Cardiology",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "cardiology"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "info@hradeckralovecardiology.cz"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "Sokolská 581"
+      ],
+      "city": "Hradec Kralove",
+      "state": "Kralovehradecky kraj",
+      "postalCode": "50003",
+      "country": "Czech Republic",
+      "position": {
+        "latitude": 50.20964,
+        "longitude": 15.83294
+      }
+    }
+  ]
+}

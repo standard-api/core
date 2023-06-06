@@ -1,0 +1,27 @@
+Cannot load graph, because specified graph element does not exist in graph.
+UUID: 576a533b-5764-401b-876c-9df37461bf90
+GraphDescription: OutgoingEdgeQueryDescription
+{
+  "serializationType" : "399c927c-fa45-435d-bc83-66918b18482c",
+  "childGraphDescriptions" : [ {
+    "serializationType" : "AllAttributesDescription",
+    "childGraphDescriptions" : [ ],
+    "parameters" : null,
+    "declarationType" : "PositiveGraphDescription",
+    "graphTraversingType" : "value"
+  } ],
+  "parameters" : {
+    "edgeType" : "exampleComplexJoinedGraphEdgeType1"
+  },
+  "searchQueryParameters" : {
+    "filterOptions" : [ ],
+    "sortOptions" : [ ],
+    "paginationOption" : null
+  },
+  "collectionComparisonOperator" : "ANY",
+  "compact" : true,
+  "outgoing" : true,
+  "graphTraversingType" : "edge",
+  "declarationType" : "PositiveGraphDescription",
+  "ingoing" : false
+}

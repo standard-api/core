@@ -3,9 +3,7 @@ package ai.stapi.serialization.classNameProvider;
 import ai.stapi.serialization.classNameProvider.exception.GenericClassNameProviderException;
 import ai.stapi.serialization.classNameProvider.specific.SpecificClassNameProvider;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class GenericClassNameProvider {
 
   private final List<SpecificClassNameProvider> classNameProviderList;

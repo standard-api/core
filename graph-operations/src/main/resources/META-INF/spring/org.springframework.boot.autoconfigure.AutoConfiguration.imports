@@ -1,0 +1,9 @@
+ai.stapi.graphoperations.configuration.ClassNameProviderConfiguration
+ai.stapi.graphoperations.configuration.GraphLoaderConfiguration
+ai.stapi.graphoperations.configuration.GraphMappingProviderConfiguration
+ai.stapi.graphoperations.configuration.GraphReaderConfiguration
+ai.stapi.graphoperations.configuration.GraphSerializationConfiguration
+ai.stapi.graphoperations.configuration.GraphSynchronizationConfiguration
+ai.stapi.graphoperations.configuration.GraphToMapObjectMapperConfiguration
+ai.stapi.graphoperations.configuration.GraphWriterConfiguration
+ai.stapi.graphoperations.configuration.ObjectGraphMapperConfiguration

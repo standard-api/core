@@ -1,0 +1,10 @@
+node_type: Address
+node_hash: CE5E7
+node_edges:
+attributes:
+	city -> Ostrava
+	country -> Czech Republic
+	line -> [28. rijna 50, 28. rijna 50, 28. rijna 50, 28. rijna 50, 28. rijna 50]
+	postalCode -> 70030
+	state -> Moravskoslezsky kraj
+

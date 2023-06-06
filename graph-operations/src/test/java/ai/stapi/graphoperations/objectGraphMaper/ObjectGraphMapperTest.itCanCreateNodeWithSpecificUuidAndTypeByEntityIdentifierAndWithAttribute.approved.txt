@@ -1,0 +1,8 @@
+nodes:
+	node_type: command_node
+	node_hash: 03FD4
+	node_edges:
+	attributes:
+		name -> example_create_command_name
+
+edges:

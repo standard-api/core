@@ -1,4 +1,5 @@
 ai.stapi.graph.configuration.AttributeFactoryConfiguration
+ai.stapi.graph.configuration.GraphRepositoryConfiguration
 ai.stapi.graph.configuration.renderer.ApiRendererConfiguration
 ai.stapi.graph.configuration.renderer.IdLessTextRendererConfiguration
 ai.stapi.graph.configuration.renderer.ResponseGraphRendererConfiguration

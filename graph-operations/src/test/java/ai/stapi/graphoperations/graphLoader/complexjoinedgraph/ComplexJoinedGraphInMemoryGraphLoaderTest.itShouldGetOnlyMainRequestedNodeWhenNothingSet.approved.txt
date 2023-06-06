@@ -1,0 +1,4 @@
+node_type: ExampleComplexJoinedGraphNodeType1
+node_hash: D2A88
+node_edges:
+attributes:

@@ -3,8 +3,12 @@ package ai.stapi.configuration;
 import ai.stapi.serialization.classNameProvider.GenericClassNameProvider;
 import ai.stapi.serialization.classNameProvider.specific.SpecificClassNameProvider;
 import ai.stapi.serialization.jackson.SerializableObjectConfigurer;
+import ai.stapi.serialization.jackson.TimestampConfigurer;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 
 @AutoConfiguration
@@ -22,5 +26,22 @@ public class SerializationConfiguration {
       GenericClassNameProvider genericClassNameProvider
   ) {
     return new SerializableObjectConfigurer(genericClassNameProvider);
+  }
+
+  @Bean
+  @ConditionalOnMissingBean
+  public ObjectMapper objectMapper() {
+    return new ObjectMapper();
+  }
+  
+  @Bean
+  @ConditionalOnBean(ObjectMapper.class)
+  public ObjectMapper commonObjectMapper(
+      ObjectMapper objectMapper,
+      SerializableObjectConfigurer serializableObjectConfigurer
+  ) {
+    serializableObjectConfigurer.configure(objectMapper);
+    TimestampConfigurer.configureTimestampModule(objectMapper);
+    return objectMapper;
   }
 }

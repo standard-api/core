@@ -1,0 +1,1 @@
+First graph description must be of type 'NodeDescription' but was of type 'OutgoingEdgeDescription'.

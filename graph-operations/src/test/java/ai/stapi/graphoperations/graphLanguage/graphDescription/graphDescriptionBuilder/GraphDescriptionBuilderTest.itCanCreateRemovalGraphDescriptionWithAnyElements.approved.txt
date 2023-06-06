@@ -1,0 +1,27 @@
+{
+  "serializationType" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "traversingType" : "node",
+  "childGraphDescriptions" : [ {
+    "serializationType" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+    "traversingType" : "node",
+    "childGraphDescriptions" : [ {
+      "serializationType" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "traversingType" : "node",
+      "childGraphDescriptions" : [ {
+        "serializationType" : "UuidIdentityDescription",
+        "traversingType" : "value",
+        "childGraphDescriptions" : [ ],
+        "parameters" : { }
+      } ],
+      "parameters" : {
+        "nodeType" : "another_example_node"
+      }
+    } ],
+    "parameters" : {
+      "edgeType" : "example_edge"
+    }
+  } ],
+  "parameters" : {
+    "nodeType" : "example_node"
+  }
+}

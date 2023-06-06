@@ -1,0 +1,37 @@
+{
+  "resourceType": "Organization",
+  "id": "olomoucHospital",
+  "name": "Olomouc Hospital",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "hospital"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "info@olomouchospital.cz"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "17. listopadu 12",
+        "Havlickova 897"
+      ],
+      "city": "Olomouc",
+      "state": "Olomoucky kraj",
+      "postalCode": "77200",
+      "country": "Czech Republic",
+      "position": {
+        "latitude": 49.59552,
+        "longitude": 17.25174
+      }
+    }
+  ]
+}

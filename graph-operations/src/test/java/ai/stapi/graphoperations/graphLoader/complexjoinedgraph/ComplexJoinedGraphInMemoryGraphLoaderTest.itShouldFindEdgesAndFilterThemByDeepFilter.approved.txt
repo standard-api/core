@@ -1,0 +1,26 @@
+[ {
+  "edges" : {
+    "exampleName" : "Example Edge Name 3",
+    "exampleQuantity" : 0,
+    "node" : {
+      "exampleName" : "Example Name 9",
+      "exampleQuantity" : 40,
+      "exampleComplexJoinedGraphEdgeType2Connections" : [ {
+        "edges" : {
+          "exampleName" : "Example Edge Name 4",
+          "exampleQuantity" : 0
+        }
+      } ]
+    }
+  }
+}, {
+  "edges" : {
+    "exampleName" : "Example Edge Name 7",
+    "exampleQuantity" : 0,
+    "node" : {
+      "exampleName" : "Example Name 11",
+      "exampleQuantity" : 50,
+      "exampleComplexJoinedGraphEdgeType2Connections" : [ ]
+    }
+  }
+} ]

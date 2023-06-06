@@ -1,0 +1,43 @@
+{
+  "serializationType" : "NodeDescription",
+  "traversingType" : "node",
+  "childGraphDescriptions" : [ {
+    "serializationType" : "LeafAttributeDescription",
+    "describedStructureType" : "LeafAttribute",
+    "traversingType" : "attribute",
+    "childGraphDescriptions" : [ {
+      "serializationType" : "StringAttributeValueDescription",
+      "describedAttributeDataTypeId" : "string",
+      "traversingType" : "value",
+      "childGraphDescriptions" : [ {
+        "serializationType" : "ConstantDescription",
+        "traversingType" : "constant",
+        "childGraphDescriptions" : [ ],
+        "parameters" : {
+          "value" : "my_value"
+        }
+      } ],
+      "parameters" : { }
+    } ],
+    "parameters" : {
+      "attributeName" : "second_branch_attribute"
+    }
+  }, {
+    "serializationType" : "OutgoingEdgeDescription",
+    "traversingType" : "edge",
+    "childGraphDescriptions" : [ {
+      "serializationType" : "NodeDescription",
+      "traversingType" : "node",
+      "childGraphDescriptions" : [ ],
+      "parameters" : {
+        "nodeType" : "third_branch_node"
+      }
+    } ],
+    "parameters" : {
+      "edgeType" : "third_branch_edge"
+    }
+  } ],
+  "parameters" : {
+    "nodeType" : "first_branch_node"
+  }
+}

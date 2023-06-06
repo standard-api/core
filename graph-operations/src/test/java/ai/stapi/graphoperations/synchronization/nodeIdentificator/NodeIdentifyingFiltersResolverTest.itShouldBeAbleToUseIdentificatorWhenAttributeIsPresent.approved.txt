@@ -1,0 +1,58 @@
+{
+  "serializationType" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "traversingType" : "node",
+  "childGraphDescriptions" : [ {
+    "serializationType" : "AllAttributesDescription",
+    "traversingType" : "value",
+    "allAttributesDescriptionParameters" : null,
+    "childGraphDescriptions" : [ ]
+  } ],
+  "parameters" : {
+    "nodeType" : "test_node_type"
+  },
+  "searchQueryParameters" : {
+    "filterOptions" : [ {
+      "optionType" : "filter",
+      "strategy" : "or",
+      "parameters" : {
+        "childFilterOptions" : [ {
+          "optionType" : "filter",
+          "strategy" : "equals",
+          "parameters" : {
+            "attributeValue" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+            "attributeNamePath" : {
+              "serializationType" : "UuidIdentityDescription",
+              "traversingType" : "value",
+              "childGraphDescriptions" : [ ],
+              "parameters" : { }
+            }
+          }
+        }, {
+          "optionType" : "filter",
+          "strategy" : "equals",
+          "parameters" : {
+            "attributeValue" : "matching",
+            "attributeNamePath" : {
+              "serializationType" : "AttributeQueryDescription",
+              "describedStructureType" : "Irrelevant",
+              "traversingType" : "attribute",
+              "childGraphDescriptions" : [ ],
+              "parameters" : {
+                "attributeName" : "identifying_attribute"
+              }
+            }
+          }
+        } ]
+      }
+    } ],
+    "paginationOption" : {
+      "optionType" : "paging",
+      "strategy" : "offset",
+      "parameters" : {
+        "limit" : 2,
+        "offset" : 0
+      }
+    },
+    "sortOptions" : [ ]
+  }
+}

@@ -21,9 +21,6 @@ public class NodeIdAndType {
     this.id = id;
   }
 
-  private NodeIdAndType() {
-  }
-
   public String getType() {
     return type;
   }
@@ -37,10 +34,9 @@ public class NodeIdAndType {
     if (this == o) {
       return true;
     }
-    if (!(o instanceof NodeIdAndType)) {
+    if (!(o instanceof NodeIdAndType that)) {
       return false;
     }
-    NodeIdAndType that = (NodeIdAndType) o;
     return getType().equals(that.getType()) && getId().equals(that.getId());
   }
 

@@ -1,0 +1,50 @@
+node_type: Address
+node_hash: 1D057
+node_edges:
+attributes:
+	city -> Karlovy Vary
+	country -> Czech Republic
+	line -> [Trida Tomase Bati 9]
+	postalCode -> 36001
+	state -> Karlovarsky kraj
+
+node_type: Address
+node_hash: 2B8FC
+node_edges:
+attributes:
+	city -> Aš
+	country -> Czech Republic
+	line -> [Dlouhá 21]
+	postalCode -> 35201
+	state -> Aš
+
+node_type: Address
+node_hash: 8AD53
+node_edges:
+attributes:
+	city -> Ceske Budejovice
+	country -> Czech Republic
+	line -> [Prazska 33, Prazska 33, Prazska 33, Prazska 34]
+	postalCode -> 37001
+	state -> Jihocesky kraj
+
+node_type: Address
+node_hash: 8BEFD
+node_edges:
+attributes:
+	city -> Litomerice
+	country -> Czech Republic
+	line -> [Husova 37]
+	postalCode -> 41201
+	state -> Ustecky kraj
+
+node_type: Address
+node_hash: 8E8FC
+node_edges:
+attributes:
+	city -> Liberec
+	country -> Czech Republic
+	line -> [Husova 15]
+	postalCode -> 46001
+	state -> Liberecky kraj
+

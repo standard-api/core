@@ -1,0 +1,38 @@
+{
+  "serializationType" : "ObjectObjectGraphMapping",
+  "fields" : {
+    "entityIdentifier" : {
+      "serializationType" : "ObjectFieldDefinition",
+      "fieldObjectGraphMapping" : {
+        "serializationType" : "ObjectObjectGraphMapping",
+        "fields" : {
+          "id" : {
+            "serializationType" : "ObjectFieldDefinition",
+            "fieldObjectGraphMapping" : {
+              "serializationType" : "LeafObjectGraphMapping",
+              "graphDescription" : {
+                "serializationType" : "UuidIdentityDescription",
+                "traversingType" : "value",
+                "childGraphDescriptions" : [ ],
+                "parameters" : { }
+              }
+            },
+            "relation" : null
+          }
+        },
+        "graphDescription" : {
+          "serializationType" : "NodeDescription",
+          "childGraphDescriptions" : [ ],
+          "parameters" : {
+            "nodeType" : "dto_identity"
+          },
+          "traversingType" : null
+        }
+      },
+      "relation" : {
+        "serializationType" : "6a1a15dd-4aba-4c20-b883-2836d3e4cbd6"
+      }
+    }
+  },
+  "graphDescription" : null
+}

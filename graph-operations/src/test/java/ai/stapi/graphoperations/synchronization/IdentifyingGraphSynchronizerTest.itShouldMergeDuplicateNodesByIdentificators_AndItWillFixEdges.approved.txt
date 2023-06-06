@@ -1,0 +1,21 @@
+nodes:
+	node_type: type
+	node_hash: BE746
+	node_edges:
+		type -> connects -> type_C (BE746 -> 48F6D -> 62892)
+	attributes:
+		A_attribute -> A_value
+		B_attribute -> B_value
+		identifying_attribute -> matched
+
+	node_type: type_C
+	node_hash: 62892
+	node_edges:
+		type -> connects -> type_C (BE746 -> 48F6D -> 62892)
+	attributes:
+
+edges:
+	edge_type: connects
+	edge_hash: 48F6D
+	type -> connects -> type_C (BE746 -> 48F6D -> 62892)
+	attributes:

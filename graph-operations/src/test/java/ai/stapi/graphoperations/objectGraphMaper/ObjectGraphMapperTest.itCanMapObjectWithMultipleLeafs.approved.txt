@@ -1,0 +1,8 @@
+nodes:
+	node_type: person_node
+	node_hash: 536BC
+	node_edges:
+	attributes:
+		name -> Mirek
+
+edges:

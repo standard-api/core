@@ -1,0 +1,57 @@
+nodes:
+	node_type: graph_description_attribute_boolean
+	node_hash: 99FA3
+	node_edges:
+		graph_description_leaf_attribute -> has_child_graph_mapping -> graph_description_attribute_boolean (59762 -> C7A50 -> 99FA3)
+	attributes:
+
+	node_type: graph_description_attribute_integer
+	node_hash: ADE14
+	node_edges:
+		graph_description_leaf_attribute -> has_child_graph_mapping -> graph_description_attribute_integer (6DFB0 -> D8DEE -> ADE14)
+	attributes:
+
+	node_type: graph_description_leaf_attribute
+	node_hash: 59762
+	node_edges:
+		graph_description_leaf_attribute -> has_child_graph_mapping -> graph_description_attribute_boolean (59762 -> C7A50 -> 99FA3)
+		graph_description_node -> has_child_graph_mapping -> graph_description_leaf_attribute (20B70 -> E545B -> 59762)
+	attributes:
+		attribute_name -> isOccupied
+
+	node_type: graph_description_leaf_attribute
+	node_hash: 6DFB0
+	node_edges:
+		graph_description_leaf_attribute -> has_child_graph_mapping -> graph_description_attribute_integer (6DFB0 -> D8DEE -> ADE14)
+		graph_description_node -> has_child_graph_mapping -> graph_description_leaf_attribute (20B70 -> 1B41D -> 6DFB0)
+	attributes:
+		attribute_name -> numberOfResidents
+
+	node_type: graph_description_node
+	node_hash: 20B70
+	node_edges:
+		graph_description_node -> has_child_graph_mapping -> graph_description_leaf_attribute (20B70 -> 1B41D -> 6DFB0)
+		graph_description_node -> has_child_graph_mapping -> graph_description_leaf_attribute (20B70 -> E545B -> 59762)
+	attributes:
+		node_type -> house
+
+edges:
+	edge_type: has_child_graph_mapping
+	edge_hash: 1B41D
+	graph_description_node -> has_child_graph_mapping -> graph_description_leaf_attribute (20B70 -> 1B41D -> 6DFB0)
+	attributes:
+
+	edge_type: has_child_graph_mapping
+	edge_hash: C7A50
+	graph_description_leaf_attribute -> has_child_graph_mapping -> graph_description_attribute_boolean (59762 -> C7A50 -> 99FA3)
+	attributes:
+
+	edge_type: has_child_graph_mapping
+	edge_hash: D8DEE
+	graph_description_leaf_attribute -> has_child_graph_mapping -> graph_description_attribute_integer (6DFB0 -> D8DEE -> ADE14)
+	attributes:
+
+	edge_type: has_child_graph_mapping
+	edge_hash: E545B
+	graph_description_node -> has_child_graph_mapping -> graph_description_leaf_attribute (20B70 -> E545B -> 59762)
+	attributes:

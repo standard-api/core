@@ -1,0 +1,99 @@
+nodes:
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: 3E6A9
+	node_edges:
+	attributes:
+		exampleName -> Example Name 1
+		exampleQuantity -> 0
+		exampleStringAttribute -> Deep From First
+		example_list_attribute -> [List Value 1, List Value 2, List Value 3]
+
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: 6477A
+	node_edges:
+	attributes:
+		exampleName -> Example Name 2
+		exampleQuantity -> 5
+		exampleStringAttribute -> Deep From First
+		example_list_attribute -> [List Value 4, List Value 5, List Value 6]
+
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: 67921
+	node_edges:
+		ExampleComplexJoinedGraphNodeType2 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType1 (1C0D4 -> 6EF5C -> 67921)
+	attributes:
+		exampleName -> Example Name 6
+		exampleQuantity -> 25
+		exampleStringAttribute -> Shallow To First
+
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: 80547
+	node_edges:
+	attributes:
+		exampleName -> Example Name 3
+		exampleQuantity -> 10
+		exampleStringAttribute -> Shallow From First
+		example_list_attribute -> [List Value 10, List Value 11, List Value 12]
+
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: 9A8B6
+	node_edges:
+	attributes:
+		exampleName -> Example Name 16
+		exampleQuantity -> 85
+		exampleStringAttribute -> Shallow From First V2
+
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: BB652
+	node_edges:
+		ExampleComplexJoinedGraphNodeType2 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType1 (755E1 -> 37CF7 -> BB652)
+	attributes:
+		exampleName -> Example Name 7
+		exampleQuantity -> 30
+		exampleStringAttribute -> Deep To First
+		example_list_attribute -> [List Value 7, List Value 8, List Value 9]
+
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: C08E9
+	node_edges:
+	attributes:
+		exampleName -> Example Name 4
+		exampleQuantity -> 15
+		exampleStringAttribute -> Shallow From First Other
+
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: FD56B
+	node_edges:
+	attributes:
+		exampleName -> Example Name 5
+		exampleQuantity -> 20
+		exampleStringAttribute -> Without edge
+
+	node_type: ExampleComplexJoinedGraphNodeType2
+	node_hash: 1C0D4
+	node_edges:
+		ExampleComplexJoinedGraphNodeType2 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType1 (1C0D4 -> 6EF5C -> 67921)
+	attributes:
+
+	node_type: ExampleComplexJoinedGraphNodeType2
+	node_hash: 755E1
+	node_edges:
+		ExampleComplexJoinedGraphNodeType2 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType1 (755E1 -> 37CF7 -> BB652)
+	attributes:
+
+edges:
+	edge_type: exampleComplexJoinedGraphEdgeType1
+	edge_hash: 37CF7
+	ExampleComplexJoinedGraphNodeType2 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType1 (755E1 -> 37CF7 -> BB652)
+	attributes:
+		exampleName -> Example Edge Name 5
+		exampleQuantity -> 0
+		exampleStringAttribute -> default
+
+	edge_type: exampleComplexJoinedGraphEdgeType1
+	edge_hash: 6EF5C
+	ExampleComplexJoinedGraphNodeType2 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType1 (1C0D4 -> 6EF5C -> 67921)
+	attributes:
+		exampleName -> Example Edge Name 8
+		exampleQuantity -> 0
+		exampleStringAttribute -> default

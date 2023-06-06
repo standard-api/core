@@ -1,0 +1,29 @@
+{
+  "serializationType" : "NodeDescription",
+  "traversingType" : "node",
+  "childGraphDescriptions" : [ {
+    "serializationType" : "LeafAttributeDescription",
+    "describedStructureType" : "LeafAttribute",
+    "traversingType" : "attribute",
+    "childGraphDescriptions" : [ {
+      "serializationType" : "StringAttributeValueDescription",
+      "describedAttributeDataTypeId" : "string",
+      "traversingType" : "value",
+      "childGraphDescriptions" : [ {
+        "serializationType" : "ConstantDescription",
+        "traversingType" : "constant",
+        "childGraphDescriptions" : [ ],
+        "parameters" : {
+          "value" : "my_value"
+        }
+      } ],
+      "parameters" : { }
+    } ],
+    "parameters" : {
+      "attributeName" : "example_attribute"
+    }
+  } ],
+  "parameters" : {
+    "nodeType" : "example_type"
+  }
+}

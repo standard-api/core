@@ -1,0 +1,21 @@
+nodes:
+	node_type: node_from_type
+	node_hash: 94D89
+	node_edges:
+		node_from_type -> edge_type -> node_to_type (94D89 -> B37F9 -> B4FF5)
+	attributes:
+		attribute_name -> [attribute value]
+
+	node_type: node_to_type
+	node_hash: B4FF5
+	node_edges:
+		node_from_type -> edge_type -> node_to_type (94D89 -> B37F9 -> B4FF5)
+	attributes:
+		attribute_name -> [attribute value]
+
+edges:
+	edge_type: edge_type
+	edge_hash: B37F9
+	node_from_type -> edge_type -> node_to_type (94D89 -> B37F9 -> B4FF5)
+	attributes:
+		attribute_name -> [attribute value]

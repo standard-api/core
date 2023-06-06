@@ -1,0 +1,19 @@
+nodes:
+	node_type: first_node
+	node_hash: 6C760
+	node_edges:
+		first_node -> first_edge -> second_node (6C760 -> D56FA -> EF65B)
+	attributes:
+
+	node_type: second_node
+	node_hash: EF65B
+	node_edges:
+		first_node -> first_edge -> second_node (6C760 -> D56FA -> EF65B)
+	attributes:
+		example_attribute -> example_value
+
+edges:
+	edge_type: first_edge
+	edge_hash: D56FA
+	first_node -> first_edge -> second_node (6C760 -> D56FA -> EF65B)
+	attributes:

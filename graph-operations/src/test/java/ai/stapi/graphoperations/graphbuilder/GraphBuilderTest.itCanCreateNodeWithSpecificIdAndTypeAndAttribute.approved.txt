@@ -1,0 +1,11 @@
+nodes:
+	node_type: example_type
+	node_hash: B1575
+	node_edges:
+	attributes:
+		boolean_attribute -> true
+		decimal_attribute -> 5.6231
+		integer_attribute -> 1
+		string_attribute -> string_value
+
+edges:

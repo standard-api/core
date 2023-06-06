@@ -1,0 +1,5 @@
+node_type: Test_node_type
+node_hash: 131DD
+node_edges:
+attributes:
+	string_type -> test value

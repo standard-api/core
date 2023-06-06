@@ -1,0 +1,7 @@
+node_type: Test_node_type
+node_hash: 7E640
+node_edges:
+attributes:
+	string_type -> test value
+	string_type -> test value_overwritten
+	string_type2 -> test value2

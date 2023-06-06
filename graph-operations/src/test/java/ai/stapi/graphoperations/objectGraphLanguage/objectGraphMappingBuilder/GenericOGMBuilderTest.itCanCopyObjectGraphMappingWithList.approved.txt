@@ -1,0 +1,66 @@
+{
+  "serializationType" : "ObjectObjectGraphMapping",
+  "fields" : {
+    "children" : {
+      "serializationType" : "ObjectFieldDefinition",
+      "fieldObjectGraphMapping" : {
+        "serializationType" : "ListObjectGraphMapping",
+        "childObjectGraphMapping" : {
+          "serializationType" : "LeafObjectGraphMapping",
+          "graphDescription" : {
+            "serializationType" : "NodeDescription",
+            "traversingType" : "node",
+            "childGraphDescriptions" : [ ],
+            "parameters" : {
+              "nodeType" : "child"
+            }
+          }
+        },
+        "graphDescription" : {
+          "serializationType" : "NullGraphDescription",
+          "traversingType" : "null",
+          "childGraphDescriptions" : [ ]
+        }
+      },
+      "relation" : {
+        "serializationType" : "NullGraphDescription",
+        "traversingType" : "null",
+        "childGraphDescriptions" : [ ]
+      }
+    },
+    "name" : {
+      "serializationType" : "ObjectFieldDefinition",
+      "fieldObjectGraphMapping" : {
+        "serializationType" : "LeafObjectGraphMapping",
+        "graphDescription" : {
+          "serializationType" : "LeafAttributeDescription",
+          "describedStructureType" : "LeafAttribute",
+          "traversingType" : "attribute",
+          "childGraphDescriptions" : [ {
+            "serializationType" : "StringAttributeValueDescription",
+            "describedAttributeDataTypeId" : "string",
+            "traversingType" : "value",
+            "childGraphDescriptions" : [ ],
+            "parameters" : { }
+          } ],
+          "parameters" : {
+            "attributeName" : "name"
+          }
+        }
+      },
+      "relation" : {
+        "serializationType" : "NullGraphDescription",
+        "traversingType" : "null",
+        "childGraphDescriptions" : [ ]
+      }
+    }
+  },
+  "graphDescription" : {
+    "serializationType" : "NodeDescription",
+    "traversingType" : "node",
+    "childGraphDescriptions" : [ ],
+    "parameters" : {
+      "nodeType" : "entity"
+    }
+  }
+}

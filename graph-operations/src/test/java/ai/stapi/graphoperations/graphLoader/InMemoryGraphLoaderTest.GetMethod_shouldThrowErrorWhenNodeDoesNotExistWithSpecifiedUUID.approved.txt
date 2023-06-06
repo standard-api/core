@@ -1,0 +1,17 @@
+Cannot load graph, because specified graph element does not exist in graph.
+UUID: 0762fc65-7c9f-4578-944a-8d89f003d03d
+GraphDescription: NodeQueryGraphDescription
+{
+  "serializationType" : "72ba0bef-5f38-489b-bbbf-8212191f1f92",
+  "childGraphDescriptions" : [ ],
+  "parameters" : {
+    "nodeType" : "node2"
+  },
+  "searchQueryParameters" : {
+    "filterOptions" : [ ],
+    "sortOptions" : [ ],
+    "paginationOption" : null
+  },
+  "graphTraversingType" : "node",
+  "declarationType" : "PositiveGraphDescription"
+}

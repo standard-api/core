@@ -1,0 +1,62 @@
+{
+  "nodes" : {
+    "node_from_type/NodeFromId" : {
+      "_id" : "node_from_type/NodeFromId",
+      "attributes" : {
+        "attribute_name" : [ {
+          "values" : [ {
+            "serializationType" : "string",
+            "value" : "attribute value"
+          } ],
+          "metaData" : {
+            "createdAt" : [ {
+              "serializationType" : "instant",
+              "value" : "2023-05-04 21:00:55.68332646"
+            } ]
+          }
+        } ]
+      },
+      "_key" : "NodeFromId"
+    },
+    "node_to_type/NodeToId" : {
+      "_id" : "node_to_type/NodeToId",
+      "attributes" : {
+        "attribute_name" : [ {
+          "values" : [ {
+            "serializationType" : "string",
+            "value" : "attribute value"
+          } ],
+          "metaData" : {
+            "createdAt" : [ {
+              "serializationType" : "instant",
+              "value" : "2023-05-04 21:00:55.68332646"
+            } ]
+          }
+        } ]
+      },
+      "_key" : "NodeToId"
+    }
+  },
+  "edges" : {
+    "edge_type/EdgeId" : {
+      "_id" : "edge_type/EdgeId",
+      "attributes" : {
+        "attribute_name" : [ {
+          "values" : [ {
+            "serializationType" : "string",
+            "value" : "attribute value"
+          } ],
+          "metaData" : {
+            "createdAt" : [ {
+              "serializationType" : "instant",
+              "value" : "2023-05-04 21:00:55.68332646"
+            } ]
+          }
+        } ]
+      },
+      "_from" : "node_from_type/NodeFromId",
+      "_to" : "node_to_type/NodeToId",
+      "_key" : "EdgeId"
+    }
+  }
+}

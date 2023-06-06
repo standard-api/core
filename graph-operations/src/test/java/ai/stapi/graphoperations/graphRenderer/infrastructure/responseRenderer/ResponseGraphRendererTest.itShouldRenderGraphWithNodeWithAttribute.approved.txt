@@ -1,0 +1,18 @@
+{
+  "edges" : { },
+  "nodes" : {
+    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx" : {
+      "type" : "example_node_type",
+      "uuid" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "attributes" : {
+        "exampleAttributeName" : {
+          "name" : "exampleAttributeName",
+          "values" : [ {
+            "createdAt" : hidden_date,
+            "value" : "exampleAttributeValue"
+          } ]
+        }
+      }
+    }
+  }
+}

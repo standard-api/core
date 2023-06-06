@@ -1,0 +1,7 @@
+nodes:
+	node_type: ogm_leaf
+	node_hash: D294E
+	node_edges:
+	attributes:
+
+edges:

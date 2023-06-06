@@ -1,0 +1,23 @@
+nodes:
+	node_type: type
+	node_hash: DF706
+	node_edges:
+		type -> connects -> type_C (DF706 -> B727F -> C503C)
+	attributes:
+		A_attribute -> A_value
+		B_attribute -> B_value
+		identifying_attribute -> matched
+
+	node_type: type_C
+	node_hash: C503C
+	node_edges:
+		type -> connects -> type_C (DF706 -> B727F -> C503C)
+	attributes:
+
+edges:
+	edge_type: connects
+	edge_hash: B727F
+	type -> connects -> type_C (DF706 -> B727F -> C503C)
+	attributes:
+		A_edge_attribute -> A_edge_value
+		B_edge_attribute -> B_edge_value

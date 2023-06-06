@@ -1,0 +1,20 @@
+{
+  "serializationType" : "ObjectFieldDefinition",
+  "fieldObjectGraphMapping" : {
+    "serializationType" : "InterfaceObjectGraphMapping",
+    "graphDescription" : {
+      "serializationType" : "OutgoingEdgeDescription",
+      "traversingType" : "edge",
+      "childGraphDescriptions" : [ ],
+      "parameters" : {
+        "edgeType" : "value"
+      }
+    },
+    "interfaceUuid" : null
+  },
+  "relation" : {
+    "serializationType" : "NullGraphDescription",
+    "traversingType" : "null",
+    "childGraphDescriptions" : [ ]
+  }
+}

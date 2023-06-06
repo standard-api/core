@@ -1,0 +1,36 @@
+{
+  "resourceType": "Organization",
+  "id": "karlovyVaryRehabilitationCenter",
+  "name": "Karlovy Vary Rehabilitation Center",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "rehabilitation-center"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "info@karlovyvaryrehabcenter.cz"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "Trida Tomase Bati 9"
+      ],
+      "city": "Karlovy Vary",
+      "state": "Karlovarsky kraj",
+      "postalCode": "36001",
+      "country": "Czech Republic",
+      "position": {
+        "latitude": 50.23155,
+        "longitude": 12.87143
+      }
+    }
+  ]
+}

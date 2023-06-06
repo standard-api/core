@@ -1,0 +1,22 @@
+{
+  "serializationType" : "NodeDescription",
+  "traversingType" : "node",
+  "childGraphDescriptions" : [ {
+    "serializationType" : "OutgoingEdgeDescription",
+    "traversingType" : "edge",
+    "childGraphDescriptions" : [ {
+      "serializationType" : "NodeDescription",
+      "traversingType" : "node",
+      "childGraphDescriptions" : [ ],
+      "parameters" : {
+        "nodeType" : "another_positive_node"
+      }
+    } ],
+    "parameters" : {
+      "edgeType" : "positive_edge"
+    }
+  } ],
+  "parameters" : {
+    "nodeType" : "positive_node"
+  }
+}

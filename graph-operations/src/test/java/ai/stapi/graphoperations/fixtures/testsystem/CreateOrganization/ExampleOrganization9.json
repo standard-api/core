@@ -1,0 +1,36 @@
+{
+  "resourceType": "Organization",
+  "id": "liberecOrthopedicClinic",
+  "name": "Liberec Orthopedic Clinic",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "orthopedic-clinic"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "info@liberecorthopedicclinic.cz"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "Husova 15"
+      ],
+      "city": "Liberec",
+      "state": "Liberecky kraj",
+      "postalCode": "46001",
+      "country": "Czech Republic",
+      "position": {
+        "latitude": 50.76978,
+        "longitude": 15.05418
+      }
+    }
+  ]
+}

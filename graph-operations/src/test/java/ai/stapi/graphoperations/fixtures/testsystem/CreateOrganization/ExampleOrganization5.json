@@ -1,0 +1,39 @@
+{
+  "resourceType": "Organization",
+  "id": "plzenChildrensHospital",
+  "name": "Plzen Children's Hospital",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "hospital"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "info@plzenchildrenshospital.cz"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "Alej Svobody 80",
+        "Nalej Svobody 478",
+        "Prilej Svobody 44"
+      ],
+      "city": "Plzen",
+      "state": "Plzensky kraj",
+      "postalCode": "32600",
+      "country": "Czech Republic",
+      "position": {
+        "latitude": 49.74747,
+        "longitude": 13.38177
+      }
+    }
+  ]
+}
+

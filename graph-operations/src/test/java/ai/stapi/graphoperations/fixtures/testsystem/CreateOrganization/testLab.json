@@ -1,0 +1,11 @@
+{
+  "resourceType": "Organization",
+  "id": "testLab",
+  "identifier": [
+    {
+      "system": "https://genio.fit/systems/czechia/ico",
+      "value": "111222333444"
+    }
+  ],
+  "name": "TestLab"
+}

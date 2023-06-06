@@ -1,0 +1,23 @@
+{
+  "id" : "CodeableConcept",
+  "abstract" : false,
+  "kind" : "complex-type",
+  "differential" : {
+    "element" : [ {
+      "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "max" : "*",
+      "min" : 0,
+      "path" : "CodeableConcept"
+    }, {
+      "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "max" : "*",
+      "min" : 0,
+      "path" : "CodeableConcept.coding"
+    }, {
+      "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "max" : "1",
+      "min" : 0,
+      "path" : "CodeableConcept.text"
+    } ]
+  }
+}

@@ -1,0 +1,10 @@
+nodes:
+	node_type: testNode
+	node_hash: 67164
+	node_edges:
+	attributes:
+		mergedTestAttribute -> newValue
+		mergedTestAttribute -> oldValue
+		testAttribute -> value
+
+edges:

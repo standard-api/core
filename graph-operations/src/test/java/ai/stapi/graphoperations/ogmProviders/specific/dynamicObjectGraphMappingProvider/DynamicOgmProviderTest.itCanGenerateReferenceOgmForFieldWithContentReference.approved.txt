@@ -1,0 +1,28 @@
+{
+  "serializationType" : "ObjectFieldDefinition",
+  "fieldObjectGraphMapping" : {
+    "serializationType" : "ListObjectGraphMapping",
+    "childObjectGraphMapping" : {
+      "serializationType" : "ReferenceObjectGraphMapping",
+      "referencedSerializationType" : "PlanDefinitionAction",
+      "graphDescription" : {
+        "serializationType" : "OutgoingEdgeDescription",
+        "traversingType" : "edge",
+        "childGraphDescriptions" : [ ],
+        "parameters" : {
+          "edgeType" : "action"
+        }
+      }
+    },
+    "graphDescription" : {
+      "serializationType" : "NullGraphDescription",
+      "traversingType" : "null",
+      "childGraphDescriptions" : [ ]
+    }
+  },
+  "relation" : {
+    "serializationType" : "NullGraphDescription",
+    "traversingType" : "null",
+    "childGraphDescriptions" : [ ]
+  }
+}

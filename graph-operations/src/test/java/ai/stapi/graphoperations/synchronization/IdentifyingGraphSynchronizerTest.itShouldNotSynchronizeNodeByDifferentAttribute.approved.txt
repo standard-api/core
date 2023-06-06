@@ -1,0 +1,5 @@
+node_type: Test_node_type
+node_hash: BEFB9
+node_edges:
+attributes:
+	not_identifying_attribute -> test value

@@ -1,0 +1,4 @@
+Provided object from field 'fallbackName' could not be converted by 'ObjectSpecificObjectGraphMapper'. Object probably doesn't correspond to ObjectGraphMapping definition attached to it.
+Cause: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('exampleName')
+ at [Source: UNKNOWN; byte offset: #UNKNOWN]
+Provided object: "exampleName"

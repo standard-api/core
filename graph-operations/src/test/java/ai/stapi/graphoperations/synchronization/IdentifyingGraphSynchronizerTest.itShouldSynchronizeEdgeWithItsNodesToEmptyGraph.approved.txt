@@ -1,0 +1,4 @@
+edge_type: contains
+edge_hash: 17B46
+glass -> contains -> water (6652D -> 17B46 -> F5F68)
+attributes:

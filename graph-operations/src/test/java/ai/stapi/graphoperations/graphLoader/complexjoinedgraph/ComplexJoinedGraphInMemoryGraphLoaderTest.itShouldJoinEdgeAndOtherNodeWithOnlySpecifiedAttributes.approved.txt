@@ -1,0 +1,117 @@
+nodes:
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: 2A944
+	node_edges:
+	attributes:
+		exampleName -> Example Name 6
+		exampleQuantity -> 25
+		exampleStringAttribute -> Shallow To First
+
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: 59B03
+	node_edges:
+		ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType2 (59B03 -> 87B05 -> 502BD)
+	attributes:
+		exampleName -> Example Name 1
+		exampleQuantity -> 0
+		exampleStringAttribute -> Deep From First
+		example_list_attribute -> [List Value 1, List Value 2, List Value 3]
+
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: 6E709
+	node_edges:
+		ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType2 (6E709 -> F431B -> C981A)
+	attributes:
+		exampleName -> Example Name 3
+		exampleQuantity -> 10
+		exampleStringAttribute -> Shallow From First
+		example_list_attribute -> [List Value 10, List Value 11, List Value 12]
+
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: 7BBCA
+	node_edges:
+	attributes:
+		exampleName -> Example Name 7
+		exampleQuantity -> 30
+		exampleStringAttribute -> Deep To First
+		example_list_attribute -> [List Value 7, List Value 8, List Value 9]
+
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: 9A8B6
+	node_edges:
+	attributes:
+		exampleName -> Example Name 16
+		exampleQuantity -> 85
+		exampleStringAttribute -> Shallow From First V2
+
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: C08E9
+	node_edges:
+	attributes:
+		exampleName -> Example Name 4
+		exampleQuantity -> 15
+		exampleStringAttribute -> Shallow From First Other
+
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: C3E1A
+	node_edges:
+		ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType2 (C3E1A -> 72EFA -> 9B361)
+	attributes:
+		exampleName -> Example Name 2
+		exampleQuantity -> 5
+		exampleStringAttribute -> Deep From First
+		example_list_attribute -> [List Value 4, List Value 5, List Value 6]
+
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: FD56B
+	node_edges:
+	attributes:
+		exampleName -> Example Name 5
+		exampleQuantity -> 20
+		exampleStringAttribute -> Without edge
+
+	node_type: ExampleComplexJoinedGraphNodeType2
+	node_hash: 502BD
+	node_edges:
+		ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType2 (59B03 -> 87B05 -> 502BD)
+	attributes:
+		exampleName -> Example Name 8
+
+	node_type: ExampleComplexJoinedGraphNodeType2
+	node_hash: 9B361
+	node_edges:
+		ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType2 (C3E1A -> 72EFA -> 9B361)
+	attributes:
+		exampleName -> Example Name 9
+
+	node_type: ExampleComplexJoinedGraphNodeType2
+	node_hash: C981A
+	node_edges:
+		ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType2 (6E709 -> F431B -> C981A)
+	attributes:
+		exampleName -> Example Name 11
+
+edges:
+	edge_type: exampleComplexJoinedGraphEdgeType1
+	edge_hash: 72EFA
+	ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType2 (C3E1A -> 72EFA -> 9B361)
+	attributes:
+		exampleName -> Example Edge Name 3
+		exampleQuantity -> 0
+		exampleStringAttribute -> default
+
+	edge_type: exampleComplexJoinedGraphEdgeType1
+	edge_hash: 87B05
+	ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType2 (59B03 -> 87B05 -> 502BD)
+	attributes:
+		exampleName -> Example Edge Name 1
+		exampleQuantity -> 0
+		exampleStringAttribute -> default
+
+	edge_type: exampleComplexJoinedGraphEdgeType1
+	edge_hash: F431B
+	ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType2 (6E709 -> F431B -> C981A)
+	attributes:
+		exampleName -> Example Edge Name 7
+		exampleQuantity -> 0
+		exampleStringAttribute -> default

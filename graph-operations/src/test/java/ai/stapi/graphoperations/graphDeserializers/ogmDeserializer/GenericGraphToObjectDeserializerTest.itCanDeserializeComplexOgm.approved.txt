@@ -1,0 +1,45 @@
+{
+  "serializationType" : "ObjectObjectGraphMapping",
+  "fields" : {
+    "randomFieldName" : {
+      "serializationType" : "ObjectFieldDefinition",
+      "fieldObjectGraphMapping" : {
+        "serializationType" : "ObjectObjectGraphMapping",
+        "fields" : {
+          "nestedObjectField" : {
+            "serializationType" : "ObjectFieldDefinition",
+            "fieldObjectGraphMapping" : {
+              "serializationType" : "LeafObjectGraphMapping",
+              "graphDescription" : {
+                "serializationType" : "LeafAttributeDescription",
+                "childGraphDescriptions" : [ {
+                  "serializationType" : "StringAttributeValueDescription",
+                  "describedAttributeDataTypeId" : "string",
+                  "traversingType" : "value",
+                  "childGraphDescriptions" : [ ],
+                  "parameters" : { }
+                } ],
+                "describedStructureType" : null,
+                "parameters" : {
+                  "attributeName" : "nestedAttribute"
+                },
+                "traversingType" : null
+              }
+            },
+            "relation" : null
+          }
+        },
+        "graphDescription" : null
+      },
+      "relation" : null
+    }
+  },
+  "graphDescription" : {
+    "serializationType" : "NodeDescription",
+    "childGraphDescriptions" : [ ],
+    "parameters" : {
+      "nodeType" : "example_node"
+    },
+    "traversingType" : null
+  }
+}

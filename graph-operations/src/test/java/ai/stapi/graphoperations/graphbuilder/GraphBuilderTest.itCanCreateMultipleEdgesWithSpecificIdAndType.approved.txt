@@ -1,0 +1,30 @@
+nodes:
+	node_type: first_node
+	node_hash: FB6C9
+	node_edges:
+		first_node -> first_edge -> second_node (FB6C9 -> 5374F -> B5720)
+	attributes:
+
+	node_type: second_node
+	node_hash: B5720
+	node_edges:
+		first_node -> first_edge -> second_node (FB6C9 -> 5374F -> B5720)
+		third_node -> second_edge -> second_node (14E3E -> C5880 -> B5720)
+	attributes:
+
+	node_type: third_node
+	node_hash: 14E3E
+	node_edges:
+		third_node -> second_edge -> second_node (14E3E -> C5880 -> B5720)
+	attributes:
+
+edges:
+	edge_type: first_edge
+	edge_hash: 5374F
+	first_node -> first_edge -> second_node (FB6C9 -> 5374F -> B5720)
+	attributes:
+
+	edge_type: second_edge
+	edge_hash: C5880
+	third_node -> second_edge -> second_node (14E3E -> C5880 -> B5720)
+	attributes:

@@ -1,0 +1,11 @@
+[ {
+  "nodeId" : {
+    "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx"
+  },
+  "nodeType" : "node_type"
+}, {
+  "nodeId" : {
+    "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx"
+  },
+  "nodeType" : "another_type"
+} ]

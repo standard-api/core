@@ -1,0 +1,15 @@
+{
+  "serializationType" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "traversingType" : "node",
+  "childGraphDescriptions" : [ {
+    "serializationType" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+    "traversingType" : "node",
+    "childGraphDescriptions" : [ ],
+    "parameters" : {
+      "nodeType" : "another_example_node"
+    }
+  } ],
+  "parameters" : {
+    "nodeType" : "example_node"
+  }
+}

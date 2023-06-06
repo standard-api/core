@@ -1,0 +1,24 @@
+node_type: ExampleEntity
+node_hash: 94D76
+node_edges:
+attributes:
+	exampleName -> Example Name 3
+	exampleQuantity -> 1000
+	exampleStringAttribute -> Some Other Attribute Value
+
+node_type: ExampleEntity
+node_hash: 51756
+node_edges:
+attributes:
+	exampleName -> Example Name 4
+	exampleQuantity -> 23
+	exampleStringAttribute -> Attribute Value
+
+node_type: ExampleEntity
+node_hash: 597B1
+node_edges:
+attributes:
+	exampleName -> Example Name 5
+	exampleQuantity -> 653
+	exampleStringAttribute -> Some Other Attribute Value
+

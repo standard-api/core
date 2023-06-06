@@ -1,0 +1,8 @@
+{
+  "serializationType" : "NodeDescription",
+  "traversingType" : "node",
+  "childGraphDescriptions" : [ ],
+  "parameters" : {
+    "nodeType" : "example_node"
+  }
+}

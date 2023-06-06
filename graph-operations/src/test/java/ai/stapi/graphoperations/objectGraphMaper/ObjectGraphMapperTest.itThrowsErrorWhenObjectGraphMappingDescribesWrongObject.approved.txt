@@ -1,0 +1,4 @@
+Provided object from field 'name' could not be converted by 'ListSpecificObjectGraphMapper'. Object probably doesn't correspond to ObjectGraphMapping definition attached to it.
+Cause: Cannot deserialize value of type `java.util.ArrayList<java.lang.Object>` from String value (token `JsonToken.VALUE_STRING`)
+ at [Source: UNKNOWN; byte offset: #UNKNOWN]
+Provided object: "Mirek"

@@ -1,0 +1,33 @@
+nodes:
+	node_type: graph_description_node
+	node_hash: 2F167
+	node_edges:
+		graph_description_outgoing_edge -> has_child_graph_mapping -> graph_description_node (E705A -> 02A70 -> 2F167)
+	attributes:
+		node_type -> resident
+
+	node_type: graph_description_node
+	node_hash: B2EB2
+	node_edges:
+		graph_description_node -> has_child_graph_mapping -> graph_description_outgoing_edge (B2EB2 -> 8742D -> E705A)
+	attributes:
+		node_type -> house
+
+	node_type: graph_description_outgoing_edge
+	node_hash: E705A
+	node_edges:
+		graph_description_node -> has_child_graph_mapping -> graph_description_outgoing_edge (B2EB2 -> 8742D -> E705A)
+		graph_description_outgoing_edge -> has_child_graph_mapping -> graph_description_node (E705A -> 02A70 -> 2F167)
+	attributes:
+		edge_type -> contains_resident
+
+edges:
+	edge_type: has_child_graph_mapping
+	edge_hash: 02A70
+	graph_description_outgoing_edge -> has_child_graph_mapping -> graph_description_node (E705A -> 02A70 -> 2F167)
+	attributes:
+
+	edge_type: has_child_graph_mapping
+	edge_hash: 8742D
+	graph_description_node -> has_child_graph_mapping -> graph_description_outgoing_edge (B2EB2 -> 8742D -> E705A)
+	attributes:

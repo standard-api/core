@@ -1,0 +1,17 @@
+{
+  "serializationType" : "ObjectFieldDefinition",
+  "fieldObjectGraphMapping" : {
+    "serializationType" : "LeafObjectGraphMapping",
+    "graphDescription" : {
+      "serializationType" : "UuidIdentityDescription",
+      "traversingType" : "value",
+      "childGraphDescriptions" : [ ],
+      "parameters" : { }
+    }
+  },
+  "relation" : {
+    "serializationType" : "NullGraphDescription",
+    "traversingType" : "null",
+    "childGraphDescriptions" : [ ]
+  }
+}

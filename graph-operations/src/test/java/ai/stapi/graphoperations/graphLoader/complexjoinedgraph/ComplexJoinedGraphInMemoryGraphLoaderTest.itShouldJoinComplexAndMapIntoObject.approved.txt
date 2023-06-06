@@ -1,0 +1,90 @@
+[ {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "exampleName" : "Example Name 1",
+  "exampleComplexJoinedGraphEdgeType1Connections" : {
+    "edges" : {
+      "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "exampleName" : "Example Edge Name 1",
+      "node" : {
+        "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+        "exampleName" : "Example Name 8",
+        "exampleComplexJoinedGraphEdgeType2Connections" : [ {
+          "edges" : {
+            "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+            "exampleName" : "Example Edge Name 2",
+            "node" : {
+              "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+              "exampleName" : "Example Name 13"
+            }
+          }
+        } ]
+      }
+    }
+  }
+}, {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "exampleName" : "Example Name 2",
+  "exampleComplexJoinedGraphEdgeType1Connections" : {
+    "edges" : {
+      "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "exampleName" : "Example Edge Name 3",
+      "node" : {
+        "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+        "exampleName" : "Example Name 9",
+        "exampleComplexJoinedGraphEdgeType2Connections" : [ {
+          "edges" : {
+            "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+            "exampleName" : "Example Edge Name 4",
+            "node" : {
+              "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+              "exampleName" : "Example Name 14"
+            }
+          }
+        } ]
+      }
+    }
+  }
+}, {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "exampleName" : "Example Name 7",
+  "exampleComplexJoinedGraphEdgeType1Connections" : null
+}, {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "exampleName" : "Example Name 3",
+  "exampleComplexJoinedGraphEdgeType1Connections" : {
+    "edges" : {
+      "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "exampleName" : "Example Edge Name 7",
+      "node" : {
+        "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+        "exampleName" : "Example Name 11",
+        "exampleComplexJoinedGraphEdgeType2Connections" : [ ]
+      }
+    }
+  }
+}, {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "exampleName" : "Example Name 6",
+  "exampleComplexJoinedGraphEdgeType1Connections" : null
+}, {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "exampleName" : "Example Name 16",
+  "exampleComplexJoinedGraphEdgeType1Connections" : {
+    "edges" : {
+      "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "exampleName" : "Example Edge Name 9",
+      "node" : {
+        "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+        "exampleName" : "Example Name 17"
+      }
+    }
+  }
+}, {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "exampleName" : "Example Name 4",
+  "exampleComplexJoinedGraphEdgeType1Connections" : null
+}, {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "exampleName" : "Example Name 5",
+  "exampleComplexJoinedGraphEdgeType1Connections" : null
+} ]

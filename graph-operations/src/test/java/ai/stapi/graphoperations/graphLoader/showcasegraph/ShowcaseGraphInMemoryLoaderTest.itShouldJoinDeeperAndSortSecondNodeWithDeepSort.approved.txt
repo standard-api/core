@@ -1,0 +1,709 @@
+[ {
+  "type" : "Address",
+  "differential" : {
+    "element" : [ {
+      "max" : "1",
+      "min" : 0,
+      "path" : "Address.text",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "Address.state",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "Address.postalCode",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "Address.line",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "Address.district",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "Address.country",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "Address.city",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "Address.period",
+      "type" : [ {
+        "code" : "Period"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "path" : "Address.position.longitude",
+      "type" : [ {
+        "code" : "decimal"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "path" : "Address.position.latitude",
+      "type" : [ {
+        "code" : "decimal"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "Address.use",
+      "type" : [ {
+        "code" : "code"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "Address.type",
+      "type" : [ {
+        "code" : "code"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "Address.position",
+      "type" : [ {
+        "code" : "BackboneElement"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "Address",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "AggregateDefinition",
+  "differential" : {
+    "element" : [ {
+      "max" : "1",
+      "min" : 0,
+      "path" : "AggregateDefinition.name",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "AggregateDefinition.id",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "AggregateDefinition.description",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "path" : "AggregateDefinition.structure",
+      "type" : [ {
+        "code" : "Reference"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "AggregateDefinition.command",
+      "type" : [ {
+        "code" : "CommandHandlerDefinition"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "AggregateDefinition",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "BackboneElement",
+  "differential" : {
+    "element" : [ {
+      "max" : "*",
+      "min" : 0,
+      "path" : "BackboneElement.modifierExtension",
+      "type" : [ {
+        "code" : "Extension"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "BackboneElement",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "base64Binary",
+  "differential" : {
+    "element" : [ {
+      "max" : "1",
+      "min" : 0,
+      "path" : "base64Binary.value",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "base64Binary",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "boolean",
+  "differential" : {
+    "element" : [ {
+      "max" : "1",
+      "min" : 0,
+      "path" : "boolean.value",
+      "type" : [ {
+        "code" : "boolean"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "boolean",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "canonical",
+  "differential" : {
+    "element" : [ {
+      "max" : "1",
+      "min" : 0,
+      "path" : "canonical.value",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "canonical",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "code",
+  "differential" : {
+    "element" : [ {
+      "max" : "1",
+      "min" : 0,
+      "path" : "code.value",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "code",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "CodeableConcept",
+  "differential" : {
+    "element" : [ {
+      "max" : "1",
+      "min" : 0,
+      "path" : "CodeableConcept.text",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "CodeableConcept.coding",
+      "type" : [ {
+        "code" : "Coding"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "CodeableConcept",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "CodeableReference",
+  "differential" : {
+    "element" : [ {
+      "max" : "1",
+      "min" : 0,
+      "path" : "CodeableReference.reference",
+      "type" : [ {
+        "code" : "Reference"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "CodeableReference.concept",
+      "type" : [ {
+        "code" : "CodeableConcept"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "CodeableReference",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "Coding",
+  "differential" : {
+    "element" : [ {
+      "max" : "1",
+      "min" : 0,
+      "path" : "Coding.system",
+      "type" : [ {
+        "code" : "uri"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "Coding.version",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "Coding.display",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "Coding.code",
+      "type" : [ {
+        "code" : "code"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "Coding.userSelected",
+      "type" : [ {
+        "code" : "boolean"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "Coding",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "CommandHandlerDefinition",
+  "differential" : {
+    "element" : [ {
+      "max" : "1",
+      "min" : 1,
+      "path" : "CommandHandlerDefinition.eventFactory.modification.modificationPath",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "CommandHandlerDefinition.eventFactory.modification.inputValueParameterName",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "CommandHandlerDefinition.eventFactory.modification.destinationIndexParameterName",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "CommandHandlerDefinition.operation",
+      "type" : [ {
+        "code" : "Reference"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "CommandHandlerDefinition.eventFactory.event",
+      "type" : [ {
+        "code" : "Reference"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "path" : "CommandHandlerDefinition.eventFactory.modification.kind",
+      "type" : [ {
+        "code" : "code"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "CommandHandlerDefinition.creationalPolicy",
+      "type" : [ {
+        "code" : "code"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "CommandHandlerDefinition.eventFactory.modification",
+      "type" : [ {
+        "code" : "BackboneElement"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "CommandHandlerDefinition.eventFactory",
+      "type" : [ {
+        "code" : "BackboneElement"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "CommandHandlerDefinition",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "ContactDetail",
+  "differential" : {
+    "element" : [ {
+      "max" : "1",
+      "min" : 0,
+      "path" : "ContactDetail.name",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "ContactDetail.telecom",
+      "type" : [ {
+        "code" : "ContactPoint"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "ContactDetail",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "ContactPoint",
+  "differential" : {
+    "element" : [ {
+      "max" : "1",
+      "min" : 0,
+      "path" : "ContactPoint.value",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "ContactPoint.rank",
+      "type" : [ {
+        "code" : "positiveInt"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "ContactPoint.period",
+      "type" : [ {
+        "code" : "Period"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "ContactPoint.use",
+      "type" : [ {
+        "code" : "code"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "ContactPoint.system",
+      "type" : [ {
+        "code" : "code"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "ContactPoint",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "DataRequirement",
+  "differential" : {
+    "element" : [ {
+      "max" : "1",
+      "min" : 1,
+      "path" : "DataRequirement.sort.path",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "DataRequirement.mustSupport",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "DataRequirement.dateFilter.searchParam",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "DataRequirement.dateFilter.path",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "DataRequirement.codeFilter.searchParam",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "DataRequirement.codeFilter.path",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "DataRequirement.limit",
+      "type" : [ {
+        "code" : "positiveInt"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "DataRequirement.sort",
+      "type" : [ {
+        "code" : "Element"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "DataRequirement.dateFilter",
+      "type" : [ {
+        "code" : "Element"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "DataRequirement.codeFilter",
+      "type" : [ {
+        "code" : "Element"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "DataRequirement.dateFilter.value[x]",
+      "type" : [ {
+        "code" : "dateTime"
+      }, {
+        "code" : "Duration"
+      }, {
+        "code" : "Period"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "DataRequirement.codeFilter.code",
+      "type" : [ {
+        "code" : "Coding"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "DataRequirement.subject[x]",
+      "type" : [ {
+        "code" : "CodeableConcept"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "path" : "DataRequirement.type",
+      "type" : [ {
+        "code" : "code"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "path" : "DataRequirement.sort.direction",
+      "type" : [ {
+        "code" : "code"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "DataRequirement.profile",
+      "type" : [ {
+        "code" : "canonical"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "DataRequirement.codeFilter.valueSet",
+      "type" : [ {
+        "code" : "canonical"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "DataRequirement",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "DataType",
+  "differential" : {
+    "element" : [ {
+      "max" : "*",
+      "min" : 0,
+      "path" : "DataType",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "date",
+  "differential" : {
+    "element" : [ {
+      "max" : "1",
+      "min" : 0,
+      "path" : "date.value",
+      "type" : [ {
+        "code" : "date"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "date",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "dateTime",
+  "differential" : {
+    "element" : [ {
+      "max" : "1",
+      "min" : 0,
+      "path" : "dateTime.value",
+      "type" : [ {
+        "code" : "dateTime"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "dateTime",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "decimal",
+  "differential" : {
+    "element" : [ {
+      "max" : "1",
+      "min" : 0,
+      "path" : "decimal.value",
+      "type" : [ {
+        "code" : "decimal"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "decimal",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "DomainResource",
+  "differential" : {
+    "element" : [ {
+      "max" : "*",
+      "min" : 0,
+      "path" : "DomainResource.contained",
+      "type" : [ {
+        "code" : "Resource"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "path" : "DomainResource.text",
+      "type" : [ {
+        "code" : "Narrative"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "DomainResource.modifierExtension",
+      "type" : [ {
+        "code" : "Extension"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "DomainResource.extension",
+      "type" : [ {
+        "code" : "Extension"
+      } ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "path" : "DomainResource",
+      "type" : [ ]
+    } ]
+  }
+}, {
+  "type" : "Duration",
+  "differential" : {
+    "element" : [ {
+      "max" : "*",
+      "min" : 0,
+      "path" : "Duration",
+      "type" : [ ]
+    } ]
+  }
+} ]
