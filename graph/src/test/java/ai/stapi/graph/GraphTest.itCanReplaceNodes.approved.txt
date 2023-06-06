@@ -1,0 +1,8 @@
+nodes:
+	node_type: SameType
+	node_hash: 36596
+	node_edges:
+	attributes:
+		B_attribute -> B_value
+
+edges:

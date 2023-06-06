@@ -1,0 +1,12 @@
+nodes:
+	node_type: node_from
+	node_hash: 48E1F
+	node_edges:
+	attributes:
+
+	node_type: node_to
+	node_hash: 6CBFE
+	node_edges:
+	attributes:
+
+edges:

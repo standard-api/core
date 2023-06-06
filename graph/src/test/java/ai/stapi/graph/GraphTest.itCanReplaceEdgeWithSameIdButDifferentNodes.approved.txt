@@ -1,0 +1,26 @@
+nodes:
+	node_type: ArbitraryNodeType1
+	node_hash: C29CA
+	node_edges:
+		ArbitraryNodeType1 -> test_edge -> ArbitraryNodeType3 (C29CA -> 21169 -> 7CC2D)
+	attributes:
+		A_attribute -> A_value
+
+	node_type: ArbitraryNodeType2
+	node_hash: 5C848
+	node_edges:
+	attributes:
+		B_attribute -> B_value
+
+	node_type: ArbitraryNodeType3
+	node_hash: 7CC2D
+	node_edges:
+		ArbitraryNodeType1 -> test_edge -> ArbitraryNodeType3 (C29CA -> 21169 -> 7CC2D)
+	attributes:
+
+edges:
+	edge_type: test_edge
+	edge_hash: 21169
+	ArbitraryNodeType1 -> test_edge -> ArbitraryNodeType3 (C29CA -> 21169 -> 7CC2D)
+	attributes:
+		Edge_attribute_new_type -> Edge_attribute_value_value_new

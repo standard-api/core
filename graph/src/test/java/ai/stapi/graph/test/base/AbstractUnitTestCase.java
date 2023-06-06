@@ -1,9 +1,9 @@
 package ai.stapi.graph.test.base;
 
 import ai.stapi.graph.Graph;
-import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.graphelements.Edge;
 import ai.stapi.graph.graphelements.Node;
+import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.renderer.infrastructure.idLessTextRenderer.IdLessTextGraphRenderer;
 import ai.stapi.graph.renderer.infrastructure.idLessTextRenderer.IdLessTextRendererOptions;
 import ai.stapi.graph.renderer.infrastructure.idLessTextRenderer.attribute.TextAttributeContainerRenderer;
@@ -14,6 +14,8 @@ import ai.stapi.graph.renderer.infrastructure.textRenderer.node.TextNodeRenderer
 import ai.stapi.graph.traversableGraphElements.TraversableEdge;
 import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
+import ai.stapi.objectRenderer.infrastructure.objectToJsonStringRenderer.ObjectToJSonStringOptions;
+import ai.stapi.objectRenderer.infrastructure.objectToJsonStringRenderer.ObjectToJsonStringRenderer;
 import ai.stapi.utils.LineFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,8 @@ import org.junit.jupiter.api.function.Executable;
 
 public abstract class AbstractUnitTestCase implements FixtureFileLoadableTestTrait {
 
+  private final ObjectToJsonStringRenderer objectToJsonStringRenderer =
+      new ObjectToJsonStringRenderer();
   private final TextAttributeContainerRenderer textAttributeContainerRenderer =
       new TextAttributeContainerRenderer();
 
@@ -260,6 +264,19 @@ public abstract class AbstractUnitTestCase implements FixtureFileLoadableTestTra
         renderedExpected,
         renderedActual
     );
+  }
+
+  protected void thenObjectApproved(Object obj) {
+    var options = new ObjectToJSonStringOptions(
+        ObjectToJSonStringOptions.RenderFeature.SORT_FIELDS,
+        ObjectToJSonStringOptions.RenderFeature.HIDE_IDS
+    );
+    this.thenObjectApproved(obj, options);
+  }
+
+  protected void thenObjectApproved(Object obj, ObjectToJSonStringOptions options) {
+    var objRender = this.objectToJsonStringRenderer.render(obj, options);
+    Approvals.verify(objRender.toPrintableString().replace("\\n", System.lineSeparator()));
   }
 
   protected void thenEdgesHaveSameIdAndTypeAndNodeIds(Edge expectedEdge,
