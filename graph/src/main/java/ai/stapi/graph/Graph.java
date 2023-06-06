@@ -45,6 +45,15 @@ public class Graph {
     this.edgeTypeCounts = ImmutableMap.of();
   }
 
+  public Graph(AttributeContainer... graphElements) {
+    this();
+    var newInMemoryGraph = this.withAll(graphElements);
+    this.nodeMap = ImmutableMap.copyOf(newInMemoryGraph.nodeMap);
+    this.edgeMap = ImmutableMap.copyOf(newInMemoryGraph.edgeMap);
+    this.nodeTypeCounts = ImmutableMap.copyOf(newInMemoryGraph.nodeTypeCounts);
+    this.edgeTypeCounts = ImmutableMap.copyOf(newInMemoryGraph.edgeTypeCounts);
+  }
+
   private Graph(
       Map<UniqueIdentifier, Node> nodeMap,
       Map<UniqueIdentifier, Edge> edgeMap,
@@ -55,15 +64,6 @@ public class Graph {
     this.edgeMap = ImmutableMap.copyOf(edgeMap);
     this.nodeTypeCounts = ImmutableMap.copyOf(nodeTypeCounts);
     this.edgeTypeCounts = ImmutableMap.copyOf(edgeTypeCounts);
-  }
-
-  public Graph(AttributeContainer... graphElements) {
-    this();
-    var newInMemoryGraph = this.withAll(graphElements);
-    this.nodeMap = ImmutableMap.copyOf(newInMemoryGraph.nodeMap);
-    this.edgeMap = ImmutableMap.copyOf(newInMemoryGraph.edgeMap);
-    this.nodeTypeCounts = ImmutableMap.copyOf(newInMemoryGraph.nodeTypeCounts);
-    this.edgeTypeCounts = ImmutableMap.copyOf(newInMemoryGraph.edgeTypeCounts);
   }
 
   private Graph(
@@ -89,6 +89,13 @@ public class Graph {
     this.edgeMap = ImmutableMap.copyOf(edgeMap);
     this.nodeTypeCounts = ImmutableMap.copyOf(newNodeTypeCounts);
     this.edgeTypeCounts = ImmutableMap.copyOf(newEdgeTypeCounts);
+  }
+  
+  public static Graph unsafe(
+      Map<UniqueIdentifier, Node> nodeMap,
+      Map<UniqueIdentifier, Edge> edgeMap
+  ) {
+    return new Graph(nodeMap, edgeMap);
   }
 
   public InMemoryGraphRepository traversable() {

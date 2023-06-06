@@ -8,7 +8,6 @@ import ai.stapi.graphoperations.serializableGraph.SerializableGraph;
 import ai.stapi.graphoperations.serializableGraph.SerializableNode;
 import ai.stapi.identity.UniqueIdentifier;
 import java.util.HashMap;
-import org.springframework.stereotype.Service;
 
 public class SerializableGraphDeserializer {
 
@@ -36,7 +35,7 @@ public class SerializableGraphDeserializer {
         .map(this.edgeDeserializer::deserialize)
         .forEach(edge -> edges.put(edge.getId(), edge));
 
-    return new Graph(nodes, edges);
+    return Graph.unsafe(nodes, edges);
   }
 
   public Edge deserializeEdge(SerializableEdge serializableEdge) {
