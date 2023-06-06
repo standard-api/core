@@ -3,15 +3,11 @@ package ai.stapi.objectRenderer.model;
 import ai.stapi.objectRenderer.exceptions.OptionsAreNotSupportedByAnyRendererException;
 import ai.stapi.objectRenderer.exceptions.OptionsAreSupportedByMultipleRenderersException;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-@Service
 public class GenericObjectRenderer {
 
   private List<ObjectRenderer> existingObjectRenderers;
 
-  @Autowired
   public GenericObjectRenderer(List<ObjectRenderer> existingObjectRenderers) {
     this.existingObjectRenderers = existingObjectRenderers;
   }

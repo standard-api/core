@@ -13,6 +13,7 @@ import java.sql.Timestamp;
 
 public class TimestampConfigurer {
 
+  private TimestampConfigurer() {}
   public static void configureTimestampModule(ObjectMapper objectMapper) {
     var timestampModule = new SimpleModule("CustomTimestampModule");
     timestampModule.addSerializer(

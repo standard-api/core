@@ -19,7 +19,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.springframework.stereotype.Service;
 
-@Service
 public class ObjectToJsonStringRenderer implements ObjectRenderer {
 
   @Override
@@ -100,8 +99,7 @@ public class ObjectToJsonStringRenderer implements ObjectRenderer {
   }
 
   private Map<String, Object> convertToMap(Object object, ObjectToJSonStringOptions options) {
-    return this.getMapper(options).convertValue(object, new TypeReference<>() {
-    });
+    return this.getMapper(options).convertValue(object, new TypeReference<>() {});
   }
 
   private Object convertObjectToSortedMap(Object object, ObjectToJSonStringOptions options) {
