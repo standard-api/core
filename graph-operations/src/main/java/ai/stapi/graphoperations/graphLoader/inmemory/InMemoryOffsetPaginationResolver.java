@@ -3,12 +3,10 @@ package ai.stapi.graphoperations.graphLoader.inmemory;
 import ai.stapi.graphoperations.graphLoader.search.SearchOption;
 import ai.stapi.graphoperations.graphLoader.search.paginationOption.OffsetPaginationOption;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
-import org.springframework.stereotype.Service;
 
-@Service
 public class InMemoryOffsetPaginationResolver extends AbstractInMemorySearchOptionResolver<OffsetPaginationOption> {
 
-  protected InMemoryOffsetPaginationResolver(
+  public InMemoryOffsetPaginationResolver(
       StructureSchemaFinder structureSchemaFinder
   ) {
     super(structureSchemaFinder);

@@ -9,7 +9,6 @@ import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.sp
 import ai.stapi.graphoperations.ogmProviders.specific.SpecificGraphMappingProvider;
 import org.springframework.stereotype.Service;
 
-@Service
 public class ObjectOgmProvider implements SpecificGraphMappingProvider {
 
   @Override

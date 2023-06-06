@@ -6,7 +6,6 @@ import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.sp
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
-@Service
 public class NodeDescriptionGraphMappingProvider
     extends AbstractGraphDescriptionGraphMappingProvider {
 

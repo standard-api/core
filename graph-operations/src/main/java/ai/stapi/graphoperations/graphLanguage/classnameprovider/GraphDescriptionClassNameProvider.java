@@ -17,18 +17,10 @@ import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.query.At
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.query.IngoingEdgeQueryDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.query.NodeQueryGraphDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.query.OutgoingEdgeQueryDescription;
-import ai.stapi.graphoperations.objectGraphLanguage.InterfaceObjectGraphMapping;
-import ai.stapi.graphoperations.objectGraphLanguage.LeafObjectGraphMapping;
-import ai.stapi.graphoperations.objectGraphLanguage.ListObjectGraphMapping;
-import ai.stapi.graphoperations.objectGraphLanguage.MapObjectGraphMapping;
-import ai.stapi.graphoperations.objectGraphLanguage.ObjectObjectGraphMapping;
-import ai.stapi.graphoperations.objectGraphLanguage.ReferenceObjectGraphMapping;
 import ai.stapi.serialization.classNameProvider.specific.AbstractSerializableObjectClassNameProvider;
 import java.util.HashMap;
 import java.util.Map;
-import org.springframework.stereotype.Service;
 
-@Service
 public class GraphDescriptionClassNameProvider extends AbstractSerializableObjectClassNameProvider {
   @Override
   protected Map<String, Class<?>> getClassMap() {

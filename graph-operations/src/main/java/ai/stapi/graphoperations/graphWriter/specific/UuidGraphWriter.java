@@ -8,9 +8,7 @@ import ai.stapi.graphoperations.graphWriter.SpecificGraphWriter;
 import ai.stapi.graphoperations.graphWriter.exceptions.SpecificGraphWriterException;
 import ai.stapi.graphoperations.graphbuilder.GraphBuilder;
 import ai.stapi.identity.UniqueIdentifier;
-import org.springframework.stereotype.Service;
 
-@Service
 public class UuidGraphWriter implements SpecificGraphWriter {
 
   @Override

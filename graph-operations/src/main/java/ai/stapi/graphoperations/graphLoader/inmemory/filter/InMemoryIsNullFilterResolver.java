@@ -8,15 +8,12 @@ import ai.stapi.graphoperations.graphLoader.search.filterOption.LeafFilterOption
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
 import java.util.List;
 import java.util.Set;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
 
-@Service
 public class InMemoryIsNullFilterResolver extends InMemoryLeafFilterResolver {
 
-  protected InMemoryIsNullFilterResolver(
+  public InMemoryIsNullFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
-      @Lazy InMemoryGraphLoader inMemoryGraphLoader
+      InMemoryGraphLoader inMemoryGraphLoader
   ) {
     super(structureSchemaFinder, inMemoryGraphLoader);
   }

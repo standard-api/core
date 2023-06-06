@@ -13,10 +13,7 @@ import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
 import ai.stapi.serialization.SerializableObject;
 import java.util.List;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
 
-@Service
 public class GenericGraphToObjectDeserializer {
 
   protected final GraphReader graphReader;
@@ -25,7 +22,7 @@ public class GenericGraphToObjectDeserializer {
   private final ObjectMapper objectMapper;
 
   public GenericGraphToObjectDeserializer(
-      @Lazy List<SpecificGraphToObjectDeserializer> specificDeserializers,
+      List<SpecificGraphToObjectDeserializer> specificDeserializers,
       GraphReader graphReader,
       ObjectMapper objectMapper,
       GenericGraphMappingProvider mappingProvider

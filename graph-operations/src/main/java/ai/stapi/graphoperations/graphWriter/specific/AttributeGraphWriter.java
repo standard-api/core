@@ -10,9 +10,7 @@ import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive
 import ai.stapi.graphoperations.graphWriter.SpecificGraphWriter;
 import ai.stapi.graphoperations.graphWriter.exceptions.SpecificGraphWriterException;
 import ai.stapi.graphoperations.graphbuilder.GraphBuilder;
-import org.springframework.stereotype.Service;
 
-@Service
 public class AttributeGraphWriter implements SpecificGraphWriter {
 
     @Override

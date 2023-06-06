@@ -16,9 +16,7 @@ import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.query.No
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.query.OutgoingEdgeQueryDescription;
 import ai.stapi.graphoperations.objectGraphLanguage.ObjectGraphMapping;
 import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.specific.ogm.ObjectGraphMappingBuilder;
-import org.springframework.stereotype.Service;
 
-@Service
 public class GraphLoaderOgmFactory {
 
   public ObjectGraphMapping create(GraphDescription graphDescription) {

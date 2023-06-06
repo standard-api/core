@@ -9,9 +9,7 @@ import ai.stapi.graphoperations.graphbuilder.GraphBuilder;
 import ai.stapi.graphoperations.graphWriter.exceptions.SpecificGraphWriterException;
 import ai.stapi.graphoperations.graphbuilder.specific.positive.EdgeDirection;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
-import org.springframework.stereotype.Service;
 
-@Service
 public class EdgeGraphWriter implements SpecificGraphWriter {
 
   @Override

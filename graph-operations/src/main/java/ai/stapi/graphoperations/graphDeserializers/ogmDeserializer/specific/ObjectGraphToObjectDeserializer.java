@@ -15,9 +15,7 @@ import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
 import ai.stapi.graphoperations.serializationTypeProvider.GenericSerializationTypeByNodeProvider;
 import java.util.HashMap;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class ObjectGraphToObjectDeserializer extends AbstractSpecificGraphToObjectDeserializer {
 
   public ObjectGraphToObjectDeserializer(

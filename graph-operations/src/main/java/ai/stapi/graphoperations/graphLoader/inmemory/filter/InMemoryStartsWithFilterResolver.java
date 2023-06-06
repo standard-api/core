@@ -9,15 +9,12 @@ import ai.stapi.graphoperations.graphLoader.search.filterOption.StartsWithFilter
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
 import java.util.List;
 import java.util.Set;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
 
-@Service
 public class InMemoryStartsWithFilterResolver extends InMemoryOneValueFilterResolver {
 
-  protected InMemoryStartsWithFilterResolver(
+  public InMemoryStartsWithFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
-      @Lazy InMemoryGraphLoader inMemoryGraphLoader
+      InMemoryGraphLoader inMemoryGraphLoader
   ) {
     super(structureSchemaFinder, inMemoryGraphLoader);
   }

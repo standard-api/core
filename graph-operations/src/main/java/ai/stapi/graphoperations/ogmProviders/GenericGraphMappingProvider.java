@@ -8,9 +8,7 @@ import ai.stapi.serialization.AbstractSerializableObject;
 import ai.stapi.serialization.SerializableObject;
 import java.util.List;
 import java.util.Map;
-import org.springframework.stereotype.Service;
 
-@Service
 public class GenericGraphMappingProvider {
 
   private final List<SpecificGraphMappingProvider> mappingProviders;

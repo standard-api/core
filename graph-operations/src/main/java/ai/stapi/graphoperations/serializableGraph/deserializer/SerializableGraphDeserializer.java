@@ -10,7 +10,6 @@ import ai.stapi.identity.UniqueIdentifier;
 import java.util.HashMap;
 import org.springframework.stereotype.Service;
 
-@Service
 public class SerializableGraphDeserializer {
 
   private final SerializableNodeDeserializer nodeDeserializer;

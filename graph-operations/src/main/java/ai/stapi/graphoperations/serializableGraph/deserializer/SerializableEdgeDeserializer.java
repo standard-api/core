@@ -5,7 +5,6 @@ import ai.stapi.graphoperations.serializableGraph.SerializableEdge;
 import ai.stapi.identity.UniqueIdentifier;
 import org.springframework.stereotype.Service;
 
-@Service
 public class SerializableEdgeDeserializer {
 
   private final SerializableAttributeDeserializer attributeDeserializer;

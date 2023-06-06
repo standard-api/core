@@ -20,7 +20,6 @@ import java.util.stream.Collectors;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
-@Service
 public class NodeIdentifyingFiltersResolver {
 
     private final GenericNodeIdentificatorsProvider identificatorsProvider;

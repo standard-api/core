@@ -9,17 +9,14 @@ import ai.stapi.graphoperations.graphToMapObjectMapper.specific.SpecificGraphToM
 import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
 import java.util.List;
 import java.util.Map;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
 
-@Service
 public class GraphToMapObjectMapper {
 
   private final List<SpecificGraphToMapMapper> specificGraphToMapMappers;
   private final GenericGraphMappingProvider genericGraphMappingProvider;
 
   public GraphToMapObjectMapper(
-      @Lazy List<SpecificGraphToMapMapper> specificGraphToMapMappers,
+      List<SpecificGraphToMapMapper> specificGraphToMapMappers,
       GenericGraphMappingProvider genericGraphMappingProvider
   ) {
     this.specificGraphToMapMappers = specificGraphToMapMappers;

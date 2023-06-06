@@ -5,15 +5,12 @@ import ai.stapi.graphoperations.graphLoader.search.SearchOption;
 import ai.stapi.graphoperations.graphLoader.search.sortOption.DescendingSortOption;
 import ai.stapi.graphoperations.graphLoader.search.sortOption.SortOption;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
 
-@Service
 public class InMemoryDescendingSortResolver extends InMemorySortResolver {
 
-  protected InMemoryDescendingSortResolver(
+  public InMemoryDescendingSortResolver(
       StructureSchemaFinder structureSchemaFinder,
-      @Lazy InMemoryGraphLoader inMemoryGraphLoader
+      InMemoryGraphLoader inMemoryGraphLoader
   ) {
     super(structureSchemaFinder, inMemoryGraphLoader);
   }

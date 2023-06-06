@@ -5,17 +5,14 @@ import ai.stapi.graphoperations.graphLoader.search.SearchOption;
 import ai.stapi.graphoperations.graphLoader.search.sortOption.AscendingSortOption;
 import ai.stapi.graphoperations.graphLoader.search.sortOption.SortOption;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
 
-@Service
 public class InMemoryAscendingSortResolver extends InMemorySortResolver {
 
   public static final String GREATEST_VALUE = "\uffff";
 
-  protected InMemoryAscendingSortResolver(
+  public InMemoryAscendingSortResolver(
       StructureSchemaFinder structureSchemaFinder,
-      @Lazy InMemoryGraphLoader inMemoryGraphLoader
+      InMemoryGraphLoader inMemoryGraphLoader
   ) {
     super(structureSchemaFinder, inMemoryGraphLoader);
   }

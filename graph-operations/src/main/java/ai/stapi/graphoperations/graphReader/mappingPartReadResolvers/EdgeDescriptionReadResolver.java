@@ -11,9 +11,7 @@ import ai.stapi.graphoperations.graphReader.readResults.EdgeReadResult;
 import ai.stapi.graphoperations.graphReader.readResults.NodeReadResult;
 import ai.stapi.graphoperations.graphReader.readResults.ReadResult;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class EdgeDescriptionReadResolver implements GraphDescriptionReadResolver {
 
   @Override

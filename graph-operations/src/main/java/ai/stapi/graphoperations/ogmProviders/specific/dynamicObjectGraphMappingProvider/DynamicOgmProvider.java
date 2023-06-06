@@ -23,9 +23,7 @@ import ai.stapi.schema.structureSchemaProvider.StructureSchemaProvider;
 import ai.stapi.schema.structureSchemaProvider.exception.CannotProvideStructureSchema;
 import java.util.HashMap;
 import java.util.Map;
-import org.springframework.stereotype.Service;
 
-@Service
 public class DynamicOgmProvider implements SpecificGraphMappingProvider {
 
   private final StructureSchemaProvider structureSchemaProvider;

@@ -10,9 +10,7 @@ import ai.stapi.graphoperations.graphReader.GraphReader;
 import ai.stapi.graphoperations.graphReader.exception.GraphReaderException;
 import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class ReferenceGraphToMapMapper extends AbstractSpecificGraphToMapMapper {
 
   public ReferenceGraphToMapMapper(GraphReader graphReader,

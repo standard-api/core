@@ -6,9 +6,7 @@ import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive
 import ai.stapi.graphoperations.graphWriter.SpecificGraphWriter;
 import ai.stapi.graphoperations.graphbuilder.GraphBuilder;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
-import org.springframework.stereotype.Service;
 
-@Service
 public class NodeGraphWriter implements SpecificGraphWriter {
 
   @Override

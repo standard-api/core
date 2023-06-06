@@ -8,9 +8,7 @@ import ai.stapi.graphoperations.objectGraphLanguage.MapObjectGraphMapping;
 import ai.stapi.graphoperations.objectGraphLanguage.ObjectGraphMapping;
 import com.fasterxml.jackson.core.type.TypeReference;
 import java.util.Map;
-import org.springframework.stereotype.Service;
 
-@Service
 public class MapSpecificObjectGraphMapper extends AbstractSpecificObjectGraphMapper {
 
   public MapSpecificObjectGraphMapper(GenericObjectGraphMapper genericGraphMapper) {

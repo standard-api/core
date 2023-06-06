@@ -9,10 +9,7 @@ import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
 import ai.stapi.serialization.SerializableObject;
 import java.util.List;
 import java.util.Map;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
 
-@Service
 public class GenericObjectGraphMapper {
 
   private final List<SpecificObjectGraphMapper> specificObjectGraphMappers;
@@ -20,7 +17,7 @@ public class GenericObjectGraphMapper {
   private final GenericGraphMappingProvider mappingProvider;
 
   public GenericObjectGraphMapper(
-      @Lazy List<SpecificObjectGraphMapper> specificObjectGraphMappers,
+      List<SpecificObjectGraphMapper> specificObjectGraphMappers,
       GenericGraphWriter writer,
       GenericGraphMappingProvider mappingProvider
   ) {

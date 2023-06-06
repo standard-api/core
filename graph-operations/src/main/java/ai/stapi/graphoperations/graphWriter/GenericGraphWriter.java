@@ -13,9 +13,7 @@ import ai.stapi.graph.Graph;
 import ai.stapi.identity.UniqueIdentifier;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.stereotype.Service;
 
-@Service
 public class GenericGraphWriter {
 
   private final List<SpecificGraphWriter> specificGraphWriters;

@@ -6,13 +6,13 @@ import ai.stapi.graphoperations.serializationTypeProvider.specific.SpecificSeria
 import java.util.List;
 import org.springframework.stereotype.Service;
 
-@Service
 public class GenericSerializationTypeByNodeProvider {
 
   private final List<SpecificSerializationTypeProvider> serializationTypeProviders;
 
   public GenericSerializationTypeByNodeProvider(
-      List<SpecificSerializationTypeProvider> serializationTypeProviders) {
+      List<SpecificSerializationTypeProvider> serializationTypeProviders
+  ) {
     this.serializationTypeProviders = serializationTypeProviders;
   }
 

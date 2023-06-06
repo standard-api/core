@@ -3,7 +3,6 @@ package ai.stapi.graphoperations.ogmProviders.specific.graphDescriptionMappingPr
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.LeafAttributeDescription;
 import org.springframework.stereotype.Service;
 
-@Service
 public class LeafAttributeGraphMappingProvider extends AbstractAttributeGraphMappingProvider {
 
   public static final String GRAPH_DESCRIPTION_NODE_TYPE = "graph_description_leaf_attribute";

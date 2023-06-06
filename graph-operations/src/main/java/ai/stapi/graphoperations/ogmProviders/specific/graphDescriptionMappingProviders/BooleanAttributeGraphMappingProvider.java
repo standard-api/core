@@ -2,9 +2,7 @@ package ai.stapi.graphoperations.ogmProviders.specific.graphDescriptionMappingPr
 
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.BooleanAttributeValueDescription;
 import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.specific.ogm.ObjectGraphMappingBuilder;
-import org.springframework.stereotype.Service;
 
-@Service
 public class BooleanAttributeGraphMappingProvider extends AbstractGraphDescriptionGraphMappingProvider {
 
   public static final String GRAPH_DESCRIPTION_NODE_TYPE = "graph_description_attribute_boolean";

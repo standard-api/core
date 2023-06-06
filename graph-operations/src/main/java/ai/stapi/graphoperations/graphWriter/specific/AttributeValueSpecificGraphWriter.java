@@ -4,9 +4,7 @@ import ai.stapi.graphoperations.graphLanguage.graphDescription.GraphDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.AbstractAttributeValueDescription;
 import ai.stapi.graphoperations.graphWriter.SpecificGraphWriter;
 import ai.stapi.graphoperations.graphbuilder.GraphBuilder;
-import org.springframework.stereotype.Service;
 
-@Service
 public class AttributeValueSpecificGraphWriter implements SpecificGraphWriter {
 
   @Override

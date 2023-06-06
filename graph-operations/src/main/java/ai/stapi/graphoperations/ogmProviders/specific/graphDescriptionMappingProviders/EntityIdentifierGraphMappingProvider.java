@@ -7,7 +7,6 @@ import ai.stapi.graphoperations.objectLanguage.EntityIdentifier;
 import ai.stapi.graphoperations.ogmProviders.specific.SpecificGraphMappingProvider;
 import org.springframework.stereotype.Service;
 
-@Service
 public class EntityIdentifierGraphMappingProvider implements SpecificGraphMappingProvider {
 
   protected String getGraphDescriptionNodeType() {

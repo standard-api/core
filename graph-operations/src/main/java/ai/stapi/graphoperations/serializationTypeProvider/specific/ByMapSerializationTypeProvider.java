@@ -25,9 +25,7 @@ import ai.stapi.schema.structuredefinition.ElementDefinition;
 import ai.stapi.schema.structuredefinition.StructureDefinitionData;
 import java.util.HashMap;
 import java.util.Map;
-import org.springframework.stereotype.Service;
 
-@Service
 public class ByMapSerializationTypeProvider implements SpecificSerializationTypeProvider {
 
   @Override

@@ -11,26 +11,23 @@ import ai.stapi.graphoperations.objectGraphMapper.model.MissingFieldResolvingStr
 import ai.stapi.serialization.AbstractSerializableObject;
 import ai.stapi.serialization.SerializableObject;
 import java.util.Map;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.jetbrains.annotations.Nullable;
 
-@Service
 public class InterfaceSpecificObjectGraphMapper extends AbstractSpecificObjectGraphMapper {
 
   private final GenericGraphMappingProvider mappingProvider;
-  private final InterfaceSpecificObjectGraphMapperFixStrategy
-      interfaceSpecificObjectGraphMapperFixStrategy;
+  
+  @Nullable
+  private final InterfaceSpecificObjectGraphMapperFixStrategy interfaceSpecificObjectGraphMapperFixStrategy;
 
   public InterfaceSpecificObjectGraphMapper(
       GenericObjectGraphMapper genericGraphMapper,
       GenericGraphMappingProvider mappingProvider,
-      @Autowired(required = false)
-      InterfaceSpecificObjectGraphMapperFixStrategy interfaceSpecificObjectGraphMapperFixStrategy
+      @Nullable InterfaceSpecificObjectGraphMapperFixStrategy interfaceSpecificObjectGraphMapperFixStrategy
   ) {
     super(genericGraphMapper);
     this.mappingProvider = mappingProvider;
-    this.interfaceSpecificObjectGraphMapperFixStrategy =
-        interfaceSpecificObjectGraphMapperFixStrategy;
+    this.interfaceSpecificObjectGraphMapperFixStrategy = interfaceSpecificObjectGraphMapperFixStrategy;
   }
 
   @Override
@@ -59,8 +56,7 @@ public class InterfaceSpecificObjectGraphMapper extends AbstractSpecificObjectGr
           fieldEntry.getValue()
       );
     }
-    var mappingDefinition =
-        this.mappingProvider.provideGraphMapping(serializationType, fieldEntry.getKey());
+    var mappingDefinition = this.mappingProvider.provideGraphMapping(serializationType, fieldEntry.getKey());
     var interfaceObjectGraphMapping = (InterfaceObjectGraphMapping) objectGraphMapping;
     if (this.interfaceSpecificObjectGraphMapperFixStrategy != null) {
       interfaceObjectGraphMapping = this.interfaceSpecificObjectGraphMapperFixStrategy.fix(

@@ -2,9 +2,7 @@ package ai.stapi.graphoperations.synchronization.nodeIdentificator;
 
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.UuidIdentityDescription;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class DefaultUuidIdentityIdentificatorProvider implements NodeIdentificatorsProvider {
     
     @Override

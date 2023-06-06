@@ -4,7 +4,6 @@ import java.util.Comparator;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
-@Service
 public class GenericNodeIdentificatorsProvider {
     private final List<NodeIdentificatorsProvider> providers;
 

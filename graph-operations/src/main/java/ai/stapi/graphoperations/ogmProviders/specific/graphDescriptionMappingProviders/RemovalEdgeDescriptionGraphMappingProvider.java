@@ -1,10 +1,8 @@
 package ai.stapi.graphoperations.ogmProviders.specific.graphDescriptionMappingProviders;
 
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.removal.RemovalEdgeDescription;
-import org.springframework.stereotype.Service;
 
-@Service
-public class RemovalEdgeDescriptionGraphMappingProviderImpl
+public class RemovalEdgeDescriptionGraphMappingProvider
     extends AbstractEdgeDescriptionGraphMappingProvider {
 
   @Override

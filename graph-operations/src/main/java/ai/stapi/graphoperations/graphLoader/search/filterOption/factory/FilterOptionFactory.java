@@ -27,9 +27,7 @@ import ai.stapi.graphoperations.graphLoader.search.filterOption.OrFilterOption;
 import ai.stapi.graphoperations.graphLoader.search.filterOption.StartsWithFilterOption;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class FilterOptionFactory {
 
   public FilterOption<?> create(

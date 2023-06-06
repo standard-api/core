@@ -9,9 +9,7 @@ import ai.stapi.graphoperations.graphToMapObjectMapper.exception.GraphToMapObjec
 import ai.stapi.graphoperations.graphReader.GraphReader;
 import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class LeafGraphToMapMapper extends AbstractSpecificGraphToMapMapper {
 
   public LeafGraphToMapMapper(

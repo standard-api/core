@@ -9,9 +9,7 @@ import ai.stapi.graphoperations.objectGraphLanguage.ObjectObjectGraphMapping;
 import ai.stapi.graphoperations.objectGraphLanguage.ReferenceObjectGraphMapping;
 import ai.stapi.serialization.classNameProvider.specific.AbstractSerializableObjectClassNameProvider;
 import java.util.Map;
-import org.springframework.stereotype.Service;
 
-@Service
 public class ObjectGraphMappingClassNameProvider extends AbstractSerializableObjectClassNameProvider {
   @Override
   protected Map<String, Class<?>> getClassMap() {

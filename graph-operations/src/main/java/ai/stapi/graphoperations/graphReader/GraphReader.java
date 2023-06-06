@@ -20,9 +20,7 @@ import ai.stapi.identity.UniqueIdentifier;
 import java.util.ArrayList;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.stereotype.Service;
 
-@Service
 public class GraphReader {
 
   private final List<GraphDescriptionReadResolver> graphDescriptionResolvers;

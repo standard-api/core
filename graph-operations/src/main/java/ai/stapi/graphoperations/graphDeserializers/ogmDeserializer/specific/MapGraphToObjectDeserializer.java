@@ -12,9 +12,7 @@ import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.MissingTraver
 import ai.stapi.graphoperations.serializationTypeProvider.GenericSerializationTypeByNodeProvider;
 import java.util.HashMap;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class MapGraphToObjectDeserializer extends AbstractSpecificGraphToObjectDeserializer {
 
   public MapGraphToObjectDeserializer(

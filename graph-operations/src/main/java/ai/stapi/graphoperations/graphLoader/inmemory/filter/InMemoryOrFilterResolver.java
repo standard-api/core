@@ -6,14 +6,12 @@ import ai.stapi.graphoperations.graphLoader.search.SearchOption;
 import ai.stapi.graphoperations.graphLoader.search.filterOption.FilterOption;
 import ai.stapi.graphoperations.graphLoader.search.filterOption.OrFilterOption;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
-import org.springframework.stereotype.Service;
 
-@Service
 public class InMemoryOrFilterResolver extends InMemoryFilterResolver {
 
   private final GenericInMemoryFilterOptionResolver genericInMemoryFilterOptionResolver;
 
-  protected InMemoryOrFilterResolver(
+  public InMemoryOrFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       GenericInMemoryFilterOptionResolver genericInMemoryFilterOptionResolver
   ) {

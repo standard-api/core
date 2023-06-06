@@ -6,15 +6,12 @@ import ai.stapi.graphoperations.graphLoader.inmemory.InMemorySearchResolvingCont
 import ai.stapi.graphoperations.graphLoader.search.filterOption.AbstractOneValueFilterOption;
 import ai.stapi.graphoperations.graphLoader.search.filterOption.FilterOption;
 import java.util.List;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
 
-@Service
 public class GenericInMemoryFilterOptionResolver {
   
   private final List<InMemoryFilterResolver> inMemoryFilterResolvers;
 
-  public GenericInMemoryFilterOptionResolver(@Lazy List<InMemoryFilterResolver> inMemoryFilterResolvers) {
+  public GenericInMemoryFilterOptionResolver(List<InMemoryFilterResolver> inMemoryFilterResolvers) {
     this.inMemoryFilterResolvers = inMemoryFilterResolvers;
   }
 

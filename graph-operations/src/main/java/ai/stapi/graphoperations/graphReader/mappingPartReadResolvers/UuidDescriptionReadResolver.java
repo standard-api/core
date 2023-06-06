@@ -9,9 +9,7 @@ import ai.stapi.graphoperations.graphReader.readResults.ReadResult;
 import ai.stapi.graphoperations.graphReader.readResults.UuidIdentityReadResult;
 import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class UuidDescriptionReadResolver implements GraphDescriptionReadResolver {
 
   @Override

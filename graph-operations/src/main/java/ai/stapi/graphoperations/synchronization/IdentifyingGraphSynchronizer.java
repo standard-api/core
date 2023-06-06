@@ -22,10 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import org.apache.commons.collections4.map.LinkedMap;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
 
-@Service
 public class IdentifyingGraphSynchronizer implements GraphSynchronizer {
 
     private final NodeRepository nodeRepository;
@@ -37,8 +34,8 @@ public class IdentifyingGraphSynchronizer implements GraphSynchronizer {
     private final StructureSchemaFinder structureSchemaFinder;
     
     public IdentifyingGraphSynchronizer(
-        @Lazy NodeRepository nodeRepository,
-        @Lazy EdgeRepository edgeRepository,
+        NodeRepository nodeRepository,
+        EdgeRepository edgeRepository,
         NodeIdentifyingFiltersResolver nodeIdentifyingFiltersResolver,
         GraphLoader graphLoader,
         InMemoryGenericSearchOptionResolver searchOptionResolver,

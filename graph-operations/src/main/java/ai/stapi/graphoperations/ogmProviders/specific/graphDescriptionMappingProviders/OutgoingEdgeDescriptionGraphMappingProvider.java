@@ -3,7 +3,6 @@ package ai.stapi.graphoperations.ogmProviders.specific.graphDescriptionMappingPr
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.OutgoingEdgeDescription;
 import org.springframework.stereotype.Service;
 
-@Service
 public class OutgoingEdgeDescriptionGraphMappingProvider
     extends AbstractEdgeDescriptionGraphMappingProvider {
 

@@ -7,17 +7,13 @@ import ai.stapi.graphoperations.graphLoader.search.SearchOption;
 import ai.stapi.graphoperations.graphLoader.search.filterOption.AbstractOneValueFilterOption;
 import ai.stapi.graphoperations.graphLoader.search.filterOption.AnyMatchFilterOption;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
 
-@Service
 public class InMemoryAnyMatchFilterResolver extends InMemoryArrayComparisonFilterResolver {
-
-
-  protected InMemoryAnyMatchFilterResolver(
+  
+  public InMemoryAnyMatchFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       GenericInMemoryFilterOptionResolver genericInMemoryFilterOptionResolver,
-      @Lazy InMemoryGraphLoader inMemoryGraphLoader
+      InMemoryGraphLoader inMemoryGraphLoader
   ) {
     super(structureSchemaFinder, genericInMemoryFilterOptionResolver, inMemoryGraphLoader);
   }

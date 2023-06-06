@@ -10,9 +10,7 @@ import ai.stapi.graphoperations.graphReader.GraphReader;
 import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
 import java.util.HashMap;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class ObjectGraphToMapMapper extends AbstractSpecificGraphToMapMapper {
 
   public ObjectGraphToMapMapper(

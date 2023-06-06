@@ -16,12 +16,10 @@ import ai.stapi.serialization.AbstractSerializableObject;
 import ai.stapi.graphoperations.serializationTypeProvider.GenericSerializationTypeByNodeProvider;
 import java.util.List;
 import java.util.Map;
-import org.springframework.stereotype.Service;
 
-@Service
 public class InterfaceGraphToObjectDeserializer extends AbstractSpecificGraphToObjectDeserializer {
 
-  protected InterfaceGraphToObjectDeserializer(
+  public InterfaceGraphToObjectDeserializer(
       GraphReader graphReader,
       GenericGraphToObjectDeserializer genericDeserializer,
       GenericSerializationTypeByNodeProvider serializationTypeProvider,

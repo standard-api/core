@@ -8,15 +8,12 @@ import ai.stapi.graphoperations.graphLoader.search.filterOption.NotNullFilterOpt
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
 import java.util.List;
 import java.util.Set;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
 
-@Service
 public class InMemoryNotNullFilterResolver extends InMemoryLeafFilterResolver {
 
-  protected InMemoryNotNullFilterResolver(
+  public InMemoryNotNullFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
-      @Lazy InMemoryGraphLoader inMemoryGraphLoader
+      InMemoryGraphLoader inMemoryGraphLoader
   ) {
     super(structureSchemaFinder, inMemoryGraphLoader);
   }

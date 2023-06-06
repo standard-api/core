@@ -11,9 +11,7 @@ import ai.stapi.graphoperations.objectGraphMapper.model.GenericObjectGraphMapper
 import ai.stapi.graphoperations.objectGraphMapper.model.MissingFieldResolvingStrategy;
 import java.util.List;
 import java.util.Map;
-import org.springframework.stereotype.Service;
 
-@Service
 public class ListSpecificObjectGraphMapper extends AbstractSpecificObjectGraphMapper {
 
   public ListSpecificObjectGraphMapper(GenericObjectGraphMapper genericGraphMapper) {

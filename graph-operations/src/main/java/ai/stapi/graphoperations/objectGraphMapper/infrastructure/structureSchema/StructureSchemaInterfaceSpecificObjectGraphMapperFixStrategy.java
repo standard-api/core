@@ -12,16 +12,15 @@ import ai.stapi.schema.structureSchema.BoxedPrimitiveStructureType;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaProvider;
 import ai.stapi.schema.structureSchemaProvider.exception.CannotProvideStructureSchema;
 import java.util.Map;
-import org.springframework.stereotype.Service;
 
-@Service
 public class StructureSchemaInterfaceSpecificObjectGraphMapperFixStrategy
     implements InterfaceSpecificObjectGraphMapperFixStrategy {
 
   private final StructureSchemaProvider structureSchemaProvider;
 
   public StructureSchemaInterfaceSpecificObjectGraphMapperFixStrategy(
-      StructureSchemaProvider structureSchemaProvider) {
+      StructureSchemaProvider structureSchemaProvider
+  ) {
     this.structureSchemaProvider = structureSchemaProvider;
   }
 

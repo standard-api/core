@@ -5,9 +5,7 @@ import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive
 import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graphoperations.graphReader.readResults.ReadResult;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class AttributeValueDescriptionReadResolver implements GraphDescriptionReadResolver {
 
   @Override

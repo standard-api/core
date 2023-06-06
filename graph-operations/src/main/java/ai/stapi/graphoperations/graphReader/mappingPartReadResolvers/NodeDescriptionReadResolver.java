@@ -10,9 +10,7 @@ import ai.stapi.graphoperations.graphReader.readResults.ReadResult;
 import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class NodeDescriptionReadResolver implements GraphDescriptionReadResolver {
 
   @Override

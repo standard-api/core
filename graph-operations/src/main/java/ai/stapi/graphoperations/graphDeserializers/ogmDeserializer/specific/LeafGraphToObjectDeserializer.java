@@ -11,9 +11,7 @@ import ai.stapi.graphoperations.objectGraphLanguage.LeafObjectGraphMapping;
 import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
 import ai.stapi.graphoperations.serializationTypeProvider.GenericSerializationTypeByNodeProvider;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class LeafGraphToObjectDeserializer extends AbstractSpecificGraphToObjectDeserializer {
 
   public LeafGraphToObjectDeserializer(

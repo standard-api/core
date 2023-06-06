@@ -14,9 +14,7 @@ import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.Ge
 import com.fasterxml.jackson.core.type.TypeReference;
 import java.util.Map;
 import java.util.Optional;
-import org.springframework.stereotype.Service;
 
-@Service
 public class ObjectSpecificObjectGraphMapper extends AbstractSpecificObjectGraphMapper {
 
   public ObjectSpecificObjectGraphMapper(GenericObjectGraphMapper genericGraphMapper) {

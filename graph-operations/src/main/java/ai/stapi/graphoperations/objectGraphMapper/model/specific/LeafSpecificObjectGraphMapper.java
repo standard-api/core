@@ -8,9 +8,7 @@ import ai.stapi.graphoperations.objectGraphMapper.model.GenericObjectGraphMapper
 import ai.stapi.graphoperations.objectGraphMapper.model.MissingFieldResolvingStrategy;
 import ai.stapi.utils.Classifier;
 import java.util.Map;
-import org.springframework.stereotype.Service;
 
-@Service
 public class LeafSpecificObjectGraphMapper extends AbstractSpecificObjectGraphMapper {
 
   public LeafSpecificObjectGraphMapper(GenericObjectGraphMapper genericGraphMapper) {

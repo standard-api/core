@@ -7,9 +7,7 @@ import ai.stapi.graphoperations.objectGraphLanguage.ObjectGraphMapping;
 import ai.stapi.graphoperations.objectGraphLanguage.ReferenceObjectGraphMapping;
 import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
 import java.util.Map;
-import org.springframework.stereotype.Service;
 
-@Service
 public class ReferenceSpecificObjectGraphMapper extends AbstractSpecificObjectGraphMapper {
 
   private final GenericGraphMappingProvider genericGraphMappingProvider;
