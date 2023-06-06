@@ -1,0 +1,16 @@
+node_type: ExampleEntity
+node_hash: 1344F
+node_edges:
+attributes:
+	exampleName -> Example Name 1
+	exampleQuantity -> 654
+	exampleStringAttribute -> Attribute Value
+
+node_type: ExampleEntity
+node_hash: 51756
+node_edges:
+attributes:
+	exampleName -> Example Name 4
+	exampleQuantity -> 23
+	exampleStringAttribute -> Attribute Value
+

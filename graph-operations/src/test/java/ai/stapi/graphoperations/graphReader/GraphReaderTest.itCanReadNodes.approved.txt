@@ -1,0 +1,21 @@
+node_type: city
+node_hash: 6FA63
+node_edges:
+	region -> has_city -> city (BF5F2 -> 36F4F -> 6FA63)
+attributes:
+	name -> Brno
+
+node_type: city
+node_hash: B268D
+node_edges:
+	region -> has_city -> city (B510A -> 6F39C -> B268D)
+attributes:
+	name -> Prague
+
+node_type: city
+node_hash: F842E
+node_edges:
+	region -> has_city -> city (B510A -> C7887 -> F842E)
+attributes:
+	name -> Plzen
+

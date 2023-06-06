@@ -1,0 +1,62 @@
+{
+  "edges" : {
+    "edge_type/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx" : {
+      "_from" : "node_from_type/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "_id" : "edge_type/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "_key" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "_to" : "node_to_type/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "attributes" : {
+        "attribute_name" : [ {
+          "metaData" : {
+            "createdAt" : [ {
+              "serializationType" : "instant",
+              "value" : "2023-05-04 21:00:55.68332646"
+            } ]
+          },
+          "values" : [ {
+            "serializationType" : "string",
+            "value" : "attribute value"
+          } ]
+        } ]
+      }
+    }
+  },
+  "nodes" : {
+    "node_from_type/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx" : {
+      "_id" : "node_from_type/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "_key" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "attributes" : {
+        "attribute_name" : [ {
+          "metaData" : {
+            "createdAt" : [ {
+              "serializationType" : "instant",
+              "value" : "2023-05-04 21:00:55.68332646"
+            } ]
+          },
+          "values" : [ {
+            "serializationType" : "string",
+            "value" : "attribute value"
+          } ]
+        } ]
+      }
+    },
+    "node_to_type/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx" : {
+      "_id" : "node_to_type/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "_key" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "attributes" : {
+        "attribute_name" : [ {
+          "metaData" : {
+            "createdAt" : [ {
+              "serializationType" : "instant",
+              "value" : "2023-05-04 21:00:55.68332646"
+            } ]
+          },
+          "values" : [ {
+            "serializationType" : "string",
+            "value" : "attribute value"
+          } ]
+        } ]
+      }
+    }
+  }
+}

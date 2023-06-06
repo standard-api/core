@@ -1,0 +1,5 @@
+edge_type: contains
+edge_hash: F4C95
+Glass -> contains -> Water (F3AB3 -> F4C95 -> B1FFC)
+attributes:
+	new -> value

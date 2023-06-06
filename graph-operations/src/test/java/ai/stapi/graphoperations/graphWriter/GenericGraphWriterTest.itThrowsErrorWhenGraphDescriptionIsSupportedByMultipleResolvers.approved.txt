@@ -1,0 +1,4 @@
+There is more than one supporting SpecificGraphWriter for declaration 'ExampleAmbiguousGraphDescription'.
+Supporting: 
+'ExampleAmbiguousSpecificGraphWriter'
+'ExampleAnotherAmbiguousSpecificGraphWriter'

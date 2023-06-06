@@ -1,0 +1,6 @@
+node_type: Test_node_type
+node_hash: 56A98
+node_edges:
+attributes:
+	identifying_attribute -> identified value
+	some_other_attribute -> new synchronized value

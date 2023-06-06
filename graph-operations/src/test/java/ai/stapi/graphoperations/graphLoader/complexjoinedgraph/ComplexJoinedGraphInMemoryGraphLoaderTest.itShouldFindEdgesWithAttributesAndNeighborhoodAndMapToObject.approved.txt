@@ -1,0 +1,33 @@
+[ {
+  "edges" : {
+    "exampleName" : "Example Edge Name 1",
+    "node" : {
+      "exampleName" : "Example Name 8",
+      "exampleComplexJoinedGraphEdgeType2Connections" : [ {
+        "edges" : {
+          "exampleName" : "Example Edge Name 2"
+        }
+      } ]
+    }
+  }
+}, {
+  "edges" : {
+    "exampleName" : "Example Edge Name 3",
+    "node" : {
+      "exampleName" : "Example Name 9",
+      "exampleComplexJoinedGraphEdgeType2Connections" : [ {
+        "edges" : {
+          "exampleName" : "Example Edge Name 4"
+        }
+      } ]
+    }
+  }
+}, {
+  "edges" : {
+    "exampleName" : "Example Edge Name 7",
+    "node" : {
+      "exampleName" : "Example Name 11",
+      "exampleComplexJoinedGraphEdgeType2Connections" : [ ]
+    }
+  }
+} ]

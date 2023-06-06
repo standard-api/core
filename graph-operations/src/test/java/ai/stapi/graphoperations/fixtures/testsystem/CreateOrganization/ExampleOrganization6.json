@@ -1,0 +1,40 @@
+{
+  "resourceType": "Organization",
+  "id": "ostravaPhysicalTherapy",
+  "name": "Ostrava Physical Therapy",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "physical-therapy"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "info@ostravaphysicaltherapy.cz"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "28. rijna 50",
+        "28. rijna 50",
+        "28. rijna 50",
+        "28. rijna 50",
+        "28. rijna 50"
+      ],
+      "city": "Ostrava",
+      "state": "Moravskoslezsky kraj",
+      "postalCode": "70030",
+      "country": "Czech Republic",
+      "position": {
+        "latitude": 49.82972,
+        "longitude": 18.28082
+      }
+    }
+  ]
+}

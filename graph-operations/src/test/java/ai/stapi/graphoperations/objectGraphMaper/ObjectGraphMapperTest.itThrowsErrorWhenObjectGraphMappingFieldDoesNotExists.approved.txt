@@ -1,0 +1,11 @@
+Provided object:
+{
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "name" : "Mirek",
+  "surname" : "Dobrota",
+  "nationality" : "Cech"
+}
+ does not contain field with name:
+randomField
+All required:
+randomField

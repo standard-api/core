@@ -1,0 +1,38 @@
+{
+  "resourceType": "Organization",
+  "id": "brnoDentalCare",
+  "name": "Brno Dental Care",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "dental-care"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "info@brnodentalcare.cz"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "Kounicova 22",
+        "Kovarova 58",
+        "Babisova 88"
+      ],
+      "city": "Brno",
+      "state": "Jihomoravsky kraj",
+      "postalCode": "60200",
+      "country": "Czech Republic",
+      "position": {
+        "latitude": 49.19522,
+        "longitude": 16.60851
+      }
+    }
+  ]
+}

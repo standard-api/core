@@ -1,0 +1,10 @@
+[ {
+  "name" : "Prague Medical Clinic",
+  "address" : [ {
+    "country" : "Czech Republic",
+    "line" : [ "Dlouhá 21" ]
+  }, {
+    "country" : "Czech Republic",
+    "line" : [ "Vaclavske Namesti 8", "Vaclavske Namesti 11", "Vaclavske Namesti 50" ]
+  } ]
+} ]

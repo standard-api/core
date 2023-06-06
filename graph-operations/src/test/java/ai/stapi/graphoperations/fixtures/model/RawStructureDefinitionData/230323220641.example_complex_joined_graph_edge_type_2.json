@@ -1,0 +1,47 @@
+{
+  "id": "exampleComplexJoinedGraphEdgeType2",
+  "description": "exampleComplexJoinedGraphEdgeType2",
+  "uri": "http://example.com/exampleComplexJoinedGraphEdgeType2",
+  "type": "StructureDefinition",
+  "abstract": false,
+  "kind": "complex-type",
+  "name": "exampleComplexJoinedGraphEdgeType2",
+  "status": "draft",
+  "differential": {
+    "element": [
+      {
+        "id": "exampleComplexJoinedGraphEdgeType2.exampleName",
+        "path": "exampleComplexJoinedGraphEdgeType2.exampleName",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "exampleComplexJoinedGraphEdgeType2.exampleStringAttribute",
+        "path": "exampleComplexJoinedGraphEdgeType2.exampleStringAttribute",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "exampleComplexJoinedGraphEdgeType2.exampleQuantity",
+        "path": "exampleComplexJoinedGraphEdgeType2.exampleQuantity",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      }
+    ]
+  }
+}

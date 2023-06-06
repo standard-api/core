@@ -1,0 +1,77 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "EventMessageDefinition",
+  "type": "EventMessageDefinition",
+  "url": "http://conception.tech/fhir/StructureDefinition/EventMessageDefinition",
+  "name": "EventMessageDefinition",
+  "kind": "resource",
+  "abstract": false,
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Resource",
+  "differential": {
+    "element": [
+      {
+        "id": "EventMessageDefinition",
+        "path": "EventMessageDefinition",
+        "short": "Definition of an event to fire",
+        "definition": "Definition of an event to fire",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "EventMessageDefinition.id",
+        "path": "EventMessageDefinition.id",
+        "short": "Name/Type for this event definition (computer friendly)",
+        "definition": "Name/Type for this event definition (computer friendly)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "http://hl7.org/fhirpath/System.String"
+          }
+        ]
+      },
+      {
+        "id": "EventMessageDefinition.name",
+        "path": "EventMessageDefinition.name",
+        "short": "Name for this event definition (user friendly)",
+        "definition": "Name for this event definition (user friendly)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "http://hl7.org/fhirpath/System.String"
+          }
+        ]
+      },
+      {
+        "id": "EventMessageDefinition.type",
+        "path": "EventMessageDefinition.type",
+        "short": "The type of event to fire",
+        "definition": "The type of event to fire.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "EventMessageDefinition.description",
+        "path": "EventMessageDefinition.description",
+        "short": "A description of the event definition",
+        "definition": "A description of the event definition.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "http://hl7.org/fhirpath/System.String"
+          }
+        ]
+      }
+    ]
+  }
+}

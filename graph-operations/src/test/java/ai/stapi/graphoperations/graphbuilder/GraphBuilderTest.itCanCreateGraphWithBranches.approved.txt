@@ -1,0 +1,18 @@
+nodes:
+	node_type: first_branch_node
+	node_hash: 4020D
+	node_edges:
+		first_branch_node -> second_branch_edge -> third_branch_node (4020D -> B3956 -> 03A24)
+	attributes:
+
+	node_type: third_branch_node
+	node_hash: 03A24
+	node_edges:
+		first_branch_node -> second_branch_edge -> third_branch_node (4020D -> B3956 -> 03A24)
+	attributes:
+
+edges:
+	edge_type: second_branch_edge
+	edge_hash: B3956
+	first_branch_node -> second_branch_edge -> third_branch_node (4020D -> B3956 -> 03A24)
+	attributes:

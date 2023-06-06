@@ -1,0 +1,57 @@
+nodes:
+	node_type: graph_description_node
+	node_hash: 337D0
+	node_edges:
+		ogm_leaf -> has_graph_description -> graph_description_node (63736 -> B9243 -> 337D0)
+	attributes:
+		node_type -> persons_mom
+
+	node_type: graph_description_node
+	node_hash: 47ECF
+	node_edges:
+		graph_description_node -> has_child_graph_mapping -> graph_description_outgoing_edge (47ECF -> 23ED0 -> DBA88)
+		ogm_list -> has_graph_description -> graph_description_node (7D914 -> 30349 -> 47ECF)
+	attributes:
+		node_type -> person
+
+	node_type: graph_description_outgoing_edge
+	node_hash: DBA88
+	node_edges:
+		graph_description_node -> has_child_graph_mapping -> graph_description_outgoing_edge (47ECF -> 23ED0 -> DBA88)
+	attributes:
+		edge_type -> has_mom
+
+	node_type: ogm_leaf
+	node_hash: 63736
+	node_edges:
+		ogm_leaf -> has_graph_description -> graph_description_node (63736 -> B9243 -> 337D0)
+		ogm_list -> has_child_ogm -> ogm_leaf (7D914 -> 00F4C -> 63736)
+	attributes:
+
+	node_type: ogm_list
+	node_hash: 7D914
+	node_edges:
+		ogm_list -> has_child_ogm -> ogm_leaf (7D914 -> 00F4C -> 63736)
+		ogm_list -> has_graph_description -> graph_description_node (7D914 -> 30349 -> 47ECF)
+	attributes:
+
+edges:
+	edge_type: has_child_graph_mapping
+	edge_hash: 23ED0
+	graph_description_node -> has_child_graph_mapping -> graph_description_outgoing_edge (47ECF -> 23ED0 -> DBA88)
+	attributes:
+
+	edge_type: has_child_ogm
+	edge_hash: 00F4C
+	ogm_list -> has_child_ogm -> ogm_leaf (7D914 -> 00F4C -> 63736)
+	attributes:
+
+	edge_type: has_graph_description
+	edge_hash: 30349
+	ogm_list -> has_graph_description -> graph_description_node (7D914 -> 30349 -> 47ECF)
+	attributes:
+
+	edge_type: has_graph_description
+	edge_hash: B9243
+	ogm_leaf -> has_graph_description -> graph_description_node (63736 -> B9243 -> 337D0)
+	attributes:

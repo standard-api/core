@@ -1,0 +1,18 @@
+nodes:
+	node_type: another_irrelevant_type
+	node_hash: 15409
+	node_edges:
+		irrelevant_type -> example_edge -> another_irrelevant_type (DF523 -> AD0A5 -> 15409)
+	attributes:
+
+	node_type: irrelevant_type
+	node_hash: DF523
+	node_edges:
+		irrelevant_type -> example_edge -> another_irrelevant_type (DF523 -> AD0A5 -> 15409)
+	attributes:
+
+edges:
+	edge_type: example_edge
+	edge_hash: AD0A5
+	irrelevant_type -> example_edge -> another_irrelevant_type (DF523 -> AD0A5 -> 15409)
+	attributes:

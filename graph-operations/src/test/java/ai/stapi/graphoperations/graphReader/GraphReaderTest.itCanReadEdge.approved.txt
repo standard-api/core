@@ -1,0 +1,5 @@
+edge_type: has_window
+edge_hash: 17795
+house -> has_window -> window (97011 -> 17795 -> 7154A)
+attributes:
+

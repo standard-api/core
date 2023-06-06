@@ -1,0 +1,54 @@
+[ {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "exampleName" : "Example Name 1",
+  "exampleComplexJoinedGraphEdgeType1" : {
+    "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+    "exampleName" : "Example Name 8",
+    "exampleComplexJoinedGraphEdgeType2" : [ {
+      "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "exampleName" : "Example Name 13"
+    } ]
+  }
+}, {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "exampleName" : "Example Name 2",
+  "exampleComplexJoinedGraphEdgeType1" : {
+    "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+    "exampleName" : "Example Name 9",
+    "exampleComplexJoinedGraphEdgeType2" : [ {
+      "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "exampleName" : "Example Name 14"
+    } ]
+  }
+}, {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "exampleName" : "Example Name 7",
+  "exampleComplexJoinedGraphEdgeType1" : null
+}, {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "exampleName" : "Example Name 3",
+  "exampleComplexJoinedGraphEdgeType1" : {
+    "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+    "exampleName" : "Example Name 11",
+    "exampleComplexJoinedGraphEdgeType2" : [ ]
+  }
+}, {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "exampleName" : "Example Name 6",
+  "exampleComplexJoinedGraphEdgeType1" : null
+}, {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "exampleName" : "Example Name 16",
+  "exampleComplexJoinedGraphEdgeType1" : {
+    "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+    "exampleName" : "Example Name 17"
+  }
+}, {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "exampleName" : "Example Name 4",
+  "exampleComplexJoinedGraphEdgeType1" : null
+}, {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "exampleName" : "Example Name 5",
+  "exampleComplexJoinedGraphEdgeType1" : null
+} ]

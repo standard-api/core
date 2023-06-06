@@ -1,0 +1,19 @@
+[ {
+  "exampleName" : "Example Name 1",
+  "exampleQuantity" : 0,
+  "exampleStringAttribute" : "Deep From First",
+  "exampleComplexJoinedGraphEdgeType1" : {
+    "exampleName" : "Example Name 8",
+    "exampleQuantity" : 35,
+    "exampleStringAttribute" : "Deep From Middle"
+  }
+}, {
+  "exampleName" : "Example Name 2",
+  "exampleQuantity" : 5,
+  "exampleStringAttribute" : "Deep From First",
+  "exampleComplexJoinedGraphEdgeType1" : {
+    "exampleName" : "Example Name 9",
+    "exampleQuantity" : 40,
+    "exampleStringAttribute" : "Deep From Middle"
+  }
+} ]

@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  ai.stapi.graphoperations.configuration.GraphLoaderConfiguration,\
+  ai.stapi.graphoperations.configuration.GraphSerializationConfiguration

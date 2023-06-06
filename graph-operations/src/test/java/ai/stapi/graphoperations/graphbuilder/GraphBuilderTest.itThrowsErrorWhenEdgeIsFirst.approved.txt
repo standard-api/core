@@ -1,0 +1,1 @@
+Graph can not have edge as first element.

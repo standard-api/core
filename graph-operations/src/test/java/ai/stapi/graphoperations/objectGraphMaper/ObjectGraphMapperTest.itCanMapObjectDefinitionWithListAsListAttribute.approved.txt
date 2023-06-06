@@ -1,0 +1,9 @@
+nodes:
+	node_type: house
+	node_hash: 3D4EF
+	node_edges:
+	attributes:
+		address -> Vorackova 30
+		room_name -> [kuchyne, loznice, koupelna]
+
+edges:

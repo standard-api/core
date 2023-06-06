@@ -1,0 +1,54 @@
+nodes:
+	node_type: ExampleComplexJoinedGraphNodeType1
+	node_hash: 39D12
+	node_edges:
+		ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType2 (39D12 -> 08D1D -> F5BE2)
+		ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1Other -> ExampleComplexJoinedGraphNodeType2Other (39D12 -> A81EB -> 660CA)
+	attributes:
+		exampleName -> Example Name 1
+
+	node_type: ExampleComplexJoinedGraphNodeType2
+	node_hash: F5BE2
+	node_edges:
+		ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType2 (39D12 -> 08D1D -> F5BE2)
+		ExampleComplexJoinedGraphNodeType2 -> exampleComplexJoinedGraphEdgeType2 -> ExampleComplexJoinedGraphNodeType3 (F5BE2 -> 999AC -> CC061)
+	attributes:
+		exampleName -> Example Name 8
+		exampleQuantity -> 35
+		exampleStringAttribute -> Deep From Middle
+
+	node_type: ExampleComplexJoinedGraphNodeType2Other
+	node_hash: 660CA
+	node_edges:
+		ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1Other -> ExampleComplexJoinedGraphNodeType2Other (39D12 -> A81EB -> 660CA)
+	attributes:
+		exampleName -> Example Name 19
+		exampleQuantity -> 35
+		exampleStringAttribute -> Shallow From Last Other
+
+	node_type: ExampleComplexJoinedGraphNodeType3
+	node_hash: CC061
+	node_edges:
+		ExampleComplexJoinedGraphNodeType2 -> exampleComplexJoinedGraphEdgeType2 -> ExampleComplexJoinedGraphNodeType3 (F5BE2 -> 999AC -> CC061)
+	attributes:
+
+edges:
+	edge_type: exampleComplexJoinedGraphEdgeType1
+	edge_hash: 08D1D
+	ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1 -> ExampleComplexJoinedGraphNodeType2 (39D12 -> 08D1D -> F5BE2)
+	attributes:
+		exampleName -> Example Edge Name 1
+
+	edge_type: exampleComplexJoinedGraphEdgeType1Other
+	edge_hash: A81EB
+	ExampleComplexJoinedGraphNodeType1 -> exampleComplexJoinedGraphEdgeType1Other -> ExampleComplexJoinedGraphNodeType2Other (39D12 -> A81EB -> 660CA)
+	attributes:
+		exampleQuantity -> 0
+
+	edge_type: exampleComplexJoinedGraphEdgeType2
+	edge_hash: 999AC
+	ExampleComplexJoinedGraphNodeType2 -> exampleComplexJoinedGraphEdgeType2 -> ExampleComplexJoinedGraphNodeType3 (F5BE2 -> 999AC -> CC061)
+	attributes:
+		exampleName -> Example Edge Name 2
+		exampleQuantity -> 0
+		exampleStringAttribute -> default

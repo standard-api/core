@@ -1,0 +1,51 @@
+{
+  "resourceType": "Organization",
+  "id": "pragueMedicalClinic",
+  "name": "Prague Medical Clinic",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "medical-clinic"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "info@praguemedicalclinic.cz"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "Vaclavske Namesti 8",
+        "Vaclavske Namesti 11",
+        "Vaclavske Namesti 50"
+      ],
+      "city": "Prague",
+      "state": "Praha",
+      "postalCode": "11000",
+      "country": "Czech Republic",
+      "position": {
+        "latitude": 50.08804,
+        "longitude": 14.42076
+      }
+    },
+    {
+      "line": [
+        "Dlouhá 21"
+      ],
+      "city": "Aš",
+      "state": "Aš",
+      "postalCode": "35201",
+      "country": "Czech Republic",
+      "position": {
+        "latitude": 50.223791,
+        "longitude": 12.197354
+      }
+    }
+  ]
+}

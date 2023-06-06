@@ -1,0 +1,8 @@
+{
+  "serializationType" : "b78cee2a-1063-49b7-a020-4790931dc85a",
+  "name" : "Master name",
+  "childDto" : {
+    "serializationType" : "fb6b6720-6ff7-4d62-bb47-84f888171fe9",
+    "name" : "Ivan Mladek"
+  }
+}

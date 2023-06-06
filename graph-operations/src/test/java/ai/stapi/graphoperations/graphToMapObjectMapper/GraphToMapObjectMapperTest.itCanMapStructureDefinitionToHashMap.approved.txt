@@ -1,0 +1,99 @@
+{
+  "serializationType" : "StructureDefinition",
+  "id" : "patient",
+  "abstract" : false,
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/DomainResource",
+  "derivation" : "constraint",
+  "description" : "This resource describes a patient.",
+  "kind" : "resource",
+  "name" : "Patient",
+  "publisher" : "Example Publisher",
+  "status" : "active",
+  "title" : "Patient Resource Definition",
+  "type" : "Patient",
+  "url" : "http://example.com/fhir/StructureDefinition/patient",
+  "version" : "1.0",
+  "baseDefinitionReference" : {
+    "serializationType" : "StructureDefinition"
+  },
+  "differential" : {
+    "serializationType" : "StructureDefinitionDifferential",
+    "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+    "element" : [ {
+      "serializationType" : "ElementDefinition",
+      "id" : "Patient",
+      "definition" : "Demographics and other administrative information about an individual or animal receiving care or other health-related services.",
+      "max" : "*",
+      "min" : 0,
+      "path" : "Patient",
+      "short" : "Patient",
+      "typeReference" : {
+        "serializationType" : "ElementDefinition"
+      }
+    }, {
+      "serializationType" : "ElementDefinition",
+      "id" : "Patient.birthDate",
+      "definition" : "The date on which the individual or animal was born.",
+      "max" : "1",
+      "min" : 0,
+      "path" : "Patient.birthDate",
+      "short" : "The date of birth for the patient",
+      "type" : [ {
+        "serializationType" : "ElementDefinitionType",
+        "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+        "code" : "date"
+      } ],
+      "typeReference" : {
+        "serializationType" : "ElementDefinition"
+      }
+    }, {
+      "serializationType" : "ElementDefinition",
+      "id" : "Patient.gender",
+      "definition" : "Administrative gender.",
+      "max" : "1",
+      "min" : 0,
+      "path" : "Patient.gender",
+      "short" : "Gender",
+      "type" : [ {
+        "serializationType" : "ElementDefinitionType",
+        "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+        "code" : "code"
+      } ],
+      "typeReference" : {
+        "serializationType" : "ElementDefinition"
+      }
+    }, {
+      "serializationType" : "ElementDefinition",
+      "id" : "Patient.identifier",
+      "definition" : "An identifier that applies to this patient in this context.",
+      "max" : "*",
+      "min" : 0,
+      "path" : "Patient.identifier",
+      "short" : "An identifier for the patient",
+      "type" : [ {
+        "serializationType" : "ElementDefinitionType",
+        "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+        "code" : "Identifier"
+      } ],
+      "typeReference" : {
+        "serializationType" : "ElementDefinition"
+      }
+    }, {
+      "serializationType" : "ElementDefinition",
+      "id" : "Patient.name",
+      "definition" : "A name associated with the individual or animal receiving care or other health-related services.",
+      "max" : "*",
+      "min" : 0,
+      "path" : "Patient.name",
+      "short" : "A name associated with the patient",
+      "type" : [ {
+        "serializationType" : "ElementDefinitionType",
+        "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+        "code" : "HumanName"
+      } ],
+      "typeReference" : {
+        "serializationType" : "ElementDefinition"
+      }
+    } ]
+  }
+}

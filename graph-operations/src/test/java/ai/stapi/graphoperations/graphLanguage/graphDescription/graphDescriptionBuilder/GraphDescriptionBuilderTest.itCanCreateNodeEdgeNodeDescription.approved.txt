@@ -1,0 +1,22 @@
+{
+  "serializationType" : "NodeDescription",
+  "traversingType" : "node",
+  "childGraphDescriptions" : [ {
+    "serializationType" : "OutgoingEdgeDescription",
+    "traversingType" : "edge",
+    "childGraphDescriptions" : [ {
+      "serializationType" : "NodeDescription",
+      "traversingType" : "node",
+      "childGraphDescriptions" : [ ],
+      "parameters" : {
+        "nodeType" : "second_node"
+      }
+    } ],
+    "parameters" : {
+      "edgeType" : "example_edge"
+    }
+  } ],
+  "parameters" : {
+    "nodeType" : "first_node"
+  }
+}

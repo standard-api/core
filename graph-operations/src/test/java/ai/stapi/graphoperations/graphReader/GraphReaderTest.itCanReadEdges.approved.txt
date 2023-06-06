@@ -1,0 +1,15 @@
+edge_type: has_city
+edge_hash: 36F4F
+region -> has_city -> city (BF5F2 -> 36F4F -> 6FA63)
+attributes:
+
+edge_type: has_city
+edge_hash: 6F39C
+region -> has_city -> city (B510A -> 6F39C -> B268D)
+attributes:
+
+edge_type: has_city
+edge_hash: C7887
+region -> has_city -> city (B510A -> C7887 -> F842E)
+attributes:
+

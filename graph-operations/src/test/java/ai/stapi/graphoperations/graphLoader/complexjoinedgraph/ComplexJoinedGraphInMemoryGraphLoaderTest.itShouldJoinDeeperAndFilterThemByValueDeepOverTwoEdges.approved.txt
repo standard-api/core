@@ -1,0 +1,10 @@
+[ {
+  "exampleName" : "Example Name 1",
+  "exampleComplexJoinedGraphEdgeType1" : {
+    "exampleComplexJoinedGraphEdgeType2" : [ {
+      "exampleName" : "Example Name 13",
+      "exampleQuantity" : 60,
+      "exampleStringAttribute" : "Deep From Last"
+    } ]
+  }
+} ]

@@ -1,0 +1,138 @@
+{
+  "serializationType" : "ObjectObjectGraphMapping",
+  "fields" : {
+    "id" : {
+      "serializationType" : "ObjectFieldDefinition",
+      "fieldObjectGraphMapping" : {
+        "serializationType" : "LeafObjectGraphMapping",
+        "graphDescription" : {
+          "serializationType" : "UuidIdentityDescription",
+          "traversingType" : "value",
+          "childGraphDescriptions" : [ ],
+          "parameters" : { }
+        }
+      },
+      "relation" : {
+        "serializationType" : "NullGraphDescription",
+        "traversingType" : "null",
+        "childGraphDescriptions" : [ ]
+      }
+    },
+    "extension" : {
+      "serializationType" : "ObjectFieldDefinition",
+      "fieldObjectGraphMapping" : {
+        "serializationType" : "ListObjectGraphMapping",
+        "childObjectGraphMapping" : {
+          "serializationType" : "ReferenceObjectGraphMapping",
+          "referencedSerializationType" : "Extension",
+          "graphDescription" : {
+            "serializationType" : "OutgoingEdgeDescription",
+            "traversingType" : "edge",
+            "childGraphDescriptions" : [ ],
+            "parameters" : {
+              "edgeType" : "extension"
+            }
+          }
+        },
+        "graphDescription" : {
+          "serializationType" : "NullGraphDescription",
+          "traversingType" : "null",
+          "childGraphDescriptions" : [ ]
+        }
+      },
+      "relation" : {
+        "serializationType" : "NullGraphDescription",
+        "traversingType" : "null",
+        "childGraphDescriptions" : [ ]
+      }
+    },
+    "latitude" : {
+      "serializationType" : "ObjectFieldDefinition",
+      "fieldObjectGraphMapping" : {
+        "serializationType" : "LeafObjectGraphMapping",
+        "graphDescription" : {
+          "serializationType" : "LeafAttributeDescription",
+          "describedStructureType" : "LeafAttribute",
+          "traversingType" : "attribute",
+          "childGraphDescriptions" : [ {
+            "serializationType" : "DecimalAttributeValueDescription",
+            "describedAttributeDataTypeId" : "decimal",
+            "traversingType" : "value",
+            "childGraphDescriptions" : [ ],
+            "parameters" : { }
+          } ],
+          "parameters" : {
+            "attributeName" : "latitude"
+          }
+        }
+      },
+      "relation" : {
+        "serializationType" : "NullGraphDescription",
+        "traversingType" : "null",
+        "childGraphDescriptions" : [ ]
+      }
+    },
+    "longitude" : {
+      "serializationType" : "ObjectFieldDefinition",
+      "fieldObjectGraphMapping" : {
+        "serializationType" : "LeafObjectGraphMapping",
+        "graphDescription" : {
+          "serializationType" : "LeafAttributeDescription",
+          "describedStructureType" : "LeafAttribute",
+          "traversingType" : "attribute",
+          "childGraphDescriptions" : [ {
+            "serializationType" : "DecimalAttributeValueDescription",
+            "describedAttributeDataTypeId" : "decimal",
+            "traversingType" : "value",
+            "childGraphDescriptions" : [ ],
+            "parameters" : { }
+          } ],
+          "parameters" : {
+            "attributeName" : "longitude"
+          }
+        }
+      },
+      "relation" : {
+        "serializationType" : "NullGraphDescription",
+        "traversingType" : "null",
+        "childGraphDescriptions" : [ ]
+      }
+    },
+    "modifierExtension" : {
+      "serializationType" : "ObjectFieldDefinition",
+      "fieldObjectGraphMapping" : {
+        "serializationType" : "ListObjectGraphMapping",
+        "childObjectGraphMapping" : {
+          "serializationType" : "ReferenceObjectGraphMapping",
+          "referencedSerializationType" : "Extension",
+          "graphDescription" : {
+            "serializationType" : "OutgoingEdgeDescription",
+            "traversingType" : "edge",
+            "childGraphDescriptions" : [ ],
+            "parameters" : {
+              "edgeType" : "modifierExtension"
+            }
+          }
+        },
+        "graphDescription" : {
+          "serializationType" : "NullGraphDescription",
+          "traversingType" : "null",
+          "childGraphDescriptions" : [ ]
+        }
+      },
+      "relation" : {
+        "serializationType" : "NullGraphDescription",
+        "traversingType" : "null",
+        "childGraphDescriptions" : [ ]
+      }
+    }
+  },
+  "graphDescription" : {
+    "serializationType" : "NodeDescription",
+    "traversingType" : "node",
+    "childGraphDescriptions" : [ ],
+    "parameters" : {
+      "nodeType" : "AddressPosition"
+    }
+  }
+}

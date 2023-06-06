@@ -1,0 +1,18 @@
+{
+  "serializationType" : "LeafObjectGraphMapping",
+  "graphDescription" : {
+    "serializationType" : "LeafAttributeDescription",
+    "describedStructureType" : "LeafAttribute",
+    "traversingType" : "attribute",
+    "childGraphDescriptions" : [ {
+      "serializationType" : "DecimalAttributeValueDescription",
+      "describedAttributeDataTypeId" : "decimal",
+      "traversingType" : "value",
+      "childGraphDescriptions" : [ ],
+      "parameters" : { }
+    } ],
+    "parameters" : {
+      "attributeName" : "exampleDecimalAttribute"
+    }
+  }
+}

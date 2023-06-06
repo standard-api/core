@@ -1,0 +1,69 @@
+nodes:
+	node_type: graph_description_attribute_string
+	node_hash: 679DC
+	node_edges:
+		graph_description_leaf_attribute -> has_child_graph_mapping -> graph_description_attribute_string (6D60D -> FA6E4 -> 679DC)
+	attributes:
+
+	node_type: graph_description_leaf_attribute
+	node_hash: 6D60D
+	node_edges:
+		graph_description_leaf_attribute -> has_child_graph_mapping -> graph_description_attribute_string (6D60D -> FA6E4 -> 679DC)
+		ogm_leaf -> has_graph_description -> graph_description_leaf_attribute (91495 -> FADE7 -> 6D60D)
+	attributes:
+		attribute_name -> address
+
+	node_type: graph_description_node
+	node_hash: AAF84
+	node_edges:
+		ogm_object -> has_graph_description -> graph_description_node (6C325 -> C5DCD -> AAF84)
+	attributes:
+		node_type -> house
+
+	node_type: ogm_leaf
+	node_hash: 91495
+	node_edges:
+		ogm_leaf -> has_graph_description -> graph_description_leaf_attribute (91495 -> FADE7 -> 6D60D)
+		ogm_object_field -> has_child_ogm -> ogm_leaf (12256 -> D2047 -> 91495)
+	attributes:
+
+	node_type: ogm_object
+	node_hash: 6C325
+	node_edges:
+		ogm_object -> has_field_mapping -> ogm_object_field (6C325 -> 6CD9C -> 12256)
+		ogm_object -> has_graph_description -> graph_description_node (6C325 -> C5DCD -> AAF84)
+	attributes:
+
+	node_type: ogm_object_field
+	node_hash: 12256
+	node_edges:
+		ogm_object -> has_field_mapping -> ogm_object_field (6C325 -> 6CD9C -> 12256)
+		ogm_object_field -> has_child_ogm -> ogm_leaf (12256 -> D2047 -> 91495)
+	attributes:
+
+edges:
+	edge_type: has_child_graph_mapping
+	edge_hash: FA6E4
+	graph_description_leaf_attribute -> has_child_graph_mapping -> graph_description_attribute_string (6D60D -> FA6E4 -> 679DC)
+	attributes:
+
+	edge_type: has_child_ogm
+	edge_hash: D2047
+	ogm_object_field -> has_child_ogm -> ogm_leaf (12256 -> D2047 -> 91495)
+	attributes:
+
+	edge_type: has_field_mapping
+	edge_hash: 6CD9C
+	ogm_object -> has_field_mapping -> ogm_object_field (6C325 -> 6CD9C -> 12256)
+	attributes:
+		field_name -> address
+
+	edge_type: has_graph_description
+	edge_hash: C5DCD
+	ogm_object -> has_graph_description -> graph_description_node (6C325 -> C5DCD -> AAF84)
+	attributes:
+
+	edge_type: has_graph_description
+	edge_hash: FADE7
+	ogm_leaf -> has_graph_description -> graph_description_leaf_attribute (91495 -> FADE7 -> 6D60D)
+	attributes:

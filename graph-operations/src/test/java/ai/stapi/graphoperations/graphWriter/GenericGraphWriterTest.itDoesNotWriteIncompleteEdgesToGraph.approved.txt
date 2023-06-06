@@ -1,0 +1,7 @@
+nodes:
+	node_type: house
+	node_hash: 4C1D3
+	node_edges:
+	attributes:
+
+edges:

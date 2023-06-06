@@ -1,0 +1,47 @@
+{
+  "id": "ExampleEntity",
+  "description": "ExampleEntity",
+  "uri": "http://example.com/ExampleEntity",
+  "type": "StructureDefinition",
+  "abstract": false,
+  "kind": "complex-type",
+  "name": "ExampleEntity",
+  "status": "draft",
+  "differential": {
+    "element": [
+      {
+        "id": "ExampleEntity.exampleName",
+        "path": "ExampleEntity.exampleName",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "ExampleEntity.exampleStringAttribute",
+        "path": "ExampleEntity.exampleStringAttribute",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "ExampleEntity.exampleQuantity",
+        "path": "ExampleEntity.exampleQuantity",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      }
+    ]
+  }
+}

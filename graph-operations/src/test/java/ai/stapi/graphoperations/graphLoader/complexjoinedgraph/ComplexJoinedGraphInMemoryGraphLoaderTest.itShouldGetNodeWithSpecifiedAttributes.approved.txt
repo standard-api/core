@@ -1,0 +1,5 @@
+node_type: ExampleComplexJoinedGraphNodeType1
+node_hash: BB11F
+node_edges:
+attributes:
+	exampleName -> Example Name 1

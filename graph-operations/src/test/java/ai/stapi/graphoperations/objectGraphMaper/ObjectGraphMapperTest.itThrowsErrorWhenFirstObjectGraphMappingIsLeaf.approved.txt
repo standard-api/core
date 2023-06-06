@@ -1,0 +1,2 @@
+First Object Graph Mapping should be of type "ObjectObjectGraphMapping" 
+but is "LeafObjectGraphMapping". 

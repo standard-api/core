@@ -1,0 +1,4 @@
+node_type: test_node_type
+node_hash: FE9B0
+node_edges:
+attributes:

@@ -1,0 +1,10 @@
+{
+  "edges" : { },
+  "nodes" : {
+    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx" : {
+      "type" : "example_node_type",
+      "uuid" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "attributes" : { }
+    }
+  }
+}

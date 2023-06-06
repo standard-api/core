@@ -1,0 +1,1 @@
+Serialization type 'string' is primitive-type, use method for primitive OGM instead.

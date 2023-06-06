@@ -1,0 +1,8 @@
+nodes:
+	node_type: example_node
+	node_hash: 6894E
+	node_edges:
+	attributes:
+		example_attribute_name -> example_value
+
+edges:

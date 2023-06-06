@@ -1,0 +1,10 @@
+nodes:
+	node_type: person_node
+	node_hash: FA86D
+	node_edges:
+	attributes:
+		name -> Mirek
+		nationality -> Cech
+		surname -> Dobrota
+
+edges:

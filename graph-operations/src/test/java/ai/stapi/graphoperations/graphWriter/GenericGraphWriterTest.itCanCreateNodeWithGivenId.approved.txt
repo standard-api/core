@@ -1,0 +1,7 @@
+nodes:
+	node_type: example_node
+	node_hash: 4F7AE
+	node_edges:
+	attributes:
+
+edges:

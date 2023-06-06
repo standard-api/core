@@ -1,0 +1,3 @@
+Given object to be mapped to graph should not be null. But it is.
+Given Graph Object Mapping:
+"ObjectObjectGraphMapping"

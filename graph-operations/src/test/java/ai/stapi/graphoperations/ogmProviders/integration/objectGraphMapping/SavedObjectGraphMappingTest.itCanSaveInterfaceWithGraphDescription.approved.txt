@@ -1,0 +1,8 @@
+nodes:
+	node_type: ogm_interface
+	node_hash: CBE91
+	node_edges:
+	attributes:
+		interfaceUuid -> 1b70940b-a231-45c7-ab32-51381a7163a2
+
+edges:

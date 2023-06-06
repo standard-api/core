@@ -1,0 +1,30 @@
+node_type: Address
+node_hash: 0B1B5
+node_edges:
+attributes:
+	city -> Hradec Kralove
+	country -> Czech Republic
+	line -> [Sokolská 581]
+	postalCode -> 50003
+	state -> Kralovehradecky kraj
+
+node_type: Address
+node_hash: 2B8FC
+node_edges:
+attributes:
+	city -> Aš
+	country -> Czech Republic
+	line -> [Dlouhá 21]
+	postalCode -> 35201
+	state -> Aš
+
+node_type: Address
+node_hash: F64EE
+node_edges:
+attributes:
+	city -> Prague
+	country -> Czech Republic
+	line -> [Vaclavske Namesti 8, Vaclavske Namesti 11, Vaclavske Namesti 50]
+	postalCode -> 11000
+	state -> Praha
+

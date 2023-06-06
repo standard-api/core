@@ -1,0 +1,32 @@
+nodes:
+	node_type: graph_description_attribute_string
+	node_hash: 80311
+	node_edges:
+		graph_description_leaf_attribute -> has_child_graph_mapping -> graph_description_attribute_string (AF342 -> 4F2C3 -> 80311)
+	attributes:
+
+	node_type: graph_description_leaf_attribute
+	node_hash: AF342
+	node_edges:
+		graph_description_leaf_attribute -> has_child_graph_mapping -> graph_description_attribute_string (AF342 -> 4F2C3 -> 80311)
+		graph_description_node -> has_child_graph_mapping -> graph_description_leaf_attribute (A1B0C -> E348C -> AF342)
+	attributes:
+		attribute_name -> example_attribute
+
+	node_type: graph_description_node
+	node_hash: A1B0C
+	node_edges:
+		graph_description_node -> has_child_graph_mapping -> graph_description_leaf_attribute (A1B0C -> E348C -> AF342)
+	attributes:
+		node_type -> example_node
+
+edges:
+	edge_type: has_child_graph_mapping
+	edge_hash: 4F2C3
+	graph_description_leaf_attribute -> has_child_graph_mapping -> graph_description_attribute_string (AF342 -> 4F2C3 -> 80311)
+	attributes:
+
+	edge_type: has_child_graph_mapping
+	edge_hash: E348C
+	graph_description_node -> has_child_graph_mapping -> graph_description_leaf_attribute (A1B0C -> E348C -> AF342)
+	attributes:

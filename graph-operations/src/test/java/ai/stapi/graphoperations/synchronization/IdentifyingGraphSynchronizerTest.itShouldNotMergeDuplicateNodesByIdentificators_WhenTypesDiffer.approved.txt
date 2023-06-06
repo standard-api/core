@@ -1,0 +1,16 @@
+nodes:
+	node_type: typeA
+	node_hash: 1EF5F
+	node_edges:
+	attributes:
+		A_attribute -> A_value
+		identifying_attribute -> same_value
+
+	node_type: typeB
+	node_hash: 9FEB3
+	node_edges:
+	attributes:
+		B_attribute -> B_value
+		identifying_attribute -> same_value
+
+edges:

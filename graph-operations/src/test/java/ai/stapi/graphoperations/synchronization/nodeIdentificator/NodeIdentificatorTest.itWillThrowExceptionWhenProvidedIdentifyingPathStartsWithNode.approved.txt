@@ -1,0 +1,10 @@
+Node identificator was invalid, because path to identification value does not start with edge or attribute description. Invalid paths: 
+{
+  "serializationType" : "NodeDescription",
+  "childGraphDescriptions" : [ ],
+  "parameters" : {
+    "nodeType" : "irrelevant"
+  },
+  "declarationType" : "PositiveGraphDescription",
+  "graphTraversingType" : "node"
+}

@@ -1,0 +1,19 @@
+nodes:
+	node_type: node2
+	node_hash: A6D3E
+	node_edges:
+		node2 -> edge2 -> node3 (A6D3E -> E50BE -> 586A7)
+	attributes:
+
+	node_type: node3
+	node_hash: 586A7
+	node_edges:
+		node2 -> edge2 -> node3 (A6D3E -> E50BE -> 586A7)
+	attributes:
+		example_attribute -> node3_value
+
+edges:
+	edge_type: edge2
+	edge_hash: E50BE
+	node2 -> edge2 -> node3 (A6D3E -> E50BE -> 586A7)
+	attributes:

@@ -1,0 +1,30 @@
+Node identificator was invalid, because path to identification value is not single path. Invalid paths: 
+{
+  "serializationType" : "OutgoingEdgeDescription",
+  "childGraphDescriptions" : [ {
+    "serializationType" : "AttributeQueryDescription",
+    "childGraphDescriptions" : [ ],
+    "parameters" : {
+      "attributeName" : "oneAttribute"
+    },
+    "graphTraversingType" : "attribute",
+    "declarationType" : "PositiveGraphDescription",
+    "describedAttributeStructureType" : "Irrelevant"
+  }, {
+    "serializationType" : "AttributeQueryDescription",
+    "childGraphDescriptions" : [ ],
+    "parameters" : {
+      "attributeName" : "secondAttribute"
+    },
+    "graphTraversingType" : "attribute",
+    "declarationType" : "PositiveGraphDescription",
+    "describedAttributeStructureType" : "Irrelevant"
+  } ],
+  "parameters" : {
+    "edgeType" : "irrelevantEdge"
+  },
+  "outgoing" : true,
+  "ingoing" : false,
+  "declarationType" : "PositiveGraphDescription",
+  "graphTraversingType" : "edge"
+}

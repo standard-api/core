@@ -1,0 +1,19 @@
+node_type: node1
+node_hash: 2AC87
+node_edges:
+attributes:
+	example_attribute -> node1_value
+	other_attribute -> node1_other_value
+
+node_type: node1
+node_hash: 5870E
+node_edges:
+attributes:
+	example_attribute -> node12_value
+
+node_type: node1
+node_hash: 92784
+node_edges:
+attributes:
+	example_attribute -> node11_value
+

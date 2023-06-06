@@ -1,0 +1,20 @@
+{
+  "serializationType" : "NodeDescription",
+  "traversingType" : "node",
+  "childGraphDescriptions" : [ {
+    "serializationType" : "UuidIdentityDescription",
+    "traversingType" : "value",
+    "childGraphDescriptions" : [ {
+      "serializationType" : "ConstantDescription",
+      "traversingType" : "constant",
+      "childGraphDescriptions" : [ ],
+      "parameters" : {
+        "value" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx"
+      }
+    } ],
+    "parameters" : { }
+  } ],
+  "parameters" : {
+    "nodeType" : "first_node"
+  }
+}

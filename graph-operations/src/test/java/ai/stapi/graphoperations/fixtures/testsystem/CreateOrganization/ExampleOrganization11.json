@@ -1,0 +1,36 @@
+{
+  "resourceType": "Organization",
+  "id": "litomericePhysicalTherapy",
+  "name": "Litomerice Physical Therapy",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "physical-therapy"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "info@litomericephysicaltherapy.cz"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "Husova 37"
+      ],
+      "city": "Litomerice",
+      "state": "Ustecky kraj",
+      "postalCode": "41201",
+      "country": "Czech Republic",
+      "position": {
+        "latitude": 50.53991,
+        "longitude": 14.14663
+      }
+    }
+  ]
+}

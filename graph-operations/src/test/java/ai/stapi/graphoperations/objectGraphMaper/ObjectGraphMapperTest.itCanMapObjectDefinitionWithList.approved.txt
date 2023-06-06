@@ -1,0 +1,91 @@
+nodes:
+	node_type: house
+	node_hash: 39BE5
+	node_edges:
+		house -> has_resident -> resident (39BE5 -> 01BCA -> ADCEE)
+		house -> has_resident -> resident (39BE5 -> 51FBA -> 74336)
+		house -> has_resident -> resident (39BE5 -> 95078 -> D91E8)
+		house -> has_room -> room (39BE5 -> 27015 -> 07834)
+		house -> has_room -> room (39BE5 -> 5AC5A -> FC09F)
+		house -> has_room -> room (39BE5 -> 8B09E -> 8F2C3)
+	attributes:
+		address -> Vorackova 30
+
+	node_type: resident
+	node_hash: 74336
+	node_edges:
+		house -> has_resident -> resident (39BE5 -> 51FBA -> 74336)
+	attributes:
+		name -> Mirek
+		nationality -> Cech
+		surname -> Dobrota
+
+	node_type: resident
+	node_hash: ADCEE
+	node_edges:
+		house -> has_resident -> resident (39BE5 -> 01BCA -> ADCEE)
+	attributes:
+		name -> Jack
+		nationality -> Pirat
+		surname -> Sparrow
+
+	node_type: resident
+	node_hash: D91E8
+	node_edges:
+		house -> has_resident -> resident (39BE5 -> 95078 -> D91E8)
+	attributes:
+		name -> Lukas
+		nationality -> Cech
+		surname -> Voracek
+
+	node_type: room
+	node_hash: 07834
+	node_edges:
+		house -> has_room -> room (39BE5 -> 27015 -> 07834)
+	attributes:
+		room_name -> kuchyne
+
+	node_type: room
+	node_hash: 8F2C3
+	node_edges:
+		house -> has_room -> room (39BE5 -> 8B09E -> 8F2C3)
+	attributes:
+		room_name -> loznice
+
+	node_type: room
+	node_hash: FC09F
+	node_edges:
+		house -> has_room -> room (39BE5 -> 5AC5A -> FC09F)
+	attributes:
+		room_name -> koupelna
+
+edges:
+	edge_type: has_resident
+	edge_hash: 01BCA
+	house -> has_resident -> resident (39BE5 -> 01BCA -> ADCEE)
+	attributes:
+
+	edge_type: has_resident
+	edge_hash: 51FBA
+	house -> has_resident -> resident (39BE5 -> 51FBA -> 74336)
+	attributes:
+
+	edge_type: has_resident
+	edge_hash: 95078
+	house -> has_resident -> resident (39BE5 -> 95078 -> D91E8)
+	attributes:
+
+	edge_type: has_room
+	edge_hash: 27015
+	house -> has_room -> room (39BE5 -> 27015 -> 07834)
+	attributes:
+
+	edge_type: has_room
+	edge_hash: 5AC5A
+	house -> has_room -> room (39BE5 -> 5AC5A -> FC09F)
+	attributes:
+
+	edge_type: has_room
+	edge_hash: 8B09E
+	house -> has_room -> room (39BE5 -> 8B09E -> 8F2C3)
+	attributes:

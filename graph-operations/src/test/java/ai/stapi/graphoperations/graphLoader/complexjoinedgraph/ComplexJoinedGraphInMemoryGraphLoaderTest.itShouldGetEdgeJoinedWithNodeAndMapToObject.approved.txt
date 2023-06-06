@@ -1,0 +1,12 @@
+{
+  "edges" : {
+    "exampleName" : "Example Edge Name 1",
+    "exampleQuantity" : 0,
+    "exampleStringAttribute" : "default",
+    "node" : {
+      "exampleName" : "Example Name 8",
+      "exampleQuantity" : 35,
+      "exampleStringAttribute" : "Deep From Middle"
+    }
+  }
+}

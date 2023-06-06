@@ -1,0 +1,33 @@
+nodes:
+	node_type: node1
+	node_hash: B5708
+	node_edges:
+		node1 -> edge1 -> node2 (B5708 -> C9F0D -> 6D26D)
+	attributes:
+		example_attribute -> node1_value
+
+	node_type: node2
+	node_hash: 6D26D
+	node_edges:
+		node1 -> edge1 -> node2 (B5708 -> C9F0D -> 6D26D)
+		node2 -> edge2 -> node3 (6D26D -> 2D315 -> 06954)
+	attributes:
+		example_attribute -> node2_value
+
+	node_type: node3
+	node_hash: 06954
+	node_edges:
+		node2 -> edge2 -> node3 (6D26D -> 2D315 -> 06954)
+	attributes:
+		example_attribute -> node3_value
+
+edges:
+	edge_type: edge1
+	edge_hash: C9F0D
+	node1 -> edge1 -> node2 (B5708 -> C9F0D -> 6D26D)
+	attributes:
+
+	edge_type: edge2
+	edge_hash: 2D315
+	node2 -> edge2 -> node3 (6D26D -> 2D315 -> 06954)
+	attributes:

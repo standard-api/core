@@ -1,0 +1,28 @@
+nodes:
+	node_type: research
+	node_hash: 9DFB9
+	node_edges:
+		statement -> is_based_on -> research (D3CCE -> F91D8 -> 9DFB9)
+		statement -> is_derived_from -> research (D3CCE -> DBEAB -> 9DFB9)
+	attributes:
+		attribute_name -> test_value
+
+	node_type: statement
+	node_hash: D3CCE
+	node_edges:
+		statement -> is_based_on -> research (D3CCE -> F91D8 -> 9DFB9)
+		statement -> is_derived_from -> research (D3CCE -> DBEAB -> 9DFB9)
+	attributes:
+		attribute_name -> test_value
+
+edges:
+	edge_type: is_based_on
+	edge_hash: F91D8
+	statement -> is_based_on -> research (D3CCE -> F91D8 -> 9DFB9)
+	attributes:
+		attribute_name -> test_value
+
+	edge_type: is_derived_from
+	edge_hash: DBEAB
+	statement -> is_derived_from -> research (D3CCE -> DBEAB -> 9DFB9)
+	attributes:

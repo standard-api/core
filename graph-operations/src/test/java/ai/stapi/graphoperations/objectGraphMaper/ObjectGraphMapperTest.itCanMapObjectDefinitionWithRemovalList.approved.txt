@@ -1,0 +1,46 @@
+nodes:
+	node_type: house
+	node_hash: 14382
+	node_edges:
+		house -> has_room -> room (14382 -> 27015 -> 07834)
+		house -> has_room -> room (14382 -> 5AC5A -> FC09F)
+		house -> has_room -> room (14382 -> 8B09E -> 8F2C3)
+	attributes:
+		address -> Vorackova 30
+
+	node_type: room
+	node_hash: 07834
+	node_edges:
+		house -> has_room -> room (14382 -> 27015 -> 07834)
+	attributes:
+		room_name -> kuchyne
+
+	node_type: room
+	node_hash: 8F2C3
+	node_edges:
+		house -> has_room -> room (14382 -> 8B09E -> 8F2C3)
+	attributes:
+		room_name -> loznice
+
+	node_type: room
+	node_hash: FC09F
+	node_edges:
+		house -> has_room -> room (14382 -> 5AC5A -> FC09F)
+	attributes:
+		room_name -> koupelna
+
+edges:
+	edge_type: has_room
+	edge_hash: 27015
+	house -> has_room -> room (14382 -> 27015 -> 07834)
+	attributes:
+
+	edge_type: has_room
+	edge_hash: 5AC5A
+	house -> has_room -> room (14382 -> 5AC5A -> FC09F)
+	attributes:
+
+	edge_type: has_room
+	edge_hash: 8B09E
+	house -> has_room -> room (14382 -> 8B09E -> 8F2C3)
+	attributes:

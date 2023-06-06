@@ -1,0 +1,7 @@
+node_type: doors_handle
+node_hash: 7BCC3
+node_edges:
+	doors -> has_doors_handle -> doors_handle (40AB8 -> 4D74B -> 7BCC3)
+attributes:
+	material -> metal
+

@@ -1,0 +1,22 @@
+{
+  "serializationType" : "Identifier",
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "system" : "http://example.org/identifiers",
+  "value" : "123456",
+  "period" : {
+    "serializationType" : "Period",
+    "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx"
+  },
+  "type" : {
+    "serializationType" : "CodeableConcept",
+    "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+    "text" : "Medical Record Number",
+    "coding" : [ {
+      "serializationType" : "Coding",
+      "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+      "code" : "MR",
+      "display" : "Medical Record Number",
+      "system" : "http://hl7.org/fhir/v2/0203"
+    } ]
+  }
+}

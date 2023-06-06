@@ -1,0 +1,18 @@
+[ {
+  "graphDescriptions" : [ {
+    "serializationType" : "UuidIdentityDescription",
+    "traversingType" : "value",
+    "childGraphDescriptions" : [ ],
+    "parameters" : { }
+  } ]
+}, {
+  "graphDescriptions" : [ {
+    "serializationType" : "AttributeQueryDescription",
+    "describedStructureType" : "Irrelevant",
+    "traversingType" : "attribute",
+    "childGraphDescriptions" : [ ],
+    "parameters" : {
+      "attributeName" : "someAttribute"
+    }
+  } ]
+} ]

@@ -1,0 +1,8 @@
+nodes:
+	node_type: graph_description_node
+	node_hash: 91048
+	node_edges:
+	attributes:
+		node_type -> example_node
+
+edges:

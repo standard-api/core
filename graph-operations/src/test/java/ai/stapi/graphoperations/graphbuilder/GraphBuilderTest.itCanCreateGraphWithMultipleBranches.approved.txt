@@ -1,0 +1,30 @@
+nodes:
+	node_type: first_branch_node
+	node_hash: 4DF8E
+	node_edges:
+		first_branch_node -> second_branch_edge -> second_branch_node (4DF8E -> B469E -> BF044)
+		first_branch_node -> third_branch_edge -> third_branch_node (4DF8E -> B1582 -> 65A79)
+	attributes:
+
+	node_type: second_branch_node
+	node_hash: BF044
+	node_edges:
+		first_branch_node -> second_branch_edge -> second_branch_node (4DF8E -> B469E -> BF044)
+	attributes:
+
+	node_type: third_branch_node
+	node_hash: 65A79
+	node_edges:
+		first_branch_node -> third_branch_edge -> third_branch_node (4DF8E -> B1582 -> 65A79)
+	attributes:
+
+edges:
+	edge_type: second_branch_edge
+	edge_hash: B469E
+	first_branch_node -> second_branch_edge -> second_branch_node (4DF8E -> B469E -> BF044)
+	attributes:
+
+	edge_type: third_branch_edge
+	edge_hash: B1582
+	first_branch_node -> third_branch_edge -> third_branch_node (4DF8E -> B1582 -> 65A79)
+	attributes:

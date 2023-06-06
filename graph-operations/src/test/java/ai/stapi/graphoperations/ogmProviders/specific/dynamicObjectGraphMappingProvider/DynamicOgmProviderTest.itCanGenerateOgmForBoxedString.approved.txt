@@ -1,0 +1,36 @@
+{
+  "serializationType" : "ObjectObjectGraphMapping",
+  "fields" : {
+    "value" : {
+      "serializationType" : "ObjectFieldDefinition",
+      "fieldObjectGraphMapping" : {
+        "serializationType" : "LeafObjectGraphMapping",
+        "graphDescription" : {
+          "serializationType" : "LeafAttributeDescription",
+          "describedStructureType" : "LeafAttribute",
+          "traversingType" : "attribute",
+          "childGraphDescriptions" : [ {
+            "serializationType" : "StringAttributeValueDescription",
+            "describedAttributeDataTypeId" : "string",
+            "traversingType" : "value",
+            "childGraphDescriptions" : [ ],
+            "parameters" : { }
+          } ],
+          "parameters" : {
+            "attributeName" : "exampleAttribute"
+          }
+        }
+      },
+      "relation" : {
+        "serializationType" : "NullGraphDescription",
+        "traversingType" : "null",
+        "childGraphDescriptions" : [ ]
+      }
+    }
+  },
+  "graphDescription" : {
+    "serializationType" : "NullGraphDescription",
+    "traversingType" : "null",
+    "childGraphDescriptions" : [ ]
+  }
+}
