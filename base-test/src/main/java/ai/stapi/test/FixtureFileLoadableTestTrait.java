@@ -10,11 +10,10 @@ public interface FixtureFileLoadableTestTrait {
 
   default String getFixtureFilePath(String fixtureFile) {
     var relativeTestFolderPath = this.getRelativeTestFolderPath();
-    var absoluteFixturePath = this.getAbsoluteFixturePath(
+    return this.getAbsoluteFixturePath(
         fixtureFile,
         relativeTestFolderPath
     );
-    return absoluteFixturePath;
   }
 
   default List<String> getAllFixtureFiles() {
