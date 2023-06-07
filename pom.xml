@@ -12,6 +12,7 @@
         <module>schema</module>
         <module>base-test</module>
         <module>graph-operations</module>
+        <module>graph-system</module>
     </modules>
     <packaging>pom</packaging>
 
