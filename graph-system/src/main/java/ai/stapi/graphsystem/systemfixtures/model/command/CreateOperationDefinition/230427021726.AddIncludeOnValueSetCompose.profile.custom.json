@@ -1,0 +1,29 @@
+{
+  "code": "AddIncludeOnValueSetCompose",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "ValueSet"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "include",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "ValueSetComposeInclude",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.compose.include"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Include on ValueSet.compose",
+  "description": "Generated command for adding include(ValueSetComposeInclude) on ValueSet Aggregate",
+  "id": "AddIncludeOnValueSetCompose",
+  "type": false,
+  "status": "draft"
+}

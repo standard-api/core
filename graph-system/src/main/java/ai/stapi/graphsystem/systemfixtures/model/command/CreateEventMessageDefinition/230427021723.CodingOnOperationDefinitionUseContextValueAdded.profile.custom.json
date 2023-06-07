@@ -1,0 +1,8 @@
+{
+  "name": "Coding on OperationDefinitionUseContextValue Added",
+  "description": "Generated Event for adding on OperationDefinition.",
+  "id": "CodingOnOperationDefinitionUseContextValueAdded",
+  "type": {
+    "id": "OperationDefinition"
+  }
+}

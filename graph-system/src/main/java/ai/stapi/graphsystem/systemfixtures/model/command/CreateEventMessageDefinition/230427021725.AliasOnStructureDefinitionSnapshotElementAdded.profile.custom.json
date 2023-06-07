@@ -1,0 +1,8 @@
+{
+  "name": "Alias on StructureDefinitionSnapshotElement Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "AliasOnStructureDefinitionSnapshotElementAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

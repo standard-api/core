@@ -1,0 +1,29 @@
+{
+  "code": "AddOverloadOnOperationDefinition",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "OperationDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "overload",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "OperationDefinitionOverload",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.overload"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Overload on OperationDefinition",
+  "description": "Generated command for adding overload(OperationDefinitionOverload) on OperationDefinition Aggregate",
+  "id": "AddOverloadOnOperationDefinition",
+  "type": false,
+  "status": "draft"
+}

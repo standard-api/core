@@ -1,0 +1,29 @@
+{
+  "code": "AddResourceOnOperationDefinition",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "OperationDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "resource",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.resource"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Resource on OperationDefinition",
+  "description": "Generated command for adding resource(code) on OperationDefinition Aggregate",
+  "id": "AddResourceOnOperationDefinition",
+  "type": false,
+  "status": "draft"
+}

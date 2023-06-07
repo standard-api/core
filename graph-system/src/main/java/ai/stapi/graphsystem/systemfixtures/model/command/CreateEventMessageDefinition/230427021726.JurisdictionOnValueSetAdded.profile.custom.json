@@ -1,0 +1,8 @@
+{
+  "name": "Jurisdiction on ValueSet Added",
+  "description": "Generated Event for adding on ValueSet.",
+  "id": "JurisdictionOnValueSetAdded",
+  "type": {
+    "id": "ValueSet"
+  }
+}

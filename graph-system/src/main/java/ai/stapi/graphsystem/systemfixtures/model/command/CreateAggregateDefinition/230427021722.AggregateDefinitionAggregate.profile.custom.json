@@ -1,0 +1,8 @@
+{
+  "name": "AggregateDefinition",
+  "id": "AggregateDefinitionAggregate",
+  "command": [],
+  "structure": {
+    "id": "AggregateDefinition"
+  }
+}

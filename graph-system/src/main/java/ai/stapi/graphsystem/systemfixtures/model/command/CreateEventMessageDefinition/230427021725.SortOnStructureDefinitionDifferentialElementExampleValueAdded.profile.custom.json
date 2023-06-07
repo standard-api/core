@@ -1,0 +1,8 @@
+{
+  "name": "Sort on StructureDefinitionDifferentialElementExampleValue Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "SortOnStructureDefinitionDifferentialElementExampleValueAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "code": "AddUseContextOnOperationDefinition",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "OperationDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "useContext",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "UsageContext",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.useContext"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add UseContext on OperationDefinition",
+  "description": "Generated command for adding useContext(UsageContext) on OperationDefinition Aggregate",
+  "id": "AddUseContextOnOperationDefinition",
+  "type": false,
+  "status": "draft"
+}

@@ -1,0 +1,3 @@
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.name
+Required field is missing.

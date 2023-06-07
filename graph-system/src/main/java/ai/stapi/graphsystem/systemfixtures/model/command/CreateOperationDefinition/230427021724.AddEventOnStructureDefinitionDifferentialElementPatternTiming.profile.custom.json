@@ -1,0 +1,42 @@
+{
+  "code": "AddEventOnStructureDefinitionDifferentialElementPatternTiming",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "event",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "dateTime",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.pattern.timing.event"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "elementId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Event on StructureDefinition.differential.element.pattern.timing",
+  "description": "Generated command for adding event(dateTime) on StructureDefinition Aggregate",
+  "id": "AddEventOnStructureDefinitionDifferentialElementPatternTiming",
+  "type": false,
+  "status": "draft"
+}

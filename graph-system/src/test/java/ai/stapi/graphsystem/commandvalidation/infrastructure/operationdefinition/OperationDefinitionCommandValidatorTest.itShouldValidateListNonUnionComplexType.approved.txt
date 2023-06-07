@@ -1,0 +1,28 @@
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.periods
+Wrong cardinality. Required size should be between 0-3. Actual size was: 5.
+
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.periods[0]
+Complex type was not Object. Required type: Period
+Actual value: "Completely Wrong Period Value"
+
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.periods[1]<Period>.end
+Primitive value was of invalid data type. Required data type: dateTime.
+Actual value: "Bad End"
+
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.periods[1]<Period>.start
+Primitive value was of invalid data type. Required data type: dateTime.
+Actual value: "Bad Start"
+
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.periods[2]<Period>.end
+Primitive value was of invalid data type. Required data type: dateTime.
+Actual value: "Bad End"
+
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.periods[3]<Period>.start
+Primitive value was of invalid data type. Required data type: dateTime.
+Actual value: "Bad Start"

@@ -1,0 +1,8 @@
+{
+  "name": "MustSupport on StructureDefinitionDifferentialElementFixed Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "MustSupportOnStructureDefinitionDifferentialElementFixedAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

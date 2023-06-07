@@ -1,0 +1,9 @@
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.quantities[0]
+Primitive value was of invalid data type. Required data type: integer.
+Actual value: "A"
+
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.quantities[2]
+Primitive value was of invalid data type. Required data type: integer.
+Actual value: "B"

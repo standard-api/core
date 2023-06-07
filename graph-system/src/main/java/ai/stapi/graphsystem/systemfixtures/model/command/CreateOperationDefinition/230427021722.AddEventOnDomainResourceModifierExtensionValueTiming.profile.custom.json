@@ -1,0 +1,42 @@
+{
+  "code": "AddEventOnDomainResourceModifierExtensionValueTiming",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "DomainResource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "event",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "dateTime",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.modifierExtension.value.timing.event"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "modifierExtensionId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.modifierExtension.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Event on DomainResource.modifierExtension.value.timing",
+  "description": "Generated command for adding event(dateTime) on DomainResource Aggregate",
+  "id": "AddEventOnDomainResourceModifierExtensionValueTiming",
+  "type": false,
+  "status": "draft"
+}

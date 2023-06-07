@@ -1,0 +1,8 @@
+{
+  "name": "Sort on StructureDefinitionSnapshotElementPatternData Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "SortOnStructureDefinitionSnapshotElementPatternDataAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Coding on ValueSetUseContextValue Added",
+  "description": "Generated Event for adding on ValueSet.",
+  "id": "CodingOnValueSetUseContextValueAdded",
+  "type": {
+    "id": "ValueSet"
+  }
+}

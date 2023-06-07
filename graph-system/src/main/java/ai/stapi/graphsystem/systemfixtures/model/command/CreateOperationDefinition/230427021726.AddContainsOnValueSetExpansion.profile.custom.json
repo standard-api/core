@@ -1,0 +1,29 @@
+{
+  "code": "AddContainsOnValueSetExpansion",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "ValueSet"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "contains",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "ValueSetExpansionContains",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.expansion.contains"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Contains on ValueSet.expansion",
+  "description": "Generated command for adding contains(ValueSetExpansionContains) on ValueSet Aggregate",
+  "id": "AddContainsOnValueSetExpansion",
+  "type": false,
+  "status": "draft"
+}

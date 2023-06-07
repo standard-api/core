@@ -1,0 +1,42 @@
+{
+  "code": "AddCodingOnStructureDefinitionJurisdiction",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "coding",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Coding",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.jurisdiction.coding"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "jurisdictionId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.jurisdiction.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Coding on StructureDefinition.jurisdiction",
+  "description": "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+  "id": "AddCodingOnStructureDefinitionJurisdiction",
+  "type": false,
+  "status": "draft"
+}

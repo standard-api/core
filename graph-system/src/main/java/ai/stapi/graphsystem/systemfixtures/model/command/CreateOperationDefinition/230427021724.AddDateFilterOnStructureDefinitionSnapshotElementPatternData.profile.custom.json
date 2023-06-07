@@ -1,0 +1,42 @@
+{
+  "code": "AddDateFilterOnStructureDefinitionSnapshotElementPatternData",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "dateFilter",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "DataRequirementDateFilter",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.pattern.data.dateFilter"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "dataId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.pattern.data.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add DateFilter on StructureDefinition.snapshot.element.pattern.data",
+  "description": "Generated command for adding dateFilter(DataRequirementDateFilter) on StructureDefinition Aggregate",
+  "id": "AddDateFilterOnStructureDefinitionSnapshotElementPatternData",
+  "type": false,
+  "status": "draft"
+}

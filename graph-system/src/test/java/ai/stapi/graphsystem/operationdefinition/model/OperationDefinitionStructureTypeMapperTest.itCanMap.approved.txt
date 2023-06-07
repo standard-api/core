@@ -1,0 +1,142 @@
+{
+  "serializationType" : "ComplexStructureType",
+  "definitionType" : "ExampleTestCommand",
+  "description" : "Command for testing various services",
+  "isAbstract" : false,
+  "kind" : "complex-type",
+  "parent" : "",
+  "fields" : {
+    "complexQuantity" : {
+      "serializationType" : "FieldDefinition",
+      "description" : "",
+      "max" : "1",
+      "min" : 0,
+      "name" : "complexQuantity",
+      "parentDefinitionType" : "ExampleTestCommand",
+      "types" : [ {
+        "isContentReferenced" : false,
+        "originalType" : "Quantity",
+        "type" : "Quantity",
+        "typeGroup" : "STANDARD"
+      } ]
+    },
+    "exampleListUnion" : {
+      "serializationType" : "FieldDefinition",
+      "description" : "",
+      "max" : "*",
+      "min" : 0,
+      "name" : "exampleListUnion",
+      "parentDefinitionType" : "ExampleTestCommand",
+      "types" : [ {
+        "isContentReferenced" : false,
+        "originalType" : "decimal",
+        "type" : "BoxedDecimal",
+        "typeGroup" : "STANDARD"
+      }, {
+        "isContentReferenced" : false,
+        "originalType" : "Period",
+        "type" : "Period",
+        "typeGroup" : "STANDARD"
+      }, {
+        "isContentReferenced" : false,
+        "originalType" : "Quantity",
+        "type" : "Quantity",
+        "typeGroup" : "STANDARD"
+      } ]
+    },
+    "exampleReferenceField" : {
+      "serializationType" : "FieldDefinition",
+      "description" : "",
+      "max" : "1",
+      "min" : 0,
+      "name" : "exampleReferenceField",
+      "parentDefinitionType" : "ExampleTestCommand",
+      "types" : [ {
+        "isContentReferenced" : false,
+        "originalType" : "Reference",
+        "type" : "OperationDefinition",
+        "typeGroup" : "STANDARD"
+      } ]
+    },
+    "exampleUnion" : {
+      "serializationType" : "FieldDefinition",
+      "description" : "",
+      "max" : "1",
+      "min" : 0,
+      "name" : "exampleUnion",
+      "parentDefinitionType" : "ExampleTestCommand",
+      "types" : [ {
+        "isContentReferenced" : false,
+        "originalType" : "boolean",
+        "type" : "BoxedBoolean",
+        "typeGroup" : "STANDARD"
+      }, {
+        "isContentReferenced" : false,
+        "originalType" : "integer",
+        "type" : "BoxedInteger",
+        "typeGroup" : "STANDARD"
+      }, {
+        "isContentReferenced" : false,
+        "originalType" : "string",
+        "type" : "BoxedString",
+        "typeGroup" : "STANDARD"
+      } ]
+    },
+    "fieldWithAnonymous" : {
+      "serializationType" : "FieldDefinition",
+      "description" : "",
+      "max" : "1",
+      "min" : 0,
+      "name" : "fieldWithAnonymous",
+      "parentDefinitionType" : "ExampleTestCommand",
+      "types" : [ {
+        "isContentReferenced" : false,
+        "originalType" : "StructureDefinition",
+        "type" : "StructureDefinition",
+        "typeGroup" : "STANDARD"
+      } ]
+    },
+    "name" : {
+      "serializationType" : "FieldDefinition",
+      "description" : "",
+      "max" : "1",
+      "min" : 1,
+      "name" : "name",
+      "parentDefinitionType" : "ExampleTestCommand",
+      "types" : [ {
+        "isContentReferenced" : false,
+        "originalType" : "string",
+        "type" : "string",
+        "typeGroup" : "STANDARD"
+      } ]
+    },
+    "periods" : {
+      "serializationType" : "FieldDefinition",
+      "description" : "",
+      "max" : "3",
+      "min" : 0,
+      "name" : "periods",
+      "parentDefinitionType" : "ExampleTestCommand",
+      "types" : [ {
+        "isContentReferenced" : false,
+        "originalType" : "Period",
+        "type" : "Period",
+        "typeGroup" : "STANDARD"
+      } ]
+    },
+    "quantities" : {
+      "serializationType" : "FieldDefinition",
+      "description" : "",
+      "max" : "3",
+      "min" : 0,
+      "name" : "quantities",
+      "parentDefinitionType" : "ExampleTestCommand",
+      "types" : [ {
+        "isContentReferenced" : false,
+        "originalType" : "integer",
+        "type" : "integer",
+        "typeGroup" : "STANDARD"
+      } ]
+    }
+  }
+}

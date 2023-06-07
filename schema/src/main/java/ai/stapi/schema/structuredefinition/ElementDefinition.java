@@ -8,6 +8,7 @@ import org.jetbrains.annotations.Nullable;
 public class ElementDefinition implements SerializableObject {
 
   public static final String SERIALIZATION_TYPE = "ElementDefinition";
+  
   private String path;
 
   @Nullable

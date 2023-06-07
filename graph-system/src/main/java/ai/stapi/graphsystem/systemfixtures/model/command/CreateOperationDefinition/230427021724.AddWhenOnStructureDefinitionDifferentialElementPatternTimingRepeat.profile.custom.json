@@ -1,0 +1,42 @@
+{
+  "code": "AddWhenOnStructureDefinitionDifferentialElementPatternTimingRepeat",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "when",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.pattern.timing.repeat.when"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "elementId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add When on StructureDefinition.differential.element.pattern.timing.repeat",
+  "description": "Generated command for adding when(code) on StructureDefinition Aggregate",
+  "id": "AddWhenOnStructureDefinitionDifferentialElementPatternTimingRepeat",
+  "type": false,
+  "status": "draft"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "DomainResource",
+  "description": "A resource that includes narrative, extensions, and contained resources.",
+  "id": "DomainResourceAggregate",
+  "command": [],
+  "structure": {
+    "id": "DomainResource"
+  }
+}

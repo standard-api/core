@@ -1,0 +1,29 @@
+{
+  "code": "AddMappingOnStructureDefinition",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "mapping",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "StructureDefinitionMapping",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.mapping"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Mapping on StructureDefinition",
+  "description": "Generated command for adding mapping(StructureDefinitionMapping) on StructureDefinition Aggregate",
+  "id": "AddMappingOnStructureDefinition",
+  "type": false,
+  "status": "draft"
+}

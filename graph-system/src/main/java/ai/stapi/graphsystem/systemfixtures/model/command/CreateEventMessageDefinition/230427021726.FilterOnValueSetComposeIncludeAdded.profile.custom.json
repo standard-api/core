@@ -1,0 +1,8 @@
+{
+  "name": "Filter on ValueSetComposeInclude Added",
+  "description": "Generated Event for adding on ValueSet.",
+  "id": "FilterOnValueSetComposeIncludeAdded",
+  "type": {
+    "id": "ValueSet"
+  }
+}

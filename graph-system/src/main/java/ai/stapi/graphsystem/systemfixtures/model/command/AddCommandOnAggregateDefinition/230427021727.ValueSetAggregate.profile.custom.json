@@ -1,0 +1,146 @@
+{
+  "command": [
+    {
+      "operation": {
+        "id": "CreateValueSet"
+      },
+      "creationalPolicy": "if_missing",
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ValueSetCreated"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "inputValueParameterName": "date",
+              "modificationPath": "ValueSet.date"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "extension",
+              "modificationPath": "ValueSet.extension"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "copyright",
+              "modificationPath": "ValueSet.copyright"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "purpose",
+              "modificationPath": "ValueSet.purpose"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "modifierExtension",
+              "modificationPath": "ValueSet.modifierExtension"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "jurisdiction",
+              "modificationPath": "ValueSet.jurisdiction"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "description",
+              "modificationPath": "ValueSet.description"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "language",
+              "modificationPath": "ValueSet.language"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "experimental",
+              "modificationPath": "ValueSet.experimental"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "title",
+              "modificationPath": "ValueSet.title"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "contact",
+              "modificationPath": "ValueSet.contact"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "text",
+              "modificationPath": "ValueSet.text"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "identifier",
+              "modificationPath": "ValueSet.identifier"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "version",
+              "modificationPath": "ValueSet.version"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "url",
+              "modificationPath": "ValueSet.url"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "expansion",
+              "modificationPath": "ValueSet.expansion"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "contained",
+              "modificationPath": "ValueSet.contained"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "immutable",
+              "modificationPath": "ValueSet.immutable"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "compose",
+              "modificationPath": "ValueSet.compose"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "meta",
+              "modificationPath": "ValueSet.meta"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "name",
+              "modificationPath": "ValueSet.name"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "implicitRules",
+              "modificationPath": "ValueSet.implicitRules"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "publisher",
+              "modificationPath": "ValueSet.publisher"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "useContext",
+              "modificationPath": "ValueSet.useContext"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "status",
+              "modificationPath": "ValueSet.status"
+            }
+          ],
+          "id": "c9128429-95fc-4d81-8718-8b2b45db7122"
+        }
+      ]
+    }
+  ],
+  "id": "ValueSetAggregate"
+}

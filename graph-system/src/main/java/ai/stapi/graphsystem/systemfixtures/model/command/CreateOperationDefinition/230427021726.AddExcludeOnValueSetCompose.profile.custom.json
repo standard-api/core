@@ -1,0 +1,29 @@
+{
+  "code": "AddExcludeOnValueSetCompose",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "ValueSet"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "exclude",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "ValueSetComposeInclude",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.compose.exclude"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Exclude on ValueSet.compose",
+  "description": "Generated command for adding exclude(ValueSetComposeInclude) on ValueSet Aggregate",
+  "id": "AddExcludeOnValueSetCompose",
+  "type": false,
+  "status": "draft"
+}

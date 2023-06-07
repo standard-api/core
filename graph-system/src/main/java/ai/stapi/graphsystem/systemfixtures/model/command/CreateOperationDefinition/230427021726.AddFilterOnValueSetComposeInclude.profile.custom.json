@@ -1,0 +1,42 @@
+{
+  "code": "AddFilterOnValueSetComposeInclude",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "ValueSet"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "filter",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "ValueSetComposeIncludeFilter",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.compose.include.filter"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "includeId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.compose.include.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Filter on ValueSet.compose.include",
+  "description": "Generated command for adding filter(ValueSetComposeIncludeFilter) on ValueSet Aggregate",
+  "id": "AddFilterOnValueSetComposeInclude",
+  "type": false,
+  "status": "draft"
+}

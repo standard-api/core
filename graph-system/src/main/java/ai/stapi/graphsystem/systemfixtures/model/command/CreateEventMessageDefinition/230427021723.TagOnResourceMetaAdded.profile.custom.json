@@ -1,0 +1,8 @@
+{
+  "name": "Tag on ResourceMeta Added",
+  "description": "Generated Event for adding on Resource.",
+  "id": "TagOnResourceMetaAdded",
+  "type": {
+    "id": "Resource"
+  }
+}

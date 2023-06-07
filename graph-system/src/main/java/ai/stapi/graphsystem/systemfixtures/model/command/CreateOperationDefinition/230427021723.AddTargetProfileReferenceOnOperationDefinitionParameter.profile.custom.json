@@ -1,0 +1,46 @@
+{
+  "code": "AddTargetProfileReferenceOnOperationDefinitionParameter",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "OperationDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "targetProfileReference",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Reference",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.parameter.targetProfileReference"
+        }
+      ],
+      "targetProfileReference": [
+        {
+          "id": "StructureDefinition"
+        }
+      ]
+    },
+    {
+      "name": "parameterId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.parameter.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add TargetProfileReference on OperationDefinition.parameter",
+  "description": "Generated command for adding targetProfileReference(Reference) on OperationDefinition Aggregate",
+  "id": "AddTargetProfileReferenceOnOperationDefinitionParameter",
+  "type": false,
+  "status": "draft"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Event on StructureDefinitionSnapshotElementFixedTiming Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "EventOnStructureDefinitionSnapshotElementFixedTimingAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

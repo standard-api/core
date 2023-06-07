@@ -1,0 +1,29 @@
+{
+  "code": "AddIdentifierOnStructureDefinition",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "identifier",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Identifier",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.identifier"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Identifier on StructureDefinition",
+  "description": "Generated command for adding identifier(Identifier) on StructureDefinition Aggregate",
+  "id": "AddIdentifierOnStructureDefinition",
+  "type": false,
+  "status": "draft"
+}

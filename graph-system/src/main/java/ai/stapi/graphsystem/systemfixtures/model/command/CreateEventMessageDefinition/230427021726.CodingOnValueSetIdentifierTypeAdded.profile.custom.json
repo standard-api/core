@@ -1,0 +1,8 @@
+{
+  "name": "Coding on ValueSetIdentifierType Added",
+  "description": "Generated Event for adding on ValueSet.",
+  "id": "CodingOnValueSetIdentifierTypeAdded",
+  "type": {
+    "id": "ValueSet"
+  }
+}

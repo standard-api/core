@@ -1,0 +1,13 @@
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.complexQuantity<Quantity>.extension
+Field had single value, but list is required.
+Actual value: "Wrong Extension Type"
+
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.complexQuantity<Quantity>.value
+Primitive value was of invalid data type. Required data type: decimal.
+Actual value: "Wrong Value Type"
+
+[WARNING] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.complexQuantity<Quantity>.extraField
+It is extra field.

@@ -1,0 +1,29 @@
+{
+  "code": "AddUseContextOnValueSet",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "ValueSet"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "useContext",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "UsageContext",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.useContext"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add UseContext on ValueSet",
+  "description": "Generated command for adding useContext(UsageContext) on ValueSet Aggregate",
+  "id": "AddUseContextOnValueSet",
+  "type": false,
+  "status": "draft"
+}

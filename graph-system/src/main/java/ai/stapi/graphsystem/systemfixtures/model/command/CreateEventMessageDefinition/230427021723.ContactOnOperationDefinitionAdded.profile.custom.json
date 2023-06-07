@@ -1,0 +1,8 @@
+{
+  "name": "Contact on OperationDefinition Added",
+  "description": "Generated Event for adding on OperationDefinition.",
+  "id": "ContactOnOperationDefinitionAdded",
+  "type": {
+    "id": "OperationDefinition"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "code": "AddConditionOnStructureDefinitionSnapshotElement",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "condition",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.condition"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "elementId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Condition on StructureDefinition.snapshot.element",
+  "description": "Generated command for adding condition(id) on StructureDefinition Aggregate",
+  "id": "AddConditionOnStructureDefinitionSnapshotElement",
+  "type": false,
+  "status": "draft"
+}

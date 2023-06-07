@@ -1,0 +1,42 @@
+{
+  "code": "AddDataOnDomainResourceExtensionValue",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "DomainResource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "data",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "DataRequirement",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.extension.value.data"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "extensionId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.extension.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Data on DomainResource.extension.value",
+  "description": "Generated command for adding data(DataRequirement) on DomainResource Aggregate",
+  "id": "AddDataOnDomainResourceExtensionValue",
+  "type": false,
+  "status": "draft"
+}

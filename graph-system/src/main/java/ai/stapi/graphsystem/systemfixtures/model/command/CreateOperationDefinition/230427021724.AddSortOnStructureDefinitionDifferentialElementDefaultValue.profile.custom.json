@@ -1,0 +1,42 @@
+{
+  "code": "AddSortOnStructureDefinitionDifferentialElementDefaultValue",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "sort",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "DataRequirementSort",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.defaultValue.sort"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "elementId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Sort on StructureDefinition.differential.element.defaultValue",
+  "description": "Generated command for adding sort(DataRequirementSort) on StructureDefinition Aggregate",
+  "id": "AddSortOnStructureDefinitionDifferentialElementDefaultValue",
+  "type": false,
+  "status": "draft"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Tag on ParametersParameterResourceMeta Added",
+  "description": "Generated Event for adding on Parameters.",
+  "id": "TagOnParametersParameterResourceMetaAdded",
+  "type": {
+    "id": "Parameters"
+  }
+}

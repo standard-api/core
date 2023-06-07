@@ -1,0 +1,8 @@
+{
+  "name": "DayOfWeek on ParametersParameterValueTimingRepeat Added",
+  "description": "Generated Event for adding on Parameters.",
+  "id": "DayOfWeekOnParametersParameterValueTimingRepeatAdded",
+  "type": {
+    "id": "Parameters"
+  }
+}

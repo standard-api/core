@@ -1,0 +1,8 @@
+{
+  "name": "MustSupport on StructureDefinitionSnapshotElementDefaultValue Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "MustSupportOnStructureDefinitionSnapshotElementDefaultValueAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

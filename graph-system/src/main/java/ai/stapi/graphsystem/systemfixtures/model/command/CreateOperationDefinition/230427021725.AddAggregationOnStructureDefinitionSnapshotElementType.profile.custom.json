@@ -1,0 +1,42 @@
+{
+  "code": "AddAggregationOnStructureDefinitionSnapshotElementType",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "aggregation",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.type.aggregation"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "typeId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.type.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Aggregation on StructureDefinition.snapshot.element.type",
+  "description": "Generated command for adding aggregation(code) on StructureDefinition Aggregate",
+  "id": "AddAggregationOnStructureDefinitionSnapshotElementType",
+  "type": false,
+  "status": "draft"
+}

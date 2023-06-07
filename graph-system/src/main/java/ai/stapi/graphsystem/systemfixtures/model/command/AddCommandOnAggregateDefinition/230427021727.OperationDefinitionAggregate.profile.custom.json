@@ -1,0 +1,26 @@
+{
+  "command": [
+    {
+      "operation": {
+        "id": "AddTargetProfileReferenceOnOperationDefinitionParameter"
+      },
+      "creationalPolicy": "never",
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TargetProfileReferenceOnOperationDefinitionParameterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "inputValueParameterName": "targetProfileReference",
+              "modificationPath": "OperationDefinition.parameter.targetProfileReference"
+            }
+          ],
+          "id": "1e67b21d-eaaf-4e8d-b92c-62885125604b"
+        }
+      ]
+    }
+  ],
+  "id": "OperationDefinitionAggregate"
+}

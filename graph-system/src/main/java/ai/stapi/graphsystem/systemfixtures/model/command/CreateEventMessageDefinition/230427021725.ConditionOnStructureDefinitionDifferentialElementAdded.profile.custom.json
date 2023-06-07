@@ -1,0 +1,8 @@
+{
+  "name": "Condition on StructureDefinitionDifferentialElement Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "ConditionOnStructureDefinitionDifferentialElementAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

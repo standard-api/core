@@ -1,0 +1,29 @@
+{
+  "code": "AddElementOnStructureDefinitionSnapshot",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "element",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "ElementDefinition",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Element on StructureDefinition.snapshot",
+  "description": "Generated command for adding element(ElementDefinition) on StructureDefinition Aggregate",
+  "id": "AddElementOnStructureDefinitionSnapshot",
+  "type": false,
+  "status": "draft"
+}

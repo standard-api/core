@@ -1,0 +1,8 @@
+{
+  "name": "UseContext on StructureDefinition Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "UseContextOnStructureDefinitionAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

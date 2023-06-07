@@ -1,0 +1,8 @@
+{
+  "name": "When on StructureDefinitionSnapshotElementPatternTimingRepeat Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "WhenOnStructureDefinitionSnapshotElementPatternTimingRepeatAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

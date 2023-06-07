@@ -1,0 +1,8 @@
+{
+  "name": "Profile on StructureDefinitionSnapshotElementExampleValueData Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "ProfileOnStructureDefinitionSnapshotElementExampleValueDataAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

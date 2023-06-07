@@ -1,0 +1,42 @@
+{
+  "code": "AddSortOnStructureDefinitionSnapshotElementPattern",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "sort",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "DataRequirementSort",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.pattern.sort"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "elementId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Sort on StructureDefinition.snapshot.element.pattern",
+  "description": "Generated command for adding sort(DataRequirementSort) on StructureDefinition Aggregate",
+  "id": "AddSortOnStructureDefinitionSnapshotElementPattern",
+  "type": false,
+  "status": "draft"
+}

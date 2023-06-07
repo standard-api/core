@@ -1,0 +1,42 @@
+{
+  "code": "AddSortOnStructureDefinitionSnapshotElementExampleValueData",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "sort",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "DataRequirementSort",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.example.value.data.sort"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "dataId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.example.value.data.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Sort on StructureDefinition.snapshot.element.example.value.data",
+  "description": "Generated command for adding sort(DataRequirementSort) on StructureDefinition Aggregate",
+  "id": "AddSortOnStructureDefinitionSnapshotElementExampleValueData",
+  "type": false,
+  "status": "draft"
+}

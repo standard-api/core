@@ -1,0 +1,61 @@
+{
+  "command": [
+    {
+      "operation": {
+        "id": "CreateOperationOutcome"
+      },
+      "creationalPolicy": "if_missing",
+      "eventFactory": [
+        {
+          "event": {
+            "id": "OperationOutcomeCreated"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "inputValueParameterName": "contained",
+              "modificationPath": "OperationOutcome.contained"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "extension",
+              "modificationPath": "OperationOutcome.extension"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "issue",
+              "modificationPath": "OperationOutcome.issue"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "meta",
+              "modificationPath": "OperationOutcome.meta"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "modifierExtension",
+              "modificationPath": "OperationOutcome.modifierExtension"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "implicitRules",
+              "modificationPath": "OperationOutcome.implicitRules"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "language",
+              "modificationPath": "OperationOutcome.language"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "text",
+              "modificationPath": "OperationOutcome.text"
+            }
+          ],
+          "id": "e633a7a4-bd1a-45bc-99e7-684eccdc42eb"
+        }
+      ]
+    }
+  ],
+  "id": "OperationOutcomeAggregate"
+}

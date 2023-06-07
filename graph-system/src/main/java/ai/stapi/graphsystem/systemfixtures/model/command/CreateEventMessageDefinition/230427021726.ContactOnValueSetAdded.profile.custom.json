@@ -1,0 +1,8 @@
+{
+  "name": "Contact on ValueSet Added",
+  "description": "Generated Event for adding on ValueSet.",
+  "id": "ContactOnValueSetAdded",
+  "type": {
+    "id": "ValueSet"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Profile on StructureDefinitionDifferentialElementPatternData Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "ProfileOnStructureDefinitionDifferentialElementPatternDataAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

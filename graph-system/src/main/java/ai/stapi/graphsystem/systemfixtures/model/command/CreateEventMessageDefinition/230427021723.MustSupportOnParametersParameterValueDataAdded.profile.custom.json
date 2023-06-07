@@ -1,0 +1,8 @@
+{
+  "name": "MustSupport on ParametersParameterValueData Added",
+  "description": "Generated Event for adding on Parameters.",
+  "id": "MustSupportOnParametersParameterValueDataAdded",
+  "type": {
+    "id": "Parameters"
+  }
+}

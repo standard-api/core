@@ -1,0 +1,8 @@
+{
+  "name": "Exclude on ValueSetCompose Added",
+  "description": "Generated Event for adding on ValueSet.",
+  "id": "ExcludeOnValueSetComposeAdded",
+  "type": {
+    "id": "ValueSet"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "code": "AddCodingOnStructureDefinitionDifferentialElementFixedSubject",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "coding",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Coding",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.fixed.subject.coding"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "elementId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Coding on StructureDefinition.differential.element.fixed.subject",
+  "description": "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+  "id": "AddCodingOnStructureDefinitionDifferentialElementFixedSubject",
+  "type": false,
+  "status": "draft"
+}

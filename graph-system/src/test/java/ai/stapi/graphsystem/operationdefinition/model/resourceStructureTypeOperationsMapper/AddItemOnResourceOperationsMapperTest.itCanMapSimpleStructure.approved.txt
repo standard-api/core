@@ -1,0 +1,26 @@
+{
+  "newParameters" : [ ],
+  "operations" : [ {
+    "id" : "AddTagOnExampleTestResource",
+    "code" : "AddTagOnExampleTestResource",
+    "description" : "Generated command for adding tag(string) on ExampleTestResource Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Tag on ExampleTestResource",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "tag",
+      "type" : "string",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleTestResource.tag"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "ExampleTestResource" ]
+  } ]
+}

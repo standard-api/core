@@ -1,0 +1,8 @@
+{
+  "name": "Tag on DomainResourceContainedMeta Added",
+  "description": "Generated Event for adding on DomainResource.",
+  "id": "TagOnDomainResourceContainedMetaAdded",
+  "type": {
+    "id": "DomainResource"
+  }
+}

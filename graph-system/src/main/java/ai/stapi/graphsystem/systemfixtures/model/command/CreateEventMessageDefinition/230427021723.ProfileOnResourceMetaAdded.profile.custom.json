@@ -1,0 +1,8 @@
+{
+  "name": "Profile on ResourceMeta Added",
+  "description": "Generated Event for adding on Resource.",
+  "id": "ProfileOnResourceMetaAdded",
+  "type": {
+    "id": "Resource"
+  }
+}

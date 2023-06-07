@@ -1,0 +1,29 @@
+{
+  "code": "AddContextOnStructureDefinition",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "context",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "StructureDefinitionContext",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.context"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Context on StructureDefinition",
+  "description": "Generated command for adding context(StructureDefinitionContext) on StructureDefinition Aggregate",
+  "id": "AddContextOnStructureDefinition",
+  "type": false,
+  "status": "draft"
+}

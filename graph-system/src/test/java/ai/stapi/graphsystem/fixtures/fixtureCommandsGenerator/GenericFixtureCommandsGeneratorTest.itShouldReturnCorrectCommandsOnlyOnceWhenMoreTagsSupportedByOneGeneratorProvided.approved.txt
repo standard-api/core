@@ -1,0 +1,19 @@
+[ {
+  "generatorClassName" : "ai.stapi.graphsystem.fixtures.examplegenerators.ExampleFixtureCommandsGenerator",
+  "oneTimeGenerator" : true,
+  "commandDefinitions" : [ {
+    "name" : "ai.stapi.graphsystem.fixtures.examplegenerators.CreateNewExampleNodeCommand",
+    "command" : {
+      "serializationType" : "CreateNewExampleNodeCommand",
+      "targetIdentifier" : {
+        "id" : "2d82aa9a-64d9-4e68-a825-ecacca941201"
+      },
+      "exampleNodeName" : "Example Name",
+      "exampleNodeType" : "ExampleNodeType",
+      "exampleQuantity" : 0,
+      "exampleStringAttribute" : "default",
+      "exampleListAttribute" : [ ]
+    }
+  } ],
+  "processedFiles" : [ ]
+} ]

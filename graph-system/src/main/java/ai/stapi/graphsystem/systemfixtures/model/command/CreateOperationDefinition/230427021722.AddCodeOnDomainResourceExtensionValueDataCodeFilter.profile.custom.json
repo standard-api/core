@@ -1,0 +1,42 @@
+{
+  "code": "AddCodeOnDomainResourceExtensionValueDataCodeFilter",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "DomainResource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "code",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Coding",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.extension.value.data.codeFilter.code"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "codeFilterId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.extension.value.data.codeFilter.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Code on DomainResource.extension.value.data.codeFilter",
+  "description": "Generated command for adding code(Coding) on DomainResource Aggregate",
+  "id": "AddCodeOnDomainResourceExtensionValueDataCodeFilter",
+  "type": false,
+  "status": "draft"
+}

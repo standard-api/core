@@ -1,0 +1,42 @@
+{
+  "code": "AddCodingOnOperationOutcomeIssueDetails",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "OperationOutcome"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "coding",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Coding",
+      "referencedFrom": [
+        {
+          "source": "OperationOutcome.issue.details.coding"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "issueId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "OperationOutcome.issue.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Coding on OperationOutcome.issue.details",
+  "description": "Generated command for adding coding(Coding) on OperationOutcome Aggregate",
+  "id": "AddCodingOnOperationOutcomeIssueDetails",
+  "type": false,
+  "status": "draft"
+}

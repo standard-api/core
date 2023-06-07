@@ -1,0 +1,29 @@
+{
+  "code": "AddElementOnStructureDefinitionDifferential",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "element",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "ElementDefinition",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Element on StructureDefinition.differential",
+  "description": "Generated command for adding element(ElementDefinition) on StructureDefinition Aggregate",
+  "id": "AddElementOnStructureDefinitionDifferential",
+  "type": false,
+  "status": "draft"
+}

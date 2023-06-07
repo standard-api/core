@@ -1,0 +1,29 @@
+{
+  "code": "AddContactOnOperationDefinition",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "OperationDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "contact",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "string",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.contact"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Contact on OperationDefinition",
+  "description": "Generated command for adding contact(string) on OperationDefinition Aggregate",
+  "id": "AddContactOnOperationDefinition",
+  "type": false,
+  "status": "draft"
+}

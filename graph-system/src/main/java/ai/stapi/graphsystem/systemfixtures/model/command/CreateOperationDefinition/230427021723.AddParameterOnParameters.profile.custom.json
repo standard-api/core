@@ -1,0 +1,29 @@
+{
+  "code": "AddParameterOnParameters",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "Parameters"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "parameter",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "ParametersParameter",
+      "referencedFrom": [
+        {
+          "source": "Parameters.parameter"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Parameter on Parameters",
+  "description": "Generated command for adding parameter(ParametersParameter) on Parameters Aggregate",
+  "id": "AddParameterOnParameters",
+  "type": false,
+  "status": "draft"
+}

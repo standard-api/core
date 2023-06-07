@@ -1,0 +1,29 @@
+{
+  "code": "AddParameterOnValueSetExpansion",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "ValueSet"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "parameter",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "ValueSetExpansionParameter",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.expansion.parameter"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Parameter on ValueSet.expansion",
+  "description": "Generated command for adding parameter(ValueSetExpansionParameter) on ValueSet Aggregate",
+  "id": "AddParameterOnValueSetExpansion",
+  "type": false,
+  "status": "draft"
+}

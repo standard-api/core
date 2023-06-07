@@ -1,0 +1,8 @@
+{
+  "name": "Constraint on StructureDefinitionDifferentialElement Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "ConstraintOnStructureDefinitionDifferentialElementAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

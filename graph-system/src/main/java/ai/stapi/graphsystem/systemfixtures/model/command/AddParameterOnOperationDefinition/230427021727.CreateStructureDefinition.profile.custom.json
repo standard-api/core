@@ -1,0 +1,22 @@
+{
+  "parameter": [
+    {
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.baseDefinitionReference"
+        }
+      ],
+      "min": 0,
+      "max": "1",
+      "use": "in",
+      "name": "baseDefinitionReference",
+      "type": "Reference",
+      "targetProfileReference": [
+        {
+          "id": "StructureDefinition"
+        }
+      ]
+    }
+  ],
+  "id": "CreateStructureDefinition"
+}

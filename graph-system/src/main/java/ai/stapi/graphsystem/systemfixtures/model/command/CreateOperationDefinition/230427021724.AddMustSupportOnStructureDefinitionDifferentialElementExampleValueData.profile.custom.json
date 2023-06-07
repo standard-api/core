@@ -1,0 +1,42 @@
+{
+  "code": "AddMustSupportOnStructureDefinitionDifferentialElementExampleValueData",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "mustSupport",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "string",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.example.value.data.mustSupport"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "dataId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.example.value.data.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add MustSupport on StructureDefinition.differential.element.example.value.data",
+  "description": "Generated command for adding mustSupport(string) on StructureDefinition Aggregate",
+  "id": "AddMustSupportOnStructureDefinitionDifferentialElementExampleValueData",
+  "type": false,
+  "status": "draft"
+}

@@ -1,0 +1,42 @@
+{
+  "code": "AddWhenOnStructureDefinitionSnapshotElementExampleValueTimingRepeat",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "when",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.example.value.timing.repeat.when"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.example.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add When on StructureDefinition.snapshot.element.example.value.timing.repeat",
+  "description": "Generated command for adding when(code) on StructureDefinition Aggregate",
+  "id": "AddWhenOnStructureDefinitionSnapshotElementExampleValueTimingRepeat",
+  "type": false,
+  "status": "draft"
+}

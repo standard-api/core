@@ -1,0 +1,8 @@
+{
+  "name": "ValueSet on ValueSetComposeInclude Added",
+  "description": "Generated Event for adding on ValueSet.",
+  "id": "ValueSetOnValueSetComposeIncludeAdded",
+  "type": {
+    "id": "ValueSet"
+  }
+}

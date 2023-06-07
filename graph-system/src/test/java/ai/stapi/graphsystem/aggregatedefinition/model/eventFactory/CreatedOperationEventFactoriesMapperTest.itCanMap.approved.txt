@@ -1,0 +1,47 @@
+[ {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "event" : {
+    "id" : "AggregateDefinitionCreated",
+    "description" : "Generated Event for newly created AggregateDefinition.",
+    "name" : "AggregateDefinition Created",
+    "type" : {
+      "id" : "AggregateDefinition"
+    }
+  },
+  "modification" : [ {
+    "inputValueParameterName" : "meta",
+    "kind" : "add",
+    "modificationPath" : "AggregateDefinition.meta",
+    "destinationIndexParameterName" : null
+  }, {
+    "inputValueParameterName" : "name",
+    "kind" : "add",
+    "modificationPath" : "AggregateDefinition.name",
+    "destinationIndexParameterName" : null
+  }, {
+    "inputValueParameterName" : "implicitRules",
+    "kind" : "add",
+    "modificationPath" : "AggregateDefinition.implicitRules",
+    "destinationIndexParameterName" : null
+  }, {
+    "inputValueParameterName" : "description",
+    "kind" : "add",
+    "modificationPath" : "AggregateDefinition.description",
+    "destinationIndexParameterName" : null
+  }, {
+    "inputValueParameterName" : "language",
+    "kind" : "add",
+    "modificationPath" : "AggregateDefinition.language",
+    "destinationIndexParameterName" : null
+  }, {
+    "inputValueParameterName" : "command",
+    "kind" : "add",
+    "modificationPath" : "AggregateDefinition.command",
+    "destinationIndexParameterName" : null
+  }, {
+    "inputValueParameterName" : "structure",
+    "kind" : "add",
+    "modificationPath" : "AggregateDefinition.structure",
+    "destinationIndexParameterName" : null
+  } ]
+} ]

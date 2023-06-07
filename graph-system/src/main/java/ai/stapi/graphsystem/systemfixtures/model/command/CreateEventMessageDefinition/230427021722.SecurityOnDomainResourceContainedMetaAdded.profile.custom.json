@@ -1,0 +1,8 @@
+{
+  "name": "Security on DomainResourceContainedMeta Added",
+  "description": "Generated Event for adding on DomainResource.",
+  "id": "SecurityOnDomainResourceContainedMetaAdded",
+  "type": {
+    "id": "DomainResource"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Part on ParametersParameter Added",
+  "description": "Generated Event for adding on Parameters.",
+  "id": "PartOnParametersParameterAdded",
+  "type": {
+    "id": "Parameters"
+  }
+}

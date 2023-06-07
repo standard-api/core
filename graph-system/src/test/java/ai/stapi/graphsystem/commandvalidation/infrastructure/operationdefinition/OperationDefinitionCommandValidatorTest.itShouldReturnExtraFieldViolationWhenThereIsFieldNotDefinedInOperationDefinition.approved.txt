@@ -1,0 +1,3 @@
+[WARNING] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.extraField
+It is extra field.

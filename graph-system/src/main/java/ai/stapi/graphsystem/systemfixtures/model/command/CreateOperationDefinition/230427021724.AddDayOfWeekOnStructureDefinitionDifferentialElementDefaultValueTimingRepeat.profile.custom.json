@@ -1,0 +1,42 @@
+{
+  "code": "AddDayOfWeekOnStructureDefinitionDifferentialElementDefaultValueTimingRepeat",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "dayOfWeek",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.defaultValue.timing.repeat.dayOfWeek"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "elementId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add DayOfWeek on StructureDefinition.differential.element.defaultValue.timing.repeat",
+  "description": "Generated command for adding dayOfWeek(code) on StructureDefinition Aggregate",
+  "id": "AddDayOfWeekOnStructureDefinitionDifferentialElementDefaultValueTimingRepeat",
+  "type": false,
+  "status": "draft"
+}

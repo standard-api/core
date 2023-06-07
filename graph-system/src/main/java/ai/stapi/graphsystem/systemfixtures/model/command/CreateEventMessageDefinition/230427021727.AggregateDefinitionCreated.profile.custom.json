@@ -1,0 +1,8 @@
+{
+  "name": "AggregateDefinition Created",
+  "description": "Generated Event for newly created AggregateDefinition.",
+  "id": "AggregateDefinitionCreated",
+  "type": {
+    "id": "AggregateDefinition"
+  }
+}

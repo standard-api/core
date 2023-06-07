@@ -1,0 +1,29 @@
+{
+  "code": "AddUseContextOnStructureDefinition",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "useContext",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "UsageContext",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.useContext"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add UseContext on StructureDefinition",
+  "description": "Generated command for adding useContext(UsageContext) on StructureDefinition Aggregate",
+  "id": "AddUseContextOnStructureDefinition",
+  "type": false,
+  "status": "draft"
+}

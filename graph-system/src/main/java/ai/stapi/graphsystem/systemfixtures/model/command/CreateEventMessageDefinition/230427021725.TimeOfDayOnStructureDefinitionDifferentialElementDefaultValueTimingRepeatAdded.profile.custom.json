@@ -1,0 +1,8 @@
+{
+  "name": "TimeOfDay on StructureDefinitionDifferentialElementDefaultValueTimingRepeat Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "TimeOfDayOnStructureDefinitionDifferentialElementDefaultValueTimingRepeatAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Resource on OperationDefinition Added",
+  "description": "Generated Event for adding on OperationDefinition.",
+  "id": "ResourceOnOperationDefinitionAdded",
+  "type": {
+    "id": "OperationDefinition"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "code": "AddJurisdictionOnStructureDefinition",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "jurisdiction",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "CodeableConcept",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.jurisdiction"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Jurisdiction on StructureDefinition",
+  "description": "Generated command for adding jurisdiction(CodeableConcept) on StructureDefinition Aggregate",
+  "id": "AddJurisdictionOnStructureDefinition",
+  "type": false,
+  "status": "draft"
+}

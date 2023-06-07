@@ -1,0 +1,42 @@
+{
+  "code": "AddDateFilterOnStructureDefinitionDifferentialElementExampleValueData",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "dateFilter",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "DataRequirementDateFilter",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.example.value.data.dateFilter"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "dataId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.example.value.data.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add DateFilter on StructureDefinition.differential.element.example.value.data",
+  "description": "Generated command for adding dateFilter(DataRequirementDateFilter) on StructureDefinition Aggregate",
+  "id": "AddDateFilterOnStructureDefinitionDifferentialElementExampleValueData",
+  "type": false,
+  "status": "draft"
+}

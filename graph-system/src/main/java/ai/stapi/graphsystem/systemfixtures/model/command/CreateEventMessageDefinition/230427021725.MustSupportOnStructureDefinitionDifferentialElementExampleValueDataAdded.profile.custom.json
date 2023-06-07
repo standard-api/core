@@ -1,0 +1,8 @@
+{
+  "name": "MustSupport on StructureDefinitionDifferentialElementExampleValueData Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "MustSupportOnStructureDefinitionDifferentialElementExampleValueDataAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

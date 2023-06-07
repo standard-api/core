@@ -1,0 +1,8 @@
+{
+  "name": "When on DomainResourceModifierExtensionValueTimingRepeat Added",
+  "description": "Generated Event for adding on DomainResource.",
+  "id": "WhenOnDomainResourceModifierExtensionValueTimingRepeatAdded",
+  "type": {
+    "id": "DomainResource"
+  }
+}

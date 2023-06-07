@@ -1,0 +1,8 @@
+{
+  "name": "Condition on StructureDefinitionSnapshotElement Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "ConditionOnStructureDefinitionSnapshotElementAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

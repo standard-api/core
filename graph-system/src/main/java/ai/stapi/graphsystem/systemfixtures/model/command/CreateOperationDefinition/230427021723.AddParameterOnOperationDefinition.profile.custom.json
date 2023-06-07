@@ -1,0 +1,29 @@
+{
+  "code": "AddParameterOnOperationDefinition",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "OperationDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "parameter",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "OperationDefinitionParameter",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.parameter"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Parameter on OperationDefinition",
+  "description": "Generated command for adding parameter(OperationDefinitionParameter) on OperationDefinition Aggregate",
+  "id": "AddParameterOnOperationDefinition",
+  "type": false,
+  "status": "draft"
+}

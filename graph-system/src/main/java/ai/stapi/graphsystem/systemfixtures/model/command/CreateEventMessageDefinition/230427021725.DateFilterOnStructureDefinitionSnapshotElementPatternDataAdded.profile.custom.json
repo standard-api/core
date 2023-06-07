@@ -1,0 +1,8 @@
+{
+  "name": "DateFilter on StructureDefinitionSnapshotElementPatternData Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "DateFilterOnStructureDefinitionSnapshotElementPatternDataAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

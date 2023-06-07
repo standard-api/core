@@ -1,0 +1,8 @@
+{
+  "name": "Data on ParametersParameterValue Added",
+  "description": "Generated Event for adding on Parameters.",
+  "id": "DataOnParametersParameterValueAdded",
+  "type": {
+    "id": "Parameters"
+  }
+}

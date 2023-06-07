@@ -1,0 +1,8 @@
+{
+  "name": "EventMessageDefinition Created",
+  "description": "Generated Event for newly created EventMessageDefinition.",
+  "id": "EventMessageDefinitionCreated",
+  "type": {
+    "id": "EventMessageDefinition"
+  }
+}

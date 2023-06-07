@@ -1,0 +1,29 @@
+{
+  "code": "AddContactOnValueSet",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "ValueSet"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "contact",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "ContactDetail",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.contact"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Contact on ValueSet",
+  "description": "Generated command for adding contact(ContactDetail) on ValueSet Aggregate",
+  "id": "AddContactOnValueSet",
+  "type": false,
+  "status": "draft"
+}

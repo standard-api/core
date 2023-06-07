@@ -1,0 +1,6 @@
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.exampleUnion
+Union member was invalid. Object with string field under key 'serializationType' is required.
+Actual value: {
+  "irrelevantField" : "Irrelevant Value"
+}

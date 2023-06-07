@@ -1,0 +1,8 @@
+{
+  "name": "Security on ResourceMeta Added",
+  "description": "Generated Event for adding on Resource.",
+  "id": "SecurityOnResourceMetaAdded",
+  "type": {
+    "id": "Resource"
+  }
+}

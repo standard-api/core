@@ -1,0 +1,272 @@
+{
+  "newParameters" : [ ],
+  "operations" : [ {
+    "id" : "AddExampleUnionFieldOnExampleResourceType",
+    "code" : "AddExampleUnionFieldOnExampleResourceType",
+    "description" : "Generated command for adding exampleUnionField(decimal | SameFieldComplex1 | SameFieldComplex2 | Timing | Reference) on ExampleResourceType Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add ExampleUnionField on ExampleResourceType",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "exampleUnionFieldDecimal",
+      "type" : "decimal",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "*",
+      "min" : 1,
+      "name" : "exampleUnionFieldSameFieldComplex1",
+      "type" : "SameFieldComplex1",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "*",
+      "min" : 1,
+      "name" : "exampleUnionFieldSameFieldComplex2",
+      "type" : "SameFieldComplex2",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "*",
+      "min" : 1,
+      "name" : "exampleUnionFieldTiming",
+      "type" : "Timing",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "*",
+      "min" : 1,
+      "name" : "exampleUnionFieldReference",
+      "type" : "Reference",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField"
+      } ],
+      "targetProfileReference" : [ {
+        "id" : "StructureDefinition"
+      } ]
+    } ],
+    "resource" : [ "ExampleResourceType" ]
+  }, {
+    "id" : "AddEventOnExampleResourceTypeExampleUnionField",
+    "code" : "AddEventOnExampleResourceTypeExampleUnionField",
+    "description" : "Generated command for adding event(dateTime) on ExampleResourceType Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Event on ExampleResourceType.exampleUnionField",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "event",
+      "type" : "dateTime",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField.event"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "exampleUnionFieldId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField.id"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "ExampleResourceType" ]
+  }, {
+    "id" : "AddTimeOfDayOnExampleResourceTypeExampleUnionFieldRepeat",
+    "code" : "AddTimeOfDayOnExampleResourceTypeExampleUnionFieldRepeat",
+    "description" : "Generated command for adding timeOfDay(time) on ExampleResourceType Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add TimeOfDay on ExampleResourceType.exampleUnionField.repeat",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "timeOfDay",
+      "type" : "time",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField.repeat.timeOfDay"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "exampleUnionFieldId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField.id"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "ExampleResourceType" ]
+  }, {
+    "id" : "AddCodingOnExampleResourceTypeExampleUnionFieldCode",
+    "code" : "AddCodingOnExampleResourceTypeExampleUnionFieldCode",
+    "description" : "Generated command for adding coding(Coding) on ExampleResourceType Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Coding on ExampleResourceType.exampleUnionField.code",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "coding",
+      "type" : "Coding",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField.code.coding"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "exampleUnionFieldId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField.id"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "ExampleResourceType" ]
+  }, {
+    "id" : "AddSameFieldOnExampleResourceTypeExampleUnionField",
+    "code" : "AddSameFieldOnExampleResourceTypeExampleUnionField",
+    "description" : "This automatic adding Operation was merged, because two ComplexType unionType members had fieldName with same name, but different type. Original descriptions: 
+Generated command for adding sameField(string) on ExampleResourceType Aggregate
+Generated command for adding sameField(decimal) on ExampleResourceType Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add SameField on ExampleResourceType.exampleUnionField",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "1",
+      "min" : 1,
+      "name" : "exampleUnionFieldId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField.id"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "*",
+      "min" : 1,
+      "name" : "sameFieldString",
+      "type" : "string",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField.sameField"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "*",
+      "min" : 1,
+      "name" : "sameFieldDecimal",
+      "type" : "decimal",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField.sameField"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "ExampleResourceType" ]
+  }, {
+    "id" : "AddDayOfWeekOnExampleResourceTypeExampleUnionFieldRepeat",
+    "code" : "AddDayOfWeekOnExampleResourceTypeExampleUnionFieldRepeat",
+    "description" : "Generated command for adding dayOfWeek(code) on ExampleResourceType Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add DayOfWeek on ExampleResourceType.exampleUnionField.repeat",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "dayOfWeek",
+      "type" : "code",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField.repeat.dayOfWeek"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "exampleUnionFieldId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField.id"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "ExampleResourceType" ]
+  }, {
+    "id" : "AddWhenOnExampleResourceTypeExampleUnionFieldRepeat",
+    "code" : "AddWhenOnExampleResourceTypeExampleUnionFieldRepeat",
+    "description" : "Generated command for adding when(code) on ExampleResourceType Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add When on ExampleResourceType.exampleUnionField.repeat",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "when",
+      "type" : "code",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField.repeat.when"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "exampleUnionFieldId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField.id"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "ExampleResourceType" ]
+  } ]
+}

@@ -1,0 +1,29 @@
+{
+  "code": "AddTagOnResourceMeta",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "Resource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "tag",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Coding",
+      "referencedFrom": [
+        {
+          "source": "Resource.meta.tag"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Tag on Resource.meta",
+  "description": "Generated command for adding tag(Coding) on Resource Aggregate",
+  "id": "AddTagOnResourceMeta",
+  "type": false,
+  "status": "draft"
+}

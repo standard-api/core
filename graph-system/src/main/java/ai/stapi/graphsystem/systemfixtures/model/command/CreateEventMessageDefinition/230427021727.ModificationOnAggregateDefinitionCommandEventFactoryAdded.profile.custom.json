@@ -1,0 +1,8 @@
+{
+  "name": "Modification on AggregateDefinitionCommandEventFactory Added",
+  "description": "Generated Event for adding on AggregateDefinition.",
+  "id": "ModificationOnAggregateDefinitionCommandEventFactoryAdded",
+  "type": {
+    "id": "AggregateDefinition"
+  }
+}

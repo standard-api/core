@@ -1,0 +1,33 @@
+{
+  "id": "StructureDefinition",
+  "element": [
+    {
+      "definition": "A Reference to StructureDefinition that is the base structure from which this type is derived, either by specialization or constraint.",
+      "id": "StructureDefinition.baseDefinitionReference",
+      "max": "1",
+      "min": 0,
+      "path": "StructureDefinition.baseDefinitionReference",
+      "type": [
+        {
+          "code": "Reference",
+          "targetProfile": [
+            "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
+          ]
+        }
+      ]
+    },
+    {
+      "definition": "The id of the parent StructureDefinition of this Differential.",
+      "id": "StructureDefinition.differential.parent",
+      "max": "1",
+      "min": 1,
+      "path": "StructureDefinition.differential.parent",
+      "short": "The id of the parent StructureDefinition of this Differential.",
+      "type": [
+        {
+          "code": "string"
+        }
+      ]
+    }
+  ]
+}

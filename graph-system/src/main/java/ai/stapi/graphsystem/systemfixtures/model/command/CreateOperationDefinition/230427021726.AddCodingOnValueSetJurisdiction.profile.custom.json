@@ -1,0 +1,42 @@
+{
+  "code": "AddCodingOnValueSetJurisdiction",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "ValueSet"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "coding",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Coding",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.jurisdiction.coding"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "jurisdictionId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.jurisdiction.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Coding on ValueSet.jurisdiction",
+  "description": "Generated command for adding coding(Coding) on ValueSet Aggregate",
+  "id": "AddCodingOnValueSetJurisdiction",
+  "type": false,
+  "status": "draft"
+}

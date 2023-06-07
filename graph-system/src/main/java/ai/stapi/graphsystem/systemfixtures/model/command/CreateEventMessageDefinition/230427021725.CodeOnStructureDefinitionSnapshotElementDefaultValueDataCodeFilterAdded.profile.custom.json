@@ -1,0 +1,8 @@
+{
+  "name": "Code on StructureDefinitionSnapshotElementDefaultValueDataCodeFilter Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "CodeOnStructureDefinitionSnapshotElementDefaultValueDataCodeFilterAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

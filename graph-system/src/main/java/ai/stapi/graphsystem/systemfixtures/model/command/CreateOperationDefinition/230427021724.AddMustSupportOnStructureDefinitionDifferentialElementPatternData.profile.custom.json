@@ -1,0 +1,42 @@
+{
+  "code": "AddMustSupportOnStructureDefinitionDifferentialElementPatternData",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "mustSupport",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "string",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.pattern.data.mustSupport"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "dataId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.pattern.data.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add MustSupport on StructureDefinition.differential.element.pattern.data",
+  "description": "Generated command for adding mustSupport(string) on StructureDefinition Aggregate",
+  "id": "AddMustSupportOnStructureDefinitionDifferentialElementPatternData",
+  "type": false,
+  "status": "draft"
+}

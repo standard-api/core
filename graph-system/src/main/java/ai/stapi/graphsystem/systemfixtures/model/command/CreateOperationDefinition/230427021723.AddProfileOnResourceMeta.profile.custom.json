@@ -1,0 +1,29 @@
+{
+  "code": "AddProfileOnResourceMeta",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "Resource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "profile",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "canonical",
+      "referencedFrom": [
+        {
+          "source": "Resource.meta.profile"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Profile on Resource.meta",
+  "description": "Generated command for adding profile(canonical) on Resource Aggregate",
+  "id": "AddProfileOnResourceMeta",
+  "type": false,
+  "status": "draft"
+}

@@ -1,0 +1,114 @@
+{
+  "newParameters" : [ ],
+  "operations" : [ {
+    "id" : "AddTimeOfDayOnExampleResourceTypeExampleElementFieldRepeat",
+    "code" : "AddTimeOfDayOnExampleResourceTypeExampleElementFieldRepeat",
+    "description" : "Generated command for adding timeOfDay(time) on ExampleResourceType Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add TimeOfDay on ExampleResourceType.exampleElementField.repeat",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "timeOfDay",
+      "type" : "time",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleElementField.repeat.timeOfDay"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "ExampleResourceType" ]
+  }, {
+    "id" : "AddEventOnExampleResourceTypeExampleElementField",
+    "code" : "AddEventOnExampleResourceTypeExampleElementField",
+    "description" : "Generated command for adding event(dateTime) on ExampleResourceType Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Event on ExampleResourceType.exampleElementField",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "event",
+      "type" : "dateTime",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleElementField.event"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "ExampleResourceType" ]
+  }, {
+    "id" : "AddDayOfWeekOnExampleResourceTypeExampleElementFieldRepeat",
+    "code" : "AddDayOfWeekOnExampleResourceTypeExampleElementFieldRepeat",
+    "description" : "Generated command for adding dayOfWeek(code) on ExampleResourceType Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add DayOfWeek on ExampleResourceType.exampleElementField.repeat",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "dayOfWeek",
+      "type" : "code",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleElementField.repeat.dayOfWeek"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "ExampleResourceType" ]
+  }, {
+    "id" : "AddCodingOnExampleResourceTypeExampleElementFieldCode",
+    "code" : "AddCodingOnExampleResourceTypeExampleElementFieldCode",
+    "description" : "Generated command for adding coding(Coding) on ExampleResourceType Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Coding on ExampleResourceType.exampleElementField.code",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "coding",
+      "type" : "Coding",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleElementField.code.coding"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "ExampleResourceType" ]
+  }, {
+    "id" : "AddWhenOnExampleResourceTypeExampleElementFieldRepeat",
+    "code" : "AddWhenOnExampleResourceTypeExampleElementFieldRepeat",
+    "description" : "Generated command for adding when(code) on ExampleResourceType Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add When on ExampleResourceType.exampleElementField.repeat",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "when",
+      "type" : "code",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleElementField.repeat.when"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "ExampleResourceType" ]
+  } ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "MustSupport on StructureDefinitionSnapshotElementFixedData Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "MustSupportOnStructureDefinitionSnapshotElementFixedDataAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

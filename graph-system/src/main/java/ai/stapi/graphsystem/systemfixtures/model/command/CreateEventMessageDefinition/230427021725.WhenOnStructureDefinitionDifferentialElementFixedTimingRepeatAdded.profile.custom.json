@@ -1,0 +1,8 @@
+{
+  "name": "When on StructureDefinitionDifferentialElementFixedTimingRepeat Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "WhenOnStructureDefinitionDifferentialElementFixedTimingRepeatAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

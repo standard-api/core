@@ -1,0 +1,92 @@
+{
+  "AggregateDefinitionAggregate" : {
+    "newParameters" : [ ],
+    "operations" : [ {
+      "id" : "AddCommandOnAggregateDefinition",
+      "code" : "AddCommandOnAggregateDefinition",
+      "description" : "Generated command for adding command(CommandHandlerDefinition) on AggregateDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Command on AggregateDefinition",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "command",
+        "type" : "CommandHandlerDefinition",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "AggregateDefinition.command"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "AggregateDefinition" ]
+    }, {
+      "id" : "AddModificationOnAggregateDefinitionCommandEventFactory",
+      "code" : "AddModificationOnAggregateDefinitionCommandEventFactory",
+      "description" : "Generated command for adding modification(CommandHandlerDefinitionEventFactoryModification) on AggregateDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Modification on AggregateDefinition.command.eventFactory",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "modification",
+        "type" : "CommandHandlerDefinitionEventFactoryModification",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "AggregateDefinition.command.eventFactory.modification"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "eventFactoryId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "AggregateDefinition.command.eventFactory.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "AggregateDefinition" ]
+    }, {
+      "id" : "AddEventFactoryOnAggregateDefinitionCommand",
+      "code" : "AddEventFactoryOnAggregateDefinitionCommand",
+      "description" : "Generated command for adding eventFactory(CommandHandlerDefinitionEventFactory) on AggregateDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add EventFactory on AggregateDefinition.command",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "eventFactory",
+        "type" : "CommandHandlerDefinitionEventFactory",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "AggregateDefinition.command.eventFactory"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "commandId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "AggregateDefinition.command.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "AggregateDefinition" ]
+    } ]
+  }
+}

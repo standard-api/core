@@ -1,0 +1,8 @@
+{
+  "name": "Keyword on StructureDefinition Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "KeywordOnStructureDefinitionAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}
