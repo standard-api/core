@@ -1,0 +1,42 @@
+{
+  "code": "AddModificationOnAggregateDefinitionCommandEventFactory",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "AggregateDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "modification",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "CommandHandlerDefinitionEventFactoryModification",
+      "referencedFrom": [
+        {
+          "source": "AggregateDefinition.command.eventFactory.modification"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "eventFactoryId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "AggregateDefinition.command.eventFactory.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Modification on AggregateDefinition.command.eventFactory",
+  "description": "Generated command for adding modification(CommandHandlerDefinitionEventFactoryModification) on AggregateDefinition Aggregate",
+  "id": "AddModificationOnAggregateDefinitionCommandEventFactory",
+  "type": false,
+  "status": "draft"
+}

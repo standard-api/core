@@ -1,0 +1,3 @@
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.quantities
+Wrong cardinality. Required size should be between 0-3. Actual size was: 6.

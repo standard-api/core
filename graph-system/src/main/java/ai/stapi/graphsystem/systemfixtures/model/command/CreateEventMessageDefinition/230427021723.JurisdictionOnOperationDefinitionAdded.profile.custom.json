@@ -1,0 +1,8 @@
+{
+  "name": "Jurisdiction on OperationDefinition Added",
+  "description": "Generated Event for adding on OperationDefinition.",
+  "id": "JurisdictionOnOperationDefinitionAdded",
+  "type": {
+    "id": "OperationDefinition"
+  }
+}

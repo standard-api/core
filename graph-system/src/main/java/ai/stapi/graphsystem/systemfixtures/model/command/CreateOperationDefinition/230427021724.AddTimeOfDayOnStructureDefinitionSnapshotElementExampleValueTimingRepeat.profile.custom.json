@@ -1,0 +1,42 @@
+{
+  "code": "AddTimeOfDayOnStructureDefinitionSnapshotElementExampleValueTimingRepeat",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "timeOfDay",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "time",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.example.value.timing.repeat.timeOfDay"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.example.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add TimeOfDay on StructureDefinition.snapshot.element.example.value.timing.repeat",
+  "description": "Generated command for adding timeOfDay(time) on StructureDefinition Aggregate",
+  "id": "AddTimeOfDayOnStructureDefinitionSnapshotElementExampleValueTimingRepeat",
+  "type": false,
+  "status": "draft"
+}

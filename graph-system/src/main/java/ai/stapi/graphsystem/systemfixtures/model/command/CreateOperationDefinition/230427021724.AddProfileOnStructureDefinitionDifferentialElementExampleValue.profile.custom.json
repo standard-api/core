@@ -1,0 +1,42 @@
+{
+  "code": "AddProfileOnStructureDefinitionDifferentialElementExampleValue",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "profile",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "canonical",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.example.value.profile"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.example.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Profile on StructureDefinition.differential.element.example.value",
+  "description": "Generated command for adding profile(canonical) on StructureDefinition Aggregate",
+  "id": "AddProfileOnStructureDefinitionDifferentialElementExampleValue",
+  "type": false,
+  "status": "draft"
+}

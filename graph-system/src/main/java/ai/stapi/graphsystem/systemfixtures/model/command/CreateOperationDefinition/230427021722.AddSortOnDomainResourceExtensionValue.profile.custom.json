@@ -1,0 +1,42 @@
+{
+  "code": "AddSortOnDomainResourceExtensionValue",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "DomainResource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "sort",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "DataRequirementSort",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.extension.value.sort"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "extensionId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.extension.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Sort on DomainResource.extension.value",
+  "description": "Generated command for adding sort(DataRequirementSort) on DomainResource Aggregate",
+  "id": "AddSortOnDomainResourceExtensionValue",
+  "type": false,
+  "status": "draft"
+}

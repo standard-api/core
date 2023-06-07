@@ -1,0 +1,25 @@
+{
+  "id": "OperationDefinition",
+  "element": [
+    {
+      "comment": "If type is Reference | canonical, allowed targets. If type is 'Resource', then this constrains the allowed resource types",
+      "definition": "If type is Reference | canonical, allowed targets. If type is 'Resource', then this constrains the allowed resource types",
+      "id": "OperationDefinition.parameter.targetProfileReference",
+      "isModifier": false,
+      "isSummary": false,
+      "max": "*",
+      "min": 0,
+      "mustSupport": false,
+      "path": "OperationDefinition.parameter.targetProfileReference",
+      "short": "If type is Reference | canonical, allowed targets. If type is 'Resource', then this constrains the allowed resource types",
+      "type": [
+        {
+          "code": "Reference",
+          "targetProfile": [
+            "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
+          ]
+        }
+      ]
+    }
+  ]
+}

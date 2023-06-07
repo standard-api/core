@@ -1,0 +1,88 @@
+{
+  "newParameters" : [ ],
+  "operations" : [ {
+    "id" : "CreateAggregateDefinition",
+    "code" : "Create AggregateDefinition",
+    "description" : "Generated command for creating AggregateDefinition with all fields.",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Create AggregateDefinition",
+    "status" : "draft",
+    "system" : false,
+    "type" : true,
+    "parameter" : [ {
+      "max" : "1",
+      "min" : 0,
+      "name" : "meta",
+      "type" : "Meta",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "AggregateDefinition.meta"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "name" : "name",
+      "type" : "string",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "AggregateDefinition.name"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "name" : "description",
+      "type" : "string",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "AggregateDefinition.description"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "name" : "implicitRules",
+      "type" : "uri",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "AggregateDefinition.implicitRules"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "name" : "language",
+      "type" : "code",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "AggregateDefinition.language"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "*",
+      "min" : 0,
+      "name" : "command",
+      "type" : "CommandHandlerDefinition",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "AggregateDefinition.command"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "structure",
+      "type" : "Reference",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "AggregateDefinition.structure"
+      } ],
+      "targetProfileReference" : [ {
+        "id" : "StructureDefinition"
+      } ]
+    } ],
+    "resource" : [ "AggregateDefinition" ]
+  } ]
+}

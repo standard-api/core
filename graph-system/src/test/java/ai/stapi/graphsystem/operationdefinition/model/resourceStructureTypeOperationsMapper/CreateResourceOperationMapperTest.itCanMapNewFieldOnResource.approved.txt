@@ -1,0 +1,19 @@
+{
+  "AggregateDefinitionAggregate" : {
+    "newParameters" : [ {
+      "operationId" : "CreateAggregateDefinition",
+      "parameters" : [ {
+        "max" : "*",
+        "min" : 0,
+        "name" : "command",
+        "type" : "CommandHandlerDefinition",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "AggregateDefinition.command"
+        } ],
+        "targetProfileReference" : [ ]
+      } ]
+    } ],
+    "operations" : [ ]
+  }
+}

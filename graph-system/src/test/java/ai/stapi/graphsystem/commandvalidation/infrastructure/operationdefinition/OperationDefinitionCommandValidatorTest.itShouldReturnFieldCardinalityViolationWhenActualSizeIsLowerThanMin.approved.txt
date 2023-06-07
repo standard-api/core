@@ -1,0 +1,3 @@
+[ERROR] Command with name: 'AnotherExampleTestCommand' did not validate.
+Field path: AnotherExampleTestCommand.tags
+Wrong cardinality. Required size should be higher than 3. Actual size was: 2.

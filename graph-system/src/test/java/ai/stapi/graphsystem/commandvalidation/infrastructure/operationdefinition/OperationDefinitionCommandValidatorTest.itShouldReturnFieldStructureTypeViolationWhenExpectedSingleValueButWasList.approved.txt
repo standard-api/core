@@ -1,0 +1,4 @@
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.name
+Field had list of values, but only single value is required.
+Actual value: [ "some", "values" ]

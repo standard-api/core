@@ -1,0 +1,50 @@
+{
+  "newParameters" : [ ],
+  "operations" : [ {
+    "id" : "CreateExampleResourceType",
+    "code" : "Create ExampleResourceType",
+    "description" : "Generated command for creating ExampleResourceType with all fields.",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Create ExampleResourceType",
+    "status" : "draft",
+    "system" : false,
+    "type" : true,
+    "parameter" : [ {
+      "max" : "1",
+      "min" : 1,
+      "name" : "exampleUnionFieldDecimal",
+      "type" : "decimal",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "exampleUnionFieldExtension",
+      "type" : "Extension",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "exampleUnionFieldReference",
+      "type" : "Reference",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField"
+      } ],
+      "targetProfileReference" : [ {
+        "id" : "OperationDefinition"
+      }, {
+        "id" : "StructureDefinition"
+      } ]
+    } ],
+    "resource" : [ "ExampleResourceType" ]
+  } ]
+}

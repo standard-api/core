@@ -1,0 +1,8 @@
+{
+  "name": "TimeOfDay on DomainResourceExtensionValueTimingRepeat Added",
+  "description": "Generated Event for adding on DomainResource.",
+  "id": "TimeOfDayOnDomainResourceExtensionValueTimingRepeatAdded",
+  "type": {
+    "id": "DomainResource"
+  }
+}

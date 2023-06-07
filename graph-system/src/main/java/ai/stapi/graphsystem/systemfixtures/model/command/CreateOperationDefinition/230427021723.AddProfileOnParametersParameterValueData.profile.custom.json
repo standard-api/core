@@ -1,0 +1,42 @@
+{
+  "code": "AddProfileOnParametersParameterValueData",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "Parameters"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "profile",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "canonical",
+      "referencedFrom": [
+        {
+          "source": "Parameters.parameter.value.data.profile"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "dataId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "Parameters.parameter.value.data.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Profile on Parameters.parameter.value.data",
+  "description": "Generated command for adding profile(canonical) on Parameters Aggregate",
+  "id": "AddProfileOnParametersParameterValueData",
+  "type": false,
+  "status": "draft"
+}

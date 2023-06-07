@@ -1,0 +1,8 @@
+{
+  "name": "DayOfWeek on StructureDefinitionSnapshotElementFixedTimingRepeat Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "DayOfWeekOnStructureDefinitionSnapshotElementFixedTimingRepeatAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

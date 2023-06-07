@@ -1,0 +1,8 @@
+{
+  "name": "CodeFilter on StructureDefinitionSnapshotElementFixed Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "CodeFilterOnStructureDefinitionSnapshotElementFixedAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

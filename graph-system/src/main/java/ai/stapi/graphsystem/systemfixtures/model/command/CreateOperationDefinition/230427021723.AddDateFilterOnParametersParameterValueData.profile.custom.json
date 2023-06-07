@@ -1,0 +1,42 @@
+{
+  "code": "AddDateFilterOnParametersParameterValueData",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "Parameters"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "dateFilter",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "DataRequirementDateFilter",
+      "referencedFrom": [
+        {
+          "source": "Parameters.parameter.value.data.dateFilter"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "dataId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "Parameters.parameter.value.data.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add DateFilter on Parameters.parameter.value.data",
+  "description": "Generated command for adding dateFilter(DataRequirementDateFilter) on Parameters Aggregate",
+  "id": "AddDateFilterOnParametersParameterValueData",
+  "type": false,
+  "status": "draft"
+}

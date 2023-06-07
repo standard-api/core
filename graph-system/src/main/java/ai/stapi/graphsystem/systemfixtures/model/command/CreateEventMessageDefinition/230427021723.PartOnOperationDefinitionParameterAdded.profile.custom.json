@@ -1,0 +1,8 @@
+{
+  "name": "Part on OperationDefinitionParameter Added",
+  "description": "Generated Event for adding on OperationDefinition.",
+  "id": "PartOnOperationDefinitionParameterAdded",
+  "type": {
+    "id": "OperationDefinition"
+  }
+}

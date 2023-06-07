@@ -1,0 +1,42 @@
+{
+  "code": "AddDiscriminatorOnStructureDefinitionSnapshotElementSlicing",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "discriminator",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "ElementDefinitionSlicingDiscriminator",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.slicing.discriminator"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "elementId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Discriminator on StructureDefinition.snapshot.element.slicing",
+  "description": "Generated command for adding discriminator(ElementDefinitionSlicingDiscriminator) on StructureDefinition Aggregate",
+  "id": "AddDiscriminatorOnStructureDefinitionSnapshotElementSlicing",
+  "type": false,
+  "status": "draft"
+}

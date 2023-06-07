@@ -1,0 +1,8 @@
+{
+  "name": "Issue on OperationOutcome Added",
+  "description": "Generated Event for adding on OperationOutcome.",
+  "id": "IssueOnOperationOutcomeAdded",
+  "type": {
+    "id": "OperationOutcome"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Identifier on StructureDefinition Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "IdentifierOnStructureDefinitionAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

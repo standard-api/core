@@ -1,0 +1,29 @@
+{
+  "code": "AddModifierExtensionOnDomainResource",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "DomainResource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "modifierExtension",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Extension",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.modifierExtension"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add ModifierExtension on DomainResource",
+  "description": "Generated command for adding modifierExtension(Extension) on DomainResource Aggregate",
+  "id": "AddModifierExtensionOnDomainResource",
+  "type": false,
+  "status": "draft"
+}

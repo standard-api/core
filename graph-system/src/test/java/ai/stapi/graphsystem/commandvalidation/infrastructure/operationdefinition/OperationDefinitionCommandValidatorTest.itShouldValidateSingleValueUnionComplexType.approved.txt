@@ -1,0 +1,18 @@
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.exampleUnion<BoxedString>.extension[0]
+Complex type was not Object. Required type: Extension
+Actual value: "Completely Wrong Extension"
+
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.exampleUnion<BoxedString>.extension[1]<Extension>.url
+Primitive value was of invalid data type. Required data type: string.
+Actual value: 50
+
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.exampleUnion<BoxedString>.extension[2]<Extension>.url
+Required field is missing.
+
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.exampleUnion<BoxedString>.value
+Primitive value was of invalid data type. Required data type: string.
+Actual value: 250

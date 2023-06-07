@@ -1,0 +1,42 @@
+{
+  "code": "AddCodeFilterOnStructureDefinitionDifferentialElementPattern",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "codeFilter",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "DataRequirementCodeFilter",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.pattern.codeFilter"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "elementId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add CodeFilter on StructureDefinition.differential.element.pattern",
+  "description": "Generated command for adding codeFilter(DataRequirementCodeFilter) on StructureDefinition Aggregate",
+  "id": "AddCodeFilterOnStructureDefinitionDifferentialElementPattern",
+  "type": false,
+  "status": "draft"
+}

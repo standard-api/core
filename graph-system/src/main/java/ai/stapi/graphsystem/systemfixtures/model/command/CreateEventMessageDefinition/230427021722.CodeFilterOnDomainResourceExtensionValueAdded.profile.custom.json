@@ -1,0 +1,8 @@
+{
+  "name": "CodeFilter on DomainResourceExtensionValue Added",
+  "description": "Generated Event for adding on DomainResource.",
+  "id": "CodeFilterOnDomainResourceExtensionValueAdded",
+  "type": {
+    "id": "DomainResource"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "OperationDefinition Created",
+  "description": "Generated Event for newly created OperationDefinition.",
+  "id": "OperationDefinitionCreated",
+  "type": {
+    "id": "OperationDefinition"
+  }
+}

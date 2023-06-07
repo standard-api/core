@@ -1,0 +1,8 @@
+{
+  "name": "StructureDefinition Created",
+  "description": "Generated Event for newly created StructureDefinition.",
+  "id": "StructureDefinitionCreated",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

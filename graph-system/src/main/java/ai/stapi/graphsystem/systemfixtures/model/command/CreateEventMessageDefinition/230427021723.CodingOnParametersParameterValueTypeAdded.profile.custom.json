@@ -1,0 +1,8 @@
+{
+  "name": "Coding on ParametersParameterValueType Added",
+  "description": "Generated Event for adding on Parameters.",
+  "id": "CodingOnParametersParameterValueTypeAdded",
+  "type": {
+    "id": "Parameters"
+  }
+}

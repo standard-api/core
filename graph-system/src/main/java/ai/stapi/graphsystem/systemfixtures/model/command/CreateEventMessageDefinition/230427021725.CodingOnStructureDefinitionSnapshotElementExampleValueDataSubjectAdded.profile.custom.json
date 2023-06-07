@@ -1,0 +1,8 @@
+{
+  "name": "Coding on StructureDefinitionSnapshotElementExampleValueDataSubject Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "CodingOnStructureDefinitionSnapshotElementExampleValueDataSubjectAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

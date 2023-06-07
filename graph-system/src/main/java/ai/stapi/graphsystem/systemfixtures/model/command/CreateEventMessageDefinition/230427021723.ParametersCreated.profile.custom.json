@@ -1,0 +1,8 @@
+{
+  "name": "Parameters Created",
+  "description": "Generated Event for newly created Parameters.",
+  "id": "ParametersCreated",
+  "type": {
+    "id": "Parameters"
+  }
+}

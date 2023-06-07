@@ -1,0 +1,9 @@
+{
+  "name": "Resource",
+  "description": "This is the base resource type for everything.",
+  "id": "ResourceAggregate",
+  "command": [],
+  "structure": {
+    "id": "Resource"
+  }
+}

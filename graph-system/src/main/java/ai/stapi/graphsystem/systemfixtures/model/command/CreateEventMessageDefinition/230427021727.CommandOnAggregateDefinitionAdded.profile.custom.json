@@ -1,0 +1,8 @@
+{
+  "name": "Command on AggregateDefinition Added",
+  "description": "Generated Event for adding on AggregateDefinition.",
+  "id": "CommandOnAggregateDefinitionAdded",
+  "type": {
+    "id": "AggregateDefinition"
+  }
+}

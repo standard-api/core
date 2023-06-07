@@ -1,0 +1,42 @@
+{
+  "code": "AddProfileOnStructureDefinitionSnapshotElementType",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "profile",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "canonical",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.type.profile"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "typeId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.type.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Profile on StructureDefinition.snapshot.element.type",
+  "description": "Generated command for adding profile(canonical) on StructureDefinition Aggregate",
+  "id": "AddProfileOnStructureDefinitionSnapshotElementType",
+  "type": false,
+  "status": "draft"
+}

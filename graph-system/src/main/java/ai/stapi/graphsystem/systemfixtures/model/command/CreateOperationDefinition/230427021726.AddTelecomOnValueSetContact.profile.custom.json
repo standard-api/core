@@ -1,0 +1,42 @@
+{
+  "code": "AddTelecomOnValueSetContact",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "ValueSet"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "telecom",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "ContactPoint",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.contact.telecom"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "contactId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.contact.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Telecom on ValueSet.contact",
+  "description": "Generated command for adding telecom(ContactPoint) on ValueSet Aggregate",
+  "id": "AddTelecomOnValueSetContact",
+  "type": false,
+  "status": "draft"
+}

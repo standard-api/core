@@ -1,0 +1,17 @@
+[ {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "event" : {
+    "id" : "ElementOnStructureDefinitionDifferentialAdded",
+    "description" : "Generated Event for adding on StructureDefinition.",
+    "name" : "Element on StructureDefinitionDifferential Added",
+    "type" : {
+      "id" : "StructureDefinition"
+    }
+  },
+  "modification" : [ {
+    "inputValueParameterName" : "element",
+    "kind" : "add",
+    "modificationPath" : "StructureDefinition.differential.element",
+    "destinationIndexParameterName" : null
+  } ]
+} ]

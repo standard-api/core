@@ -1,0 +1,6 @@
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.exampleReferenceField
+Reference value was invalid. Object with single string field under key 'id' is required.
+Actual value: {
+  "irrelevantOtherField" : "Irrelevant Value"
+}

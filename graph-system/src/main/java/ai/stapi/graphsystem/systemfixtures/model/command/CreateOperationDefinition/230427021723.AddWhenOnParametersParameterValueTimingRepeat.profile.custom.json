@@ -1,0 +1,42 @@
+{
+  "code": "AddWhenOnParametersParameterValueTimingRepeat",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "Parameters"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "when",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "Parameters.parameter.value.timing.repeat.when"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "parameterId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "Parameters.parameter.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add When on Parameters.parameter.value.timing.repeat",
+  "description": "Generated command for adding when(code) on Parameters Aggregate",
+  "id": "AddWhenOnParametersParameterValueTimingRepeat",
+  "type": false,
+  "status": "draft"
+}

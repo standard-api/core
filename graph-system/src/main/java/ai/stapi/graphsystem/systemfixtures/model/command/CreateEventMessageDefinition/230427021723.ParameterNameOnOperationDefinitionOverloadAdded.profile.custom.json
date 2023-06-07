@@ -1,0 +1,8 @@
+{
+  "name": "ParameterName on OperationDefinitionOverload Added",
+  "description": "Generated Event for adding on OperationDefinition.",
+  "id": "ParameterNameOnOperationDefinitionOverloadAdded",
+  "type": {
+    "id": "OperationDefinition"
+  }
+}

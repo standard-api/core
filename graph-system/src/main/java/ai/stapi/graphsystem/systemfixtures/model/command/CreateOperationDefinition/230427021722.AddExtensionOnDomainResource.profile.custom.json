@@ -1,0 +1,29 @@
+{
+  "code": "AddExtensionOnDomainResource",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "DomainResource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "extension",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Extension",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.extension"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Extension on DomainResource",
+  "description": "Generated command for adding extension(Extension) on DomainResource Aggregate",
+  "id": "AddExtensionOnDomainResource",
+  "type": false,
+  "status": "draft"
+}

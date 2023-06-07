@@ -1,0 +1,29 @@
+{
+  "code": "AddSecurityOnResourceMeta",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "Resource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "security",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Coding",
+      "referencedFrom": [
+        {
+          "source": "Resource.meta.security"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Security on Resource.meta",
+  "description": "Generated command for adding security(Coding) on Resource Aggregate",
+  "id": "AddSecurityOnResourceMeta",
+  "type": false,
+  "status": "draft"
+}

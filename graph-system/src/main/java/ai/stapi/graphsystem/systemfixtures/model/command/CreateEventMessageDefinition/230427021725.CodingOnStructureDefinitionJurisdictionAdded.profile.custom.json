@@ -1,0 +1,8 @@
+{
+  "name": "Coding on StructureDefinitionJurisdiction Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "CodingOnStructureDefinitionJurisdictionAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "code": "AddCodingOnStructureDefinitionIdentifierType",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "coding",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Coding",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.identifier.type.coding"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "identifierId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.identifier.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Coding on StructureDefinition.identifier.type",
+  "description": "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+  "id": "AddCodingOnStructureDefinitionIdentifierType",
+  "type": false,
+  "status": "draft"
+}

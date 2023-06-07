@@ -1,0 +1,8 @@
+{
+  "name": "Example on StructureDefinitionSnapshotElement Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "ExampleOnStructureDefinitionSnapshotElementAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

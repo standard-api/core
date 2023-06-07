@@ -1,0 +1,8 @@
+{
+  "name": "ValueSet Created",
+  "description": "Generated Event for newly created ValueSet.",
+  "id": "ValueSetCreated",
+  "type": {
+    "id": "ValueSet"
+  }
+}

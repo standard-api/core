@@ -1,0 +1,56 @@
+{
+  "command": [
+    {
+      "operation": {
+        "id": "CreateAggregateDefinition"
+      },
+      "creationalPolicy": "if_missing",
+      "eventFactory": [
+        {
+          "event": {
+            "id": "AggregateDefinitionCreated"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "inputValueParameterName": "meta",
+              "modificationPath": "AggregateDefinition.meta"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "name",
+              "modificationPath": "AggregateDefinition.name"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "implicitRules",
+              "modificationPath": "AggregateDefinition.implicitRules"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "description",
+              "modificationPath": "AggregateDefinition.description"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "language",
+              "modificationPath": "AggregateDefinition.language"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "command",
+              "modificationPath": "AggregateDefinition.command"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "structure",
+              "modificationPath": "AggregateDefinition.structure"
+            }
+          ],
+          "id": "99f01c3e-f5fc-4d74-b5f4-a01cfd3b3180"
+        }
+      ]
+    }
+  ],
+  "id": "AggregateDefinitionAggregate"
+}

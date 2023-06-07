@@ -1,0 +1,362 @@
+{
+  "newParameters" : [ ],
+  "operations" : [ {
+    "id" : "AddJurisdictionOnOperationDefinition",
+    "code" : "AddJurisdictionOnOperationDefinition",
+    "description" : "Generated command for adding jurisdiction(CodeableConcept) on OperationDefinition Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Jurisdiction on OperationDefinition",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "jurisdiction",
+      "type" : "CodeableConcept",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.jurisdiction"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "OperationDefinition" ]
+  }, {
+    "id" : "AddContactOnOperationDefinition",
+    "code" : "AddContactOnOperationDefinition",
+    "description" : "Generated command for adding contact(string) on OperationDefinition Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Contact on OperationDefinition",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "contact",
+      "type" : "string",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.contact"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "OperationDefinition" ]
+  }, {
+    "id" : "AddParameterOnOperationDefinition",
+    "code" : "AddParameterOnOperationDefinition",
+    "description" : "Generated command for adding parameter(OperationDefinitionParameter) on OperationDefinition Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Parameter on OperationDefinition",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "parameter",
+      "type" : "OperationDefinitionParameter",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.parameter"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "OperationDefinition" ]
+  }, {
+    "id" : "AddResourceOnOperationDefinition",
+    "code" : "AddResourceOnOperationDefinition",
+    "description" : "Generated command for adding resource(code) on OperationDefinition Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Resource on OperationDefinition",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "resource",
+      "type" : "code",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.resource"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "OperationDefinition" ]
+  }, {
+    "id" : "AddOverloadOnOperationDefinition",
+    "code" : "AddOverloadOnOperationDefinition",
+    "description" : "Generated command for adding overload(OperationDefinitionOverload) on OperationDefinition Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Overload on OperationDefinition",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "overload",
+      "type" : "OperationDefinitionOverload",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.overload"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "OperationDefinition" ]
+  }, {
+    "id" : "AddUseContextOnOperationDefinition",
+    "code" : "AddUseContextOnOperationDefinition",
+    "description" : "Generated command for adding useContext(UsageContext) on OperationDefinition Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add UseContext on OperationDefinition",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "useContext",
+      "type" : "UsageContext",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.useContext"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "OperationDefinition" ]
+  }, {
+    "id" : "AddCodingOnOperationDefinitionJurisdiction",
+    "code" : "AddCodingOnOperationDefinitionJurisdiction",
+    "description" : "Generated command for adding coding(Coding) on OperationDefinition Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Coding on OperationDefinition.jurisdiction",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "coding",
+      "type" : "Coding",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.jurisdiction.coding"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "jurisdictionId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.jurisdiction.id"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "OperationDefinition" ]
+  }, {
+    "id" : "AddTargetProfileReferenceOnOperationDefinitionParameter",
+    "code" : "AddTargetProfileReferenceOnOperationDefinitionParameter",
+    "description" : "Generated command for adding targetProfileReference(Reference) on OperationDefinition Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add TargetProfileReference on OperationDefinition.parameter",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "targetProfileReference",
+      "type" : "Reference",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.parameter.targetProfileReference"
+      } ],
+      "targetProfileReference" : [ {
+        "id" : "StructureDefinition"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "parameterId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.parameter.id"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "OperationDefinition" ]
+  }, {
+    "id" : "AddReferencedFromOnOperationDefinitionParameter",
+    "code" : "AddReferencedFromOnOperationDefinitionParameter",
+    "description" : "Generated command for adding referencedFrom(OperationDefinitionParameterReferencedFrom) on OperationDefinition Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add ReferencedFrom on OperationDefinition.parameter",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "referencedFrom",
+      "type" : "OperationDefinitionParameterReferencedFrom",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.parameter.referencedFrom"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "parameterId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.parameter.id"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "OperationDefinition" ]
+  }, {
+    "id" : "AddTargetProfileOnOperationDefinitionParameter",
+    "code" : "AddTargetProfileOnOperationDefinitionParameter",
+    "description" : "Generated command for adding targetProfile(canonical) on OperationDefinition Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add TargetProfile on OperationDefinition.parameter",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "targetProfile",
+      "type" : "canonical",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.parameter.targetProfile"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "parameterId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.parameter.id"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "OperationDefinition" ]
+  }, {
+    "id" : "AddPartOnOperationDefinitionParameter",
+    "code" : "AddPartOnOperationDefinitionParameter",
+    "description" : "Generated command for adding part(OperationDefinitionParameter) on OperationDefinition Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Part on OperationDefinition.parameter",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "part",
+      "type" : "OperationDefinitionParameter",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.parameter.part"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "parameterId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.parameter.id"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "OperationDefinition" ]
+  }, {
+    "id" : "AddParameterNameOnOperationDefinitionOverload",
+    "code" : "AddParameterNameOnOperationDefinitionOverload",
+    "description" : "Generated command for adding parameterName(string) on OperationDefinition Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add ParameterName on OperationDefinition.overload",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "parameterName",
+      "type" : "string",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.overload.parameterName"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "overloadId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.overload.id"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "OperationDefinition" ]
+  }, {
+    "id" : "AddCodingOnOperationDefinitionUseContextValue",
+    "code" : "AddCodingOnOperationDefinitionUseContextValue",
+    "description" : "Generated command for adding coding(Coding) on OperationDefinition Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Coding on OperationDefinition.useContext.value",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "coding",
+      "type" : "Coding",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.useContext.value.coding"
+      } ],
+      "targetProfileReference" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "useContextId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.useContext.id"
+      } ],
+      "targetProfileReference" : [ ]
+    } ],
+    "resource" : [ "OperationDefinition" ]
+  } ]
+}

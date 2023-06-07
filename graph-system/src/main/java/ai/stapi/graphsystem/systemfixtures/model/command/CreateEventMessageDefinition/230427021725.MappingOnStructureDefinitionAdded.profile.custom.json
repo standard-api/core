@@ -1,0 +1,8 @@
+{
+  "name": "Mapping on StructureDefinition Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "MappingOnStructureDefinitionAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

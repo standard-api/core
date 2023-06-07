@@ -1,0 +1,42 @@
+{
+  "code": "AddRepresentationOnStructureDefinitionSnapshotElement",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "representation",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.representation"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "elementId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Representation on StructureDefinition.snapshot.element",
+  "description": "Generated command for adding representation(code) on StructureDefinition Aggregate",
+  "id": "AddRepresentationOnStructureDefinitionSnapshotElement",
+  "type": false,
+  "status": "draft"
+}

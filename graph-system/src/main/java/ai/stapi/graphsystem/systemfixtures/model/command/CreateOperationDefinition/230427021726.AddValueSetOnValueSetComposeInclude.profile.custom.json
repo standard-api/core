@@ -1,0 +1,42 @@
+{
+  "code": "AddValueSetOnValueSetComposeInclude",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "ValueSet"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "valueSet",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "canonical",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.compose.include.valueSet"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "includeId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.compose.include.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add ValueSet on ValueSet.compose.include",
+  "description": "Generated command for adding valueSet(canonical) on ValueSet Aggregate",
+  "id": "AddValueSetOnValueSetComposeInclude",
+  "type": false,
+  "status": "draft"
+}

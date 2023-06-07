@@ -1,0 +1,29 @@
+{
+  "code": "AddJurisdictionOnOperationDefinition",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "OperationDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "jurisdiction",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "CodeableConcept",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.jurisdiction"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Jurisdiction on OperationDefinition",
+  "description": "Generated command for adding jurisdiction(CodeableConcept) on OperationDefinition Aggregate",
+  "id": "AddJurisdictionOnOperationDefinition",
+  "type": false,
+  "status": "draft"
+}

@@ -1,0 +1,29 @@
+{
+  "code": "AddContextInvariantOnStructureDefinition",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "contextInvariant",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "string",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.contextInvariant"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add ContextInvariant on StructureDefinition",
+  "description": "Generated command for adding contextInvariant(string) on StructureDefinition Aggregate",
+  "id": "AddContextInvariantOnStructureDefinition",
+  "type": false,
+  "status": "draft"
+}

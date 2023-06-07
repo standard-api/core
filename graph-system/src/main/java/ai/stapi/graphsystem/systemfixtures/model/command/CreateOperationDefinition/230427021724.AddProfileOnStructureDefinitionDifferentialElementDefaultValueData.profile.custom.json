@@ -1,0 +1,42 @@
+{
+  "code": "AddProfileOnStructureDefinitionDifferentialElementDefaultValueData",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "profile",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "canonical",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.defaultValue.data.profile"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "dataId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.defaultValue.data.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Profile on StructureDefinition.differential.element.defaultValue.data",
+  "description": "Generated command for adding profile(canonical) on StructureDefinition Aggregate",
+  "id": "AddProfileOnStructureDefinitionDifferentialElementDefaultValueData",
+  "type": false,
+  "status": "draft"
+}

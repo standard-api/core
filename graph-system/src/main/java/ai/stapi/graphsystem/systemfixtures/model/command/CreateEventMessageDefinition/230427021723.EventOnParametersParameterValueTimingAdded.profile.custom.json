@@ -1,0 +1,8 @@
+{
+  "name": "Event on ParametersParameterValueTiming Added",
+  "description": "Generated Event for adding on Parameters.",
+  "id": "EventOnParametersParameterValueTimingAdded",
+  "type": {
+    "id": "Parameters"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "code": "AddKeywordOnStructureDefinition",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "keyword",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Coding",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.keyword"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Keyword on StructureDefinition",
+  "description": "Generated command for adding keyword(Coding) on StructureDefinition Aggregate",
+  "id": "AddKeywordOnStructureDefinition",
+  "type": false,
+  "status": "draft"
+}

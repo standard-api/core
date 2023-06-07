@@ -1,0 +1,29 @@
+{
+  "code": "AddJurisdictionOnValueSet",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "ValueSet"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "jurisdiction",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "CodeableConcept",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.jurisdiction"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Jurisdiction on ValueSet",
+  "description": "Generated command for adding jurisdiction(CodeableConcept) on ValueSet Aggregate",
+  "id": "AddJurisdictionOnValueSet",
+  "type": false,
+  "status": "draft"
+}

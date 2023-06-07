@@ -1,0 +1,8 @@
+{
+  "name": "Profile on DomainResourceModifierExtensionValue Added",
+  "description": "Generated Event for adding on DomainResource.",
+  "id": "ProfileOnDomainResourceModifierExtensionValueAdded",
+  "type": {
+    "id": "DomainResource"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "code": "AddProfileOnDomainResourceModifierExtensionValue",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "DomainResource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "profile",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "canonical",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.modifierExtension.value.profile"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "modifierExtensionId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.modifierExtension.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Profile on DomainResource.modifierExtension.value",
+  "description": "Generated command for adding profile(canonical) on DomainResource Aggregate",
+  "id": "AddProfileOnDomainResourceModifierExtensionValue",
+  "type": false,
+  "status": "draft"
+}

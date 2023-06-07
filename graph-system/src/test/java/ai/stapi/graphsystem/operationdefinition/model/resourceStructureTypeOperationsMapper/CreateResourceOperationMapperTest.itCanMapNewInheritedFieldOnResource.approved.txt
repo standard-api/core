@@ -1,0 +1,70 @@
+{
+  "OperationDefinitionAggregate" : {
+    "newParameters" : [ {
+      "operationId" : "CreateOperationDefinition",
+      "parameters" : [ {
+        "max" : "1",
+        "min" : 0,
+        "name" : "text",
+        "type" : "Narrative",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "OperationDefinition.text"
+        } ],
+        "targetProfileReference" : [ ]
+      } ]
+    } ],
+    "operations" : [ ]
+  },
+  "OperationOutcomeAggregate" : {
+    "newParameters" : [ {
+      "operationId" : "CreateOperationOutcome",
+      "parameters" : [ {
+        "max" : "1",
+        "min" : 0,
+        "name" : "text",
+        "type" : "Narrative",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "OperationOutcome.text"
+        } ],
+        "targetProfileReference" : [ ]
+      } ]
+    } ],
+    "operations" : [ ]
+  },
+  "StructureDefinitionAggregate" : {
+    "newParameters" : [ {
+      "operationId" : "CreateStructureDefinition",
+      "parameters" : [ {
+        "max" : "1",
+        "min" : 0,
+        "name" : "text",
+        "type" : "Narrative",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.text"
+        } ],
+        "targetProfileReference" : [ ]
+      } ]
+    } ],
+    "operations" : [ ]
+  },
+  "ValueSetAggregate" : {
+    "newParameters" : [ {
+      "operationId" : "CreateValueSet",
+      "parameters" : [ {
+        "max" : "1",
+        "min" : 0,
+        "name" : "text",
+        "type" : "Narrative",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "ValueSet.text"
+        } ],
+        "targetProfileReference" : [ ]
+      } ]
+    } ],
+    "operations" : [ ]
+  }
+}

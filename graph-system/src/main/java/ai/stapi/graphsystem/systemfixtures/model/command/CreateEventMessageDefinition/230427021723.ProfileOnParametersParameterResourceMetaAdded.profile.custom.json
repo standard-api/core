@@ -1,0 +1,8 @@
+{
+  "name": "Profile on ParametersParameterResourceMeta Added",
+  "description": "Generated Event for adding on Parameters.",
+  "id": "ProfileOnParametersParameterResourceMetaAdded",
+  "type": {
+    "id": "Parameters"
+  }
+}

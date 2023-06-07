@@ -1,0 +1,8 @@
+{
+  "name": "TargetProfile on OperationDefinitionParameter Added",
+  "description": "Generated Event for adding on OperationDefinition.",
+  "id": "TargetProfileOnOperationDefinitionParameterAdded",
+  "type": {
+    "id": "OperationDefinition"
+  }
+}

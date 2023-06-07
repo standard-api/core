@@ -1,0 +1,29 @@
+{
+  "code": "AddCommandOnAggregateDefinition",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "AggregateDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "command",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "CommandHandlerDefinition",
+      "referencedFrom": [
+        {
+          "source": "AggregateDefinition.command"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Command on AggregateDefinition",
+  "description": "Generated command for adding command(CommandHandlerDefinition) on AggregateDefinition Aggregate",
+  "id": "AddCommandOnAggregateDefinition",
+  "type": false,
+  "status": "draft"
+}

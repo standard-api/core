@@ -1,0 +1,29 @@
+{
+  "code": "AddIdentifierOnValueSet",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "ValueSet"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "identifier",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Identifier",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.identifier"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Identifier on ValueSet",
+  "description": "Generated command for adding identifier(Identifier) on ValueSet Aggregate",
+  "id": "AddIdentifierOnValueSet",
+  "type": false,
+  "status": "draft"
+}

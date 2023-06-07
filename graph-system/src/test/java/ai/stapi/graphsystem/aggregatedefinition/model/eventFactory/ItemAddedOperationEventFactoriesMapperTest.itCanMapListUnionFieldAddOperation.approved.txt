@@ -1,0 +1,17 @@
+[ {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "event" : {
+    "id" : "ExampleUnionFieldOnExampleResourceTypeAdded",
+    "description" : "Generated Event for adding on ExampleResourceType.",
+    "name" : "ExampleUnionField on ExampleResourceType Added",
+    "type" : {
+      "id" : "ExampleResourceType"
+    }
+  },
+  "modification" : [ {
+    "inputValueParameterName" : "exampleUnionField",
+    "kind" : "add",
+    "modificationPath" : "ExampleResourceType.exampleUnionField",
+    "destinationIndexParameterName" : null
+  } ]
+} ]

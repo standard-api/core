@@ -1,0 +1,8 @@
+{
+  "name": "Coding on StructureDefinitionSnapshotElementDefaultValueType Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "CodingOnStructureDefinitionSnapshotElementDefaultValueTypeAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

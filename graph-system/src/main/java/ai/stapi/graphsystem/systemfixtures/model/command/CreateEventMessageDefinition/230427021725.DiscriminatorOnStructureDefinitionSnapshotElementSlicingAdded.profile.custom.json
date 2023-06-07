@@ -1,0 +1,8 @@
+{
+  "name": "Discriminator on StructureDefinitionSnapshotElementSlicing Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "DiscriminatorOnStructureDefinitionSnapshotElementSlicingAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

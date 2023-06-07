@@ -1,0 +1,42 @@
+{
+  "code": "AddPartOnParametersParameter",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "Parameters"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "part",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "ParametersParameter",
+      "referencedFrom": [
+        {
+          "source": "Parameters.parameter.part"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "parameterId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "Parameters.parameter.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Part on Parameters.parameter",
+  "description": "Generated command for adding part(ParametersParameter) on Parameters Aggregate",
+  "id": "AddPartOnParametersParameter",
+  "type": false,
+  "status": "draft"
+}

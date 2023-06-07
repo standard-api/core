@@ -1,0 +1,8 @@
+{
+  "name": "UseContext on ValueSet Added",
+  "description": "Generated Event for adding on ValueSet.",
+  "id": "UseContextOnValueSetAdded",
+  "type": {
+    "id": "ValueSet"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Parameter on ValueSetExpansion Added",
+  "description": "Generated Event for adding on ValueSet.",
+  "id": "ParameterOnValueSetExpansionAdded",
+  "type": {
+    "id": "ValueSet"
+  }
+}

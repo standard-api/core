@@ -1,0 +1,42 @@
+{
+  "code": "AddDataOnStructureDefinitionDifferentialElementExampleValue",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "data",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "DataRequirement",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.example.value.data"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.example.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Data on StructureDefinition.differential.element.example.value",
+  "description": "Generated command for adding data(DataRequirement) on StructureDefinition Aggregate",
+  "id": "AddDataOnStructureDefinitionDifferentialElementExampleValue",
+  "type": false,
+  "status": "draft"
+}

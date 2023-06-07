@@ -1,0 +1,42 @@
+{
+  "code": "AddTimeOfDayOnDomainResourceExtensionValueTimingRepeat",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "DomainResource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "timeOfDay",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "time",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.extension.value.timing.repeat.timeOfDay"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "extensionId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.extension.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add TimeOfDay on DomainResource.extension.value.timing.repeat",
+  "description": "Generated command for adding timeOfDay(time) on DomainResource Aggregate",
+  "id": "AddTimeOfDayOnDomainResourceExtensionValueTimingRepeat",
+  "type": false,
+  "status": "draft"
+}

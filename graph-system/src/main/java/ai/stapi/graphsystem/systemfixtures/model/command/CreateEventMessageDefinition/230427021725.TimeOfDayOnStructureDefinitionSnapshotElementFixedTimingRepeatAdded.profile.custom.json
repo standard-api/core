@@ -1,0 +1,8 @@
+{
+  "name": "TimeOfDay on StructureDefinitionSnapshotElementFixedTimingRepeat Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "TimeOfDayOnStructureDefinitionSnapshotElementFixedTimingRepeatAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

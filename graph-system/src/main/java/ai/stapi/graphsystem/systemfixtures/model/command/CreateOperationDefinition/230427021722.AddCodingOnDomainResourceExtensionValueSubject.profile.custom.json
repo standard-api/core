@@ -1,0 +1,42 @@
+{
+  "code": "AddCodingOnDomainResourceExtensionValueSubject",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "DomainResource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "coding",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Coding",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.extension.value.subject.coding"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "extensionId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.extension.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Coding on DomainResource.extension.value.subject",
+  "description": "Generated command for adding coding(Coding) on DomainResource Aggregate",
+  "id": "AddCodingOnDomainResourceExtensionValueSubject",
+  "type": false,
+  "status": "draft"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Code on StructureDefinitionDifferentialElementDefaultValueCodeFilter Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "CodeOnStructureDefinitionDifferentialElementDefaultValueCodeFilterAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

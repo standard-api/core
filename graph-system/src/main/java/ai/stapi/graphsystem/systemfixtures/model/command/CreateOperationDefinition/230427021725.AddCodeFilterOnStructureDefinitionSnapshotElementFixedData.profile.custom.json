@@ -1,0 +1,42 @@
+{
+  "code": "AddCodeFilterOnStructureDefinitionSnapshotElementFixedData",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "codeFilter",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "DataRequirementCodeFilter",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.fixed.data.codeFilter"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "dataId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.fixed.data.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add CodeFilter on StructureDefinition.snapshot.element.fixed.data",
+  "description": "Generated command for adding codeFilter(DataRequirementCodeFilter) on StructureDefinition Aggregate",
+  "id": "AddCodeFilterOnStructureDefinitionSnapshotElementFixedData",
+  "type": false,
+  "status": "draft"
+}

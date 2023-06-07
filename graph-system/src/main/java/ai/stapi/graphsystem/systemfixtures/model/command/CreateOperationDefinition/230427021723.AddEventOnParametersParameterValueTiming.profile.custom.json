@@ -1,0 +1,42 @@
+{
+  "code": "AddEventOnParametersParameterValueTiming",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "Parameters"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "event",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "dateTime",
+      "referencedFrom": [
+        {
+          "source": "Parameters.parameter.value.timing.event"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "parameterId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "Parameters.parameter.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Event on Parameters.parameter.value.timing",
+  "description": "Generated command for adding event(dateTime) on Parameters Aggregate",
+  "id": "AddEventOnParametersParameterValueTiming",
+  "type": false,
+  "status": "draft"
+}

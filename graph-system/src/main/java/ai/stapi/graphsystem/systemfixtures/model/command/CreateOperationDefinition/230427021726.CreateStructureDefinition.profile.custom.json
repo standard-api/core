@@ -1,0 +1,445 @@
+{
+  "code": "Create StructureDefinition",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "date",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "dateTime",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.date"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "extension",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "Extension",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.extension"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "copyright",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "markdown",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.copyright"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "purpose",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "markdown",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.purpose"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "modifierExtension",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "Extension",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.modifierExtension"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "jurisdiction",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "CodeableConcept",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.jurisdiction"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "description",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "markdown",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.description"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "language",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.language"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "experimental",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "boolean",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.experimental"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "title",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "string",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.title"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "type",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "uri",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.type"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "differential",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "StructureDefinitionDifferential",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "fhirVersion",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.fhirVersion"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "context",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "StructureDefinitionContext",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.context"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "text",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "Narrative",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.text"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "keyword",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "Coding",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.keyword"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "identifier",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "Identifier",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.identifier"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "mapping",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "StructureDefinitionMapping",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.mapping"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "kind",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.kind"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "abstract",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "boolean",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.abstract"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "baseDefinition",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "canonical",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.baseDefinition"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "version",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "string",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.version"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "url",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "uri",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.url"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "contained",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "Resource",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.contained"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "meta",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "Meta",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.meta"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "name",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "string",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.name"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "implicitRules",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "uri",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.implicitRules"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "publisher",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "string",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.publisher"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "derivation",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.derivation"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "contextInvariant",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "string",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.contextInvariant"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "useContext",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "UsageContext",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.useContext"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "snapshot",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "StructureDefinitionSnapshot",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "status",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.status"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Create StructureDefinition",
+  "description": "Generated command for creating StructureDefinition with all fields.",
+  "id": "CreateStructureDefinition",
+  "type": true,
+  "status": "draft"
+}

@@ -1,0 +1,42 @@
+{
+  "code": "AddConstraintOnStructureDefinitionSnapshotElement",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "constraint",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "ElementDefinitionConstraint",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.constraint"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "elementId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Constraint on StructureDefinition.snapshot.element",
+  "description": "Generated command for adding constraint(ElementDefinitionConstraint) on StructureDefinition Aggregate",
+  "id": "AddConstraintOnStructureDefinitionSnapshotElement",
+  "type": false,
+  "status": "draft"
+}

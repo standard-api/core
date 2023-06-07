@@ -1,0 +1,51 @@
+{
+  "command": [
+    {
+      "operation": {
+        "id": "CreateEventMessageDefinition"
+      },
+      "creationalPolicy": "if_missing",
+      "eventFactory": [
+        {
+          "event": {
+            "id": "EventMessageDefinitionCreated"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "inputValueParameterName": "name",
+              "modificationPath": "EventMessageDefinition.name"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "implicitRules",
+              "modificationPath": "EventMessageDefinition.implicitRules"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "description",
+              "modificationPath": "EventMessageDefinition.description"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "language",
+              "modificationPath": "EventMessageDefinition.language"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "type",
+              "modificationPath": "EventMessageDefinition.type"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "meta",
+              "modificationPath": "EventMessageDefinition.meta"
+            }
+          ],
+          "id": "c8a2130b-21a2-4509-9dc9-adeb4d7d9958"
+        }
+      ]
+    }
+  ],
+  "id": "EventMessageDefinitionAggregate"
+}

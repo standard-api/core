@@ -1,0 +1,30 @@
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.exampleListUnion[0]
+Union member was invalid. Object with string field under key 'serializationType' is required.
+Actual value: "Completely Wrong Union Member"
+
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.exampleListUnion[1]
+Union member was invalid. Object with string field under key 'serializationType' is required.
+Actual value: {
+  "irrelevantField" : "Missing Serialization Type Union Member"
+}
+
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.exampleListUnion[2]<Period>.start
+Primitive value was of invalid data type. Required data type: dateTime.
+Actual value: "Bad Start"
+
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.exampleListUnion[3]<Quantity>.extension
+Field had single value, but list is required.
+Actual value: "Wrong Extension Type"
+
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.exampleListUnion[3]<Quantity>.value
+Primitive value was of invalid data type. Required data type: decimal.
+Actual value: "Wrong Value Type"
+
+[WARNING] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.exampleListUnion[3]<Quantity>.extraField
+It is extra field.

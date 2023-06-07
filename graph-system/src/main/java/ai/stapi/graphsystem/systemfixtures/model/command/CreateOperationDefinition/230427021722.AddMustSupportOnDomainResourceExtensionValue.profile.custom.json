@@ -1,0 +1,42 @@
+{
+  "code": "AddMustSupportOnDomainResourceExtensionValue",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "DomainResource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "mustSupport",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "string",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.extension.value.mustSupport"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "extensionId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.extension.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add MustSupport on DomainResource.extension.value",
+  "description": "Generated command for adding mustSupport(string) on DomainResource Aggregate",
+  "id": "AddMustSupportOnDomainResourceExtensionValue",
+  "type": false,
+  "status": "draft"
+}

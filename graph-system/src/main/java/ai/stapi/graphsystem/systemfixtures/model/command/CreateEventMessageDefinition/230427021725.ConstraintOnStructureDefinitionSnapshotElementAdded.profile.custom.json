@@ -1,0 +1,8 @@
+{
+  "name": "Constraint on StructureDefinitionSnapshotElement Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "ConstraintOnStructureDefinitionSnapshotElementAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

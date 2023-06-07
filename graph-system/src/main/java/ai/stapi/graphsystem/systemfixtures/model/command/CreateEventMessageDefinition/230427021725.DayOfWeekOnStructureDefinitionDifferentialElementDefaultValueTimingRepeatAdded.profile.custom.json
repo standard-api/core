@@ -1,0 +1,8 @@
+{
+  "name": "DayOfWeek on StructureDefinitionDifferentialElementDefaultValueTimingRepeat Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "DayOfWeekOnStructureDefinitionDifferentialElementDefaultValueTimingRepeatAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

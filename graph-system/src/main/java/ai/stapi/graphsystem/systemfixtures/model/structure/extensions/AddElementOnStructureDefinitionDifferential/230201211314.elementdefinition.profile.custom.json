@@ -1,0 +1,21 @@
+{
+  "id": "ElementDefinition",
+  "element": [
+    {
+      "definition": "Reference to Data type or Resource that is a(or the) type used for this element. e.g. \"string\" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.",
+      "id": "ElementDefinition.typeReference",
+      "max": "1",
+      "min": 0,
+      "path": "ElementDefinition.typeReference",
+      "short": "Data type or Resource (reference to definition)",
+      "type": [
+        {
+          "code": "Reference",
+          "targetProfile": [
+            "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
+          ]
+        }
+      ]
+    }
+  ]
+}

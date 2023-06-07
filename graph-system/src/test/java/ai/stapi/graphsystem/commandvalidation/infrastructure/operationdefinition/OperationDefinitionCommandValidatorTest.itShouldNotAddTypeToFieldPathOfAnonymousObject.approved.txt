@@ -1,0 +1,4 @@
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.fieldWithAnonymous<StructureDefinition>.differential.element[0]<ElementDefinition>.label
+Primitive value was of invalid data type. Required data type: string.
+Actual value: 50

@@ -1,0 +1,8 @@
+{
+  "name": "OperationOutcome Created",
+  "description": "Generated Event for newly created OperationOutcome.",
+  "id": "OperationOutcomeCreated",
+  "type": {
+    "id": "OperationOutcome"
+  }
+}

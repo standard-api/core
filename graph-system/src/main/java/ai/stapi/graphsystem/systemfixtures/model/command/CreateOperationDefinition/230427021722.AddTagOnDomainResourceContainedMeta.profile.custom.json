@@ -1,0 +1,42 @@
+{
+  "code": "AddTagOnDomainResourceContainedMeta",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "DomainResource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "tag",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Coding",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.contained.meta.tag"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "containedId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.contained.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Tag on DomainResource.contained.meta",
+  "description": "Generated command for adding tag(Coding) on DomainResource Aggregate",
+  "id": "AddTagOnDomainResourceContainedMeta",
+  "type": false,
+  "status": "draft"
+}

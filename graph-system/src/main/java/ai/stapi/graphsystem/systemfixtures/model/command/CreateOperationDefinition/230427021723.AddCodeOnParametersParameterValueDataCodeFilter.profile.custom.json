@@ -1,0 +1,42 @@
+{
+  "code": "AddCodeOnParametersParameterValueDataCodeFilter",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "Parameters"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "code",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Coding",
+      "referencedFrom": [
+        {
+          "source": "Parameters.parameter.value.data.codeFilter.code"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "codeFilterId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "Parameters.parameter.value.data.codeFilter.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Code on Parameters.parameter.value.data.codeFilter",
+  "description": "Generated command for adding code(Coding) on Parameters Aggregate",
+  "id": "AddCodeOnParametersParameterValueDataCodeFilter",
+  "type": false,
+  "status": "draft"
+}

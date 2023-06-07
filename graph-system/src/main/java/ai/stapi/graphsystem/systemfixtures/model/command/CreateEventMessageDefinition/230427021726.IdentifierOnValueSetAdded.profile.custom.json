@@ -1,0 +1,8 @@
+{
+  "name": "Identifier on ValueSet Added",
+  "description": "Generated Event for adding on ValueSet.",
+  "id": "IdentifierOnValueSetAdded",
+  "type": {
+    "id": "ValueSet"
+  }
+}

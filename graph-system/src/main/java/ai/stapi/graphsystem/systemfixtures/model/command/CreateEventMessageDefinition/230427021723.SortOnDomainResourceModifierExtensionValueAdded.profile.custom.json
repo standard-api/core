@@ -1,0 +1,8 @@
+{
+  "name": "Sort on DomainResourceModifierExtensionValue Added",
+  "description": "Generated Event for adding on DomainResource.",
+  "id": "SortOnDomainResourceModifierExtensionValueAdded",
+  "type": {
+    "id": "DomainResource"
+  }
+}

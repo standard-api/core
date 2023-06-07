@@ -1,0 +1,42 @@
+{
+  "code": "AddCodingOnValueSetIdentifierType",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "ValueSet"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "coding",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Coding",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.identifier.type.coding"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "identifierId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "ValueSet.identifier.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Coding on ValueSet.identifier.type",
+  "description": "Generated command for adding coding(Coding) on ValueSet Aggregate",
+  "id": "AddCodingOnValueSetIdentifierType",
+  "type": false,
+  "status": "draft"
+}

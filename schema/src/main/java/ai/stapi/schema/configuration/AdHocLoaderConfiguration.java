@@ -27,8 +27,8 @@ public class AdHocLoaderConfiguration {
   }
   
   @Bean
-  @ConditionalOnMissingBean
-  public StructureDefinitionLoader adHocStructureDefinitionLoader(
+  @ConditionalOnMissingBean(StructureDefinitionLoader.class)
+  public AdHocStructureDefinitionLoader adHocStructureDefinitionLoader(
       GenericAdHocModelDefinitionsLoader genericAdHocModelDefinitionsLoader,
       ScopeCacher scopeCacher
   ) {

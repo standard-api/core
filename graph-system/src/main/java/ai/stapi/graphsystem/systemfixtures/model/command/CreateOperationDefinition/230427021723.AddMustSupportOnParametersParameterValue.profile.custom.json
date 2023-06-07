@@ -1,0 +1,42 @@
+{
+  "code": "AddMustSupportOnParametersParameterValue",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "Parameters"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "mustSupport",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "string",
+      "referencedFrom": [
+        {
+          "source": "Parameters.parameter.value.mustSupport"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "parameterId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "Parameters.parameter.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add MustSupport on Parameters.parameter.value",
+  "description": "Generated command for adding mustSupport(string) on Parameters Aggregate",
+  "id": "AddMustSupportOnParametersParameterValue",
+  "type": false,
+  "status": "draft"
+}

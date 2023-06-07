@@ -1,0 +1,8 @@
+{
+  "name": "Contained on DomainResource Added",
+  "description": "Generated Event for adding on DomainResource.",
+  "id": "ContainedOnDomainResourceAdded",
+  "type": {
+    "id": "DomainResource"
+  }
+}

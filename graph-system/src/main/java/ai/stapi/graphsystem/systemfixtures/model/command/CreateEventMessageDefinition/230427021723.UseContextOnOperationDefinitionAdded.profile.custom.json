@@ -1,0 +1,8 @@
+{
+  "name": "UseContext on OperationDefinition Added",
+  "description": "Generated Event for adding on OperationDefinition.",
+  "id": "UseContextOnOperationDefinitionAdded",
+  "type": {
+    "id": "OperationDefinition"
+  }
+}

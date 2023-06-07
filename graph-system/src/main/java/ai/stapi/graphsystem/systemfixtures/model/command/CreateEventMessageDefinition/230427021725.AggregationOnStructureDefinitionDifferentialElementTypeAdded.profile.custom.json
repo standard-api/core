@@ -1,0 +1,8 @@
+{
+  "name": "Aggregation on StructureDefinitionDifferentialElementType Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "AggregationOnStructureDefinitionDifferentialElementTypeAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

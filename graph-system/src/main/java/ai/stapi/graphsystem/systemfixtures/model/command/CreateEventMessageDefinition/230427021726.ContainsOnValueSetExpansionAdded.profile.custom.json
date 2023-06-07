@@ -1,0 +1,8 @@
+{
+  "name": "Contains on ValueSetExpansion Added",
+  "description": "Generated Event for adding on ValueSet.",
+  "id": "ContainsOnValueSetExpansionAdded",
+  "type": {
+    "id": "ValueSet"
+  }
+}

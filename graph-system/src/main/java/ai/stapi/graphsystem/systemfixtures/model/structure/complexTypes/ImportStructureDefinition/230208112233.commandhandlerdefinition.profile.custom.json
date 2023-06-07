@@ -1,0 +1,150 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "CommandHandlerDefinition",
+  "type": "CommandHandlerDefinition",
+  "url": "http://conception.tech/fhir/StructureDefinition/CommandHandlerDefinition",
+  "name": "CommandHandlerDefinition",
+  "status": "draft",
+  "kind": "complex-type",
+  "abstract": false,
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+  "differential": {
+    "element": [
+      {
+        "id": "CommandHandlerDefinition",
+        "path": "CommandHandlerDefinition",
+        "short": "Definition of a command handler",
+        "definition": "Definition of a command handler.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "CommandHandlerDefinition.operation",
+        "path": "CommandHandlerDefinition.operation",
+        "short": "The operation to be executed",
+        "definition": "The operation to be executed.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/OperationDefinition"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CommandHandlerDefinition.creationalPolicy",
+        "path": "CommandHandlerDefinition.creationalPolicy",
+        "short": "When to create the resource",
+        "definition": "The creational policy for the resource.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/creational-policy"
+        }
+      },
+      {
+        "id": "CommandHandlerDefinition.eventFactory",
+        "path": "CommandHandlerDefinition.eventFactory",
+        "short": "Definition of events to fire",
+        "definition": "Definition of events to fire.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "CommandHandlerDefinition.eventFactory.event",
+        "path": "CommandHandlerDefinition.eventFactory.event",
+        "short": "The event to fire",
+        "definition": "The event to fire.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/EventMessageDefinition"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CommandHandlerDefinition.eventFactory.modification",
+        "path": "CommandHandlerDefinition.eventFactory.modification",
+        "short": "Specifies the modifications to be made to the aggregate.",
+        "definition": "Specifies the modifications to be made to the aggregate.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "CommandHandlerDefinition.eventFactory.modification.kind",
+        "path": "CommandHandlerDefinition.eventFactory.modification.kind",
+        "short": "The kind of modification to be made. add | replace | move | remove | insert",
+        "definition": "The kind of modification to be made. add | replace | move | remove | insert",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "CommandHandlerDefinition.eventFactory.modification.inputValueParameterName",
+        "path": "CommandHandlerDefinition.eventFactory.modification.inputValueParameterName",
+        "short": "The parameter name on operation which will be used as input value for modification.",
+        "definition": "The parameter name on operation which will be used as input value for modification.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "CommandHandlerDefinition.eventFactory.modification.modificationPath",
+        "path": "CommandHandlerDefinition.eventFactory.modification.modificationPath",
+        "short": "The path on aggregate structure where the modification will be applied.",
+        "definition": "The path on aggregate structure where the modification will be applied.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "CommandHandlerDefinition.eventFactory.modification.destinationIndexParameterName",
+        "path": "CommandHandlerDefinition.eventFactory.modification.destinationIndexParameterName",
+        "short": "The parameter name on operation which will be used as destination index for insert and move",
+        "definition": "The parameter name on operation which will be used as destination index for insert and move",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

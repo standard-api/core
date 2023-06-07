@@ -1,0 +1,9 @@
+{
+  "name": "OperationOutcome",
+  "description": "A collection of error, warning, or information messages that result from a system action.",
+  "id": "OperationOutcomeAggregate",
+  "command": [],
+  "structure": {
+    "id": "OperationOutcome"
+  }
+}

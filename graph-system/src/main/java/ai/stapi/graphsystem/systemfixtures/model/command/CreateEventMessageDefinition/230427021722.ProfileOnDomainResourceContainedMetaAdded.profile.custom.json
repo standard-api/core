@@ -1,0 +1,8 @@
+{
+  "name": "Profile on DomainResourceContainedMeta Added",
+  "description": "Generated Event for adding on DomainResource.",
+  "id": "ProfileOnDomainResourceContainedMetaAdded",
+  "type": {
+    "id": "DomainResource"
+  }
+}

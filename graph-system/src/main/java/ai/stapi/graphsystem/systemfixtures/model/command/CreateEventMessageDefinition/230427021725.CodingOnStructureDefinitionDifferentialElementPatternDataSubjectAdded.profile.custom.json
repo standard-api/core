@@ -1,0 +1,8 @@
+{
+  "name": "Coding on StructureDefinitionDifferentialElementPatternDataSubject Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "CodingOnStructureDefinitionDifferentialElementPatternDataSubjectAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Event on StructureDefinitionDifferentialElementExampleValueTiming Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "EventOnStructureDefinitionDifferentialElementExampleValueTimingAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

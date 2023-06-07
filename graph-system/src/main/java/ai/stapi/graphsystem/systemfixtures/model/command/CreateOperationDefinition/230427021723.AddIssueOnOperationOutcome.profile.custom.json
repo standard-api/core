@@ -1,0 +1,29 @@
+{
+  "code": "AddIssueOnOperationOutcome",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "OperationOutcome"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "issue",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "OperationOutcomeIssue",
+      "referencedFrom": [
+        {
+          "source": "OperationOutcome.issue"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Issue on OperationOutcome",
+  "description": "Generated command for adding issue(OperationOutcomeIssue) on OperationOutcome Aggregate",
+  "id": "AddIssueOnOperationOutcome",
+  "type": false,
+  "status": "draft"
+}

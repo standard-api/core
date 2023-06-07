@@ -1,0 +1,42 @@
+{
+  "code": "AddCodeFilterOnStructureDefinitionSnapshotElementPattern",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "codeFilter",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "DataRequirementCodeFilter",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.pattern.codeFilter"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "elementId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.snapshot.element.id"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add CodeFilter on StructureDefinition.snapshot.element.pattern",
+  "description": "Generated command for adding codeFilter(DataRequirementCodeFilter) on StructureDefinition Aggregate",
+  "id": "AddCodeFilterOnStructureDefinitionSnapshotElementPattern",
+  "type": false,
+  "status": "draft"
+}

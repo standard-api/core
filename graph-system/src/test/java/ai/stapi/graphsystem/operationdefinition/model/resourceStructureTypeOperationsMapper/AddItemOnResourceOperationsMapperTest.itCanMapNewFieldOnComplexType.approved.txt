@@ -1,0 +1,2394 @@
+{
+  "DomainResourceAggregate" : {
+    "newParameters" : [ ],
+    "operations" : [ {
+      "id" : "AddCodingOnDomainResourceExtensionValue",
+      "code" : "AddCodingOnDomainResourceExtensionValue",
+      "description" : "Generated command for adding coding(Coding) on DomainResource Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on DomainResource.extension.value",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.extension.value.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "extensionId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.extension.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "DomainResource" ]
+    }, {
+      "id" : "AddCodingOnDomainResourceExtensionValueConcept",
+      "code" : "AddCodingOnDomainResourceExtensionValueConcept",
+      "description" : "Generated command for adding coding(Coding) on DomainResource Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on DomainResource.extension.value.concept",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.extension.value.concept.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "extensionId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.extension.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "DomainResource" ]
+    }, {
+      "id" : "AddCodingOnDomainResourceExtensionValueSubject",
+      "code" : "AddCodingOnDomainResourceExtensionValueSubject",
+      "description" : "Generated command for adding coding(Coding) on DomainResource Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on DomainResource.extension.value.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.extension.value.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "extensionId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.extension.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "DomainResource" ]
+    }, {
+      "id" : "AddCodingOnDomainResourceExtensionValueType",
+      "code" : "AddCodingOnDomainResourceExtensionValueType",
+      "description" : "Generated command for adding coding(Coding) on DomainResource Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on DomainResource.extension.value.type",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.extension.value.type.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "extensionId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.extension.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "DomainResource" ]
+    }, {
+      "id" : "AddCodingOnDomainResourceExtensionValueDataSubject",
+      "code" : "AddCodingOnDomainResourceExtensionValueDataSubject",
+      "description" : "Generated command for adding coding(Coding) on DomainResource Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on DomainResource.extension.value.data.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.extension.value.data.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "dataId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.extension.value.data.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "DomainResource" ]
+    }, {
+      "id" : "AddCodingOnDomainResourceExtensionValueTimingCode",
+      "code" : "AddCodingOnDomainResourceExtensionValueTimingCode",
+      "description" : "Generated command for adding coding(Coding) on DomainResource Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on DomainResource.extension.value.timing.code",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.extension.value.timing.code.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "extensionId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.extension.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "DomainResource" ]
+    }, {
+      "id" : "AddCodingOnDomainResourceModifierExtensionValue",
+      "code" : "AddCodingOnDomainResourceModifierExtensionValue",
+      "description" : "Generated command for adding coding(Coding) on DomainResource Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on DomainResource.modifierExtension.value",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.modifierExtension.value.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "modifierExtensionId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.modifierExtension.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "DomainResource" ]
+    }, {
+      "id" : "AddCodingOnDomainResourceModifierExtensionValueConcept",
+      "code" : "AddCodingOnDomainResourceModifierExtensionValueConcept",
+      "description" : "Generated command for adding coding(Coding) on DomainResource Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on DomainResource.modifierExtension.value.concept",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.modifierExtension.value.concept.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "modifierExtensionId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.modifierExtension.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "DomainResource" ]
+    }, {
+      "id" : "AddCodingOnDomainResourceModifierExtensionValueSubject",
+      "code" : "AddCodingOnDomainResourceModifierExtensionValueSubject",
+      "description" : "Generated command for adding coding(Coding) on DomainResource Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on DomainResource.modifierExtension.value.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.modifierExtension.value.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "modifierExtensionId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.modifierExtension.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "DomainResource" ]
+    }, {
+      "id" : "AddCodingOnDomainResourceModifierExtensionValueType",
+      "code" : "AddCodingOnDomainResourceModifierExtensionValueType",
+      "description" : "Generated command for adding coding(Coding) on DomainResource Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on DomainResource.modifierExtension.value.type",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.modifierExtension.value.type.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "modifierExtensionId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.modifierExtension.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "DomainResource" ]
+    }, {
+      "id" : "AddCodingOnDomainResourceModifierExtensionValueDataSubject",
+      "code" : "AddCodingOnDomainResourceModifierExtensionValueDataSubject",
+      "description" : "Generated command for adding coding(Coding) on DomainResource Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on DomainResource.modifierExtension.value.data.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.modifierExtension.value.data.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "dataId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.modifierExtension.value.data.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "DomainResource" ]
+    }, {
+      "id" : "AddCodingOnDomainResourceModifierExtensionValueTimingCode",
+      "code" : "AddCodingOnDomainResourceModifierExtensionValueTimingCode",
+      "description" : "Generated command for adding coding(Coding) on DomainResource Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on DomainResource.modifierExtension.value.timing.code",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.modifierExtension.value.timing.code.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "modifierExtensionId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "DomainResource.modifierExtension.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "DomainResource" ]
+    } ]
+  },
+  "OperationDefinitionAggregate" : {
+    "newParameters" : [ ],
+    "operations" : [ {
+      "id" : "AddCodingOnOperationDefinitionJurisdiction",
+      "code" : "AddCodingOnOperationDefinitionJurisdiction",
+      "description" : "Generated command for adding coding(Coding) on OperationDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on OperationDefinition.jurisdiction",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "OperationDefinition.jurisdiction.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "jurisdictionId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "OperationDefinition.jurisdiction.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "OperationDefinition" ]
+    }, {
+      "id" : "AddCodingOnOperationDefinitionUseContextValue",
+      "code" : "AddCodingOnOperationDefinitionUseContextValue",
+      "description" : "Generated command for adding coding(Coding) on OperationDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on OperationDefinition.useContext.value",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "OperationDefinition.useContext.value.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "useContextId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "OperationDefinition.useContext.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "OperationDefinition" ]
+    } ]
+  },
+  "OperationOutcomeAggregate" : {
+    "newParameters" : [ ],
+    "operations" : [ {
+      "id" : "AddCodingOnOperationOutcomeIssueDetails",
+      "code" : "AddCodingOnOperationOutcomeIssueDetails",
+      "description" : "Generated command for adding coding(Coding) on OperationOutcome Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on OperationOutcome.issue.details",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "OperationOutcome.issue.details.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "issueId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "OperationOutcome.issue.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "OperationOutcome" ]
+    } ]
+  },
+  "ParametersAggregate" : {
+    "newParameters" : [ ],
+    "operations" : [ {
+      "id" : "AddCodingOnParametersParameterValue",
+      "code" : "AddCodingOnParametersParameterValue",
+      "description" : "Generated command for adding coding(Coding) on Parameters Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on Parameters.parameter.value",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "Parameters.parameter.value.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "parameterId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "Parameters.parameter.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "Parameters" ]
+    }, {
+      "id" : "AddCodingOnParametersParameterValueSubject",
+      "code" : "AddCodingOnParametersParameterValueSubject",
+      "description" : "Generated command for adding coding(Coding) on Parameters Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on Parameters.parameter.value.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "Parameters.parameter.value.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "parameterId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "Parameters.parameter.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "Parameters" ]
+    }, {
+      "id" : "AddCodingOnParametersParameterValueType",
+      "code" : "AddCodingOnParametersParameterValueType",
+      "description" : "Generated command for adding coding(Coding) on Parameters Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on Parameters.parameter.value.type",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "Parameters.parameter.value.type.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "parameterId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "Parameters.parameter.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "Parameters" ]
+    }, {
+      "id" : "AddCodingOnParametersParameterValueDataSubject",
+      "code" : "AddCodingOnParametersParameterValueDataSubject",
+      "description" : "Generated command for adding coding(Coding) on Parameters Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on Parameters.parameter.value.data.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "Parameters.parameter.value.data.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "dataId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "Parameters.parameter.value.data.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "Parameters" ]
+    }, {
+      "id" : "AddCodingOnParametersParameterValueTimingCode",
+      "code" : "AddCodingOnParametersParameterValueTimingCode",
+      "description" : "Generated command for adding coding(Coding) on Parameters Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on Parameters.parameter.value.timing.code",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "Parameters.parameter.value.timing.code.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "parameterId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "Parameters.parameter.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "Parameters" ]
+    } ]
+  },
+  "StructureDefinitionAggregate" : {
+    "newParameters" : [ ],
+    "operations" : [ {
+      "id" : "AddCodingOnStructureDefinitionJurisdiction",
+      "code" : "AddCodingOnStructureDefinitionJurisdiction",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.jurisdiction",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.jurisdiction.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "jurisdictionId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.jurisdiction.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementDefaultValue",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementDefaultValue",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.defaultValue",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.defaultValue.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementDefaultValueConcept",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementDefaultValueConcept",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.defaultValue.concept",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.defaultValue.concept.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementDefaultValueSubject",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementDefaultValueSubject",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.defaultValue.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.defaultValue.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementDefaultValueType",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementDefaultValueType",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.defaultValue.type",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.defaultValue.type.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementDefaultValueDataSubject",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementDefaultValueDataSubject",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.defaultValue.data.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.defaultValue.data.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "dataId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.defaultValue.data.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementDefaultValueTimingCode",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementDefaultValueTimingCode",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.defaultValue.timing.code",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.defaultValue.timing.code.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementPattern",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementPattern",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.pattern",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.pattern.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementPatternConcept",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementPatternConcept",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.pattern.concept",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.pattern.concept.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementPatternSubject",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementPatternSubject",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.pattern.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.pattern.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementPatternType",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementPatternType",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.pattern.type",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.pattern.type.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementPatternDataSubject",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementPatternDataSubject",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.pattern.data.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.pattern.data.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "dataId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.pattern.data.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementPatternTimingCode",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementPatternTimingCode",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.pattern.timing.code",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.pattern.timing.code.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementExampleValue",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementExampleValue",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.example.value",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.example.value.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "exampleId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.example.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementExampleValueConcept",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementExampleValueConcept",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.example.value.concept",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.example.value.concept.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "exampleId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.example.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementExampleValueSubject",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementExampleValueSubject",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.example.value.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.example.value.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "exampleId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.example.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementExampleValueType",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementExampleValueType",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.example.value.type",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.example.value.type.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "exampleId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.example.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementExampleValueDataSubject",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementExampleValueDataSubject",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.example.value.data.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.example.value.data.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "dataId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.example.value.data.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementExampleValueTimingCode",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementExampleValueTimingCode",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.example.value.timing.code",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.example.value.timing.code.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "exampleId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.example.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementFixed",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementFixed",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.fixed",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.fixed.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementFixedConcept",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementFixedConcept",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.fixed.concept",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.fixed.concept.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementFixedSubject",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementFixedSubject",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.fixed.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.fixed.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementFixedType",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementFixedType",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.fixed.type",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.fixed.type.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementFixedDataSubject",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementFixedDataSubject",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.fixed.data.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.fixed.data.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "dataId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.fixed.data.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionDifferentialElementFixedTimingCode",
+      "code" : "AddCodingOnStructureDefinitionDifferentialElementFixedTimingCode",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.differential.element.fixed.timing.code",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.fixed.timing.code.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.differential.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionIdentifierType",
+      "code" : "AddCodingOnStructureDefinitionIdentifierType",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.identifier.type",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.identifier.type.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "identifierId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.identifier.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionUseContextValue",
+      "code" : "AddCodingOnStructureDefinitionUseContextValue",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.useContext.value",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.useContext.value.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "useContextId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.useContext.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementDefaultValue",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementDefaultValue",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.defaultValue",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.defaultValue.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementDefaultValueConcept",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementDefaultValueConcept",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.defaultValue.concept",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.defaultValue.concept.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementDefaultValueSubject",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementDefaultValueSubject",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.defaultValue.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.defaultValue.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementDefaultValueType",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementDefaultValueType",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.defaultValue.type",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.defaultValue.type.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementDefaultValueDataSubject",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementDefaultValueDataSubject",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.defaultValue.data.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.defaultValue.data.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "dataId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.defaultValue.data.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementDefaultValueTimingCode",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementDefaultValueTimingCode",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.defaultValue.timing.code",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.defaultValue.timing.code.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementPattern",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementPattern",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.pattern",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.pattern.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementPatternConcept",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementPatternConcept",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.pattern.concept",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.pattern.concept.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementPatternSubject",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementPatternSubject",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.pattern.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.pattern.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementPatternType",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementPatternType",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.pattern.type",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.pattern.type.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementPatternDataSubject",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementPatternDataSubject",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.pattern.data.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.pattern.data.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "dataId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.pattern.data.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementPatternTimingCode",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementPatternTimingCode",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.pattern.timing.code",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.pattern.timing.code.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementExampleValue",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementExampleValue",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.example.value",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.example.value.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "exampleId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.example.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementExampleValueConcept",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementExampleValueConcept",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.example.value.concept",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.example.value.concept.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "exampleId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.example.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementExampleValueSubject",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementExampleValueSubject",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.example.value.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.example.value.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "exampleId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.example.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementExampleValueType",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementExampleValueType",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.example.value.type",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.example.value.type.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "exampleId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.example.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementExampleValueDataSubject",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementExampleValueDataSubject",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.example.value.data.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.example.value.data.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "dataId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.example.value.data.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementExampleValueTimingCode",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementExampleValueTimingCode",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.example.value.timing.code",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.example.value.timing.code.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "exampleId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.example.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementFixed",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementFixed",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.fixed",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.fixed.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementFixedConcept",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementFixedConcept",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.fixed.concept",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.fixed.concept.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementFixedSubject",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementFixedSubject",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.fixed.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.fixed.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementFixedType",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementFixedType",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.fixed.type",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.fixed.type.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementFixedDataSubject",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementFixedDataSubject",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.fixed.data.subject",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.fixed.data.subject.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "dataId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.fixed.data.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    }, {
+      "id" : "AddCodingOnStructureDefinitionSnapshotElementFixedTimingCode",
+      "code" : "AddCodingOnStructureDefinitionSnapshotElementFixedTimingCode",
+      "description" : "Generated command for adding coding(Coding) on StructureDefinition Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on StructureDefinition.snapshot.element.fixed.timing.code",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.fixed.timing.code.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "elementId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.snapshot.element.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "StructureDefinition" ]
+    } ]
+  },
+  "ValueSetAggregate" : {
+    "newParameters" : [ ],
+    "operations" : [ {
+      "id" : "AddCodingOnValueSetIdentifierType",
+      "code" : "AddCodingOnValueSetIdentifierType",
+      "description" : "Generated command for adding coding(Coding) on ValueSet Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on ValueSet.identifier.type",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "ValueSet.identifier.type.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "identifierId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "ValueSet.identifier.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "ValueSet" ]
+    }, {
+      "id" : "AddCodingOnValueSetJurisdiction",
+      "code" : "AddCodingOnValueSetJurisdiction",
+      "description" : "Generated command for adding coding(Coding) on ValueSet Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on ValueSet.jurisdiction",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "ValueSet.jurisdiction.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "jurisdictionId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "ValueSet.jurisdiction.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "ValueSet" ]
+    }, {
+      "id" : "AddCodingOnValueSetUseContextValue",
+      "code" : "AddCodingOnValueSetUseContextValue",
+      "description" : "Generated command for adding coding(Coding) on ValueSet Aggregate",
+      "instance" : true,
+      "kind" : "operation",
+      "name" : "Add Coding on ValueSet.useContext.value",
+      "status" : "draft",
+      "system" : false,
+      "type" : false,
+      "parameter" : [ {
+        "max" : "*",
+        "min" : 1,
+        "name" : "coding",
+        "type" : "Coding",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "ValueSet.useContext.value.coding"
+        } ],
+        "targetProfileReference" : [ ]
+      }, {
+        "max" : "1",
+        "min" : 1,
+        "name" : "useContextId",
+        "type" : "id",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "ValueSet.useContext.id"
+        } ],
+        "targetProfileReference" : [ ]
+      } ],
+      "resource" : [ "ValueSet" ]
+    } ]
+  }
+}

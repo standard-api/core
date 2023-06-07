@@ -1,0 +1,8 @@
+{
+  "name": "ModifierExtension on DomainResource Added",
+  "description": "Generated Event for adding on DomainResource.",
+  "id": "ModifierExtensionOnDomainResourceAdded",
+  "type": {
+    "id": "DomainResource"
+  }
+}

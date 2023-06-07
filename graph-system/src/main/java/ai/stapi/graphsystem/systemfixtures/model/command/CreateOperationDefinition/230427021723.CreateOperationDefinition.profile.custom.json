@@ -1,0 +1,445 @@
+{
+  "code": "Create OperationDefinition",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "OperationDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "date",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "dateTime",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.date"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "extension",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "Extension",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.extension"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "code",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.code"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "instance",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "boolean",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.instance"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "purpose",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "markdown",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.purpose"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "modifierExtension",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "Extension",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.modifierExtension"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "jurisdiction",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "CodeableConcept",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.jurisdiction"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "description",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "markdown",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.description"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "language",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.language"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "experimental",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "boolean",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.experimental"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "title",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "string",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.title"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "type",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "boolean",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.type"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "contact",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "string",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.contact"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "parameter",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "OperationDefinitionParameter",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.parameter"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "text",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "Narrative",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.text"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "resource",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.resource"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "kind",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.kind"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "inputProfile",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "canonical",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.inputProfile"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "version",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "string",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.version"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "affectsState",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "boolean",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.affectsState"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "url",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "uri",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.url"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "overload",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "OperationDefinitionOverload",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.overload"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "outputProfile",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "canonical",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.outputProfile"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "contained",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "Resource",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.contained"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "system",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "boolean",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.system"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "meta",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "Meta",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.meta"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "name",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "string",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.name"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "implicitRules",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "uri",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.implicitRules"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "publisher",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "string",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.publisher"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "comment",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "markdown",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.comment"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "useContext",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "type": "UsageContext",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.useContext"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "status",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.status"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "base",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "canonical",
+      "referencedFrom": [
+        {
+          "source": "OperationDefinition.base"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Create OperationDefinition",
+  "description": "Generated command for creating OperationDefinition with all fields.",
+  "id": "CreateOperationDefinition",
+  "type": true,
+  "status": "draft"
+}

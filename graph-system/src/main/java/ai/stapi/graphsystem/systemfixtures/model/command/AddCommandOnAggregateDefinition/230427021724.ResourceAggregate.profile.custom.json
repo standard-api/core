@@ -1,0 +1,68 @@
+{
+  "command": [
+    {
+      "operation": {
+        "id": "AddTagOnResourceMeta"
+      },
+      "creationalPolicy": "never",
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TagOnResourceMetaAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "inputValueParameterName": "tag",
+              "modificationPath": "Resource.meta.tag"
+            }
+          ],
+          "id": "0ca79633-df79-4bfe-ab9e-c3aec656337d"
+        }
+      ]
+    },
+    {
+      "operation": {
+        "id": "AddSecurityOnResourceMeta"
+      },
+      "creationalPolicy": "never",
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SecurityOnResourceMetaAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "inputValueParameterName": "security",
+              "modificationPath": "Resource.meta.security"
+            }
+          ],
+          "id": "85742301-d0e8-4492-8f7f-2aeafffcf72f"
+        }
+      ]
+    },
+    {
+      "operation": {
+        "id": "AddProfileOnResourceMeta"
+      },
+      "creationalPolicy": "never",
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnResourceMetaAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "inputValueParameterName": "profile",
+              "modificationPath": "Resource.meta.profile"
+            }
+          ],
+          "id": "429490b0-94a6-4b11-bc5a-09f30786b3f8"
+        }
+      ]
+    }
+  ],
+  "id": "ResourceAggregate"
+}

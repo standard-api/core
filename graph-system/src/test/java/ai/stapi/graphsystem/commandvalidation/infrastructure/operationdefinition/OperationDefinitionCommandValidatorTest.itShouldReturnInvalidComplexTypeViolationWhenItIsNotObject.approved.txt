@@ -1,0 +1,4 @@
+[ERROR] Command with name: 'ExampleTestCommand' did not validate.
+Field path: ExampleTestCommand.complexQuantity
+Complex type was not Object. Required type: Quantity
+Actual value: "Invalid Value"

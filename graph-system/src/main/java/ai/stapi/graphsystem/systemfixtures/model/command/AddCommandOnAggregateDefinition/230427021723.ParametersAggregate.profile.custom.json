@@ -1,0 +1,41 @@
+{
+  "command": [
+    {
+      "operation": {
+        "id": "CreateParameters"
+      },
+      "creationalPolicy": "if_missing",
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ParametersCreated"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "inputValueParameterName": "implicitRules",
+              "modificationPath": "Parameters.implicitRules"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "language",
+              "modificationPath": "Parameters.language"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "meta",
+              "modificationPath": "Parameters.meta"
+            },
+            {
+              "kind": "add",
+              "inputValueParameterName": "parameter",
+              "modificationPath": "Parameters.parameter"
+            }
+          ],
+          "id": "d173a836-1d39-4153-8a8e-73b166aae397"
+        }
+      ]
+    }
+  ],
+  "id": "ParametersAggregate"
+}

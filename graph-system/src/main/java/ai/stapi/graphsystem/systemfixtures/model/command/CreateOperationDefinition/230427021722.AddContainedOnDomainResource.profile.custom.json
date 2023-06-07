@@ -1,0 +1,29 @@
+{
+  "code": "AddContainedOnDomainResource",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "DomainResource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "contained",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Resource",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.contained"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Add Contained on DomainResource",
+  "description": "Generated command for adding contained(Resource) on DomainResource Aggregate",
+  "id": "AddContainedOnDomainResource",
+  "type": false,
+  "status": "draft"
+}

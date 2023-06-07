@@ -1,0 +1,8 @@
+{
+  "name": "Coding on DomainResourceExtensionValueSubject Added",
+  "description": "Generated Event for adding on DomainResource.",
+  "id": "CodingOnDomainResourceExtensionValueSubjectAdded",
+  "type": {
+    "id": "DomainResource"
+  }
+}
