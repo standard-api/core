@@ -1,4 +1,9 @@
 # standard-api/core
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=standard-api_core&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=standard-api_core)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=standard-api_core&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=standard-api_core)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=standard-api_core&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=standard-api_core)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=standard-api_core&metric=bugs)](https://sonarcloud.io/summary/new_code?id=standard-api_core)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=standard-api_core&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=standard-api_core)
 
 Welcome to the core repository of stapi.ai, an endeavor to (r)evolutionize software design, development, and operation.
 Here, the "code as data" philosophy comes alive in the form of new, somewhat opinionated, and currently experimental
