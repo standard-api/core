@@ -15,7 +15,6 @@ import java.util.UUID;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-@Service
 public class CreatedOperationEventFactoriesMapper implements OperationEventFactoriesMapper {
 
   private final OperationDefinitionStructureTypeMapper mapper;
@@ -23,7 +22,7 @@ public class CreatedOperationEventFactoriesMapper implements OperationEventFacto
 
   public CreatedOperationEventFactoriesMapper(
       OperationDefinitionStructureTypeMapper mapper,
-      @Lazy AggregateDefinitionProvider aggregateDefinitionProvider
+      AggregateDefinitionProvider aggregateDefinitionProvider
   ) {
     this.mapper = mapper;
     this.aggregateDefinitionProvider = aggregateDefinitionProvider;

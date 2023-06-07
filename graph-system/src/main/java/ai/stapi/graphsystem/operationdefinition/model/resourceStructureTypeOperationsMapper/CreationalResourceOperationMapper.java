@@ -9,9 +9,7 @@ import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
 import java.util.List;
 import java.util.stream.Stream;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.stereotype.Service;
 
-@Service
 public class CreationalResourceOperationMapper extends AbstractResourceOperationsMapper {
 
   public CreationalResourceOperationMapper(StructureSchemaFinder structureSchemaFinder) {

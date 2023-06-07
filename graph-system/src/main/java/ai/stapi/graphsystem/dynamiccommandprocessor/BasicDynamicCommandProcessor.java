@@ -9,9 +9,7 @@ import ai.stapi.graphoperations.objectGraphMapper.model.GenericObjectGraphMapper
 import ai.stapi.graphoperations.objectGraphMapper.model.MissingFieldResolvingStrategy;
 import ai.stapi.graphsystem.commandEventGraphMappingProvider.GenericCommandEventGraphMappingProvider;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class BasicDynamicCommandProcessor implements SpecificDynamicCommandProcessor {
 
   protected final GenericObjectGraphMapper objectGraphMapper;

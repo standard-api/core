@@ -27,9 +27,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.stereotype.Service;
 
-@Service
 public class OperationDefinitionCommandValidator implements CommandValidator {
 
   private final OperationDefinitionProvider operationDefinitionProvider;

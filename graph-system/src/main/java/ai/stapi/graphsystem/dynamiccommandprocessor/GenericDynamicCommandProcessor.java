@@ -6,9 +6,7 @@ import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.graphsystem.messaging.command.AbstractCommand;
 import ai.stapi.graphoperations.objectGraphMapper.model.MissingFieldResolvingStrategy;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class GenericDynamicCommandProcessor implements DynamicCommandProcessor {
 
   private final List<SpecificDynamicCommandProcessor> specificDynamicCommandProcessors;

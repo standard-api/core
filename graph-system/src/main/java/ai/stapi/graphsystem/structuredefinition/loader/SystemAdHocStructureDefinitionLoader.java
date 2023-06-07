@@ -16,9 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.stereotype.Service;
 
-@Service
 public class SystemAdHocStructureDefinitionLoader implements StructureDefinitionLoader {
 
   private final GenericAdHocModelDefinitionsLoader genericAdHocModelDefinitionsLoader;

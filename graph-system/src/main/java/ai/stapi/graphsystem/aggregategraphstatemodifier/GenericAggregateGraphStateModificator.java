@@ -11,7 +11,6 @@ import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionStructu
 import java.util.List;
 import org.springframework.stereotype.Service;
 
-@Service
 public class GenericAggregateGraphStateModificator {
 
   private final List<AggregateGraphStateModificator> aggregateGraphStateModificators;

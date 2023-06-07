@@ -14,11 +14,8 @@ import ai.stapi.graphsystem.commandEventGraphMappingProvider.specific.SpecificCo
 import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
 import java.util.HashMap;
 import java.util.Map;
-import org.springframework.stereotype.Service;
 
-@Service
-public class ImportStructureDefinitionOgmProvider
-    implements SpecificCommandEventGraphMappingProvider {
+public class ImportStructureDefinitionOgmProvider implements SpecificCommandEventGraphMappingProvider {
 
   private final GenericGraphMappingProvider genericGraphMappingProvider;
 

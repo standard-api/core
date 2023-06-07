@@ -1,2 +1,9 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  ai.stapi.graphsystem.configuration.SerializationConfiguration
+  ai.stapi.graphsystem.configuration.AggregateDefinitionConfiguration,\
+  ai.stapi.graphsystem.configuration.CommandValidationConfiguration,\
+  ai.stapi.graphsystem.configuration.DynamicCommandProcessorConfiguration,\
+  ai.stapi.graphsystem.configuration.FixtureGeneratorConfiguration,\
+  ai.stapi.graphsystem.configuration.OperationDefinitionConfiguration,\
+  ai.stapi.graphsystem.configuration.SerializationConfiguration,\
+  ai.stapi.graphsystem.configuration.StructureDefinitionConfiguration,\
+  ai.stapi.graphsystem.configuration.SystemConfiguration

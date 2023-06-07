@@ -1,28 +1,23 @@
 package ai.stapi.graphsystem.genericGraphEventFactory;
 
 import ai.stapi.graphsystem.messaging.event.AggregateGraphUpdatedEvent;
-import ai.stapi.graphsystem.messaging.event.DynamicGraphUpdateEventFactory;
 import ai.stapi.graphsystem.genericGraphEventFactory.exception.GenericGraphEventFactoryException;
 import ai.stapi.graphsystem.genericGraphEventFactory.specific.SpecificGraphEventFactory;
 import ai.stapi.graph.graphElementForRemoval.GraphElementForRemoval;
 import ai.stapi.graph.Graph;
+import ai.stapi.graphsystem.messaging.event.DynamicGraphUpdatedEvent;
 import ai.stapi.identity.UniqueIdentifier;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.stereotype.Service;
 
-@Service
 public class GenericGraphEventFactory {
 
   private final List<SpecificGraphEventFactory> eventFactories;
-  private final DynamicGraphUpdateEventFactory dynamicGraphUpdateEventFactory;
 
   public GenericGraphEventFactory(
-      List<SpecificGraphEventFactory> eventFactories,
-      DynamicGraphUpdateEventFactory dynamicGraphUpdateEventFactory
+      List<SpecificGraphEventFactory> eventFactories
   ) {
     this.eventFactories = eventFactories;
-    this.dynamicGraphUpdateEventFactory = dynamicGraphUpdateEventFactory;
   }
 
   public AggregateGraphUpdatedEvent<? extends UniqueIdentifier> createEvent(
@@ -32,8 +27,8 @@ public class GenericGraphEventFactory {
       Graph graph,
       List<GraphElementForRemoval> elementsForRemoval
   ) {
-    if (this.dynamicGraphUpdateEventFactory.supports(eventType)) {
-      return this.dynamicGraphUpdateEventFactory.createEvent(
+    if (DynamicGraphUpdatedEvent.class.equals(eventType)) {
+      return new DynamicGraphUpdatedEvent(
           eventName,
           identity,
           graph,
@@ -66,13 +61,11 @@ public class GenericGraphEventFactory {
     var supportingFactories = this.eventFactories.stream()
         .filter(specificObjectGraphMapper -> specificObjectGraphMapper.supports(event))
         .toList();
-    if (supportingFactories.size() == 0) {
-      throw GenericGraphEventFactoryException.becauseNoSupportingSpecificFactoriesForGivenEvent(
-          event);
+    if (supportingFactories.isEmpty()) {
+      throw GenericGraphEventFactoryException.becauseNoSupportingSpecificFactoriesForGivenEvent(event);
     }
     if (supportingFactories.size() > 1) {
-      throw GenericGraphEventFactoryException.becauseMoreThanOneSpecificFactoriesForGivenCommand(
-          event);
+      throw GenericGraphEventFactoryException.becauseMoreThanOneSpecificFactoriesForGivenCommand(event);
     }
     return supportingFactories.get(0);
   }

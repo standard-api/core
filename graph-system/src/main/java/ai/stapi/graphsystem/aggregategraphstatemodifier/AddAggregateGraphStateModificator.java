@@ -26,9 +26,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
-import org.springframework.stereotype.Service;
 
-@Service
 public class AddAggregateGraphStateModificator implements AggregateGraphStateModificator {
 
   private final StructureSchemaFinder structureSchemaFinder;

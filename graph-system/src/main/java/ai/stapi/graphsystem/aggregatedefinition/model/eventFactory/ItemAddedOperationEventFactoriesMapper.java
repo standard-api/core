@@ -9,9 +9,7 @@ import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionStructu
 import ai.stapi.graphsystem.operationdefinition.model.resourceStructureTypeOperationsMapper.OperationDefinitionParameters;
 import ai.stapi.schema.structuredefinition.StructureDefinitionId;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class ItemAddedOperationEventFactoriesMapper implements OperationEventFactoriesMapper {
 
   private final OperationDefinitionStructureTypeMapper mapper;

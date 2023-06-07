@@ -22,7 +22,6 @@ import org.jetbrains.annotations.NotNull;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-@Service
 public class DatabaseStructureDefinitionLoader implements StructureDefinitionLoader {
 
   private final GraphLoader graphLoader;

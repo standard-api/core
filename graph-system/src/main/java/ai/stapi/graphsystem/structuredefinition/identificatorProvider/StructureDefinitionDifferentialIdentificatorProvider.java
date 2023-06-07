@@ -3,9 +3,7 @@ package ai.stapi.graphsystem.structuredefinition.identificatorProvider;
 import ai.stapi.graphoperations.synchronization.nodeIdentificator.NodeIdentificator;
 import ai.stapi.graphoperations.synchronization.nodeIdentificator.NodeIdentificatorsProvider;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class StructureDefinitionDifferentialIdentificatorProvider implements NodeIdentificatorsProvider {
 
   @Override

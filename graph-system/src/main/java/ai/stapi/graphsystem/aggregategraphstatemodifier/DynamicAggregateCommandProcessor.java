@@ -2,7 +2,6 @@ package ai.stapi.graphsystem.aggregategraphstatemodifier;
 
 import ai.stapi.graphsystem.aggregatedefinition.model.AggregateDefinitionProvider;
 import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO.EventFactory;
-import ai.stapi.graphsystem.aggregategraphstatemodifier.GenericAggregateGraphStateModificator;
 import ai.stapi.graphsystem.dynamiccommandprocessor.SpecificDynamicCommandProcessor;
 import ai.stapi.graphsystem.messaging.event.AggregateGraphUpdatedEvent;
 import ai.stapi.graphsystem.messaging.command.DynamicCommand;
@@ -14,9 +13,7 @@ import ai.stapi.graphoperations.objectGraphMapper.model.GraphMappingResult;
 import ai.stapi.graphoperations.objectGraphMapper.model.MissingFieldResolvingStrategy;
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionDTO;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class DynamicAggregateCommandProcessor implements SpecificDynamicCommandProcessor {
 
   private final AggregateDefinitionProvider aggregateDefinitionProvider;

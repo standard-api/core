@@ -5,7 +5,6 @@ import ai.stapi.schema.adHocLoaders.AbstractFileModelDefinitionsLoader;
 import ai.stapi.schema.scopeProvider.ScopeOptions;
 import org.springframework.stereotype.Service;
 
-@Service
 public class SystemModelDefinitionsLoader extends AbstractFileModelDefinitionsLoader {
 
   public static final String SCOPE = "system";

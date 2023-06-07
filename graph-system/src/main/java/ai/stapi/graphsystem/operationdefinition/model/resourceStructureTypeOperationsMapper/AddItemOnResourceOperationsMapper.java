@@ -14,9 +14,7 @@ import java.util.stream.Collectors;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.springframework.stereotype.Service;
 
-@Service
 public class AddItemOnResourceOperationsMapper extends AbstractResourceOperationsMapper {
 
   public AddItemOnResourceOperationsMapper(StructureSchemaFinder structureSchemaFinder) {

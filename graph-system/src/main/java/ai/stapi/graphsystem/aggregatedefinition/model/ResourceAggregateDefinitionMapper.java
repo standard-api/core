@@ -2,9 +2,7 @@ package ai.stapi.graphsystem.aggregatedefinition.model;
 
 import ai.stapi.schema.structureSchema.ResourceStructureType;
 import ai.stapi.schema.structuredefinition.StructureDefinitionId;
-import org.springframework.stereotype.Service;
 
-@Service
 public class ResourceAggregateDefinitionMapper {
 
   public AggregateDefinitionDTO map(ResourceStructureType resourceStructureType) {

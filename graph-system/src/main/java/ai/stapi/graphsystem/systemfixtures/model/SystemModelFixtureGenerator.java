@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.logging.Logger;
 import org.springframework.stereotype.Service;
 
-@Service
 public class SystemModelFixtureGenerator extends AbstractModelFileFixtureGenerator {
 
   public static final String TAG = "system-model";

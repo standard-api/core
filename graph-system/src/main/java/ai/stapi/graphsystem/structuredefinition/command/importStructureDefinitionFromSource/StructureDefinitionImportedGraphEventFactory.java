@@ -7,9 +7,7 @@ import ai.stapi.graphsystem.messaging.event.AggregateGraphUpdatedEvent;
 import ai.stapi.graphsystem.genericGraphEventFactory.specific.SpecificGraphEventFactory;
 import ai.stapi.schema.structuredefinition.StructureDefinitionId;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class StructureDefinitionImportedGraphEventFactory implements SpecificGraphEventFactory {
 
   @Override
