@@ -2,6 +2,7 @@ package ai.stapi.graphsystem.configuration;
 
 import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
 import ai.stapi.graphsystem.genericGraphEventFactory.GenericGraphEventFactory;
+import ai.stapi.graphsystem.structuredefinition.classnameprovider.StructureDefinitionClassNameProvider;
 import ai.stapi.graphsystem.structuredefinition.command.importStructureDefinitionFromSource.ImportStructureDefinitionOgmProvider;
 import ai.stapi.graphsystem.structuredefinition.command.importStructureDefinitionFromSource.StructureDefinitionImportedGraphEventFactory;
 import ai.stapi.graphsystem.structuredefinition.identificatorProvider.ElementDefinitionIdentificatorProvider;
@@ -54,5 +55,10 @@ public class StructureDefinitionConfiguration {
   @ConditionalOnBean(GenericGraphEventFactory.class)
   public StructureDefinitionImportedGraphEventFactory structureDefinitionImportedGraphEventFactory() {
     return new StructureDefinitionImportedGraphEventFactory();
+  }
+  
+  @Bean
+  public StructureDefinitionClassNameProvider structureDefinitionClassNameProvider() {
+    return new StructureDefinitionClassNameProvider();
   }
 }

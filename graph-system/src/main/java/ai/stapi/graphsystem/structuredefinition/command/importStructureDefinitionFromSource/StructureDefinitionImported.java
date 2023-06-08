@@ -4,8 +4,10 @@ import ai.stapi.graph.Graph;
 import ai.stapi.graphsystem.messaging.event.AggregateGraphUpdatedEvent;
 import ai.stapi.schema.structuredefinition.StructureDefinitionId;
 
-public class StructureDefinitionImported
-    extends AggregateGraphUpdatedEvent<StructureDefinitionId> {
+public class StructureDefinitionImported extends AggregateGraphUpdatedEvent<StructureDefinitionId> {
+
+  private StructureDefinitionImported() {
+  }
 
   public StructureDefinitionImported(
       StructureDefinitionId structureDefinitionId,
