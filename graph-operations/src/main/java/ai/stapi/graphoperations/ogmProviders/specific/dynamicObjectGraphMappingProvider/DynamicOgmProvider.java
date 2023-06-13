@@ -1,7 +1,6 @@
 package ai.stapi.graphoperations.ogmProviders.specific.dynamicObjectGraphMappingProvider;
 
 import ai.stapi.graph.attribute.LeafAttribute;
-import ai.stapi.graphoperations.ogmProviders.specific.dynamicObjectGraphMappingProvider.exception.DynamicOgmProviderException;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.GraphDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.ListAttributeDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.UuidIdentityDescription;
@@ -14,6 +13,7 @@ import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.sp
 import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.specific.ogm.ObjectGraphMappingBuilder;
 import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.specific.ogm.ReferenceGraphMappingBuilder;
 import ai.stapi.graphoperations.ogmProviders.specific.SpecificGraphMappingProvider;
+import ai.stapi.graphoperations.ogmProviders.specific.dynamicObjectGraphMappingProvider.exception.DynamicOgmProviderException;
 import ai.stapi.schema.structureSchema.AbstractStructureType;
 import ai.stapi.schema.structureSchema.BoxedPrimitiveStructureType;
 import ai.stapi.schema.structureSchema.ComplexStructureType;
@@ -22,6 +22,7 @@ import ai.stapi.schema.structureSchema.PrimitiveStructureType;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaProvider;
 import ai.stapi.schema.structureSchemaProvider.exception.CannotProvideStructureSchema;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class DynamicOgmProvider implements SpecificGraphMappingProvider {
@@ -78,14 +79,29 @@ public class DynamicOgmProvider implements SpecificGraphMappingProvider {
     throw DynamicOgmProviderException.becauseSerializationTypeIsComplex(serializationType);
   }
 
+  @Override
   public ObjectGraphMapping provideGraphMapping(
-      String serializationType
+      String serializationType,
+      String fieldName
   ) {
     AbstractStructureType definition;
     try {
       definition = this.structureSchemaProvider.provideSpecific(serializationType);
     } catch (CannotProvideStructureSchema e) {
       throw DynamicOgmProviderException.becauseThereWasNoStructureSchema(serializationType, e);
+    }
+    if (definition.getKind().equals(AbstractStructureType.PRIMITIVE_TYPE)) {
+      return this.provideOgmForPrimitive(
+          serializationType,
+          new FieldDefinition(
+              fieldName,
+              1,
+              "1",
+              "",
+              List.of(),
+              definition.getDefinitionType()
+          )
+      );
     }
     return this.provideGraphMapping(serializationType, definition);
   }

@@ -4,7 +4,6 @@ import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionB
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.NodeDescription;
 import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.specific.ogm.ObjectGraphMappingBuilder;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.stereotype.Service;
 
 public class NodeDescriptionGraphMappingProvider
     extends AbstractGraphDescriptionGraphMappingProvider {

@@ -4,10 +4,10 @@ import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionB
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.NullGraphDescription;
 import ai.stapi.graphoperations.objectGraphLanguage.InterfaceObjectGraphMapping;
 import ai.stapi.graphoperations.objectGraphLanguage.ObjectGraphMapping;
-import ai.stapi.graphoperations.objectGraphMapper.model.specific.exceptions.SpecificObjectGraphMapperException;
-import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
 import ai.stapi.graphoperations.objectGraphMapper.model.GenericObjectGraphMapper;
 import ai.stapi.graphoperations.objectGraphMapper.model.MissingFieldResolvingStrategy;
+import ai.stapi.graphoperations.objectGraphMapper.model.specific.exceptions.SpecificObjectGraphMapperException;
+import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
 import ai.stapi.serialization.AbstractSerializableObject;
 import ai.stapi.serialization.SerializableObject;
 import java.util.Map;
@@ -56,7 +56,10 @@ public class InterfaceSpecificObjectGraphMapper extends AbstractSpecificObjectGr
           fieldEntry.getValue()
       );
     }
-    var mappingDefinition = this.mappingProvider.provideGraphMapping(serializationType, fieldEntry.getKey());
+    var mappingDefinition = this.mappingProvider.provideGraphMapping(
+        serializationType, 
+        fieldEntry.getKey()
+    );
     var interfaceObjectGraphMapping = (InterfaceObjectGraphMapping) objectGraphMapping;
     if (this.interfaceSpecificObjectGraphMapperFixStrategy != null) {
       interfaceObjectGraphMapping = this.interfaceSpecificObjectGraphMapperFixStrategy.fix(

@@ -14,8 +14,8 @@ public class ExampleNestedDtoWithListOfStringsSpecificGraphMappingProvider
   public static final String NODE_TYPE = "example_nested_dto_with_list_of_strings_node";
 
   @Override
-  public ObjectGraphMapping provideGraphMapping(String serializationType
-  ) {
+  public ObjectGraphMapping provideGraphMapping(String serializationType,
+                                                String fieldName) {
     var objectBuilder = new ObjectGraphMappingBuilder();
     objectBuilder
         .setGraphDescription(new GraphDescriptionBuilder().addNodeDescription(NODE_TYPE));

@@ -84,6 +84,9 @@ public abstract class AbstractOneValueFilterOption<ValueType>
     if (value instanceof Double doubleValue) {
       return new DecimalAttributeValue(doubleValue);
     }
+    if (value instanceof Float floatValue) {
+      return new DecimalAttributeValue(floatValue.doubleValue());
+    }
     if (value instanceof Integer integerValue) {
       return new IntegerAttributeValue(integerValue);
     }

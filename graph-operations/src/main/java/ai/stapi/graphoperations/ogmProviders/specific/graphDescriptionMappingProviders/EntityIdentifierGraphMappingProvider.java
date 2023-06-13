@@ -5,7 +5,6 @@ import ai.stapi.graphoperations.objectGraphLanguage.ObjectGraphMapping;
 import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.specific.ogm.ObjectGraphMappingBuilder;
 import ai.stapi.graphoperations.objectLanguage.EntityIdentifier;
 import ai.stapi.graphoperations.ogmProviders.specific.SpecificGraphMappingProvider;
-import org.springframework.stereotype.Service;
 
 public class EntityIdentifierGraphMappingProvider implements SpecificGraphMappingProvider {
 
@@ -14,8 +13,8 @@ public class EntityIdentifierGraphMappingProvider implements SpecificGraphMappin
   }
 
   @Override
-  public ObjectGraphMapping provideGraphMapping(String serializationType
-  ) {
+  public ObjectGraphMapping provideGraphMapping(String serializationType,
+                                                String fieldName) {
     var definition = new ObjectGraphMappingBuilder();
     definition.setGraphDescription(
         new GraphDescriptionBuilder().addNodeDescription(this.getGraphDescriptionNodeType()));

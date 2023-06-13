@@ -23,32 +23,8 @@ class DynamicOgmProviderTest extends SchemaIntegrationTestCase {
 
   @Test
   void itThrowsWhenTryingToGenerateOGMForNonExistingType() {
-    Executable throwable = () -> this.dynamicOgmProvider.provideGraphMapping(
-        "non-existing-serialization-type"
-    );
+    Executable throwable = () -> this.dynamicOgmProvider.provideGraphMapping("non-existing-serialization-type");
     this.thenExceptionMessageApproved(RuntimeException.class, throwable);
-  }
-
-  @Test
-  void itThrowsWhenTryingToGenerateOGMForPrimitiveType() {
-    Executable throwable = () -> this.dynamicOgmProvider.provideGraphMapping("string");
-    this.thenExceptionMessageApproved(RuntimeException.class, throwable);
-  }
-
-  @Test
-  void itCanGenerateOgmForBoxedString() {
-    var actual = this.dynamicOgmProvider.provideOgmForPrimitive(
-        "BoxedString",
-        new FieldDefinition(
-            "exampleAttribute",
-            0,
-            "1",
-            "",
-            List.of(FieldType.asPlainType("string")),
-            "Irrelevant"
-        )
-    );
-    this.thenObjectApproved(actual);
   }
 
   @Test
@@ -61,6 +37,28 @@ class DynamicOgmProviderTest extends SchemaIntegrationTestCase {
             "1",
             "",
             List.of(FieldType.asPlainType("decimal")),
+            "Irrelevant"
+        )
+    );
+    this.thenObjectApproved(actual);
+  }
+
+  @Test
+  void itCanGenerateOgmForPrimitiveTypeThroughNormalMethod() {
+    var actual = this.dynamicOgmProvider.provideGraphMapping("string", "exampleAttributeName");
+    this.thenObjectApproved(actual);
+  }
+
+  @Test
+  void itCanGenerateOgmForBoxedString() {
+    var actual = this.dynamicOgmProvider.provideOgmForPrimitive(
+        "BoxedString",
+        new FieldDefinition(
+            "exampleAttribute",
+            0,
+            "1",
+            "",
+            List.of(FieldType.asPlainType("string")),
             "Irrelevant"
         )
     );
@@ -88,17 +86,13 @@ class DynamicOgmProviderTest extends SchemaIntegrationTestCase {
 
   @Test
   void itCanGenerateReferenceOgmForFieldWithContentReference() {
-    var result = (ObjectObjectGraphMapping) this.dynamicOgmProvider.provideGraphMapping(
-        "PlanDefinitionAction"
-    );
+    var result = (ObjectObjectGraphMapping) this.dynamicOgmProvider.provideGraphMapping("PlanDefinitionAction");
     this.thenObjectApproved(result.getFields().get("action"));
   }
 
   @Test
   void itCanGenerateInterfaceOgmForFieldWithUnionType() {
-    var result = (ObjectObjectGraphMapping) this.dynamicOgmProvider.provideGraphMapping(
-        "Extension"
-    );
+    var result = (ObjectObjectGraphMapping) this.dynamicOgmProvider.provideGraphMapping("Extension");
     this.thenObjectApproved(result.getFields().get("value"));
   }
 }

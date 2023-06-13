@@ -15,8 +15,8 @@ public class ExampleNestedDtoWithListOfInterfacesGraphMappingProvider
   public static final String NODE_TYPE = "example_dto_with_list_of_interfaces_node";
 
   @Override
-  public ObjectGraphMapping provideGraphMapping(String serializationType
-  ) {
+  public ObjectGraphMapping provideGraphMapping(String serializationType,
+                                                String fieldName) {
     var objectBuilder = new ObjectGraphMappingBuilder();
     objectBuilder
         .setGraphDescription(new GraphDescriptionBuilder().addNodeDescription(NODE_TYPE));

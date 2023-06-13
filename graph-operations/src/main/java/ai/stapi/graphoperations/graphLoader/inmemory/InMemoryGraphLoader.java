@@ -5,9 +5,9 @@ import ai.stapi.graph.Graph;
 import ai.stapi.graph.attribute.Attribute;
 import ai.stapi.graph.attribute.LeafAttribute;
 import ai.stapi.graph.attribute.attributeValue.IdAttributeValue;
-import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.graphelements.Edge;
 import ai.stapi.graph.graphelements.Node;
+import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.traversableGraphElements.TraversableEdge;
 import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
@@ -28,10 +28,10 @@ import ai.stapi.graphoperations.graphLoader.GraphLoader;
 import ai.stapi.graphoperations.graphLoader.GraphLoaderFindAsObjectOutput;
 import ai.stapi.graphoperations.graphLoader.GraphLoaderGetAsObjectOutput;
 import ai.stapi.graphoperations.graphLoader.GraphLoaderReturnType;
+import ai.stapi.graphoperations.graphLoader.exceptions.GraphLoaderException;
 import ai.stapi.graphoperations.graphLoader.search.SearchQueryParameters;
 import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
-import ai.stapi.graphoperations.graphLoader.exceptions.GraphLoaderException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -129,7 +129,7 @@ public class InMemoryGraphLoader implements GraphLoader {
 
   private Set<GraphLoaderReturnType> convertReturnTypes(GraphLoaderReturnType[] returnTypes) {
     if (returnTypes.length == 0) {
-      return Set.of(GraphLoaderReturnType.GRAPH);
+      return Set.of(GraphLoaderReturnType.OBJECT);
     }
     return Arrays.stream(returnTypes).collect(Collectors.toSet());
   }
