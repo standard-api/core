@@ -6,13 +6,12 @@ import ai.stapi.graphoperations.objectGraphLanguage.ListObjectGraphMapping;
 import ai.stapi.graphoperations.objectGraphLanguage.ObjectGraphMapping;
 import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.specific.ogm.ObjectGraphMappingBuilder;
 import ai.stapi.graphoperations.ogmProviders.specific.SpecificGraphMappingProvider;
-import org.springframework.stereotype.Service;
 
 public class ListOgmProvider implements SpecificGraphMappingProvider {
 
   @Override
-  public ObjectGraphMapping provideGraphMapping(String serializationType
-  ) {
+  public ObjectGraphMapping provideGraphMapping(String serializationType,
+                                                String fieldName) {
     var listBuilder = new ObjectGraphMappingBuilder();
     listBuilder.setGraphDescription(new GraphDescriptionBuilder().addNodeDescription("ogm_list"));
     listBuilder.addField("graphDescription")

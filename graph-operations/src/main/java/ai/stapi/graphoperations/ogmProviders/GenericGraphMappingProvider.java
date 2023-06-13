@@ -50,12 +50,12 @@ public class GenericGraphMappingProvider {
 
   public ObjectGraphMapping provideGraphMapping(String serializationType, String fieldName) {
     var provider = this.getSupportingProvider(serializationType);
-    return provider.provideGraphMapping(serializationType);
+    return provider.provideGraphMapping(serializationType, fieldName);
   }
 
   public ObjectGraphMapping provideGraphMapping(String serializationType) {
     var provider = this.getSupportingProvider(serializationType);
-    return provider.provideGraphMapping(serializationType);
+    return provider.provideGraphMapping(serializationType, "");
   }
 
   public boolean supports(String serializationType) {
@@ -67,7 +67,7 @@ public class GenericGraphMappingProvider {
     var listOfSupportingProviders = this.mappingProviders.stream()
         .filter(specificObjectGraphMapper -> specificObjectGraphMapper.supports(serializationType))
         .toList();
-    if (listOfSupportingProviders.size() == 0) {
+    if (listOfSupportingProviders.isEmpty()) {
       throw GraphMappingProviderException.becauseThereIsNoSupportingSpecificGraphMappingProvider(
           serializationType);
     }

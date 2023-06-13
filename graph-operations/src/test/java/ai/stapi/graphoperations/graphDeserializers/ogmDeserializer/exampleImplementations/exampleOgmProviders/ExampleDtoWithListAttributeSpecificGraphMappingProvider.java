@@ -15,8 +15,8 @@ public class ExampleDtoWithListAttributeSpecificGraphMappingProvider
   public static final String NODE_TYPE = "example_dto_with_list_attribute_node";
 
   @Override
-  public ObjectGraphMapping provideGraphMapping(String serializationType
-  ) {
+  public ObjectGraphMapping provideGraphMapping(String serializationType,
+                                                String fieldName) {
     var objectBuilder = new ObjectGraphMappingBuilder();
     objectBuilder
         .setGraphDescription(new GraphDescriptionBuilder().addNodeDescription(NODE_TYPE));

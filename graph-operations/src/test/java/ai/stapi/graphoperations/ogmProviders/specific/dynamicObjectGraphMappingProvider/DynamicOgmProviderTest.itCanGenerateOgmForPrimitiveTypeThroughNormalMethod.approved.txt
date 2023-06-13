@@ -1,0 +1,18 @@
+{
+  "serializationType" : "LeafObjectGraphMapping",
+  "graphDescription" : {
+    "serializationType" : "LeafAttributeDescription",
+    "describedStructureType" : "LeafAttribute",
+    "traversingType" : "attribute",
+    "childGraphDescriptions" : [ {
+      "serializationType" : "StringAttributeValueDescription",
+      "describedAttributeDataTypeId" : "string",
+      "traversingType" : "value",
+      "childGraphDescriptions" : [ ],
+      "parameters" : { }
+    } ],
+    "parameters" : {
+      "attributeName" : "exampleAttributeName"
+    }
+  }
+}
