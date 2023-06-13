@@ -140,6 +140,9 @@ public class StructureDefinitionData implements SerializableObject {
     private List<ElementDefinition> element;
     private String parent;
 
+    private Differential() {
+    }
+
     public Differential(List<ElementDefinition> element, String parent) {
       this.element = element;
       this.parent = parent;

@@ -84,14 +84,15 @@ public class GenericGraphMappingProvider {
       return staticProviders.get(0);
     }
     var dynamicProvider = listOfSupportingProviders.stream()
-        .filter(provider -> provider instanceof DynamicOgmProvider)
+        .filter(DynamicOgmProvider.class::isInstance)
         .findAny()
         .orElse(null);
     if (dynamicProvider != null) {
       return dynamicProvider;
     }
     throw GraphMappingProviderException.becauseThereIsNoSupportingSpecificGraphMappingProvider(
-        serializationType);
+        serializationType
+    );
   }
 
 }
