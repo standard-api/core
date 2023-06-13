@@ -3,9 +3,9 @@ package ai.stapi.graphoperations.graphToMapObjectMapper;
 import ai.stapi.graph.Graph;
 import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
-import ai.stapi.graphoperations.objectGraphLanguage.ObjectGraphMapping;
 import ai.stapi.graphoperations.graphToMapObjectMapper.exception.GraphToMapObjectMapperException;
 import ai.stapi.graphoperations.graphToMapObjectMapper.specific.SpecificGraphToMapMapper;
+import ai.stapi.graphoperations.objectGraphLanguage.ObjectGraphMapping;
 import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
 import java.util.List;
 import java.util.Map;
@@ -28,8 +28,7 @@ public class GraphToMapObjectMapper {
       Graph graph
   ) {
     if (!genericGraphMappingProvider.supports(element.getType())) {
-      throw GraphToMapObjectMapperException
-          .becauseNodeTypeIsNotValidSerializationType(element.getType());
+      throw GraphToMapObjectMapperException.becauseNodeTypeIsNotValidSerializationType(element.getType());
     }
     if (graph.getAllNodes().isEmpty()) {
       throw GraphToMapObjectMapperException.becauseProvidedGraphIsEmpty();

@@ -87,8 +87,8 @@ public class DefaultStructureSchemaFinder implements StructureSchemaFinder {
     }
 
     if (structureType instanceof ComplexStructureType complexStructureType) {
-      var missingFields = fieldNames.stream().
-          filter(fieldName -> !complexStructureType.getAllFields().containsKey(fieldName))
+      var missingFields = fieldNames.stream()
+          .filter(fieldName -> !complexStructureType.getAllFields().containsKey(fieldName))
           .toList();
 
       if (!missingFields.isEmpty()) {

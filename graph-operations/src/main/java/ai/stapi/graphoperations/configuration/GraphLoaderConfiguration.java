@@ -1,5 +1,40 @@
 package ai.stapi.graphoperations.configuration;
 
+import ai.stapi.configuration.SerializationConfiguration;
+import ai.stapi.graph.configuration.GraphRepositoryConfiguration;
+import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
+import ai.stapi.graphoperations.graphLoader.GraphLoader;
+import ai.stapi.graphoperations.graphLoader.graphLoaderOGMFactory.GraphLoaderOgmFactory;
+import ai.stapi.graphoperations.graphLoader.inmemory.InMemoryAscendingSortResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.InMemoryDescendingSortResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.InMemoryGenericSearchOptionResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.InMemoryGraphLoader;
+import ai.stapi.graphoperations.graphLoader.inmemory.InMemoryGraphLoaderProvider;
+import ai.stapi.graphoperations.graphLoader.inmemory.InMemoryOffsetPaginationResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.InMemorySearchResolvingContext;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.GenericInMemoryFilterOptionResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryAllMatchFilterResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryAndFilterResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryAnyMatchFilterResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryContainsFilterResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryEndsWithFilterResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryEqualsFilterResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryFilterResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryGreaterThanFilterResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryGreaterThanOrEqualsFilterResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryIsNullFilterResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryLowerThanFilterResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryLowerThanOrEqualFilterResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryNoneMatchFilterResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryNotEqualsFilterResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryNotFilterResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryNotNullFilterResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryOrFilterResolver;
+import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryStartsWithFilterResolver;
+import ai.stapi.graphoperations.graphLoader.search.SearchOptionResolver;
+import ai.stapi.graphoperations.graphLoader.search.filterOption.factory.FilterOptionFactory;
+import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
@@ -7,40 +42,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Lazy;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import ai.stapi.configuration.SerializationConfiguration;
-import ai.stapi.graph.configuration.GraphRepositoryConfiguration;
-import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
-import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
-import ai.stapi.graphoperations.graphLoader.GraphLoader;
-import ai.stapi.graphoperations.graphLoader.graphLoaderOGMFactory.GraphLoaderOgmFactory;
-import ai.stapi.graphoperations.graphLoader.search.filterOption.factory.FilterOptionFactory;
-import ai.stapi.graphoperations.graphLoader.search.SearchOptionResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.InMemoryAscendingSortResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.InMemoryDescendingSortResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.InMemoryGenericSearchOptionResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.InMemoryGraphLoader;
-import ai.stapi.graphoperations.graphLoader.inmemory.InMemoryOffsetPaginationResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.InMemorySearchResolvingContext;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryIsNullFilterResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryLowerThanFilterResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryLowerThanOrEqualFilterResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryNotEqualsFilterResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryNotNullFilterResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryStartsWithFilterResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryAnyMatchFilterResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryContainsFilterResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryEndsWithFilterResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryEqualsFilterResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryGreaterThanFilterResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryGreaterThanOrEqualsFilterResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryNoneMatchFilterResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.GenericInMemoryFilterOptionResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryAllMatchFilterResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryAndFilterResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryFilterResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryNotFilterResolver;
-import ai.stapi.graphoperations.graphLoader.inmemory.filter.InMemoryOrFilterResolver;
 
 @AutoConfiguration
 @AutoConfigureAfter({SerializationConfiguration.class, GraphRepositoryConfiguration.class})
@@ -54,6 +55,15 @@ public class GraphLoaderConfiguration {
   @Bean
   public FilterOptionFactory filterOptionFactory() {
     return new FilterOptionFactory();
+  }
+  
+  @Bean
+  public InMemoryGraphLoaderProvider inMemoryGraphLoaderProvider(
+      InMemoryGenericSearchOptionResolver searchOptionResolver,
+      StructureSchemaFinder structureSchemaFinder,
+      ObjectMapper objectMapper
+  ) {
+    return new InMemoryGraphLoaderProvider(searchOptionResolver, structureSchemaFinder, objectMapper);
   }
   
   @Bean
