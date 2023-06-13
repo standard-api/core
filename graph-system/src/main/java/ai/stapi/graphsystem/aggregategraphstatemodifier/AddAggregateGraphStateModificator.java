@@ -1,12 +1,8 @@
 package ai.stapi.graphsystem.aggregategraphstatemodifier;
 
 import ai.stapi.graph.Graph;
-import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
-import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification;
-import ai.stapi.graphsystem.aggregategraphstatemodifier.exceptions.CannotAddToAggregateState;
-import ai.stapi.graphsystem.messaging.command.DynamicCommand;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.GraphDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.UuidIdentityDescription;
 import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.GenericOGMBuilder;
@@ -15,7 +11,11 @@ import ai.stapi.graphoperations.objectGraphMapper.model.GenericObjectGraphMapper
 import ai.stapi.graphoperations.objectGraphMapper.model.GraphMappingResult;
 import ai.stapi.graphoperations.objectGraphMapper.model.MissingFieldResolvingStrategy;
 import ai.stapi.graphoperations.ogmProviders.specific.dynamicObjectGraphMappingProvider.DynamicOgmProvider;
+import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification;
+import ai.stapi.graphsystem.aggregategraphstatemodifier.exceptions.CannotAddToAggregateState;
+import ai.stapi.graphsystem.messaging.command.DynamicCommand;
 import ai.stapi.graphsystem.operationdefinition.model.FieldDefinitionWithSource;
+import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.schema.structureSchema.ComplexStructureType;
 import ai.stapi.schema.structureSchema.FieldDefinition;
 import ai.stapi.schema.structureSchema.ResourceStructureType;
@@ -124,9 +124,9 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
         .addLeafAsObjectFieldMapping()
         .setGraphDescription(new UuidIdentityDescription());
 
-    var dataField = objectOgm.addField("data");
-
     var fieldName = splitPath[splitPath.length - 1];
+    var dataField = objectOgm.addField(fieldName);
+
     var edge = new GraphDescriptionBuilder().addOutgoingEdge(fieldName);
     if (inputValueSchema.isUnionType()) {
       if (inputValueSchema.isList()) {
@@ -176,7 +176,7 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
 
     var fakedObject = new HashMap<>(Map.of(
         "id", modifiedNode.getId().getId(),
-        "data", inputValue
+        fieldName, inputValue
     ));
     return this.objectGraphMapper.mapToGraph(
         objectOgm.build(),

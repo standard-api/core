@@ -55,7 +55,7 @@ public class GenericGraphMappingProvider {
 
   public ObjectGraphMapping provideGraphMapping(String serializationType) {
     var provider = this.getSupportingProvider(serializationType);
-    return provider.provideGraphMapping(serializationType, "");
+    return provider.provideGraphMapping(serializationType);
   }
 
   public boolean supports(String serializationType) {
