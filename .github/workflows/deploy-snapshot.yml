@@ -1,12 +1,4 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
-
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-name: Deploy SNAPSHOT to Sonatype staging and GitHub
+name: Deploy SNAPSHOT to Sonatype staging
 
 on:
   workflow_dispatch:
@@ -18,47 +10,14 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up JDK 17 for GitHub
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: maven
-          server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-          settings-path: ${{ github.workspace }} # location for the settings.xml file
+      - name: Setup JDK with maven
+        uses: ./.github/workflows/setup-jdk-with-maven.yml
 
-      - name: Build with Maven
-        run: mvn package --file pom.xml
+      - name: Build and check
+        uses: ./.github/workflows/build-and-check.yml
 
-      - name: Analyze with checkstyle
-        run: mvn checkstyle:check -Dcheckstyle.failOnError=true --file pom.xml
+      - name: Setup JDK for sonatype release
+        uses: ./.github/workflows/setup-jdk-for-sonatype-release.yml
 
-      - name: Analyze with sonar
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn sonar:sonar -Dsonar.branch.name=${GITHUB_REF_NAME} -Dsonar.qualitygate.wait=true --file pom.xml
-
-      - name: Publish to GitHub Packages Apache Maven
-        run: mvn deploy -Pgithub -DskipTests -s $GITHUB_WORKSPACE/settings.xml
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - uses: actions/checkout@v3
-      - name: Set up JDK 17 for Sonatype
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: maven
-          settings-path: ${{ github.workspace }} # location for the settings.xml file
-          server-id: sonatype
-          server-username: MAVEN_USERNAME
-          server-password: MAVEN_PASSWORD
-          
-        
-      - name: Publish SNAPSHOT to Sonatype
-        run: mvn -B -U -Possrh deploy -Dstyle.color=always -DskipTests=true -s $GITHUB_WORKSPACE/settings.xml
-        env:
-          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+      - name: Publish snapshot to Sonatype
+        uses: ./.github/workflows/publish-snapshot.yml

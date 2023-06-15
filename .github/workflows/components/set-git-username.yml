@@ -1,0 +1,4 @@
+name: Set git user and email
+run: |
+  git config user.name 'Automated Release'
+  git config user.email 'infol@stapi.ai'
