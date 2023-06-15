@@ -42,3 +42,6 @@ jobs:
 
       - name: Publish snapshot to Sonatype
         uses: ./.github/workflows/publish-release.yml
+
+      - name: Release version on github
+        uses: ./.github/workflows/publish-release.github.yml
