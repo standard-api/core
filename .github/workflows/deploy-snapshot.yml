@@ -10,6 +10,9 @@ jobs:
       contents: read
       packages: write
     steps:
+      - name: Checkout
+        uses: ./.github/workflows/checkout.yml
+
       - name: Setup JDK with maven
         uses: ./.github/workflows/setup-jdk-with-maven.yml
 
