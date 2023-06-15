@@ -1,5 +1,5 @@
 name: Commit updated POMs
 run: |
   git add **/pom.xml
-  git commit -m "Update versions to ${{ steps.semver.outputs.new-version }}"
+  git commit -m "Update versions to ${{ steps.semver.outputs.version }}"
   git push origin master

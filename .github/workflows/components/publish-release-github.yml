@@ -4,7 +4,7 @@ uses: actions/create-release@v1
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 with:
-  tag_name: ${{ steps.semver.outputs.new-version }}
-  release_name: Release ${{ steps.semver.outputs.new-version }}
+  tag_name: ${{ steps.semver.outputs.version }}
+  release_name: Release ${{ steps.semver.outputs.version }}
   draft: false
   prerelease: false
