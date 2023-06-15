@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: ./.github/workflows/checkout.yml
+        uses: ./.github/actions/checkout
 
       - name: Setup JDK with maven
-        uses: ./.github/workflows/setup-jdk-with-maven.yml
+        uses: ./.github/actions/setup-jdk-with-maven
 
       - name: Build and check
-        uses: ./.github/workflows/build-and-check.yml
+        uses: ./.github/actions/build-and-check

@@ -16,10 +16,10 @@ jobs:
       packages: write
     steps:
       - name: Checkout
-        uses: ./.github/workflows/checkout.yml
+        uses: ./.github/actions/checkout
 
       - name: Setup JDK with maven
-        uses: ./.github/workflows/setup-jdk-with-maven.yml
+        uses: ./.github/actions/setup-jdk-with-maven
 
       - name: Create new Semantic Version
         uses: zwaldowski/semver-release-action@v3@v1
@@ -29,19 +29,19 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update Versions on all subpackages
-        uses: ./.github/workflows/update-subpackages-version.yml
+        uses: ./.github/actions/update-subpackages-version
 
       - name: Set git user and email
-        uses: ./.github/workflows/set-git-username.yml
+        uses: ./.github/actions/set-git-username
 
       - name: Commit updated POMs
-        uses: ./.github/workflows/commit-updated-version-pom-files.yml
+        uses: ./.github/actions/commit-updated-version-pom-files
 
       - name: Setup JDK for sonatype release
-        uses: ./.github/workflows/setup-jdk-for-sonatype-release.yml
+        uses: ./.github/actions/setup-jdk-for-sonatype-release-sonatype
 
       - name: Publish snapshot to Sonatype
-        uses: ./.github/workflows/publish-release.yml
+        uses: ./.github/actions/publish-release
 
       - name: Release version on github
-        uses: ./.github/workflows/publish-release.github.yml
+        uses: ./.github/actions/publish-release.github
