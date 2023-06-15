@@ -1,0 +1,44 @@
+name: Release new version and Deploy to Maven Central
+
+on:
+  workflow_dispatch:
+    inputs:
+      semverBump:
+        description: 'The type of Semantic Version bump (patch, minor or major)'
+        required: true
+        default: 'patch'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: ./.github/workflows/checkout.yml
+
+      - name: Setup JDK with maven
+        uses: ./.github/workflows/setup-jdk-with-maven.yml
+
+      - name: Create new Semantic Version
+        uses: qcastel/create-new-semantic-version@v1
+        id: semver
+        with:
+          bump: ${{ github.event.inputs.semverBump }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update Versions on all subpackages
+        uses: ./.github/workflows/update-subpackages-version.yml
+
+      - name: Set git user and email
+        uses: ./.github/workflows/set-git-username.yml
+
+      - name: Commit updated POMs
+        uses: ./.github/workflows/commit-updated-version-pom-files.yml
+
+      - name: Setup JDK for sonatype release
+        uses: ./.github/workflows/setup-jdk-for-sonatype-release.yml
+
+      - name: Publish snapshot to Sonatype
+        uses: ./.github/workflows/publish-release.yml
