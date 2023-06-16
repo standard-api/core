@@ -5,6 +5,7 @@ runs:
   using: "composite"
   steps:
     - name: Publish SNAPSHOT to Sonatype
+      shell: bash
       run: mvn -B -U -Possrh deploy -Dstyle.color=always -DskipTests=true -s $GITHUB_WORKSPACE/settings.xml
       env:
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}

@@ -5,12 +5,15 @@ runs:
   using: "composite"
   steps:
     - name: Build with Maven
+      shell: bash
       run: mvn package --file pom.xml
 
     - name: Analyze with checkstyle
+      shell: bash
       run: mvn checkstyle:check -Dcheckstyle.failOnError=true --file pom.xml
 
     - name: Analyze with sonar
+      shell: bash
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: mvn sonar:sonar -Dsonar.branch.name=${GITHUB_REF_NAME} -Dsonar.qualitygate.wait=true --file pom.xml

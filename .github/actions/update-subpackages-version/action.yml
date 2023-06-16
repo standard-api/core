@@ -5,6 +5,7 @@ runs:
   using: "composite"
   steps:
     - name: Install XMLStarlet and Update Versions
+      shell: bash
       run: |
         sudo apt-get install -y xmlstarlet
         NEW_VERSION=${{ steps.semver.outputs.version }}
