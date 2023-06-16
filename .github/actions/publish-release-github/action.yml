@@ -1,5 +1,14 @@
 name: Create Release on Github Repository
 description: 'Create Release on Github Repository'
+
+inputs:
+  github_token:
+    description: 'Github token'
+    required: true
+  version:
+    description: 'Version to release'
+    required: true
+
 runs:
   using: "composite"
   steps:
@@ -7,9 +16,9 @@ runs:
       id: create_release
       uses: actions/create-release@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ inputs.sonar_token }}
       with:
-        tag_name: ${{ steps.semver.outputs.version }}
-        release_name: Release ${{ steps.semver.outputs.version }}
+        tag_name: ${{ inputs.version }}
+        release_name: Release v${{ inputs.version }}
         draft: false
         prerelease: false

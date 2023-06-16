@@ -1,6 +1,17 @@
 name: Publish SNAPSHOT to Sonatype
 description: 'Publish SNAPSHOT to Sonatype'
 
+inputs:
+  ossrh_username:
+    description: 'OSSRH usernmae'
+    required: true
+  ossrh_token:
+    description: 'OSSRH token'
+    required: true
+  ossrh_gpg_secret_key_password:
+    description: 'OSSRH GPG secret key password'
+    required: true
+
 runs:
   using: "composite"
   steps:
@@ -8,6 +19,6 @@ runs:
       shell: bash
       run: mvn -B -U -Possrh deploy -Dstyle.color=always -DskipTests=true -s $GITHUB_WORKSPACE/settings.xml
       env:
-        MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-        MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-        MAVEN_GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }} 
+        MAVEN_USERNAME: ${{ inputs.ossrh_username }}
+        MAVEN_PASSWORD: ${{ inputs.ossrh_token }}
+        MAVEN_GPG_PASSPHRASE: ${{ inputs.ossrh_gpg_secret_key_password }} 
