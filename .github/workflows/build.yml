@@ -19,4 +19,5 @@ jobs:
 
       - name: Build and check
         uses: ./.github/actions/build-and-check
-        secrets: inherit
+        with:
+          sonar_token: ${{ secrets.SONAR_TOKEN }}
