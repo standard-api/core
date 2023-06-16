@@ -1,0 +1,11 @@
+name: Set git user and email
+description: 'Set git user and email'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set git user and email
+      shell: bash
+      run: |
+        git config user.name 'Automated Release'
+        git config user.email 'infol@stapi.ai'

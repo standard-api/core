@@ -1,0 +1,11 @@
+name: Commit updated POMs
+description: 'Commit updated POMs'
+runs:
+  using: "composite"
+  steps:
+    - name: Commit updated POMs
+      shell: bash
+      run: |
+        git add **/pom.xml
+        git commit -m "Update versions to ${{ steps.semver.outputs.version }}"
+        git push origin master

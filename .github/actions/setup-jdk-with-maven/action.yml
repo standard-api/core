@@ -1,0 +1,12 @@
+name: Setup Maven and Java
+description: 'Setup Maven and Java'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Maven and Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven

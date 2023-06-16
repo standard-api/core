@@ -9,39 +9,48 @@ on:
         default: 'patch'
 
 jobs:
-  deploy:
+  deploy-release:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
     steps:
-      - name: Checkout
-        uses: ./.github/workflows/checkout.yml
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Setup JDK with maven
-        uses: ./.github/workflows/setup-jdk-with-maven.yml
+        uses: ./.github/actions/setup-jdk-with-maven
 
       - name: Create new Semantic Version
-        uses: qcastel/create-new-semantic-version@v1
+        uses: zwaldowski/semver-release-action@v3
         id: semver
         with:
           bump: ${{ github.event.inputs.semverBump }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update Versions on all subpackages
-        uses: ./.github/workflows/update-subpackages-version.yml
+        uses: ./.github/actions/update-subpackages-version
 
       - name: Set git user and email
-        uses: ./.github/workflows/set-git-username.yml
+        uses: ./.github/actions/set-git-username
 
       - name: Commit updated POMs
-        uses: ./.github/workflows/commit-updated-version-pom-files.yml
+        uses: ./.github/actions/commit-updated-version-pom-files
 
       - name: Setup JDK for sonatype release
-        uses: ./.github/workflows/setup-jdk-for-sonatype-release.yml
+        uses: ./.github/actions/setup-jdk-for-sonatype-release-sonatype
+        with:
+          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
 
       - name: Publish snapshot to Sonatype
-        uses: ./.github/workflows/publish-release.yml
+        uses: ./.github/actions/publish-release-sonatype
+        with:
+          ossrh_username: ${{ secrets.OSSRH_USERNAME }}
+          ossrh_token: ${{ secrets.OSSRH_TOKEN }}
+          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
 
       - name: Release version on github
-        uses: ./.github/workflows/publish-release.github.yml
+        uses: ./.github/actions/publish-release-github
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          release_version: ${{ steps.semver.outputs.version }}

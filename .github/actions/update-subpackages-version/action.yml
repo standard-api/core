@@ -1,0 +1,13 @@
+name: Install XMLStarlet and Update Versions
+description: 'Install XMLStarlet and Update Versions'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install XMLStarlet and Update Versions
+      shell: bash
+      run: |
+        sudo apt-get install -y xmlstarlet
+        NEW_VERSION=${{ steps.semver.outputs.version }}
+        mvn versions:set -DnewVersion=$NEW_VERSION
+        find . -name pom.xml -exec xmlstarlet ed -L -u "/project/parent/version" -v "$NEW_VERSION" {} \;
