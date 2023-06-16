@@ -19,3 +19,5 @@ jobs:
 
       - name: Build and check
         uses: ./.github/actions/build-and-check
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
