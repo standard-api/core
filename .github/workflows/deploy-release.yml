@@ -22,7 +22,7 @@ jobs:
         uses: ./.github/actions/setup-jdk-with-maven
 
       - name: Create new Semantic Version
-        uses: zwaldowski/semver-release-action@v3@v1
+        uses: zwaldowski/semver-release-action@v3
         id: semver
         with:
           bump: ${{ github.event.inputs.semverBump }}
