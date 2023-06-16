@@ -1,7 +1,9 @@
 name: Deploy test
 
 on:
-  workflow_dispatch:
+  push:
+    branches-ignore:
+      - master
 
 jobs:
   deploy-release:
@@ -20,7 +22,7 @@ jobs:
         uses: zwaldowski/semver-release-action@v3
         id: semver
         with:
-          bump: ${{ github.event.inputs.semverBump }}
+          bump: 'patch'
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update Versions on all subpackages
