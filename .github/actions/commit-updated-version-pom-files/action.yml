@@ -1,11 +1,18 @@
 name: Commit updated POMs
 description: 'Commit updated POMs'
+
+inputs:
+  github_token:
+    description: 'Github token'
+    required: true
+
 runs:
   using: "composite"
   steps:
     - name: Commit updated POMs
       shell: bash
       run: |
+        git checkout -b new_branch
         git add **/pom.xml
         git commit -m "Update versions to ${{ steps.semver.outputs.version }}"
-        git push origin master
+        git push https://${{ inputs.github_token }}@github.com/standard-api/core.git HEAD:new_branch

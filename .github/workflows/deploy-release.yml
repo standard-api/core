@@ -36,6 +36,8 @@ jobs:
 
       - name: Commit updated POMs
         uses: ./.github/actions/commit-updated-version-pom-files
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup JDK for sonatype release
         uses: ./.github/actions/setup-jdk-for-sonatype-release-sonatype
