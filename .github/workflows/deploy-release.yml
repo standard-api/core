@@ -9,7 +9,7 @@ on:
         default: 'patch'
 
 jobs:
-  deploy:
+  deploy-release:
     runs-on: ubuntu-latest
     permissions:
       contents: read
