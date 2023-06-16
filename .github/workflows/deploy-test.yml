@@ -35,6 +35,7 @@ jobs:
         uses: ./.github/actions/commit-updated-version-pom-files
         with:
           github_token: ${{ secrets.GH_STAPI_BOT_TOKEN }}
+          message: Update version to ${{ steps.semver.outputs.version }}
 
 #      - name: Setup JDK for sonatype release
 #        uses: ./.github/actions/setup-jdk-for-sonatype-release-sonatype

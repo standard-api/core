@@ -5,6 +5,9 @@ inputs:
   github_token:
     description: 'Github token'
     required: true
+  message:
+    description: 'Message to commit'
+    required: true
 
 runs:
   using: "composite"
@@ -15,5 +18,5 @@ runs:
         git checkout -b new_branch
         echo ${{ inputs.github_token }}
         git add **/pom.xml
-        git commit -m "Update versions to ${{ steps.semver.outputs.version }}"
-        git push https://${{ inputs.github_token }}@github.com/standard-api/core.git HEAD:new_branch
+        git commit -m "${{ inputs.message }}"
+        git push https://x-access-token:${{ inputs.github_token }}@github.com/standard-api/core.git HEAD:new_branch
