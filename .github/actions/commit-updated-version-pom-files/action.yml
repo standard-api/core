@@ -19,4 +19,4 @@ runs:
         echo ${{ inputs.github_token }}
         git add **/pom.xml
         git commit -m "${{ inputs.message }}"
-        git push https://x-access-token:${{ inputs.github_token }}@github.com/standard-api/core.git HEAD:new_branch
+        git push https://${{ inputs.github_token }}@github.com/standard-api/core.git HEAD:new_branch
