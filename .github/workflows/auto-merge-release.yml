@@ -8,12 +8,13 @@ on:
 jobs:
   auto_merge:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login == 'your-bot-username' && startsWith(github.event.pull_request.head.ref, 'release/')
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Wait for status checks
-        uses: fountainhead/action-wait-for-check@v1.1.0a
+        uses: fountainhead/action-wait-for-check@v1.1.0
         id: wait-for-checks
         with:
           token: ${{ secrets.GH_STAPI_BOT_TOKEN }}
@@ -21,7 +22,6 @@ jobs:
           checkInterval: 10
 
       - name: Auto merge
-        if: steps.wait-for-checks.outputs.conclusion == 'success' && github.event.pull_request.user.login == 'your-bot-username' && startsWith(github.event.pull_request.head.ref, 'release/')
         run: |
           gh pr merge ${{ github.event.pull_request.number }} --merge
         env:
