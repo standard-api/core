@@ -19,36 +19,33 @@ runs:
         # Get current version
         CURRENT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
         
-        # If CURRENT_VERSION has only two parts, append '.0'
-        if [[ $CURRENT_VERSION =~ ^[0-9]+\.[0-9]+$ ]]; then
-          CURRENT_VERSION+=".0"
-        fi
-        
         # Break down the version number into its components
         IFS='.' read -ra VERSION_PARTS <<< "$CURRENT_VERSION"
-
-        # Bump version number depending on input
+        
+        MAJOR=${VERSION_PARTS[0]}
+        MINOR=${VERSION_PARTS[1]}
+        PATCH=${VERSION_PARTS[2]}
+        
         case "${{ inputs.bump }}" in
           "major")
-            ((VERSION_PARTS[0]++))
-            VERSION_PARTS[1]=0
-            VERSION_PARTS[2]=0
+            ((MAJOR++))
+            MINOR=0
+            PATCH=0
             ;;
           "minor")
-            ((VERSION_PARTS[1]++))
-            VERSION_PARTS[2]=0
+            ((MINOR++))
+            PATCH=0
             ;;
           "patch")
-            ((VERSION_PARTS[2]++))
+            ((PATCH++))
             ;;
           *)
             echo "Invalid bump type."
             exit 1
             ;;
         esac
-
-        # Construct the new version number
-        NEW_VERSION="${VERSION_PARTS[0]}.${VERSION_PARTS[1]}.${VERSION_PARTS[2]}"
+        
+        NEW_VERSION="$MAJOR.$MINOR.$PATCH"
 
         # Set the new version in the POM files
         mvn versions:set -DnewVersion=$NEW_VERSION
