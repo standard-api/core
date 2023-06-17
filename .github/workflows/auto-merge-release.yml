@@ -1,4 +1,4 @@
-name: Auto Merge PR
+name: Auto Merge Release PR
 
 on:
   pull_request:
