@@ -5,7 +5,8 @@ inputs:
     description: 'The part of the version number to bump (major, minor, patch)'
     required: true
 outputs:
-  new_version:
+  version:
+    value: ${{ steps.bump_version.outputs.version }}
     description: "The new version"
 runs:
   using: "composite"
@@ -49,4 +50,4 @@ runs:
         mvn versions:commit
 
         # Set output variable
-        echo "{new_version}={$NEW_VERSION}" >> $GITHUB_OUTPUT
+        echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
