@@ -1,4 +1,4 @@
-name: Release new version and Deploy to Maven Central
+name: Prepare release PR
 
 on:
   workflow_dispatch:

@@ -1,4 +1,4 @@
-name: Auto Merge Release PR
+name: Auto Merge Release PR and publish to Sonatype
 
 on:
   pull_request:
@@ -41,14 +41,14 @@ jobs:
         with:
           ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
 
-      - name: Publish snapshot to Sonatype
+      - name: Publish release to Sonatype
         uses: ./.github/actions/publish-release-sonatype
         with:
           ossrh_username: ${{ secrets.OSSRH_USERNAME }}
           ossrh_token: ${{ secrets.OSSRH_TOKEN }}
           ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
 
-      - name: Release version on github
+      - name: Publish release on github
         uses: ./.github/actions/publish-release-github
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
