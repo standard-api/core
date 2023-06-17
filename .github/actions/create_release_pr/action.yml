@@ -1,0 +1,27 @@
+name: Commit updated POMs
+description: 'Commit updated POMs'
+
+inputs:
+  github_token:
+    description: 'Github token'
+    required: true
+  message:
+    description: 'Message to commit'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Commit updated POMs
+      shell: bash
+      run: |
+        git checkout -b release/${{ inputs.message }}
+        git add **/pom.xml
+        git add pom.xml
+        git commit -m "${{ inputs.message }}"
+        git push https://${{ inputs.github_token }}@github.com/standard-api/core.git HEAD:release/${{ inputs.message }}
+    - name: Create Pull Request
+      shell: bash
+      run: |
+        gh auth login --with-token <<< ${{ inputs.github_token }}
+        gh pr create --repo standard-api/core --title "Release ${{ inputs.message }}" --body "Auto PR for release ${{ inputs.message }}" --head release/${{ inputs.message }} --base master --reviewer your-reviewer

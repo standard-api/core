@@ -32,25 +32,14 @@ jobs:
         uses: ./.github/actions/set-git-username
 
       - name: Commit updated POMs
-        uses: ./.github/actions/commit-updated-version-pom-files
+        uses: ./.github/actions/create-release-pr
         with:
           github_token: ${{ secrets.GH_STAPI_BOT_TOKEN }}
           message: Release new ${{ github.event.inputs.semverBump }} version ${{ steps.semver.outputs.version }}
 
-      - name: Setup JDK for sonatype release
-        uses: ./.github/actions/setup-jdk-for-sonatype-release
+      - name: Archive version
+        uses: actions/upload-artifact@v2
         with:
-          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
-
-      - name: Publish snapshot to Sonatype
-        uses: ./.github/actions/publish-release-sonatype
-        with:
-          ossrh_username: ${{ secrets.OSSRH_USERNAME }}
-          ossrh_token: ${{ secrets.OSSRH_TOKEN }}
-          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
-
-      - name: Release version on github
-        uses: ./.github/actions/publish-release-github
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          release_version: ${{ steps.semver.outputs.version }}
+          name: version
+          path: version.txt
+        run: echo "${{ steps.semver.outputs.version }}" > version.txt
