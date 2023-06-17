@@ -38,7 +38,7 @@ jobs:
           message: Release new ${{ github.event.inputs.semverBump }} version ${{ steps.semver.outputs.version }}
 
       - name: Setup JDK for sonatype release
-        uses: ./.github/actions/setup-jdk-for-sonatype-release-sonatype
+        uses: ./.github/actions/setup-jdk-for-sonatype-release
         with:
           ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
 
