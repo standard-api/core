@@ -8,18 +8,10 @@ on:
 jobs:
   auto_merge:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == 'your-bot-username' && startsWith(github.event.pull_request.head.ref, 'release/')
+    if: github.event.pull_request.user.login == 'stapi-bot' && startsWith(github.event.pull_request.head.ref, 'release/')
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Wait for status checks
-        uses: fountainhead/action-wait-for-check@v1.1.0
-        id: wait-for-checks
-        with:
-          token: ${{ secrets.GH_STAPI_BOT_TOKEN }}
-          ref: ${{ github.event.pull_request.head.sha }}
-          checkInterval: 10
 
       - name: Auto merge
         run: |
