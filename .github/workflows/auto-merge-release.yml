@@ -1,0 +1,55 @@
+name: Auto Merge Release PR and publish to Sonatype
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  auto_merge:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login == 'your-bot-username' && startsWith(github.event.pull_request.head.ref, 'release/')
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Wait for status checks
+        uses: fountainhead/action-wait-for-check@v1.1.0
+        id: wait-for-checks
+        with:
+          token: ${{ secrets.GH_STAPI_BOT_TOKEN }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          checkInterval: 10
+
+      - name: Auto merge
+        run: |
+          gh pr merge ${{ github.event.pull_request.number }} --merge
+        env:
+          GH_TOKEN: ${{ secrets.GH_STAPI_BOT_TOKEN }}
+
+      - name: Download version
+        uses: actions/download-artifact@v2
+        with:
+          name: version
+          path: version.txt
+
+      - name: Set version
+        run: echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
+
+      - name: Setup JDK for sonatype release
+        uses: ./.github/actions/setup-jdk-for-sonatype-release
+        with:
+          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+
+      - name: Publish release to Sonatype
+        uses: ./.github/actions/publish-release-sonatype
+        with:
+          ossrh_username: ${{ secrets.OSSRH_USERNAME }}
+          ossrh_token: ${{ secrets.OSSRH_TOKEN }}
+          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+
+      - name: Publish release on github
+        uses: ./.github/actions/publish-release-github
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          release_version: ${{ env.VERSION }}
