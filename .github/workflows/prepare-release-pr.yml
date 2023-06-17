@@ -1,4 +1,4 @@
-name: Prepare release PR
+name: Release new version
 
 on:
   workflow_dispatch:
@@ -31,15 +31,33 @@ jobs:
       - name: Set git user and email
         uses: ./.github/actions/set-git-username
 
-      - name: Commit updated POMs
+      - name: Create release PR
         uses: ./.github/actions/create-release-pr
         with:
           github_token: ${{ secrets.GH_STAPI_BOT_TOKEN }}
-          message: Release new ${{ github.event.inputs.semverBump }} version ${{ steps.semver.outputs.version }}
+          bump: ${{ github.event.inputs.semverBump }}
+          version: ${{ steps.semver.outputs.version }}
 
-      - name: Archive version
-        uses: actions/upload-artifact@v2
+      - name: Automatically merge PR
+        run: |
+          gh pr merge ${{ github.event.pull_request.number }} --merge --admin
+        env:
+          GH_TOKEN: ${{ secrets.GH_STAPI_BOT_TOKEN }}
+
+      - name: Setup JDK for sonatype release
+        uses: ./.github/actions/setup-jdk-for-sonatype-release
         with:
-          name: version
-          path: version.txt
-        run: echo "${{ steps.semver.outputs.version }}" > version.txt
+          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+
+      - name: Publish release to Sonatype
+        uses: ./.github/actions/publish-release-sonatype
+        with:
+          ossrh_username: ${{ secrets.OSSRH_USERNAME }}
+          ossrh_token: ${{ secrets.OSSRH_TOKEN }}
+          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+
+      - name: Publish release on github
+        uses: ./.github/actions/publish-release-github
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          release_version: ${{ steps.semver.outputs.version }}
