@@ -8,7 +8,7 @@ on:
 jobs:
   auto_merge:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == 'your-bot-username' && startsWith(github.event.pull_request.head.ref, 'release/')
+    if: github.event.pull_request.user.login == 'stapi-bot' && startsWith(github.event.pull_request.head.ref, 'release/')
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
