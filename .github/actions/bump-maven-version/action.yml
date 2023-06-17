@@ -16,7 +16,12 @@ runs:
       run: |
         # Get current version
         CURRENT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-
+        
+        # If CURRENT_VERSION has only two parts, append '.0'
+        if [[ $CURRENT_VERSION =~ ^[0-9]+\.[0-9]+$ ]]; then
+          CURRENT_VERSION+=".0"
+        fi
+        
         # Break down the version number into its components
         IFS='.' read -ra VERSION_PARTS <<< "$CURRENT_VERSION"
 

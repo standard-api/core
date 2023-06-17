@@ -24,7 +24,7 @@ jobs:
         uses: ./.github/actions/bump-maven-version
         id: semver
         with:
-          bump: 'patch'
+          bump: 'minor'
 
       - name: Set git user and email
         uses: ./.github/actions/set-git-username
