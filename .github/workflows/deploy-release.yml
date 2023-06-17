@@ -48,6 +48,9 @@ jobs:
         uses: ./.github/actions/setup-jdk-for-sonatype-release
         with:
           ossrh_gpg_secret_key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
+          ossrh_username: ${{ secrets.OSSRH_USERNAME }}
+          ossrh_token: ${{ secrets.OSSRH_TOKEN }}
+          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
 
       - name: Publish release to Sonatype
         uses: ./.github/actions/publish-release-sonatype
