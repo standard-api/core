@@ -1,0 +1,52 @@
+name: 'Bump version'
+description: 'Bumps the version number in pom.xml'
+inputs:
+  bump:
+    description: 'The part of the version number to bump (major, minor, patch)'
+    required: true
+outputs:
+  new_version:
+    description: "The new version"
+runs:
+  using: "composite"
+  steps:
+    - id: bump_version
+      shell: bash
+      run: |
+        # Get current version
+        CURRENT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+
+        # Break down the version number into its components
+        IFS='.' read -ra VERSION_PARTS <<< "$CURRENT_VERSION"
+
+        # Bump version number depending on input
+        case "${{ inputs.bump }}" in
+          "major")
+            ((VERSION_PARTS[0]++))
+            VERSION_PARTS[1]=0
+            VERSION_PARTS[2]=0
+            ;;
+          "minor")
+            ((VERSION_PARTS[1]++))
+            VERSION_PARTS[2]=0
+            ;;
+          "patch")
+            ((VERSION_PARTS[2]++))
+            ;;
+          *)
+            echo "Invalid bump type."
+            exit 1
+            ;;
+        esac
+
+        # Construct the new version number
+        NEW_VERSION="${VERSION_PARTS[0]}.${VERSION_PARTS[1]}.${VERSION_PARTS[2]}"
+
+        # Set the new version in the POM files
+        mvn versions:set -DnewVersion=$NEW_VERSION
+
+        # Commit changes
+        mvn versions:commit
+
+        # Set output variable
+        echo "{new_version}={$NEW_VERSION}" >> $GITHUB_OUTPUT

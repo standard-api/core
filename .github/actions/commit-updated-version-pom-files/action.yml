@@ -16,7 +16,7 @@ runs:
       shell: bash
       run: |
         git checkout -b new_branch
-        echo ${{ inputs.github_token }}
         git add **/pom.xml
+        git add pom.xml
         git commit -m "${{ inputs.message }}"
         git push https://${{ inputs.github_token }}@github.com/standard-api/core.git HEAD:new_branch
