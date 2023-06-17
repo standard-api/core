@@ -7,13 +7,14 @@ on:
         description: 'The type of Semantic Version bump (patch, minor or major)'
         required: true
         default: 'patch'
-
 jobs:
   deploy-release:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
       packages: write
+      pull-requests: write
+      contents: write
+      repository-projects: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -22,14 +23,10 @@ jobs:
         uses: ./.github/actions/setup-jdk-with-maven
 
       - name: Create new Semantic Version
-        uses: zwaldowski/semver-release-action@v3
+        uses: ./.github/actions/bump-maven-version
         id: semver
         with:
           bump: ${{ github.event.inputs.semverBump }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Update Versions on all subpackages
-        uses: ./.github/actions/update-subpackages-version
 
       - name: Set git user and email
         uses: ./.github/actions/set-git-username
@@ -38,6 +35,7 @@ jobs:
         uses: ./.github/actions/commit-updated-version-pom-files
         with:
           github_token: ${{ secrets.GH_STAPI_BOT_TOKEN }}
+          message: Release new ${{ github.event.inputs.semverBump }} version ${{ steps.semver.outputs.version }}
 
       - name: Setup JDK for sonatype release
         uses: ./.github/actions/setup-jdk-for-sonatype-release-sonatype
