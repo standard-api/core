@@ -1,0 +1,34 @@
+name: Commit updated POMs
+description: 'Commit updated POMs'
+
+inputs:
+  github_token:
+    description: 'Github token'
+    required: true
+  version:
+    description: 'Version to commit'
+    required: true
+  bump:
+    description: 'Bump type (patch, minor or major)'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Commit updated POMs
+      shell: bash
+      run: |
+        git checkout -b release/${{ inputs.version }}
+        git add **/pom.xml
+        git add pom.xml
+        git commit -m "Release new ${{ inputs.bump }} version ${{ inputs.version }}"
+        git push https://${{ inputs.github_token }}@github.com/standard-api/core.git HEAD:release/${{ inputs.version }}
+    - name: Create Pull Request
+      shell: bash
+      run: |
+        gh auth login --with-token <<< ${{ inputs.github_token }}
+        gh pr create --repo standard-api/core \
+          --title "Release ${{ inputs.version }} (${{ inputs.bump }})" \
+          --body "Auto PR for release ${{ inputs.version }}" \
+          --head release/${{ inputs.version }} \
+          --base master
