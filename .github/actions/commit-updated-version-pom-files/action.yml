@@ -15,8 +15,7 @@ runs:
     - name: Commit updated POMs
       shell: bash
       run: |
-        git checkout -b new_branch
         git add **/pom.xml
         git add pom.xml
         git commit -m "${{ inputs.message }}"
-        git push https://${{ inputs.github_token }}@github.com/standard-api/core.git HEAD:new_branch
+        git push https://${{ inputs.github_token }}@github.com/standard-api/core.git HEAD:master
