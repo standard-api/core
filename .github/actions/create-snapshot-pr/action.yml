@@ -1,5 +1,5 @@
-name: Commit And Create Release PR
-description: 'Commit And Create Release PR'
+name: Commit And Create Snapshot PR
+description: 'Commit And Create Snapshot PR'
 
 inputs:
   github_token:
@@ -11,6 +11,7 @@ inputs:
   bump:
     description: 'Bump type (patch, minor or major)'
     required: true
+
 outputs:
   pr_number:
     description: "The number of the created pull request"
@@ -22,19 +23,19 @@ runs:
     - name: Commit updated POMs
       shell: bash
       run: |
-        git checkout -b release/${{ inputs.version }}
+        git checkout -b snapshot/${{ inputs.version }}
         git add **/pom.xml
         git add pom.xml
-        git commit -m "Release new ${{ inputs.bump }} version ${{ inputs.version }}"
-        git push https://${{ inputs.github_token }}@github.com/standard-api/core.git HEAD:release/${{ inputs.version }}
+        git commit -m "Prepare new ${{ inputs.bump }} version ${{ inputs.version }} for next development cycle"
+        git push https://${{ inputs.github_token }}@github.com/standard-api/core.git HEAD:snapshot/${{ inputs.version }}
     - name: Create Pull Request
       shell: bash
       run: |
         gh auth login --with-token <<< ${{ inputs.github_token }}
         PR_URL=$(gh pr create --repo standard-api/core \
-          --title "Release ${{ inputs.version }} (${{ inputs.bump }})" \
-          --body "Auto PR for release ${{ inputs.version }}" \
-          --head release/${{ inputs.version }} \
+          --title "Prepare ${{ inputs.bump }} ${{ inputs.version }} for next development cycle" \
+          --body "Auto PR for snapshot ${{ inputs.version }}" \
+          --head snapshot/${{ inputs.version }} \
           --base master)
         
         PR_NUMBER=$(echo $PR_URL | grep -o '[0-9]\+$')

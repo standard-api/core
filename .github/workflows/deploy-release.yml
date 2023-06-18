@@ -24,7 +24,7 @@ jobs:
 
       - name: Create new Semantic Version
         uses: ./.github/actions/bump-maven-version
-        id: semver
+        id: bumpedVersion
         with:
           bump: ${{ github.event.inputs.semverBump }}
 
@@ -32,17 +32,27 @@ jobs:
         uses: ./.github/actions/set-git-username
 
       - name: Create release PR
+        id: createReleasePR
         uses: ./.github/actions/create-release-pr
         with:
           github_token: ${{ secrets.GH_STAPI_BOT_TOKEN }}
           bump: ${{ github.event.inputs.semverBump }}
-          version: ${{ steps.semver.outputs.version }}
+          version: ${{ steps.bumpedVersion.outputs.version }}
 
-      - name: Automatically merge PR
+      - name: Automatically merge release PR
         run: |
-          gh pr merge ${{ github.event.pull_request.number }} --merge --admin
+          gh pr merge ${{ steps.createReleasePR.outputs.pr_number }} --merge --admin
         env:
           GH_TOKEN: ${{ secrets.GH_STAPI_BOT_TOKEN }}
+
+      - name: Tag the release
+        run: |
+          git tag v${{ steps.bumpedVersion.outputs.version }}
+          git push origin v${{ steps.bumpedVersion.outputs.version }}
+
+      - name: Checkout to master
+        run: |
+          git checkout master
 
       - name: Setup JDK for sonatype release
         uses: ./.github/actions/setup-jdk-for-sonatype-release
@@ -63,4 +73,34 @@ jobs:
         uses: ./.github/actions/publish-release-github
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          release_version: ${{ steps.semver.outputs.version }}
+          release_version: ${{ steps.bumpedVersion.outputs.version }}
+
+      - name: Set next SNAPSHOT version
+        uses: ./.github/actions/bump-maven-version
+        id: bumpedVersionSnapshot
+        with:
+          bump: 'snapshot'
+
+      - name: Create snapshot PR
+        uses: ./.github/actions/create-snapshot-pr
+        id: createSnapshotPR
+        with:
+          github_token: ${{ secrets.GH_STAPI_BOT_TOKEN }}
+          version: ${{ steps.bumpedVersionSnapshot.outputs.version }}
+
+      - name: Automatically merge release PR
+        run: |
+          gh pr merge ${{ steps.createSnapshotPR.outputs.pr_number }} --merge --admin
+        env:
+          GH_TOKEN: ${{ secrets.GH_STAPI_BOT_TOKEN }}
+
+      - name: Checkout to master
+        run: |
+          git checkout master
+
+      - name: Publish snapshot to Sonatype
+        uses: ./.github/actions/publish-snapshot-sonatype
+        with:
+          ossrh_username: ${{ secrets.OSSRH_USERNAME }}
+          ossrh_token: ${{ secrets.OSSRH_TOKEN }}
+          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
