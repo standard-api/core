@@ -31,3 +31,8 @@ runs:
         gpg-private-key: ${{ inputs.ossrh_gpg_secret_key }}
         gpg-passphrase: ${{ inputs.ossrh_gpg_secret_key_password }}
         gpg-executable: gpg2
+    - name: echo
+      shell: bash
+      run: |
+        gpg --version
+        mvn -version

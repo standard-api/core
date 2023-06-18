@@ -8,6 +8,9 @@ inputs:
   ossrh_token:
     description: 'OSSRH token'
     required: true
+  ossrh_gpg_secret_key:
+    description: 'OSSRH GPG secret key'
+    required: true
   ossrh_gpg_secret_key_password:
     description: 'OSSRH GPG secret key password'
     required: true
@@ -15,9 +18,18 @@ inputs:
 runs:
   using: "composite"
   steps:
+#    - name: Import GPG key
+    #      uses: crazy-max/ghaction-import-gpg@v5
+    #      with:
+    #        gpg_private_key: ${{ inputs.ossrh_gpg_secret_key }}
+    #        passphrase: ${{ inputs.ossrh_gpg_secret_key_password }}
+    - name: Create Dummy settings-security.xml
+      shell: bash
+      run: echo "<settingsSecurity></settingsSecurity>" > ${{ github.workspace }}/settings-security.xml
+
     - name: Publish SNAPSHOT to Sonatype
       shell: bash
-      run: mvn -B -U -Possrh deploy -Dstyle.color=always -DskipTests=true -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn -X -B -U -Possrh,release deploy -Dmaven.security.interactive=false -Dstyle.color=always -DskipTests=true -s ${{ github.workspace }}/settings.xml -Dsettings.security=${{ github.workspace }}/settings-security.xml
       env:
         MAVEN_USERNAME: ${{ inputs.ossrh_username }}
         MAVEN_PASSWORD: ${{ inputs.ossrh_token }}
