@@ -1,5 +1,5 @@
 name: 'Bump version'
-description: 'Bumps the version number in pom.xml'
+description: 'Bumps the version number in root pom.xml along with all submodules'
 inputs:
   bump:
     description: 'The part of the version number to bump (major, minor, patch)'
@@ -20,32 +20,37 @@ runs:
         CURRENT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
         
         # Break down the version number into its components
-        IFS='.' read -ra VERSION_PARTS <<< "$CURRENT_VERSION"
+        IFS='.-' read -ra VERSION_PARTS <<< "$CURRENT_VERSION"
         
         MAJOR=${VERSION_PARTS[0]}
         MINOR=${VERSION_PARTS[1]}
         PATCH=${VERSION_PARTS[2]}
+        
+        SNAPSHOT=""
         
         case "${{ inputs.bump }}" in
           "major")
             MAJOR=$((MAJOR + 1))
             MINOR=0
             PATCH=0
-            ;;
+          ;;
           "minor")
             MINOR=$((MINOR + 1))
             PATCH=0
-            ;;
+          ;;
           "patch")
+          ;;
+          "snapshot")
             PATCH=$((PATCH + 1))
-            ;;
+            SNAPSHOT="-SNAPSHOT"
+          ;;
           *)
-            echo "Invalid bump type."
-            exit 1
-            ;;
+          echo "Invalid bump type."
+          exit 1
+          ;;
         esac
         
-        NEW_VERSION="$MAJOR.$MINOR.$PATCH"
+        NEW_VERSION="$MAJOR.$MINOR.$PATCH$SNAPSHOT"
 
         # Set the new version in the POM files
         mvn versions:set -DnewVersion=$NEW_VERSION
