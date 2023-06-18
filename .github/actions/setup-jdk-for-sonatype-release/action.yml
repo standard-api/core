@@ -1,5 +1,5 @@
-name: Set git user and email
-description: 'Set git user and email'
+name: Setup JDK for sonatype release
+description: 'Setup JDK for sonatype release'
 
 inputs:
   ossrh_username:
