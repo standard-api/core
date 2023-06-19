@@ -119,7 +119,7 @@ jobs:
       #          ossrh_token: ${{ secrets.OSSRH_TOKEN }}
       #          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
 
-      - uses: actions/checkout@v3
+
       - name: Set up JDK 17 for Sonatype
         uses: actions/setup-java@v3
         with:
@@ -128,10 +128,10 @@ jobs:
           cache: maven
           settings-path: ${{ github.workspace }} # location for the settings.xml file
           server-id: ossrh
-          server-username: ${{ secrets.OSSRH_USERNAME }}
-          server-password: ${{ secrets.OSSRH_TOKEN }}
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
           gpg-private-key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
-          gpg-passphrase: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE
           gpg-executable: gpg2
 
 
