@@ -24,4 +24,4 @@ runs:
         if curl -s "https://repo1.maven.org/maven2/${{ inputs.group_id }}/${{ inputs.artifact_id }}/maven-metadata.xml" | grep -q "<version>${{ inputs.version }}</version>"; then
           VERSION_EXISTS='true'
         fi
-        echo "version_exists=$VERSION_EXISTS" >> $GITHUB_ENV
+        echo "version_exists=$VERSION_EXISTS" >> $GITHUB_OUTPUT

@@ -9,6 +9,7 @@ outputs:
     value: ${{ steps.bump_version.outputs.version }}
     description: "The new version"
   was_bumped:
+    value: ${{ steps.bump_version.outputs.was_bumped }}
     description: 'Whether the version was bumped or not'
 runs:
   using: "composite"
@@ -24,7 +25,7 @@ runs:
         if [[ "$EXISTING_BUMP" == "Release new patch version ${CURRENT_VERSION}" ]]; then
           echo "The version ${CURRENT_VERSION} has already been bumped."
           echo "version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
-          echo "was_bumped=false" >> $GITHUB_ENV
+          echo "was_bumped=false" >> $GITHUB_OUTPUT
           exit 0
         fi
         
@@ -69,4 +70,4 @@ runs:
 
         # Set output variable
         echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
-        echo "was_bumped=true" >> $GITHUB_ENV
+        echo "was_bumped=true" >> $GITHUB_OUTPUT
