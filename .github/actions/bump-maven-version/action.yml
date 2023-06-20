@@ -8,16 +8,25 @@ outputs:
   version:
     value: ${{ steps.bump_version.outputs.version }}
     description: "The new version"
+  was_bumped:
+    description: 'Whether the version was bumped or not'
 runs:
   using: "composite"
   steps:
     - id: bump_version
       shell: bash
       run: |
-        set -x
-        
         # Get current version
         CURRENT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+        # Get the latest version bump commit message
+        EXISTING_BUMP=$(git log --grep="Release new patch version ${CURRENT_VERSION}" --pretty=format:"%s")
+        
+        if [[ "$EXISTING_BUMP" == "Release new patch version ${CURRENT_VERSION}" ]]; then
+          echo "The version ${CURRENT_VERSION} has already been bumped."
+          echo "version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+          echo "was_bumped=false" >> $GITHUB_ENV
+          exit 0
+        fi
         
         # Break down the version number into its components
         IFS='.-' read -ra VERSION_PARTS <<< "$CURRENT_VERSION"
@@ -60,3 +69,4 @@ runs:
 
         # Set output variable
         echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
+        echo "was_bumped=true" >> $GITHUB_ENV

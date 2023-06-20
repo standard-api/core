@@ -1,0 +1,26 @@
+# ./.github/actions/check-release-exists/action.yaml
+name: 'Check if release exists'
+description: 'Check if a GitHub release with the specified tag already exists'
+inputs:
+  github_token:
+    description: 'The GitHub token used to authenticate with the API'
+    required: true
+  tag_name:
+    description: 'The tag name of the release to check'
+    required: true
+outputs:
+  exists:
+    description: 'Whether the release exists'
+    value: ${{ steps.check_release.outputs.exists }}
+runs:
+  using: "composite"
+  steps:
+    - id: check_release
+      shell: bash
+      run: |
+        RELEASE_URL=$(curl --silent --show-error -H "Authorization: Bearer ${{ inputs.github_token }}" "https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ inputs.tag_name }}")
+        if [[ "$RELEASE_URL" != "Not Found" ]]; then
+          echo "exists=true" >> $GITHUB_ENV
+        else
+          echo "exists=false" >> $GITHUB_ENV
+        fi

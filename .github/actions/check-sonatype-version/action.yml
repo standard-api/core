@@ -1,0 +1,27 @@
+name: 'Check if version exists on Sonatype'
+description: 'Check if a given version of artifact exists on Sonatype repository'
+inputs:
+  group_id:
+    description: 'The group ID of the artifact'
+    required: true
+  artifact_id:
+    description: 'The artifact ID'
+    required: true
+  version:
+    description: 'The version to check'
+    required: true
+outputs:
+  version_exists:
+    description: 'Whether the version exists or not'
+    value: ${{ steps.check_version.outputs.version_exists }}
+runs:
+  using: "composite"
+  steps:
+    - id: check_version
+      shell: bash
+      run: |
+        VERSION_EXISTS='false'
+        if curl -s "https://repo1.maven.org/maven2/${{ inputs.group_id }}/${{ inputs.artifact_id }}/maven-metadata.xml" | grep -q "<version>${{ inputs.version }}</version>"; then
+          VERSION_EXISTS='true'
+        fi
+        echo "version_exists=$VERSION_EXISTS" >> $GITHUB_ENV
