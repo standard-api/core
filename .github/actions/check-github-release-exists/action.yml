@@ -18,9 +18,9 @@ runs:
     - id: check_release
       shell: bash
       run: |
-        RELEASE_URL=$(curl --silent --show-error -H "Authorization: Bearer ${{ inputs.github_token }}" "https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ inputs.tag_name }}")
-        if [[ "$RELEASE_URL" != "Not Found" ]]; then
-          echo "exists=true" >> $GITHUB_ENV
-        else
+        RESPONSE=$(curl -s -H "Authorization: token ${{ inputs.github_token }}" https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ inputs.tag_name }})
+        if echo "$RESPONSE" | grep -q "Not Found"; then
           echo "exists=false" >> $GITHUB_ENV
+        else
+          echo "exists=true" >> $GITHUB_ENV
         fi
