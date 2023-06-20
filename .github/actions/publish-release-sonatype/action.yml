@@ -8,9 +8,6 @@ inputs:
   ossrh_token:
     description: 'OSSRH token'
     required: true
-  ossrh_gpg_secret_key:
-    description: 'OSSRH GPG secret key'
-    required: true
   ossrh_gpg_secret_key_password:
     description: 'OSSRH GPG secret key password'
     required: true
@@ -18,11 +15,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Import GPG key
-      uses: crazy-max/ghaction-import-gpg@v5
-      with:
-        gpg_private_key: ${{ inputs.ossrh_gpg_secret_key }}
-        passphrase: ${{ inputs.ossrh_gpg_secret_key_password }}
     - name: Publish release to Sonatype
       shell: bash
       run: mvn -B -U -D skipTests=true -Possrh,release clean deploy -Dstyle.color=always -e -s ${{ github.workspace }}/settings.xml

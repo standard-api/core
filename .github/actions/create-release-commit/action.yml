@@ -29,6 +29,7 @@ runs:
         git push https://${{ inputs.github_token }}@github.com/standard-api/core.git HEAD:release/${{ inputs.version }}
     - name: Create Pull Request
       shell: bash
+      id: createReleasePR
       run: |
         gh auth login --with-token <<< ${{ inputs.github_token }}
         PR_URL=$(gh pr create --repo standard-api/core \
@@ -39,3 +40,10 @@ runs:
         
         PR_NUMBER=$(echo $PR_URL | grep -o '[0-9]\+$')
         echo "::set-output name=pr_number::$PR_NUMBER"
+
+    - name: Automatically merge release PR
+      shell: bash
+      run: |
+        gh pr merge ${{ steps.createReleasePR.outputs.pr_number }} --merge --admin
+      env:
+        GH_TOKEN: ${{ inputs.github_token }}

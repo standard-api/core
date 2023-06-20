@@ -18,127 +18,82 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
-      #      - name: Setup JDK with maven
-      #        uses: ./.github/actions/setup-jdk-with-maven
-      #
-      #      - name: Create new Semantic Version
-      #        uses: ./.github/actions/bump-maven-version
-      #        id: bumpedVersion
-      #        with:
-      #          bump: ${{ github.event.inputs.semverBump }}
-      #
-      #      - name: Set git user and email
-      #        uses: ./.github/actions/set-git-username
-      #
-      #      - name: Create release PR
-      #        id: createReleasePR
-      #        uses: ./.github/actions/create-release-pr
-      #        with:
-      #          github_token: ${{ secrets.GH_STAPI_BOT_TOKEN }}
-      #          bump: ${{ github.event.inputs.semverBump }}
-      #          version: ${{ steps.bumpedVersion.outputs.version }}
-      #
-      #      - name: Automatically merge release PR
-      #        run: |
-      #          gh pr merge ${{ steps.createReleasePR.outputs.pr_number }} --merge --admin
-      #        env:
-      #          GH_TOKEN: ${{ secrets.GH_STAPI_BOT_TOKEN }}
-      #
-      #      - name: Tag the release
-      #        run: |
-      #          git tag v${{ steps.bumpedVersion.outputs.version }}
-      #          git push origin v${{ steps.bumpedVersion.outputs.version }}
-      #
-      #      - name: Checkout to master
-      #        run: |
-      #          git checkout master
-      #
-      #      - name: Setup JDK for sonatype release
-      #        uses: ./.github/actions/setup-jdk-for-sonatype-release
-      #        with:
-      #          ossrh_gpg_secret_key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
-      #          ossrh_username: ${{ secrets.OSSRH_USERNAME }}
-      #          ossrh_token: ${{ secrets.OSSRH_TOKEN }}
-      #          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
-      #
-      #      - name: Publish release to Sonatype
-      #        uses: ./.github/actions/publish-release-sonatype
-      #        with:
-      #          ossrh_username: ${{ secrets.OSSRH_USERNAME }}
-      #          ossrh_token: ${{ secrets.OSSRH_TOKEN }}
-      #          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
-      #          ossrh_gpg_secret_key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
-      #
-      #      - name: Publish release on github
-      #        uses: ./.github/actions/publish-release-github
-      #        with:
-      #          github_token: ${{ secrets.GITHUB_TOKEN }}
-      #          release_version: ${{ steps.bumpedVersion.outputs.version }}
-      #
-      #      - name: Set next SNAPSHOT version
-      #        uses: ./.github/actions/bump-maven-version
-      #        id: bumpedVersionSnapshot
-      #        with:
-      #          bump: 'snapshot'
-      #
-      #      - name: Create snapshot PR
-      #        uses: ./.github/actions/create-snapshot-pr
-      #        id: createSnapshotPR
-      #        with:
-      #          github_token: ${{ secrets.GH_STAPI_BOT_TOKEN }}
-      #          version: ${{ steps.bumpedVersionSnapshot.outputs.version }}
-      #
-      #      - name: Automatically merge release PR
-      #        run: |
-      #          gh pr merge ${{ steps.createSnapshotPR.outputs.pr_number }} --merge --admin
-      #        env:
-      #          GH_TOKEN: ${{ secrets.GH_STAPI_BOT_TOKEN }}
-      #
-      #      - name: Checkout to master
-      #        run: |
-      #          git checkout master
-      
-      
-      
-      
-      
-      
-      #      - name: Setup JDK for sonatype release
-      #        uses: ./.github/actions/setup-jdk-for-sonatype-release
-      #        with:
-      #          ossrh_gpg_secret_key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
-      #          ossrh_username: ${{ secrets.OSSRH_USERNAME }}
-      #          ossrh_token: ${{ secrets.OSSRH_TOKEN }}
-      #          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
-      #      - name: Publish snapshot to Sonatype
-      #        uses: ./.github/actions/publish-snapshot-sonatype
-      #        with:
-      #          ossrh_gpg_secret_key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
-      #          ossrh_username: ${{ secrets.OSSRH_USERNAME }}
-      #          ossrh_token: ${{ secrets.OSSRH_TOKEN }}
-      #          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
 
+      - name: Setup JDK with maven
+        uses: ./.github/actions/setup-jdk-with-maven
 
-      - name: Set up JDK 17 for Sonatype
-        uses: actions/setup-java@v3
+      - name: Create new Semantic Version
+        uses: ./.github/actions/bump-maven-version
+        id: bumpedVersion
         with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: maven
-          settings-path: ${{ github.workspace }} # location for the settings.xml file
-          server-id: ossrh
-          server-username: MAVEN_USERNAME
-          server-password: MAVEN_PASSWORD
-          gpg-private-key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
-          gpg-passphrase: MAVEN_GPG_PASSPHRASE
-          gpg-executable: gpg2
+          bump: ${{ github.event.inputs.semverBump }}
 
+      - name: Set git user and email
+        uses: ./.github/actions/set-git-username
+
+      - name: Create release commit using PR and automatic merge
+        uses: ./.github/actions/create-release-commit
+        with:
+          github_token: ${{ secrets.GH_STAPI_BOT_TOKEN }}
+          bump: ${{ github.event.inputs.semverBump }}
+          version: ${{ steps.bumpedVersion.outputs.version }}
+
+      - name: Checkout updated master
+        uses: actions/checkout@v3
+        with:
+          ref: master
+
+      - name: Tag the release
+        run: |
+          git tag v${{ steps.bumpedVersion.outputs.version }}
+          git push origin v${{ steps.bumpedVersion.outputs.version }}
+
+      - name: Setup JDK for sonatype release
+        uses: ./.github/actions/setup-jdk-for-sonatype-release
+        with:
+          ossrh_gpg_secret_key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
 
       - name: Publish release to Sonatype
-        run: mvn -B -U -Possrh,release clean deploy -Dstyle.color=always -e -s $GITHUB_WORKSPACE/settings.xml
-        env:
-          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-          MAVEN_GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+        uses: ./.github/actions/publish-release-sonatype
+        with:
+          ossrh_username: ${{ secrets.OSSRH_USERNAME }}
+          ossrh_token: ${{ secrets.OSSRH_TOKEN }}
+          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+
+      - name: Publish release on github
+        uses: ./.github/actions/publish-release-github
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          release_version: ${{ steps.bumpedVersion.outputs.version }}
+
+      - name: Set next SNAPSHOT version
+        uses: ./.github/actions/bump-maven-version
+        id: bumpedVersionSnapshot
+        with:
+          bump: 'snapshot'
+
+      - name: Create snapshot commit using PR and automatic merge
+        uses: ./.github/actions/create-snapshot-pr
+        id: createSnapshotPR
+        with:
+          github_token: ${{ secrets.GH_STAPI_BOT_TOKEN }}
+          version: ${{ steps.bumpedVersionSnapshot.outputs.version }}
+
+      - name: Checkout updated master
+        uses: actions/checkout@v3
+        with:
+          ref: master
+
+      - name: Setup JDK for sonatype release
+        uses: ./.github/actions/setup-jdk-for-sonatype-release
+        with:
+          ossrh_gpg_secret_key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
+
+      - name: Publish snapshot to Sonatype
+        uses: ./.github/actions/publish-snapshot-sonatype
+        with:
+          ossrh_username: ${{ secrets.OSSRH_USERNAME }}
+          ossrh_token: ${{ secrets.OSSRH_TOKEN }}
+          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+
 

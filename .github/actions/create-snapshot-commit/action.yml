@@ -40,3 +40,10 @@ runs:
         
         PR_NUMBER=$(echo $PR_URL | grep -o '[0-9]\+$')
         echo "::set-output name=pr_number::$PR_NUMBER"
+
+    - name: Automatically merge release PR
+      shell: bash
+      run: |
+        gh pr merge ${{ steps.createReleasePR.outputs.pr_number }} --merge --admin
+      env:
+        GH_TOKEN: ${{ inputs.github_token }}
