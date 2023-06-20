@@ -5,7 +5,7 @@ inputs:
   github_token:
     description: 'Github token'
     required: true
-  version:
+  release_version:
     description: 'Version to release'
     required: true
 
@@ -16,9 +16,9 @@ runs:
       id: create_release
       uses: actions/create-release@v1
       env:
-        GITHUB_TOKEN: ${{ inputs.sonar_token }}
+        GITHUB_TOKEN: ${{ inputs.github_token }}
       with:
-        tag_name: ${{ inputs.version }}
-        release_name: Release v${{ inputs.version }}
+        tag_name: ${{ inputs.release_version }}
+        release_name: Release v${{ inputs.release_version }}
         draft: false
         prerelease: false
