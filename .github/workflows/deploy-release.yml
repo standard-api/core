@@ -53,8 +53,8 @@ jobs:
         with:
           ossrh_gpg_secret_key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
 
-      - name: Publish release to Sonatype
-        uses: ./.github/actions/publish-release-sonatype
+      - name: Deploy release to Sonatype
+        uses: ./.github/actions/deploy-sonatype
         with:
           ossrh_username: ${{ secrets.OSSRH_USERNAME }}
           ossrh_token: ${{ secrets.OSSRH_TOKEN }}
@@ -89,8 +89,8 @@ jobs:
         with:
           ossrh_gpg_secret_key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
 
-      - name: Publish snapshot to Sonatype
-        uses: ./.github/actions/publish-snapshot-sonatype
+      - name: Deploy snapshot to Sonatype
+        uses: ./.github/actions/deploy-sonatype
         with:
           ossrh_username: ${{ secrets.OSSRH_USERNAME }}
           ossrh_token: ${{ secrets.OSSRH_TOKEN }}

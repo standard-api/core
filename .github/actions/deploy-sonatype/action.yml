@@ -17,7 +17,7 @@ runs:
   steps:
     - name: Publish release to Sonatype
       shell: bash
-      run: mvn -B -U -D skipTests=true -Possrh,release clean deploy -Dstyle.color=always -e -s ${{ github.workspace }}/settings.xml
+      run: mvn -B -U -Possrh,release clean deploy -DskipTests=true -Dstyle.color=always -e -s ${{ github.workspace }}/settings.xml
       env:
         MAVEN_USERNAME: ${{ inputs.ossrh_username }}
         MAVEN_PASSWORD: ${{ inputs.ossrh_token }}
