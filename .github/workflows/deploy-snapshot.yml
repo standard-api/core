@@ -14,18 +14,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup JDK with maven
-        uses: ./.github/actions/setup-jdk-with-maven
-
-      - name: Build and check
-        uses: ./.github/actions/build-and-check
-
       - name: Setup JDK for sonatype release
         uses: ./.github/actions/setup-jdk-for-sonatype-release
         with:
-          ossrh_gpg_secret_key_password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+          ossrh_gpg_secret_key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
+
+      - name: Check if current version is a snapshot
+        id: checkSnapshot
+        uses: ./.github/actions/check-if-snapshot
 
       - name: Publish snapshot to Sonatype
+        if: ${{ steps.checkSnapshot.outputs.is_snapshot == 'true' }}
         uses: ./.github/actions/deploy-sonatype
         with:
           ossrh_username: ${{ secrets.OSSRH_USERNAME }}

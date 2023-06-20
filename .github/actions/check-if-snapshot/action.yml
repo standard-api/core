@@ -1,0 +1,20 @@
+name: 'Check if current version is a snapshot'
+description: 'Check if the current version in the Maven POM file is a snapshot version'
+outputs:
+  is_snapshot:
+    description: 'Whether the current version is a snapshot version or not'
+    value: ${{ steps.check_snapshot.outputs.is_snapshot }}
+runs:
+  using: "composite"
+  steps:
+    - id: check_snapshot
+      shell: bash
+      run: |
+        # Get current version
+        CURRENT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+        # Check if current version is a snapshot
+        IS_SNAPSHOT='false'
+        if [[ "$CURRENT_VERSION" == *"-SNAPSHOT"* ]]; then
+          IS_SNAPSHOT='true'
+        fi
+        echo "is_snapshot=$IS_SNAPSHOT" >> $GITHUB_OUTPUT
