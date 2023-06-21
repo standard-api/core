@@ -11,6 +11,9 @@ inputs:
   bump:
     description: 'Bump type (patch, minor or major)'
     required: true
+  repository:
+    description: 'Repository name at github.com/standard-api'
+    required: true
 outputs:
   pr_number:
     description: "The number of the created pull request"
@@ -26,13 +29,13 @@ runs:
         git add **/pom.xml
         git add pom.xml
         git commit -m "Release new ${{ inputs.bump }} version ${{ inputs.version }}"
-        git push https://${{ inputs.github_token }}@github.com/standard-api/core.git HEAD:release/${{ inputs.version }}
+        git push https://${{ inputs.github_token }}@github.com/standard-api/${{ inputs.repository }}.git HEAD:release/${{ inputs.version }}
     - name: Create Pull Request
       shell: bash
       id: createReleasePR
       run: |
         gh auth login --with-token <<< ${{ inputs.github_token }}
-        PR_URL=$(gh pr create --repo standard-api/core \
+        PR_URL=$(gh pr create --repo standard-api/${{ inputs.repository }} \
           --title "Release ${{ inputs.version }} (${{ inputs.bump }})" \
           --body "Auto PR for release ${{ inputs.version }}" \
           --head release/${{ inputs.version }} \

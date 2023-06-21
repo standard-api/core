@@ -11,13 +11,18 @@ inputs:
   ossrh_gpg_secret_key_password:
     description: 'OSSRH GPG secret key password'
     required: true
+  directory:
+    description: 'The directory of the package to be deployed'
+    required: true
 
 runs:
   using: "composite"
   steps:
     - name: Publish release to Sonatype
       shell: bash
-      run: mvn -B -U -Possrh,release clean deploy -DskipTests=true -Dstyle.color=always -e -s ${{ github.workspace }}/settings.xml
+      run: |
+        cd ${{ inputs.directory }}
+        mvn -B -U -Possrh,release clean deploy -DskipTests=true -Dstyle.color=always -e -s ${{ github.workspace }}/settings.xml
       env:
         MAVEN_USERNAME: ${{ inputs.ossrh_username }}
         MAVEN_PASSWORD: ${{ inputs.ossrh_token }}

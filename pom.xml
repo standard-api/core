@@ -10,8 +10,8 @@
         <module>common</module>
         <module>graph</module>
         <module>schema</module>
-        <module>base-test</module>
         <module>graph-operations</module>
+        <module>base-test</module>
         <module>graph-system</module>
     </modules>
     <packaging>pom</packaging>
@@ -35,7 +35,7 @@
     </issueManagement>
 
     <properties>
-        <stapi.version>0.0.11</stapi.version>
+        <stapi.version>${project.version}</stapi.version>
         <java.version>17</java.version>
         <maven-dependency-plugin.version>3.5.0</maven-dependency-plugin.version>
         <surefire-junit-platform.version>2.22.2</surefire-junit-platform.version>

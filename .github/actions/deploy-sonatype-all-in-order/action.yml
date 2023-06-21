@@ -1,0 +1,23 @@
+name: Publish release to Sonatype
+description: 'Publish release to Sonatype'
+
+inputs:
+  ossrh_username:
+    description: 'OSSRH usernmae'
+    required: true
+  ossrh_token:
+    description: 'OSSRH token'
+    required: true
+  ossrh_gpg_secret_key_password:
+    description: 'OSSRH GPG secret key password'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - uses: ./.github/actions/deploy-sonatype
+      with:
+        directory: '.'
+        ossrh_username: ${{ inputs.ossrh_username }}
+        ossrh_token: ${{ inputs.ossrh_token }}
+        ossrh_gpg_secret_key_password: ${{ inputs.ossrh_gpg_secret_key_password }}

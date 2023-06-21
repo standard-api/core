@@ -38,6 +38,7 @@ jobs:
           github_token: ${{ secrets.GH_STAPI_BOT_TOKEN }}
           bump: ${{ github.event.inputs.semverBump }}
           version: ${{ steps.bumpedVersion.outputs.version }}
+          repository: core
 
       - name: Checkout updated master
         uses: actions/checkout@v3
@@ -59,7 +60,7 @@ jobs:
 
       - name: Deploy release to Sonatype
         if: ${{ steps.check_version.outputs.version_exists == 'false' }}
-        uses: ./.github/actions/deploy-sonatype
+        uses: ./.github/actions/deploy-sonatype-all-in-order
         with:
           ossrh_username: ${{ secrets.OSSRH_USERNAME }}
           ossrh_token: ${{ secrets.OSSRH_TOKEN }}
@@ -71,6 +72,7 @@ jobs:
             git tag ${{ steps.bumpedVersion.outputs.version }}
             git push origin ${{ steps.bumpedVersion.outputs.version }}
           fi
+
       - name: Check if release exists
         id: check_release
         uses: ./.github/actions/check-github-release-exists
@@ -96,9 +98,9 @@ jobs:
         with:
           github_token: ${{ secrets.GH_STAPI_BOT_TOKEN }}
           version: ${{ steps.bumpedVersionSnapshot.outputs.version }}
+          repository: 'core'
 
       - name: Checkout updated master
         uses: actions/checkout@v3
         with:
           ref: master
-

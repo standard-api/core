@@ -20,8 +20,18 @@ runs:
     - id: check_version
       shell: bash
       run: |
+        GROUP_ID_RAW=${{ inputs.group_id }}
+        GROUP_ID=${GROUP_ID_RAW//./\/} # replace dots in group id with slashes
+        ARTIFACT_ID=${{ inputs.artifact_id }}
+        VERSION=${{ inputs.version }}
+        echo "Going to find out if version ${{ inputs.version }} of package is already deployed on sonatype at: "
+        echo "https://repo1.maven.org/maven2/${GROUP_ID}/${ARTIFACT_ID}/maven-metadata.xml"
+        
         VERSION_EXISTS='false'
-        if curl -s "https://repo1.maven.org/maven2/${{ inputs.group_id }}/${{ inputs.artifact_id }}/maven-metadata.xml" | grep -q "<version>${{ inputs.version }}</version>"; then
+        if curl -s "https://repo1.maven.org/maven2/${GROUP_ID}/${ARTIFACT_ID}/maven-metadata.xml" | grep -q "<version>${VERSION}</version>"; then
           VERSION_EXISTS='true'
+          echo "And it is already deployed there."
+        else
+          echo "And it is not yet deployed there."
         fi
         echo "version_exists=$VERSION_EXISTS" >> $GITHUB_OUTPUT

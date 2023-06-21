@@ -11,6 +11,9 @@ inputs:
   bump:
     description: 'Bump type (patch, minor or major)'
     required: true
+  repository:
+    description: 'Repository name at github.com/standard-api'
+    required: true
 
 outputs:
   pr_number:
@@ -27,12 +30,12 @@ runs:
         git add **/pom.xml
         git add pom.xml
         git commit -m "Prepare new ${{ inputs.bump }} version ${{ inputs.version }} for next development cycle"
-        git push https://${{ inputs.github_token }}@github.com/standard-api/core.git HEAD:snapshot/${{ inputs.version }}
+        git push https://${{ inputs.github_token }}@github.com/standard-api/${{ inputs.repository }}.git HEAD:snapshot/${{ inputs.version }}
     - name: Create Pull Request
       shell: bash
       run: |
         gh auth login --with-token <<< ${{ inputs.github_token }}
-        PR_URL=$(gh pr create --repo standard-api/core \
+        PR_URL=$(gh pr create --repo standard-api/${{ inputs.repository }} \
           --title "Prepare ${{ inputs.bump }} ${{ inputs.version }} for next development cycle" \
           --body "Auto PR for snapshot ${{ inputs.version }}" \
           --head snapshot/${{ inputs.version }} \
