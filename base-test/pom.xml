@@ -6,7 +6,7 @@
     <parent>
         <groupId>ai.stapi</groupId>
         <artifactId>core</artifactId>
-        <version>0.0.24</version>
+        <version>0.0.25-SNAPSHOT</version>
     </parent>
 
     <artifactId>base-test</artifactId>
