@@ -87,6 +87,7 @@ jobs:
           tag_name: ${{ steps.bumpedVersion.outputs.version }}
 
       - name: Publish release on github
+        id: publish_release_github
         if: steps.check_release.outputs.exists == 'false'
         uses: ./.github/actions/publish-release-github
         with:
