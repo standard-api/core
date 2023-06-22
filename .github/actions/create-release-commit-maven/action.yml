@@ -1,0 +1,24 @@
+name: Create release commit for maven
+description: 'Create release commit for maven'
+
+inputs:
+  version:
+    description: 'Version to commit'
+    required: true
+  bump:
+    description: 'Bump type (patch, minor or major)'
+    required: true
+outputs:
+  pr_number:
+    description: "The number of the created pull request"
+    value: ${{ steps.create.outputs.pr_number }}
+
+runs:
+  using: "composite"
+  steps:
+    - name: Commit updated POMs
+      shell: bash
+      run: |
+        git add **/pom.xml
+        git add pom.xml
+        git commit -m "Release new ${{ inputs.bump }} version ${{ inputs.version }} of maven packages" || true

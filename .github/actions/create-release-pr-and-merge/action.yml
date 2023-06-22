@@ -1,5 +1,5 @@
-name: Commit And Create Release PR
-description: 'Commit And Create Release PR'
+name: Create Release PR and merge
+description: 'Create Release PR and merge'
 
 inputs:
   github_token:
@@ -26,9 +26,6 @@ runs:
       shell: bash
       run: |
         git checkout -b release/${{ inputs.version }}
-        git add **/pom.xml
-        git add pom.xml
-        git commit -m "Release new ${{ inputs.bump }} version ${{ inputs.version }}"
         git push https://${{ inputs.github_token }}@github.com/standard-api/${{ inputs.repository }}.git HEAD:release/${{ inputs.version }}
     - name: Create Pull Request
       shell: bash
@@ -47,6 +44,6 @@ runs:
     - name: Automatically merge release PR
       shell: bash
       run: |
-        gh pr merge ${{ steps.createReleasePR.outputs.pr_number }} --merge --admin
+        gh pr merge ${{ steps.createReleasePR.outputs.pr_number }} --squash --admin
       env:
         GH_TOKEN: ${{ inputs.github_token }}
