@@ -93,6 +93,15 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release_version: ${{ steps.bumpedVersion.outputs.version }}
 
+      - name: Publish release notifications
+        if: steps.check_release.outputs.exists == 'false'
+        uses: ./.github/actions/publish-release-notifications
+        with:
+          discord_webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          release_version: ${{ steps.bumpedVersion.outputs.version }}
+          repository: "standard-api/core"
+          changelog: ${{ steps.publish_release_github.outputs.changelog }}
+
       - name: Set next SNAPSHOT version
         uses: ./.github/actions/bump-maven-version
         id: bumpedVersionSnapshot

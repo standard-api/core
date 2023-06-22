@@ -1,0 +1,32 @@
+name: Post release to public
+description: 'Create Release on Github Repository'
+
+inputs:
+  changelog:
+    description: 'Github token'
+    required: true
+  release_version:
+    description: 'Version to release'
+    required: true
+  repository:
+    description: 'Version to release'
+    required: true
+  discord_webhook_url:
+    description: 'Version to release'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Post changelog to Discord
+      shell: bash
+      env:
+        CHANGELOG: ${{ inputs.changelog }}
+        RELEASE_VERSION: ${{ inputs.release_version }}
+        REPOSITORY: ${{ inputs.repository }}
+        DISCORD_WEBHOOK: ${{ inputs.discord_webhook_url }}
+      run: |
+        CHANGELOG=${CHANGELOG//'\`'/'`'}  # Correct the backticks escaping
+        TITLE="We have released new version $RELEASE_VERSION in [$REPOSITORY](https://github.com/$REPOSITORY)"
+        JSON_MESSAGE=$(jq -n --arg title "$TITLE" --arg description "$CHANGELOG" '{"embeds": [{"title": $title, "description": $description}]}')
+        curl -X POST -H "Content-Type: application/json" -d "$JSON_MESSAGE" $DISCORD_WEBHOOK
