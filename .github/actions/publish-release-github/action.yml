@@ -1,4 +1,4 @@
-name: Create Release on Github Repository
+name: Post release to public
 description: 'Create Release on Github Repository'
 
 inputs:
@@ -8,15 +8,76 @@ inputs:
   release_version:
     description: 'Version to release'
     required: true
+outputs:
+  changelog:
+    value: ${{ steps.modified.outputs.log }}
+    description: "The changelog"
 
 runs:
   using: "composite"
   steps:
+    - name: Checkout updated master
+      uses: actions/checkout@v3
+      with:
+        ref: master
+        fetch-depth: 100
+    - name: Get reference to release commit
+      id: releaseCommit
+      shell: bash
+      run: |
+        REF=$(git log --grep='Release [0-9.]* \(.*\) \(.*\)' -n 1 --format=format:"%H")
+        echo "Last release commit is: $REF"
+        echo "ref=$(printf "%s" "$REF")" >> $GITHUB_OUTPUT
+
     - name: Generate changelog
       id: changelog
       uses: metcalfc/changelog-generator@v0.4.4
       with:
         myToken: ${{ inputs.github_token }}
+        head-ref: ${{ steps.releaseCommit.outputs.ref }}
+
+    - name: Modify the changelog
+      id: modified
+      shell: bash
+      run: |
+        set -o noglob
+
+        printf "Going to modify changelog\n"
+        echo "${{ steps.changelog.outputs.changelog }}" | base64 | tr -d '\n'
+        
+        cat << "EOF"
+          ${{ steps.changelog.outputs.changelog }}
+        EOF
+        
+        # Define patterns to filter out
+        PATTERNS=(
+        'Prepare new snapshot version .*SNAPSHOT for next development cycle'
+        'Merge pull request .* from standard-api/snapshot/.*-SNAPSHOT'
+        'Release [0-9.]* \(.*\) \(.*\)'
+        )
+        printf "Patterns are defined\n"
+        
+        # Join patterns with '|'
+        JOINT_PATTERN=$(IFS='|'; echo "${PATTERNS[*]}")
+        printf "Patterns are joined\n"
+        
+        # Store the original changelog
+        ORIGINAL_CHANGELOG=$(cat << "EOF"
+        ${{ steps.changelog.outputs.changelog }}
+        EOF
+        )
+        printf "Original changelog: %s\n" "$ORIGINAL_CHANGELOG"
+        
+        # Filter the changelog until the given commit hash
+        echo "Commit ref: ${{ steps.releaseCommit.outputs.ref }}"
+        FILTERED_UNTIL_COMMIT=$(echo "$ORIGINAL_CHANGELOG" | awk "/\/commit\/${{ steps.releaseCommit.outputs.ref }}/{exit} 1")
+        printf "Filtered until last release: %s\n" "$FILTERED_CHANGELOG"
+        
+        # Filter out the undesired lines
+        FILTERED_CHANGELOG=$(echo "$FILTERED_UNTIL_COMMIT" | grep -vE "$JOINT_PATTERN")
+        printf "Filtered changelog: %s\n" "$FILTERED_CHANGELOG"
+        
+        echo "log<<EOF"$'\n'"$FILTERED_CHANGELOG"$'\n'EOF >> $GITHUB_OUTPUT
 
     - name: Create Release on Github Repository
       id: create_release
@@ -27,19 +88,20 @@ runs:
         tag_name: ${{ inputs.release_version }}
         release_name: Release v${{ inputs.release_version }}
         body: |
-          Grab the new version from Maven central https://repo1.maven.org/maven2/ai/stapi/graph-system/${{ github.event.inputs.releaseversion }}/ by using it in your deps:
+          Grab the new version from Maven central https://repo1.maven.org/maven2/ai/stapi/graph-system/${{ inputs.release_version }}/ by using it in your deps:
 
           ```
           <dependencies>
               <dependency>
                   <groupId>ai.stapi</groupId>
                   <artifactId>graph-system</artifactId>
-                  <version>${{ github.event.inputs.releaseversion }}</version>
+                  <version>${{ inputs.release_version }}</version>
               </dependency>
           </dependencies>
           ```
 
           ### Things that changed in this release
-          ${{ steps.changelog.outputs.changelog }}
+          ${{ steps.modified.outputs.log }}
         draft: false
         prerelease: false
+

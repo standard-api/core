@@ -22,7 +22,7 @@ jobs:
       - name: Setup JDK with maven
         uses: ./.github/actions/setup-jdk-with-maven
 
-      - name: Create new Semantic Version
+      - name: Bump new Semantic Version in maven
         uses: ./.github/actions/bump-maven-version
         id: bumpedVersion
         with:
@@ -31,9 +31,15 @@ jobs:
       - name: Set git user and email
         uses: ./.github/actions/set-git-username
 
+      - name: Create release commit for maven
+        uses: ./.github/actions/create-release-commit-maven
+        with:
+          bump: ${{ github.event.inputs.semverBump }}
+          version: ${{ steps.bumpedVersion.outputs.version }}
+
       - name: Create release commit using PR and automatic merge
         if: ${{ steps.bumpedVersion.outputs.was_bumped == 'true' }}
-        uses: ./.github/actions/create-release-commit
+        uses: ./.github/actions/create-release-pr-and-merge
         with:
           github_token: ${{ secrets.GH_STAPI_BOT_TOKEN }}
           bump: ${{ github.event.inputs.semverBump }}
