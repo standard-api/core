@@ -48,7 +48,7 @@ runs:
       shell: bash
       run: |
         gh pr merge ${{ steps.createReleasePR.outputs.pr_number }} \
-        --message "Prepare snapshot version ${{ inputs.version }} for next development cycle" \
+        --subject "Prepare snapshot version ${{ inputs.version }} for next development cycle" \
         --squash \
         --admin \
         --delete-branch

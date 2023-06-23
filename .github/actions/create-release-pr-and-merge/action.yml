@@ -45,7 +45,7 @@ runs:
       shell: bash
       run: |
         gh pr merge ${{ steps.createReleasePR.outputs.pr_number }} \
-        --message "Release ${{ inputs.version }} (${{ inputs.bump }}) (#${{ steps.createReleasePR.outputs.pr_number }})" \
+        --subject "Release ${{ inputs.version }} (${{ inputs.bump }}) (#${{ steps.createReleasePR.outputs.pr_number }})" \
         --squash \
         --admin \
         --delete-branch
