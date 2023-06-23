@@ -44,6 +44,9 @@ runs:
     - name: Automatically merge release PR
       shell: bash
       run: |
-        gh pr merge ${{ steps.createReleasePR.outputs.pr_number }} --squash --admin
+        gh pr merge ${{ steps.createReleasePR.outputs.pr_number }} \
+        --message "Release ${{ inputs.version }} (${{ inputs.bump }}) (#${{ steps.createReleasePR.outputs.pr_number }})" \
+        --squash \
+        --admin
       env:
         GH_TOKEN: ${{ inputs.github_token }}
