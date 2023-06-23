@@ -50,6 +50,7 @@ runs:
         gh pr merge ${{ steps.createReleasePR.outputs.pr_number }} \
         --message "Prepare snapshot version ${{ inputs.version }} for next development cycle" \
         --squash \
-        --admin
+        --admin \
+        --delete-branch
       env:
         GH_TOKEN: ${{ inputs.github_token }}

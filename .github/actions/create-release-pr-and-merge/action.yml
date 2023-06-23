@@ -47,6 +47,7 @@ runs:
         gh pr merge ${{ steps.createReleasePR.outputs.pr_number }} \
         --message "Release ${{ inputs.version }} (${{ inputs.bump }}) (#${{ steps.createReleasePR.outputs.pr_number }})" \
         --squash \
-        --admin
+        --admin \
+        --delete-branch
       env:
         GH_TOKEN: ${{ inputs.github_token }}
