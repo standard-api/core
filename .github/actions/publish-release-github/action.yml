@@ -51,7 +51,7 @@ runs:
         
         # Define patterns to filter out
         PATTERNS=(
-        'Prepare new snapshot version .*SNAPSHOT for next development cycle'
+        'Prepare snapshot version .*SNAPSHOT for next development cycle'
         'Merge pull request .* from standard-api/snapshot/.*-SNAPSHOT'
         'Release [0-9.]* \(.*\) \(.*\)'
         )
