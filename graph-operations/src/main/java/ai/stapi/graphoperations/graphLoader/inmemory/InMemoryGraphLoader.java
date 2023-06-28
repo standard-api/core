@@ -32,6 +32,8 @@ import ai.stapi.graphoperations.graphLoader.GraphLoaderReturnType;
 import ai.stapi.graphoperations.graphLoader.exceptions.GraphLoaderException;
 import ai.stapi.graphoperations.graphLoader.search.SearchQueryParameters;
 import ai.stapi.identity.UniqueIdentifier;
+import ai.stapi.schema.structureSchema.exception.FieldDoesNotExist;
+import ai.stapi.schema.structureSchema.exception.FieldsNotFoundException;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
@@ -467,12 +469,16 @@ public class InMemoryGraphLoader implements GraphLoader {
           if (graphElement.containsAttribute(attributeName)) {
             list.add(graphElement.getAttribute(attributeName));
           } else {
-            var fieldDefinition = this.structureSchemaFinder.getFieldDefinitionOrFallback(
-                graphElementType,
-                attributeName
-            );
-            if (fieldDefinition.isList()) {
-              list.add(new ListAttribute(attributeName));
+            try {
+              var fieldDefinition = this.structureSchemaFinder.getFieldDefinitionFor(
+                  graphElementType,
+                  attributeName
+              );
+              if (fieldDefinition.isList()) {
+                list.add(new ListAttribute(attributeName));
+              }
+            } catch (FieldsNotFoundException ignored) {
+              
             }
           }
         });
