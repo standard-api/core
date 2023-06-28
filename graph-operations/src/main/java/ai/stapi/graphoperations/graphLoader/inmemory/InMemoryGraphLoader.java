@@ -4,6 +4,7 @@ import ai.stapi.graph.AttributeContainer;
 import ai.stapi.graph.Graph;
 import ai.stapi.graph.attribute.Attribute;
 import ai.stapi.graph.attribute.LeafAttribute;
+import ai.stapi.graph.attribute.ListAttribute;
 import ai.stapi.graph.attribute.attributeValue.IdAttributeValue;
 import ai.stapi.graph.graphelements.Edge;
 import ai.stapi.graph.graphelements.Node;
@@ -272,7 +273,7 @@ public class InMemoryGraphLoader implements GraphLoader {
   ) {
     var object = new HashMap<String, Object>();
     var graph = new Graph();
-    var attributes = this.resolveAttributes(node, graphDescription);
+    var attributes = this.resolveAttributes(node.getType(), node, graphDescription);
     if (returnTypes.contains(GraphLoaderReturnType.GRAPH)) {
       var inputNode = new Node(node.getId(), node.getType());
       for (Attribute<?> attribute : attributes) {
@@ -380,7 +381,7 @@ public class InMemoryGraphLoader implements GraphLoader {
         .toList();
 
     var graph = new Graph();
-    var attributes = this.resolveAttributes(edge, graphDescription);
+    var attributes = this.resolveAttributes(edge.getType(), edge, graphDescription);
     if (returnTypes.contains(GraphLoaderReturnType.GRAPH)) {
       var nodeFrom = new Node(edge.getNodeFromId(), edge.getNodeFromType());
       var nodeTo = new Node(edge.getNodeToId(), edge.getNodeToType());
@@ -393,15 +394,15 @@ public class InMemoryGraphLoader implements GraphLoader {
     Map<String, Object> object = new HashMap<>();
     Map<String, Object> edgesObject = new HashMap<>();
     if (this.isMappingToConnectionObject(graphDescription, returnTypes)) {
-        object.put("edges", edgesObject);
-        attributes.forEach(
-            attribute -> edgesObject.put(attribute.getName(), attribute.getValue())
-        );
-        if (
-            graphDescription.getChildGraphDescriptions().stream().anyMatch(UuidIdentityDescription.class::isInstance)
-        ) {
-          edgesObject.put("id", edge.getId().getId());
-        }
+      object.put("edges", edgesObject);
+      attributes.forEach(
+          attribute -> edgesObject.put(attribute.getName(), attribute.getValue())
+      );
+      if (
+          graphDescription.getChildGraphDescriptions().stream().anyMatch(UuidIdentityDescription.class::isInstance)
+      ) {
+        edgesObject.put("id", edge.getId().getId());
+      }
     }
     if (childNodeDescriptions.isEmpty()) {
       return new GraphLoaderStepOutput(object, graph);
@@ -431,7 +432,7 @@ public class InMemoryGraphLoader implements GraphLoader {
       if (returnTypes.contains(GraphLoaderReturnType.OBJECT)) {
         if (
             graphDescription instanceof EdgeQueryDescription edgeQueryDescription
-            && !edgeQueryDescription.isCompact()
+                && !edgeQueryDescription.isCompact()
         ) {
           edgesObject.put("node", graphLoaderStepOutput.getObject());
         } else {
@@ -445,6 +446,7 @@ public class InMemoryGraphLoader implements GraphLoader {
   }
 
   private List<Attribute<?>> resolveAttributes(
+      String graphElementType,
       AttributeContainer graphElement,
       GraphDescription graphDescription
   ) {
@@ -460,8 +462,20 @@ public class InMemoryGraphLoader implements GraphLoader {
     childGraphDescriptions.stream()
         .filter(AbstractAttributeDescription.class::isInstance)
         .map(description -> (AttributeDescriptionParameters) description.getParameters())
-        .filter(parameters -> graphElement.containsAttribute(parameters.getAttributeName()))
-        .forEach(parameters -> list.add(graphElement.getAttribute(parameters.getAttributeName())));
+        .forEach(parameters -> {
+          var attributeName = parameters.getAttributeName();
+          if (graphElement.containsAttribute(attributeName)) {
+            list.add(graphElement.getAttribute(attributeName));
+          } else {
+            var fieldDefinition = this.structureSchemaFinder.getFieldDefinitionOrFallback(
+                graphElementType,
+                attributeName
+            );
+            if (fieldDefinition.isList()) {
+              list.add(new ListAttribute(attributeName));
+            }
+          }
+        });
 
     return list;
   }
@@ -559,7 +573,7 @@ public class InMemoryGraphLoader implements GraphLoader {
   }
 
   private boolean isMappingToConnectionObject(
-      AbstractEdgeDescription graphDescription, 
+      AbstractEdgeDescription graphDescription,
       Set<GraphLoaderReturnType> returnTypes
   ) {
     if (!returnTypes.contains(GraphLoaderReturnType.OBJECT)) {
@@ -570,8 +584,8 @@ public class InMemoryGraphLoader implements GraphLoader {
     }
     return false;
   }
-  private static class GraphLoaderStepOutput {
 
+  private static class GraphLoaderStepOutput {
 
 
     private final Map<String, Object> object;
