@@ -1,0 +1,18 @@
+{
+  "type" : "object",
+  "properties" : {
+    "exampleArrayIntegerField" : {
+      "type" : "array",
+      "items" : {
+        "type" : "number"
+      }
+    },
+    "exampleArrayStringField" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    }
+  },
+  "required" : [ "exampleArrayStringField", "exampleArrayIntegerField" ]
+}

@@ -1,5 +1,6 @@
 package ai.stapi.formapi.formmapper;
 
+import ai.stapi.formapi.formmapper.exceptions.CannotMapJsonSchema;
 import ai.stapi.formapi.formmapper.exceptions.CannotPrintJSONSchema;
 import ai.stapi.graph.attribute.attributeValue.Base64BinaryAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.BooleanAttributeValue;
@@ -30,9 +31,11 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.Map;
 import java.util.Set;
+import org.everit.json.schema.ArraySchema;
 import org.everit.json.schema.BooleanSchema;
 import org.everit.json.schema.NumberSchema;
 import org.everit.json.schema.ObjectSchema;
+import org.everit.json.schema.Schema;
 import org.everit.json.schema.StringSchema;
 import org.springframework.stereotype.Service;
 
@@ -97,19 +100,44 @@ public class FormMapper {
     if (field.getTypes().isEmpty()) {
       return;
     }
+    if (field.getFloatMax() > 1) {
+      this.mapArrayField(field, builder);
+      return;
+    }
     if (field.getTypes().size() > 1) {
       throw new RuntimeException("Union types not implemented yet.");
     }
     var type = field.getTypes().get(0).getType();
+    var schema = this.getPrimitiveSchema(type);
+    builder.addPropertySchema(parameterName, schema);
+  }
+
+  private Schema getPrimitiveSchema(String type) {
     if (STRING_LIKE_PRIMITIVES.contains(type)) {
-      builder.addPropertySchema(parameterName, new StringSchema());
+      return new StringSchema();
     }
     if (NUMBER_LIKE_PRIMITIVES.contains(type)) {
-      builder.addPropertySchema(parameterName, new NumberSchema());
+      return new NumberSchema();
     }
     if (type.equals(BooleanAttributeValue.SERIALIZATION_TYPE)) {
-      builder.addPropertySchema(parameterName, new BooleanSchema.Builder().build());
+      return new BooleanSchema.Builder().build();
     }
+    throw CannotMapJsonSchema.becauseUnknownPrimitiveTypeEncountered(type);
+  }
+
+  private void mapArrayField(
+      FieldDefinition field, 
+      ObjectSchema.Builder builder
+  ) {
+    if (field.getTypes().size() > 1) {
+      throw new RuntimeException("Union types not implemented yet.");
+    }
+    var type = field.getTypes().get(0).getType();
+    var itemSchema = this.getPrimitiveSchema(type);
+    builder.addPropertySchema(
+        field.getName(), 
+        new ArraySchema.Builder().allItemSchema(itemSchema).build()
+    );
   }
 
   private Map<String, Object> printSchema(ObjectSchema schema) {

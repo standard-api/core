@@ -1,0 +1,42 @@
+{
+  "code": "TestArrayCommand",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "DomainResource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "exampleArrayStringField",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "string",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleArrayStringField"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleArrayIntegerField",
+      "use": "in",
+      "min": 1,
+      "max": "5",
+      "type": "integer",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleArrayIntegerField"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Example Command with Array Fields",
+  "description": "Example Command with Array Fields",
+  "id": "TestArrayCommand",
+  "type": false,
+  "status": "draft"
+}
