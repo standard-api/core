@@ -826,7 +826,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
           "type" : "string"
         }
       },
-      "required" : [ "path", "direction" ]
+      "required" : [ "direction", "path" ]
     },
     "Duration" : {
       "description" : "Base StructureDefinition for Duration Type: A length of time.",
@@ -1126,7 +1126,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
           "type" : "string"
         }
       },
-      "required" : [ "use", "type" ]
+      "required" : [ "type", "use" ]
     },
     "Period" : {
       "description" : "Base StructureDefinition for Period Type: A time period defined by a start and end date and optionally time.",

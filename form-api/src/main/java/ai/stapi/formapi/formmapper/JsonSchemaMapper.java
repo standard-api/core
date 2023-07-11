@@ -31,6 +31,7 @@ import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -100,6 +101,8 @@ public class JsonSchemaMapper {
     );
     complexStructureType.getAllFields()
         .values()
+        .stream()
+        .sorted(Comparator.comparing(FieldDefinition::getName))
         .forEach(field -> this.mapField(field, builder, formMapperContext));
 
     return builder.build();
