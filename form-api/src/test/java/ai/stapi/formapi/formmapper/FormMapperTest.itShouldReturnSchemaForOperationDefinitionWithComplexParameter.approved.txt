@@ -1,0 +1,20 @@
+{
+  "type" : "object",
+  "definitions" : {
+    "TestObjectWithoutParent" : {
+      "type" : "object",
+      "properties" : {
+        "exampleStringField" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "exampleStringField" ]
+    }
+  },
+  "properties" : {
+    "exampleObjectField" : {
+      "$ref" : "#/definitions/TestObjectWithoutParent"
+    }
+  },
+  "required" : [ "exampleObjectField" ]
+}

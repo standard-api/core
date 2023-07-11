@@ -24,17 +24,22 @@ import ai.stapi.graph.attribute.attributeValue.UuidAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.XhtmlAttributeValue;
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionDTO;
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionStructureTypeMapper;
+import ai.stapi.schema.structureSchema.ComplexStructureType;
 import ai.stapi.schema.structureSchema.FieldDefinition;
+import ai.stapi.schema.structureSchema.FieldType;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import org.everit.json.schema.ArraySchema;
 import org.everit.json.schema.BooleanSchema;
 import org.everit.json.schema.NumberSchema;
 import org.everit.json.schema.ObjectSchema;
+import org.everit.json.schema.ReferenceSchema;
 import org.everit.json.schema.Schema;
 import org.everit.json.schema.StringSchema;
 import org.springframework.stereotype.Service;
@@ -79,19 +84,28 @@ public class FormMapper {
   }
 
   public Map<String, Object> map(OperationDefinitionDTO operationDefinitionDTO) {
-    var builder = new ObjectSchema.Builder();
     var fakedStructureType = this.operationDefinitionStructureTypeMapper.map(operationDefinitionDTO);
-    fakedStructureType.getAllFields()
-        .values()
-        .forEach(field -> this.mapField(field, builder));
+    var formMapperContext = new FormMapperContext();
+    var schema = this.getObjectSchema(fakedStructureType, formMapperContext);
+    return this.printSchema(schema, formMapperContext);
+  }
 
-    var schema = builder.build();
-    return this.printSchema(schema);
+  private ObjectSchema getObjectSchema(
+      ComplexStructureType complexStructureType,
+      FormMapperContext formMapperContext
+  ) {
+    var builder = new ObjectSchema.Builder();
+    complexStructureType.getAllFields()
+        .values()
+        .forEach(field -> this.mapField(field, builder, formMapperContext));
+
+    return builder.build();
   }
 
   private void mapField(
       FieldDefinition field,
-      ObjectSchema.Builder builder
+      ObjectSchema.Builder builder,
+      FormMapperContext formMapperContext
   ) {
     var parameterName = field.getName();
     if (field.getMin() > 0) {
@@ -101,15 +115,30 @@ public class FormMapper {
       return;
     }
     if (field.getFloatMax() > 1) {
-      this.mapArrayField(field, builder);
+      this.mapArrayField(field, builder, formMapperContext);
       return;
     }
     if (field.getTypes().size() > 1) {
       throw new RuntimeException("Union types not implemented yet.");
     }
-    var type = field.getTypes().get(0).getType();
-    var schema = this.getPrimitiveSchema(type);
+    var type = field.getTypes().get(0);
+    var schema = this.getSchema(type, formMapperContext);
     builder.addPropertySchema(parameterName, schema);
+  }
+
+  private Schema getSchema(FieldType type, FormMapperContext formMapperContext) {
+    var typeName = type.getType();
+    if (type.isPrimitiveType()) {
+      return this.getPrimitiveSchema(typeName);
+    } else {
+      if (!formMapperContext.hasType(typeName)) {
+        formMapperContext.addType(typeName);
+        var structureType = (ComplexStructureType) this.structureSchemaFinder.getStructureType(typeName);
+        var objectSchema = this.getObjectSchema(structureType, formMapperContext);
+        formMapperContext.putSchema(typeName, objectSchema);
+      }
+      return new ReferenceSchema.Builder().refValue(String.format("#/definitions/%s", typeName)).build();
+    }
   }
 
   private Schema getPrimitiveSchema(String type) {
@@ -127,25 +156,68 @@ public class FormMapper {
 
   private void mapArrayField(
       FieldDefinition field, 
-      ObjectSchema.Builder builder
+      ObjectSchema.Builder builder,
+      FormMapperContext formMapperContext
   ) {
     if (field.getTypes().size() > 1) {
       throw new RuntimeException("Union types not implemented yet.");
     }
-    var type = field.getTypes().get(0).getType();
-    var itemSchema = this.getPrimitiveSchema(type);
+    var type = field.getTypes().get(0);
+    var itemSchema = this.getSchema(type, formMapperContext);
     builder.addPropertySchema(
         field.getName(), 
         new ArraySchema.Builder().allItemSchema(itemSchema).build()
     );
   }
 
-  private Map<String, Object> printSchema(ObjectSchema schema) {
+  private Map<String, Object> printSchema(ObjectSchema schema, FormMapperContext formMapperContext) {
     try {
-      return new ObjectMapper().readValue(schema.toString(), new TypeReference<>() {
-      });
+      var map = new ObjectMapper().readValue(schema.toString(), new TypeReference<HashMap<String, Object>>() {});
+      var definitionsMap = new HashMap<String, Object>();
+      formMapperContext.getComplexTypeSchemas().forEach((key, value) -> definitionsMap.put(key, this.printDefinition(value)));
+      map.put("definitions", definitionsMap);
+      return map;
     } catch (JsonProcessingException e) {
       throw new CannotPrintJSONSchema(e);
+    }
+  }
+
+  private Map<String, Object> printDefinition(ObjectSchema schema) {
+    try {
+      return new ObjectMapper().readValue(schema.toString(), new TypeReference<HashMap<String, Object>>() {});
+    } catch (JsonProcessingException e) {
+      throw new CannotPrintJSONSchema(e);
+    }
+  }
+  
+  private static class FormMapperContext {
+
+    private final Set<String> encounteredComplexTypes;
+    private final Map<String, ObjectSchema> complexTypeSchemas;
+
+    public FormMapperContext() {
+      this.encounteredComplexTypes = new HashSet<>();
+      this.complexTypeSchemas = new HashMap<>();
+    }
+    
+    public void putSchema(String typeName, ObjectSchema schema) {
+      this.complexTypeSchemas.put(typeName, schema);
+    }
+    
+    public void addType(String typeName) {
+      this.encounteredComplexTypes.add(typeName);
+    }
+    
+    public boolean hasType(String typeName) {
+      return this.encounteredComplexTypes.contains(typeName);
+    }
+
+    public Set<String> getEncounteredComplexTypes() {
+      return encounteredComplexTypes;
+    }
+
+    public Map<String, ObjectSchema> getComplexTypeSchemas() {
+      return complexTypeSchemas;
     }
   }
 }

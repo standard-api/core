@@ -1,0 +1,29 @@
+{
+  "code": "TestObjectCommand",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "DomainResource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "exampleObjectField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "TestObjectWithoutParent",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleObjectField"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Example Command with Example Object Field",
+  "description": "Example Command with Example Object Field",
+  "id": "TestObjectCommand",
+  "type": false,
+  "status": "draft"
+}
