@@ -1,0 +1,1016 @@
+{
+  "type" : "object",
+  "definitions" : {
+    "BoxedId" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Identifier" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "period" : {
+          "$ref" : "#/definitions/Period"
+        },
+        "system" : {
+          "type" : "string"
+        },
+        "type" : {
+          "$ref" : "#/definitions/CodeableConcept"
+        },
+        "use" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BoxedBase64Binary" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BoxedBoolean" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "BoxedCanonical" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BoxedCode" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BoxedDate" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BoxedDateTime" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BoxedDecimal" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "number"
+        }
+      }
+    },
+    "BoxedInstant" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BoxedInteger" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "number"
+        }
+      }
+    },
+    "BoxedMarkdown" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BoxedOid" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BoxedPositiveInt" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "number"
+        }
+      }
+    },
+    "BoxedString" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BoxedTime" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BoxedUnsignedInt" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "number"
+        }
+      }
+    },
+    "BoxedUri" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BoxedUrl" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BoxedUuid" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "CodeableConcept" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "coding" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Coding"
+          }
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "text" : {
+          "type" : "string"
+        }
+      }
+    },
+    "CodeableReference" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "concept" : {
+          "$ref" : "#/definitions/CodeableConcept"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "reference" : {
+          "$ref" : "#/definitions/Reference"
+        }
+      }
+    },
+    "Coding" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "display" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "system" : {
+          "type" : "string"
+        },
+        "userSelected" : {
+          "type" : "boolean"
+        },
+        "version" : {
+          "type" : "string"
+        }
+      }
+    },
+    "DataRequirement" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "codeFilter" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/DataRequirementCodeFilter"
+          }
+        },
+        "dateFilter" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/DataRequirementDateFilter"
+          }
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "limit" : {
+          "type" : "number"
+        },
+        "mustSupport" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "profile" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "sort" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/DataRequirementSort"
+          }
+        },
+        "subject" : {
+          "$ref" : "#/definitions/CodeableConcept"
+        },
+        "type" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "type" ]
+    },
+    "DataRequirementCodeFilter" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "code" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Coding"
+          }
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "path" : {
+          "type" : "string"
+        },
+        "searchParam" : {
+          "type" : "string"
+        },
+        "valueSet" : {
+          "type" : "string"
+        }
+      }
+    },
+    "DataRequirementDateFilter" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "path" : {
+          "type" : "string"
+        },
+        "searchParam" : {
+          "type" : "string"
+        },
+        "value" : {
+          "oneOf" : [ {
+            "$ref" : "#/definitions/BoxedDateTime"
+          }, {
+            "$ref" : "#/definitions/Duration"
+          }, {
+            "$ref" : "#/definitions/Period"
+          } ]
+        }
+      }
+    },
+    "DataRequirementSort" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "direction" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "path" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "path", "direction" ]
+    },
+    "Duration" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "comparator" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "system" : {
+          "type" : "string"
+        },
+        "unit" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "number"
+        }
+      }
+    },
+    "Expression" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "expression" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "language" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "reference" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "language" ]
+    },
+    "Extension" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "url" : {
+          "type" : "string"
+        },
+        "value" : {
+          "oneOf" : [ {
+            "$ref" : "#/definitions/BoxedBase64Binary"
+          }, {
+            "$ref" : "#/definitions/BoxedBoolean"
+          }, {
+            "$ref" : "#/definitions/BoxedCanonical"
+          }, {
+            "$ref" : "#/definitions/BoxedCode"
+          }, {
+            "$ref" : "#/definitions/BoxedDate"
+          }, {
+            "$ref" : "#/definitions/BoxedDateTime"
+          }, {
+            "$ref" : "#/definitions/BoxedDecimal"
+          }, {
+            "$ref" : "#/definitions/BoxedId"
+          }, {
+            "$ref" : "#/definitions/BoxedInstant"
+          }, {
+            "$ref" : "#/definitions/BoxedInteger"
+          }, {
+            "$ref" : "#/definitions/BoxedMarkdown"
+          }, {
+            "$ref" : "#/definitions/BoxedOid"
+          }, {
+            "$ref" : "#/definitions/BoxedPositiveInt"
+          }, {
+            "$ref" : "#/definitions/BoxedString"
+          }, {
+            "$ref" : "#/definitions/BoxedTime"
+          }, {
+            "$ref" : "#/definitions/BoxedUnsignedInt"
+          }, {
+            "$ref" : "#/definitions/BoxedUri"
+          }, {
+            "$ref" : "#/definitions/BoxedUrl"
+          }, {
+            "$ref" : "#/definitions/BoxedUuid"
+          }, {
+            "$ref" : "#/definitions/CodeableConcept"
+          }, {
+            "$ref" : "#/definitions/CodeableReference"
+          }, {
+            "$ref" : "#/definitions/Coding"
+          }, {
+            "$ref" : "#/definitions/DataRequirement"
+          }, {
+            "$ref" : "#/definitions/Expression"
+          }, {
+            "$ref" : "#/definitions/Identifier"
+          }, {
+            "$ref" : "#/definitions/ParameterDefinition"
+          }, {
+            "$ref" : "#/definitions/Period"
+          }, {
+            "$ref" : "#/definitions/Quantity"
+          }, {
+            "$ref" : "#/definitions/Reference"
+          }, {
+            "$ref" : "#/definitions/SimpleQuantity"
+          }, {
+            "$ref" : "#/definitions/TriggerDefinition"
+          } ]
+        }
+      },
+      "required" : [ "url" ]
+    },
+    "ParameterDefinition" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "documentation" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "max" : {
+          "type" : "string"
+        },
+        "min" : {
+          "type" : "number"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "profile" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "use" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "use", "type" ]
+    },
+    "Period" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "end" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "start" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Quantity" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "comparator" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "system" : {
+          "type" : "string"
+        },
+        "unit" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "number"
+        }
+      }
+    },
+    "Range" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "high" : {
+          "$ref" : "#/definitions/Quantity"
+        },
+        "low" : {
+          "$ref" : "#/definitions/Quantity"
+        }
+      }
+    },
+    "Reference" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "display" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "identifier" : {
+          "$ref" : "#/definitions/Identifier"
+        },
+        "reference" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        }
+      }
+    },
+    "SimpleQuantity" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "system" : {
+          "type" : "string"
+        },
+        "unit" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "number"
+        }
+      }
+    },
+    "Timing" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "code" : {
+          "$ref" : "#/definitions/CodeableConcept"
+        },
+        "event" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "modifierExtension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "repeat" : {
+          "$ref" : "#/definitions/TimingRepeat"
+        }
+      }
+    },
+    "TimingRepeat" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "bounds" : {
+          "oneOf" : [ {
+            "$ref" : "#/definitions/Duration"
+          }, {
+            "$ref" : "#/definitions/Period"
+          }, {
+            "$ref" : "#/definitions/Range"
+          } ]
+        },
+        "count" : {
+          "type" : "number"
+        },
+        "countMax" : {
+          "type" : "number"
+        },
+        "dayOfWeek" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "duration" : {
+          "type" : "number"
+        },
+        "durationMax" : {
+          "type" : "number"
+        },
+        "durationUnit" : {
+          "type" : "string"
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "frequency" : {
+          "type" : "number"
+        },
+        "frequencyMax" : {
+          "type" : "number"
+        },
+        "offset" : {
+          "type" : "number"
+        },
+        "period" : {
+          "type" : "number"
+        },
+        "periodMax" : {
+          "type" : "number"
+        },
+        "periodUnit" : {
+          "type" : "string"
+        },
+        "timeOfDay" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "when" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "TriggerDefinition" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "condition" : {
+          "$ref" : "#/definitions/Expression"
+        },
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/DataRequirement"
+          }
+        },
+        "extension" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Extension"
+          }
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "timing" : {
+          "oneOf" : [ {
+            "$ref" : "#/definitions/BoxedDate"
+          }, {
+            "$ref" : "#/definitions/BoxedDateTime"
+          }, {
+            "$ref" : "#/definitions/Timing"
+          } ]
+        },
+        "type" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "type" ]
+    }
+  },
+  "properties" : {
+    "exampleUnionField" : {
+      "oneOf" : [ {
+        "$ref" : "#/definitions/BoxedInteger"
+      }, {
+        "$ref" : "#/definitions/BoxedString"
+      } ]
+    }
+  },
+  "required" : [ "exampleUnionField" ]
+}
