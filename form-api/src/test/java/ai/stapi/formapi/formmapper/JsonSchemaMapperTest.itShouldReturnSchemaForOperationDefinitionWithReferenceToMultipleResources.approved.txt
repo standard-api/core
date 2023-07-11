@@ -1,0 +1,20 @@
+{
+  "description" : "Example Command with Example Reference Field",
+  "title" : "TestMultipleReferenceCommand",
+  "type" : "object",
+  "definitions" : { },
+  "properties" : {
+    "exampleMultipleReferenceField" : {
+      "oneOf" : [ {
+        "description" : "",
+        "title" : "OperationDefinition",
+        "type" : "string"
+      }, {
+        "description" : "",
+        "title" : "StructureDefinition",
+        "type" : "string"
+      } ]
+    }
+  },
+  "required" : [ "exampleMultipleReferenceField" ]
+}

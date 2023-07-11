@@ -74,6 +74,20 @@ class JsonSchemaMapperTest extends SchemaIntegrationTestCase {
   }
 
   @Test
+  void itShouldReturnSchemaForOperationDefinitionWithReference() {
+    var operationDefinition = this.operationDefinitionProvider.provide("TestReferenceCommand");
+    var jsonSchema = this.jsonSchemaMapper.map(operationDefinition);
+    this.thenObjectApproved(jsonSchema);
+  }
+
+  @Test
+  void itShouldReturnSchemaForOperationDefinitionWithReferenceToMultipleResources() {
+    var operationDefinition = this.operationDefinitionProvider.provide("TestMultipleReferenceCommand");
+    var jsonSchema = this.jsonSchemaMapper.map(operationDefinition);
+    this.thenObjectApproved(jsonSchema);
+  }
+
+  @Test
   void itShouldReturnSchemaForCreateStructureDefinition() {
     var operationDefinition = this.operationDefinitionProvider.provide("CreateStructureDefinition");
     var jsonSchema = this.jsonSchemaMapper.map(operationDefinition);
