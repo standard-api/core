@@ -13,6 +13,7 @@
         <module>graph-operations</module>
         <module>base-test</module>
         <module>graph-system</module>
+        <module>form-api</module>
     </modules>
     <packaging>pom</packaging>
 
