@@ -7,6 +7,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.Map;
+import org.everit.json.schema.BooleanSchema;
+import org.everit.json.schema.NumberSchema;
 import org.everit.json.schema.ObjectSchema;
 import org.everit.json.schema.StringSchema;
 import org.springframework.stereotype.Service;
@@ -41,6 +43,12 @@ public class FormMapper {
     }
     if (parameter.getType().equals("string")) {
       builder.addPropertySchema(parameterName, new StringSchema());
+    }
+    if (parameter.getType().equals("integer")) {
+      builder.addPropertySchema(parameterName, new NumberSchema());
+    }
+    if (parameter.getType().equals("boolean")) {
+      builder.addPropertySchema(parameterName, new BooleanSchema.Builder().build());
     }
   }
 
