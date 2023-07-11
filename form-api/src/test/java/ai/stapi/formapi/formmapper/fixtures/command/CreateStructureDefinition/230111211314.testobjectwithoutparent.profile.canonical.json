@@ -1,0 +1,30 @@
+{
+  "abstract": false,
+  "baseDefinition": null,
+  "description": "Test Object Without Parent",
+  "differential": {
+    "element": [
+      {
+        "definition": "Example String Field",
+        "id": "Narrative.exampleStringField",
+        "max": "1",
+        "min": 1,
+        "path": "Narrative.exampleStringField",
+        "short": "generated | extensions | additional | empty",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  },
+  "id": "TestObjectWithoutParent",
+  "kind": "complex-type",
+  "name": "TestObjectWithoutParent",
+  "resourceType": "StructureDefinition",
+  "status": "active",
+  "type": "TestObjectWithoutParent",
+  "url": "http://stapi.ai/StructureDefinition/TestObjectWithoutParent",
+  "version": "4.3.0"
+}
