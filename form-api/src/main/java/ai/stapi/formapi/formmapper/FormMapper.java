@@ -22,6 +22,8 @@ import ai.stapi.graph.attribute.attributeValue.UrlAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.UuidAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.XhtmlAttributeValue;
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionDTO;
+import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionStructureTypeMapper;
+import ai.stapi.schema.structureSchema.FieldDefinition;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -62,38 +64,50 @@ public class FormMapper {
       IntegerAttributeValue.SERIALIZATION_TYPE
   );
 
+  private final OperationDefinitionStructureTypeMapper operationDefinitionStructureTypeMapper;
   private final StructureSchemaFinder structureSchemaFinder;
 
-  public FormMapper(StructureSchemaFinder structureSchemaFinder) {
+  public FormMapper(
+      OperationDefinitionStructureTypeMapper operationDefinitionStructureTypeMapper, 
+      StructureSchemaFinder structureSchemaFinder
+  ) {
+    this.operationDefinitionStructureTypeMapper = operationDefinitionStructureTypeMapper;
     this.structureSchemaFinder = structureSchemaFinder;
   }
 
   public Map<String, Object> map(OperationDefinitionDTO operationDefinitionDTO) {
     var builder = new ObjectSchema.Builder();
-    operationDefinitionDTO.getParameter()
-        .stream()
-        .filter(parameter -> parameter.getUse().equals("in"))
-        .forEach(parameter -> this.mapParameter(parameter, builder));
+    var fakedStructureType = this.operationDefinitionStructureTypeMapper.map(operationDefinitionDTO);
+    fakedStructureType.getAllFields()
+        .values()
+        .forEach(field -> this.mapField(field, builder));
 
     var schema = builder.build();
     return this.printSchema(schema);
   }
 
-  private void mapParameter(
-      OperationDefinitionDTO.ParameterDTO parameter,
+  private void mapField(
+      FieldDefinition field,
       ObjectSchema.Builder builder
   ) {
-    var parameterName = parameter.getName();
-    if (parameter.getMin() > 0) {
+    var parameterName = field.getName();
+    if (field.getMin() > 0) {
       builder.addRequiredProperty(parameterName);
     }
-    if (STRING_LIKE_PRIMITIVES.contains(parameter.getType())) {
+    if (field.getTypes().isEmpty()) {
+      return;
+    }
+    if (field.getTypes().size() > 1) {
+      throw new RuntimeException("Union types not implemented yet.");
+    }
+    var type = field.getTypes().get(0).getType();
+    if (STRING_LIKE_PRIMITIVES.contains(type)) {
       builder.addPropertySchema(parameterName, new StringSchema());
     }
-    if (NUMBER_LIKE_PRIMITIVES.contains(parameter.getType())) {
+    if (NUMBER_LIKE_PRIMITIVES.contains(type)) {
       builder.addPropertySchema(parameterName, new NumberSchema());
     }
-    if (parameter.getType().equals(BooleanAttributeValue.SERIALIZATION_TYPE)) {
+    if (type.equals(BooleanAttributeValue.SERIALIZATION_TYPE)) {
       builder.addPropertySchema(parameterName, new BooleanSchema.Builder().build());
     }
   }

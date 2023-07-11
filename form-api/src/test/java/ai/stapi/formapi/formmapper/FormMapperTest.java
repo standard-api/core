@@ -2,12 +2,13 @@ package ai.stapi.formapi.formmapper;
 
 import ai.stapi.formapi.formmapper.fixtures.FormApiTestDefinitionsLoader;
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionProvider;
+import ai.stapi.graphsystem.systemfixtures.model.SystemModelDefinitionsLoader;
 import ai.stapi.test.schemaintegration.SchemaIntegrationTestCase;
 import ai.stapi.test.schemaintegration.StructureDefinitionScope;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-@StructureDefinitionScope(FormApiTestDefinitionsLoader.SCOPE)
+@StructureDefinitionScope({FormApiTestDefinitionsLoader.SCOPE, SystemModelDefinitionsLoader.SCOPE})
 class FormMapperTest extends SchemaIntegrationTestCase {
   
   @Autowired
