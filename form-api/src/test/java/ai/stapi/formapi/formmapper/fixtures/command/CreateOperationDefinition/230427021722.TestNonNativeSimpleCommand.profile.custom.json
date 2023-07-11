@@ -1,0 +1,237 @@
+{
+  "code": "TestNonNativeSimpleCommand",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "DomainResource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "exampleBase64Field",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "base64Binary",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleBase64Field"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleCanonicalField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "canonical",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleCanonicalField"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleCodeField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "code",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleCodeField"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleDateField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "date",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleDateField"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleDateTimeField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "dateTime",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleDateTimeField"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleDecimalField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "decimal",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleDecimalField"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleIdField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleIdField"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleInstantField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "instant",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleInstantField"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleMarkdownField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "markdown",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleMarkdownField"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleOidField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "oid",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleOidField"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "examplePositiveIntegerField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "positiveInt",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.examplePositiveIntegerField"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleTimeField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "time",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleTimeField"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleUnsignedIntegerField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "unsignedInt",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleUnsignedIntegerField"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleUriField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "uri",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleUriField"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleUrlField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "url",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleUrlField"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleUuidField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "uuid",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleUuidField"
+        }
+      ],
+      "targetProfileReference": []
+    },
+    {
+      "name": "exampleXhtmlField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "xhtml",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleXhtmlField"
+        }
+      ],
+      "targetProfileReference": []
+    }
+  ],
+  "name": "Example Command with Non Native Fields",
+  "description": "Example Command with Non Native Fields",
+  "id": "TestNonNativeSimpleCommand",
+  "type": false,
+  "status": "draft"
+}
