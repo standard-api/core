@@ -47,7 +47,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class FormMapper {
-  
+
   public static Set<String> STRING_LIKE_PRIMITIVES = Set.of(
       Base64BinaryAttributeValue.SERIALIZATION_TYPE,
       CanonicalAttributeValue.SERIALIZATION_TYPE,
@@ -77,7 +77,7 @@ public class FormMapper {
   private final StructureSchemaFinder structureSchemaFinder;
 
   public FormMapper(
-      OperationDefinitionStructureTypeMapper operationDefinitionStructureTypeMapper, 
+      OperationDefinitionStructureTypeMapper operationDefinitionStructureTypeMapper,
       StructureSchemaFinder structureSchemaFinder
   ) {
     this.operationDefinitionStructureTypeMapper = operationDefinitionStructureTypeMapper;
@@ -96,6 +96,10 @@ public class FormMapper {
       FormMapperContext formMapperContext
   ) {
     var builder = new ObjectSchema.Builder();
+    builder.title(complexStructureType.getDefinitionType());
+    builder.description(
+        complexStructureType.getDescription()
+    );
     complexStructureType.getAllFields()
         .values()
         .forEach(field -> this.mapField(field, builder, formMapperContext));
@@ -118,7 +122,7 @@ public class FormMapper {
     if (field.getFloatMax() > 1) {
       this.mapArrayField(field, builder, formMapperContext);
       return;
-    }    
+    }
     var schema = this.getSchema(field, formMapperContext);
     builder.addPropertySchema(parameterName, schema);
   }
@@ -127,19 +131,23 @@ public class FormMapper {
     if (field.getTypes().size() > 1) {
       var schemaBuilder = new CombinedSchema.Builder().criterion(CombinedSchema.ONE_CRITERION);
       field.getTypes().stream()
-          .map(type -> this.getMemberSchema(formMapperContext, type))
+          .map(type -> this.getMemberSchema(type, field, formMapperContext))
           .forEach(schemaBuilder::subschema);
-      
+
       return schemaBuilder.build();
     }
     var type = field.getTypes().get(0);
-    return this.getMemberSchema(formMapperContext, type);
+    return this.getMemberSchema(type, field, formMapperContext);
   }
 
-  private Schema getMemberSchema(FormMapperContext formMapperContext, FieldType type) {
+  private Schema getMemberSchema(
+      FieldType type,
+      FieldDefinition fieldDefinition,
+      FormMapperContext formMapperContext
+  ) {
     var typeName = type.getType();
     if (type.isPrimitiveType()) {
-      return this.getPrimitiveSchema(typeName);
+      return this.getPrimitiveSchema(typeName, fieldDefinition);
     } else {
       if (!formMapperContext.hasType(typeName)) {
         formMapperContext.addType(typeName);
@@ -147,40 +155,56 @@ public class FormMapper {
         var objectSchema = this.getObjectSchema(structureType, formMapperContext);
         formMapperContext.putSchema(typeName, objectSchema);
       }
-      return new ReferenceSchema.Builder().refValue(String.format("#/definitions/%s", typeName)).build();
+      return new ReferenceSchema.Builder()
+          .refValue(String.format("#/definitions/%s", typeName))
+          .title(typeName)
+          .description(fieldDefinition.getDescription())
+          .build();
     }
   }
 
-  private Schema getPrimitiveSchema(String type) {
+  private Schema getPrimitiveSchema(String type, FieldDefinition fieldDefinition) {
     if (STRING_LIKE_PRIMITIVES.contains(type)) {
-      return new StringSchema();
+      return new StringSchema.Builder()
+          .title(type)
+          .description(fieldDefinition.getDescription())
+          .build();
     }
     if (NUMBER_LIKE_PRIMITIVES.contains(type)) {
-      return new NumberSchema();
+      return new NumberSchema.Builder()
+          .title(type)
+          .description(fieldDefinition.getDescription())
+          .build();
     }
     if (type.equals(BooleanAttributeValue.SERIALIZATION_TYPE)) {
-      return new BooleanSchema.Builder().build();
+      return new BooleanSchema.Builder()
+          .title(type)
+          .description(fieldDefinition.getDescription())
+          .build();
     }
     throw CannotMapJsonSchema.becauseUnknownPrimitiveTypeEncountered(type);
   }
 
   private void mapArrayField(
-      FieldDefinition field, 
+      FieldDefinition field,
       ObjectSchema.Builder builder,
       FormMapperContext formMapperContext
   ) {
     var itemSchema = this.getSchema(field, formMapperContext);
     builder.addPropertySchema(
-        field.getName(), 
+        field.getName(),
         new ArraySchema.Builder().allItemSchema(itemSchema).build()
     );
   }
 
   private Map<String, Object> printSchema(ObjectSchema schema, FormMapperContext formMapperContext) {
     try {
-      var map = new ObjectMapper().readValue(schema.toString(), new TypeReference<HashMap<String, Object>>() {});
+      var map = new ObjectMapper().readValue(schema.toString(), new TypeReference<HashMap<String, Object>>() {
+      });
       var definitionsMap = new HashMap<String, Object>();
-      formMapperContext.getComplexTypeSchemas().forEach((key, value) -> definitionsMap.put(key, this.printDefinition(value)));
+      formMapperContext.getComplexTypeSchemas().forEach(
+          (typeName, definition) -> definitionsMap.put(typeName, this.printDefinition(definition))
+      );
       map.put("definitions", definitionsMap);
       return map;
     } catch (JsonProcessingException e) {
@@ -190,12 +214,13 @@ public class FormMapper {
 
   private Map<String, Object> printDefinition(ObjectSchema schema) {
     try {
-      return new ObjectMapper().readValue(schema.toString(), new TypeReference<HashMap<String, Object>>() {});
+      return new ObjectMapper().readValue(schema.toString(), new TypeReference<HashMap<String, Object>>() {
+      });
     } catch (JsonProcessingException e) {
       throw new CannotPrintJSONSchema(e);
     }
   }
-  
+
   private static class FormMapperContext {
 
     private final Set<String> encounteredComplexTypes;
@@ -205,15 +230,15 @@ public class FormMapper {
       this.encounteredComplexTypes = new HashSet<>();
       this.complexTypeSchemas = new HashMap<>();
     }
-    
+
     public void putSchema(String typeName, ObjectSchema schema) {
       this.complexTypeSchemas.put(typeName, schema);
     }
-    
+
     public void addType(String typeName) {
       this.encounteredComplexTypes.add(typeName);
     }
-    
+
     public boolean hasType(String typeName) {
       return this.encounteredComplexTypes.contains(typeName);
     }

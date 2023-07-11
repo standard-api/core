@@ -1,3 +1,6 @@
 {
-  "type" : "object"
+  "description" : "Example Command with no parameters",
+  "title" : "TestEmptyCommand",
+  "type" : "object",
+  "definitions" : { }
 }
