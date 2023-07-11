@@ -43,9 +43,7 @@ import org.everit.json.schema.ObjectSchema;
 import org.everit.json.schema.ReferenceSchema;
 import org.everit.json.schema.Schema;
 import org.everit.json.schema.StringSchema;
-import org.springframework.stereotype.Service;
 
-@Service
 public class JsonSchemaMapper {
 
   public static Set<String> STRING_LIKE_PRIMITIVES = Set.of(
