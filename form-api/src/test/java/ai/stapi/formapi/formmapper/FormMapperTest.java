@@ -65,4 +65,11 @@ class FormMapperTest extends SchemaIntegrationTestCase {
     var formSchema = this.formMapper.map(operationDefinition);
     this.thenObjectApproved(formSchema);
   }
+
+  @Test
+  void itShouldReturnSchemaForOperationDefinitionWithUnionType() {
+    var operationDefinition = this.operationDefinitionProvider.provide("TestUnionCommand");
+    var formSchema = this.formMapper.map(operationDefinition);
+    this.thenObjectApproved(formSchema);
+  }
 }

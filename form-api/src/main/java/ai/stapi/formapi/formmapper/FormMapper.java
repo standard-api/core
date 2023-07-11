@@ -37,6 +37,7 @@ import java.util.Map;
 import java.util.Set;
 import org.everit.json.schema.ArraySchema;
 import org.everit.json.schema.BooleanSchema;
+import org.everit.json.schema.CombinedSchema;
 import org.everit.json.schema.NumberSchema;
 import org.everit.json.schema.ObjectSchema;
 import org.everit.json.schema.ReferenceSchema;
@@ -117,16 +118,25 @@ public class FormMapper {
     if (field.getFloatMax() > 1) {
       this.mapArrayField(field, builder, formMapperContext);
       return;
-    }
-    if (field.getTypes().size() > 1) {
-      throw new RuntimeException("Union types not implemented yet.");
-    }
-    var type = field.getTypes().get(0);
-    var schema = this.getSchema(type, formMapperContext);
+    }    
+    var schema = this.getSchema(field, formMapperContext);
     builder.addPropertySchema(parameterName, schema);
   }
 
-  private Schema getSchema(FieldType type, FormMapperContext formMapperContext) {
+  private Schema getSchema(FieldDefinition field, FormMapperContext formMapperContext) {
+    if (field.getTypes().size() > 1) {
+      var schemaBuilder = new CombinedSchema.Builder().criterion(CombinedSchema.ONE_CRITERION);
+      field.getTypes().stream()
+          .map(type -> this.getMemberSchema(formMapperContext, type))
+          .forEach(schemaBuilder::subschema);
+      
+      return schemaBuilder.build();
+    }
+    var type = field.getTypes().get(0);
+    return this.getMemberSchema(formMapperContext, type);
+  }
+
+  private Schema getMemberSchema(FormMapperContext formMapperContext, FieldType type) {
     var typeName = type.getType();
     if (type.isPrimitiveType()) {
       return this.getPrimitiveSchema(typeName);
@@ -159,11 +169,7 @@ public class FormMapper {
       ObjectSchema.Builder builder,
       FormMapperContext formMapperContext
   ) {
-    if (field.getTypes().size() > 1) {
-      throw new RuntimeException("Union types not implemented yet.");
-    }
-    var type = field.getTypes().get(0);
-    var itemSchema = this.getSchema(type, formMapperContext);
+    var itemSchema = this.getSchema(field, formMapperContext);
     builder.addPropertySchema(
         field.getName(), 
         new ArraySchema.Builder().allItemSchema(itemSchema).build()
