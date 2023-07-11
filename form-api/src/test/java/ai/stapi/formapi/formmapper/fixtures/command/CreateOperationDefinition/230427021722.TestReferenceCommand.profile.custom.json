@@ -1,0 +1,29 @@
+{
+  "code": "TestReferenceCommand",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "DomainResource"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "exampleReferenceField",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "Reference",
+      "referencedFrom": [
+        {
+          "source": "DomainResource.exampleReferenceField"
+        }
+      ],
+      "targetProfileReference": [ "StructureDefinition" ]
+    }
+  ],
+  "name": "Example Command with Example Reference Field",
+  "description": "Example Command with Example Reference Field",
+  "id": "TestReferenceCommand",
+  "type": false,
+  "status": "draft"
+}

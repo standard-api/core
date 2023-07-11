@@ -146,6 +146,8 @@ public class JsonSchemaMapper {
     var typeName = type.getType();
     if (type.isPrimitiveType()) {
       return this.getPrimitiveSchema(typeName, fieldDefinition);
+    } else if (type.isReference()) {
+      return new StringSchema.Builder().title(typeName).description(fieldDefinition.getDescription()).build();
     } else {
       if (!formMapperContext.hasType(typeName)) {
         formMapperContext.addType(typeName);
