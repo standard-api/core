@@ -51,4 +51,11 @@ class FormMapperTest extends SchemaIntegrationTestCase {
     var formSchema = this.formMapper.map(operationDefinition);
     this.thenObjectApproved(formSchema);
   }
+
+  @Test
+  void itShouldReturnSchemaForOperationDefinitionWithArrayPrimitiveParameters() {
+    var operationDefinition = this.operationDefinitionProvider.provide("TestArrayCommand");
+    var formSchema = this.formMapper.map(operationDefinition);
+    this.thenObjectApproved(formSchema);
+  }
 }
