@@ -9,74 +9,74 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @StructureDefinitionScope({FormApiTestDefinitionsLoader.SCOPE, SystemModelDefinitionsLoader.SCOPE})
-class FormMapperTest extends SchemaIntegrationTestCase {
-  
+class JsonSchemaMapperTest extends SchemaIntegrationTestCase {
+
   @Autowired
   private OperationDefinitionProvider operationDefinitionProvider;
-  
+
   @Autowired
-  private FormMapper formMapper;
+  private JsonSchemaMapper jsonSchemaMapper;
 
   @Test
   void itShouldReturnEmptySchemaForOperationDefinitionWithoutParameters() {
     var operationDefinition = this.operationDefinitionProvider.provide("TestEmptyCommand");
-    var formSchema = this.formMapper.map(operationDefinition);
-    this.thenObjectApproved(formSchema);
+    var jsonSchema = this.jsonSchemaMapper.map(operationDefinition);
+    this.thenObjectApproved(jsonSchema);
   }
 
   @Test
   void itShouldReturnSchemaForOperationDefinitionWithStringParameter() {
     var operationDefinition = this.operationDefinitionProvider.provide("TestSimpleCommand");
-    var formSchema = this.formMapper.map(operationDefinition);
-    this.thenObjectApproved(formSchema);
+    var jsonSchema = this.jsonSchemaMapper.map(operationDefinition);
+    this.thenObjectApproved(jsonSchema);
   }
 
   @Test
   void itShouldReturnSchemaForOperationDefinitionWithOptionalStringParameter() {
     var operationDefinition = this.operationDefinitionProvider.provide("TestOptionalSimpleCommand");
-    var formSchema = this.formMapper.map(operationDefinition);
-    this.thenObjectApproved(formSchema);
+    var jsonSchema = this.jsonSchemaMapper.map(operationDefinition);
+    this.thenObjectApproved(jsonSchema);
   }
 
   @Test
   void itShouldReturnSchemaForOperationDefinitionWithMultiplePrimitiveParameters() {
     var operationDefinition = this.operationDefinitionProvider.provide("TestMultipleSimpleCommand");
-    var formSchema = this.formMapper.map(operationDefinition);
-    this.thenObjectApproved(formSchema);
+    var jsonSchema = this.jsonSchemaMapper.map(operationDefinition);
+    this.thenObjectApproved(jsonSchema);
   }
 
   @Test
   void itShouldReturnSchemaForOperationDefinitionWithNonNativePrimitiveParameters() {
     var operationDefinition = this.operationDefinitionProvider.provide("TestNonNativeSimpleCommand");
-    var formSchema = this.formMapper.map(operationDefinition);
-    this.thenObjectApproved(formSchema);
+    var jsonSchema = this.jsonSchemaMapper.map(operationDefinition);
+    this.thenObjectApproved(jsonSchema);
   }
 
   @Test
   void itShouldReturnSchemaForOperationDefinitionWithArrayPrimitiveParameters() {
     var operationDefinition = this.operationDefinitionProvider.provide("TestArrayCommand");
-    var formSchema = this.formMapper.map(operationDefinition);
-    this.thenObjectApproved(formSchema);
+    var jsonSchema = this.jsonSchemaMapper.map(operationDefinition);
+    this.thenObjectApproved(jsonSchema);
   }
 
   @Test
   void itShouldReturnSchemaForOperationDefinitionWithComplexParameter() {
     var operationDefinition = this.operationDefinitionProvider.provide("TestObjectCommand");
-    var formSchema = this.formMapper.map(operationDefinition);
-    this.thenObjectApproved(formSchema);
+    var jsonSchema = this.jsonSchemaMapper.map(operationDefinition);
+    this.thenObjectApproved(jsonSchema);
   }
 
   @Test
   void itShouldReturnSchemaForOperationDefinitionWithUnionType() {
     var operationDefinition = this.operationDefinitionProvider.provide("TestUnionCommand");
-    var formSchema = this.formMapper.map(operationDefinition);
-    this.thenObjectApproved(formSchema);
+    var jsonSchema = this.jsonSchemaMapper.map(operationDefinition);
+    this.thenObjectApproved(jsonSchema);
   }
 
   @Test
   void itShouldReturnSchemaForCreateStructureDefinition() {
     var operationDefinition = this.operationDefinitionProvider.provide("CreateStructureDefinition");
-    var formSchema = this.formMapper.map(operationDefinition);
-    this.thenObjectApproved(formSchema);
+    var jsonSchema = this.jsonSchemaMapper.map(operationDefinition);
+    this.thenObjectApproved(jsonSchema);
   }
 }
