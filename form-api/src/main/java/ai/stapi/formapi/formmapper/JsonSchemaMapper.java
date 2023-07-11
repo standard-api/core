@@ -46,7 +46,7 @@ import org.everit.json.schema.StringSchema;
 import org.springframework.stereotype.Service;
 
 @Service
-public class FormMapper {
+public class JsonSchemaMapper {
 
   public static Set<String> STRING_LIKE_PRIMITIVES = Set.of(
       Base64BinaryAttributeValue.SERIALIZATION_TYPE,
@@ -76,7 +76,7 @@ public class FormMapper {
   private final OperationDefinitionStructureTypeMapper operationDefinitionStructureTypeMapper;
   private final StructureSchemaFinder structureSchemaFinder;
 
-  public FormMapper(
+  public JsonSchemaMapper(
       OperationDefinitionStructureTypeMapper operationDefinitionStructureTypeMapper,
       StructureSchemaFinder structureSchemaFinder
   ) {
