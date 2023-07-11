@@ -826,7 +826,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
           "type" : "string"
         }
       },
-      "required" : [ "path", "direction" ]
+      "required" : [ "direction", "path" ]
     },
     "Duration" : {
       "description" : "Base StructureDefinition for Duration Type: A length of time.",
@@ -1807,7 +1807,7 @@ When pattern[x] is used to constrain a complex object, it means that each proper
           "type" : "string"
         }
       },
-      "required" : [ "path", "min", "max" ]
+      "required" : [ "max", "min", "path" ]
     },
     "ElementDefinitionBinding" : {
       "description" : "Type for anonymous field contained in ElementDefinition",
@@ -1899,7 +1899,7 @@ When pattern[x] is used to constrain a complex object, it means that each proper
           "type" : "string"
         }
       },
-      "required" : [ "severity", "human", "key" ]
+      "required" : [ "human", "key", "severity" ]
     },
     "ElementDefinitionExample" : {
       "description" : "Type for anonymous field contained in ElementDefinition",
@@ -2081,7 +2081,7 @@ When pattern[x] is used to constrain a complex object, it means that each proper
           "type" : "string"
         }
       },
-      "required" : [ "map", "identity" ]
+      "required" : [ "identity", "map" ]
     },
     "ElementDefinitionSlicing" : {
       "description" : "Type for anonymous field contained in ElementDefinition",
@@ -2556,7 +2556,7 @@ When pattern[x] is used to constrain a complex object, it means that each proper
           "type" : "string"
         }
       },
-      "required" : [ "use", "type" ]
+      "required" : [ "type", "use" ]
     },
     "Period" : {
       "description" : "Base StructureDefinition for Period Type: A time period defined by a start and end date and optionally time.",
@@ -2813,7 +2813,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
           "type" : "string"
         }
       },
-      "required" : [ "parent", "element" ]
+      "required" : [ "element", "parent" ]
     },
     "StructureDefinitionMapping" : {
       "description" : "Type for anonymous field contained in StructureDefinition",
@@ -3371,5 +3371,5 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
       "type" : "string"
     }
   },
-  "required" : [ "type", "kind", "abstract", "url", "name", "status" ]
+  "required" : [ "abstract", "kind", "name", "status", "type", "url" ]
 }
