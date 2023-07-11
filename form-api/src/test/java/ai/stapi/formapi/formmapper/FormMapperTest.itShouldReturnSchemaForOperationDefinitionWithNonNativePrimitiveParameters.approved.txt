@@ -1,55 +1,92 @@
 {
+  "description" : "Example Command with Non Native Fields",
+  "title" : "TestNonNativeSimpleCommand",
   "type" : "object",
+  "definitions" : { },
   "properties" : {
     "exampleIdField" : {
+      "description" : "",
+      "title" : "id",
       "type" : "string"
     },
     "exampleBase64Field" : {
+      "description" : "",
+      "title" : "base64Binary",
       "type" : "string"
     },
     "exampleCanonicalField" : {
+      "description" : "",
+      "title" : "canonical",
       "type" : "string"
     },
     "exampleCodeField" : {
+      "description" : "",
+      "title" : "code",
       "type" : "string"
     },
     "exampleDateField" : {
+      "description" : "",
+      "title" : "date",
       "type" : "string"
     },
     "exampleDateTimeField" : {
+      "description" : "",
+      "title" : "dateTime",
       "type" : "string"
     },
     "exampleDecimalField" : {
+      "description" : "",
+      "title" : "decimal",
       "type" : "number"
     },
     "exampleInstantField" : {
+      "description" : "",
+      "title" : "instant",
       "type" : "string"
     },
     "exampleMarkdownField" : {
+      "description" : "",
+      "title" : "markdown",
       "type" : "string"
     },
     "exampleOidField" : {
+      "description" : "",
+      "title" : "oid",
       "type" : "string"
     },
     "examplePositiveIntegerField" : {
+      "description" : "",
+      "title" : "positiveInt",
       "type" : "number"
     },
     "exampleTimeField" : {
+      "description" : "",
+      "title" : "time",
       "type" : "string"
     },
     "exampleUnsignedIntegerField" : {
+      "description" : "",
+      "title" : "unsignedInt",
       "type" : "number"
     },
     "exampleUriField" : {
+      "description" : "",
+      "title" : "uri",
       "type" : "string"
     },
     "exampleUrlField" : {
+      "description" : "",
+      "title" : "url",
       "type" : "string"
     },
     "exampleUuidField" : {
+      "description" : "",
+      "title" : "uuid",
       "type" : "string"
     },
     "exampleXhtmlField" : {
+      "description" : "",
+      "title" : "xhtml",
       "type" : "string"
     }
   },

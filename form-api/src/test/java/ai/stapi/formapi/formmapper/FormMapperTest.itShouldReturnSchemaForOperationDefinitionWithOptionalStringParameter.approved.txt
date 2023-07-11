@@ -1,7 +1,12 @@
 {
+  "description" : "Example Command with optional Example String Field",
+  "title" : "TestOptionalSimpleCommand",
   "type" : "object",
+  "definitions" : { },
   "properties" : {
     "exampleStringField" : {
+      "description" : "",
+      "title" : "string",
       "type" : "string"
     }
   }

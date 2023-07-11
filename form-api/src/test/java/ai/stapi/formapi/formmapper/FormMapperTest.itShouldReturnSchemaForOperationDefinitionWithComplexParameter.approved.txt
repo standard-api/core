@@ -1,10 +1,16 @@
 {
+  "description" : "Example Command with Example Object Field",
+  "title" : "TestObjectCommand",
   "type" : "object",
   "definitions" : {
     "TestObjectWithoutParent" : {
+      "description" : "Test Object Without Parent",
+      "title" : "TestObjectWithoutParent",
       "type" : "object",
       "properties" : {
         "exampleStringField" : {
+          "description" : "Example String Field",
+          "title" : "string",
           "type" : "string"
         }
       },
@@ -13,7 +19,9 @@
   },
   "properties" : {
     "exampleObjectField" : {
-      "$ref" : "#/definitions/TestObjectWithoutParent"
+      "$ref" : "#/definitions/TestObjectWithoutParent",
+      "description" : "",
+      "title" : "TestObjectWithoutParent"
     }
   },
   "required" : [ "exampleObjectField" ]
