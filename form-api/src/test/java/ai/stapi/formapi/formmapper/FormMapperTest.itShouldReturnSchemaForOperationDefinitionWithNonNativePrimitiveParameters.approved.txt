@@ -53,5 +53,5 @@
       "type" : "string"
     }
   },
-  "required" : [ "exampleBase64Field", "exampleCanonicalField", "exampleCodeField", "exampleDateField", "exampleDateTimeField", "exampleDecimalField", "exampleIdField", "exampleInstantField", "exampleMarkdownField", "exampleOidField", "examplePositiveIntegerField", "exampleTimeField", "exampleUnsignedIntegerField", "exampleUriField", "exampleUrlField", "exampleUuidField", "exampleXhtmlField" ]
+  "required" : [ "exampleTimeField", "exampleUriField", "exampleCodeField", "exampleXhtmlField", "exampleUrlField", "exampleOidField", "exampleUuidField", "exampleCanonicalField", "examplePositiveIntegerField", "exampleUnsignedIntegerField", "exampleDecimalField", "exampleBase64Field", "exampleMarkdownField", "exampleDateField", "exampleIdField", "exampleDateTimeField", "exampleInstantField" ]
 }
