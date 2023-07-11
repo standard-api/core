@@ -1,0 +1,57 @@
+{
+  "type" : "object",
+  "properties" : {
+    "exampleIdField" : {
+      "type" : "string"
+    },
+    "exampleBase64Field" : {
+      "type" : "string"
+    },
+    "exampleCanonicalField" : {
+      "type" : "string"
+    },
+    "exampleCodeField" : {
+      "type" : "string"
+    },
+    "exampleDateField" : {
+      "type" : "string"
+    },
+    "exampleDateTimeField" : {
+      "type" : "string"
+    },
+    "exampleDecimalField" : {
+      "type" : "number"
+    },
+    "exampleInstantField" : {
+      "type" : "string"
+    },
+    "exampleMarkdownField" : {
+      "type" : "string"
+    },
+    "exampleOidField" : {
+      "type" : "string"
+    },
+    "examplePositiveIntegerField" : {
+      "type" : "number"
+    },
+    "exampleTimeField" : {
+      "type" : "string"
+    },
+    "exampleUnsignedIntegerField" : {
+      "type" : "number"
+    },
+    "exampleUriField" : {
+      "type" : "string"
+    },
+    "exampleUrlField" : {
+      "type" : "string"
+    },
+    "exampleUuidField" : {
+      "type" : "string"
+    },
+    "exampleXhtmlField" : {
+      "type" : "string"
+    }
+  },
+  "required" : [ "exampleBase64Field", "exampleCanonicalField", "exampleCodeField", "exampleDateField", "exampleDateTimeField", "exampleDecimalField", "exampleIdField", "exampleInstantField", "exampleMarkdownField", "exampleOidField", "examplePositiveIntegerField", "exampleTimeField", "exampleUnsignedIntegerField", "exampleUriField", "exampleUrlField", "exampleUuidField", "exampleXhtmlField" ]
+}
