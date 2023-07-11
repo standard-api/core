@@ -1,0 +1,15 @@
+{
+  "type" : "object",
+  "properties" : {
+    "exampleBooleanField" : {
+      "type" : "boolean"
+    },
+    "exampleIntegerField" : {
+      "type" : "number"
+    },
+    "exampleStringField" : {
+      "type" : "string"
+    }
+  },
+  "required" : [ "exampleStringField" ]
+}
