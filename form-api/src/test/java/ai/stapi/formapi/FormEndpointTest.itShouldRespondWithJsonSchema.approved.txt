@@ -3178,15 +3178,14 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
       "type" : "boolean"
     },
     "baseDefinition" : {
-      "oneOf" : [ {
-        "$ref" : "#/definitions/BoxedCanonical",
-        "description" : "",
-        "title" : "BoxedCanonical"
-      }, {
-        "description" : "",
-        "title" : "StructureDefinition",
-        "type" : "string"
-      } ]
+      "description" : "",
+      "title" : "canonical",
+      "type" : "string"
+    },
+    "baseDefinitionRef" : {
+      "description" : "",
+      "title" : "StructureDefinition",
+      "type" : "string"
     },
     "contained" : {
       "type" : "array",
