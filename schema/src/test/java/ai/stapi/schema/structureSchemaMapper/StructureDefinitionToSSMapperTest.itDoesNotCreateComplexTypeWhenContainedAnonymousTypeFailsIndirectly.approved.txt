@@ -24,7 +24,7 @@
       "type" : "TestComplexWithAnonymousType",
       "url" : "http://test.url/for/TestComplexWithAnonymousType",
       "baseDefinition" : null,
-      "baseDefinitionReference" : null,
+      "baseDefinitionRef" : null,
       "differential" : {
         "element" : [ {
           "comment" : "",
@@ -36,7 +36,11 @@
           "contentReference" : null,
           "type" : [ {
             "code" : "Element",
-            "targetProfile" : [ ]
+            "codeRef" : {
+              "id" : "Element"
+            },
+            "targetProfile" : [ ],
+            "targetProfileRef" : [ ]
           } ]
         }, {
           "comment" : "",
@@ -48,7 +52,11 @@
           "contentReference" : null,
           "type" : [ {
             "code" : "ComplexTypeWithMissingPrimitive",
-            "targetProfile" : [ ]
+            "codeRef" : {
+              "id" : "ComplexTypeWithMissingPrimitive"
+            },
+            "targetProfile" : [ ],
+            "targetProfileRef" : [ ]
           } ]
         } ]
       }
@@ -64,7 +72,7 @@
       "type" : "ComplexTypeWithMissingPrimitive",
       "url" : "http://test.url/for/ComplexTypeWithMissingPrimitive",
       "baseDefinition" : null,
-      "baseDefinitionReference" : null,
+      "baseDefinitionRef" : null,
       "differential" : {
         "element" : [ {
           "comment" : "",
@@ -76,7 +84,11 @@
           "contentReference" : null,
           "type" : [ {
             "code" : "missingPrimitive",
-            "targetProfile" : [ ]
+            "codeRef" : {
+              "id" : "missingPrimitive"
+            },
+            "targetProfile" : [ ],
+            "targetProfileRef" : [ ]
           } ]
         } ]
       }

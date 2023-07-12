@@ -1,5 +1,5 @@
 {
-  "code": "AddTargetProfileReferenceOnOperationDefinitionParameter",
+  "code": "AddTargetProfileRefOnOperationDefinitionParameter",
   "system": false,
   "instance": true,
   "resource": [
@@ -8,17 +8,17 @@
   "kind": "operation",
   "parameter": [
     {
-      "name": "targetProfileReference",
+      "name": "targetProfileRef",
       "use": "in",
       "min": 1,
       "max": "*",
       "type": "Reference",
       "referencedFrom": [
         {
-          "source": "OperationDefinition.parameter.targetProfileReference"
+          "source": "OperationDefinition.parameter.targetProfileRef"
         }
       ],
-      "targetProfileReference": [
+      "targetProfileRef": [
         {
           "id": "StructureDefinition"
         }
@@ -35,12 +35,12 @@
           "source": "OperationDefinition.parameter.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
-  "name": "Add TargetProfileReference on OperationDefinition.parameter",
-  "description": "Generated command for adding targetProfileReference(Reference) on OperationDefinition Aggregate",
-  "id": "AddTargetProfileReferenceOnOperationDefinitionParameter",
+  "name": "Add targetProfileRef on OperationDefinition.parameter",
+  "description": "Generated command for adding targetProfileRef(Reference) on OperationDefinition Aggregate",
+  "id": "AddTargetProfileRefOnOperationDefinitionParameter",
   "type": false,
   "status": "draft"
 }

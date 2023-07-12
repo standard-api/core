@@ -19,7 +19,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleElementField.repeat.timeOfDay"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleResourceType" ]
   }, {
@@ -41,7 +41,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleElementField.event"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleResourceType" ]
   }, {
@@ -63,7 +63,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleElementField.repeat.dayOfWeek"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleResourceType" ]
   }, {
@@ -85,7 +85,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleElementField.code.coding"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleResourceType" ]
   }, {
@@ -107,7 +107,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleElementField.repeat.when"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleResourceType" ]
   } ]

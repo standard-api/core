@@ -18,7 +18,7 @@
           "source": "StructureDefinition.differential.element.representation"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "elementId",
@@ -31,7 +31,7 @@
           "source": "StructureDefinition.differential.element.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Representation on StructureDefinition.differential.element",

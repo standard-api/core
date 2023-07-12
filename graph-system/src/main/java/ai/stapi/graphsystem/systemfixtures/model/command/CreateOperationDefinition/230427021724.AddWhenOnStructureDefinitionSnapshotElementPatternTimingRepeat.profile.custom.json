@@ -18,7 +18,7 @@
           "source": "StructureDefinition.snapshot.element.pattern.timing.repeat.when"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "elementId",
@@ -31,7 +31,7 @@
           "source": "StructureDefinition.snapshot.element.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add When on StructureDefinition.snapshot.element.pattern.timing.repeat",

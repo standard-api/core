@@ -18,7 +18,7 @@
           "source": "OperationDefinition.overload.parameterName"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "overloadId",
@@ -31,7 +31,7 @@
           "source": "OperationDefinition.overload.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add ParameterName on OperationDefinition.overload",

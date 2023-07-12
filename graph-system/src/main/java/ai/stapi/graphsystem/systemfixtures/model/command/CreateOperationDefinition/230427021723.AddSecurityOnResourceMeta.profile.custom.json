@@ -18,7 +18,7 @@
           "source": "Resource.meta.security"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Security on Resource.meta",

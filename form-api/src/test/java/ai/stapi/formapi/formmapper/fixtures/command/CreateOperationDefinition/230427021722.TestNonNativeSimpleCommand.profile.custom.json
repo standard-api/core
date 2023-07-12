@@ -18,7 +18,7 @@
           "source": "DomainResource.exampleBase64Field"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleCanonicalField",
@@ -31,7 +31,7 @@
           "source": "DomainResource.exampleCanonicalField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleCodeField",
@@ -44,7 +44,7 @@
           "source": "DomainResource.exampleCodeField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleDateField",
@@ -57,7 +57,7 @@
           "source": "DomainResource.exampleDateField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleDateTimeField",
@@ -70,7 +70,7 @@
           "source": "DomainResource.exampleDateTimeField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleDecimalField",
@@ -83,7 +83,7 @@
           "source": "DomainResource.exampleDecimalField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleIdField",
@@ -96,7 +96,7 @@
           "source": "DomainResource.exampleIdField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleInstantField",
@@ -109,7 +109,7 @@
           "source": "DomainResource.exampleInstantField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleMarkdownField",
@@ -122,7 +122,7 @@
           "source": "DomainResource.exampleMarkdownField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleOidField",
@@ -135,7 +135,7 @@
           "source": "DomainResource.exampleOidField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "examplePositiveIntegerField",
@@ -148,7 +148,7 @@
           "source": "DomainResource.examplePositiveIntegerField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleTimeField",
@@ -161,7 +161,7 @@
           "source": "DomainResource.exampleTimeField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleUnsignedIntegerField",
@@ -174,7 +174,7 @@
           "source": "DomainResource.exampleUnsignedIntegerField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleUriField",
@@ -187,7 +187,7 @@
           "source": "DomainResource.exampleUriField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleUrlField",
@@ -200,7 +200,7 @@
           "source": "DomainResource.exampleUrlField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleUuidField",
@@ -213,7 +213,7 @@
           "source": "DomainResource.exampleUuidField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleXhtmlField",
@@ -226,7 +226,7 @@
           "source": "DomainResource.exampleXhtmlField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Example Command with Non Native Fields",

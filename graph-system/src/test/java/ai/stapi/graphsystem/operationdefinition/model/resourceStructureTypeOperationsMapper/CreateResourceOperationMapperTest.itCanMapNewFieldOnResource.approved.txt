@@ -11,7 +11,7 @@
         "referencedFrom" : [ {
           "source" : "AggregateDefinition.command"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ]
     } ],
     "operations" : [ ]

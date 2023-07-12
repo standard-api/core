@@ -36,7 +36,7 @@ public class IdentifyingGraphSynchronizerTestStructureLoader
                 List.of(
                     new ElementDefinition(
                         "Test_node_type.string_type",
-                        List.of(new ElementDefinitionType("string", null)),
+                        List.of(new ElementDefinitionType("string")),
                         1,
                         "1",
                         "A string attribute of the test node",
@@ -45,7 +45,7 @@ public class IdentifyingGraphSynchronizerTestStructureLoader
                     ),
                     new ElementDefinition(
                         "Test_node_type.identifying_attribute",
-                        List.of(new ElementDefinitionType("string", null)),
+                        List.of(new ElementDefinitionType("string")),
                         1,
                         "1",
                         "An identifying attribute of the test node",
@@ -54,7 +54,7 @@ public class IdentifyingGraphSynchronizerTestStructureLoader
                     ),
                     new ElementDefinition(
                         "Test_node_type.not_identifying_attribute",
-                        List.of(new ElementDefinitionType("string", null)),
+                        List.of(new ElementDefinitionType("string")),
                         0,
                         "1",
                         "A non-identifying attribute of the test node",
@@ -63,7 +63,7 @@ public class IdentifyingGraphSynchronizerTestStructureLoader
                     ),
                     new ElementDefinition(
                         "Test_node_type.some_other_attribute",
-                        List.of(new ElementDefinitionType("string", null)),
+                        List.of(new ElementDefinitionType("string")),
                         0,
                         "1",
                         "Some other attribute of the test node",
@@ -72,7 +72,7 @@ public class IdentifyingGraphSynchronizerTestStructureLoader
                     ),
                     new ElementDefinition(
                         "Test_node_type.string_type2",
-                        List.of(new ElementDefinitionType("string", null)),
+                        List.of(new ElementDefinitionType("string")),
                         0,
                         "1",
                         "A string attribute of the test node",
@@ -96,7 +96,7 @@ public class IdentifyingGraphSynchronizerTestStructureLoader
                 List.of(
                     new ElementDefinition(
                         "contains.new",
-                        List.of(new ElementDefinitionType("string", null)),
+                        List.of(new ElementDefinitionType("string")),
                         1,
                         "1",
                         "A new field that contains something.",
@@ -120,7 +120,7 @@ public class IdentifyingGraphSynchronizerTestStructureLoader
                 List.of(
                     new ElementDefinition(
                         "node_from_type.identifying_attribute",
-                        List.of(new ElementDefinitionType("string", null)),
+                        List.of(new ElementDefinitionType("string")),
                         1,
                         "1",
                         "The identifying attribute of the node",

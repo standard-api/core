@@ -2,12 +2,32 @@
   "id": "ElementDefinition",
   "element": [
     {
-      "definition": "Reference to Data type or Resource that is a(or the) type used for this element. e.g. \"string\" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.",
-      "id": "ElementDefinition.typeReference",
+      "comment": "If the element is a reference to another resource, this element contains \"Reference\", and the targetProfile element defines what resources can be referenced. The targetProfile may be a reference to the general definition of a resource (e.g. http://hl7.org/fhir/StructureDefinition/Patient).",
+      "definition": "Reference Data type or Resource that is a(or the) type used for this element. References are URLs that are relative to http://hl7.org/fhir/StructureDefinition e.g. \"string\" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.",
+      "id": "ElementDefinition.type.codeRef",
+      "isSummary": true,
       "max": "1",
-      "min": 0,
-      "path": "ElementDefinition.typeReference",
+      "min": 1,
+      "path": "ElementDefinition.type.codeRef",
       "short": "Data type or Resource (reference to definition)",
+      "type": [
+        {
+          "code": "Reference",
+          "targetProfile": [
+            "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
+          ]
+        }
+      ]
+    },
+    {
+      "definition": "Used when the type is \"Reference\" or \"canonical\", and identifies a profile structure or implementation Guide that applies to the target of the reference this element refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the target resource SHALL conform to at least one profile defined in the implementation guide.",
+      "id": "ElementDefinition.type.targetProfileRef",
+      "isModifier": false,
+      "isSummary": true,
+      "max": "*",
+      "min": 0,
+      "path": "ElementDefinition.type.targetProfileRef",
+      "short": "Profile (StructureDefinition or IG) on the Reference/canonical target - one must apply",
       "type": [
         {
           "code": "Reference",

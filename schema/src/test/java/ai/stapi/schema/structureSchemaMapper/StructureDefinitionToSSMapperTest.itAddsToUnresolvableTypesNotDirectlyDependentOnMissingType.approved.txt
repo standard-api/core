@@ -14,7 +14,7 @@
       "type" : "TestComplex2",
       "url" : "http://test.url/for/complex2",
       "baseDefinition" : null,
-      "baseDefinitionReference" : null,
+      "baseDefinitionRef" : null,
       "differential" : {
         "element" : [ {
           "comment" : "",
@@ -26,7 +26,11 @@
           "contentReference" : null,
           "type" : [ {
             "code" : "TestComplex1",
-            "targetProfile" : [ ]
+            "codeRef" : {
+              "id" : "TestComplex1"
+            },
+            "targetProfile" : [ ],
+            "targetProfileRef" : [ ]
           } ]
         } ]
       }
@@ -42,7 +46,7 @@
       "type" : "TestComplex1",
       "url" : "http://test.url/for/complex",
       "baseDefinition" : null,
-      "baseDefinitionReference" : null,
+      "baseDefinitionRef" : null,
       "differential" : {
         "element" : [ {
           "comment" : "",
@@ -54,7 +58,11 @@
           "contentReference" : null,
           "type" : [ {
             "code" : "testPrimitive",
-            "targetProfile" : [ ]
+            "codeRef" : {
+              "id" : "testPrimitive"
+            },
+            "targetProfile" : [ ],
+            "targetProfileRef" : [ ]
           } ]
         } ]
       }

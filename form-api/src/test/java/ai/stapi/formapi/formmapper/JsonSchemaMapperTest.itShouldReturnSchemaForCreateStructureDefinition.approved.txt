@@ -1764,11 +1764,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
             "description" : "The data type or resource that the value of this element is permitted to be.",
             "title" : "ElementDefinitionType"
           }
-        },
-        "typeReference" : {
-          "description" : "Reference to Data type or Resource that is a(or the) type used for this element. e.g. \"string\" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.",
-          "title" : "StructureDefinition",
-          "type" : "string"
         }
       },
       "required" : [ "path" ]
@@ -2181,6 +2176,11 @@ When pattern[x] is used to constrain a complex object, it means that each proper
           "title" : "uri",
           "type" : "string"
         },
+        "codeRef" : {
+          "description" : "Reference Data type or Resource that is a(or the) type used for this element. References are URLs that are relative to http://hl7.org/fhir/StructureDefinition e.g. \"string\" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.",
+          "title" : "StructureDefinition",
+          "type" : "string"
+        },
         "extension" : {
           "type" : "array",
           "items" : {
@@ -2205,13 +2205,21 @@ When pattern[x] is used to constrain a complex object, it means that each proper
             "type" : "string"
           }
         },
+        "targetProfileRef" : {
+          "type" : "array",
+          "items" : {
+            "description" : "Used when the type is \"Reference\" or \"canonical\", and identifies a profile structure or implementation Guide that applies to the target of the reference this element refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the target resource SHALL conform to at least one profile defined in the implementation guide.",
+            "title" : "StructureDefinition",
+            "type" : "string"
+          }
+        },
         "versioning" : {
           "description" : "Whether this reference needs to be version specific or version independent, or whether either can be used.",
           "title" : "code",
           "type" : "string"
         }
       },
-      "required" : [ "code" ]
+      "required" : [ "code", "codeRef" ]
     },
     "Expression" : {
       "description" : "Base StructureDefinition for Expression Type: A expression that is evaluated in a specified context and returns a value. The context of use of the expression must specify the context in which the expression is evaluated, and how the result of the expression is used.",
@@ -2806,14 +2814,9 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
             "title" : "Extension"
           }
-        },
-        "parent" : {
-          "description" : "The id of the parent StructureDefinition of this Differential.",
-          "title" : "string",
-          "type" : "string"
         }
       },
-      "required" : [ "element", "parent" ]
+      "required" : [ "element" ]
     },
     "StructureDefinitionMapping" : {
       "description" : "Type for anonymous field contained in StructureDefinition",

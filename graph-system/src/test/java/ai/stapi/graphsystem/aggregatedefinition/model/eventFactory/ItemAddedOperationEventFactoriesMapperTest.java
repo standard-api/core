@@ -1,10 +1,10 @@
 package ai.stapi.graphsystem.aggregatedefinition.model.eventFactory;
 
+import ai.stapi.graphsystem.operationdefinition.infrastructure.AdHocOperationDefinitionProvider;
+import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionDTO;
 import ai.stapi.test.SystemSchemaIntegrationTestCase;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import ai.stapi.graphsystem.operationdefinition.infrastructure.AdHocOperationDefinitionProvider;
-import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -59,7 +59,7 @@ class ItemAddedOperationEventFactoriesMapperTest extends SystemSchemaIntegration
             "referencedFrom" : [ {
               "source" : "ExampleResourceType.exampleUnionField"
             } ],
-            "targetProfileReference" : [ ]
+            "targetProfileRef" : [ ]
           }, {
             "max" : "1",
             "min" : 1,
@@ -69,7 +69,7 @@ class ItemAddedOperationEventFactoriesMapperTest extends SystemSchemaIntegration
             "referencedFrom" : [ {
               "source" : "ExampleResourceType.exampleUnionField"
             } ],
-            "targetProfileReference" : [ ]
+            "targetProfileRef" : [ ]
           }, {
             "max" : "1",
             "min" : 1,
@@ -79,7 +79,7 @@ class ItemAddedOperationEventFactoriesMapperTest extends SystemSchemaIntegration
             "referencedFrom" : [ {
               "source" : "ExampleResourceType.exampleUnionField"
             } ],
-            "targetProfileReference" : [ {
+            "targetProfileRef" : [ {
               "id" : "OperationDefinition"
             }, {
               "id" : "StructureDefinition"

@@ -1,5 +1,6 @@
 package ai.stapi.graphsystem.operationdefinition.model.resourceStructureTypeOperationsMapper;
 
+import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.schema.adHocLoaders.AbstractJavaModelDefinitionsLoader;
 import ai.stapi.schema.scopeProvider.ScopeOptions;
 import ai.stapi.schema.structuredefinition.ElementDefinition;
@@ -31,12 +32,12 @@ public class AddItemOnResourceOperationsMapperTestDefinitionsLoader
             false,
             "ExampleTestResource",
             "http://hl7.org/fhir/StructureDefinition/DomainResource",
-            null,
+            new UniqueIdentifier("DomainResource"),
             new StructureDefinitionData.Differential(
                 List.of(
                     new ElementDefinition(
                         "ExampleTestResource.name",
-                        List.of(new ElementDefinitionType("string", null)),
+                        List.of(new ElementDefinitionType("string")),
                         1,
                         "1",
                         "The name of the test resource",
@@ -45,7 +46,7 @@ public class AddItemOnResourceOperationsMapperTestDefinitionsLoader
                     ),
                     new ElementDefinition(
                         "ExampleTestResource.description",
-                        List.of(new ElementDefinitionType("string", null)),
+                        List.of(new ElementDefinitionType("string")),
                         1,
                         "1",
                         "The description of the test resource",
@@ -54,7 +55,7 @@ public class AddItemOnResourceOperationsMapperTestDefinitionsLoader
                     ),
                     new ElementDefinition(
                         "ExampleTestResource.tag",
-                        List.of(new ElementDefinitionType("string", null)),
+                        List.of(new ElementDefinitionType("string")),
                         1,
                         "*",
                         "Tags of the test resource",
@@ -65,8 +66,10 @@ public class AddItemOnResourceOperationsMapperTestDefinitionsLoader
                         "ExampleTestResource.structure",
                         List.of(
                             new ElementDefinitionType(
-                                "Reference", 
-                                List.of("http://hl7.org/fhir/StructureDefinition/StructureDefinition")
+                                "Reference",
+                                new UniqueIdentifier("Reference"),
+                                List.of("http://hl7.org/fhir/StructureDefinition/StructureDefinition"),
+                                List.of(new UniqueIdentifier("StructureDefinition"))
                             )
                         ),
                         0,
@@ -92,7 +95,7 @@ public class AddItemOnResourceOperationsMapperTestDefinitionsLoader
                 List.of(
                     new ElementDefinition(
                         "SameFieldComplex1.sameField",
-                        List.of(new ElementDefinitionType("string", null)),
+                        List.of(new ElementDefinitionType("string")),
                         1,
                         "*",
                         "The same field but with type string",
@@ -116,7 +119,7 @@ public class AddItemOnResourceOperationsMapperTestDefinitionsLoader
                 List.of(
                     new ElementDefinition(
                         "SameFieldComplex2.sameField",
-                        List.of(new ElementDefinitionType("decimal", null)),
+                        List.of(new ElementDefinitionType("decimal")),
                         1,
                         "*",
                         "The same field but with type decimal",

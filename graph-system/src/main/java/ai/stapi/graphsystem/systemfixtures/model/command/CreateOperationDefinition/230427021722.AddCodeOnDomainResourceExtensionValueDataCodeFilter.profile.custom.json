@@ -18,7 +18,7 @@
           "source": "DomainResource.extension.value.data.codeFilter.code"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "codeFilterId",
@@ -31,7 +31,7 @@
           "source": "DomainResource.extension.value.data.codeFilter.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Code on DomainResource.extension.value.data.codeFilter",

@@ -18,7 +18,7 @@ public class StructureDefinitionData implements SerializableObject {
   private Boolean isAbstract;
   private String type;
   private String baseDefinition;
-  private UniqueIdentifier baseDefinitionReference;
+  private UniqueIdentifier baseDefinitionRef;
   private Differential differential;
 
   protected StructureDefinitionData() {
@@ -33,7 +33,7 @@ public class StructureDefinitionData implements SerializableObject {
       Boolean isAbstract,
       String type,
       String baseDefinition,
-      UniqueIdentifier baseDefinitionReference,
+      UniqueIdentifier baseDefinitionRef,
       Differential differential
   ) {
     this.id = id;
@@ -44,7 +44,7 @@ public class StructureDefinitionData implements SerializableObject {
     this.isAbstract = isAbstract;
     this.type = type;
     this.baseDefinition = baseDefinition;
-    this.baseDefinitionReference = baseDefinitionReference;
+    this.baseDefinitionRef = baseDefinitionRef;
     this.differential = differential;
   }
 
@@ -57,7 +57,7 @@ public class StructureDefinitionData implements SerializableObject {
       Boolean isAbstract,
       String type,
       String baseDefinition,
-      UniqueIdentifier baseDefinitionReference,
+      UniqueIdentifier baseDefinitionRef,
       List<ElementDefinition> differential
   ) {
     this.id = id;
@@ -68,7 +68,7 @@ public class StructureDefinitionData implements SerializableObject {
     this.isAbstract = isAbstract;
     this.type = type;
     this.baseDefinition = baseDefinition;
-    this.baseDefinitionReference = baseDefinitionReference;
+    this.baseDefinitionRef = baseDefinitionRef;
     this.differential = new Differential(differential);
   }
 
@@ -105,8 +105,8 @@ public class StructureDefinitionData implements SerializableObject {
     return differential;
   }
 
-  public UniqueIdentifier getBaseDefinitionReference() {
-    return baseDefinitionReference;
+  public UniqueIdentifier getBaseDefinitionRef() {
+    return baseDefinitionRef;
   }
 
   public String getBaseDefinition() {
@@ -129,7 +129,7 @@ public class StructureDefinitionData implements SerializableObject {
         ", kind='" + kind + '\'' +
         ", isAbstract=" + isAbstract +
         ", type='" + type + '\'' +
-        ", baseDefinition=" + baseDefinitionReference +
+        ", baseDefinition=" + baseDefinitionRef +
         ", differential=" + differential +
         '}';
   }

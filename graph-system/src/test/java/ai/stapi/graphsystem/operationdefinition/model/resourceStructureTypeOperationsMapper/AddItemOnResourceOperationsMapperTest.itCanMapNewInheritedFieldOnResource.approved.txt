@@ -20,7 +20,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -42,7 +42,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.mustSupport"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -52,7 +52,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -74,7 +74,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.data.codeFilter"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -84,7 +84,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.data.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -106,7 +106,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.data.sort"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -116,7 +116,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.data.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -138,7 +138,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.timing.repeat.timeOfDay"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -148,7 +148,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -170,7 +170,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.concept.coding"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -180,7 +180,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -202,7 +202,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.data.mustSupport"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -212,7 +212,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.data.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -234,7 +234,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.coding"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -244,7 +244,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -266,7 +266,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.timing.repeat.when"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -276,7 +276,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -298,7 +298,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.codeFilter"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -308,7 +308,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -330,7 +330,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.data.dateFilter"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -340,7 +340,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.data.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -362,7 +362,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.timing.code.coding"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -372,7 +372,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -394,7 +394,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.sort"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -404,7 +404,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -426,7 +426,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.data.subject.coding"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -436,7 +436,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.data.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -458,7 +458,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.data"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -468,7 +468,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -490,7 +490,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.codeFilter.code"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -500,7 +500,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.codeFilter.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -522,7 +522,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.data.codeFilter.code"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -532,7 +532,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.data.codeFilter.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -554,7 +554,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.subject.coding"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -564,7 +564,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -586,7 +586,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.timing.event"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -596,7 +596,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -618,7 +618,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.data.profile"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -628,7 +628,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.data.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -650,7 +650,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.dateFilter"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -660,7 +660,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -682,7 +682,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.type.coding"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -692,7 +692,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -714,7 +714,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.profile"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -724,7 +724,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     }, {
@@ -746,7 +746,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.value.timing.repeat.dayOfWeek"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -756,7 +756,7 @@
         "referencedFrom" : [ {
           "source" : "DomainResource.extension.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "DomainResource" ]
     } ]

@@ -18,7 +18,7 @@
           "source": "StructureDefinition.snapshot.element.example.value.dateFilter"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleId",
@@ -31,7 +31,7 @@
           "source": "StructureDefinition.snapshot.element.example.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add DateFilter on StructureDefinition.snapshot.element.example.value",

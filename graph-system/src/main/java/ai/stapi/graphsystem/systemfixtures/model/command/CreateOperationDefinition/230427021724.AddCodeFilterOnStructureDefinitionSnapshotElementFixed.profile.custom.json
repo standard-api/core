@@ -18,7 +18,7 @@
           "source": "StructureDefinition.snapshot.element.fixed.codeFilter"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "elementId",
@@ -31,7 +31,7 @@
           "source": "StructureDefinition.snapshot.element.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add CodeFilter on StructureDefinition.snapshot.element.fixed",

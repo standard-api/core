@@ -18,7 +18,7 @@
           "source": "DomainResource.exampleArrayStringField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleArrayIntegerField",
@@ -31,7 +31,7 @@
           "source": "DomainResource.exampleArrayIntegerField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Example Command with Array Fields",

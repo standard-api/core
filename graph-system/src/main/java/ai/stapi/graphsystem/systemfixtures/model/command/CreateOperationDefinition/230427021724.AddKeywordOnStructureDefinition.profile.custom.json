@@ -18,7 +18,7 @@
           "source": "StructureDefinition.keyword"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Keyword on StructureDefinition",

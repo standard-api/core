@@ -1,7 +1,7 @@
 {
-  "name": "TargetProfileReference on OperationDefinitionParameter Added",
+  "name": "TargetProfileRef on OperationDefinitionParameter Added",
   "description": "Generated Event for adding on OperationDefinition.",
-  "id": "TargetProfileReferenceOnOperationDefinitionParameterAdded",
+  "id": "TargetProfileRefOnOperationDefinitionParameterAdded",
   "type": {
     "id": "OperationDefinition"
   }

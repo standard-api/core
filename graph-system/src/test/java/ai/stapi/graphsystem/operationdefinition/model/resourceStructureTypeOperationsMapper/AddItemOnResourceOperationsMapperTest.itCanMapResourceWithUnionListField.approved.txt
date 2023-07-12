@@ -19,7 +19,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "*",
       "min" : 1,
@@ -29,7 +29,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "*",
       "min" : 1,
@@ -39,7 +39,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "*",
       "min" : 1,
@@ -49,7 +49,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "*",
       "min" : 1,
@@ -59,7 +59,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField"
       } ],
-      "targetProfileReference" : [ {
+      "targetProfileRef" : [ {
         "id" : "StructureDefinition"
       } ]
     } ],
@@ -83,7 +83,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.event"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 1,
@@ -93,7 +93,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.id"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleResourceType" ]
   }, {
@@ -115,7 +115,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.repeat.timeOfDay"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 1,
@@ -125,7 +125,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.id"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleResourceType" ]
   }, {
@@ -147,7 +147,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.code.coding"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 1,
@@ -157,7 +157,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.id"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleResourceType" ]
   }, {
@@ -181,7 +181,7 @@ Generated command for adding sameField(decimal) on ExampleResourceType Aggregate
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.id"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "*",
       "min" : 1,
@@ -191,7 +191,7 @@ Generated command for adding sameField(decimal) on ExampleResourceType Aggregate
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.sameField"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "*",
       "min" : 1,
@@ -201,7 +201,7 @@ Generated command for adding sameField(decimal) on ExampleResourceType Aggregate
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.sameField"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleResourceType" ]
   }, {
@@ -223,7 +223,7 @@ Generated command for adding sameField(decimal) on ExampleResourceType Aggregate
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.repeat.dayOfWeek"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 1,
@@ -233,7 +233,7 @@ Generated command for adding sameField(decimal) on ExampleResourceType Aggregate
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.id"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleResourceType" ]
   }, {
@@ -255,7 +255,7 @@ Generated command for adding sameField(decimal) on ExampleResourceType Aggregate
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.repeat.when"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 1,
@@ -265,7 +265,7 @@ Generated command for adding sameField(decimal) on ExampleResourceType Aggregate
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.id"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleResourceType" ]
   } ]

@@ -14,7 +14,7 @@
       "status" : "draft",
       "type" : "primitive",
       "url" : "http://test.url/for/primitive",
-      "baseDefinitionReference" : {
+      "baseDefinitionRef" : {
         "id" : "parentPrimitive"
       },
       "differential" : {
@@ -32,7 +32,7 @@
       "type" : "parentPrimitive",
       "url" : "http://test.url/for/parentPrimitive",
       "baseDefinition" : null,
-      "baseDefinitionReference" : null,
+      "baseDefinitionRef" : null,
       "differential" : {
         "element" : [ ]
       }

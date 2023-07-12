@@ -18,7 +18,7 @@
           "source": "ValueSet.expansion.contains"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Contains on ValueSet.expansion",

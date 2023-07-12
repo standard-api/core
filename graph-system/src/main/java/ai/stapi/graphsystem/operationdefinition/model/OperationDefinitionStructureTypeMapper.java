@@ -107,7 +107,7 @@ public class OperationDefinitionStructureTypeMapper {
   ) {
     var type = parameterDTO.getType();
     if (type.equals("Reference")) {
-      return parameterDTO.getTargetProfileReference().stream().map(
+      return parameterDTO.getTargetProfileRef().stream().map(
           targetProfile -> new FieldType(targetProfile.getId(), type)
       );
     }

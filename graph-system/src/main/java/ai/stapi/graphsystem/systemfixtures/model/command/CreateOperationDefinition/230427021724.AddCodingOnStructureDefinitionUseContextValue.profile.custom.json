@@ -18,7 +18,7 @@
           "source": "StructureDefinition.useContext.value.coding"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "useContextId",
@@ -31,7 +31,7 @@
           "source": "StructureDefinition.useContext.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Coding on StructureDefinition.useContext.value",

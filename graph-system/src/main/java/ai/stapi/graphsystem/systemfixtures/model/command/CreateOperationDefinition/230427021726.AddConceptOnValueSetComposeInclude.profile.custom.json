@@ -18,7 +18,7 @@
           "source": "ValueSet.compose.include.concept"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "includeId",
@@ -31,7 +31,7 @@
           "source": "ValueSet.compose.include.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Concept on ValueSet.compose.include",

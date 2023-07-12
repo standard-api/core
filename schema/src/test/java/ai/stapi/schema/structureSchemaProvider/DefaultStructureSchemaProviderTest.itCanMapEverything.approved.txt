@@ -8080,20 +8080,6 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
             "type" : "Extension",
             "typeGroup" : "STANDARD"
           } ]
-        },
-        "parent" : {
-          "serializationType" : "FieldDefinition",
-          "description" : "The id of the parent StructureDefinition of this Differential.",
-          "max" : "1",
-          "min" : 1,
-          "name" : "parent",
-          "parentDefinitionType" : "StructureDefinitionDifferential",
-          "types" : [ {
-            "isContentReferenced" : false,
-            "originalType" : "string",
-            "type" : "string",
-            "typeGroup" : "STANDARD"
-          } ]
         }
       }
     },

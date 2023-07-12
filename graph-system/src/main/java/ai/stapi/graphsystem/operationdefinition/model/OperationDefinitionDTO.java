@@ -170,7 +170,7 @@ public class OperationDefinitionDTO {
               parameterDTO.getMax(),
               parameterDTO.getType(),
               parameterDTO.getReferencedFrom(),
-              parameterDTO.getTargetProfileReference()
+              parameterDTO.getTargetProfileRef()
           ));
         }).toList();
 
@@ -286,7 +286,7 @@ public class OperationDefinitionDTO {
     private String max;
     private String type;
     private List<ReferencedFrom> referencedFrom;
-    private List<StructureDefinitionId> targetProfileReference;
+    private List<StructureDefinitionId> targetProfileRef;
 
     private ParameterDTO() {
     }
@@ -298,7 +298,7 @@ public class OperationDefinitionDTO {
         String max,
         String type,
         List<ReferencedFrom> referencedFrom,
-        List<StructureDefinitionId> targetProfileReference
+        List<StructureDefinitionId> targetProfileRef
     ) {
       this.name = name;
       this.use = use;
@@ -306,7 +306,7 @@ public class OperationDefinitionDTO {
       this.max = max;
       this.type = type;
       this.referencedFrom = referencedFrom;
-      this.targetProfileReference = targetProfileReference;
+      this.targetProfileRef = targetProfileRef;
     }
 
     public ParameterDTO(
@@ -316,7 +316,7 @@ public class OperationDefinitionDTO {
         String max,
         String type,
         ReferencedFrom referencedFrom,
-        List<StructureDefinitionId> targetProfileReference
+        List<StructureDefinitionId> targetProfileRef
     ) {
       this.name = name;
       this.use = use;
@@ -324,7 +324,7 @@ public class OperationDefinitionDTO {
       this.max = max;
       this.type = type;
       this.referencedFrom = new ArrayList<>(List.of(referencedFrom));
-      this.targetProfileReference = targetProfileReference;
+      this.targetProfileRef = targetProfileRef;
     }
 
     public ParameterDTO merge(ParameterDTO other) {
@@ -371,8 +371,8 @@ public class OperationDefinitionDTO {
       var mergedReferencedFrom = new ArrayList<>(this.getReferencedFrom());
       mergedReferencedFrom.addAll(other.getReferencedFrom());
 
-      var mergedTargetProfileReferences = new ArrayList<>(this.getTargetProfileReference());
-      mergedTargetProfileReferences.addAll(other.getTargetProfileReference());
+      var mergedTargetProfileReferences = new ArrayList<>(this.getTargetProfileRef());
+      mergedTargetProfileReferences.addAll(other.getTargetProfileRef());
 
       return new ParameterDTO(
           this.getName(),
@@ -386,12 +386,7 @@ public class OperationDefinitionDTO {
               .stream()
               .map(group -> group.get(0))
               .toList(),
-          mergedTargetProfileReferences.stream()
-              .collect(Collectors.groupingBy(StructureDefinitionId::getId))
-              .values()
-              .stream()
-              .map(group -> group.get(0))
-              .toList()
+          new HashSet<>(mergedTargetProfileReferences).stream().toList()
       );
     }
 
@@ -432,8 +427,8 @@ public class OperationDefinitionDTO {
       return referencedFrom.get(0);
     }
 
-    public List<StructureDefinitionId> getTargetProfileReference() {
-      return targetProfileReference;
+    public List<StructureDefinitionId> getTargetProfileRef() {
+      return targetProfileRef;
     }
 
     @JsonIgnore

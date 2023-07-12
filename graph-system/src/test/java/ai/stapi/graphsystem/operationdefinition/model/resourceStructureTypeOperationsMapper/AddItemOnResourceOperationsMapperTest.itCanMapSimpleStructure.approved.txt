@@ -19,7 +19,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleTestResource.tag"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleTestResource" ]
   } ]

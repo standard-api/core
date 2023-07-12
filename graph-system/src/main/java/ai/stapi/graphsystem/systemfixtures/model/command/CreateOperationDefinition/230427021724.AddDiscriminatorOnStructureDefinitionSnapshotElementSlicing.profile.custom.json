@@ -18,7 +18,7 @@
           "source": "StructureDefinition.snapshot.element.slicing.discriminator"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "elementId",
@@ -31,7 +31,7 @@
           "source": "StructureDefinition.snapshot.element.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Discriminator on StructureDefinition.snapshot.element.slicing",

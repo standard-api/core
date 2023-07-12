@@ -113,8 +113,8 @@ public class StructureDefinitionToSSMapper {
         .setSerializationType(definitionDTO.getId())
         .setDescription(definitionDTO.getDescription())
         .setIsAbstract(definitionDTO.getIsAbstract());
-    if (definitionDTO.getBaseDefinitionReference() != null) {
-      builder.setParent(definitionDTO.getBaseDefinitionReference().toString());
+    if (definitionDTO.getBaseDefinitionRef() != null) {
+      builder.setParent(definitionDTO.getBaseDefinitionRef().toString());
     }
     return builder;
   }
@@ -128,8 +128,8 @@ public class StructureDefinitionToSSMapper {
         .setDescription(structureDefinitionData.getDescription())
         .setIsAbstract(structureDefinitionData.getIsAbstract())
         .setKind(structureDefinitionData.getKind());
-    if (structureDefinitionData.getBaseDefinitionReference() != null) {
-      builder.setParent(structureDefinitionData.getBaseDefinitionReference().toString());
+    if (structureDefinitionData.getBaseDefinitionRef() != null) {
+      builder.setParent(structureDefinitionData.getBaseDefinitionRef().toString());
     }
 
     var resultBuilders = new ArrayList<AbstractStructureTypeBuilder>();
@@ -189,7 +189,7 @@ public class StructureDefinitionToSSMapper {
             if (type.isEmpty()) {
               return;
             }
-            anonymousBuilder.setParent(type.get(0).getCode());
+            anonymousBuilder.setParent(type.get(0).getCodeRef().getId());
           }
       );
       var fieldTypes = this.resolveElementTypes(elementDefinition);
@@ -247,27 +247,25 @@ public class StructureDefinitionToSSMapper {
       ElementDefinition elementDefinition,
       ElementDefinitionType type
   ) {
-    if (this.isAnonymousElement(type.getCode())) {
+    var code = type.getCodeRef().getId();
+    if (this.isAnonymousElement(code)) {
       return List.of(
           FieldType.asAnonymousType(
               this.createAnonymousComplexTypeNameFromElementPath(elementDefinition.getPath()),
-              type.getCode()
+              code
           )
       );
-    } else if (isPrimitiveType(type.getCode()) && isUnionType(elementDefinition)) {
-      return List.of(FieldType.asBoxedType(type.getCode()));
-    } else if (isReference(type.getCode())) {
-      if (type.getTargetProfile().isEmpty()) {
+    } else if (isPrimitiveType(code) && isUnionType(elementDefinition)) {
+      return List.of(FieldType.asBoxedType(code));
+    } else if (isReference(code)) {
+      if (type.getTargetProfileRef().isEmpty()) {
         return List.of(FieldType.asReferenceType("Reference"));
       }
-      return type.getTargetProfile().stream()
-          .map(targetProfile -> {
-            var splitTargetProfile = targetProfile.split("/");
-            var targetType = splitTargetProfile[splitTargetProfile.length - 1];
-            return FieldType.asReferenceType(targetType);
-          }).toList();
+      return type.getTargetProfileRef().stream()
+          .map(targetProfile -> FieldType.asReferenceType(targetProfile.getId()))
+          .toList();
     } else {
-      return List.of(FieldType.asPlainType(type.getCode()));
+      return List.of(FieldType.asPlainType(type.getCodeRef().getId()));
     }
   }
 
@@ -306,7 +304,7 @@ public class StructureDefinitionToSSMapper {
       );
       return FieldType.asContentReferenced(
           anonymousTypeName,
-          referencedElementDefinition.get().getType().get(0).getCode()
+          referencedElementDefinition.get().getType().get(0).getCodeRef().getId()
       );
     }
     return null;

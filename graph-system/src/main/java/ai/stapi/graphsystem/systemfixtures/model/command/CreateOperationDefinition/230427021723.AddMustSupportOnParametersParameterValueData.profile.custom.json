@@ -18,7 +18,7 @@
           "source": "Parameters.parameter.value.data.mustSupport"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "dataId",
@@ -31,7 +31,7 @@
           "source": "Parameters.parameter.value.data.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add MustSupport on Parameters.parameter.value.data",

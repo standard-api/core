@@ -18,7 +18,7 @@
           "source": "ValueSet.useContext.value.coding"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "useContextId",
@@ -31,7 +31,7 @@
           "source": "ValueSet.useContext.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Coding on ValueSet.useContext.value",

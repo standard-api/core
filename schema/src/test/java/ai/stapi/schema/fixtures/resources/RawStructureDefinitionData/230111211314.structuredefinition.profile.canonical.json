@@ -249,19 +249,6 @@
         ]
       },
       {
-        "definition": "The id of the parent StructureDefinition of this Differential.",
-        "id": "StructureDefinition.differential.parent",
-        "max": "1",
-        "min": 1,
-        "path": "StructureDefinition.differential.parent",
-        "short": "The id of the parent StructureDefinition of this Differential.",
-        "type": [
-          {
-            "code": "string"
-          }
-        ]
-      },
-      {
         "comment": "Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this structure definition outside of FHIR, where it is not possible to use the logical URI.",
         "definition": "A formal identifier that is used to identify this structure definition when it is represented in other formats, or referenced in a specification, model, design or an instance.",
         "id": "StructureDefinition.identifier",

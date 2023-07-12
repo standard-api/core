@@ -14,7 +14,7 @@
       "status" : "draft",
       "type" : "primitiveTop",
       "url" : "http://test.url/for/primitiveTopParent",
-      "baseDefinitionReference" : {
+      "baseDefinitionRef" : {
         "id" : "Element"
       },
       "differential" : {
@@ -32,7 +32,7 @@
       "type" : "Element",
       "url" : "http://test.url/for/Element",
       "baseDefinition" : null,
-      "baseDefinitionReference" : null,
+      "baseDefinitionRef" : null,
       "differential" : {
         "element" : [ {
           "comment" : "",
@@ -44,7 +44,11 @@
           "contentReference" : null,
           "type" : [ {
             "code" : "missingPrimitiveType",
-            "targetProfile" : [ ]
+            "codeRef" : {
+              "id" : "missingPrimitiveType"
+            },
+            "targetProfile" : [ ],
+            "targetProfileRef" : [ ]
           } ]
         } ]
       }
@@ -60,7 +64,7 @@
       "status" : "draft",
       "type" : "primitiveMiddle",
       "url" : "http://test.url/for/primitiveMiddle",
-      "baseDefinitionReference" : {
+      "baseDefinitionRef" : {
         "id" : "primitiveTop"
       },
       "differential" : {
@@ -78,7 +82,7 @@
       "status" : "draft",
       "type" : "primitiveBottom",
       "url" : "http://test.url/for/primitiveBottom",
-      "baseDefinitionReference" : {
+      "baseDefinitionRef" : {
         "id" : "primitiveMiddle"
       },
       "differential" : {

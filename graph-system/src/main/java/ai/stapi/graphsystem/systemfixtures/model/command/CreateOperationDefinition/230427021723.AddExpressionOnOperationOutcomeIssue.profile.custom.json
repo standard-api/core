@@ -18,7 +18,7 @@
           "source": "OperationOutcome.issue.expression"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "issueId",
@@ -31,7 +31,7 @@
           "source": "OperationOutcome.issue.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Expression on OperationOutcome.issue",

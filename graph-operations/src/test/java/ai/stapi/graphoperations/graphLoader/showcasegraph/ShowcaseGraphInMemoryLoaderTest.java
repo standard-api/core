@@ -1,14 +1,13 @@
 package ai.stapi.graphoperations.graphLoader.showcasegraph;
 
+import ai.stapi.graph.repositorypruner.RepositoryPruner;
 import ai.stapi.graphoperations.fixtures.ShowcaseGraphFixturesProvider;
 import ai.stapi.graphoperations.fixtures.testsystem.TestSystemModelDefinitionsLoader;
-import ai.stapi.identity.UniqueIdentifier;
-import ai.stapi.graph.repositorypruner.RepositoryPruner;
-import ai.stapi.graphoperations.synchronization.GraphSynchronizer;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.AllAttributesDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.EdgeDescriptionParameters;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.NodeDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.NodeDescriptionParameters;
+import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.OutgoingEdgeDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.UuidIdentityDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.query.AttributeQueryDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.query.CollectionComparisonOperator;
@@ -26,6 +25,8 @@ import ai.stapi.graphoperations.graphLoader.search.filterOption.NoneMatchFilterO
 import ai.stapi.graphoperations.graphLoader.search.paginationOption.OffsetPaginationOption;
 import ai.stapi.graphoperations.graphLoader.search.sortOption.AscendingSortOption;
 import ai.stapi.graphoperations.graphLoader.search.sortOption.DescendingSortOption;
+import ai.stapi.graphoperations.synchronization.GraphSynchronizer;
+import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.test.schemaintegration.SchemaIntegrationTestCase;
 import ai.stapi.test.schemaintegration.StructureDefinitionScope;
 import org.junit.jupiter.api.BeforeAll;
@@ -208,7 +209,13 @@ class ShowcaseGraphInMemoryLoaderTest extends SchemaIntegrationTestCase {
     var innerSort = new AscendingSortOption(
         new NodeDescription(
             new NodeDescriptionParameters("ElementDefinitionType"),
-            new AttributeQueryDescription("code")
+            new OutgoingEdgeDescription(
+                new EdgeDescriptionParameters("codeRef"),
+                new NodeDescription(
+                    "StructureDefinition",
+                    new AttributeQueryDescription("type")
+                )
+            )
         )
     );
     var sort = new DescendingSortOption(
@@ -220,7 +227,13 @@ class ShowcaseGraphInMemoryLoaderTest extends SchemaIntegrationTestCase {
                 new NodeQueryGraphDescription(
                     new NodeDescriptionParameters("ElementDefinitionType"),
                     SearchQueryParameters.from(),
-                    new AttributeQueryDescription("code")
+                    new OutgoingEdgeDescription(
+                        new EdgeDescriptionParameters("codeRef"),
+                        new NodeDescription(
+                            "StructureDefinition",
+                            new AttributeQueryDescription("type")
+                        )
+                    )
                 )
             )
         )
@@ -263,7 +276,13 @@ class ShowcaseGraphInMemoryLoaderTest extends SchemaIntegrationTestCase {
                                 SearchQueryParameters.from(innerSort),
                                 new NodeDescription(
                                     new NodeDescriptionParameters("ElementDefinitionType"),
-                                    new AttributeQueryDescription("code")
+                                    new OutgoingEdgeDescription(
+                                        new EdgeDescriptionParameters("codeRef"),
+                                        new NodeDescription(
+                                            "StructureDefinition",
+                                            new UuidIdentityDescription()
+                                        )
+                                    )
                                 )
                             )
                         )

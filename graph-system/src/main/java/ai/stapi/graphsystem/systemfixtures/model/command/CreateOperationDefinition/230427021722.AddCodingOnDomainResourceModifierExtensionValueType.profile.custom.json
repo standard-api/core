@@ -18,7 +18,7 @@
           "source": "DomainResource.modifierExtension.value.type.coding"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "modifierExtensionId",
@@ -31,7 +31,7 @@
           "source": "DomainResource.modifierExtension.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Coding on DomainResource.modifierExtension.value.type",

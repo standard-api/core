@@ -18,7 +18,7 @@
           "source": "StructureDefinition.snapshot.element.example.value.timing.repeat.dayOfWeek"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleId",
@@ -31,7 +31,7 @@
           "source": "StructureDefinition.snapshot.element.example.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add DayOfWeek on StructureDefinition.snapshot.element.example.value.timing.repeat",

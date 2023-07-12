@@ -18,7 +18,7 @@
           "source": "Parameters.parameter.value.timing.repeat.when"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "parameterId",
@@ -31,7 +31,7 @@
           "source": "Parameters.parameter.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add When on Parameters.parameter.value.timing.repeat",
