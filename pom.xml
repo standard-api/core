@@ -5,7 +5,7 @@
 
     <groupId>ai.stapi</groupId>
     <artifactId>core</artifactId>
-    <version>0.0.29-SNAPSHOT</version>
+    <version>0.0.29</version>
     <modules>
         <module>common</module>
         <module>graph</module>
