@@ -118,6 +118,11 @@
             },
             {
               "kind": "add",
+              "inputValueParameterName": "baseDefinitionRef",
+              "modificationPath": "StructureDefinition.baseDefinitionRef"
+            },
+            {
+              "kind": "add",
               "inputValueParameterName": "version",
               "modificationPath": "StructureDefinition.version"
             },

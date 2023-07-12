@@ -3,13 +3,13 @@
     {
       "referencedFrom": [
         {
-          "source": "StructureDefinition.baseDefinitionReference"
+          "source": "StructureDefinition.baseDefinitionRef"
         }
       ],
       "min": 0,
       "max": "1",
       "use": "in",
-      "name": "baseDefinitionReference",
+      "name": "baseDefinitionRef",
       "type": "Reference",
       "targetProfileRef": [
         {

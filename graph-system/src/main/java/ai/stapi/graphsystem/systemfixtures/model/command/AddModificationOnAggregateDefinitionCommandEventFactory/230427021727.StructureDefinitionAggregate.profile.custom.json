@@ -2,8 +2,8 @@
   "modification": [
     {
       "kind": "add",
-      "inputValueParameterName": "baseDefinitionReference",
-      "modificationPath": "StructureDefinition.baseDefinitionReference"
+      "inputValueParameterName": "baseDefinitionRef",
+      "modificationPath": "StructureDefinition.baseDefinitionRef"
     }
   ],
   "eventFactoryId": "cd43acdb-0818-4ae2-8f52-a5d6b289c8a6",
