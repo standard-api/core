@@ -18,7 +18,7 @@
           "source": "Parameters.parameter.resource.meta.tag"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "parameterId",
@@ -31,7 +31,7 @@
           "source": "Parameters.parameter.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Tag on Parameters.parameter.resource.meta",

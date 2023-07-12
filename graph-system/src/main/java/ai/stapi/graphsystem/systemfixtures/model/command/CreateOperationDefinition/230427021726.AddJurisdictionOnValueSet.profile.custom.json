@@ -18,7 +18,7 @@
           "source": "ValueSet.jurisdiction"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Jurisdiction on ValueSet",

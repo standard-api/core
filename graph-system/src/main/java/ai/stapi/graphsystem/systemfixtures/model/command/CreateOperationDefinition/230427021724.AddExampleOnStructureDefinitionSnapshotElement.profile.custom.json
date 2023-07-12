@@ -18,7 +18,7 @@
           "source": "StructureDefinition.snapshot.element.example"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "elementId",
@@ -31,7 +31,7 @@
           "source": "StructureDefinition.snapshot.element.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Example on StructureDefinition.snapshot.element",

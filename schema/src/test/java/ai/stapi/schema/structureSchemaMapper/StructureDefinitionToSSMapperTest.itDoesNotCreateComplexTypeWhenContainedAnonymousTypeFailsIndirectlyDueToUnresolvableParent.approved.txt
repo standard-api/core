@@ -33,7 +33,7 @@
       "status" : "draft",
       "type" : "primitiveWithMissingParent",
       "url" : "http://test.url/for/primitiveWithMissingParent",
-      "baseDefinitionReference" : {
+      "baseDefinitionRef" : {
         "id" : "missinElement"
       },
       "differential" : {
@@ -51,7 +51,7 @@
       "type" : "TestComplexWithAnonymousType",
       "url" : "http://test.url/for/TestComplexWithAnonymousType",
       "baseDefinition" : null,
-      "baseDefinitionReference" : null,
+      "baseDefinitionRef" : null,
       "differential" : {
         "element" : [ {
           "comment" : "",
@@ -63,7 +63,11 @@
           "contentReference" : null,
           "type" : [ {
             "code" : "BackboneElement",
-            "targetProfile" : [ ]
+            "codeRef" : {
+              "id" : "BackboneElement"
+            },
+            "targetProfile" : [ ],
+            "targetProfileRef" : [ ]
           } ]
         }, {
           "comment" : "",
@@ -75,7 +79,11 @@
           "contentReference" : null,
           "type" : [ {
             "code" : "ComplexTypeWithPrimitive",
-            "targetProfile" : [ ]
+            "codeRef" : {
+              "id" : "ComplexTypeWithPrimitive"
+            },
+            "targetProfile" : [ ],
+            "targetProfileRef" : [ ]
           } ]
         } ]
       }
@@ -91,7 +99,7 @@
       "type" : "ComplexTypeWithMissingPrimitive",
       "url" : "http://test.url/for/ComplexTypeWithMissingPrimitive",
       "baseDefinition" : null,
-      "baseDefinitionReference" : null,
+      "baseDefinitionRef" : null,
       "differential" : {
         "element" : [ {
           "comment" : "",
@@ -103,7 +111,11 @@
           "contentReference" : null,
           "type" : [ {
             "code" : "primitiveWithMissingParent",
-            "targetProfile" : [ ]
+            "codeRef" : {
+              "id" : "primitiveWithMissingParent"
+            },
+            "targetProfile" : [ ],
+            "targetProfileRef" : [ ]
           } ]
         } ]
       }

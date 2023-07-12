@@ -70,7 +70,7 @@
         "childGraphDescriptions" : [ ]
       }
     },
-    "baseDefinitionReference" : {
+    "baseDefinitionRef" : {
       "serializationType" : "ObjectFieldDefinition",
       "fieldObjectGraphMapping" : {
         "serializationType" : "ObjectObjectGraphMapping",
@@ -105,7 +105,7 @@
           "traversingType" : "edge",
           "childGraphDescriptions" : [ ],
           "parameters" : {
-            "edgeType" : "baseDefinitionReference"
+            "edgeType" : "baseDefinitionRef"
           }
         }
       },

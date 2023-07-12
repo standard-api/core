@@ -1,11 +1,13 @@
 package ai.stapi.schema.structuredefinition;
 
+import ai.stapi.identity.UniqueIdentifier;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import org.apache.commons.lang3.StringUtils;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureDefinitionNormalizer {
@@ -59,7 +61,7 @@ public class StructureDefinitionNormalizer {
     var newMap = new HashMap<>(structureDefinition);
     if (baseDefinition != null) {
       newMap.put(
-          "baseDefinitionReference",
+          "baseDefinitionRef",
           new StructureDefinitionId(replaced)
       );
     }
@@ -97,13 +99,17 @@ public class StructureDefinitionNormalizer {
                         )
                     );
                     return new ElementDefinitionType(
-                        fixedCode,
-                        type.getTargetProfile()
+                        type.getCode(),
+                        new UniqueIdentifier(fixedCode),
+                        type.getTargetProfile(),
+                        fixTargetProfile(type.getTargetProfile())
                     );
                   }
                   return new ElementDefinitionType(
                       type.getCode(),
-                      type.getTargetProfile()
+                      new UniqueIdentifier(type.getCode()),
+                      type.getTargetProfile(),
+                      fixTargetProfile(type.getTargetProfile())
                   );
                 }).collect(Collectors.toCollection(ArrayList::new));
           }
@@ -143,8 +149,10 @@ public class StructureDefinitionNormalizer {
                     ""
                 )
             );
-            fixedType.put("code", fixedCode);
+            fixedType.put("codeRef", fixedCode);
           }
+          var targetProfile = (List<String>) type.get("targetProfile");
+          fixedType.put("targetProfileRef", fixTargetProfile(targetProfile));
           return fixedType;
         }).collect(Collectors.toCollection(ArrayList::new));
       }
@@ -155,5 +163,13 @@ public class StructureDefinitionNormalizer {
       );
       return fixedElement;
     }).collect(Collectors.toCollection(ArrayList::new));
+  }
+
+  @NotNull
+  private static List<UniqueIdentifier> fixTargetProfile(List<String> targetProfile) {
+    return targetProfile.stream().map(profile -> profile.replace(
+        "http://hl7.org/fhir/StructureDefinition/",
+        ""
+    )).map(UniqueIdentifier::new).toList();
   }
 }

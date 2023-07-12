@@ -18,7 +18,7 @@
           "source": "Parameters.implicitRules"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "language",
@@ -31,7 +31,7 @@
           "source": "Parameters.language"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "meta",
@@ -44,7 +44,7 @@
           "source": "Parameters.meta"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "parameter",
@@ -57,7 +57,7 @@
           "source": "Parameters.parameter"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Create Parameters",

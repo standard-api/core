@@ -56,7 +56,7 @@
       "status" : "draft",
       "type" : "TestComplex1",
       "url" : "http://test.url/for/complex",
-      "baseDefinitionReference" : {
+      "baseDefinitionRef" : {
         "id" : "TestComplex2"
       },
       "differential" : {
@@ -70,7 +70,11 @@
           "contentReference" : null,
           "type" : [ {
             "code" : "testPrimitive",
-            "targetProfile" : [ ]
+            "codeRef" : {
+              "id" : "testPrimitive"
+            },
+            "targetProfile" : [ ],
+            "targetProfileRef" : [ ]
           } ]
         } ]
       }

@@ -18,7 +18,7 @@
           "source": "AggregateDefinition.command"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Command on AggregateDefinition",

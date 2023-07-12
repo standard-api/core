@@ -18,7 +18,7 @@
           "source": "OperationDefinition.date"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "extension",
@@ -31,7 +31,7 @@
           "source": "OperationDefinition.extension"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "code",
@@ -44,7 +44,7 @@
           "source": "OperationDefinition.code"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "instance",
@@ -57,7 +57,7 @@
           "source": "OperationDefinition.instance"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "purpose",
@@ -70,7 +70,7 @@
           "source": "OperationDefinition.purpose"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "modifierExtension",
@@ -83,7 +83,7 @@
           "source": "OperationDefinition.modifierExtension"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "jurisdiction",
@@ -96,7 +96,7 @@
           "source": "OperationDefinition.jurisdiction"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "description",
@@ -109,7 +109,7 @@
           "source": "OperationDefinition.description"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "language",
@@ -122,7 +122,7 @@
           "source": "OperationDefinition.language"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "experimental",
@@ -135,7 +135,7 @@
           "source": "OperationDefinition.experimental"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "title",
@@ -148,7 +148,7 @@
           "source": "OperationDefinition.title"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "type",
@@ -161,7 +161,7 @@
           "source": "OperationDefinition.type"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "contact",
@@ -174,7 +174,7 @@
           "source": "OperationDefinition.contact"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "parameter",
@@ -187,7 +187,7 @@
           "source": "OperationDefinition.parameter"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "text",
@@ -200,7 +200,7 @@
           "source": "OperationDefinition.text"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "resource",
@@ -213,7 +213,7 @@
           "source": "OperationDefinition.resource"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "kind",
@@ -226,7 +226,7 @@
           "source": "OperationDefinition.kind"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "inputProfile",
@@ -239,7 +239,7 @@
           "source": "OperationDefinition.inputProfile"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "version",
@@ -252,7 +252,7 @@
           "source": "OperationDefinition.version"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "affectsState",
@@ -265,7 +265,7 @@
           "source": "OperationDefinition.affectsState"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "url",
@@ -278,7 +278,7 @@
           "source": "OperationDefinition.url"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "overload",
@@ -291,7 +291,7 @@
           "source": "OperationDefinition.overload"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "outputProfile",
@@ -304,7 +304,7 @@
           "source": "OperationDefinition.outputProfile"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "contained",
@@ -317,7 +317,7 @@
           "source": "OperationDefinition.contained"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "system",
@@ -330,7 +330,7 @@
           "source": "OperationDefinition.system"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "meta",
@@ -343,7 +343,7 @@
           "source": "OperationDefinition.meta"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "name",
@@ -356,7 +356,7 @@
           "source": "OperationDefinition.name"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "implicitRules",
@@ -369,7 +369,7 @@
           "source": "OperationDefinition.implicitRules"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "publisher",
@@ -382,7 +382,7 @@
           "source": "OperationDefinition.publisher"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "comment",
@@ -395,7 +395,7 @@
           "source": "OperationDefinition.comment"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "useContext",
@@ -408,7 +408,7 @@
           "source": "OperationDefinition.useContext"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "status",
@@ -421,7 +421,7 @@
           "source": "OperationDefinition.status"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "base",
@@ -434,7 +434,7 @@
           "source": "OperationDefinition.base"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Create OperationDefinition",

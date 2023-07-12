@@ -18,7 +18,7 @@
           "source": "AggregateDefinition.command.eventFactory.modification"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "eventFactoryId",
@@ -31,7 +31,7 @@
           "source": "AggregateDefinition.command.eventFactory.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Modification on AggregateDefinition.command.eventFactory",

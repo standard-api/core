@@ -18,7 +18,7 @@
           "source": "OperationDefinition.contact"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Contact on OperationDefinition",

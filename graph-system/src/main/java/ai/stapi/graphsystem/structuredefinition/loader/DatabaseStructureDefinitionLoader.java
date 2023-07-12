@@ -31,11 +31,10 @@ public class DatabaseStructureDefinitionLoader implements StructureDefinitionLoa
       new AttributeQueryDescription("url"),
       new AttributeQueryDescription("status"),
       new AttributeQueryDescription("description"),
-      new AttributeQueryDescription("kind"),
-      new AttributeQueryDescription("abstract"),
+      new AttributeQueryDescription("kind"),      new AttributeQueryDescription("abstract"),
       new AttributeQueryDescription("type"),
       new OutgoingEdgeDescription(
-          new EdgeDescriptionParameters("baseDefinitionReference"),
+          new EdgeDescriptionParameters("baseDefinitionRef"),
           new NodeDescription(
               new NodeDescriptionParameters("StructureDefinition"),
               new UuidIdentityDescription()
@@ -67,7 +66,21 @@ public class DatabaseStructureDefinitionLoader implements StructureDefinitionLoa
                           new NodeDescription(
                               new NodeDescriptionParameters("ElementDefinitionType"),
                               new AttributeQueryDescription("code"),
-                              new AttributeQueryDescription("targetProfile")
+                              new OutgoingEdgeDescription(
+                                  new EdgeDescriptionParameters("codeRef"),
+                                  new NodeDescription(
+                                      "StructureDefinition",
+                                      new UuidIdentityDescription()
+                                  )
+                              ),
+                              new AttributeQueryDescription("targetProfile"),
+                              new OutgoingEdgeDescription(
+                                  new EdgeDescriptionParameters("targetProfileRef"),
+                                  new NodeDescription(
+                                      "StructureDefinition",
+                                      new UuidIdentityDescription()
+                                  )
+                              )
                           )
                       )
                   )

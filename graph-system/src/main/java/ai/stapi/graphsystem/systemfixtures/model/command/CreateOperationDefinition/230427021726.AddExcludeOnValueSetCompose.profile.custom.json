@@ -18,7 +18,7 @@
           "source": "ValueSet.compose.exclude"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Exclude on ValueSet.compose",

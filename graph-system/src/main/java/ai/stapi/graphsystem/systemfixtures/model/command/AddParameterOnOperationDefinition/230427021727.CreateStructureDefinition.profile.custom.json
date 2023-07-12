@@ -11,7 +11,7 @@
       "use": "in",
       "name": "baseDefinitionReference",
       "type": "Reference",
-      "targetProfileReference": [
+      "targetProfileRef": [
         {
           "id": "StructureDefinition"
         }

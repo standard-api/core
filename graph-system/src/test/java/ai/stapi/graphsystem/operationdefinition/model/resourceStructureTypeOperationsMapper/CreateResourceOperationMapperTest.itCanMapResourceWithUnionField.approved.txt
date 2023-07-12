@@ -19,7 +19,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 1,
@@ -29,7 +29,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 1,
@@ -39,7 +39,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField"
       } ],
-      "targetProfileReference" : [ {
+      "targetProfileRef" : [ {
         "id" : "OperationDefinition"
       }, {
         "id" : "StructureDefinition"

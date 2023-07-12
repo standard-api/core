@@ -18,7 +18,7 @@
           "source": "StructureDefinition.snapshot.element.type.aggregation"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "typeId",
@@ -31,7 +31,7 @@
           "source": "StructureDefinition.snapshot.element.type.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Aggregation on StructureDefinition.snapshot.element.type",

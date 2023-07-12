@@ -18,7 +18,7 @@
           "source": "ValueSet.date"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "extension",
@@ -31,7 +31,7 @@
           "source": "ValueSet.extension"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "copyright",
@@ -44,7 +44,7 @@
           "source": "ValueSet.copyright"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "purpose",
@@ -57,7 +57,7 @@
           "source": "ValueSet.purpose"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "modifierExtension",
@@ -70,7 +70,7 @@
           "source": "ValueSet.modifierExtension"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "jurisdiction",
@@ -83,7 +83,7 @@
           "source": "ValueSet.jurisdiction"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "description",
@@ -96,7 +96,7 @@
           "source": "ValueSet.description"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "language",
@@ -109,7 +109,7 @@
           "source": "ValueSet.language"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "experimental",
@@ -122,7 +122,7 @@
           "source": "ValueSet.experimental"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "title",
@@ -135,7 +135,7 @@
           "source": "ValueSet.title"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "contact",
@@ -148,7 +148,7 @@
           "source": "ValueSet.contact"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "text",
@@ -161,7 +161,7 @@
           "source": "ValueSet.text"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "identifier",
@@ -174,7 +174,7 @@
           "source": "ValueSet.identifier"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "version",
@@ -187,7 +187,7 @@
           "source": "ValueSet.version"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "url",
@@ -200,7 +200,7 @@
           "source": "ValueSet.url"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "expansion",
@@ -213,7 +213,7 @@
           "source": "ValueSet.expansion"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "contained",
@@ -226,7 +226,7 @@
           "source": "ValueSet.contained"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "immutable",
@@ -239,7 +239,7 @@
           "source": "ValueSet.immutable"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "compose",
@@ -252,7 +252,7 @@
           "source": "ValueSet.compose"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "meta",
@@ -265,7 +265,7 @@
           "source": "ValueSet.meta"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "name",
@@ -278,7 +278,7 @@
           "source": "ValueSet.name"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "implicitRules",
@@ -291,7 +291,7 @@
           "source": "ValueSet.implicitRules"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "publisher",
@@ -304,7 +304,7 @@
           "source": "ValueSet.publisher"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "useContext",
@@ -317,7 +317,7 @@
           "source": "ValueSet.useContext"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "status",
@@ -330,7 +330,7 @@
           "source": "ValueSet.status"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Create ValueSet",

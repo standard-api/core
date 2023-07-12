@@ -18,7 +18,7 @@
           "source": "ValueSet.useContext"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add UseContext on ValueSet",

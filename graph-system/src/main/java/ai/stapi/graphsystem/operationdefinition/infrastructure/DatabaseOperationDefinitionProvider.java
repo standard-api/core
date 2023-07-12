@@ -15,7 +15,6 @@ import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionDTO;
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionProvider;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
 public class DatabaseOperationDefinitionProvider implements OperationDefinitionProvider {
 
@@ -101,7 +100,7 @@ public class DatabaseOperationDefinitionProvider implements OperationDefinitionP
                     )
                 ),
                 new OutgoingEdgeQueryDescription(
-                    new EdgeDescriptionParameters("targetProfileReference"),
+                    new EdgeDescriptionParameters("targetProfile"),
                     SearchQueryParameters.builder()
                         .setPaginationOption(new OffsetPaginationOption(0, 300))
                         .build(),

@@ -18,7 +18,7 @@
           "source": "OperationOutcome.contained"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "extension",
@@ -31,7 +31,7 @@
           "source": "OperationOutcome.extension"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "issue",
@@ -44,7 +44,7 @@
           "source": "OperationOutcome.issue"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "meta",
@@ -57,7 +57,7 @@
           "source": "OperationOutcome.meta"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "modifierExtension",
@@ -70,7 +70,7 @@
           "source": "OperationOutcome.modifierExtension"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "implicitRules",
@@ -83,7 +83,7 @@
           "source": "OperationOutcome.implicitRules"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "language",
@@ -96,7 +96,7 @@
           "source": "OperationOutcome.language"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "text",
@@ -109,7 +109,7 @@
           "source": "OperationOutcome.text"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Create OperationOutcome",

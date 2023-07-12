@@ -18,7 +18,7 @@
           "source": "DomainResource.contained"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Contained on DomainResource",

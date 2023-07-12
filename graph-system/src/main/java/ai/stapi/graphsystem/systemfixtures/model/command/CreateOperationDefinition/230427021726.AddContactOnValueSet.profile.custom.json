@@ -18,7 +18,7 @@
           "source": "ValueSet.contact"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Contact on ValueSet",

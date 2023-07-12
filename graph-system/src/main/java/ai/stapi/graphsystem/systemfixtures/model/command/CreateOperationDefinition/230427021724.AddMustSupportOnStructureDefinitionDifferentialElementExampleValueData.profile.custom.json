@@ -18,7 +18,7 @@
           "source": "StructureDefinition.differential.element.example.value.data.mustSupport"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "dataId",
@@ -31,7 +31,7 @@
           "source": "StructureDefinition.differential.element.example.value.data.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add MustSupport on StructureDefinition.differential.element.example.value.data",

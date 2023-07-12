@@ -5,8 +5,8 @@ import ai.stapi.schema.adHocLoaders.GenericAdHocModelDefinitionsLoader;
 import ai.stapi.schema.scopeProvider.ScopeCacher;
 import ai.stapi.schema.scopeProvider.ScopeOptions;
 import ai.stapi.schema.structureSchema.AbstractStructureType;
-import ai.stapi.schema.structuredefinition.ElementDefinition;
 import ai.stapi.schema.structuredefinition.RawStructureDefinitionData;
+import ai.stapi.schema.structuredefinition.RawStructureDefinitionElementDefinition;
 import ai.stapi.schema.structuredefinition.StructureDefinitionData;
 import ai.stapi.schema.structuredefinition.StructureDefinitionNormalizer;
 import ai.stapi.schema.structuredefinition.loader.StructureDefinitionLoader;
@@ -73,6 +73,7 @@ public class SystemAdHocStructureDefinitionLoader implements StructureDefinition
             "AddElementOnStructureDefinitionDifferential"
         ).stream()
         .map(add -> this.fixAddElement(add, finalStructures))
+        .map(StructureDefinitionNormalizer::normalize)
         .toList();
 
     finalStructures.addAll(addElement);
@@ -101,7 +102,7 @@ public class SystemAdHocStructureDefinitionLoader implements StructureDefinition
     return sortedList;
   }
 
-  private StructureDefinitionData fixAddElement(
+  private RawStructureDefinitionData fixAddElement(
       HashMap addElementMap,
       ArrayList<StructureDefinitionData> finalStructures
   ) {
@@ -121,14 +122,14 @@ public class SystemAdHocStructureDefinitionLoader implements StructureDefinition
       );
     }
     var element = addElementMap.get("element");
-    ArrayList<ElementDefinition> castedElement = this.objectMapper.convertValue(
+    ArrayList<RawStructureDefinitionElementDefinition> castedElement = this.objectMapper.convertValue(
         element,
         new TypeReference<>() {
         }
     );
 
     var parentStructure = parentStructures.get(0);
-    return new StructureDefinitionData(
+    return new RawStructureDefinitionData(
         id,
         parentStructure.getUrl(),
         parentStructure.getStatus(),
@@ -137,8 +138,7 @@ public class SystemAdHocStructureDefinitionLoader implements StructureDefinition
         parentStructure.getIsAbstract(),
         parentStructure.getType(),
         parentStructure.getBaseDefinition(),
-        parentStructure.getBaseDefinitionReference(),
-        castedElement
+        new RawStructureDefinitionData.Differential(castedElement)
     );
   }
 }

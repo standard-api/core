@@ -18,7 +18,7 @@
           "source": "Parameters.parameter"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Parameter on Parameters",

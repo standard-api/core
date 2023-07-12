@@ -18,7 +18,7 @@
           "source": "StructureDefinition.differential.element.example.value.concept.coding"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleId",
@@ -31,7 +31,7 @@
           "source": "StructureDefinition.differential.element.example.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Coding on StructureDefinition.differential.element.example.value.concept",

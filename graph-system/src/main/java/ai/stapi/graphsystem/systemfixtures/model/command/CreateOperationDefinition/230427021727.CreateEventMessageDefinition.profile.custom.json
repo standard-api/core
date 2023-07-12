@@ -18,7 +18,7 @@
           "source": "EventMessageDefinition.meta"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "name",
@@ -31,7 +31,7 @@
           "source": "EventMessageDefinition.name"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "implicitRules",
@@ -44,7 +44,7 @@
           "source": "EventMessageDefinition.implicitRules"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "description",
@@ -57,7 +57,7 @@
           "source": "EventMessageDefinition.description"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "language",
@@ -70,7 +70,7 @@
           "source": "EventMessageDefinition.language"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "type",
@@ -83,7 +83,7 @@
           "source": "EventMessageDefinition.type"
         }
       ],
-      "targetProfileReference": [
+      "targetProfileRef": [
         {
           "id": "StructureDefinition"
         }

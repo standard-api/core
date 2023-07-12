@@ -18,7 +18,7 @@
           "source": "ValueSet.identifier.type.coding"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "identifierId",
@@ -31,7 +31,7 @@
           "source": "ValueSet.identifier.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Coding on ValueSet.identifier.type",

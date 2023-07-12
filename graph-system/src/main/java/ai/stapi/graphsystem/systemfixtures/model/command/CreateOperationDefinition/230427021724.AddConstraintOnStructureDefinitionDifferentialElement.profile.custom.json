@@ -18,7 +18,7 @@
           "source": "StructureDefinition.differential.element.constraint"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "elementId",
@@ -31,7 +31,7 @@
           "source": "StructureDefinition.differential.element.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Constraint on StructureDefinition.differential.element",

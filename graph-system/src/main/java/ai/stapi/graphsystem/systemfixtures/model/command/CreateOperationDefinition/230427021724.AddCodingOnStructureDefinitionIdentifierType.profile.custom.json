@@ -18,7 +18,7 @@
           "source": "StructureDefinition.identifier.type.coding"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "identifierId",
@@ -31,7 +31,7 @@
           "source": "StructureDefinition.identifier.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Coding on StructureDefinition.identifier.type",

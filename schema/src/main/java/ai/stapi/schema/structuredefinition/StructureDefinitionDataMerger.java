@@ -40,8 +40,7 @@ public class StructureDefinitionDataMerger {
         master.getIsAbstract() != null ? master.getIsAbstract() : slave.getIsAbstract(),
         master.getType() != null ? master.getType() : slave.getType(),
         master.getBaseDefinition() != null ? master.getBaseDefinition() : slave.getBaseDefinition(),
-        master.getBaseDefinitionReference() != null ? master.getBaseDefinitionReference()
-            : slave.getBaseDefinitionReference(),
+        master.getBaseDefinitionRef() != null ? master.getBaseDefinitionRef() : slave.getBaseDefinitionRef(),
         mergedDifferential
     );
   }

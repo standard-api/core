@@ -6,91 +6,117 @@
       "min" : 0,
       "path" : "Address.text",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "Address.state",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "Address.postalCode",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "*",
       "min" : 0,
       "path" : "Address.line",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "Address.district",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "Address.country",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "Address.city",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "Address.period",
       "type" : [ {
-        "code" : "Period"
+        "codeRef" : {
+          "id" : "Period"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 1,
       "path" : "Address.position.longitude",
       "type" : [ {
-        "code" : "decimal"
+        "codeRef" : {
+          "id" : "decimal"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 1,
       "path" : "Address.position.latitude",
       "type" : [ {
-        "code" : "decimal"
+        "codeRef" : {
+          "id" : "decimal"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "Address.use",
       "type" : [ {
-        "code" : "code"
+        "codeRef" : {
+          "id" : "code"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "Address.type",
       "type" : [ {
-        "code" : "code"
+        "codeRef" : {
+          "id" : "code"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "Address.position",
       "type" : [ {
-        "code" : "BackboneElement"
+        "codeRef" : {
+          "id" : "BackboneElement"
+        }
       } ]
     }, {
       "max" : "*",
@@ -107,35 +133,45 @@
       "min" : 0,
       "path" : "AggregateDefinition.name",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "AggregateDefinition.id",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "AggregateDefinition.description",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 1,
       "path" : "AggregateDefinition.structure",
       "type" : [ {
-        "code" : "Reference"
+        "codeRef" : {
+          "id" : "Reference"
+        }
       } ]
     }, {
       "max" : "*",
       "min" : 0,
       "path" : "AggregateDefinition.command",
       "type" : [ {
-        "code" : "CommandHandlerDefinition"
+        "codeRef" : {
+          "id" : "CommandHandlerDefinition"
+        }
       } ]
     }, {
       "max" : "*",
@@ -152,7 +188,9 @@
       "min" : 0,
       "path" : "BackboneElement.modifierExtension",
       "type" : [ {
-        "code" : "Extension"
+        "codeRef" : {
+          "id" : "Extension"
+        }
       } ]
     }, {
       "max" : "*",
@@ -169,7 +207,9 @@
       "min" : 0,
       "path" : "base64Binary.value",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "*",
@@ -186,7 +226,9 @@
       "min" : 0,
       "path" : "boolean.value",
       "type" : [ {
-        "code" : "boolean"
+        "codeRef" : {
+          "id" : "boolean"
+        }
       } ]
     }, {
       "max" : "*",
@@ -203,7 +245,9 @@
       "min" : 0,
       "path" : "canonical.value",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "*",
@@ -220,7 +264,9 @@
       "min" : 0,
       "path" : "code.value",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "*",
@@ -237,14 +283,18 @@
       "min" : 0,
       "path" : "CodeableConcept.text",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "*",
       "min" : 0,
       "path" : "CodeableConcept.coding",
       "type" : [ {
-        "code" : "Coding"
+        "codeRef" : {
+          "id" : "Coding"
+        }
       } ]
     }, {
       "max" : "*",
@@ -261,14 +311,18 @@
       "min" : 0,
       "path" : "CodeableReference.reference",
       "type" : [ {
-        "code" : "Reference"
+        "codeRef" : {
+          "id" : "Reference"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "CodeableReference.concept",
       "type" : [ {
-        "code" : "CodeableConcept"
+        "codeRef" : {
+          "id" : "CodeableConcept"
+        }
       } ]
     }, {
       "max" : "*",
@@ -285,35 +339,45 @@
       "min" : 0,
       "path" : "Coding.system",
       "type" : [ {
-        "code" : "uri"
+        "codeRef" : {
+          "id" : "uri"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "Coding.version",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "Coding.display",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "Coding.code",
       "type" : [ {
-        "code" : "code"
+        "codeRef" : {
+          "id" : "code"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "Coding.userSelected",
       "type" : [ {
-        "code" : "boolean"
+        "codeRef" : {
+          "id" : "boolean"
+        }
       } ]
     }, {
       "max" : "*",
@@ -330,63 +394,81 @@
       "min" : 1,
       "path" : "CommandHandlerDefinition.eventFactory.modification.modificationPath",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "CommandHandlerDefinition.eventFactory.modification.inputValueParameterName",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "CommandHandlerDefinition.eventFactory.modification.destinationIndexParameterName",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "CommandHandlerDefinition.operation",
       "type" : [ {
-        "code" : "Reference"
+        "codeRef" : {
+          "id" : "Reference"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "CommandHandlerDefinition.eventFactory.event",
       "type" : [ {
-        "code" : "Reference"
+        "codeRef" : {
+          "id" : "Reference"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 1,
       "path" : "CommandHandlerDefinition.eventFactory.modification.kind",
       "type" : [ {
-        "code" : "code"
+        "codeRef" : {
+          "id" : "code"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "CommandHandlerDefinition.creationalPolicy",
       "type" : [ {
-        "code" : "code"
+        "codeRef" : {
+          "id" : "code"
+        }
       } ]
     }, {
       "max" : "*",
       "min" : 0,
       "path" : "CommandHandlerDefinition.eventFactory.modification",
       "type" : [ {
-        "code" : "BackboneElement"
+        "codeRef" : {
+          "id" : "BackboneElement"
+        }
       } ]
     }, {
       "max" : "*",
       "min" : 0,
       "path" : "CommandHandlerDefinition.eventFactory",
       "type" : [ {
-        "code" : "BackboneElement"
+        "codeRef" : {
+          "id" : "BackboneElement"
+        }
       } ]
     }, {
       "max" : "*",
@@ -403,14 +485,18 @@
       "min" : 0,
       "path" : "ContactDetail.name",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "*",
       "min" : 0,
       "path" : "ContactDetail.telecom",
       "type" : [ {
-        "code" : "ContactPoint"
+        "codeRef" : {
+          "id" : "ContactPoint"
+        }
       } ]
     }, {
       "max" : "*",
@@ -427,35 +513,45 @@
       "min" : 0,
       "path" : "ContactPoint.value",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "ContactPoint.rank",
       "type" : [ {
-        "code" : "positiveInt"
+        "codeRef" : {
+          "id" : "positiveInt"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "ContactPoint.period",
       "type" : [ {
-        "code" : "Period"
+        "codeRef" : {
+          "id" : "Period"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "ContactPoint.use",
       "type" : [ {
-        "code" : "code"
+        "codeRef" : {
+          "id" : "code"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "ContactPoint.system",
       "type" : [ {
-        "code" : "code"
+        "codeRef" : {
+          "id" : "code"
+        }
       } ]
     }, {
       "max" : "*",
@@ -472,123 +568,161 @@
       "min" : 1,
       "path" : "DataRequirement.sort.path",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "*",
       "min" : 0,
       "path" : "DataRequirement.mustSupport",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "DataRequirement.dateFilter.searchParam",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "DataRequirement.dateFilter.path",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "DataRequirement.codeFilter.searchParam",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "DataRequirement.codeFilter.path",
       "type" : [ {
-        "code" : "string"
+        "codeRef" : {
+          "id" : "string"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "DataRequirement.limit",
       "type" : [ {
-        "code" : "positiveInt"
+        "codeRef" : {
+          "id" : "positiveInt"
+        }
       } ]
     }, {
       "max" : "*",
       "min" : 0,
       "path" : "DataRequirement.sort",
       "type" : [ {
-        "code" : "Element"
+        "codeRef" : {
+          "id" : "Element"
+        }
       } ]
     }, {
       "max" : "*",
       "min" : 0,
       "path" : "DataRequirement.dateFilter",
       "type" : [ {
-        "code" : "Element"
+        "codeRef" : {
+          "id" : "Element"
+        }
       } ]
     }, {
       "max" : "*",
       "min" : 0,
       "path" : "DataRequirement.codeFilter",
       "type" : [ {
-        "code" : "Element"
+        "codeRef" : {
+          "id" : "Element"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "DataRequirement.dateFilter.value[x]",
       "type" : [ {
-        "code" : "dateTime"
+        "codeRef" : {
+          "id" : "dateTime"
+        }
       }, {
-        "code" : "Duration"
+        "codeRef" : {
+          "id" : "Duration"
+        }
       }, {
-        "code" : "Period"
+        "codeRef" : {
+          "id" : "Period"
+        }
       } ]
     }, {
       "max" : "*",
       "min" : 0,
       "path" : "DataRequirement.codeFilter.code",
       "type" : [ {
-        "code" : "Coding"
+        "codeRef" : {
+          "id" : "Coding"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "DataRequirement.subject[x]",
       "type" : [ {
-        "code" : "CodeableConcept"
+        "codeRef" : {
+          "id" : "CodeableConcept"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 1,
       "path" : "DataRequirement.type",
       "type" : [ {
-        "code" : "code"
+        "codeRef" : {
+          "id" : "code"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 1,
       "path" : "DataRequirement.sort.direction",
       "type" : [ {
-        "code" : "code"
+        "codeRef" : {
+          "id" : "code"
+        }
       } ]
     }, {
       "max" : "*",
       "min" : 0,
       "path" : "DataRequirement.profile",
       "type" : [ {
-        "code" : "canonical"
+        "codeRef" : {
+          "id" : "canonical"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "DataRequirement.codeFilter.valueSet",
       "type" : [ {
-        "code" : "canonical"
+        "codeRef" : {
+          "id" : "canonical"
+        }
       } ]
     }, {
       "max" : "*",
@@ -615,7 +749,9 @@
       "min" : 0,
       "path" : "date.value",
       "type" : [ {
-        "code" : "date"
+        "codeRef" : {
+          "id" : "date"
+        }
       } ]
     }, {
       "max" : "*",
@@ -632,7 +768,9 @@
       "min" : 0,
       "path" : "dateTime.value",
       "type" : [ {
-        "code" : "dateTime"
+        "codeRef" : {
+          "id" : "dateTime"
+        }
       } ]
     }, {
       "max" : "*",
@@ -649,7 +787,9 @@
       "min" : 0,
       "path" : "decimal.value",
       "type" : [ {
-        "code" : "decimal"
+        "codeRef" : {
+          "id" : "decimal"
+        }
       } ]
     }, {
       "max" : "*",
@@ -666,28 +806,36 @@
       "min" : 0,
       "path" : "DomainResource.contained",
       "type" : [ {
-        "code" : "Resource"
+        "codeRef" : {
+          "id" : "Resource"
+        }
       } ]
     }, {
       "max" : "1",
       "min" : 0,
       "path" : "DomainResource.text",
       "type" : [ {
-        "code" : "Narrative"
+        "codeRef" : {
+          "id" : "Narrative"
+        }
       } ]
     }, {
       "max" : "*",
       "min" : 0,
       "path" : "DomainResource.modifierExtension",
       "type" : [ {
-        "code" : "Extension"
+        "codeRef" : {
+          "id" : "Extension"
+        }
       } ]
     }, {
       "max" : "*",
       "min" : 0,
       "path" : "DomainResource.extension",
       "type" : [ {
-        "code" : "Extension"
+        "codeRef" : {
+          "id" : "Extension"
+        }
       } ]
     }, {
       "max" : "*",

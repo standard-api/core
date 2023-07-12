@@ -18,7 +18,7 @@
           "source": "DomainResource.exampleMultipleReferenceField"
         }
       ],
-      "targetProfileReference": [ "StructureDefinition", "OperationDefinition" ]
+      "targetProfileRef": [ "StructureDefinition", "OperationDefinition" ]
     }
   ],
   "name": "Example Command with Example Reference Field",

@@ -14,7 +14,7 @@
       "type" : "Element",
       "url" : "http://test.url/for/Element",
       "baseDefinition" : null,
-      "baseDefinitionReference" : null,
+      "baseDefinitionRef" : null,
       "differential" : {
         "element" : [ {
           "comment" : "",
@@ -26,7 +26,11 @@
           "contentReference" : null,
           "type" : [ {
             "code" : "DeeperType",
-            "targetProfile" : [ ]
+            "codeRef" : {
+              "id" : "DeeperType"
+            },
+            "targetProfile" : [ ],
+            "targetProfileRef" : [ ]
           } ]
         } ]
       }
@@ -42,7 +46,7 @@
       "type" : "testPrimitive",
       "url" : "http://test.url/for/testPrimitive",
       "baseDefinition" : null,
-      "baseDefinitionReference" : null,
+      "baseDefinitionRef" : null,
       "differential" : {
         "element" : [ ]
       }
@@ -58,7 +62,7 @@
       "type" : "DeeperType",
       "url" : "http://test.url/for/DeeperType",
       "baseDefinition" : null,
-      "baseDefinitionReference" : null,
+      "baseDefinitionRef" : null,
       "differential" : {
         "element" : [ {
           "comment" : "",
@@ -70,7 +74,11 @@
           "contentReference" : null,
           "type" : [ {
             "code" : "SuperDeepType",
-            "targetProfile" : [ ]
+            "codeRef" : {
+              "id" : "SuperDeepType"
+            },
+            "targetProfile" : [ ],
+            "targetProfileRef" : [ ]
           } ]
         } ]
       }
@@ -86,7 +94,7 @@
       "type" : "HorseCockDeepType",
       "url" : "http://test.url/for/HorseCockDeepType",
       "baseDefinition" : null,
-      "baseDefinitionReference" : null,
+      "baseDefinitionRef" : null,
       "differential" : {
         "element" : [ {
           "comment" : "",
@@ -98,7 +106,11 @@
           "contentReference" : null,
           "type" : [ {
             "code" : "missingType",
-            "targetProfile" : [ ]
+            "codeRef" : {
+              "id" : "missingType"
+            },
+            "targetProfile" : [ ],
+            "targetProfileRef" : [ ]
           } ]
         } ]
       }
@@ -114,7 +126,7 @@
       "type" : "SuperDeepType",
       "url" : "http://test.url/for/SuperDeepType",
       "baseDefinition" : null,
-      "baseDefinitionReference" : null,
+      "baseDefinitionRef" : null,
       "differential" : {
         "element" : [ {
           "comment" : "",
@@ -126,7 +138,11 @@
           "contentReference" : null,
           "type" : [ {
             "code" : "HorseCockDeepType",
-            "targetProfile" : [ ]
+            "codeRef" : {
+              "id" : "HorseCockDeepType"
+            },
+            "targetProfile" : [ ],
+            "targetProfileRef" : [ ]
           } ]
         } ]
       }

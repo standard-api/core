@@ -18,7 +18,7 @@
           "source": "OperationDefinition.jurisdiction"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Jurisdiction on OperationDefinition",

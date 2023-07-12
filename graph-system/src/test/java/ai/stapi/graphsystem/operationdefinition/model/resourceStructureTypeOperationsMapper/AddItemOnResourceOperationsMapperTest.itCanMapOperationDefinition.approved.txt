@@ -19,7 +19,7 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.jurisdiction"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "OperationDefinition" ]
   }, {
@@ -41,7 +41,7 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.contact"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "OperationDefinition" ]
   }, {
@@ -63,7 +63,7 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.parameter"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "OperationDefinition" ]
   }, {
@@ -85,7 +85,7 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.resource"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "OperationDefinition" ]
   }, {
@@ -107,7 +107,7 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.overload"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "OperationDefinition" ]
   }, {
@@ -129,7 +129,7 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.useContext"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "OperationDefinition" ]
   }, {
@@ -151,7 +151,7 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.jurisdiction.coding"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 1,
@@ -161,41 +161,7 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.jurisdiction.id"
       } ],
-      "targetProfileReference" : [ ]
-    } ],
-    "resource" : [ "OperationDefinition" ]
-  }, {
-    "id" : "AddTargetProfileReferenceOnOperationDefinitionParameter",
-    "code" : "AddTargetProfileReferenceOnOperationDefinitionParameter",
-    "description" : "Generated command for adding targetProfileReference(Reference) on OperationDefinition Aggregate",
-    "instance" : true,
-    "kind" : "operation",
-    "name" : "Add TargetProfileReference on OperationDefinition.parameter",
-    "status" : "draft",
-    "system" : false,
-    "type" : false,
-    "parameter" : [ {
-      "max" : "*",
-      "min" : 1,
-      "name" : "targetProfileReference",
-      "type" : "Reference",
-      "use" : "in",
-      "referencedFrom" : [ {
-        "source" : "OperationDefinition.parameter.targetProfileReference"
-      } ],
-      "targetProfileReference" : [ {
-        "id" : "StructureDefinition"
-      } ]
-    }, {
-      "max" : "1",
-      "min" : 1,
-      "name" : "parameterId",
-      "type" : "id",
-      "use" : "in",
-      "referencedFrom" : [ {
-        "source" : "OperationDefinition.parameter.id"
-      } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "OperationDefinition" ]
   }, {
@@ -217,7 +183,7 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.parameter.referencedFrom"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 1,
@@ -227,7 +193,7 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.parameter.id"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "OperationDefinition" ]
   }, {
@@ -249,7 +215,7 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.parameter.targetProfile"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 1,
@@ -259,7 +225,7 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.parameter.id"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "OperationDefinition" ]
   }, {
@@ -281,7 +247,7 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.parameter.part"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 1,
@@ -291,7 +257,41 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.parameter.id"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "OperationDefinition" ]
+  }, {
+    "id" : "AddTargetProfileRefOnOperationDefinitionParameter",
+    "code" : "AddTargetProfileRefOnOperationDefinitionParameter",
+    "description" : "Generated command for adding targetProfileRef(Reference) on OperationDefinition Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add TargetProfileRef on OperationDefinition.parameter",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "targetProfileRef",
+      "type" : "Reference",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.parameter.targetProfileRef"
+      } ],
+      "targetProfileRef" : [ {
+        "id" : "StructureDefinition"
+      } ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "parameterId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "OperationDefinition.parameter.id"
+      } ],
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "OperationDefinition" ]
   }, {
@@ -313,7 +313,7 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.overload.parameterName"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 1,
@@ -323,7 +323,7 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.overload.id"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "OperationDefinition" ]
   }, {
@@ -345,7 +345,7 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.useContext.value.coding"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 1,
@@ -355,7 +355,7 @@
       "referencedFrom" : [ {
         "source" : "OperationDefinition.useContext.id"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "OperationDefinition" ]
   } ]

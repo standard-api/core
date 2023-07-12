@@ -18,7 +18,7 @@
           "source": "OperationDefinition.parameter.part"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "parameterId",
@@ -31,7 +31,7 @@
           "source": "OperationDefinition.parameter.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Part on OperationDefinition.parameter",

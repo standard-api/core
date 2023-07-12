@@ -18,7 +18,7 @@
           "source": "OperationDefinition.useContext"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add UseContext on OperationDefinition",

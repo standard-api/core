@@ -2,7 +2,6 @@ package ai.stapi.schema.structureSchemaMapper;
 
 import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.schema.fixtures.TestSystemModelDefinitionsLoader;
-import ai.stapi.schema.structuredefinition.loader.AdHocStructureDefinitionLoader;
 import ai.stapi.schema.scopeProvider.ScopeOptions;
 import ai.stapi.schema.scopeProvider.ScopeProvider;
 import ai.stapi.schema.structureSchema.ComplexStructureType;
@@ -11,6 +10,7 @@ import ai.stapi.schema.structureSchema.StructureSchema;
 import ai.stapi.schema.structuredefinition.ElementDefinition;
 import ai.stapi.schema.structuredefinition.ElementDefinitionType;
 import ai.stapi.schema.structuredefinition.StructureDefinitionData;
+import ai.stapi.schema.structuredefinition.loader.AdHocStructureDefinitionLoader;
 import ai.stapi.schema.test.integration.IntegrationTestCase;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -589,7 +589,9 @@ class StructureDefinitionToSSMapperTest extends IntegrationTestCase {
                             new ArrayList<>(List.of(
                                 new ElementDefinitionType(
                                     "Reference",
-                                    List.of("http://test.url/for/ReferencedType")
+                                    new UniqueIdentifier("Reference"),
+                                    List.of("http://test.url/for/ReferencedType"),
+                                    List.of(new UniqueIdentifier("ReferencedType"))
                                 )
                             )),
                             0,

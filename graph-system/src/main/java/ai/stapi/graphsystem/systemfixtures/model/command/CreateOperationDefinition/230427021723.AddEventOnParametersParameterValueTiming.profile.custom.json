@@ -18,7 +18,7 @@
           "source": "Parameters.parameter.value.timing.event"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "parameterId",
@@ -31,7 +31,7 @@
           "source": "Parameters.parameter.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Event on Parameters.parameter.value.timing",

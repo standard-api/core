@@ -18,7 +18,7 @@
           "source": "Parameters.parameter.value.data.codeFilter.code"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "codeFilterId",
@@ -31,7 +31,7 @@
           "source": "Parameters.parameter.value.data.codeFilter.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Code on Parameters.parameter.value.data.codeFilter",

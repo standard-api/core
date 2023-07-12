@@ -19,7 +19,7 @@
       "referencedFrom" : [ {
         "source" : "AggregateDefinition.meta"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 0,
@@ -29,7 +29,7 @@
       "referencedFrom" : [ {
         "source" : "AggregateDefinition.name"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 0,
@@ -39,7 +39,7 @@
       "referencedFrom" : [ {
         "source" : "AggregateDefinition.description"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 0,
@@ -49,7 +49,7 @@
       "referencedFrom" : [ {
         "source" : "AggregateDefinition.implicitRules"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 0,
@@ -59,7 +59,7 @@
       "referencedFrom" : [ {
         "source" : "AggregateDefinition.language"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "*",
       "min" : 0,
@@ -69,7 +69,7 @@
       "referencedFrom" : [ {
         "source" : "AggregateDefinition.command"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "1",
       "min" : 1,
@@ -79,7 +79,7 @@
       "referencedFrom" : [ {
         "source" : "AggregateDefinition.structure"
       } ],
-      "targetProfileReference" : [ {
+      "targetProfileRef" : [ {
         "id" : "StructureDefinition"
       } ]
     } ],

@@ -18,7 +18,7 @@
           "source": "OperationDefinition.parameter.referencedFrom"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "parameterId",
@@ -31,7 +31,7 @@
           "source": "OperationDefinition.parameter.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add ReferencedFrom on OperationDefinition.parameter",

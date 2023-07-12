@@ -18,7 +18,7 @@
           "source": "DomainResource.exampleUnionField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "exampleUnionFieldInteger",
@@ -31,7 +31,7 @@
           "source": "DomainResource.exampleUnionField"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Example Command with Example String Field",

@@ -24,7 +24,7 @@
       "status" : "draft",
       "type" : "TestComplex2",
       "url" : "http://test.url/for/complex2",
-      "baseDefinitionReference" : {
+      "baseDefinitionRef" : {
         "id" : "TestComplex1"
       },
       "differential" : {
@@ -42,7 +42,7 @@
       "status" : "draft",
       "type" : "TestComplex3",
       "url" : "http://test.url/for/complex3",
-      "baseDefinitionReference" : {
+      "baseDefinitionRef" : {
         "id" : "TestComplex2"
       },
       "differential" : {
@@ -60,7 +60,7 @@
       "type" : "TestComplex1",
       "url" : "http://test.url/for/complex",
       "baseDefinition" : null,
-      "baseDefinitionReference" : null,
+      "baseDefinitionRef" : null,
       "differential" : {
         "element" : [ {
           "comment" : "",
@@ -72,7 +72,11 @@
           "contentReference" : null,
           "type" : [ {
             "code" : "missingPrimitiveType",
-            "targetProfile" : [ ]
+            "codeRef" : {
+              "id" : "missingPrimitiveType"
+            },
+            "targetProfile" : [ ],
+            "targetProfileRef" : [ ]
           } ]
         } ]
       }

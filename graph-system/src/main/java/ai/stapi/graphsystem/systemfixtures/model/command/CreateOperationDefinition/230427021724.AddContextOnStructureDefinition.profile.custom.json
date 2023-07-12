@@ -18,7 +18,7 @@
           "source": "StructureDefinition.context"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Context on StructureDefinition",

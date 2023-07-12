@@ -18,7 +18,7 @@
           "source": "Resource.meta.tag"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Tag on Resource.meta",

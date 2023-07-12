@@ -53,7 +53,7 @@ class CreatedOperationEventFactoriesMapperTest extends SystemSchemaIntegrationTe
                    "referencedFrom" : [ {
                      "source" : "ExampleResourceType.exampleUnionField"
                    } ],
-                   "targetProfileReference" : [ ]
+                   "targetProfileRef" : [ ]
                  }, {
                    "max" : "1",
                    "min" : 1,
@@ -63,7 +63,7 @@ class CreatedOperationEventFactoriesMapperTest extends SystemSchemaIntegrationTe
                    "referencedFrom" : [ {
                      "source" : "ExampleResourceType.exampleUnionField"
                    } ],
-                   "targetProfileReference" : [ ]
+                   "targetProfileRef" : [ ]
                  }, {
                    "max" : "1",
                    "min" : 1,
@@ -73,7 +73,7 @@ class CreatedOperationEventFactoriesMapperTest extends SystemSchemaIntegrationTe
                    "referencedFrom" : [ {
                      "source" : "ExampleResourceType.exampleUnionField"
                    } ],
-                   "targetProfileReference" : [ {
+                   "targetProfileRef" : [ {
                      "id" : "OperationDefinition"
                    }, {
                      "id" : "StructureDefinition"

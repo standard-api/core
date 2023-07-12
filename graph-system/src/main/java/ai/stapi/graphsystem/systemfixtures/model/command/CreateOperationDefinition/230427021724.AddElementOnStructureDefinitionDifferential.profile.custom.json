@@ -18,7 +18,7 @@
           "source": "StructureDefinition.differential.element"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Element on StructureDefinition.differential",

@@ -19,7 +19,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.event"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleResourceType" ]
   }, {
@@ -41,7 +41,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.repeat.timeOfDay"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleResourceType" ]
   }, {
@@ -63,7 +63,7 @@
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.code.coding"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleResourceType" ]
   }, {
@@ -87,7 +87,7 @@ Generated command for adding sameField(decimal) on ExampleResourceType Aggregate
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.sameField"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     }, {
       "max" : "*",
       "min" : 1,
@@ -97,7 +97,7 @@ Generated command for adding sameField(decimal) on ExampleResourceType Aggregate
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.sameField"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleResourceType" ]
   }, {
@@ -119,7 +119,7 @@ Generated command for adding sameField(decimal) on ExampleResourceType Aggregate
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.repeat.dayOfWeek"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleResourceType" ]
   }, {
@@ -141,7 +141,7 @@ Generated command for adding sameField(decimal) on ExampleResourceType Aggregate
       "referencedFrom" : [ {
         "source" : "ExampleResourceType.exampleUnionField.repeat.when"
       } ],
-      "targetProfileReference" : [ ]
+      "targetProfileRef" : [ ]
     } ],
     "resource" : [ "ExampleResourceType" ]
   } ]

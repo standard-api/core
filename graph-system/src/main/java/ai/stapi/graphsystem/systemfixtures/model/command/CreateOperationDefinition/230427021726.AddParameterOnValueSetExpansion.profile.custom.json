@@ -18,7 +18,7 @@
           "source": "ValueSet.expansion.parameter"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Parameter on ValueSet.expansion",

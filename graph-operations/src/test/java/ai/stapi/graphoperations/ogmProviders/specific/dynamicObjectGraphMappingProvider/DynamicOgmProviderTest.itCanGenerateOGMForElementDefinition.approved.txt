@@ -931,51 +931,6 @@
         "traversingType" : "null",
         "childGraphDescriptions" : [ ]
       }
-    },
-    "typeReference" : {
-      "serializationType" : "ObjectFieldDefinition",
-      "fieldObjectGraphMapping" : {
-        "serializationType" : "ObjectObjectGraphMapping",
-        "fields" : {
-          "id" : {
-            "serializationType" : "ObjectFieldDefinition",
-            "fieldObjectGraphMapping" : {
-              "serializationType" : "LeafObjectGraphMapping",
-              "graphDescription" : {
-                "serializationType" : "NodeDescription",
-                "traversingType" : "node",
-                "childGraphDescriptions" : [ {
-                  "serializationType" : "UuidIdentityDescription",
-                  "traversingType" : "value",
-                  "childGraphDescriptions" : [ ],
-                  "parameters" : { }
-                } ],
-                "parameters" : {
-                  "nodeType" : "StructureDefinition"
-                }
-              }
-            },
-            "relation" : {
-              "serializationType" : "NullGraphDescription",
-              "traversingType" : "null",
-              "childGraphDescriptions" : [ ]
-            }
-          }
-        },
-        "graphDescription" : {
-          "serializationType" : "OutgoingEdgeDescription",
-          "traversingType" : "edge",
-          "childGraphDescriptions" : [ ],
-          "parameters" : {
-            "edgeType" : "typeReference"
-          }
-        }
-      },
-      "relation" : {
-        "serializationType" : "NullGraphDescription",
-        "traversingType" : "null",
-        "childGraphDescriptions" : [ ]
-      }
     }
   },
   "graphDescription" : {

@@ -20,7 +20,7 @@
         "referencedFrom" : [ {
           "source" : "AggregateDefinition.command"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "AggregateDefinition" ]
     }, {
@@ -42,7 +42,7 @@
         "referencedFrom" : [ {
           "source" : "AggregateDefinition.command.eventFactory.modification"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -52,7 +52,7 @@
         "referencedFrom" : [ {
           "source" : "AggregateDefinition.command.eventFactory.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "AggregateDefinition" ]
     }, {
@@ -74,7 +74,7 @@
         "referencedFrom" : [ {
           "source" : "AggregateDefinition.command.eventFactory"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       }, {
         "max" : "1",
         "min" : 1,
@@ -84,7 +84,7 @@
         "referencedFrom" : [ {
           "source" : "AggregateDefinition.command.id"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ],
       "resource" : [ "AggregateDefinition" ]
     } ]

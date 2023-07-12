@@ -18,7 +18,7 @@
           "source": "DomainResource.modifierExtension.value.dateFilter"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "modifierExtensionId",
@@ -31,7 +31,7 @@
           "source": "DomainResource.modifierExtension.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add DateFilter on DomainResource.modifierExtension.value",

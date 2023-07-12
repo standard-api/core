@@ -18,7 +18,7 @@
           "source": "ValueSet.identifier"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Identifier on ValueSet",

@@ -18,7 +18,7 @@
           "source": "ValueSet.compose.include.concept.designation"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "conceptId",
@@ -31,7 +31,7 @@
           "source": "ValueSet.compose.include.concept.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Designation on ValueSet.compose.include.concept",

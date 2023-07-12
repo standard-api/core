@@ -18,7 +18,7 @@
           "source": "Parameters.parameter.value.data.subject.coding"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "dataId",
@@ -31,7 +31,7 @@
           "source": "Parameters.parameter.value.data.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Coding on Parameters.parameter.value.data.subject",

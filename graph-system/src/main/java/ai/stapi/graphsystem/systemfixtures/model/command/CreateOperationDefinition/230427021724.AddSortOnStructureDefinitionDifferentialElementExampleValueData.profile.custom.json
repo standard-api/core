@@ -18,7 +18,7 @@
           "source": "StructureDefinition.differential.element.example.value.data.sort"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "dataId",
@@ -31,7 +31,7 @@
           "source": "StructureDefinition.differential.element.example.value.data.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Sort on StructureDefinition.differential.element.example.value.data",

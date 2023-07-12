@@ -18,7 +18,7 @@
           "source": "OperationDefinition.jurisdiction.coding"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "jurisdictionId",
@@ -31,7 +31,7 @@
           "source": "OperationDefinition.jurisdiction.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add Coding on OperationDefinition.jurisdiction",

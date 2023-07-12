@@ -11,7 +11,7 @@
         "referencedFrom" : [ {
           "source" : "OperationDefinition.text"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ]
     } ],
     "operations" : [ ]
@@ -28,7 +28,7 @@
         "referencedFrom" : [ {
           "source" : "OperationOutcome.text"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ]
     } ],
     "operations" : [ ]
@@ -45,7 +45,7 @@
         "referencedFrom" : [ {
           "source" : "StructureDefinition.text"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ]
     } ],
     "operations" : [ ]
@@ -62,7 +62,7 @@
         "referencedFrom" : [ {
           "source" : "ValueSet.text"
         } ],
-        "targetProfileReference" : [ ]
+        "targetProfileRef" : [ ]
       } ]
     } ],
     "operations" : [ ]

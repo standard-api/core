@@ -18,7 +18,7 @@
           "source": "AggregateDefinition.command.eventFactory"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "commandId",
@@ -31,7 +31,7 @@
           "source": "AggregateDefinition.command.id"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Add EventFactory on AggregateDefinition.command",

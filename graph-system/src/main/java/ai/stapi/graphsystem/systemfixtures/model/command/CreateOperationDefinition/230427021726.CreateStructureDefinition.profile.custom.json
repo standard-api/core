@@ -18,7 +18,7 @@
           "source": "StructureDefinition.date"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "extension",
@@ -31,7 +31,7 @@
           "source": "StructureDefinition.extension"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "copyright",
@@ -44,7 +44,7 @@
           "source": "StructureDefinition.copyright"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "purpose",
@@ -57,7 +57,7 @@
           "source": "StructureDefinition.purpose"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "modifierExtension",
@@ -70,7 +70,7 @@
           "source": "StructureDefinition.modifierExtension"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "jurisdiction",
@@ -83,7 +83,7 @@
           "source": "StructureDefinition.jurisdiction"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "description",
@@ -96,7 +96,7 @@
           "source": "StructureDefinition.description"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "language",
@@ -109,7 +109,7 @@
           "source": "StructureDefinition.language"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "experimental",
@@ -122,7 +122,7 @@
           "source": "StructureDefinition.experimental"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "title",
@@ -135,7 +135,7 @@
           "source": "StructureDefinition.title"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "type",
@@ -148,7 +148,7 @@
           "source": "StructureDefinition.type"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "differential",
@@ -161,7 +161,7 @@
           "source": "StructureDefinition.differential"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "fhirVersion",
@@ -174,7 +174,7 @@
           "source": "StructureDefinition.fhirVersion"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "context",
@@ -187,7 +187,7 @@
           "source": "StructureDefinition.context"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "text",
@@ -200,7 +200,7 @@
           "source": "StructureDefinition.text"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "keyword",
@@ -213,7 +213,7 @@
           "source": "StructureDefinition.keyword"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "identifier",
@@ -226,7 +226,7 @@
           "source": "StructureDefinition.identifier"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "mapping",
@@ -239,7 +239,7 @@
           "source": "StructureDefinition.mapping"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "kind",
@@ -252,7 +252,7 @@
           "source": "StructureDefinition.kind"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "abstract",
@@ -265,7 +265,7 @@
           "source": "StructureDefinition.abstract"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "baseDefinition",
@@ -278,7 +278,7 @@
           "source": "StructureDefinition.baseDefinition"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "version",
@@ -291,7 +291,7 @@
           "source": "StructureDefinition.version"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "url",
@@ -304,7 +304,7 @@
           "source": "StructureDefinition.url"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "contained",
@@ -317,7 +317,7 @@
           "source": "StructureDefinition.contained"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "meta",
@@ -330,7 +330,7 @@
           "source": "StructureDefinition.meta"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "name",
@@ -343,7 +343,7 @@
           "source": "StructureDefinition.name"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "implicitRules",
@@ -356,7 +356,7 @@
           "source": "StructureDefinition.implicitRules"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "publisher",
@@ -369,7 +369,7 @@
           "source": "StructureDefinition.publisher"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "derivation",
@@ -382,7 +382,7 @@
           "source": "StructureDefinition.derivation"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "contextInvariant",
@@ -395,7 +395,7 @@
           "source": "StructureDefinition.contextInvariant"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "useContext",
@@ -408,7 +408,7 @@
           "source": "StructureDefinition.useContext"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "snapshot",
@@ -421,7 +421,7 @@
           "source": "StructureDefinition.snapshot"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     },
     {
       "name": "status",
@@ -434,7 +434,7 @@
           "source": "StructureDefinition.status"
         }
       ],
-      "targetProfileReference": []
+      "targetProfileRef": []
     }
   ],
   "name": "Create StructureDefinition",
