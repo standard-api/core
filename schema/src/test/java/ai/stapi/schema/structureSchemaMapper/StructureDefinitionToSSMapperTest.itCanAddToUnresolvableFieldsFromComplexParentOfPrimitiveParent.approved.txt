@@ -18,7 +18,6 @@
         "id" : "Element"
       },
       "differential" : {
-        "parent" : "primitiveTop",
         "element" : [ ]
       }
     }
@@ -35,7 +34,6 @@
       "baseDefinition" : null,
       "baseDefinitionReference" : null,
       "differential" : {
-        "parent" : "Element",
         "element" : [ {
           "comment" : "",
           "definition" : "",
@@ -66,7 +64,6 @@
         "id" : "primitiveTop"
       },
       "differential" : {
-        "parent" : "primitiveMiddle",
         "element" : [ ]
       }
     }
@@ -85,7 +82,6 @@
         "id" : "primitiveMiddle"
       },
       "differential" : {
-        "parent" : "primitiveBottom",
         "element" : [ ]
       }
     }

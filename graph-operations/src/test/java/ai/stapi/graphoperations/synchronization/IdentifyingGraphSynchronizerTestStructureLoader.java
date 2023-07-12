@@ -79,8 +79,7 @@ public class IdentifyingGraphSynchronizerTestStructureLoader
                         null,
                         null
                     )
-                ),
-                "Test_node_type"
+                )
             )
         ),
         new StructureDefinitionData(
@@ -104,8 +103,7 @@ public class IdentifyingGraphSynchronizerTestStructureLoader
                         null,
                         null
                     )
-                ),
-                null
+                )
             )
         ),
         new StructureDefinitionData(
@@ -129,8 +127,7 @@ public class IdentifyingGraphSynchronizerTestStructureLoader
                         null,
                         null
                     )
-                ),
-                null
+                )
             )
         )
     );

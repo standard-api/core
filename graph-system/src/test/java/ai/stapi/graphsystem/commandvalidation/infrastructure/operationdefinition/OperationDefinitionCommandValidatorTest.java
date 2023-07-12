@@ -4,8 +4,8 @@ import ai.stapi.graphsystem.aggregatedefinition.infrastructure.NullAggregateDefi
 import ai.stapi.graphsystem.commandvalidation.model.CommandConstrainViolation;
 import ai.stapi.graphsystem.commandvalidation.model.exceptions.CannotValidateCommand;
 import ai.stapi.graphsystem.messaging.command.DynamicCommand;
-import ai.stapi.identity.UniversallyUniqueIdentifier;
 import ai.stapi.graphsystem.operationdefinition.model.testImplementations.TestOperationDefinitionProvider;
+import ai.stapi.identity.UniversallyUniqueIdentifier;
 import ai.stapi.test.SystemSchemaIntegrationTestCase;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -492,8 +492,7 @@ class OperationDefinitionCommandValidatorTest extends SystemSchemaIntegrationTes
                                 "path", "ExampleStructureDefinition.exampleElement",
                                 "label", 50
                             )
-                        ),
-                        "parent", "ExampleStructureDefinition"
+                        )
                     )
                 )
             )

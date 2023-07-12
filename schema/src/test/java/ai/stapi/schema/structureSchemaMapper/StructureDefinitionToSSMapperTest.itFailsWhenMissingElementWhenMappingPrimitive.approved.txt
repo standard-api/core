@@ -18,7 +18,6 @@
         "id" : "parentPrimitive"
       },
       "differential" : {
-        "parent" : "primitive",
         "element" : [ ]
       }
     }
@@ -35,7 +34,6 @@
       "baseDefinition" : null,
       "baseDefinitionReference" : null,
       "differential" : {
-        "parent" : "parentPrimitive",
         "element" : [ ]
       }
     }

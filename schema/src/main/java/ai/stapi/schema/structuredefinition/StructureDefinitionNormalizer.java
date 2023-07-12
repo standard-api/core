@@ -38,10 +38,7 @@ public class StructureDefinitionNormalizer {
         imported.getType(),
         baseDefinition,
         baseDefinition == null ? null : new StructureDefinitionId(replaced),
-        fixedElements == null ? null : new StructureDefinitionData.Differential(
-            fixedElements,
-            imported.getId()
-        )
+        fixedElements == null ? null : new StructureDefinitionData.Differential(fixedElements)
     );
   }
 
@@ -71,7 +68,6 @@ public class StructureDefinitionNormalizer {
       newMap.put(
           "differential",
           new HashMap<>(Map.of(
-              "parent", (String) structureDefinition.get("id"),
               "element", fixedElements
           ))
       );

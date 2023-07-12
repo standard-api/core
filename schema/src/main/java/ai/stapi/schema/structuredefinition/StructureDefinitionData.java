@@ -69,7 +69,7 @@ public class StructureDefinitionData implements SerializableObject {
     this.type = type;
     this.baseDefinition = baseDefinition;
     this.baseDefinitionReference = baseDefinitionReference;
-    this.differential = new Differential(differential, this.id);
+    this.differential = new Differential(differential);
   }
 
   public String getId() {
@@ -138,22 +138,16 @@ public class StructureDefinitionData implements SerializableObject {
 
     public static final String SERIALIZATION_TYPE = "StructureDefinitionDifferential";
     private List<ElementDefinition> element;
-    private String parent;
 
     private Differential() {
     }
 
-    public Differential(List<ElementDefinition> element, String parent) {
+    public Differential(List<ElementDefinition> element) {
       this.element = element;
-      this.parent = parent;
     }
 
     public List<ElementDefinition> getElement() {
       return element;
-    }
-
-    public String getParent() {
-      return parent;
     }
 
     @Override

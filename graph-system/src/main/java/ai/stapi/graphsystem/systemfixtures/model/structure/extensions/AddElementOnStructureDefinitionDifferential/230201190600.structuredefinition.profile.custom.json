@@ -15,19 +15,6 @@
           ]
         }
       ]
-    },
-    {
-      "definition": "The id of the parent StructureDefinition of this Differential.",
-      "id": "StructureDefinition.differential.parent",
-      "max": "1",
-      "min": 1,
-      "path": "StructureDefinition.differential.parent",
-      "short": "The id of the parent StructureDefinition of this Differential.",
-      "type": [
-        {
-          "code": "string"
-        }
-      ]
     }
   ]
 }

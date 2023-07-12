@@ -75,8 +75,7 @@ public class AddItemOnResourceOperationsMapperTestDefinitionsLoader
                         "The structure of the test resource",
                         null
                     )
-                ),
-                "ExampleTestResource"
+                )
             )
         ),
         new StructureDefinitionData(
@@ -100,8 +99,7 @@ public class AddItemOnResourceOperationsMapperTestDefinitionsLoader
                         "The same field but with type string",
                         null
                     )
-                ),
-                "SameFieldComplex1"
+                )
             )
         ),
         new StructureDefinitionData(
@@ -125,8 +123,7 @@ public class AddItemOnResourceOperationsMapperTestDefinitionsLoader
                         "The same field but with type decimal",
                         null
                     )
-                ),
-                "SameFieldComplex2"
+                )
             )
         )
     );
