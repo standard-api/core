@@ -28,7 +28,6 @@
         "id" : "TestComplex1"
       },
       "differential" : {
-        "parent" : "TestComplex2",
         "element" : [ ]
       }
     }
@@ -47,7 +46,6 @@
         "id" : "TestComplex2"
       },
       "differential" : {
-        "parent" : "TestComplex3",
         "element" : [ ]
       }
     }
@@ -64,7 +62,6 @@
       "baseDefinition" : null,
       "baseDefinitionReference" : null,
       "differential" : {
-        "parent" : "TestComplex1",
         "element" : [ {
           "comment" : "",
           "definition" : "",

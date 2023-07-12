@@ -58,7 +58,6 @@
       "baseDefinition" : null,
       "baseDefinitionReference" : null,
       "differential" : {
-        "parent" : "TestComplex",
         "element" : [ {
           "comment" : "",
           "definition" : "",

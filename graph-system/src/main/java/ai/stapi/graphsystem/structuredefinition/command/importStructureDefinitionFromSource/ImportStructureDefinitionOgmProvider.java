@@ -1,17 +1,17 @@
 package ai.stapi.graphsystem.structuredefinition.command.importStructureDefinitionFromSource;
 
-import ai.stapi.graphsystem.messaging.event.AggregateGraphUpdatedEvent;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.GraphDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.NullGraphDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.UuidIdentityDescription;
-import ai.stapi.identity.UniqueIdentifier;
-import ai.stapi.graphsystem.messaging.command.AbstractCommand;
 import ai.stapi.graphoperations.objectGraphLanguage.ObjectGraphMapping;
 import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.GenericOGMBuilder;
 import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.specific.ogm.ObjectGraphMappingBuilder;
 import ai.stapi.graphoperations.objectLanguage.EntityIdentifier;
-import ai.stapi.graphsystem.commandEventGraphMappingProvider.specific.SpecificCommandEventGraphMappingProvider;
 import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
+import ai.stapi.graphsystem.commandEventGraphMappingProvider.specific.SpecificCommandEventGraphMappingProvider;
+import ai.stapi.graphsystem.messaging.command.AbstractCommand;
+import ai.stapi.graphsystem.messaging.event.AggregateGraphUpdatedEvent;
+import ai.stapi.identity.UniqueIdentifier;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,7 +48,7 @@ public class ImportStructureDefinitionOgmProvider implements SpecificCommandEven
         .addLeafAsObjectFieldMapping()
         .setGraphDescription(new UuidIdentityDescription());
 
-    var ogm= this.genericGraphMappingProvider.provideGraphMapping(
+    var ogm = this.genericGraphMappingProvider.provideGraphMapping(
         "StructureDefinition"
     );
     var builder = new GenericOGMBuilder().copyGraphMappingAsBuilder(ogm);

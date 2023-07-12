@@ -26,7 +26,6 @@
       "baseDefinition" : null,
       "baseDefinitionReference" : null,
       "differential" : {
-        "parent" : "TestComplexWithAnonymousType",
         "element" : [ {
           "comment" : "",
           "definition" : "",

@@ -48,7 +48,8 @@ public class DatabaseStructureDefinitionLoader implements StructureDefinitionLoa
               new OutgoingEdgeQueryDescription(
                   new EdgeDescriptionParameters("element"),
                   SearchQueryParameters.builder()
-                      .setPaginationOption(new OffsetPaginationOption(0, 300)).build(),
+                      .setPaginationOption(new OffsetPaginationOption(0, 300))
+                      .build(),
                   new NodeDescription(
                       new NodeDescriptionParameters("ElementDefinition"),
                       new AttributeQueryDescription("path"),

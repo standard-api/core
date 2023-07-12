@@ -37,7 +37,6 @@
         "id" : "missinElement"
       },
       "differential" : {
-        "parent" : "primitiveWithMissingParent",
         "element" : [ ]
       }
     }
@@ -54,7 +53,6 @@
       "baseDefinition" : null,
       "baseDefinitionReference" : null,
       "differential" : {
-        "parent" : "TestComplexWithAnonymousType",
         "element" : [ {
           "comment" : "",
           "definition" : "",
@@ -95,7 +93,6 @@
       "baseDefinition" : null,
       "baseDefinitionReference" : null,
       "differential" : {
-        "parent" : "ComplexTypeWithPrimitive",
         "element" : [ {
           "comment" : "",
           "definition" : "",

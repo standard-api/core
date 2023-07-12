@@ -16,7 +16,6 @@
       "baseDefinition" : null,
       "baseDefinitionReference" : null,
       "differential" : {
-        "parent" : "Element",
         "element" : [ {
           "comment" : "",
           "definition" : "",
@@ -45,7 +44,6 @@
       "baseDefinition" : null,
       "baseDefinitionReference" : null,
       "differential" : {
-        "parent" : "DeeperType",
         "element" : [ {
           "comment" : "",
           "definition" : "",
@@ -76,7 +74,6 @@
         "id" : "Element"
       },
       "differential" : {
-        "parent" : "FailingComplexThroughParent",
         "element" : [ ]
       }
     }
@@ -93,7 +90,6 @@
       "baseDefinition" : null,
       "baseDefinitionReference" : null,
       "differential" : {
-        "parent" : "HorseCockDeepType",
         "element" : [ {
           "comment" : "",
           "definition" : "",
@@ -122,7 +118,6 @@
       "baseDefinition" : null,
       "baseDefinitionReference" : null,
       "differential" : {
-        "parent" : "SuperDeepType",
         "element" : [ {
           "comment" : "",
           "definition" : "",

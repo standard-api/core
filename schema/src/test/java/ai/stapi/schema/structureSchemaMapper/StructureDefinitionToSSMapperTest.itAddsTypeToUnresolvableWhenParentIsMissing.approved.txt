@@ -60,7 +60,6 @@
         "id" : "TestComplex2"
       },
       "differential" : {
-        "parent" : "TestComplex1",
         "element" : [ {
           "comment" : "",
           "definition" : "",

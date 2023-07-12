@@ -16,7 +16,6 @@
       "baseDefinition" : null,
       "baseDefinitionReference" : null,
       "differential" : {
-        "parent" : "testPrimitive",
         "element" : [ ]
       }
     }

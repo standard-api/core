@@ -3,7 +3,6 @@ package ai.stapi.schema.structuredefinition;
 import ai.stapi.serialization.SerializableObject;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
-import org.jetbrains.annotations.Nullable;
 
 public class RawStructureDefinitionData implements SerializableObject {
 
@@ -90,27 +89,17 @@ public class RawStructureDefinitionData implements SerializableObject {
   public static class Differential {
 
     private ArrayList<RawStructureDefinitionElementDefinition> element;
-    private String parent;
 
 
     protected Differential() {
     }
 
-    public Differential(
-        ArrayList<RawStructureDefinitionElementDefinition> element,
-        String parent
-    ) {
+    public Differential(ArrayList<RawStructureDefinitionElementDefinition> element) {
       this.element = element;
-      this.parent = parent;
     }
 
     public ArrayList<RawStructureDefinitionElementDefinition> getElement() {
       return element;
-    }
-
-    @Nullable
-    public String getParent() {
-      return parent;
     }
   }
 }
