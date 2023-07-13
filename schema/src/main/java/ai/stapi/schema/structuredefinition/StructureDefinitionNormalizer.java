@@ -74,7 +74,7 @@ public class StructureDefinitionNormalizer {
           ))
       );
     }
-
+    newMap.remove("snapshot");
     return newMap;
   }
 
@@ -85,8 +85,7 @@ public class StructureDefinitionNormalizer {
     if (imported.getDifferential() == null) {
       return null;
     }
-    return imported.getDifferential().getElement().stream()
-        .map(element -> {
+    return imported.getDifferential().getElement().stream().map(element -> {
           ArrayList<ElementDefinitionType> fixedTypes = new ArrayList<>();
           if (element.getType() != null) {
             fixedTypes = element.getType().stream()
@@ -149,10 +148,14 @@ public class StructureDefinitionNormalizer {
                     ""
                 )
             );
-            fixedType.put("codeRef", fixedCode);
+            fixedType.put("codeRef", new UniqueIdentifier(fixedCode));
+          } else {
+            fixedType.put("codeRef", new UniqueIdentifier(code));
           }
           var targetProfile = (List<String>) type.get("targetProfile");
-          fixedType.put("targetProfileRef", fixTargetProfile(targetProfile));
+          if (targetProfile != null) {
+            fixedType.put("targetProfileRef", fixTargetProfile(targetProfile));
+          }
           return fixedType;
         }).collect(Collectors.toCollection(ArrayList::new));
       }
