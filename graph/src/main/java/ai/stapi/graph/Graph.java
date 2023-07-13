@@ -1,11 +1,11 @@
 package ai.stapi.graph;
 
 import ai.stapi.graph.exceptions.EdgeNotFound;
-import ai.stapi.graph.exceptions.EdgeWithSameIdAlreadyExists;
+import ai.stapi.graph.exceptions.EdgeWithSameIdAndTypeAlreadyExists;
 import ai.stapi.graph.exceptions.MoreThanOneNodeOfTypeFoundException;
 import ai.stapi.graph.exceptions.NodeNotFound;
 import ai.stapi.graph.exceptions.NodeOfTypeNotFoundException;
-import ai.stapi.graph.exceptions.NodeWithSameIdAlreadyExists;
+import ai.stapi.graph.exceptions.NodeWithSameIdAndTypeAlreadyExists;
 import ai.stapi.graph.exceptions.OneOrBothNodesOnEdgeDoesNotExist;
 import ai.stapi.graph.graphElementForRemoval.EdgeForRemoval;
 import ai.stapi.graph.graphElementForRemoval.GraphElementForRemoval;
@@ -31,8 +31,8 @@ import org.apache.commons.collections4.map.LinkedMap;
 
 public class Graph {
 
-  private ImmutableMap<UniqueIdentifier, Node> nodeMap;
-  private ImmutableMap<UniqueIdentifier, Edge> edgeMap;
+  private ImmutableMap<GloballyUniqueIdentifier, Node> nodeMap;
+  private ImmutableMap<GloballyUniqueIdentifier, Edge> edgeMap;
 
   private ImmutableMap<String, Long> nodeTypeCounts;
 
@@ -55,8 +55,8 @@ public class Graph {
   }
 
   private Graph(
-      Map<UniqueIdentifier, Node> nodeMap,
-      Map<UniqueIdentifier, Edge> edgeMap,
+      Map<GloballyUniqueIdentifier, Node> nodeMap,
+      Map<GloballyUniqueIdentifier, Edge> edgeMap,
       Map<String, Long> nodeTypeCounts,
       Map<String, Long> edgeTypeCounts
   ) {
@@ -67,8 +67,8 @@ public class Graph {
   }
 
   private Graph(
-      Map<UniqueIdentifier, Node> nodeMap,
-      Map<UniqueIdentifier, Edge> edgeMap
+      Map<GloballyUniqueIdentifier, Node> nodeMap,
+      Map<GloballyUniqueIdentifier, Edge> edgeMap
   ) {
     HashMap<String, Long> newNodeTypeCounts = new HashMap<>();
     HashMap<String, Long> newEdgeTypeCounts = new HashMap<>();
@@ -90,10 +90,10 @@ public class Graph {
     this.nodeTypeCounts = ImmutableMap.copyOf(newNodeTypeCounts);
     this.edgeTypeCounts = ImmutableMap.copyOf(newEdgeTypeCounts);
   }
-  
+
   public static Graph unsafe(
-      Map<UniqueIdentifier, Node> nodeMap,
-      Map<UniqueIdentifier, Edge> edgeMap
+      Map<GloballyUniqueIdentifier, Node> nodeMap,
+      Map<GloballyUniqueIdentifier, Edge> edgeMap
   ) {
     return new Graph(nodeMap, edgeMap);
   }
@@ -103,13 +103,13 @@ public class Graph {
   }
 
   public Graph with(Node node) {
-    if (this.nodeExists(node.getId())) {
-      throw new NodeWithSameIdAlreadyExists(node.getId(), node.getType());
+    if (this.nodeExists(node.getId(), node.getType())) {
+      throw new NodeWithSameIdAndTypeAlreadyExists(node.getId(), node.getType());
     }
 
-    Map<UniqueIdentifier, Node> newNodeMap = new LinkedMap<>(this.nodeMap);
+    Map<GloballyUniqueIdentifier, Node> newNodeMap = new LinkedMap<>(this.nodeMap);
     newNodeMap.put(
-        node.getId(),
+        new GloballyUniqueIdentifier(node.getId(), node.getType()),
         node
     );
 
@@ -131,11 +131,11 @@ public class Graph {
   }
 
   public Graph with(Edge edge) {
-    this.ensureEdgeWithSameIdDoesNotExistsAlready(edge.getId(), edge.getType());
+    this.ensureEdgeWithSameIdAndTypeDoesNotExistsAlready(edge.getId(), edge.getType());
     this.ensureContainsBothNodesOnEdge(edge);
 
     var newEdgeMap = new LinkedMap<>(this.edgeMap);
-    newEdgeMap.put(edge.getId(), edge);
+    newEdgeMap.put(new GloballyUniqueIdentifier(edge.getId(), edge.getType()), edge);
 
     var newEdgeTypeCounts = new LinkedMap<>(this.edgeTypeCounts);
     newEdgeTypeCounts.put(
@@ -151,9 +151,9 @@ public class Graph {
     );
   }
 
-  private void ensureEdgeWithSameIdDoesNotExistsAlready(UniqueIdentifier id, String edgeType) {
-    if (this.edgeExists(id)) {
-      throw new EdgeWithSameIdAlreadyExists(id.getId(), edgeType);
+  private void ensureEdgeWithSameIdAndTypeDoesNotExistsAlready(UniqueIdentifier id, String edgeType) {
+    if (this.edgeExists(id, edgeType)) {
+      throw new EdgeWithSameIdAndTypeAlreadyExists(id.getId(), edgeType);
     }
   }
 
@@ -179,35 +179,23 @@ public class Graph {
   }
 
   public Node getNode(UniqueIdentifier uniqueIdentifier, String nodeType) {
-    if (!this.nodeMap.containsKey(uniqueIdentifier)) {
+    var globallyUniqueIdentifier = new GloballyUniqueIdentifier(uniqueIdentifier, nodeType);
+    if (!this.nodeMap.containsKey(globallyUniqueIdentifier)) {
       throw new NodeNotFound(uniqueIdentifier);
     }
-    var foundNode = this.nodeMap.get(uniqueIdentifier);
+    var foundNode = this.nodeMap.get(globallyUniqueIdentifier);
     if (foundNode == null || !foundNode.getType().equals(nodeType)) {
       throw new NodeNotFound(uniqueIdentifier, nodeType);
     }
     return foundNode;
   }
 
-  public Node getNode(UniqueIdentifier uniqueIdentifier) {
-    if (!this.nodeMap.containsKey(uniqueIdentifier)) {
-      throw new NodeNotFound(uniqueIdentifier);
-    }
-    return this.nodeMap.get(uniqueIdentifier);
-  }
-
-  public Edge getEdge(UniqueIdentifier uniqueIdentifier) {
-    if (!this.edgeMap.containsKey(uniqueIdentifier)) {
-      throw new EdgeNotFound(uniqueIdentifier);
-    }
-    return this.edgeMap.get(uniqueIdentifier);
-  }
-
   public Edge getEdge(UniqueIdentifier id, String edgeType) {
-    if (!this.edgeMap.containsKey(id)) {
+    var globallyUniqueIdentifier = new GloballyUniqueIdentifier(id, edgeType);
+    if (!this.edgeMap.containsKey(globallyUniqueIdentifier)) {
       throw new EdgeNotFound(id);
     }
-    var foundEdge = this.edgeMap.get(id);
+    var foundEdge = this.edgeMap.get(globallyUniqueIdentifier);
     if (foundEdge == null || !foundEdge.getType().equals(edgeType)) {
       throw new EdgeNotFound(id, edgeType);
     }
@@ -247,12 +235,13 @@ public class Graph {
   }
 
   public Graph replace(Node node) {
-    Map<UniqueIdentifier, Node> newNodeMap = new LinkedMap<>(this.nodeMap);
-    Map<String, Long> newNodeTypeCounts = new LinkedMap<>(this.nodeTypeCounts);
+    var newNodeMap = new LinkedMap<>(this.nodeMap);
+    var newNodeTypeCounts = new LinkedMap<>(this.nodeTypeCounts);
 
-    Node oldNode = this.nodeMap.get(node.getId());
+    var globallyUniqueIdentifier = new GloballyUniqueIdentifier(node.getId(), node.getType());
+    var oldNode = this.nodeMap.get(globallyUniqueIdentifier);
 
-    newNodeMap.put(node.getId(), node);
+    newNodeMap.put(globallyUniqueIdentifier, node);
 
     if (newNodeTypeCounts.containsKey(Objects.requireNonNull(oldNode).getType())) {
       long oldCount = newNodeTypeCounts.get(oldNode.getType());
@@ -279,17 +268,19 @@ public class Graph {
       return this;
     }
 
-    Map<UniqueIdentifier, Edge> newEdgeMap = new LinkedMap<>(this.edgeMap);
+    var newEdgeMap = new LinkedMap<>(this.edgeMap);
     Set<TraversableEdge> inAndOutEdgesForNode = this.traversable().findInAndOutEdgesForNode(
         id,
         nodeType
     );
     inAndOutEdgesForNode.forEach(
-        traversableEdge -> newEdgeMap.remove(traversableEdge.getId())
+        traversableEdge -> newEdgeMap.remove(
+            new GloballyUniqueIdentifier(traversableEdge.getId(), traversableEdge.getType())
+        )
     );
 
-    Map<UniqueIdentifier, Node> newNodeMap = new LinkedMap<>(this.nodeMap);
-    newNodeMap.remove(id);
+    var newNodeMap = new LinkedMap<>(this.nodeMap);
+    newNodeMap.remove(new GloballyUniqueIdentifier(id, nodeType));
 
     return new Graph(
         newNodeMap,
@@ -303,12 +294,9 @@ public class Graph {
   }
 
   public boolean nodeExists(UniqueIdentifier id, String type) {
-    return this.nodeMap.containsKey(id)
-        && Objects.requireNonNull(this.nodeMap.get(id)).getType().equals(type);
-  }
-
-  public boolean nodeExists(UniqueIdentifier id) {
-    return this.nodeMap.containsKey(id);
+    var globallyUniqueIdentifier = new GloballyUniqueIdentifier(id, type);
+    return this.nodeMap.containsKey(globallyUniqueIdentifier)
+        && Objects.requireNonNull(this.nodeMap.get(globallyUniqueIdentifier)).getType().equals(type);
   }
 
   public boolean containsNodeOfType(String nodeType) {
@@ -316,12 +304,9 @@ public class Graph {
   }
 
   public boolean edgeExists(UniqueIdentifier id, String type) {
-    return this.edgeMap.containsKey(id)
-        && Objects.requireNonNull(this.edgeMap.get(id)).getType().equals(type);
-  }
-
-  public boolean edgeExists(UniqueIdentifier id) {
-    return this.edgeMap.containsKey(id);
+    var globallyUniqueIdentifier = new GloballyUniqueIdentifier(id, type);
+    return this.edgeMap.containsKey(globallyUniqueIdentifier)
+        && Objects.requireNonNull(this.edgeMap.get(globallyUniqueIdentifier)).getType().equals(type);
   }
 
   public List<NodeTypeInfo> getNodeTypeInfos() {
@@ -351,8 +336,8 @@ public class Graph {
   }
 
   public Graph replace(Edge edge) {
-    Map<UniqueIdentifier, Edge> newEdgeMap = new LinkedMap<>(this.edgeMap);
-    newEdgeMap.put(edge.getId(), edge);
+    var newEdgeMap = new LinkedMap<>(this.edgeMap);
+    newEdgeMap.put(new GloballyUniqueIdentifier(edge.getId(), edge.getType()), edge);
 
     return new Graph(
         this.nodeMap,
@@ -367,8 +352,9 @@ public class Graph {
       return this;
     }
 
-    Map<UniqueIdentifier, Edge> newEdgeMap = new LinkedMap<>(this.edgeMap);
-    newEdgeMap.remove(edgeId);
+    var globallyUniqueIdentifier = new GloballyUniqueIdentifier(edgeId, edgeType);
+    var newEdgeMap = new LinkedMap<>(this.edgeMap);
+    newEdgeMap.remove(globallyUniqueIdentifier);
 
     Map<String, Long> newEdgeTypeCounts = new LinkedMap<>(this.edgeTypeCounts);
     newEdgeTypeCounts.put(
@@ -454,10 +440,11 @@ public class Graph {
       throw new OneOrBothNodesOnEdgeDoesNotExist();
     }
     var graph = this;
-    var foundEdge = graph.edgeMap.get(otherEdge.getId());
+    var otherEdgeIdentifier = new GloballyUniqueIdentifier(otherEdge.getId(), otherEdge.getType());
+    var foundEdge = graph.edgeMap.get(otherEdgeIdentifier);
     if (foundEdge == null) {
-      Map<UniqueIdentifier, Edge> newEdgeMap = new LinkedMap<>(graph.edgeMap);
-      newEdgeMap.put(otherEdge.getId(), otherEdge);
+      var newEdgeMap = new LinkedMap<>(graph.edgeMap);
+      newEdgeMap.put(otherEdgeIdentifier, otherEdge);
 
       Map<String, Long> newEdgeTypeCounts = new LinkedMap<>(graph.edgeTypeCounts);
       newEdgeTypeCounts.put(
@@ -473,8 +460,8 @@ public class Graph {
       );
     } else {
       var newMergedEdge = foundEdge.mergeOverwrite(otherEdge);
-      Map<UniqueIdentifier, Edge> newEdgeMap = new LinkedMap<>(graph.edgeMap);
-      newEdgeMap.put(newMergedEdge.getId(), newMergedEdge);
+      var newEdgeMap = new LinkedMap<>(graph.edgeMap);
+      newEdgeMap.put(new GloballyUniqueIdentifier(newMergedEdge.getId(), newMergedEdge.getType()), newMergedEdge);
 
       return new Graph(
           graph.nodeMap,
@@ -487,8 +474,8 @@ public class Graph {
 
   private void ensureContainsBothNodesOnEdge(Edge edge) {
     if (
-        !this.nodeExists(edge.getNodeFromId())
-            || !this.nodeExists(edge.getNodeToId())
+        !this.nodeExists(edge.getNodeFromId(), edge.getNodeFromType()) 
+            || !this.nodeExists(edge.getNodeToId(), edge.getNodeToType())
     ) {
       throw new OneOrBothNodesOnEdgeDoesNotExist();
     }
@@ -539,7 +526,7 @@ public class Graph {
     var newNodeMap = new LinkedMap<>(this.nodeMap);
     var newNodeTypeCounts = new LinkedMap<>(this.nodeTypeCounts);
 
-    var foundNode = newNodeMap.get(otherNode.getId());
+    var foundNode = newNodeMap.get(new GloballyUniqueIdentifier(otherNode.getId(), otherNode.getType()));
     Node newNode;
     if (foundNode == null) {
       newNode = otherNode;
@@ -550,7 +537,7 @@ public class Graph {
     } else {
       newNode = foundNode.mergeOverwrite(otherNode);
     }
-    newNodeMap.put(newNode.getId(), newNode);
+    newNodeMap.put(new GloballyUniqueIdentifier(newNode.getId(), newNode.getType()), newNode);
 
     return new Graph(
         newNodeMap,
@@ -558,5 +545,46 @@ public class Graph {
         newNodeTypeCounts,
         this.edgeTypeCounts
     );
+  }
+
+  public static class GloballyUniqueIdentifier {
+
+    private final UniqueIdentifier uniqueIdentifier;
+    private final String elementType;
+
+    public GloballyUniqueIdentifier(UniqueIdentifier uniqueIdentifier, String elementType) {
+      this.uniqueIdentifier = uniqueIdentifier;
+      this.elementType = elementType;
+    }
+
+    public UniqueIdentifier getUniqueIdentifier() {
+      return uniqueIdentifier;
+    }
+
+    public String getElementType() {
+      return elementType;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+      if (this == other) {
+        return true;
+      }
+      if (!(other instanceof GloballyUniqueIdentifier otherIdentifier)) {
+        return false;
+      }
+
+      if (!this.getUniqueIdentifier().equals(otherIdentifier.getUniqueIdentifier())) {
+        return false;
+      }
+      return this.getElementType().equals(otherIdentifier.getElementType());
+    }
+
+    @Override
+    public int hashCode() {
+      int result = this.getUniqueIdentifier().hashCode();
+      result = 31 * result + this.getElementType().hashCode();
+      return result;
+    }
   }
 }

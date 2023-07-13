@@ -13,7 +13,7 @@ import ai.stapi.graph.attribute.attributeValue.IntegerAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
 import ai.stapi.graph.exceptions.EdgeNotFound;
 import ai.stapi.graph.exceptions.NodeNotFound;
-import ai.stapi.graph.exceptions.NodeWithSameIdAlreadyExists;
+import ai.stapi.graph.exceptions.NodeWithSameIdAndTypeAlreadyExists;
 import ai.stapi.graph.graphElementForRemoval.NodeForRemoval;
 import ai.stapi.graph.graphelements.Edge;
 import ai.stapi.graph.graphelements.Node;
@@ -55,7 +55,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
   @Test
   void itShouldNotLoadNode_ById_WhenEmpty() throws NodeNotFound {
     Executable runnable =
-        () -> getNodeRepository().loadNode(UniversallyUniqueIdentifier.randomUUID());
+        () -> getNodeRepository().loadNode(UniversallyUniqueIdentifier.randomUUID(), "Irrelevant");
 
     Assertions.assertThrows(NodeNotFound.class, runnable);
   }
@@ -139,7 +139,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
     var expectedNode = new Node(sameId, "Already_saved_type");
     getNodeRepository().save(expectedNode);
 
-    var actualNode = getNodeRepository().loadNode(sameId);
+    var actualNode = getNodeRepository().loadNode(sameId, expectedNode.getType());
 
     Assertions.assertEquals(expectedNode.getId(), actualNode.getId());
     Assertions.assertEquals(expectedNode.getType(), actualNode.getType());
@@ -154,7 +154,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
     var newNode = new Node(sameId, "Irrelevant_type");
     Executable executable = () -> getNodeRepository().save(newNode);
 
-    Assertions.assertThrows(NodeWithSameIdAlreadyExists.class, executable);
+    Assertions.assertThrows(NodeWithSameIdAndTypeAlreadyExists.class, executable);
   }
 
   @Test
@@ -345,7 +345,7 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
     //When
     getNodeRepository().replace(replacingNode);
     //Then
-    var actualFoundNode = getNodeRepository().loadNode(alreadySavedNode.getId());
+    var actualFoundNode = getNodeRepository().loadNode(alreadySavedNode.getId(), alreadySavedNode.getType());
     Assertions.assertTrue(actualFoundNode.hasAttribute("alias"));
     Assertions.assertFalse(actualFoundNode.hasAttribute("name"));
   }

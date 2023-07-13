@@ -1,5 +1,14 @@
 package ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.specific;
 
+import ai.stapi.graph.exceptions.NodeNotFound;
+import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
+import ai.stapi.graph.traversableGraphElements.TraversableEdge;
+import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
+import ai.stapi.graph.traversableGraphElements.TraversableNode;
+import ai.stapi.graphoperations.declaration.Declaration;
+import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.GenericGraphToObjectDeserializer;
+import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.MissingTraversalTargetResolvingStrategy;
+import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.exception.GenericGraphOgmDeserializerException;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.GraphDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.GraphDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.AbstractEdgeDescription;
@@ -10,33 +19,22 @@ import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.NullGraphDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.OutgoingEdgeDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.PositiveGraphDescription;
-import ai.stapi.graphoperations.declaration.Declaration;
-import ai.stapi.graph.exceptions.NodeNotFound;
-import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.exception.GenericGraphOgmDeserializerException;
-import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
-import ai.stapi.graph.traversableGraphElements.TraversableEdge;
-import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
-import ai.stapi.graph.traversableGraphElements.TraversableNode;
 import ai.stapi.graphoperations.graphReader.GraphReader;
 import ai.stapi.graphoperations.graphReader.exception.GraphReaderException;
 import ai.stapi.graphoperations.graphReader.readResults.AbstractGraphElementReadResult;
 import ai.stapi.graphoperations.graphReader.readResults.ReadResult;
 import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
-import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.GenericGraphToObjectDeserializer;
-import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.MissingTraversalTargetResolvingStrategy;
-import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.graphoperations.serializationTypeProvider.GenericSerializationTypeByNodeProvider;
+import ai.stapi.identity.UniqueIdentifier;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstractSpecificGraphToObjectDeserializer implements
-    SpecificGraphToObjectDeserializer {
+public abstract class AbstractSpecificGraphToObjectDeserializer implements SpecificGraphToObjectDeserializer {
 
   protected final GraphReader graphReader;
   protected final GenericGraphToObjectDeserializer genericDeserializer;
   protected final GenericSerializationTypeByNodeProvider serializationTypeProvider;
   protected final GenericGraphMappingProvider mappingProvider;
-
 
   protected AbstractSpecificGraphToObjectDeserializer(
       GraphReader graphReader,
@@ -52,10 +50,11 @@ public abstract class AbstractSpecificGraphToObjectDeserializer implements
 
   protected TraversableGraphElement traverseSingleGraphBranch(
       UniqueIdentifier firstElementId,
+      String firstElementType,
       Declaration declaration,
       InMemoryGraphRepository contextualGraph
   ) {
-    var traversable = this.loadElement(firstElementId, contextualGraph);
+    var traversable = this.loadElement(firstElementId, firstElementType, contextualGraph);
     if (!(declaration instanceof PositiveGraphDescription graphDescription)) {
       return traversable;
     }
@@ -73,6 +72,7 @@ public abstract class AbstractSpecificGraphToObjectDeserializer implements
       } else {
         results = this.graphReader.readFromUncertainFirstElement(
             firstElementId,
+            firstElementType,
             (PositiveGraphDescription) declaration,
             contextualGraph
         );
@@ -98,10 +98,11 @@ public abstract class AbstractSpecificGraphToObjectDeserializer implements
 
   protected List<TraversableGraphElement> traverseMultipleGraphBranch(
       UniqueIdentifier firstElementId,
+      String firstElementType,
       Declaration declaration,
       InMemoryGraphRepository contextualGraph
   ) {
-    var traversable = this.loadElement(firstElementId, contextualGraph);
+    var traversable = this.loadElement(firstElementId, firstElementType, contextualGraph);
     if (!(declaration instanceof PositiveGraphDescription graphDescription)) {
       return List.of(traversable);
     }
@@ -119,6 +120,7 @@ public abstract class AbstractSpecificGraphToObjectDeserializer implements
       } else {
         results = this.graphReader.readFromUncertainFirstElement(
             firstElementId,
+            firstElementType,
             (PositiveGraphDescription) declaration,
             contextualGraph
         );
@@ -137,11 +139,12 @@ public abstract class AbstractSpecificGraphToObjectDeserializer implements
 
   protected Object traverseSingleGraphBranchToValue(
       UniqueIdentifier firstElementId,
+      String firstElementType,
       Declaration declaration,
       InMemoryGraphRepository contextualGraph,
       MissingTraversalTargetResolvingStrategy missingFieldStrategy
   ) {
-    var traversable = this.loadElement(firstElementId, contextualGraph);
+    var traversable = this.loadElement(firstElementId, firstElementType, contextualGraph);
     if (!(declaration instanceof PositiveGraphDescription graphDescription)) {
       return "";
     }
@@ -159,6 +162,7 @@ public abstract class AbstractSpecificGraphToObjectDeserializer implements
       } else {
         results = this.graphReader.readValuesFromUncertainFirstElement(
             firstElementId,
+            firstElementType,
             (PositiveGraphDescription) declaration,
             contextualGraph
         );
@@ -201,15 +205,16 @@ public abstract class AbstractSpecificGraphToObjectDeserializer implements
 
   protected TraversableGraphElement loadElement(
       UniqueIdentifier graphElementId,
+      String graphElementType,
       InMemoryGraphRepository graph
   ) {
     try {
-      return graph.loadNode(graphElementId);
+      return graph.loadNode(graphElementId, graphElementType);
 
     } catch (NodeNotFound ignored) {
     }
     try {
-      return graph.loadEdge(graphElementId);
+      return graph.loadEdge(graphElementId, graphElementType);
     } catch (NodeNotFound ignored) {
     }
     throw GenericGraphOgmDeserializerException.becauseElementWasNotFound(graphElementId);
@@ -226,7 +231,7 @@ public abstract class AbstractSpecificGraphToObjectDeserializer implements
   }
 
   protected GraphDescription updateLastGraphDescription(GraphDescription lastGraphDescription,
-      GraphDescription lastlyTraversedDescription) {
+                                                        GraphDescription lastlyTraversedDescription) {
     if (lastlyTraversedDescription instanceof NullGraphDescription) {
       return lastGraphDescription;
     }

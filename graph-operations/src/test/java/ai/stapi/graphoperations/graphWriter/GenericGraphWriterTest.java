@@ -55,10 +55,11 @@ class GenericGraphWriterTest extends IntegrationTestCase {
   @Test
   void itCanCreateNodeWithGivenId() {
     var nodeId = UniversallyUniqueIdentifier.randomUUID();
+    var nodeType = "example_node";
     var builder = new GraphDescriptionBuilder();
-    builder.addNodeDescription("example_node");
+    builder.addNodeDescription(nodeType);
     var result = this.graphWriter.createGraph(nodeId, builder.getOnlyPositiveGraphDescriptions());
-    var node = result.getNode(nodeId);
+    var node = result.getNode(nodeId, nodeType);
     this.thenGraphApproved(result);
   }
 
@@ -75,8 +76,9 @@ class GenericGraphWriterTest extends IntegrationTestCase {
   @Test
   void itCanCreateNodeWithGivenIdAndAttributeValue() {
     var nodeId = UniversallyUniqueIdentifier.randomUUID();
+    var nodeType = "example_node";
     var description = new NodeDescription(
-        new NodeDescriptionParameters("example_node"),
+        new NodeDescriptionParameters(nodeType),
         new UuidIdentityDescription(
             new ConstantDescription(new ConstantDescriptionParameters(nodeId))
         ),
@@ -88,22 +90,23 @@ class GenericGraphWriterTest extends IntegrationTestCase {
         )
     );
     var result = this.graphWriter.createGraph(nodeId, description);
-    var node = result.getNode(nodeId);
+    var node = result.getNode(nodeId, nodeType);
     this.thenGraphApproved(result);
   }
 
   @Test
   void itCanCreateMultipleNodesAndAttributeAtTheEnd() {
     var nodeId = UniversallyUniqueIdentifier.randomUUID();
+    var nodeType = "first_node";
     var builder = new GraphDescriptionBuilder();
-    builder.addNodeDescription("first_node")
+    builder.addNodeDescription(nodeType)
         .addOutgoingEdge("first_edge")
         .addNodeDescription("second_node")
         .addLeafAttribute("example_attribute")
         .addStringAttributeValue()
         .addConstantDescription("example_value");
     var result = this.graphWriter.createGraph(nodeId, builder.getOnlyPositiveGraphDescriptions());
-    var node = result.getNode(nodeId);
+    var node = result.getNode(nodeId, nodeType);
     this.thenGraphApproved(result);
   }
 

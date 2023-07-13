@@ -1,5 +1,7 @@
 package ai.stapi.graphoperations.graphReader;
 
+import ai.stapi.graph.Graph;
+import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graphoperations.graphLanguage.GraphBaseTypes;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.GraphDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.AbstractEdgeDescription;
@@ -9,13 +11,11 @@ import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.PositiveGraphDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.removal.RemovalGraphDescription;
 import ai.stapi.graphoperations.graphReader.exception.GraphReaderException;
-import ai.stapi.graphoperations.graphReader.readResults.ValueReadResult;
-import ai.stapi.graph.Graph;
-import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graphoperations.graphReader.mappingPartReadResolvers.GraphDescriptionReadResolver;
 import ai.stapi.graphoperations.graphReader.readResults.EdgeReadResult;
 import ai.stapi.graphoperations.graphReader.readResults.NodeReadResult;
 import ai.stapi.graphoperations.graphReader.readResults.ReadResult;
+import ai.stapi.graphoperations.graphReader.readResults.ValueReadResult;
 import ai.stapi.identity.UniqueIdentifier;
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +55,7 @@ public class GraphReader {
 
   public List<ReadResult> readFromUncertainFirstElement(
       UniqueIdentifier startElementId,
+      String startElementType,
       PositiveGraphDescription graphDescriptionForNextElement,
       InMemoryGraphRepository contextualGraph
   ) {
@@ -65,6 +66,7 @@ public class GraphReader {
     this.ensureGraphDescriptionContainsOnlyUpsertDescriptions(graphDescriptionForNextElement);
     var firstReadResult = this.guessFirstReadResult(
         startElementId,
+        startElementType,
         contextualGraph
     );
     return this.resolveAllOfTheGraphDescriptions(
@@ -120,11 +122,12 @@ public class GraphReader {
 
   public <T> List<T> readValuesFromUncertainFirstElement(
       UniqueIdentifier startElementId,
+      String startElementType,
       PositiveGraphDescription graphDescription,
       InMemoryGraphRepository contextualGraph
   ) {
     var results =
-        this.readFromUncertainFirstElement(startElementId, graphDescription, contextualGraph);
+        this.readFromUncertainFirstElement(startElementId, startElementType, graphDescription, contextualGraph);
     if (results.size() == 0) {
       return (List<T>) results;
     }
@@ -216,16 +219,17 @@ public class GraphReader {
   @NotNull
   private List<ReadResult> guessFirstReadResult(
       UniqueIdentifier startElementId,
+      String startElementType,
       InMemoryGraphRepository contextualGraph
   ) {
     List<ReadResult> readResult = null;
     try {
-      var node = contextualGraph.loadNode(startElementId);
+      var node = contextualGraph.loadNode(startElementId, startElementType);
       readResult = List.of(new NodeReadResult(node));
     } catch (RuntimeException ignored) {
     }
     try {
-      var edge = contextualGraph.loadEdge(startElementId);
+      var edge = contextualGraph.loadEdge(startElementId, startElementType);
       readResult = List.of(new EdgeReadResult(edge));
     } catch (RuntimeException ignore) {
     }

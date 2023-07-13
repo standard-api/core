@@ -1,14 +1,14 @@
 package ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.specific;
 
-import ai.stapi.graphoperations.graphLanguage.graphDescription.GraphDescription;
 import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
+import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.GenericGraphToObjectDeserializer;
+import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.MissingTraversalTargetResolvingStrategy;
+import ai.stapi.graphoperations.graphLanguage.graphDescription.GraphDescription;
 import ai.stapi.graphoperations.graphReader.GraphReader;
 import ai.stapi.graphoperations.objectGraphLanguage.MapObjectGraphMapping;
 import ai.stapi.graphoperations.objectGraphLanguage.ObjectGraphMapping;
 import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
-import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.GenericGraphToObjectDeserializer;
-import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.MissingTraversalTargetResolvingStrategy;
 import ai.stapi.graphoperations.serializationTypeProvider.GenericSerializationTypeByNodeProvider;
 import java.util.HashMap;
 import java.util.List;
@@ -37,6 +37,7 @@ public class MapGraphToObjectDeserializer extends AbstractSpecificGraphToObjectD
     elements.stream()
         .map(element -> this.traverseMultipleGraphBranch(
                 element.getId(),
+                element.getType(),
                 mapMapping.getGraphDescription(),
                 contextualGraph
             )

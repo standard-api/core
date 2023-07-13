@@ -1,13 +1,13 @@
 package ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.specific;
 
+import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
+import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
 import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.GenericGraphToObjectDeserializer;
 import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.MissingTraversalTargetResolvingStrategy;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.GraphDescription;
-import ai.stapi.graphoperations.objectGraphLanguage.ObjectGraphMapping;
-import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
-import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
 import ai.stapi.graphoperations.graphReader.GraphReader;
 import ai.stapi.graphoperations.objectGraphLanguage.LeafObjectGraphMapping;
+import ai.stapi.graphoperations.objectGraphLanguage.ObjectGraphMapping;
 import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
 import ai.stapi.graphoperations.serializationTypeProvider.GenericSerializationTypeByNodeProvider;
 import java.util.List;
@@ -34,6 +34,7 @@ public class LeafGraphToObjectDeserializer extends AbstractSpecificGraphToObject
     var leafMapping = (LeafObjectGraphMapping) graphMapping;
     return this.traverseSingleGraphBranchToValue(
         elements.get(0).getId(),
+        elements.get(0).getType(),
         leafMapping.getGraphDescription(),
         contextualGraph,
         missingTraversalTargetResolvingStrategy

@@ -1,15 +1,15 @@
 package ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.specific;
 
+import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
+import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
 import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.GenericGraphToObjectDeserializer;
 import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.MissingTraversalTargetResolvingStrategy;
 import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.exception.GenericGraphOgmDeserializerException;
 import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.specific.exception.SpecificGraphOgmDeserializerException;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.GraphDescription;
-import ai.stapi.graphoperations.objectGraphLanguage.ObjectGraphMapping;
-import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
-import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
 import ai.stapi.graphoperations.graphReader.GraphReader;
 import ai.stapi.graphoperations.graphReader.mappingPartReadResolvers.exception.GraphDescriptionReadResolverException;
+import ai.stapi.graphoperations.objectGraphLanguage.ObjectGraphMapping;
 import ai.stapi.graphoperations.objectGraphLanguage.ObjectObjectGraphMapping;
 import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
 import ai.stapi.graphoperations.serializationTypeProvider.GenericSerializationTypeByNodeProvider;
@@ -49,6 +49,7 @@ public class ObjectGraphToObjectDeserializer extends AbstractSpecificGraphToObje
     var map = new HashMap<String, Object>();
     var traversedObject = this.traverseSingleGraphBranch(
         elements.get(0).getId(),
+        elements.get(0).getType(),
         graphMapping.getGraphDescription(),
         contextualGraph
     );
@@ -56,6 +57,7 @@ public class ObjectGraphToObjectDeserializer extends AbstractSpecificGraphToObje
         (fieldName, fieldDefinition) -> {
           var traversedField = this.traverseMultipleGraphBranch(
               traversedObject.getId(),
+              traversedObject.getType(),
               fieldDefinition.getRelation(),
               contextualGraph
           );
