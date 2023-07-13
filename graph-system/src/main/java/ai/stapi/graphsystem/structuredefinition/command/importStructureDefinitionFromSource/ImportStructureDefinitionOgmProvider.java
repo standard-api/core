@@ -62,6 +62,6 @@ public class ImportStructureDefinitionOgmProvider implements SpecificCommandEven
 
   @Override
   public boolean supports(String serializationType) {
-    return serializationType.equals(FixedImportStructureDefinition.SERIALIZATION_TYPE);
+    return serializationType.equals(ImportStructureDefinition.SERIALIZATION_TYPE);
   }
 }

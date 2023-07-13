@@ -1,10 +1,9 @@
 package ai.stapi.graphsystem.fixtures.fixtureCommandsGenerator;
 
-import ai.stapi.identity.UniqueIdentifier;
-import ai.stapi.graphsystem.messaging.command.DynamicCommand;
 import ai.stapi.graphsystem.messaging.command.Command;
+import ai.stapi.graphsystem.messaging.command.DynamicCommand;
 import ai.stapi.graphsystem.structuredefinition.command.importStructureDefinitionFromSource.ImportStructureDefinition;
-import ai.stapi.schema.structuredefinition.RawStructureDefinitionData;
+import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.schema.adHocLoaders.FileLoader;
 import ai.stapi.schema.structuredefinition.StructureDefinitionId;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,7 +15,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
-import java.util.logging.Logger;
 import org.apache.commons.io.IOUtils;
 import org.jetbrains.annotations.Nullable;
 import org.springframework.core.io.Resource;
@@ -109,13 +107,11 @@ public abstract class FileFixtureCommandsGenerator extends AbstractFixtureComman
         aggregates including this one
       */
       if (Objects.requireNonNull(fileInfo).commandType.equals("ImportStructureDefinition")) {
-
-        var dto = this.objectMapper.convertValue(commandJsonPayload, RawStructureDefinitionData.class);
         command = new ImportStructureDefinition(
             new StructureDefinitionId(
                 (String) commandJsonPayload.get("id")
             ),
-            dto
+            commandJsonPayload
         );
       } else {
         command = new DynamicCommand(

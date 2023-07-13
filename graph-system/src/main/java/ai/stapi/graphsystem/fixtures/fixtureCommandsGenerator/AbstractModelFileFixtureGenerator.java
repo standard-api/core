@@ -1,13 +1,12 @@
 package ai.stapi.graphsystem.fixtures.fixtureCommandsGenerator;
 
+import ai.stapi.graphsystem.messaging.command.Command;
+import ai.stapi.graphsystem.messaging.command.DynamicCommand;
+import ai.stapi.graphsystem.structuredefinition.command.importStructureDefinitionFromSource.ImportStructureDefinition;
 import ai.stapi.schema.adHocLoaders.FileLoader;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import ai.stapi.graphsystem.messaging.command.DynamicCommand;
-import ai.stapi.graphsystem.messaging.command.Command;
-import ai.stapi.graphsystem.structuredefinition.command.importStructureDefinitionFromSource.ImportStructureDefinition;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 public abstract class AbstractModelFileFixtureGenerator extends FileFixtureCommandsGenerator {
 
@@ -24,7 +23,7 @@ public abstract class AbstractModelFileFixtureGenerator extends FileFixtureComma
     } else {
       if (command instanceof ImportStructureDefinition importStructureDefinition) {
         return importStructureDefinition.getStructureDefinitionSource()
-            .getKind()
+            .get("kind")
             .equals(filterType);
       }
       return false;
