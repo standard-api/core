@@ -110,9 +110,9 @@ public class InMemoryGraphRepository implements NodeRepository, EdgeRepository {
     }
     return new TraversableEdge(
         edge.getId(),
-        this.loadNode(edge.getNodeFromId()),
+        this.loadNode(edge.getNodeFromId(), edge.getNodeFromType()),
         edge.getType(),
-        this.loadNode(edge.getNodeToId()),
+        this.loadNode(edge.getNodeToId(), edge.getNodeToType()),
         edge.getVersionedAttributes(),
         new RepositoryNodeLoader(this)
     );
@@ -125,19 +125,9 @@ public class InMemoryGraphRepository implements NodeRepository, EdgeRepository {
     );
   }
 
-  public TraversableEdge loadEdge(UniqueIdentifier id) {
-    return this.toTraversableEdge(
-        this.graph.getEdge(id)
-    );
-  }
-
   @Override
   public boolean edgeExists(UniqueIdentifier id, String type) {
     return this.graph.edgeExists(id, type);
-  }
-
-  protected boolean edgeExists(UniqueIdentifier id) {
-    return this.graph.edgeExists(id);
   }
 
   @Override
@@ -180,20 +170,20 @@ public class InMemoryGraphRepository implements NodeRepository, EdgeRepository {
     );
   }
 
-  @Override
-  public TraversableNode loadNode(UniqueIdentifier uniqueIdentifier) {
-    return this.toTraversableNode(
-        this.graph.getNode(uniqueIdentifier)
-    );
+  public TraversableGraphElement loadGraphElement(UniqueIdentifier uuid, String elementType) {
+    if (this.nodeExists(uuid, elementType)) {
+      return this.loadNode(uuid, elementType);
+    }
+    if (this.edgeExists(uuid, elementType)) {
+      return this.loadEdge(uuid, elementType);
+    }
+
+    throw new GraphElementNotFound(uuid);
   }
 
   @Override
   public boolean nodeExists(UniqueIdentifier id, String nodeType) {
     return this.graph.nodeExists(id, nodeType);
-  }
-
-  public boolean nodeExists(UniqueIdentifier id) {
-    return this.graph.nodeExists(id);
   }
 
   @Override
@@ -215,17 +205,6 @@ public class InMemoryGraphRepository implements NodeRepository, EdgeRepository {
   public List<TraversableNode> loadAllNodes() {
     return this.graph.getAllNodes().stream()
         .map(this::toTraversableNode).toList();
-  }
-
-  public TraversableGraphElement loadGraphElement(UniqueIdentifier uuid) {
-    if (this.nodeExists(uuid)) {
-      return this.loadNode(uuid);
-    }
-    if (this.edgeExists(uuid)) {
-      return this.loadEdge(uuid);
-    }
-
-    throw new GraphElementNotFound(uuid);
   }
 
   public List<TraversableEdge> loadAllEdges() {
@@ -252,8 +231,7 @@ public class InMemoryGraphRepository implements NodeRepository, EdgeRepository {
 
 
   public void removeGraphElements(GraphElementForRemoval... graphElementsForRemoval) {
-    this.graph =
-        this.graph.removeGraphElements(graphElementsForRemoval);
+    this.graph = this.graph.removeGraphElements(graphElementsForRemoval);
     this.recalculateNodesEdgesMap();
   }
 
@@ -266,7 +244,7 @@ public class InMemoryGraphRepository implements NodeRepository, EdgeRepository {
     this.graph = this.graph.merge(otherGraph, options);
     this.recalculateNodesEdgesMap();
   }
-  
+
   @TestOnly
   public void prune() {
     this.graph = new Graph();

@@ -6,7 +6,6 @@ import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.NodeDescriptionParameters;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.UuidIdentityDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.query.AttributeQueryDescription;
-import ai.stapi.identity.UniversallyUniqueIdentifier;
 import ai.stapi.graphoperations.objectGraphLanguage.LeafObjectGraphMapping;
 import ai.stapi.graphoperations.objectGraphLanguage.ObjectObjectGraphMapping;
 import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.specific.ogm.ObjectGraphMappingBuilder;
@@ -19,6 +18,7 @@ import ai.stapi.graphoperations.objectGraphMapper.model.MissingFieldResolvingStr
 import ai.stapi.graphoperations.objectGraphMapper.model.exceptions.ObjectGraphMapperException;
 import ai.stapi.graphoperations.objectGraphMapper.model.specific.exceptions.SpecificObjectGraphMapperException;
 import ai.stapi.graphoperations.objectLanguage.EntityIdentifier;
+import ai.stapi.identity.UniversallyUniqueIdentifier;
 import ai.stapi.test.integration.IntegrationTestCase;
 import java.util.List;
 import java.util.Map;
@@ -93,20 +93,21 @@ class ObjectGraphMapperTest extends IntegrationTestCase {
                 .addLeafAttribute("name")
                 .addStringAttributeValue()
         );
+    var commandNodeType = "command_node";
     commandDefinition.addField("exampleEntityId")
         .setRelation(new EntityIdentifier())
         .addObjectAsObjectFieldMapping()
-        .setGraphDescription(new GraphDescriptionBuilder().addNodeDescription("command_node"))
+        .setGraphDescription(new GraphDescriptionBuilder().addNodeDescription(commandNodeType))
         .addField("id")
         .setRelation(new EntityIdentifier())
         .addLeafAsObjectFieldMapping()
         .setGraphDescription(new UuidIdentityDescription());
-    
+
     var graph = this.objectGraphMapper.mapToGraph(
         commandDefinition.build(),
         command
     ).getGraph();
-    var node = graph.getNode(exampleEntityId);
+    var node = graph.getNode(exampleEntityId, commandNodeType);
     this.thenGraphApproved(graph);
   }
 
@@ -236,23 +237,24 @@ class ObjectGraphMapperTest extends IntegrationTestCase {
   @Test
   void itCanMapObjectMappingWithCertainId() {
     var personId = UUID.randomUUID();
-    Person person = new Person(personId, "Mirek", "Dobrota", "Cech");
+    var personNodeType = "person_node";
+    var person = new Person(personId, "Mirek", "Dobrota", "Cech");
     var personDefinition = new ObjectGraphMappingBuilder()
-        .setGraphDescription(new GraphDescriptionBuilder().addNodeDescription("person_node"));
+        .setGraphDescription(new GraphDescriptionBuilder().addNodeDescription(personNodeType));
     personDefinition.addField("id").addLeafAsObjectFieldMapping()
         .setGraphDescription(new UuidIdentityDescription());
-    var result =
-        this.objectGraphMapper.mapToGraph(personDefinition.build(), person).getGraph();
-    result.getNode(new UniversallyUniqueIdentifier(personId));
+    var result = this.objectGraphMapper.mapToGraph(personDefinition.build(), person).getGraph();
+    result.getNode(new UniversallyUniqueIdentifier(personId), personNodeType);
     this.thenGraphApproved(result);
   }
 
   @Test
   void itCanMapObjectWithMultipleLeafs() {
     var personId = UUID.randomUUID();
-    Person person = new Person(personId, "Mirek", "Dobrota", "Cech");
+    var personNodeType = "person_node";
+    var person = new Person(personId, "Mirek", "Dobrota", "Cech");
     var personDefinition = new ObjectGraphMappingBuilder()
-        .setGraphDescription(new GraphDescriptionBuilder().addNodeDescription("person_node"));
+        .setGraphDescription(new GraphDescriptionBuilder().addNodeDescription(personNodeType));
     personDefinition.addField("name")
         .addLeafAsObjectFieldMapping()
         .setGraphDescription(
@@ -263,9 +265,8 @@ class ObjectGraphMapperTest extends IntegrationTestCase {
     personDefinition.addField("id")
         .addLeafAsObjectFieldMapping()
         .setGraphDescription(new UuidIdentityDescription());
-    var result =
-        this.objectGraphMapper.mapToGraph(personDefinition.build(), person).getGraph();
-    var node = result.getNode(new UniversallyUniqueIdentifier(personId));
+    var result = this.objectGraphMapper.mapToGraph(personDefinition.build(), person).getGraph();
+    var node = result.getNode(new UniversallyUniqueIdentifier(personId), personNodeType);
     this.thenGraphApproved(result);
   }
 
@@ -304,16 +305,16 @@ class ObjectGraphMapperTest extends IntegrationTestCase {
 
   @Test
   void itCanMapObjectDefinitionWithList() {
-    Person resident1 = new Person(UUID.randomUUID(), "Mirek", "Dobrota", "Cech");
-    Person resident2 = new Person(UUID.randomUUID(), "Lukas", "Voracek", "Cech");
-    Person resident3 = new Person(UUID.randomUUID(), "Jack", "Sparrow", "Pirat");
-    House house = new House(
-        UUID.randomUUID()
-        , List.of(
-        resident1,
-        resident2,
-        resident3
-    ),
+    var resident1 = new Person(UUID.randomUUID(), "Mirek", "Dobrota", "Cech");
+    var resident2 = new Person(UUID.randomUUID(), "Lukas", "Voracek", "Cech");
+    var resident3 = new Person(UUID.randomUUID(), "Jack", "Sparrow", "Pirat");
+    var house = new House(
+        UUID.randomUUID(),
+        List.of(
+            resident1,
+            resident2,
+            resident3
+        ),
         "Vorackova 30",
         List.of(
             "kuchyne",
@@ -321,8 +322,11 @@ class ObjectGraphMapperTest extends IntegrationTestCase {
             "koupelna"
         )
     );
-    var houseMap = new ObjectGraphMappingBuilder()
-        .setGraphDescription(new GraphDescriptionBuilder().addNodeDescription("house"));
+    var houseNodeType = "house";
+    var personNodeType = "resident";
+    var houseMap = new ObjectGraphMappingBuilder().setGraphDescription(
+        new GraphDescriptionBuilder().addNodeDescription(houseNodeType)
+    );
     houseMap.addField("id")
         .addLeafAsObjectFieldMapping()
         .setGraphDescription(new UuidIdentityDescription());
@@ -348,7 +352,7 @@ class ObjectGraphMapperTest extends IntegrationTestCase {
         .addListAsObjectFieldMapping()
         .addObjectChildDefinition();
     personMap.setGraphDescription(
-        new GraphDescriptionBuilder().addNodeDescription("resident"));
+        new GraphDescriptionBuilder().addNodeDescription(personNodeType));
     personMap.addField("id")
         .addLeafAsObjectFieldMapping()
         .setGraphDescription(new UuidIdentityDescription());
@@ -374,10 +378,10 @@ class ObjectGraphMapperTest extends IntegrationTestCase {
                 .addStringAttributeValue()
         );
     var result = this.objectGraphMapper.mapToGraph(houseMap.build(), house).getGraph();
-    var node = result.getNode(new UniversallyUniqueIdentifier(resident1.getId()));
-    node = result.getNode(new UniversallyUniqueIdentifier(resident2.getId()));
-    node = result.getNode(new UniversallyUniqueIdentifier(resident3.getId()));
-    node = result.getNode(new UniversallyUniqueIdentifier(house.getId()));
+    var node = result.getNode(new UniversallyUniqueIdentifier(resident1.getId()), personNodeType);
+    node = result.getNode(new UniversallyUniqueIdentifier(resident2.getId()), personNodeType);
+    node = result.getNode(new UniversallyUniqueIdentifier(resident3.getId()), personNodeType);
+    node = result.getNode(new UniversallyUniqueIdentifier(house.getId()), houseNodeType);
     this.thenGraphApproved(result);
   }
 
@@ -494,8 +498,9 @@ class ObjectGraphMapperTest extends IntegrationTestCase {
             "koupelna"
         )
     );
+    var houseType = "house";
     var houseMap = new ObjectGraphMappingBuilder()
-        .setGraphDescription(new GraphDescriptionBuilder().addNodeDescription("house"));
+        .setGraphDescription(new GraphDescriptionBuilder().addNodeDescription(houseType));
     houseMap.addField("id")
         .addLeafAsObjectFieldMapping()
         .setGraphDescription(new UuidIdentityDescription());
@@ -514,7 +519,7 @@ class ObjectGraphMapperTest extends IntegrationTestCase {
             new GraphDescriptionBuilder().addStringAttributeValue()
         );
     var result = this.objectGraphMapper.mapToGraph(houseMap.build(), house).getGraph();
-    var node = result.getNode(new UniversallyUniqueIdentifier(house.getId()));
+    var node = result.getNode(new UniversallyUniqueIdentifier(house.getId()), houseType);
     this.thenGraphApproved(result);
   }
 

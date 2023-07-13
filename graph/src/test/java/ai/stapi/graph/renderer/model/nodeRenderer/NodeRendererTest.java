@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import ai.stapi.graph.Graph;
 import ai.stapi.graph.attribute.LeafAttribute;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
-import ai.stapi.identity.UniversallyUniqueIdentifier;
 import ai.stapi.graph.graphelements.Edge;
 import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.renderer.infrastructure.apiRenderer.ApiRendererOptions;
@@ -16,6 +15,7 @@ import ai.stapi.graph.renderer.infrastructure.textRenderer.TextRendererOptions;
 import ai.stapi.graph.renderer.infrastructure.textRenderer.node.TextNodeRenderOutput;
 import ai.stapi.graph.test.integration.IntegrationTestCase;
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
+import ai.stapi.identity.UniversallyUniqueIdentifier;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.approvaltests.Approvals;
@@ -119,7 +119,7 @@ class NodeRendererTest extends IntegrationTestCase {
         anotherTestEdge
     );
 
-    return graph.traversable().loadNode(testNode.getId());
+    return graph.traversable().loadNode(testNode.getId(), testNode.getType());
   }
 
 }

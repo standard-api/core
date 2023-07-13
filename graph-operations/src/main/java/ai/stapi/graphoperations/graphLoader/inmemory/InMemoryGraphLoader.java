@@ -25,6 +25,7 @@ import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.UuidIdentityDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.query.EdgeQueryDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.query.GraphElementQueryDescription;
+import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.query.NodeQueryGraphDescription;
 import ai.stapi.graphoperations.graphLoader.GraphLoader;
 import ai.stapi.graphoperations.graphLoader.GraphLoaderFindAsObjectOutput;
 import ai.stapi.graphoperations.graphLoader.GraphLoaderGetAsObjectOutput;
@@ -32,7 +33,6 @@ import ai.stapi.graphoperations.graphLoader.GraphLoaderReturnType;
 import ai.stapi.graphoperations.graphLoader.exceptions.GraphLoaderException;
 import ai.stapi.graphoperations.graphLoader.search.SearchQueryParameters;
 import ai.stapi.identity.UniqueIdentifier;
-import ai.stapi.schema.structureSchema.exception.FieldDoesNotExist;
 import ai.stapi.schema.structureSchema.exception.FieldsNotFoundException;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -83,9 +83,15 @@ public class InMemoryGraphLoader implements GraphLoader {
         Object.class,
         GraphLoaderReturnType.GRAPH
     );
+    String elementType;
+    if (graphDescription instanceof NodeQueryGraphDescription nodeQueryGraphDescription) {
+      elementType = ((NodeDescriptionParameters) nodeQueryGraphDescription.getParameters()).getNodeType();
+    } else {
+      elementType = ((EdgeDescriptionParameters) graphDescription.getParameters()).getEdgeType(); 
+    }
     return output.getGraphLoaderFindAsGraphOutput().getFoundGraphElementIds()
         .stream()
-        .map(uuid -> output.getGraphLoaderFindAsGraphOutput().getGraph().loadGraphElement(uuid))
+        .map(uuid -> output.getGraphLoaderFindAsGraphOutput().getGraph().loadGraphElement(uuid, elementType))
         .toList();
   }
 
@@ -100,7 +106,13 @@ public class InMemoryGraphLoader implements GraphLoader {
         Object.class,
         GraphLoaderReturnType.GRAPH
     );
-    return graph.getGraph().loadGraphElement(elementId);
+    String elementType;
+    if (graphDescription instanceof NodeQueryGraphDescription nodeQueryGraphDescription) {
+      elementType = ((NodeDescriptionParameters) nodeQueryGraphDescription.getParameters()).getNodeType();
+    } else {
+      elementType = ((EdgeDescriptionParameters) graphDescription.getParameters()).getEdgeType();
+    }
+    return graph.getGraph().loadGraphElement(elementId, elementType);
   }
 
   @Override

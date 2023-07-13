@@ -10,9 +10,9 @@ import ai.stapi.graph.attribute.attributeValue.DecimalAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.IntegerAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
 import ai.stapi.graph.exceptions.GraphException;
-import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.graphelements.Edge;
 import ai.stapi.graph.graphelements.Node;
+import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.versionedAttributes.ImmutableVersionedAttributeGroup;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
 import org.junit.jupiter.api.Assertions;
@@ -100,7 +100,7 @@ public class TraversableNodeTest extends AttributeContainerTest {
         otherTypeEdge
     );
 
-    var loadedNode = inMemoryGraphStrucutre.traversable().loadNode(nodeTo.getId());
+    var loadedNode = inMemoryGraphStrucutre.traversable().loadNode(nodeTo.getId(), nodeTo.getType());
     //When
     var actualEdges = loadedNode.getEdges();
     //Then
@@ -164,7 +164,7 @@ public class TraversableNodeTest extends AttributeContainerTest {
         otherTypeEdge
     );
 
-    var loadedNode = inMemoryGraphStrucutre.traversable().loadNode(nodeTo.getId());
+    var loadedNode = inMemoryGraphStrucutre.traversable().loadNode(nodeTo.getId(), nodeTo.getType());
     //When
     var actualEdges = loadedNode.getEdges(expectedEdgeType);
     //Then

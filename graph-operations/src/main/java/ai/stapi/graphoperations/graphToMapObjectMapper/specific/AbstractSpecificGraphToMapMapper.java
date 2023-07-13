@@ -4,6 +4,7 @@ import ai.stapi.graph.Graph;
 import ai.stapi.graph.traversableGraphElements.TraversableEdge;
 import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
+import ai.stapi.graphoperations.declaration.Declaration;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.AbstractGraphDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.GraphDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.AbstractEdgeDescription;
@@ -12,13 +13,12 @@ import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.NodeDescriptionParameters;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.NullGraphDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.PositiveGraphDescription;
-import ai.stapi.graphoperations.declaration.Declaration;
-import ai.stapi.graphoperations.graphToMapObjectMapper.exception.GraphToMapObjectMapperException;
-import ai.stapi.graphoperations.graphToMapObjectMapper.GraphToMapObjectMapper;
 import ai.stapi.graphoperations.graphReader.GraphReader;
 import ai.stapi.graphoperations.graphReader.exception.GraphReaderException;
 import ai.stapi.graphoperations.graphReader.mappingPartReadResolvers.exception.GraphDescriptionReadResolverException;
 import ai.stapi.graphoperations.graphReader.readResults.AbstractGraphElementReadResult;
+import ai.stapi.graphoperations.graphToMapObjectMapper.GraphToMapObjectMapper;
+import ai.stapi.graphoperations.graphToMapObjectMapper.exception.GraphToMapObjectMapperException;
 import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
 import java.util.List;
 import org.apache.commons.lang3.NotImplementedException;
@@ -50,8 +50,7 @@ public abstract class AbstractSpecificGraphToMapMapper implements SpecificGraphT
     if (declaration instanceof NullGraphDescription) {
       return elements;
     }
-    return elements.stream()
-        .map(graphElement -> {
+    return elements.stream().map(graphElement -> {
           if (this.isDescriptionDescribingElement(graphElement, declaration)) {
             return this.graphReader.read(
                 graphElement.getId(),
@@ -61,6 +60,7 @@ public abstract class AbstractSpecificGraphToMapMapper implements SpecificGraphT
           } else {
             return this.graphReader.readFromUncertainFirstElement(
                 graphElement.getId(),
+                graphElement.getType(),
                 (PositiveGraphDescription) declaration,
                 graph.traversable()
             );
@@ -108,6 +108,7 @@ public abstract class AbstractSpecificGraphToMapMapper implements SpecificGraphT
     try {
       values = this.graphReader.readValuesFromUncertainFirstElement(
           element.getId(),
+          element.getType(),
           (PositiveGraphDescription) declaration,
           graph.traversable()
       );

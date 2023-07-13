@@ -212,7 +212,7 @@ public abstract class AbstractUnitTestCase implements FixtureFileLoadableTestTra
   protected void thenNodesAreSame(Node expectedNode, TraversableNode actualNode) {
     var traversableExpectedNode = new Graph(expectedNode)
         .traversable()
-        .loadNode(expectedNode.getId());
+        .loadNode(expectedNode.getId(), expectedNode.getType());
 
     var renderedExpected = textNodeRenderer.render(traversableExpectedNode).toPrintableString();
     var renderedActual = textNodeRenderer.render(actualNode).toPrintableString();

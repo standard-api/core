@@ -6,7 +6,6 @@ import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graphoperations.serializableGraph.SerializableEdge;
 import ai.stapi.graphoperations.serializableGraph.SerializableGraph;
 import ai.stapi.graphoperations.serializableGraph.SerializableNode;
-import ai.stapi.identity.UniqueIdentifier;
 import java.util.HashMap;
 
 public class SerializableGraphDeserializer {
@@ -23,17 +22,17 @@ public class SerializableGraphDeserializer {
   }
 
   public Graph deserialize(SerializableGraph serializableGraph) {
-    var nodes = new HashMap<UniqueIdentifier, Node>();
+    var nodes = new HashMap<Graph.GloballyUniqueIdentifier, Node>();
     serializableGraph.getNodes().values()
         .stream()
         .map(this.nodeDeserializer::deserialize)
-        .forEach(node -> nodes.put(node.getId(), node));
+        .forEach(node -> nodes.put(new Graph.GloballyUniqueIdentifier(node.getId(), node.getType()), node));
 
-    var edges = new HashMap<UniqueIdentifier, Edge>();
+    var edges = new HashMap<Graph.GloballyUniqueIdentifier, Edge>();
     serializableGraph.getEdges().values()
         .stream()
         .map(this.edgeDeserializer::deserialize)
-        .forEach(edge -> edges.put(edge.getId(), edge));
+        .forEach(edge -> edges.put(new Graph.GloballyUniqueIdentifier(edge.getId(), edge.getType()), edge));
 
     return Graph.unsafe(nodes, edges);
   }

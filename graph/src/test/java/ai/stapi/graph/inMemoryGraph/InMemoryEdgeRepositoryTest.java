@@ -1,21 +1,21 @@
 package ai.stapi.graph.inMemoryGraph;
 
+import ai.stapi.graph.EdgeRepository;
 import ai.stapi.graph.NodeIdAndType;
+import ai.stapi.graph.NodeRepository;
+import ai.stapi.graph.attribute.LeafAttribute;
 import ai.stapi.graph.attribute.attributeValue.BooleanAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.DecimalAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.InstantAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.IntegerAttributeValue;
+import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
 import ai.stapi.graph.exceptions.EdgeNotFound;
-import ai.stapi.graph.exceptions.EdgeWithSameIdAlreadyExists;
+import ai.stapi.graph.exceptions.EdgeWithSameIdAndTypeAlreadyExists;
 import ai.stapi.graph.exceptions.OneOrBothNodesOnEdgeDoesNotExist;
 import ai.stapi.graph.graphElementForRemoval.EdgeForRemoval;
-import ai.stapi.graph.test.base.UnitTestCase;
-import ai.stapi.graph.EdgeRepository;
-import ai.stapi.graph.NodeRepository;
-import ai.stapi.graph.attribute.LeafAttribute;
-import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
 import ai.stapi.graph.graphelements.Edge;
 import ai.stapi.graph.graphelements.Node;
+import ai.stapi.graph.test.base.UnitTestCase;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -198,7 +198,7 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
     );
     Executable executable = () -> getEdgeRepository().save(newEdge);
 
-    Assertions.assertThrows(EdgeWithSameIdAlreadyExists.class, executable);
+    Assertions.assertThrows(EdgeWithSameIdAndTypeAlreadyExists.class, executable);
   }
 
   @Test

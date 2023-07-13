@@ -1,15 +1,15 @@
 package ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.specific;
 
+import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
+import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
 import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.GenericGraphToObjectDeserializer;
 import ai.stapi.graphoperations.graphDeserializers.ogmDeserializer.MissingTraversalTargetResolvingStrategy;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.GraphDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.ListAttributeDescription;
-import ai.stapi.graphoperations.objectGraphLanguage.ObjectGraphMapping;
-import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
-import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
 import ai.stapi.graphoperations.graphReader.GraphReader;
 import ai.stapi.graphoperations.objectGraphLanguage.LeafObjectGraphMapping;
 import ai.stapi.graphoperations.objectGraphLanguage.ListObjectGraphMapping;
+import ai.stapi.graphoperations.objectGraphLanguage.ObjectGraphMapping;
 import ai.stapi.graphoperations.ogmProviders.GenericGraphMappingProvider;
 import ai.stapi.graphoperations.serializationTypeProvider.GenericSerializationTypeByNodeProvider;
 import java.util.ArrayList;
@@ -42,6 +42,7 @@ public class ListGraphToObjectDeserializer extends AbstractSpecificGraphToObject
     if (listMapping.getChildObjectGraphMapping() instanceof LeafObjectGraphMapping) {
       var values = elements.stream().map(element -> this.traverseSingleGraphBranchToValue(
               element.getId(),
+              element.getType(),
               listMapping.getGraphDescription(),
               contextualGraph,
               missingTraversalTargetResolvingStrategy
@@ -58,6 +59,7 @@ public class ListGraphToObjectDeserializer extends AbstractSpecificGraphToObject
     }
     return elements.stream().map(element -> this.traverseMultipleGraphBranch(
             element.getId(),
+            element.getType(),
             listMapping.getGraphDescription(),
             contextualGraph
         )

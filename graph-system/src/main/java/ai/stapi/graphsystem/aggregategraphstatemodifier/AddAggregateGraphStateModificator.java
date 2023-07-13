@@ -82,11 +82,11 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
       throw error.getError();
     }
     var successOutput = (HappyFindClosestListNodePathsOutput) closestListNodePaths;
-    var closestListPath = successOutput.getPaths().toList().get(0);
+    var closestListPath = successOutput.getPathsAndTypes().toList().get(0);
     var aggregateRepo = currentAggregateState.traversable();
 
     TraversableNode traversingStartNode;
-    if (closestListPath.length <= 1) {
+    if (closestListPath.getPath().length <= 1) {
       var aggregateId = command.getTargetIdentifier();
       if (aggregateRepo.nodeExists(aggregateId, aggregateType)) {
         traversingStartNode = aggregateRepo.loadNode(aggregateId, aggregateType);
@@ -107,10 +107,10 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
         traversingStartNode,
         Arrays.copyOfRange(
             splitPath,
-            closestListPath.length,
+            closestListPath.getPath().length,
             splitPath.length
         ),
-        Arrays.stream(closestListPath).toList(),
+        Arrays.stream(closestListPath.getPath()).toList(),
         operationStructureType,
         modificationDefinition
     );
@@ -199,9 +199,11 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
   ) {
     var currentLastPathToList = lastPathToList;
     if (pathToTraverse.length < 2) {
-      var result = new ArrayList<String[]>();
-      result.add(lastPathToList);
-      return new HappyFindClosestListNodePathsOutput(result.stream());
+      return new HappyFindClosestListNodePathsOutput(
+          Stream.of(
+              new PathAndType(lastPathToList, currentStructure.getDefinitionType())
+          )
+      );
     }
     var fieldName = pathToTraverse[0];
     var restOfPath = Arrays.copyOfRange(pathToTraverse, 1, pathToTraverse.length);
@@ -258,7 +260,7 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
         typeResults.stream()
             .filter(HappyFindClosestListNodePathsOutput.class::isInstance)
             .map(HappyFindClosestListNodePathsOutput.class::cast)
-            .flatMap(HappyFindClosestListNodePathsOutput::getPaths)
+            .flatMap(HappyFindClosestListNodePathsOutput::getPathsAndTypes)
     );
   }
 
@@ -303,12 +305,12 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
       DynamicCommand command,
       EventFactoryModification modificationDefinition,
       ComplexStructureType operationStructureType,
-      String[] closestListPath,
+      PathAndType closestListPath,
       InMemoryGraphRepository aggregateRepo
   ) {
     var sourcePathOfId = String.format(
         "%s.id",
-        String.join(".", closestListPath)
+        String.join(".", closestListPath.getPath())
     );
     var idParametersWithSameSourcePath = operationStructureType.getAllFields()
         .values()
@@ -337,13 +339,13 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
       throw new CannotAddToAggregateState(List.of());
     }
     var id = new UniqueIdentifier(stringIdValue);
-    if (aggregateRepo.nodeExists(id)) {
-      return aggregateRepo.loadNode(id);
+    if (aggregateRepo.nodeExists(id, closestListPath.getType())) {
+      return aggregateRepo.loadNode(id, closestListPath.getType());
     } else {
       throw CannotAddToAggregateState.becauseThereIsNoNodeWithIdSpecifiedAtSourcePath(
           modificationDefinition,
           operationStructureType,
-          String.join(".", closestListPath),
+          String.join(".", closestListPath.getPath()),
           id
       );
     }
@@ -357,17 +359,16 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
 
   }
 
-  private static class HappyFindClosestListNodePathsOutput
-      implements FindClosestListNodePathsOutput {
+  private static class HappyFindClosestListNodePathsOutput implements FindClosestListNodePathsOutput {
 
-    private final Stream<String[]> paths;
+    private final Stream<PathAndType> pathAndTypes;
 
-    public HappyFindClosestListNodePathsOutput(Stream<String[]> paths) {
-      this.paths = paths;
+    public HappyFindClosestListNodePathsOutput(Stream<PathAndType> pathAndTypes) {
+      this.pathAndTypes = pathAndTypes;
     }
 
-    public Stream<String[]> getPaths() {
-      return paths;
+    public Stream<PathAndType> getPathsAndTypes() {
+      return pathAndTypes;
     }
   }
 
@@ -382,6 +383,25 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
 
     public CannotAddToAggregateState getError() {
       return error;
+    }
+  }
+
+  private static class PathAndType {
+
+    private final String[] path;
+    private final String type;
+
+    public PathAndType(String[] path, String type) {
+      this.path = path;
+      this.type = type;
+    }
+
+    public String[] getPath() {
+      return path;
+    }
+
+    public String getType() {
+      return type;
     }
   }
 }

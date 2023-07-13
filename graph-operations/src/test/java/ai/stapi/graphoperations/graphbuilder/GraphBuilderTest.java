@@ -1,15 +1,14 @@
 package ai.stapi.graphoperations.graphbuilder;
 
-import ai.stapi.graph.attribute.attributeFactory.AttributeValueFactoryInput;
-import ai.stapi.graphoperations.graphbuilder.GraphBuilder;
-import ai.stapi.graphoperations.graphbuilder.exception.GraphBuilderException;
-import ai.stapi.graphoperations.graphbuilder.specific.positive.EdgeDirection;
 import ai.stapi.graph.attribute.LeafAttribute;
+import ai.stapi.graph.attribute.attributeFactory.AttributeValueFactoryInput;
 import ai.stapi.graph.attribute.attributeFactory.GenericAttributeFactory;
 import ai.stapi.graph.attribute.attributeValue.BooleanAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.DecimalAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.IntegerAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
+import ai.stapi.graphoperations.graphbuilder.exception.GraphBuilderException;
+import ai.stapi.graphoperations.graphbuilder.specific.positive.EdgeDirection;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
 import ai.stapi.objectRenderer.infrastructure.objectToJsonStringRenderer.ObjectToJSonStringOptions;
 import ai.stapi.test.integration.IntegrationTestCase;
@@ -59,12 +58,13 @@ public class GraphBuilderTest extends IntegrationTestCase {
   @Test
   public void itCanCreateNodeWithSpecificIdAndType() {
     var id = UniversallyUniqueIdentifier.fromString("b7842bbd-09c5-4ffe-946f-38b80d1f42ad");
+    var nodeType = "example_type";
     var builder = new GraphBuilder();
     builder.addNode()
         .setId(id)
-        .setType("example_type");
+        .setType(nodeType);
     var graph = builder.build(this.genericAttributeFactory);
-    graph.getNode(id);
+    graph.getNode(id, nodeType);
     this.thenGraphApproved(graph);
   }
 
@@ -101,10 +101,11 @@ public class GraphBuilderTest extends IntegrationTestCase {
   @Test
   public void itCanCreateNodeWithSpecificIdAndTypeAndAttribute() {
     var id = UniversallyUniqueIdentifier.fromString("b7842bbd-09c5-4ffe-946f-38b80d1f42ad");
+    var nodeType = "example_type";
     var builder = new GraphBuilder();
     var nodeBuilder = builder.addNode()
         .setId(id)
-        .setType("example_type");
+        .setType(nodeType);
     nodeBuilder.addAttribute()
         .setAttributeName("string_attribute")
         .addAttributeValue(
@@ -143,7 +144,7 @@ public class GraphBuilderTest extends IntegrationTestCase {
         .setAttributeStructureType(LeafAttribute.DATA_STRUCTURE_TYPE);
 
     var graph = builder.build(this.genericAttributeFactory);
-    graph.getNode(id);
+    graph.getNode(id, nodeType);
     this.thenGraphApproved(graph);
   }
 

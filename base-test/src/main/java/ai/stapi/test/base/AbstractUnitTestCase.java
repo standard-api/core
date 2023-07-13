@@ -1,12 +1,9 @@
 package ai.stapi.test.base;
 
 import ai.stapi.graph.Graph;
-import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.graphelements.Edge;
 import ai.stapi.graph.graphelements.Node;
-import ai.stapi.graph.traversableGraphElements.TraversableEdge;
-import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
-import ai.stapi.graph.traversableGraphElements.TraversableNode;
+import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.renderer.infrastructure.idLessTextRenderer.IdLessTextGraphRenderer;
 import ai.stapi.graph.renderer.infrastructure.idLessTextRenderer.IdLessTextRendererOptions;
 import ai.stapi.graph.renderer.infrastructure.idLessTextRenderer.attribute.TextAttributeContainerRenderer;
@@ -14,17 +11,19 @@ import ai.stapi.graph.renderer.infrastructure.idLessTextRenderer.edge.IdLessText
 import ai.stapi.graph.renderer.infrastructure.idLessTextRenderer.node.IdLessTextNodeRenderer;
 import ai.stapi.graph.renderer.infrastructure.textRenderer.edge.TextEdgeRenderer;
 import ai.stapi.graph.renderer.infrastructure.textRenderer.node.TextNodeRenderer;
+import ai.stapi.graph.traversableGraphElements.TraversableEdge;
+import ai.stapi.graph.traversableGraphElements.TraversableGraphElement;
+import ai.stapi.graph.traversableGraphElements.TraversableNode;
 import ai.stapi.objectRenderer.infrastructure.objectToJsonStringRenderer.ObjectToJSonStringOptions;
 import ai.stapi.objectRenderer.infrastructure.objectToJsonStringRenderer.ObjectToJsonStringRenderer;
 import ai.stapi.test.FixtureFileLoadableTestTrait;
 import ai.stapi.utils.LineFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import org.approvaltests.Approvals;
 import org.approvaltests.core.Options;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.function.Executable;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public abstract class AbstractUnitTestCase implements FixtureFileLoadableTestTrait {
 
@@ -215,7 +214,7 @@ public abstract class AbstractUnitTestCase implements FixtureFileLoadableTestTra
   protected void thenNodesAreSame(Node expectedNode, TraversableNode actualNode) {
     var traversableExpectedNode = new Graph(expectedNode)
         .traversable()
-        .loadNode(expectedNode.getId());
+        .loadNode(expectedNode.getId(), expectedNode.getType());
 
     var renderedExpected = textNodeRenderer.render(traversableExpectedNode).toPrintableString();
     var renderedActual = textNodeRenderer.render(actualNode).toPrintableString();

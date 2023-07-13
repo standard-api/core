@@ -25,6 +25,9 @@ public interface EdgeRepository {
 
   Set<TraversableEdge> findInAndOutEdgesForNode(UniqueIdentifier nodeId, String nodeType);
 
-  TraversableEdge findEdgeByTypeAndNodes(String edgeType, NodeIdAndType nodeFrom,
-                                         NodeIdAndType nodeTo);
+  TraversableEdge findEdgeByTypeAndNodes(
+      String edgeType,
+      NodeIdAndType nodeFrom,
+      NodeIdAndType nodeTo
+  );
 }
