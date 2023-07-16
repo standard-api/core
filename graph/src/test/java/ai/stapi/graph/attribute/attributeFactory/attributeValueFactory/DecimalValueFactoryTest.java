@@ -1,7 +1,7 @@
 package ai.stapi.graph.attribute.attributeFactory.attributeValueFactory;
 
 import ai.stapi.graph.attribute.attributeValue.DecimalAttributeValue;
-import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
@@ -25,7 +25,7 @@ class DecimalValueFactoryTest extends AbstractAttributeValueFactoryTest {
   void itCanFailsToCreateAttributeWithBadValueType() {
     this.testItFailsToCreateIncorrectValueType(
         TESTED_ATTRIBUTE_TYPE,
-        List.of(Timestamp.valueOf("2020-01-01 00:00:00.000000000"))
+        List.of(Instant.parse("2020-01-01T00:00:00.000000000Z"))
     );
   }
   

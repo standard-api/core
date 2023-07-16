@@ -1,7 +1,7 @@
 package ai.stapi.graph.attribute;
 
 import ai.stapi.graph.attribute.attributeValue.InstantAttributeValue;
-import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.List;
 
 public class CreatedAtMetaData extends MetaData {
@@ -15,19 +15,19 @@ public class CreatedAtMetaData extends MetaData {
     return new CreatedAtMetaData((InstantAttributeValue) metaData.getValues().get(0));
   }
 
-  public CreatedAtMetaData(InstantAttributeValue timestamp) {
-    super(NAME, List.of(timestamp));
+  public CreatedAtMetaData(InstantAttributeValue instantAttribute) {
+    super(NAME, List.of(instantAttribute));
   }
 
-  public CreatedAtMetaData(Timestamp timestamp) {
-    super(NAME, List.of(new InstantAttributeValue(timestamp)));
+  public CreatedAtMetaData(Instant utcTime) {
+    super(NAME, List.of(new InstantAttributeValue(utcTime)));
   }
 
-  public CreatedAtMetaData(String timestamp) {
-    super(NAME, List.of(new InstantAttributeValue(Timestamp.valueOf(timestamp))));
+  public CreatedAtMetaData(String utcTime) {
+    super(NAME, List.of(new InstantAttributeValue(Instant.parse(utcTime))));
   }
 
-  public Timestamp getTimestamp() {
-    return (Timestamp) this.getValues().get(0).getValue();
+  public Instant getInstant() {
+    return (Instant) this.getValues().get(0).getValue();
   }
 }

@@ -1,23 +1,22 @@
 package ai.stapi.objectRenderer.infrastructure.objectToJsonStringRenderer;
 
-import ai.stapi.serialization.jackson.TimestampConfigurer;
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import ai.stapi.objectRenderer.infrastructure.objectToJsonStringRenderer.ObjectToJSonStringOptions.RenderFeature;
 import ai.stapi.objectRenderer.model.ObjectRenderer;
 import ai.stapi.objectRenderer.model.RenderOutput;
 import ai.stapi.objectRenderer.model.RendererOptions;
 import ai.stapi.serialization.AbstractSerializableObject;
+import ai.stapi.serialization.jackson.JavaTimeConfigurer;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.springframework.stereotype.Service;
 
 public class ObjectToJsonStringRenderer implements ObjectRenderer {
 
@@ -80,7 +79,7 @@ public class ObjectToJsonStringRenderer implements ObjectRenderer {
 
   private ObjectMapper getMapper(ObjectToJSonStringOptions options) {
     var mapper = new ObjectMapper();
-    TimestampConfigurer.configureTimestampModule(mapper);
+    JavaTimeConfigurer.configureJavaTimeModule(mapper);
     var shouldRenderGetters = options.getFeatures()
         .contains(ObjectToJSonStringOptions.RenderFeature.RENDER_GETTERS);
 

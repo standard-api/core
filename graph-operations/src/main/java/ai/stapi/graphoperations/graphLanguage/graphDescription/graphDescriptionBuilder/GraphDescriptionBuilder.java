@@ -2,11 +2,6 @@ package ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescription
 
 import ai.stapi.graphoperations.graphLanguage.graphDescription.GraphDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.exception.GraphDescriptionBuilderException;
-import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.query.AttributeQueryDescriptionBuilder;
-import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.AbstractAttributeDescription;
-import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.PositiveGraphDescription;
-import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.UuidIdentityDescription;
-import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.removal.RemovalGraphDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.SpecificGraphDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.AbstractAttributeDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.AbstractAttributeValueDescriptionBuilder;
@@ -34,19 +29,22 @@ import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionB
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.ReferenceDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.SetAttributeDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.StringAttributeValueDescriptionBuilder;
-import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.TimeAttributeValueDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.UnsignedIntegerAttributeValueDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.UriAttributeValueDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.UrlAttributeValueDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.UuidAttributeValueDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.UuidSpecificDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.XhtmlAttributeValueDescriptionBuilder;
+import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.query.AttributeQueryDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.removal.AbstractRemovalDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.removal.RemovalEdgeDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.removal.RemovalNodeDescriptionBuilder;
+import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.AbstractAttributeDescription;
+import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.PositiveGraphDescription;
+import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.UuidIdentityDescription;
+import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.removal.RemovalGraphDescription;
 import ai.stapi.graphoperations.graphbuilder.specific.positive.EdgeDirection;
 import ai.stapi.utils.Classifier;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -69,7 +67,6 @@ public class GraphDescriptionBuilder {
             new IntegerAttributeValueDescriptionBuilder(),
             new BooleanAttributeValueDescriptionBuilder(),
             new InstantAttributeValueDescriptionBuilder(),
-            new TimeAttributeValueDescriptionBuilder(),
             new DateAttributeValueDescriptionBuilder(),
             new DateTimeAttributeValueDescriptionBuilder(),
             new Base64BinaryAttributeValueDescriptionBuilder(),

@@ -6,7 +6,6 @@ import ai.stapi.graph.versionedAttributes.exceptions.CannotMergeTwoVersionedAttr
 import ai.stapi.graph.versionedAttributes.exceptions.VersionedAttributeCannotBeEmpty;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -135,7 +134,7 @@ public abstract class AbstractVersionedAttribute<T extends Attribute<?>>
     if (currentList.isEmpty() || !Objects.requireNonNull(mostRecentFromCurrentList)
         .equals(attribute.getValue())) {
       if (attribute.getCreatedAt() == null) {
-        attribute.setCreatedAt(Timestamp.from(Instant.now()));
+        attribute.setCreatedAt(Instant.now());
       }
       newAttributeList.add((T) attribute);
       newAttributeList.sort((a1, a2) -> a2.getCreatedAt().compareTo(a1.getCreatedAt()));

@@ -2,17 +2,13 @@ package ai.stapi.graph.attribute;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import ai.stapi.graph.attribute.LeafAttribute;
-import ai.stapi.graph.attribute.ListAttribute;
-import ai.stapi.graph.attribute.SetAttribute;
 import ai.stapi.graph.attribute.attributeValue.BooleanAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.DecimalAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.InstantAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.IntegerAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
 import ai.stapi.graph.test.base.UnitTestCase;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.List;
 import java.util.Set;
 import org.junit.jupiter.api.Test;
@@ -83,7 +79,7 @@ class AttributeTest extends UnitTestCase {
   void itCanCreateDateTimeAttribute() {
     //Given
     var expectedName = "name";
-    var expectedValue = new Timestamp(Timestamp.valueOf(LocalDateTime.now()).getTime());
+    var expectedValue = Instant.now();
     //When
     var attribute = new LeafAttribute<>(
         expectedName,

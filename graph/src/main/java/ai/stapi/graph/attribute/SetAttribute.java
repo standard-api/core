@@ -1,7 +1,7 @@
 package ai.stapi.graph.attribute;
 
 import ai.stapi.graph.attribute.attributeValue.AttributeValue;
-import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,12 +14,12 @@ public class SetAttribute extends AbstractAttribute<Set<?>> {
 
   private final Set<AttributeValue<?>> boxedValues;
 
-  public SetAttribute(String name, Timestamp createdAt, Set<AttributeValue<?>> values) {
+  public SetAttribute(String name, Instant createdAt, Set<AttributeValue<?>> values) {
     super(name, createdAt);
     this.boxedValues = values;
   }
 
-  public SetAttribute(String name, Timestamp createdAt) {
+  public SetAttribute(String name, Instant createdAt) {
     this(name, createdAt, Set.of());
   }
 
@@ -40,7 +40,7 @@ public class SetAttribute extends AbstractAttribute<Set<?>> {
     this(name, Arrays.stream(values).collect(Collectors.toSet()));
   }
 
-  public SetAttribute(String name, Timestamp createdAt, AttributeValue<?>... values) {
+  public SetAttribute(String name, Instant createdAt, AttributeValue<?>... values) {
     this(name, createdAt, Arrays.stream(values).collect(Collectors.toSet()));
   }
 

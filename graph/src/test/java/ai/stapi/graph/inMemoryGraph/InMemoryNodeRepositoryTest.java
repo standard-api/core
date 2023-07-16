@@ -19,8 +19,8 @@ import ai.stapi.graph.graphelements.Edge;
 import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.test.base.UnitTestCase;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
-import java.sql.Timestamp;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Map;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -175,7 +175,8 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
     expectedNode = expectedNode.add(
         new LeafAttribute<>(
             "test_timestamp",
-            new InstantAttributeValue(Timestamp.from(Instant.now())))
+            new InstantAttributeValue(Instant.now())
+        )
     );
     getNodeRepository().save(expectedNode);
 
@@ -490,9 +491,9 @@ class InMemoryNodeRepositoryTest extends UnitTestCase {
     thirdExpectedNode = thirdExpectedNode.add(
         new ListAttribute(
             "test_union_type_attribute",
-            new DateAttributeValue(Timestamp.from(Instant.now())),
-            new DateAttributeValue(Timestamp.from(Instant.now())),
-            new DateAttributeValue(Timestamp.from(Instant.now()))
+            new DateAttributeValue(LocalDate.now()),
+            new DateAttributeValue(LocalDate.now()),
+            new DateAttributeValue(LocalDate.now())
         )
     );
     getNodeRepository().save(thirdExpectedNode);

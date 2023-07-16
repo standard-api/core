@@ -2,7 +2,7 @@ package ai.stapi.graph.attribute;
 
 
 import ai.stapi.graph.attribute.attributeValue.AttributeValue;
-import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Map;
 
 public class LeafAttribute<T, AV extends AttributeValue<T>> extends AbstractAttribute<T> {
@@ -15,7 +15,7 @@ public class LeafAttribute<T, AV extends AttributeValue<T>> extends AbstractAttr
     this.boxedValue = boxedValue;
   }
 
-  public LeafAttribute(String name, Timestamp createdAt, AV boxedValue) {
+  public LeafAttribute(String name, Instant createdAt, AV boxedValue) {
     super(name, createdAt);
     this.boxedValue = boxedValue;
   }

@@ -1,12 +1,15 @@
 package ai.stapi.graph.attribute.attributeValue;
 
-import java.sql.Timestamp;
+import java.time.Instant;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 
-public class InstantAttributeValue extends AbstractAttributeValue<Timestamp> implements StringLikeAttributeValue<Timestamp> {
+public class InstantAttributeValue extends AbstractAttributeValue<Instant>
+    implements StringLikeAttributeValue<Instant> {
 
   public static final String SERIALIZATION_TYPE = "instant";
 
-  public InstantAttributeValue(Timestamp value) {
+  public InstantAttributeValue(Instant value) {
     super(value);
   }
 
@@ -17,6 +20,7 @@ public class InstantAttributeValue extends AbstractAttributeValue<Timestamp> imp
 
   @Override
   public String toStringValue() {
-    return this.getValue().toString();
+    DateTimeFormatter formatter = DateTimeFormatter.ISO_INSTANT;
+    return this.getValue().atZone(ZoneOffset.UTC).format(formatter);
   }
 }

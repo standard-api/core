@@ -17,10 +17,7 @@ import ai.stapi.graph.graphelements.Edge;
 import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.test.base.UnitTestCase;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.time.Instant;
-import java.util.Date;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -228,11 +225,10 @@ class InMemoryEdgeRepositoryTest extends UnitTestCase {
         new LeafAttribute<>("test_integer", new IntegerAttributeValue(15))
     );
     expectedEdge = expectedEdge.add(
-        new LeafAttribute<>("test_timestamp",
-            new InstantAttributeValue(Timestamp.valueOf(
-                new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .format(Date.from(Instant.now()))
-            )))
+        new LeafAttribute<>(
+            "test_timestamp",
+            new InstantAttributeValue(Instant.now())
+        )
     );
     getEdgeRepository().save(expectedEdge);
 

@@ -7,7 +7,7 @@ import ai.stapi.graph.attribute.attributeValue.IntegerAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
 import ai.stapi.graph.versionedAttributes.exceptions.CannotAddNewVersionOfAttribute;
 import ai.stapi.graph.versionedAttributes.exceptions.CannotMergeTwoVersionedAttributes;
-import java.sql.Timestamp;
+import java.time.Instant;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
@@ -85,26 +85,26 @@ public class ImmutableVersionedAttributeTest extends AbstractVersionedAttributeT
   }
 
   @Test
-  public void itCanAddManyNewVersionsAndAutomaticallyAttachTimestampIfNeeded() {
+  public void itCanAddManyNewVersionsAndAutomaticallyAttachInstantIfNeeded() {
     //Given
     var expectedVersion1 = new LeafAttribute<>(
-        "test_name", 
-        Timestamp.valueOf("2022-01-01 01:01:01"),
+        "test_name",
+        Instant.parse("2022-01-01T01:01:01Z"),
         new StringAttributeValue("versionD-1")
     );
     var expectedVersion2 = new LeafAttribute<>(
-        "test_name", 
-        Timestamp.valueOf("2022-01-01 01:02:01"),
+        "test_name",
+        Instant.parse("2022-01-01T01:02:01Z"),
         new StringAttributeValue("versionS-2")
     );
     var expectedVersion3 = new LeafAttribute<>(
-        "test_name", 
-        Timestamp.valueOf("2022-01-01 01:03:01"),
+        "test_name",
+        Instant.parse("2022-01-01T01:03:01Z"),
         new StringAttributeValue("versionX-3")
     );
     var expectedVersion4 = new LeafAttribute<>(
-        "test_name", 
-        Timestamp.valueOf("2022-01-01 01:04:01"),
+        "test_name",
+        Instant.parse("2022-01-01T01:04:01Z"),
         new StringAttributeValue("versionU-4")
     );
     var expectedVersion5 = new LeafAttribute<>(
