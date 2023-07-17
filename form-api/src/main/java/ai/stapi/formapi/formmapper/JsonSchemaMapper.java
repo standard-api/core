@@ -16,6 +16,7 @@ import ai.stapi.graph.attribute.attributeValue.MarkdownAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.OidAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.PositiveIntegerAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
+import ai.stapi.graph.attribute.attributeValue.TimeAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.UnsignedIntegerAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.UriAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.UrlAttributeValue;
@@ -52,6 +53,7 @@ public class JsonSchemaMapper {
       CodeAttributeValue.SERIALIZATION_TYPE,
       DateAttributeValue.SERIALIZATION_TYPE,
       DateTimeAttributeValue.SERIALIZATION_TYPE,
+      TimeAttributeValue.SERIALIZATION_TYPE,
       IdAttributeValue.SERIALIZATION_TYPE,
       InstantAttributeValue.SERIALIZATION_TYPE,
       MarkdownAttributeValue.SERIALIZATION_TYPE,

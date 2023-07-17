@@ -21,6 +21,7 @@ import ai.stapi.graph.attribute.attributeFactory.attributeValueFactory.MarkdownV
 import ai.stapi.graph.attribute.attributeFactory.attributeValueFactory.OidValueFactory;
 import ai.stapi.graph.attribute.attributeFactory.attributeValueFactory.PositiveIntegerValueFactory;
 import ai.stapi.graph.attribute.attributeFactory.attributeValueFactory.StringValueFactory;
+import ai.stapi.graph.attribute.attributeFactory.attributeValueFactory.TimeAttributeValueFactory;
 import ai.stapi.graph.attribute.attributeFactory.attributeValueFactory.UnknownValueFactory;
 import ai.stapi.graph.attribute.attributeFactory.attributeValueFactory.UnsignedIntegerValueFactory;
 import ai.stapi.graph.attribute.attributeFactory.attributeValueFactory.UriValueFactory;
@@ -130,6 +131,11 @@ public class AttributeFactoryConfiguration {
   @Bean
   public StringValueFactory stringValueFactory() {
     return new StringValueFactory();
+  }
+
+  @Bean
+  public TimeAttributeValueFactory timeAttributeValueFactory() {
+    return new TimeAttributeValueFactory();
   }
 
   @Bean

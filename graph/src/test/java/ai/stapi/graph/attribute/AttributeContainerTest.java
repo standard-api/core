@@ -15,6 +15,7 @@ import ai.stapi.graph.attribute.attributeValue.MarkdownAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.OidAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.PositiveIntegerAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
+import ai.stapi.graph.attribute.attributeValue.TimeAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.UnsignedIntegerAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.UriAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.UrlAttributeValue;
@@ -25,6 +26,7 @@ import ai.stapi.graph.versionedAttributes.ImmutableVersionedAttributeGroup;
 import ai.stapi.graph.versionedAttributes.VersionedAttribute;
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Set;
@@ -492,6 +494,10 @@ public abstract class AttributeContainerTest extends UnitTestCase {
     this.approveOperationOnLeafAttribute(
         new StringAttributeValue("ExampleValue"),
         new StringAttributeValue("ExampleOtherValue")
+    );
+    this.approveOperationOnLeafAttribute(
+        new TimeAttributeValue(LocalTime.parse("12:53:40")),
+        new TimeAttributeValue(LocalTime.parse("12:55:00"))
     );
     this.approveOperationOnLeafAttribute(
         new UnsignedIntegerAttributeValue(15),

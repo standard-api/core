@@ -29,6 +29,7 @@ import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionB
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.ReferenceDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.SetAttributeDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.StringAttributeValueDescriptionBuilder;
+import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.TimeAttributeValueDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.UnsignedIntegerAttributeValueDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.UriAttributeValueDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.positive.UrlAttributeValueDescriptionBuilder;
@@ -67,6 +68,7 @@ public class GraphDescriptionBuilder {
             new IntegerAttributeValueDescriptionBuilder(),
             new BooleanAttributeValueDescriptionBuilder(),
             new InstantAttributeValueDescriptionBuilder(),
+            new TimeAttributeValueDescriptionBuilder(),
             new DateAttributeValueDescriptionBuilder(),
             new DateTimeAttributeValueDescriptionBuilder(),
             new Base64BinaryAttributeValueDescriptionBuilder(),
