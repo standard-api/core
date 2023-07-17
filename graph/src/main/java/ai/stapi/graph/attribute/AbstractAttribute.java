@@ -1,6 +1,6 @@
 package ai.stapi.graph.attribute;
 
-import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -15,7 +15,7 @@ public abstract class AbstractAttribute<T> implements Attribute<T> {
     this.metaData = new HashMap<>();
   }
 
-  protected AbstractAttribute(String name, Timestamp createdAt) {
+  protected AbstractAttribute(String name, Instant createdAt) {
     this.name = name;
     this.metaData = new HashMap<>(
         Map.of(CreatedAtMetaData.NAME, new CreatedAtMetaData(createdAt))
@@ -33,18 +33,18 @@ public abstract class AbstractAttribute<T> implements Attribute<T> {
   }
 
   @Override
-  public Timestamp getCreatedAt() {
+  public Instant getCreatedAt() {
     var createdAt = this.metaData.get(CreatedAtMetaData.NAME);
     if (createdAt == null) {
       return null;
     }
     return CreatedAtMetaData
         .fromMetaData(createdAt)
-        .getTimestamp();
+        .getInstant();
   }
 
   @Override
-  public void setCreatedAt(Timestamp createdAt) {
+  public void setCreatedAt(Instant createdAt) {
     this.metaData.put(
         CreatedAtMetaData.NAME,
         new CreatedAtMetaData(createdAt)

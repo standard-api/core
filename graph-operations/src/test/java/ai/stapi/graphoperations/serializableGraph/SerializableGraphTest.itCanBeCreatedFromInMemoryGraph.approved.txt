@@ -11,7 +11,7 @@
           "metaData" : {
             "createdAt" : [ {
               "serializationType" : "instant",
-              "value" : "2023-05-04 21:00:55.68332646"
+              "value" : "2023-05-04T21:00:55.683326460Z"
             } ]
           }
         } ]
@@ -29,7 +29,7 @@
           "metaData" : {
             "createdAt" : [ {
               "serializationType" : "instant",
-              "value" : "2023-05-04 21:00:55.68332646"
+              "value" : "2023-05-04T21:00:55.683326460Z"
             } ]
           }
         } ]
@@ -49,7 +49,7 @@
           "metaData" : {
             "createdAt" : [ {
               "serializationType" : "instant",
-              "value" : "2023-05-04 21:00:55.68332646"
+              "value" : "2023-05-04T21:00:55.683326460Z"
             } ]
           }
         } ]

@@ -39,8 +39,8 @@ public class TimeAttributeValueDescriptionBuilder extends AbstractAttributeValue
   public TimeAttributeValueDescriptionBuilder getCopy() {
     var builder = new TimeAttributeValueDescriptionBuilder();
     builder.setChildren(this.getChildren().stream()
-            .map(SpecificGraphDescriptionBuilder::getCopy)
-            .collect(Collectors.toCollection(ArrayList::new)));
+        .map(SpecificGraphDescriptionBuilder::getCopy)
+        .collect(Collectors.toCollection(ArrayList::new)));
     return builder;
   }
 }

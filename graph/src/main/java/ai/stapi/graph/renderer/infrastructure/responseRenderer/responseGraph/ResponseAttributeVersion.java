@@ -1,14 +1,14 @@
 package ai.stapi.graph.renderer.infrastructure.responseRenderer.responseGraph;
 
 import ai.stapi.graph.attribute.Attribute;
-import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Objects;
 
 public class ResponseAttributeVersion<T> {
 
   private T value;
 
-  private Timestamp createdAt;
+  private Instant createdAt;
 
   private ResponseAttributeVersion() {
   }
@@ -22,7 +22,7 @@ public class ResponseAttributeVersion<T> {
     return value;
   }
 
-  public Timestamp getCreatedAt() {
+  public Instant getCreatedAt() {
     return createdAt;
   }
 

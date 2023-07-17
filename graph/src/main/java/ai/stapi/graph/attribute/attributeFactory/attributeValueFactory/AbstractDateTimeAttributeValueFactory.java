@@ -2,9 +2,9 @@ package ai.stapi.graph.attribute.attributeFactory.attributeValueFactory;
 
 import ai.stapi.graph.attribute.attributeFactory.exceptions.CannotCreateAttribute;
 import ai.stapi.graph.attribute.attributeValue.AttributeValue;
-import java.sql.Timestamp;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,8 +20,8 @@ public abstract class AbstractDateTimeAttributeValueFactory implements Attribute
       );
     }
     var date = this.parseValueToDate((String) value);
-    
-    return this.createAttributeWithTimeStamp(date.orElseThrow());
+
+    return this.createAttributeWithUtcTime(date.orElseThrow());
   }
 
   @Override
@@ -29,7 +29,7 @@ public abstract class AbstractDateTimeAttributeValueFactory implements Attribute
     if (!(value instanceof String stringValue)) {
       return false;
     }
-    
+
     return this.parseValueToDate(stringValue).isPresent();
   }
 
@@ -38,42 +38,29 @@ public abstract class AbstractDateTimeAttributeValueFactory implements Attribute
     return dataType.equals(this.getSupportedDataType());
   }
 
-  protected abstract AttributeValue<?> createAttributeWithTimeStamp(
-      Timestamp timestamp
+  protected abstract AttributeValue<?> createAttributeWithUtcTime(
+      Instant utcTime
   );
 
   protected abstract String getSupportedDataType();
 
-  protected Optional<Timestamp> parseValueToDate(String value) {
-    try {
-      return Optional.of(Timestamp.valueOf(value));
-    } catch (IllegalArgumentException e) {
-      for (SimpleDateFormat supportedFormat : this.getSupportedFormats()) {
-        try {
-          var dateInstant = supportedFormat.parse(value).toInstant();
-          var result = Timestamp.from(dateInstant);
-          return Optional.of(result);
-        } catch (ParseException ignored) {
-          //throw exception later
-        }
+  protected Optional<Instant> parseValueToDate(String value) {
+    for (DateTimeFormatter formatter : getSupportedFormats()) {
+      try {
+        Instant instant = Instant.from(formatter.parse(value));
+        return Optional.of(Instant.from(instant));
+      } catch (DateTimeParseException ex) {
+        // If this formatter doesn't work, try the next one
       }
     }
+    // If none of the formatters worked, return empty
     return Optional.empty();
   }
 
-  private List<SimpleDateFormat> getSupportedFormats() {
+  private List<DateTimeFormatter> getSupportedFormats() {
     return List.of(
-        new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SS"),
-        new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss"),
-        new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SS"),
-        new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"),
-        new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SS"),
-        new SimpleDateFormat("yyyy/MM/dd HH:mm:ss"),
-        new SimpleDateFormat("yyyy\\MM\\dd HH:mm:ss.SS"),
-        new SimpleDateFormat("yyyy\\MM\\dd HH:mm:ss"),
-        new SimpleDateFormat("yy\\MM\\dd HH:mm:ss.SS"),
-        new SimpleDateFormat("yy\\MM\\dd HH:mm:ss"),
-        new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSSSSSZ")
+        DateTimeFormatter.ISO_OFFSET_DATE_TIME,
+        DateTimeFormatter.ISO_INSTANT
     );
   }
 }

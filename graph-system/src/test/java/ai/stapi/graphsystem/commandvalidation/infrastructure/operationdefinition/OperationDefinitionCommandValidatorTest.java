@@ -373,16 +373,16 @@ class OperationDefinitionCommandValidatorTest extends SystemSchemaIntegrationTes
                         "end", "Bad End"
                     ),
                     Map.of(
-                        "start", "2021-09-01 12:30:45.123456789",
+                        "start", "2021-09-01T12:30:45.123456789Z",
                         "end", "Bad End"
                     ),
                     Map.of(
                         "start", "Bad Start",
-                        "end", "2021-09-01 12:30:45.123456789"
+                        "end", "2021-09-01T12:30:45.123456789Z"
                     ),
                     Map.of(
-                        "start", "2021-09-01 12:30:45.123456789",
-                        "end", "2022-03-07 08:15:30.000000001"
+                        "start", "2021-09-01T12:30:45.123456789Z",
+                        "end", "2022-03-07T08:15:30.000000001Z"
                     )
                 )
             )
@@ -409,7 +409,7 @@ class OperationDefinitionCommandValidatorTest extends SystemSchemaIntegrationTes
                             "url", 50,
                             "value", Map.of(
                                 DynamicCommand.SERIALIZATION_TYPE_FIELD_NAME, "Period",
-                                "end", "2022-03-07 08:15:30.000000001"
+                                "end", "2022-03-07T08:15:30.000000001Z"
                             )
                         ),
                         Map.of(
@@ -450,7 +450,7 @@ class OperationDefinitionCommandValidatorTest extends SystemSchemaIntegrationTes
                     Map.of(
                         DynamicCommand.SERIALIZATION_TYPE_FIELD_NAME, "Period",
                         "start", "Bad Start",
-                        "end", "2021-09-01 12:30:45.123456789"
+                        "end", "2021-09-01T12:30:45.123456789Z"
                     ),
                     Map.of(
                         DynamicCommand.SERIALIZATION_TYPE_FIELD_NAME, "Quantity",

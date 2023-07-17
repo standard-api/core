@@ -1,13 +1,14 @@
 package ai.stapi.graph.attribute.attributeValue;
 
-import java.sql.Timestamp;
+import java.time.LocalDate;
 
-public class DateAttributeValue extends AbstractAttributeValue<Timestamp> implements StringLikeAttributeValue<Timestamp> {
+public class DateAttributeValue extends AbstractAttributeValue<LocalDate>
+    implements StringLikeAttributeValue<LocalDate> {
 
   public static final String SERIALIZATION_TYPE = "date";
 
-  public DateAttributeValue(Timestamp value) {
-    super(value);
+  public DateAttributeValue(LocalDate date) {
+    super(date);
   }
 
   @Override

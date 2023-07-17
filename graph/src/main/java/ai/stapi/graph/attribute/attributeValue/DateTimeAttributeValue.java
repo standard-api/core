@@ -1,12 +1,13 @@
 package ai.stapi.graph.attribute.attributeValue;
 
-import java.sql.Timestamp;
+import java.time.Instant;
 
-public class DateTimeAttributeValue extends AbstractAttributeValue<Timestamp> implements StringLikeAttributeValue<Timestamp> {
+public class DateTimeAttributeValue extends AbstractAttributeValue<Instant>
+    implements StringLikeAttributeValue<Instant> {
 
   public static final String SERIALIZATION_TYPE = "dateTime";
 
-  public DateTimeAttributeValue(Timestamp value) {
+  public DateTimeAttributeValue(Instant value) {
     super(value);
   }
 

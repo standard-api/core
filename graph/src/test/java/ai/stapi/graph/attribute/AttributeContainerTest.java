@@ -24,8 +24,9 @@ import ai.stapi.graph.attribute.exceptions.AttributeNotFoundException;
 import ai.stapi.graph.test.base.UnitTestCase;
 import ai.stapi.graph.versionedAttributes.ImmutableVersionedAttributeGroup;
 import ai.stapi.graph.versionedAttributes.VersionedAttribute;
-import java.sql.Timestamp;
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Set;
@@ -314,22 +315,22 @@ public abstract class AttributeContainerTest extends UnitTestCase {
     var expectedAttributeValue1 = 1.0d;
     var expectedAttributeValue2 = 2.0d;
     var attributeContainer = this.getAttributeContainer();
-    var timestamp1 = Timestamp.valueOf("2022-01-01 01:01:01");
-    var timeStamp2 = Timestamp.valueOf("2022-02-02 02:02:02");
-    var timeStamp3 = Timestamp.valueOf("2022-03-03 03:03:03");
+    var instant1 = Instant.parse("2022-01-01T01:01:01Z");
+    var instant2 = Instant.parse("2022-02-02T02:02:02Z");
+    var instant3 = Instant.parse("2022-03-03T03:03:03Z");
     var doubleAttribute1 = new LeafAttribute<>(
         expectedAttributeName,
-        timestamp1,
+        instant1,
         new DecimalAttributeValue(expectedAttributeValue1)
     );
     var doubleAttribute2 = new LeafAttribute<>(
         expectedAttributeName,
-        timeStamp2,
+        instant2,
         new DecimalAttributeValue(expectedAttributeValue2)
     );
     var doubleAttribute3 = new LeafAttribute<>(
         expectedAttributeName,
-        timeStamp3,
+        instant3,
         new DecimalAttributeValue(expectedAttributeValue2)
     );
     attributeContainer = attributeContainer.add(doubleAttribute1);
@@ -339,7 +340,7 @@ public abstract class AttributeContainerTest extends UnitTestCase {
     var actualAttributes = attributeContainer.getVersionedAttribute(expectedAttributeName);
     //Then
     Assertions.assertEquals(2, actualAttributes.numberOfVersions());
-    Assertions.assertEquals(timeStamp2, actualAttributes.getCurrent().getCreatedAt());
+    Assertions.assertEquals(instant2, actualAttributes.getCurrent().getCreatedAt());
   }
 
   @Test
@@ -349,20 +350,20 @@ public abstract class AttributeContainerTest extends UnitTestCase {
     var expectedAttributeValue1 = 1.0d;
     var expectedAttributeValue2 = 2.0d;
     var attributeContainer = this.getAttributeContainer();
-    var timeStamp1 = Timestamp.from(Instant.now());
+    var time1 = Instant.now();
     var doubleAttribute1 = new LeafAttribute<>(
         expectedAttributeName,
-        timeStamp1,
+        time1,
         new DecimalAttributeValue(expectedAttributeValue2)
     );
-    var timeStamp2 = Timestamp.from(Instant.now().plus(45L, ChronoUnit.HOURS));
+    var time2 = time1.plus(45L, ChronoUnit.HOURS);
     var doubleAttribute2 = new LeafAttribute<>(
         expectedAttributeName,
         new DecimalAttributeValue(expectedAttributeValue1)
     );
     var doubleAttribute3 = new LeafAttribute<>(
         expectedAttributeName,
-        timeStamp2,
+        time2,
         new DecimalAttributeValue(expectedAttributeValue2)
     );
     attributeContainer = attributeContainer.add(doubleAttribute1);
@@ -372,7 +373,7 @@ public abstract class AttributeContainerTest extends UnitTestCase {
     var actualAttributes = attributeContainer.getVersionedAttribute(expectedAttributeName);
     //Then
     Assertions.assertEquals(3, actualAttributes.numberOfVersions());
-    Assertions.assertEquals(timeStamp2, actualAttributes.getCurrent().getCreatedAt());
+    Assertions.assertEquals(time2, actualAttributes.getCurrent().getCreatedAt());
     Assertions.assertEquals(expectedAttributeValue2, actualAttributes.getCurrent().getValue());
   }
 
@@ -385,17 +386,17 @@ public abstract class AttributeContainerTest extends UnitTestCase {
     var attributeContainer = this.getAttributeContainer();
     var doubleAttribute1 = new LeafAttribute<>(
         expectedAttributeName,
-        Timestamp.valueOf("2022-01-01 01:01:01"),
+        Instant.parse("2022-01-01T01:01:01Z"),
         new DecimalAttributeValue(expectedAttributeValue2)
     );
     var doubleAttribute2 = new LeafAttribute<>(
         expectedAttributeName,
-        Timestamp.valueOf("2022-01-01 02:01:01"),
+        Instant.parse("2022-01-01T02:01:01Z"),
         new DecimalAttributeValue(expectedAttributeValue1)
     );
     var doubleAttribute3 = new LeafAttribute<>(
         expectedAttributeName,
-        Timestamp.valueOf("2022-01-01 03:01:01"),
+        Instant.parse("2022-01-01T03:01:01Z"),
         new DecimalAttributeValue(expectedAttributeValue2)
     );
     attributeContainer = attributeContainer.add(doubleAttribute1);
@@ -415,14 +416,14 @@ public abstract class AttributeContainerTest extends UnitTestCase {
     attributeContainer = attributeContainer.add(
         new LeafAttribute<>(
             "name",
-            Timestamp.from(Instant.now()),
+            Instant.now(),
             new DecimalAttributeValue(2.0d)
         )
     );
     attributeContainer = attributeContainer.add(
         new LeafAttribute<>(
             "name",
-            Timestamp.from(Instant.now()),
+            Instant.now(),
             new DecimalAttributeValue(3.0d)
         )
     );
@@ -451,12 +452,12 @@ public abstract class AttributeContainerTest extends UnitTestCase {
         new CodeAttributeValue("ExampleOtherCodeValue")
     );
     this.approveOperationOnLeafAttribute(
-        new DateAttributeValue(Timestamp.valueOf("2016-05-21 00:00:00")),
-        new DateAttributeValue(Timestamp.valueOf("2016-05-22 00:00:00"))
+        new DateAttributeValue(LocalDate.parse("2016-05-21")),
+        new DateAttributeValue(LocalDate.parse("2016-05-22"))
     );
     this.approveOperationOnLeafAttribute(
-        new DateAttributeValue(Timestamp.valueOf("2016-05-21 12:53:40")),
-        new DateAttributeValue(Timestamp.valueOf("2016-05-22 12:45:30"))
+        new DateAttributeValue(LocalDate.parse("2016-05-21")),
+        new DateAttributeValue(LocalDate.parse("2016-05-22"))
     );
     this.approveOperationOnLeafAttribute(
         new DecimalAttributeValue(4.0d),
@@ -467,8 +468,8 @@ public abstract class AttributeContainerTest extends UnitTestCase {
         new IdAttributeValue("exampleOtherId")
     );
     this.approveOperationOnLeafAttribute(
-        new InstantAttributeValue(Timestamp.from(Instant.now())),
-        new InstantAttributeValue(Timestamp.from(Instant.now()))
+        new InstantAttributeValue(Instant.now()),
+        new InstantAttributeValue(Instant.now())
     );
     this.approveOperationOnLeafAttribute(
         new IntegerAttributeValue(-5),
@@ -495,8 +496,8 @@ public abstract class AttributeContainerTest extends UnitTestCase {
         new StringAttributeValue("ExampleOtherValue")
     );
     this.approveOperationOnLeafAttribute(
-        new TimeAttributeValue(Timestamp.valueOf("2016-05-21 12:53:40")),
-        new TimeAttributeValue(Timestamp.valueOf("2016-05-21 12:55:00"))
+        new TimeAttributeValue(LocalTime.parse("12:53:40")),
+        new TimeAttributeValue(LocalTime.parse("12:55:00"))
     );
     this.approveOperationOnLeafAttribute(
         new UnsignedIntegerAttributeValue(15),
@@ -524,7 +525,7 @@ public abstract class AttributeContainerTest extends UnitTestCase {
     attributeContainer = attributeContainer.add(
         new LeafAttribute<>(
             "exampleAttributeName",
-            Timestamp.from(Instant.now()),
+            Instant.now(),
             value1
         )
     );
@@ -532,14 +533,14 @@ public abstract class AttributeContainerTest extends UnitTestCase {
     attributeContainer = attributeContainer.add(
         new LeafAttribute<>(
             "exampleAttributeName",
-            Timestamp.from(Instant.now()),
+            Instant.now(),
             value1
         )
     );
     attributeContainer = attributeContainer.add(
         new LeafAttribute<>(
             "exampleAttributeName",
-            Timestamp.from(Instant.now()),
+            Instant.now(),
             value2
         )
     );

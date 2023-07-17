@@ -1,16 +1,16 @@
 package ai.stapi.graph.attribute;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Map;
 
 public interface Attribute<T> extends Serializable {
 
   String getName();
 
-  Timestamp getCreatedAt();
+  Instant getCreatedAt();
 
-  void setCreatedAt(Timestamp createdAt);
+  void setCreatedAt(Instant createdAt);
 
   Map<String, MetaData> getMetaData();
 

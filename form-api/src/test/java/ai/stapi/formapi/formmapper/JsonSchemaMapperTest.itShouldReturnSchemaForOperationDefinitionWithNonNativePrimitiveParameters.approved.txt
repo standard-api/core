@@ -59,11 +59,6 @@
       "title" : "positiveInt",
       "type" : "number"
     },
-    "exampleTimeField" : {
-      "description" : "",
-      "title" : "time",
-      "type" : "string"
-    },
     "exampleUnsignedIntegerField" : {
       "description" : "",
       "title" : "unsignedInt",
@@ -90,5 +85,5 @@
       "type" : "string"
     }
   },
-  "required" : [ "exampleBase64Field", "exampleCanonicalField", "exampleCodeField", "exampleDateField", "exampleDateTimeField", "exampleDecimalField", "exampleIdField", "exampleInstantField", "exampleMarkdownField", "exampleOidField", "examplePositiveIntegerField", "exampleTimeField", "exampleUnsignedIntegerField", "exampleUriField", "exampleUrlField", "exampleUuidField", "exampleXhtmlField" ]
+  "required" : [ "exampleBase64Field", "exampleCanonicalField", "exampleCodeField", "exampleDateField", "exampleDateTimeField", "exampleDecimalField", "exampleIdField", "exampleInstantField", "exampleMarkdownField", "exampleOidField", "examplePositiveIntegerField", "exampleUnsignedIntegerField", "exampleUriField", "exampleUrlField", "exampleUuidField", "exampleXhtmlField" ]
 }

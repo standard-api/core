@@ -1,7 +1,7 @@
 package ai.stapi.graph.attribute;
 
 import ai.stapi.graph.attribute.attributeValue.AttributeValue;
-import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -15,12 +15,12 @@ public class ListAttribute extends AbstractAttribute<List<?>> {
 
   private final List<AttributeValue<?>> boxedValues;
 
-  public ListAttribute(String name, Timestamp createdAt, List<AttributeValue<?>> values) {
+  public ListAttribute(String name, Instant createdAt, List<AttributeValue<?>> values) {
     super(name, createdAt);
     this.boxedValues = values;
   }
 
-  public ListAttribute(String name, Timestamp createdAt) {
+  public ListAttribute(String name, Instant createdAt) {
     super(name, createdAt);
     this.boxedValues = new ArrayList<>();
   }
@@ -44,7 +44,7 @@ public class ListAttribute extends AbstractAttribute<List<?>> {
     this(name, Arrays.stream(values).collect(Collectors.toList()));
   }
 
-  public ListAttribute(String name, Timestamp createdAt, AttributeValue<?>... values) {
+  public ListAttribute(String name, Instant createdAt, AttributeValue<?>... values) {
     this(name, createdAt, Arrays.stream(values).collect(Collectors.toList()));
   }
 

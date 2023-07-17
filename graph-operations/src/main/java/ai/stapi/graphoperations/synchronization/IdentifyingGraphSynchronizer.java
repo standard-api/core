@@ -5,17 +5,17 @@ import ai.stapi.graph.Graph;
 import ai.stapi.graph.NodeIdAndType;
 import ai.stapi.graph.NodeRepository;
 import ai.stapi.graph.exceptions.GraphException;
-import ai.stapi.identity.UniqueIdentifier;
-import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
-import ai.stapi.graph.inMemoryGraph.EdgeBuilder;
 import ai.stapi.graph.graphelements.Edge;
 import ai.stapi.graph.graphelements.Node;
+import ai.stapi.graph.inMemoryGraph.EdgeBuilder;
+import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.traversableGraphElements.TraversableEdge;
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
-import ai.stapi.graphoperations.synchronization.nodeIdentificator.NodeIdentifyingFiltersResolver;
 import ai.stapi.graphoperations.graphLoader.GraphLoader;
 import ai.stapi.graphoperations.graphLoader.inmemory.InMemoryGenericSearchOptionResolver;
 import ai.stapi.graphoperations.graphLoader.inmemory.InMemoryGraphLoader;
+import ai.stapi.graphoperations.synchronization.nodeIdentificator.NodeIdentifyingFiltersResolver;
+import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
@@ -211,8 +211,7 @@ public class IdentifyingGraphSynchronizer implements GraphSynchronizer {
                     potentiallyRottenEdge.getNodeFromId(),
                     potentiallyRottenEdge.getNodeFromId()
                 );
-                var fixedNodeFrom =
-                    new Node(fixedNodeFromId, potentiallyRottenEdge.getNodeFromType());
+                var fixedNodeFrom = new Node(fixedNodeFromId, potentiallyRottenEdge.getNodeFromType());
                 var fixedNodeToId = nodeIdChangeMap.getOrDefault(
                     potentiallyRottenEdge.getNodeToId(),
                     potentiallyRottenEdge.getNodeToId()
@@ -237,8 +236,7 @@ public class IdentifyingGraphSynchronizer implements GraphSynchronizer {
                         new Edge(
                             foundEdge.getId(),
                             foundEdge.getType(),
-                            new Node(foundEdge.getNodeFrom().getId(),
-                                foundEdge.getNodeFrom().getType()),
+                            new Node(foundEdge.getNodeFrom().getId(), foundEdge.getNodeFrom().getType()),
                             new Node(foundEdge.getNodeTo().getId(), foundEdge.getNodeTo().getType()),
                             foundEdge.getVersionedAttributes()
                         )

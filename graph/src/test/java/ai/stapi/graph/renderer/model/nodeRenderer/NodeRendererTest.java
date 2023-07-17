@@ -27,6 +27,9 @@ class NodeRendererTest extends IntegrationTestCase {
 
   @Autowired
   protected GenericNodeRenderer genericNodeRenderer;
+  
+  @Autowired
+  private ObjectMapper objectMapper;
 
   @Test
   void itShouldReturnTextRenderedNode() {
@@ -72,13 +75,17 @@ class NodeRendererTest extends IntegrationTestCase {
     );
     var apiNodeRender = (NodeResponse) nodeRender;
 
-    var ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+    var ow = this.objectMapper.writer().withDefaultPrettyPrinter();
     var json = ow.writeValueAsString(apiNodeRender);
-    var jsonWithHiddenTime =
-        json.replaceAll("(\"createdAt\" : [0-9]+)", "\"createdAt\" : xxxxxxxx");
+
+    var jsonWithHiddenTime = json.replaceAll(
+        "(\"createdAt\"\\s:\\s\"\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(.\\d{1,9})?Z\")",
+        "\"createdAt\" : xxxxxxxx"
+    );
 
     Approvals.verify(jsonWithHiddenTime);
   }
+
 
   @NotNull
   private TraversableNode getTestNode() {

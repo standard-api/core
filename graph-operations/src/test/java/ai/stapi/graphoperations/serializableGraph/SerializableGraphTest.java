@@ -1,19 +1,19 @@
 package ai.stapi.graphoperations.serializableGraph;
 
-import ai.stapi.test.schemaintegration.SchemaIntegrationTestCase;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import ai.stapi.graph.Graph;
 import ai.stapi.graph.NodeIdAndType;
 import ai.stapi.graph.attribute.CreatedAtMetaData;
 import ai.stapi.graph.attribute.LeafAttribute;
 import ai.stapi.graph.attribute.attributeValue.InstantAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
-import ai.stapi.graph.Graph;
 import ai.stapi.graph.graphelements.Edge;
 import ai.stapi.graph.graphelements.Node;
 import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.identity.UniversallyUniqueIdentifier;
-import java.sql.Timestamp;
+import ai.stapi.test.schemaintegration.SchemaIntegrationTestCase;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.time.Instant;
 import java.util.List;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
@@ -42,7 +42,7 @@ class SerializableGraphTest extends SchemaIntegrationTestCase {
     );
     var attribute = new LeafAttribute<>(
         "attribute_name",
-        Timestamp.valueOf("2023-05-04 21:00:55.68332646"),
+        Instant.parse("2023-05-04T21:00:55.68332646Z"),
         new StringAttributeValue("attribute value")
     );
 
@@ -74,7 +74,7 @@ class SerializableGraphTest extends SchemaIntegrationTestCase {
     );
     var attribute = new LeafAttribute<>(
         "attribute_name",
-        Timestamp.valueOf("2023-05-04 21:00:55.68332646"),
+        Instant.parse("2023-05-04T21:00:55.68332646Z"),
         new StringAttributeValue("attribute value")
     );
 
@@ -104,7 +104,7 @@ class SerializableGraphTest extends SchemaIntegrationTestCase {
                 CreatedAtMetaData.NAME, List.of(
                     new SerializableAttributeValue(
                         InstantAttributeValue.SERIALIZATION_TYPE,
-                        "2023-05-04 21:00:55.68332646"
+                        "2023-05-04T21:00:55.68332646Z"
                     )
                 )
             )
