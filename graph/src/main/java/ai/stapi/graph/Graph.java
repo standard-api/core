@@ -437,7 +437,7 @@ public class Graph {
         otherEdge.getNodeToId(),
         otherEdge.getNodeToType()
     )) {
-      throw new OneOrBothNodesOnEdgeDoesNotExist();
+      throw new OneOrBothNodesOnEdgeDoesNotExist(otherEdge);
     }
     var graph = this;
     var otherEdgeIdentifier = new GloballyUniqueIdentifier(otherEdge.getId(), otherEdge.getType());
@@ -477,7 +477,7 @@ public class Graph {
         !this.nodeExists(edge.getNodeFromId(), edge.getNodeFromType()) 
             || !this.nodeExists(edge.getNodeToId(), edge.getNodeToType())
     ) {
-      throw new OneOrBothNodesOnEdgeDoesNotExist();
+      throw new OneOrBothNodesOnEdgeDoesNotExist(edge);
     }
   }
 
