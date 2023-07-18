@@ -22,8 +22,8 @@ public class UpdateResourceOperationMapper extends AbstractResourceOperationsMap
       return new ResourceOperationsMapperResult();
     }
     var resourceName = resourceStructureType.getDefinitionType();
-    var createCommandId = this.createCreateCommandId(resourceName);
-    var createCommandName = this.createCreateCommandName(resourceName);
+    var createCommandId = this.createUpdateCommandId(resourceName);
+    var createCommandName = this.createUpdateCommandName(resourceName);
     return new ResourceOperationsMapperResult(
         new OperationDefinitionDTO(
             createCommandId,
@@ -67,7 +67,7 @@ public class UpdateResourceOperationMapper extends AbstractResourceOperationsMap
             return new ResourceOperationsMapperResult();
           }
           var definitionType = rootResourceType.getDefinitionType();
-          var commandId = this.createCreateCommandId(definitionType);
+          var commandId = this.createUpdateCommandId(definitionType);
           return new ResourceOperationsMapperResult(
               new OperationDefinitionParameters(
                   commandId,
@@ -101,11 +101,11 @@ public class UpdateResourceOperationMapper extends AbstractResourceOperationsMap
     return this.createFieldParameters(generatedPath, field, 0, field.getMax()).stream();
   }
 
-  private String createCreateCommandId(String resourceType) {
+  private String createUpdateCommandId(String resourceType) {
     return "Update" + resourceType;
   }
 
-  private String createCreateCommandName(String resourceType) {
+  private String createUpdateCommandName(String resourceType) {
     return "Update " + resourceType;
   }
 }
