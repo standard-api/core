@@ -1,0 +1,19 @@
+{
+  "AggregateDefinitionAggregate" : {
+    "newParameters" : [ {
+      "operationId" : "UpdateAggregateDefinition",
+      "parameters" : [ {
+        "max" : "1",
+        "min" : 0,
+        "name" : "name",
+        "type" : "string",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "AggregateDefinition.name"
+        } ],
+        "targetProfileRef" : [ ]
+      } ]
+    } ],
+    "operations" : [ ]
+  }
+}

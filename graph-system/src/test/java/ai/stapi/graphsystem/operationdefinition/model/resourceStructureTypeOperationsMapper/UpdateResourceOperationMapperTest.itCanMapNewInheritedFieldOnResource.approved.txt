@@ -1,0 +1,121 @@
+{
+  "AggregateDefinitionAggregate" : {
+    "newParameters" : [ {
+      "operationId" : "UpdateAggregateDefinition",
+      "parameters" : [ {
+        "max" : "1",
+        "min" : 0,
+        "name" : "language",
+        "type" : "code",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "AggregateDefinition.language"
+        } ],
+        "targetProfileRef" : [ ]
+      } ]
+    } ],
+    "operations" : [ ]
+  },
+  "EventMessageDefinitionAggregate" : {
+    "newParameters" : [ {
+      "operationId" : "UpdateEventMessageDefinition",
+      "parameters" : [ {
+        "max" : "1",
+        "min" : 0,
+        "name" : "language",
+        "type" : "code",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "EventMessageDefinition.language"
+        } ],
+        "targetProfileRef" : [ ]
+      } ]
+    } ],
+    "operations" : [ ]
+  },
+  "OperationDefinitionAggregate" : {
+    "newParameters" : [ {
+      "operationId" : "UpdateOperationDefinition",
+      "parameters" : [ {
+        "max" : "1",
+        "min" : 0,
+        "name" : "language",
+        "type" : "code",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "OperationDefinition.language"
+        } ],
+        "targetProfileRef" : [ ]
+      } ]
+    } ],
+    "operations" : [ ]
+  },
+  "OperationOutcomeAggregate" : {
+    "newParameters" : [ {
+      "operationId" : "UpdateOperationOutcome",
+      "parameters" : [ {
+        "max" : "1",
+        "min" : 0,
+        "name" : "language",
+        "type" : "code",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "OperationOutcome.language"
+        } ],
+        "targetProfileRef" : [ ]
+      } ]
+    } ],
+    "operations" : [ ]
+  },
+  "ParametersAggregate" : {
+    "newParameters" : [ {
+      "operationId" : "UpdateParameters",
+      "parameters" : [ {
+        "max" : "1",
+        "min" : 0,
+        "name" : "language",
+        "type" : "code",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "Parameters.language"
+        } ],
+        "targetProfileRef" : [ ]
+      } ]
+    } ],
+    "operations" : [ ]
+  },
+  "StructureDefinitionAggregate" : {
+    "newParameters" : [ {
+      "operationId" : "UpdateStructureDefinition",
+      "parameters" : [ {
+        "max" : "1",
+        "min" : 0,
+        "name" : "language",
+        "type" : "code",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "StructureDefinition.language"
+        } ],
+        "targetProfileRef" : [ ]
+      } ]
+    } ],
+    "operations" : [ ]
+  },
+  "ValueSetAggregate" : {
+    "newParameters" : [ {
+      "operationId" : "UpdateValueSet",
+      "parameters" : [ {
+        "max" : "1",
+        "min" : 0,
+        "name" : "language",
+        "type" : "code",
+        "use" : "in",
+        "referencedFrom" : [ {
+          "source" : "ValueSet.language"
+        } ],
+        "targetProfileRef" : [ ]
+      } ]
+    } ],
+    "operations" : [ ]
+  }
+}
