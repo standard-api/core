@@ -1,0 +1,5 @@
+node_type: DifferentType
+node_hash: D2A5E
+node_edges:
+attributes:
+	string_type -> test value
