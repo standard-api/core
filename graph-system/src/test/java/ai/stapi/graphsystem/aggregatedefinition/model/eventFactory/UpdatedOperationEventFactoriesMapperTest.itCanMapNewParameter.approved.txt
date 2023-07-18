@@ -1,6 +1,7 @@
 [ {
   "eventFactoryId" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
   "eventFactoryModifications" : [ {
+    "startIdParameterName" : null,
     "inputValueParameterName" : "exampleParameter",
     "kind" : "replace",
     "modificationPath" : "AggregateDefinition.exampleParameter",

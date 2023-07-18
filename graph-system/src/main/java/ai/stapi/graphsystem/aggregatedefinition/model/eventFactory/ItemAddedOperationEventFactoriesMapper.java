@@ -7,6 +7,7 @@ import ai.stapi.graphsystem.operationdefinition.model.FieldDefinitionWithSource;
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionDTO;
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionStructureTypeMapper;
 import ai.stapi.graphsystem.operationdefinition.model.resourceStructureTypeOperationsMapper.OperationDefinitionParameters;
+import ai.stapi.schema.structureSchema.FieldDefinition;
 import ai.stapi.schema.structuredefinition.StructureDefinitionId;
 import java.util.List;
 
@@ -24,6 +25,11 @@ public class ItemAddedOperationEventFactoriesMapper implements OperationEventFac
     var itemAddedEventId = this.createItemAddedEventId(operationDefinition.getId());
     var itemAddedEventName = this.createItemAddedEventName(operationDefinition.getId());
     var fakedStructure = this.mapper.map(operationDefinition);
+    var idParameter = fakedStructure.getAllFields().values().stream()
+        .map(FieldDefinitionWithSource.class::cast)
+        .filter(field -> field.getLastSourcePath().equals("id"))
+        .findFirst();
+    
     return List.of(
         new EventFactory(
             new EventMessageDefinitionData(
@@ -37,6 +43,7 @@ public class ItemAddedOperationEventFactoriesMapper implements OperationEventFac
                 .filter(field -> !field.getLastSourcePath().equals("id"))
                 .map(fieldDefinition -> this.createModification(
                     fieldDefinition.getSource(),
+                    idParameter.map(FieldDefinition::getName).orElse(null),
                     fieldDefinition.getName()
                 )).toList()
         )
@@ -52,10 +59,12 @@ public class ItemAddedOperationEventFactoriesMapper implements OperationEventFac
 
   private EventFactoryModification createModification(
       String sourcePath,
+      String startIdParameterName,
       String parameterName
   ) {
     return EventFactoryModification.add(
         sourcePath,
+        startIdParameterName,
         parameterName
     );
   }

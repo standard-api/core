@@ -133,6 +133,19 @@
         ]
       },
       {
+        "id": "CommandHandlerDefinition.eventFactory.modification.startIdParameterName",
+        "path": "CommandHandlerDefinition.eventFactory.modification.startIdParameterName",
+        "short": "The parameter name on operation which will be used as starting node for modification.",
+        "definition": "The parameter name on operation which will be used as starting node for modification.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
         "id": "CommandHandlerDefinition.eventFactory.modification.destinationIndexParameterName",
         "path": "CommandHandlerDefinition.eventFactory.modification.destinationIndexParameterName",
         "short": "The parameter name on operation which will be used as destination index for insert and move",

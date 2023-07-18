@@ -9,6 +9,7 @@
     }
   },
   "modification" : [ {
+    "startIdParameterName" : null,
     "inputValueParameterName" : "exampleUnionField",
     "kind" : "add",
     "modificationPath" : "ExampleResourceType.exampleUnionField",

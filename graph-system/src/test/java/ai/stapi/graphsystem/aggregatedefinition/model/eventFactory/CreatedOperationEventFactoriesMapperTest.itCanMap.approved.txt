@@ -9,36 +9,43 @@
     }
   },
   "modification" : [ {
+    "startIdParameterName" : null,
     "inputValueParameterName" : "meta",
     "kind" : "add",
     "modificationPath" : "AggregateDefinition.meta",
     "destinationIndexParameterName" : null
   }, {
+    "startIdParameterName" : null,
     "inputValueParameterName" : "name",
     "kind" : "add",
     "modificationPath" : "AggregateDefinition.name",
     "destinationIndexParameterName" : null
   }, {
+    "startIdParameterName" : null,
     "inputValueParameterName" : "implicitRules",
     "kind" : "add",
     "modificationPath" : "AggregateDefinition.implicitRules",
     "destinationIndexParameterName" : null
   }, {
+    "startIdParameterName" : null,
     "inputValueParameterName" : "description",
     "kind" : "add",
     "modificationPath" : "AggregateDefinition.description",
     "destinationIndexParameterName" : null
   }, {
+    "startIdParameterName" : null,
     "inputValueParameterName" : "language",
     "kind" : "add",
     "modificationPath" : "AggregateDefinition.language",
     "destinationIndexParameterName" : null
   }, {
+    "startIdParameterName" : null,
     "inputValueParameterName" : "command",
     "kind" : "add",
     "modificationPath" : "AggregateDefinition.command",
     "destinationIndexParameterName" : null
   }, {
+    "startIdParameterName" : null,
     "inputValueParameterName" : "structure",
     "kind" : "add",
     "modificationPath" : "AggregateDefinition.structure",

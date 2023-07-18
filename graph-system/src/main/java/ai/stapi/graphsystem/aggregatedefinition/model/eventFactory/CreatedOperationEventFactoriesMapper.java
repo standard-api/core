@@ -12,8 +12,6 @@ import ai.stapi.schema.structuredefinition.StructureDefinitionId;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
 
 public class CreatedOperationEventFactoriesMapper implements OperationEventFactoriesMapper {
 
@@ -101,6 +99,7 @@ public class CreatedOperationEventFactoriesMapper implements OperationEventFacto
   ) {
     return EventFactoryModification.add(
         modificationPath,
+        null,
         parameterName
     );
   }

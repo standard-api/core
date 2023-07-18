@@ -99,6 +99,7 @@ public class UpdatedOperationEventFactoriesMapper implements OperationEventFacto
   ) {
     return EventFactoryModification.replace(
         modificationPath,
+        null,
         parameterName
     );
   }
