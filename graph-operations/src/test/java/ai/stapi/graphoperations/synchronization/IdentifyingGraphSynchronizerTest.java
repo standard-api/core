@@ -14,9 +14,9 @@ import ai.stapi.graph.graphelements.Edge;
 import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.repositorypruner.RepositoryPruner;
 import ai.stapi.graphoperations.fixtures.testsystem.TestSystemModelDefinitionsLoader;
-import ai.stapi.identity.UniversallyUniqueIdentifier;
 import ai.stapi.graphoperations.synchronization.nodeIdentificator.NodeIdentificator;
 import ai.stapi.graphoperations.synchronization.nodeIdentificator.testImplementation.TestNodeIdentificatorsProvider;
+import ai.stapi.identity.UniversallyUniqueIdentifier;
 import ai.stapi.test.schemaintegration.SchemaIntegrationTestCase;
 import ai.stapi.test.schemaintegration.StructureDefinitionScope;
 import org.jetbrains.annotations.NotNull;
@@ -89,6 +89,96 @@ class IdentifyingGraphSynchronizerTest extends SchemaIntegrationTestCase {
         );
 
         this.thenNodeApproved(actualNode);
+    }
+
+    @Test
+    void itShouldNotSynchronizeNodeByIdAndDifferentType() throws GraphException {
+        var existingNode = new Node("OriginalType");
+        this.nodeRepository.save(existingNode);
+
+        var expectedNode = new Node(
+            existingNode.getId(),
+            "DifferentType"
+        );
+        expectedNode = expectedNode.add(
+            new LeafAttribute<>(
+                "string_type", 
+                new StringAttributeValue("test value")
+            )
+        );
+
+        this.identifyingGraphSynchronizer.synchronize(new Graph(expectedNode));
+
+        var actualNode = this.nodeRepository.loadNode(
+            expectedNode.getId(),
+            expectedNode.getType()
+        );
+        
+        Assertions.assertTrue(this.nodeRepository.nodeExists(existingNode.getId(), existingNode.getType()));
+        this.thenNodeApproved(actualNode);
+    }
+
+
+    @Test
+    void itShouldNotFixEdgeWhenTryingToSynchronizeNodeWithSameAttributeButDifferentType() throws GraphException {
+        var existingNode = new Node("SameType");
+        var otherNode = new Node("OtherType");
+        otherNode = otherNode.add(
+            new LeafAttribute<>(
+                "identifying_attribute",
+                new StringAttributeValue("matching_value")
+            )
+        ).add(
+            new LeafAttribute<>(
+                "original_attribute",
+                new StringAttributeValue("original_value")
+            )
+        );
+        var anotherNode = new Node("AnotherType");
+        var existingEdge = new Edge(existingNode, "originalEdge", otherNode);
+        this.nodeRepository.save(existingNode);
+        this.nodeRepository.save(otherNode);
+        this.nodeRepository.save(anotherNode);
+        this.edgeRepository.save(existingEdge);
+        
+        var mergingNode1 = new Node(
+            existingNode.getId(),
+            "SameType"
+        );
+        mergingNode1 = mergingNode1.add(
+            new LeafAttribute<>(
+                "string_type",
+                new StringAttributeValue("test value")
+            )
+        );
+
+        this.testNodeIdentificatorsProvider.add(
+            otherNode.getType(),
+            new NodeIdentificator("identifying_attribute")
+        );
+
+        var mergingNode2 = new Node(anotherNode.getId(), "OtherType");
+        mergingNode2 = mergingNode2.add(
+            new LeafAttribute<>(
+                "identifying_attribute",
+                new StringAttributeValue("matching_value")
+            )
+        ).add(
+            new LeafAttribute<>(
+                "new_attribute",
+                new StringAttributeValue("irrelevant_value")
+            )
+        );
+        var newEdge = new Edge(mergingNode1, "originalEdge", mergingNode2);
+        var someEdge = new Edge(mergingNode2, "originalEdge", anotherNode);
+        var graph = new Graph(mergingNode1, mergingNode2, anotherNode, newEdge, someEdge);
+
+        this.identifyingGraphSynchronizer.synchronize(graph);
+        Assertions.assertTrue(this.nodeRepository.nodeExists(existingNode.getId(), existingNode.getType()));
+        Assertions.assertTrue(this.nodeRepository.nodeExists(otherNode.getId(), otherNode.getType()));
+        Assertions.assertTrue(this.nodeRepository.nodeExists(anotherNode.getId(), anotherNode.getType()));
+        Assertions.assertTrue(this.edgeRepository.edgeExists(existingEdge.getId(), existingEdge.getType()));
+        Assertions.assertFalse(this.nodeRepository.nodeExists(mergingNode2.getId(), mergingNode2.getType()));
     }
 
     @Test
@@ -454,7 +544,6 @@ class IdentifyingGraphSynchronizerTest extends SchemaIntegrationTestCase {
         var actualGraph = whenMergeDuplicates(graph);
 
         this.thenGraphApproved(actualGraph);
-
     }
 
     @Test
@@ -507,7 +596,6 @@ class IdentifyingGraphSynchronizerTest extends SchemaIntegrationTestCase {
         var actualGraph = whenMergeDuplicates(graph);
 
         this.thenGraphApproved(actualGraph);
-
     }
     
     @NotNull

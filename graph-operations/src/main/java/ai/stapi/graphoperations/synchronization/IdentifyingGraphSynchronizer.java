@@ -145,10 +145,10 @@ public class IdentifyingGraphSynchronizer implements GraphSynchronizer {
         return resultingGraph.getGraph().traversable();
     }
 
-    private LinkedMap<UniqueIdentifier, UniqueIdentifier> synchronizeNodes(
+    private LinkedMap<String, LinkedMap<UniqueIdentifier, UniqueIdentifier>> synchronizeNodes(
         InMemoryGraphRepository newGraph
     ) {
-        var nodeIdChangesMap = new LinkedMap<UniqueIdentifier, UniqueIdentifier>();
+        var nodeIdChangesMap = new LinkedMap<String, LinkedMap<UniqueIdentifier, UniqueIdentifier>>();
         for (var node : newGraph.getGraph().getAllNodes()) {
             this.synchronizeNode(
                 newGraph,
@@ -162,7 +162,7 @@ public class IdentifyingGraphSynchronizer implements GraphSynchronizer {
     private void synchronizeNode(
         InMemoryGraphRepository newGraph,
         Node inMemoryNode,
-        LinkedMap<UniqueIdentifier, UniqueIdentifier> nodeIdChangesMap
+        LinkedMap<String, LinkedMap<UniqueIdentifier, UniqueIdentifier>> nodeIdChangesMap
     ) {
         var identifyingQuery = this.nodeIdentifyingFiltersResolver.resolve(
             inMemoryNode,
@@ -194,7 +194,8 @@ public class IdentifyingGraphSynchronizer implements GraphSynchronizer {
                 foundNode.getVersionedAttributes()
             )
         );
-        nodeIdChangesMap.put(
+        var nodeTypeMap = nodeIdChangesMap.computeIfAbsent(inMemoryNode.getType(), (key) -> new LinkedMap<>());
+        nodeTypeMap.put(
             inMemoryNode.getId(),
             foundNode.getId()
         );
@@ -202,17 +203,23 @@ public class IdentifyingGraphSynchronizer implements GraphSynchronizer {
 
     private void synchronizeEdges(
         InMemoryGraphRepository newGraph,
-        LinkedMap<UniqueIdentifier, UniqueIdentifier> nodeIdChangeMap
+        LinkedMap<String, LinkedMap<UniqueIdentifier, UniqueIdentifier>> nodeIdChangeMap
     ) {
         newGraph.getGraph().getAllEdges().forEach(
             potentiallyRottenEdge ->
             {
                 var fixedNodeFromId = nodeIdChangeMap.getOrDefault(
+                    potentiallyRottenEdge.getNodeFromType(),
+                    new LinkedMap<>()
+                ).getOrDefault(
                     potentiallyRottenEdge.getNodeFromId(),
                     potentiallyRottenEdge.getNodeFromId()
                 );
                 var fixedNodeFrom = new Node(fixedNodeFromId, potentiallyRottenEdge.getNodeFromType());
                 var fixedNodeToId = nodeIdChangeMap.getOrDefault(
+                    potentiallyRottenEdge.getNodeToType(),
+                    new LinkedMap<>()
+                ).getOrDefault(
                     potentiallyRottenEdge.getNodeToId(),
                     potentiallyRottenEdge.getNodeToId()
                 );
