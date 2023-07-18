@@ -12,7 +12,7 @@
     "startIdParameterName" : "jurisdictionId",
     "inputValueParameterName" : "coding",
     "kind" : "add",
-    "modificationPath" : "OperationDefinition.jurisdiction.coding",
+    "modificationPath" : "coding",
     "destinationIndexParameterName" : null
   } ]
 } ]

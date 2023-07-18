@@ -4,7 +4,7 @@
     "startIdParameterName" : null,
     "inputValueParameterName" : "exampleParameter",
     "kind" : "replace",
-    "modificationPath" : "AggregateDefinition.exampleParameter",
+    "modificationPath" : "exampleParameter",
     "destinationIndexParameterName" : null
   } ]
 } ]

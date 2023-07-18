@@ -44,7 +44,7 @@ public class CreatedOperationEventFactoriesMapper implements OperationEventFacto
             ),
             fakedStructure.getAllFields().values().stream()
                 .map(param -> this.createModification(
-                    String.format("%s.%s", resourceName, param.getName()),
+                    param.getName(),
                     param.getName()
                 )).toList()
         )
@@ -66,7 +66,7 @@ public class CreatedOperationEventFactoriesMapper implements OperationEventFacto
             fakedStructure.getAllFields().values().stream()
                 .map(FieldDefinitionWithSource.class::cast)
                 .map(param -> this.createModification(
-                    param.getSource(),
+                    param.getName(),
                     param.getName()
                 )).toList()
         )

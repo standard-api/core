@@ -12,7 +12,7 @@
     "startIdParameterName" : null,
     "inputValueParameterName" : "exampleUnionField",
     "kind" : "replace",
-    "modificationPath" : "ExampleResourceType.exampleUnionField",
+    "modificationPath" : "exampleUnionField",
     "destinationIndexParameterName" : null
   } ]
 } ]

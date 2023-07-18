@@ -12,7 +12,7 @@
     "startIdParameterName" : null,
     "inputValueParameterName" : "jurisdiction",
     "kind" : "add",
-    "modificationPath" : "OperationDefinition.jurisdiction",
+    "modificationPath" : "jurisdiction",
     "destinationIndexParameterName" : null
   } ]
 } ]
