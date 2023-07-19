@@ -411,6 +411,23 @@
       "targetProfileRef": []
     },
     {
+      "name": "baseDefinitionRef",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "Reference",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.baseDefinitionRef"
+        }
+      ],
+      "targetProfileRef": [
+        {
+          "id": "StructureDefinition"
+        }
+      ]
+    },
+    {
       "name": "snapshot",
       "use": "in",
       "min": 0,

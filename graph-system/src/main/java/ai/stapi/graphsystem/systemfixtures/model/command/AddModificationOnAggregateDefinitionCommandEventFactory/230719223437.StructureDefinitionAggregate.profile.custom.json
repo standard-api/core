@@ -2,8 +2,10 @@
   "modification": [
     {
       "kind": "add",
+      "destinationIndexParameterName": null,
+      "startIdParameterName": null,
       "inputValueParameterName": "baseDefinitionRef",
-      "modificationPath": "StructureDefinition.baseDefinitionRef"
+      "modificationPath": "baseDefinitionRef"
     }
   ],
   "eventFactoryId": "cd43acdb-0818-4ae2-8f52-a5d6b289c8a6",

@@ -1,5 +1,6 @@
 {
   "name": "AggregateDefinition",
+  "description": null,
   "id": "AggregateDefinitionAggregate",
   "command": [],
   "structure": {

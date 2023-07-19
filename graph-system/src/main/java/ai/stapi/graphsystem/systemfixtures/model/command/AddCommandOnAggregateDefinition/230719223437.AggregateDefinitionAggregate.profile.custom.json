@@ -1,10 +1,10 @@
 {
   "command": [
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCommandOnAggregateDefinition"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -13,19 +13,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "command",
-              "modificationPath": "AggregateDefinition.command"
+              "modificationPath": "command"
             }
           ],
-          "id": "6ce23634-7d1f-48db-9957-d198e98ea83e"
+          "id": "ba4057eb-9f4b-4b81-9d04-578849d4cb37"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddModificationOnAggregateDefinitionCommandEventFactory"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -34,19 +36,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "eventFactoryId",
               "inputValueParameterName": "modification",
-              "modificationPath": "AggregateDefinition.command.eventFactory.modification"
+              "modificationPath": "modification"
             }
           ],
-          "id": "0ed3a786-e76e-4078-bc9d-e6a3df1f37a8"
+          "id": "ce55c664-3c82-42be-a756-feb6fdcdfd1a"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddEventFactoryOnAggregateDefinitionCommand"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -55,11 +59,13 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "commandId",
               "inputValueParameterName": "eventFactory",
-              "modificationPath": "AggregateDefinition.command.eventFactory"
+              "modificationPath": "eventFactory"
             }
           ],
-          "id": "eee86db1-69bf-4804-b757-e08132feec06"
+          "id": "7c1d4a85-190e-4db2-a72b-5dd58d6260bb"
         }
       ]
     }

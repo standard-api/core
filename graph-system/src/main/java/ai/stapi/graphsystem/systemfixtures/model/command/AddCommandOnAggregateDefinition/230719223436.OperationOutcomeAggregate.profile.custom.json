@@ -1,10 +1,10 @@
 {
   "command": [
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddIssueOnOperationOutcome"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -13,19 +13,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "issue",
-              "modificationPath": "OperationOutcome.issue"
+              "modificationPath": "issue"
             }
           ],
-          "id": "45930060-f727-4974-9338-453573ce14af"
+          "id": "cfc89ecc-d7dd-4d50-ac8f-97d3c6966546"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnOperationOutcomeIssueDetails"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -34,19 +36,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "issueId",
               "inputValueParameterName": "coding",
-              "modificationPath": "OperationOutcome.issue.details.coding"
+              "modificationPath": "details.coding"
             }
           ],
-          "id": "10beb1af-fb52-4a9f-b5a5-bf1e2450af43"
+          "id": "a68a6072-013d-4789-8949-7ea24bc20598"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddLocationOnOperationOutcomeIssue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -55,19 +59,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "issueId",
               "inputValueParameterName": "location",
-              "modificationPath": "OperationOutcome.issue.location"
+              "modificationPath": "location"
             }
           ],
-          "id": "50dcf5cd-b8ae-4749-8f37-0d8e396b6168"
+          "id": "035c7b25-cbc0-4189-a030-76733780e7a3"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddExpressionOnOperationOutcomeIssue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -76,11 +82,13 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "issueId",
               "inputValueParameterName": "expression",
-              "modificationPath": "OperationOutcome.issue.expression"
+              "modificationPath": "expression"
             }
           ],
-          "id": "db8bed63-4270-4996-a2fa-be29de957318"
+          "id": "2bbe8635-9fa2-41e2-85dd-1d14f0e43f77"
         }
       ]
     }

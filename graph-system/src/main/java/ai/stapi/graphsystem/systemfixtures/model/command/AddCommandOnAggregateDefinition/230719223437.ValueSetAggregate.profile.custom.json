@@ -1,10 +1,10 @@
 {
   "command": [
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddIdentifierOnValueSet"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -13,19 +13,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "identifier",
-              "modificationPath": "ValueSet.identifier"
+              "modificationPath": "identifier"
             }
           ],
-          "id": "08f3be81-cb9c-46ae-96dd-623dc2002679"
+          "id": "94048c99-2c19-4643-bde2-4318dc66efae"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddJurisdictionOnValueSet"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -34,19 +36,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "jurisdiction",
-              "modificationPath": "ValueSet.jurisdiction"
+              "modificationPath": "jurisdiction"
             }
           ],
-          "id": "d98104c6-69d5-4d96-ab0d-2c435dc4a370"
+          "id": "b165dcf2-8410-4009-9c01-e8f296bebb4b"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddContactOnValueSet"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -55,19 +59,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "contact",
-              "modificationPath": "ValueSet.contact"
+              "modificationPath": "contact"
             }
           ],
-          "id": "b980702c-513c-4853-a0ec-698bc5bfa280"
+          "id": "38b47f98-f99f-46e3-87d1-3630edd16f36"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddUseContextOnValueSet"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -76,19 +82,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "useContext",
-              "modificationPath": "ValueSet.useContext"
+              "modificationPath": "useContext"
             }
           ],
-          "id": "71896fe4-d632-406f-bd18-3411fdbb23bb"
+          "id": "0c8178a6-278f-438b-a180-0319f41a6c5f"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnValueSetIdentifierType"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -97,19 +105,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "identifierId",
               "inputValueParameterName": "coding",
-              "modificationPath": "ValueSet.identifier.type.coding"
+              "modificationPath": "type.coding"
             }
           ],
-          "id": "8d75dd37-7435-4a57-9764-8da1037c625d"
+          "id": "54447ae9-f62f-45af-81c6-39bd903d1899"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnValueSetJurisdiction"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -118,19 +128,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "jurisdictionId",
               "inputValueParameterName": "coding",
-              "modificationPath": "ValueSet.jurisdiction.coding"
+              "modificationPath": "coding"
             }
           ],
-          "id": "b2e35e54-4ba0-4bd9-832d-d9df269eddd4"
+          "id": "751a3e02-b31c-4f62-8830-c99c1bce6d7c"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddParameterOnValueSetExpansion"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -139,19 +151,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "parameter",
-              "modificationPath": "ValueSet.expansion.parameter"
+              "modificationPath": "expansion.parameter"
             }
           ],
-          "id": "205bfc44-be9d-4c59-9d0a-7184045d7342"
+          "id": "9d88c174-3645-4de0-8685-c2d36f6e8587"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDesignationOnValueSetExpansionContains"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -160,19 +174,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "containsId",
               "inputValueParameterName": "designation",
-              "modificationPath": "ValueSet.expansion.contains.designation"
+              "modificationPath": "designation"
             }
           ],
-          "id": "c456767d-379a-45c2-9e23-e51f4cdb63b3"
+          "id": "57e8b38f-6369-404d-8eb8-c58ff349a36b"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddContainsOnValueSetExpansion"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -181,19 +197,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "contains",
-              "modificationPath": "ValueSet.expansion.contains"
+              "modificationPath": "expansion.contains"
             }
           ],
-          "id": "334f1ffa-2116-482d-a200-9628a6ba9111"
+          "id": "5a9a11bb-f706-4307-a8ab-67995926daf6"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddContainsOnValueSetExpansionContains"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -202,19 +220,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "containsId",
               "inputValueParameterName": "contains",
-              "modificationPath": "ValueSet.expansion.contains.contains"
+              "modificationPath": "contains"
             }
           ],
-          "id": "56eaa825-7d35-468c-9ccd-1bc5872c1b9a"
+          "id": "2b914acb-b846-4278-8a9c-5a17e312785e"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddConceptOnValueSetComposeInclude"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -223,19 +243,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "includeId",
               "inputValueParameterName": "concept",
-              "modificationPath": "ValueSet.compose.include.concept"
+              "modificationPath": "concept"
             }
           ],
-          "id": "86096013-c57b-4690-9dcb-092a78d545f4"
+          "id": "9841f212-94da-4a8f-80c9-7987bee42f5e"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddFilterOnValueSetComposeInclude"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -244,19 +266,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "includeId",
               "inputValueParameterName": "filter",
-              "modificationPath": "ValueSet.compose.include.filter"
+              "modificationPath": "filter"
             }
           ],
-          "id": "6e595364-9dcd-4699-9061-42f8ff87d738"
+          "id": "0a69a0ae-5886-4dee-958b-662492703c10"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddIncludeOnValueSetCompose"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -265,19 +289,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "include",
-              "modificationPath": "ValueSet.compose.include"
+              "modificationPath": "compose.include"
             }
           ],
-          "id": "9873633e-0135-43ec-a5d6-00e3e93e586b"
+          "id": "a52a26e5-e6df-418c-a0c3-a0d81fef45c4"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddValueSetOnValueSetComposeInclude"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -286,19 +312,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "includeId",
               "inputValueParameterName": "valueSet",
-              "modificationPath": "ValueSet.compose.include.valueSet"
+              "modificationPath": "valueSet"
             }
           ],
-          "id": "7bc9f95a-f7d6-4c97-86f7-3e093621c5ef"
+          "id": "54057172-5f14-4bd1-82b7-719e25371fbe"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDesignationOnValueSetComposeIncludeConcept"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -307,19 +335,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "conceptId",
               "inputValueParameterName": "designation",
-              "modificationPath": "ValueSet.compose.include.concept.designation"
+              "modificationPath": "designation"
             }
           ],
-          "id": "ea405c99-04ed-493c-a113-5c88488b8700"
+          "id": "e8b35295-fe8e-4afb-9f3f-bf6912984925"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddExcludeOnValueSetCompose"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -328,19 +358,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "exclude",
-              "modificationPath": "ValueSet.compose.exclude"
+              "modificationPath": "compose.exclude"
             }
           ],
-          "id": "e5fa6590-2757-4915-94f9-d3a5d5172f9c"
+          "id": "bc4e8731-6baf-49d1-98b4-8b6211184ead"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddTelecomOnValueSetContact"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -349,19 +381,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "contactId",
               "inputValueParameterName": "telecom",
-              "modificationPath": "ValueSet.contact.telecom"
+              "modificationPath": "telecom"
             }
           ],
-          "id": "f5944f5e-cc08-4a96-8638-b10624491434"
+          "id": "7ede070d-7cdb-4b45-9ba0-a9d1f47b8276"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnValueSetUseContextValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -370,11 +404,13 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "useContextId",
               "inputValueParameterName": "coding",
-              "modificationPath": "ValueSet.useContext.value.coding"
+              "modificationPath": "value.coding"
             }
           ],
-          "id": "b490b249-405a-437e-a3c0-5c3bbd53c952"
+          "id": "40ad0f61-6d3c-4499-9367-e88363e10fba"
         }
       ]
     }

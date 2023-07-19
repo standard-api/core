@@ -1,10 +1,10 @@
 {
   "command": [
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddJurisdictionOnOperationDefinition"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -13,19 +13,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "jurisdiction",
-              "modificationPath": "OperationDefinition.jurisdiction"
+              "modificationPath": "jurisdiction"
             }
           ],
-          "id": "4f40f8ff-d672-431f-afed-8f496d4e0e81"
+          "id": "44985aa8-301d-460b-9bfd-cb2ad259ea00"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddContactOnOperationDefinition"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -34,19 +36,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "contact",
-              "modificationPath": "OperationDefinition.contact"
+              "modificationPath": "contact"
             }
           ],
-          "id": "377dc281-9d27-4873-bb0a-42a04e674e53"
+          "id": "be505743-a53d-4726-84be-127e99e65e53"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddParameterOnOperationDefinition"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -55,19 +59,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "parameter",
-              "modificationPath": "OperationDefinition.parameter"
+              "modificationPath": "parameter"
             }
           ],
-          "id": "61cf4c37-55ab-448c-afe8-5bcf67a61abd"
+          "id": "b1147454-0cc3-476b-ac77-06c03dd5e332"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddResourceOnOperationDefinition"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -76,19 +82,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "resource",
-              "modificationPath": "OperationDefinition.resource"
+              "modificationPath": "resource"
             }
           ],
-          "id": "ba6a180c-b0b3-49b7-825c-8d54913f7a2e"
+          "id": "871525ef-764f-409b-85a6-50b77c3a18b5"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddOverloadOnOperationDefinition"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -97,19 +105,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "overload",
-              "modificationPath": "OperationDefinition.overload"
+              "modificationPath": "overload"
             }
           ],
-          "id": "20b1883c-1eff-4f8c-93e3-0b98ae69cf81"
+          "id": "ec457fa7-e707-422f-8a70-f0efd569901a"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddUseContextOnOperationDefinition"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -118,19 +128,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "useContext",
-              "modificationPath": "OperationDefinition.useContext"
+              "modificationPath": "useContext"
             }
           ],
-          "id": "532f7bcd-aca7-44b3-a624-e09daa0edfe8"
+          "id": "3a26fd4d-cf8c-4258-8716-7556ecde0697"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnOperationDefinitionJurisdiction"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -139,19 +151,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "jurisdictionId",
               "inputValueParameterName": "coding",
-              "modificationPath": "OperationDefinition.jurisdiction.coding"
+              "modificationPath": "coding"
             }
           ],
-          "id": "c8e619e3-78f9-4b12-b4c0-6d4e31da6ab2"
+          "id": "a32da496-15fc-43da-80c0-a50ba9a2a577"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddReferencedFromOnOperationDefinitionParameter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -160,19 +174,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
               "inputValueParameterName": "referencedFrom",
-              "modificationPath": "OperationDefinition.parameter.referencedFrom"
+              "modificationPath": "referencedFrom"
             }
           ],
-          "id": "7970f3c5-87a2-4e19-9eae-76fe3a06f080"
+          "id": "b7c7850d-ad3b-4ad4-ae22-b46bb5d908d7"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddTargetProfileOnOperationDefinitionParameter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -181,19 +197,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
               "inputValueParameterName": "targetProfile",
-              "modificationPath": "OperationDefinition.parameter.targetProfile"
+              "modificationPath": "targetProfile"
             }
           ],
-          "id": "f5e46129-a71f-4e93-b356-95c2390ed3e6"
+          "id": "49991b27-dab7-490c-8d31-23e72e9409c1"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddPartOnOperationDefinitionParameter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -202,19 +220,44 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
               "inputValueParameterName": "part",
-              "modificationPath": "OperationDefinition.parameter.part"
+              "modificationPath": "part"
             }
           ],
-          "id": "3d70b408-b4d0-4754-83c8-a8fb3d687484"
+          "id": "a1fe42a7-4989-44b5-baa4-4c175548e99a"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTargetProfileRefOnOperationDefinitionParameter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TargetProfileRefOnOperationDefinitionParameterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "targetProfileRef",
+              "modificationPath": "targetProfileRef"
+            }
+          ],
+          "id": "5d754315-e44d-4aed-82e8-5c2b2f7f23b4"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddParameterNameOnOperationDefinitionOverload"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -223,19 +266,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "overloadId",
               "inputValueParameterName": "parameterName",
-              "modificationPath": "OperationDefinition.overload.parameterName"
+              "modificationPath": "parameterName"
             }
           ],
-          "id": "e40fe67f-a68b-4a5f-a557-e432602a2bd3"
+          "id": "8c6e8b5d-7be8-4536-a0d7-dc0e1b39e835"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnOperationDefinitionUseContextValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -244,11 +289,13 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "useContextId",
               "inputValueParameterName": "coding",
-              "modificationPath": "OperationDefinition.useContext.value.coding"
+              "modificationPath": "value.coding"
             }
           ],
-          "id": "0f14dc3c-57b1-409d-97a5-0e66f89e5bbd"
+          "id": "5d05562b-f922-4e9b-a41f-29ec6f538221"
         }
       ]
     }

@@ -1,9 +1,9 @@
 {
-  "code": "AddTargetProfileRefOnOperationDefinitionParameter",
+  "code": "AddTargetProfileRefOnStructureDefinitionSnapshotElementType",
   "system": false,
   "instance": true,
   "resource": [
-    "OperationDefinition"
+    "StructureDefinition"
   ],
   "kind": "operation",
   "parameter": [
@@ -15,7 +15,7 @@
       "type": "Reference",
       "referencedFrom": [
         {
-          "source": "OperationDefinition.parameter.targetProfileRef"
+          "source": "StructureDefinition.snapshot.element.type.targetProfileRef"
         }
       ],
       "targetProfileRef": [
@@ -25,22 +25,22 @@
       ]
     },
     {
-      "name": "parameterId",
+      "name": "typeId",
       "use": "in",
       "min": 1,
       "max": "1",
       "type": "id",
       "referencedFrom": [
         {
-          "source": "OperationDefinition.parameter.id"
+          "source": "StructureDefinition.snapshot.element.type.id"
         }
       ],
       "targetProfileRef": []
     }
   ],
-  "name": "Add targetProfileRef on OperationDefinition.parameter",
-  "description": "Generated command for adding targetProfileRef(Reference) on OperationDefinition Aggregate",
-  "id": "AddTargetProfileRefOnOperationDefinitionParameter",
+  "name": "Add TargetProfileRef on StructureDefinition.snapshot.element.type",
+  "description": "Generated command for adding targetProfileRef(Reference) on StructureDefinition Aggregate",
+  "id": "AddTargetProfileRefOnStructureDefinitionSnapshotElementType",
   "type": false,
   "status": "draft"
 }

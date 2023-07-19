@@ -1,10 +1,10 @@
 {
   "command": [
     {
+      "creationalPolicy": "if_missing",
       "operation": {
         "id": "CreateParameters"
       },
-      "creationalPolicy": "if_missing",
       "eventFactory": [
         {
           "event": {
@@ -13,23 +13,31 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "implicitRules",
-              "modificationPath": "Parameters.implicitRules"
+              "modificationPath": "implicitRules"
             },
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "language",
-              "modificationPath": "Parameters.language"
+              "modificationPath": "language"
             },
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "meta",
-              "modificationPath": "Parameters.meta"
+              "modificationPath": "meta"
             },
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "parameter",
-              "modificationPath": "Parameters.parameter"
+              "modificationPath": "parameter"
             }
           ],
           "id": "d173a836-1d39-4153-8a8e-73b166aae397"

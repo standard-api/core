@@ -1,0 +1,8 @@
+{
+  "name": "TargetProfileRef on StructureDefinitionDifferentialElementType Added",
+  "description": "Generated Event for adding on StructureDefinition.",
+  "id": "TargetProfileRefOnStructureDefinitionDifferentialElementTypeAdded",
+  "type": {
+    "id": "StructureDefinition"
+  }
+}

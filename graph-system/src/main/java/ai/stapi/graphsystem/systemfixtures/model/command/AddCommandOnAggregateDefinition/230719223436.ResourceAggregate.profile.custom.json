@@ -1,10 +1,10 @@
 {
   "command": [
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddTagOnResourceMeta"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -13,19 +13,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "tag",
-              "modificationPath": "Resource.meta.tag"
+              "modificationPath": "meta.tag"
             }
           ],
-          "id": "0ca79633-df79-4bfe-ab9e-c3aec656337d"
+          "id": "c3e1e24b-6232-47ae-ab28-4e71c932118a"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddSecurityOnResourceMeta"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -34,19 +36,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "security",
-              "modificationPath": "Resource.meta.security"
+              "modificationPath": "meta.security"
             }
           ],
-          "id": "85742301-d0e8-4492-8f7f-2aeafffcf72f"
+          "id": "b1724da3-65e7-4741-8b12-5bc227e612ee"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnResourceMeta"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -55,11 +59,13 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "profile",
-              "modificationPath": "Resource.meta.profile"
+              "modificationPath": "meta.profile"
             }
           ],
-          "id": "429490b0-94a6-4b11-bc5a-09f30786b3f8"
+          "id": "cc977b55-10d9-4258-b36c-13e50b8e5654"
         }
       ]
     }

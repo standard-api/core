@@ -1,10 +1,10 @@
 {
   "command": [
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddJurisdictionOnStructureDefinition"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -13,19 +13,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "jurisdiction",
-              "modificationPath": "StructureDefinition.jurisdiction"
+              "modificationPath": "jurisdiction"
             }
           ],
-          "id": "eddbcde5-d7a1-4f0f-b6d9-fcddae48fa85"
+          "id": "a1693802-0ff7-4a30-b051-e46312175e39"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddContextOnStructureDefinition"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -34,19 +36,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "context",
-              "modificationPath": "StructureDefinition.context"
+              "modificationPath": "context"
             }
           ],
-          "id": "4efa390a-edde-4da1-93a6-974629bc292f"
+          "id": "0df841be-d73f-4f68-abed-706d3441bb8a"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddKeywordOnStructureDefinition"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -55,19 +59,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "keyword",
-              "modificationPath": "StructureDefinition.keyword"
+              "modificationPath": "keyword"
             }
           ],
-          "id": "3bb3cc9b-4c4f-4649-bec9-07c075ee6c65"
+          "id": "290ea702-0ad5-4b8d-b365-eec42cba4d39"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddIdentifierOnStructureDefinition"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -76,19 +82,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "identifier",
-              "modificationPath": "StructureDefinition.identifier"
+              "modificationPath": "identifier"
             }
           ],
-          "id": "acd6c53a-9142-435f-b4bd-00151be87fb4"
+          "id": "a1ce24c9-0234-4e0c-b93d-046f484d67ab"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMappingOnStructureDefinition"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -97,19 +105,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "mapping",
-              "modificationPath": "StructureDefinition.mapping"
+              "modificationPath": "mapping"
             }
           ],
-          "id": "01f42f27-fa7e-4012-8272-dbb1e8331897"
+          "id": "164dff50-8291-4465-a54b-e6d9a66747e2"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddContextInvariantOnStructureDefinition"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -118,19 +128,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "contextInvariant",
-              "modificationPath": "StructureDefinition.contextInvariant"
+              "modificationPath": "contextInvariant"
             }
           ],
-          "id": "a4009a97-7362-41a5-bf52-3c9b242c136c"
+          "id": "59ef025a-fd45-4f7e-9d66-add09659bd7c"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddUseContextOnStructureDefinition"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -139,19 +151,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "useContext",
-              "modificationPath": "StructureDefinition.useContext"
+              "modificationPath": "useContext"
             }
           ],
-          "id": "971fe2f3-da3f-495f-9a5d-027a67b5ab00"
+          "id": "332410c2-fa96-4652-bf81-8da6a4ca02c7"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionJurisdiction"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -160,19 +174,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "jurisdictionId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.jurisdiction.coding"
+              "modificationPath": "coding"
             }
           ],
-          "id": "46545979-37d6-455d-a08f-f5ff295206ab"
+          "id": "b634f971-fb51-4ba5-b9bf-f5a63f7100c6"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMustSupportOnStructureDefinitionDifferentialElementFixedData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -181,19 +197,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "mustSupport",
-              "modificationPath": "StructureDefinition.differential.element.fixed.data.mustSupport"
+              "modificationPath": "mustSupport"
             }
           ],
-          "id": "41146fd5-7f56-4b68-8469-017e4523e3fa"
+          "id": "b22d8a23-11e8-4089-bd94-def48f5f1509"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementFixedTimingCode"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -202,19 +220,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.fixed.timing.code.coding"
+              "modificationPath": "fixed.timing.code.coding"
             }
           ],
-          "id": "dda4afe5-4d08-4fa0-9ba5-7ad3303ddd0a"
+          "id": "b9a5f8fa-54bb-4c37-b4a4-952140dd437f"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDataOnStructureDefinitionDifferentialElementPattern"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -223,19 +243,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "data",
-              "modificationPath": "StructureDefinition.differential.element.pattern.data"
+              "modificationPath": "pattern.data"
             }
           ],
-          "id": "54c63d6b-1006-4fe0-ad46-8d0d5a0650e1"
+          "id": "927ee89f-7dcc-4db1-92bf-dda5137f51f9"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionDifferentialElementFixedData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -244,19 +266,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.differential.element.fixed.data.profile"
+              "modificationPath": "profile"
             }
           ],
-          "id": "050ae965-488e-41c6-958e-31eaefd40a7a"
+          "id": "e88880a1-9148-4e8a-8838-478808754cd2"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMustSupportOnStructureDefinitionDifferentialElementFixed"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -265,19 +289,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "mustSupport",
-              "modificationPath": "StructureDefinition.differential.element.fixed.mustSupport"
+              "modificationPath": "fixed.mustSupport"
             }
           ],
-          "id": "c90ba25e-6127-411c-a7d6-a1778806a9ad"
+          "id": "350448d3-0823-4049-b8f7-cd6fe0ee0810"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDateFilterOnStructureDefinitionDifferentialElementExampleValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -286,19 +312,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "dateFilter",
-              "modificationPath": "StructureDefinition.differential.element.example.value.dateFilter"
+              "modificationPath": "value.dateFilter"
             }
           ],
-          "id": "77d6370b-cb37-41a2-a420-064ec96ddddf"
+          "id": "f659bf68-4cdf-4e3c-931e-a6cf8c4cc390"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementDefaultValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -307,19 +335,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.coding"
+              "modificationPath": "defaultValue.coding"
             }
           ],
-          "id": "9d2f4aec-1f7e-4cfd-8dc8-c1e6205c107e"
+          "id": "3fb2a8ba-d52f-44d3-bd49-51f86264c22b"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementDefaultValueConcept"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -328,19 +358,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.concept.coding"
+              "modificationPath": "defaultValue.concept.coding"
             }
           ],
-          "id": "0a87b66b-22f5-46af-bc5c-a8149ca9e48a"
+          "id": "4c384d02-5227-47de-ab07-08340f52eab7"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementPatternTimingCode"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -349,19 +381,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.pattern.timing.code.coding"
+              "modificationPath": "pattern.timing.code.coding"
             }
           ],
-          "id": "515488fd-d88c-4c44-8b88-d73fb02d313f"
+          "id": "ccce510a-8583-413b-b4e6-6cf5e387c60d"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementFixedDataSubject"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -370,19 +404,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.fixed.data.subject.coding"
+              "modificationPath": "subject.coding"
             }
           ],
-          "id": "50d176d4-924e-41c8-ab32-2d18117960cd"
+          "id": "f2e986e4-b4c2-4b9b-a52c-6572f42e92a5"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddTargetProfileOnStructureDefinitionDifferentialElementType"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -391,19 +427,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
               "inputValueParameterName": "targetProfile",
-              "modificationPath": "StructureDefinition.differential.element.type.targetProfile"
+              "modificationPath": "targetProfile"
             }
           ],
-          "id": "1a3cc9dc-6fa1-4c49-962a-60f32871a11b"
+          "id": "8ad9f0ed-1b6e-41c7-8708-c679dacd2e19"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMustSupportOnStructureDefinitionDifferentialElementDefaultValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -412,19 +450,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "mustSupport",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.data.mustSupport"
+              "modificationPath": "mustSupport"
             }
           ],
-          "id": "afe9fe47-9f1f-4152-bcaf-691f47e759cc"
+          "id": "80dd335c-3a41-43f2-80cb-9be0addbfb0e"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionDifferentialElementPatternCodeFilter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -433,19 +473,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.differential.element.pattern.codeFilter.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "80eb1592-54b4-4ad6-bd3c-dc9a2a8aff92"
+          "id": "a7fcd3d1-42bd-42dc-bd0b-130c5fece6ec"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionDifferentialElement"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -454,19 +496,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.differential.element.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "b3832a2e-7dff-48ad-ab44-c29e7d17ca02"
+          "id": "dd811c43-8de5-47dd-95a1-b18cbe93e587"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddRepresentationOnStructureDefinitionDifferentialElement"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -475,19 +519,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "representation",
-              "modificationPath": "StructureDefinition.differential.element.representation"
+              "modificationPath": "representation"
             }
           ],
-          "id": "844f2424-80a4-4910-9dd2-ed28b317964e"
+          "id": "daae2a0b-69d6-49c3-a5fe-83a1da3ab4b5"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDayOfWeekOnStructureDefinitionDifferentialElementDefaultValueTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -496,19 +542,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "dayOfWeek",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.timing.repeat.dayOfWeek"
+              "modificationPath": "defaultValue.timing.repeat.dayOfWeek"
             }
           ],
-          "id": "49922026-baee-4148-832e-609209c1f22e"
+          "id": "7149df41-96bd-4229-9751-01de6077cd2e"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionDifferentialElementPatternDataCodeFilter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -517,19 +565,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.differential.element.pattern.data.codeFilter.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "7412677c-44d0-44ed-a282-1cd7c460b068"
+          "id": "9a8ffbba-5142-48aa-9a5e-f2831eea218d"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddWhenOnStructureDefinitionDifferentialElementExampleValueTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -538,19 +588,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "when",
-              "modificationPath": "StructureDefinition.differential.element.example.value.timing.repeat.when"
+              "modificationPath": "value.timing.repeat.when"
             }
           ],
-          "id": "4027a545-605b-4a65-92a8-31755d800e8c"
+          "id": "144ac6a8-4dff-41a6-8f76-0292cdd18de0"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddWhenOnStructureDefinitionDifferentialElementFixedTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -559,19 +611,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "when",
-              "modificationPath": "StructureDefinition.differential.element.fixed.timing.repeat.when"
+              "modificationPath": "fixed.timing.repeat.when"
             }
           ],
-          "id": "4ac94382-e83d-4cc9-8e0f-1c14d5c24e6d"
+          "id": "7960c575-f934-4959-b2b8-5ab345f843f8"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddSortOnStructureDefinitionDifferentialElementPattern"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -580,19 +634,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "sort",
-              "modificationPath": "StructureDefinition.differential.element.pattern.sort"
+              "modificationPath": "pattern.sort"
             }
           ],
-          "id": "9d7a22d2-9214-41bf-87ce-a57f8449f919"
+          "id": "1521846c-078c-4571-a767-e5a43f30c2a1"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDateFilterOnStructureDefinitionDifferentialElementDefaultValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -601,19 +657,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "dateFilter",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.dateFilter"
+              "modificationPath": "defaultValue.dateFilter"
             }
           ],
-          "id": "cbd7c74b-a6dc-409b-a4fd-5c4a62e4df1a"
+          "id": "9079b06b-60c4-4956-9ce9-5859760c98be"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementExampleValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -622,19 +680,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.example.value.coding"
+              "modificationPath": "value.coding"
             }
           ],
-          "id": "51d74835-08ad-45e0-a73b-7e66b489a347"
+          "id": "4eafc71b-b389-408d-9738-bca847111a6d"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddTimeOfDayOnStructureDefinitionDifferentialElementFixedTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -643,19 +703,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "timeOfDay",
-              "modificationPath": "StructureDefinition.differential.element.fixed.timing.repeat.timeOfDay"
+              "modificationPath": "fixed.timing.repeat.timeOfDay"
             }
           ],
-          "id": "69aa7a82-695e-4837-8105-5f4a768e4377"
+          "id": "431fcf57-4886-42de-bdb2-991f07271e23"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMappingOnStructureDefinitionDifferentialElement"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -664,19 +726,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "mapping",
-              "modificationPath": "StructureDefinition.differential.element.mapping"
+              "modificationPath": "mapping"
             }
           ],
-          "id": "6ec720b0-107e-420e-a2b6-6b96d93d36b0"
+          "id": "7e7fe3b2-aa60-47d2-bf6c-17858d4cb270"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddAggregationOnStructureDefinitionDifferentialElementType"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -685,19 +749,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
               "inputValueParameterName": "aggregation",
-              "modificationPath": "StructureDefinition.differential.element.type.aggregation"
+              "modificationPath": "aggregation"
             }
           ],
-          "id": "26590bc5-ae67-4a47-870f-4641c9e55cfa"
+          "id": "6a0736b7-d095-46cf-9011-a4e8e739443c"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementPattern"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -706,19 +772,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.pattern.coding"
+              "modificationPath": "pattern.coding"
             }
           ],
-          "id": "169eb86b-2fd3-4be3-9e0c-1efe7b1a9cce"
+          "id": "21b2c28d-257d-47b9-ac76-d66cd5cc61e2"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementFixed"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -727,19 +795,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.fixed.coding"
+              "modificationPath": "fixed.coding"
             }
           ],
-          "id": "68983726-3a89-40bc-9a8f-075213db669b"
+          "id": "815881d6-8482-4b22-a096-ea20587c7e77"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddEventOnStructureDefinitionDifferentialElementPatternTiming"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -748,19 +818,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "event",
-              "modificationPath": "StructureDefinition.differential.element.pattern.timing.event"
+              "modificationPath": "pattern.timing.event"
             }
           ],
-          "id": "ef9c95ed-4c75-49c4-853d-15905df1cdc6"
+          "id": "aea6ff9f-1409-441f-b295-b5892f396821"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddElementOnStructureDefinitionDifferential"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -769,19 +841,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "element",
-              "modificationPath": "StructureDefinition.differential.element"
+              "modificationPath": "differential.element"
             }
           ],
-          "id": "961003a0-c843-4ef8-af42-f0ef52d9164d"
+          "id": "f768f4dd-1c53-42a1-bbb0-43c08150c772"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionDifferentialElementDefaultValueCodeFilter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -790,19 +864,44 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.codeFilter.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "9d4c88fd-6ddd-4da4-87f0-66bc74c0d637"
+          "id": "65db4a5c-89aa-4b81-a3d9-6ba587b765ed"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTargetProfileRefOnStructureDefinitionDifferentialElementType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TargetProfileRefOnStructureDefinitionDifferentialElementTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
+              "inputValueParameterName": "targetProfileRef",
+              "modificationPath": "targetProfileRef"
+            }
+          ],
+          "id": "466bae96-1726-4e5b-9586-e93eae41ed16"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMustSupportOnStructureDefinitionDifferentialElementPattern"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -811,19 +910,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "mustSupport",
-              "modificationPath": "StructureDefinition.differential.element.pattern.mustSupport"
+              "modificationPath": "pattern.mustSupport"
             }
           ],
-          "id": "711f22c2-ce49-4771-855b-4a027dbaf5ab"
+          "id": "6043d93e-5a68-4cdd-9018-967c4db51c8a"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddSortOnStructureDefinitionDifferentialElementFixedData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -832,19 +933,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "sort",
-              "modificationPath": "StructureDefinition.differential.element.fixed.data.sort"
+              "modificationPath": "sort"
             }
           ],
-          "id": "bad6fefb-405e-4732-b19f-9344f542e455"
+          "id": "2b650669-194f-48f9-81a5-09f338b4f0ff"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddTimeOfDayOnStructureDefinitionDifferentialElementDefaultValueTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -853,19 +956,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "timeOfDay",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.timing.repeat.timeOfDay"
+              "modificationPath": "defaultValue.timing.repeat.timeOfDay"
             }
           ],
-          "id": "aa6bd60d-c8cc-4d54-a5ed-d0f9976e751b"
+          "id": "b4ff8e1e-ea1d-4861-b216-56deabcb8131"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementFixedSubject"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -874,19 +979,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.fixed.subject.coding"
+              "modificationPath": "fixed.subject.coding"
             }
           ],
-          "id": "b0cda5e6-9bca-4f67-9f24-5a580451195e"
+          "id": "a91a61c2-dfe1-44a0-baa0-76070cc0eaf8"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionDifferentialElementFixedDataCodeFilter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -895,19 +1002,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.differential.element.fixed.data.codeFilter.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "05ca706d-4c1d-4a92-8f7f-ca3441846256"
+          "id": "db8fea5d-049e-4bcf-8389-a0943565dd12"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeFilterOnStructureDefinitionDifferentialElementFixed"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -916,19 +1025,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "codeFilter",
-              "modificationPath": "StructureDefinition.differential.element.fixed.codeFilter"
+              "modificationPath": "fixed.codeFilter"
             }
           ],
-          "id": "34a0177d-624e-4cff-a23c-20345047da60"
+          "id": "0d3c0021-0365-4356-a46d-16b40829c5d8"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeFilterOnStructureDefinitionDifferentialElementFixedData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -937,19 +1048,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "codeFilter",
-              "modificationPath": "StructureDefinition.differential.element.fixed.data.codeFilter"
+              "modificationPath": "codeFilter"
             }
           ],
-          "id": "9fc725ad-ff13-407c-80a7-03ecb0a89c4a"
+          "id": "55feed09-a2a1-4f93-b6a5-3f69953de2a3"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionDifferentialElementExampleValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -958,19 +1071,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.differential.element.example.value.data.profile"
+              "modificationPath": "profile"
             }
           ],
-          "id": "07996d09-7cd3-4a2e-a72f-04c4d1bb2f3a"
+          "id": "41d83454-f579-418f-af1c-a7b7f3e4248f"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddEventOnStructureDefinitionDifferentialElementExampleValueTiming"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -979,19 +1094,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "event",
-              "modificationPath": "StructureDefinition.differential.element.example.value.timing.event"
+              "modificationPath": "value.timing.event"
             }
           ],
-          "id": "db3bf5d4-94a8-4dcf-a8aa-af6cde6e83f7"
+          "id": "84d09315-68e4-4f76-a0b3-a460c2bbfead"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionDifferentialElementType"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1000,19 +1117,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.differential.element.type.profile"
+              "modificationPath": "profile"
             }
           ],
-          "id": "032553ac-633b-42dc-b11f-31c97bdecf1b"
+          "id": "9f923015-9233-4fe6-9bf2-4ea465c23a43"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddConstraintOnStructureDefinitionDifferentialElement"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1021,19 +1140,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "constraint",
-              "modificationPath": "StructureDefinition.differential.element.constraint"
+              "modificationPath": "constraint"
             }
           ],
-          "id": "ebb2710c-6ccd-42ec-9a56-c0ac5a5d720b"
+          "id": "8e0c25a7-0284-41bb-a3a8-e5a98e53013d"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddSortOnStructureDefinitionDifferentialElementFixed"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1042,19 +1163,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "sort",
-              "modificationPath": "StructureDefinition.differential.element.fixed.sort"
+              "modificationPath": "fixed.sort"
             }
           ],
-          "id": "038187dd-17e4-4813-b6a6-8e4c9ebc3d54"
+          "id": "439ed74a-92fe-4a5e-9755-20d92ee40747"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionDifferentialElementDefaultValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1063,19 +1186,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.data.profile"
+              "modificationPath": "profile"
             }
           ],
-          "id": "f39b18c9-5f68-4abd-a2f1-c72d3f75c389"
+          "id": "e69dfd4a-c2cf-441e-8be5-563715af1c23"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDateFilterOnStructureDefinitionDifferentialElementExampleValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1084,19 +1209,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "dateFilter",
-              "modificationPath": "StructureDefinition.differential.element.example.value.data.dateFilter"
+              "modificationPath": "dateFilter"
             }
           ],
-          "id": "48da7dde-510e-4f1c-96f4-a76e4de0fccf"
+          "id": "c1aa8bbc-227a-478a-a425-9790feb53f90"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDateFilterOnStructureDefinitionDifferentialElementPatternData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1105,19 +1232,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "dateFilter",
-              "modificationPath": "StructureDefinition.differential.element.pattern.data.dateFilter"
+              "modificationPath": "dateFilter"
             }
           ],
-          "id": "0f179fa0-260d-4d93-b3be-3a86af1890d7"
+          "id": "a67245c5-7b54-4ea3-924f-04a696c63613"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDateFilterOnStructureDefinitionDifferentialElementFixed"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1126,19 +1255,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "dateFilter",
-              "modificationPath": "StructureDefinition.differential.element.fixed.dateFilter"
+              "modificationPath": "fixed.dateFilter"
             }
           ],
-          "id": "1b71daa0-e75e-49bd-971e-bb378b4154a4"
+          "id": "a3e59cb6-c860-453d-9067-188c0d2c15fc"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddEventOnStructureDefinitionDifferentialElementFixedTiming"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1147,19 +1278,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "event",
-              "modificationPath": "StructureDefinition.differential.element.fixed.timing.event"
+              "modificationPath": "fixed.timing.event"
             }
           ],
-          "id": "b45825d9-e8c3-45eb-8608-6ee5f334bfef"
+          "id": "92453467-0c0d-440e-a998-d20214819270"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionDifferentialElementExampleValueCodeFilter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1168,19 +1301,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.differential.element.example.value.codeFilter.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "9b91caed-ead9-4729-aa34-b605af23426e"
+          "id": "6ed6ae8b-2a9b-4507-aec6-ff9990389031"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeFilterOnStructureDefinitionDifferentialElementPatternData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1189,19 +1324,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "codeFilter",
-              "modificationPath": "StructureDefinition.differential.element.pattern.data.codeFilter"
+              "modificationPath": "codeFilter"
             }
           ],
-          "id": "3be51bed-792f-421e-b3ad-5dc38448a754"
+          "id": "c164428d-879a-4998-9067-9e63e0cfc0e5"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDateFilterOnStructureDefinitionDifferentialElementFixedData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1210,19 +1347,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "dateFilter",
-              "modificationPath": "StructureDefinition.differential.element.fixed.data.dateFilter"
+              "modificationPath": "dateFilter"
             }
           ],
-          "id": "c987f4fa-bfa9-400a-a448-e93172d5fb35"
+          "id": "4a11890d-98b8-4f44-a0a5-bd6c02323d04"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDateFilterOnStructureDefinitionDifferentialElementPattern"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1231,19 +1370,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "dateFilter",
-              "modificationPath": "StructureDefinition.differential.element.pattern.dateFilter"
+              "modificationPath": "pattern.dateFilter"
             }
           ],
-          "id": "3781d65f-ee8c-49e8-b4fd-d81bac04484f"
+          "id": "347ca205-5771-4a47-b932-f67a726cfacc"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddEventOnStructureDefinitionDifferentialElementDefaultValueTiming"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1252,19 +1393,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "event",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.timing.event"
+              "modificationPath": "defaultValue.timing.event"
             }
           ],
-          "id": "1fd82b67-b5be-4054-96d2-182ee2d725e6"
+          "id": "25bc0b67-044a-48ac-95c6-356de33e9638"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddSortOnStructureDefinitionDifferentialElementDefaultValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1273,19 +1416,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "sort",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.data.sort"
+              "modificationPath": "sort"
             }
           ],
-          "id": "e3edf909-7e23-4c65-97ee-d01dc1475b2c"
+          "id": "7f646eaf-13a6-45b7-aed4-00b70666e0a3"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeFilterOnStructureDefinitionDifferentialElementDefaultValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1294,19 +1439,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "codeFilter",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.codeFilter"
+              "modificationPath": "defaultValue.codeFilter"
             }
           ],
-          "id": "58939444-acbc-4309-8bbf-d54cee1bb099"
+          "id": "bdfefbff-ad83-46ee-af38-dc89ad264c84"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementFixedConcept"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1315,19 +1462,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.fixed.concept.coding"
+              "modificationPath": "fixed.concept.coding"
             }
           ],
-          "id": "e8f61028-1594-40fc-9b5b-cdb6923a20cb"
+          "id": "9cd708b2-75af-4c6b-b13d-7a5a2ffe3ba0"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementPatternDataSubject"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1336,19 +1485,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.pattern.data.subject.coding"
+              "modificationPath": "subject.coding"
             }
           ],
-          "id": "fdc21112-45f2-4889-9c7e-fc55952794b4"
+          "id": "bb12990d-3217-4c0f-b4ba-429dbb1ec7d3"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementExampleValueSubject"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1357,19 +1508,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.example.value.subject.coding"
+              "modificationPath": "value.subject.coding"
             }
           ],
-          "id": "267e00c5-44b6-4c54-b463-295fcb87c197"
+          "id": "7b35ab1e-6a24-4f94-bcea-469345346297"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeFilterOnStructureDefinitionDifferentialElementExampleValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1378,19 +1531,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "codeFilter",
-              "modificationPath": "StructureDefinition.differential.element.example.value.codeFilter"
+              "modificationPath": "value.codeFilter"
             }
           ],
-          "id": "d21f5cf0-1f96-4e0b-9133-ab691391589b"
+          "id": "cee049b8-6860-4f30-a200-e2c752546c88"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeFilterOnStructureDefinitionDifferentialElementExampleValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1399,19 +1554,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "codeFilter",
-              "modificationPath": "StructureDefinition.differential.element.example.value.data.codeFilter"
+              "modificationPath": "codeFilter"
             }
           ],
-          "id": "4e8b7e67-a6d5-41bf-a4af-ac70a3b5c09a"
+          "id": "a0833716-8d32-44eb-97dd-67bc5f47eec2"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddSortOnStructureDefinitionDifferentialElementPatternData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1420,19 +1577,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "sort",
-              "modificationPath": "StructureDefinition.differential.element.pattern.data.sort"
+              "modificationPath": "sort"
             }
           ],
-          "id": "79ffb19d-116f-4808-a600-2fa53efd9aae"
+          "id": "1e2f2f7f-9269-4c13-93a7-b264ef47fd2d"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementFixedType"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1441,19 +1600,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.fixed.type.coding"
+              "modificationPath": "fixed.type.coding"
             }
           ],
-          "id": "d0fd386d-60c0-411e-bf5e-5e483ada934f"
+          "id": "9fbd6e53-fcda-4fc7-9f0b-bdb11e07ada9"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementPatternSubject"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1462,19 +1623,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.pattern.subject.coding"
+              "modificationPath": "pattern.subject.coding"
             }
           ],
-          "id": "6d8caa85-7ec5-454c-96fb-516c47a80bfc"
+          "id": "02da2a6c-f6a6-4915-afc5-58ac1d42ac6c"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeFilterOnStructureDefinitionDifferentialElementPattern"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1483,19 +1646,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "codeFilter",
-              "modificationPath": "StructureDefinition.differential.element.pattern.codeFilter"
+              "modificationPath": "pattern.codeFilter"
             }
           ],
-          "id": "5ab796ad-10aa-48a2-80f9-c41a81ce64cd"
+          "id": "2841e7fc-14a5-4e48-9da5-5a22123932be"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDateFilterOnStructureDefinitionDifferentialElementDefaultValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1504,19 +1669,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "dateFilter",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.data.dateFilter"
+              "modificationPath": "dateFilter"
             }
           ],
-          "id": "0560e17d-4bf4-4bdc-8c8f-c3d7893391c6"
+          "id": "151a4ef0-6b2b-4c5d-bd5b-6de864fbd019"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeFilterOnStructureDefinitionDifferentialElementDefaultValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1525,19 +1692,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "codeFilter",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.data.codeFilter"
+              "modificationPath": "codeFilter"
             }
           ],
-          "id": "ff8abaae-be6a-4dc7-81cb-2643e924c814"
+          "id": "3e58ad42-6172-4f16-bf84-d349d936bfd0"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMustSupportOnStructureDefinitionDifferentialElementExampleValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1546,19 +1715,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "mustSupport",
-              "modificationPath": "StructureDefinition.differential.element.example.value.mustSupport"
+              "modificationPath": "value.mustSupport"
             }
           ],
-          "id": "53b289d1-4f75-4d20-8a3f-e571d88d536a"
+          "id": "f3d30be9-c891-43f2-b143-e421f5a0e83d"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementPatternConcept"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1567,19 +1738,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.pattern.concept.coding"
+              "modificationPath": "pattern.concept.coding"
             }
           ],
-          "id": "0206b5b2-f5f6-4649-ae95-ae49d7db3f1b"
+          "id": "9d2a17fb-a1c9-4d44-88a8-f1bd9b497891"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddTimeOfDayOnStructureDefinitionDifferentialElementExampleValueTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1588,19 +1761,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "timeOfDay",
-              "modificationPath": "StructureDefinition.differential.element.example.value.timing.repeat.timeOfDay"
+              "modificationPath": "value.timing.repeat.timeOfDay"
             }
           ],
-          "id": "57d1b244-f8dc-4327-a25d-1443e1239253"
+          "id": "f77c9839-773d-46f0-8002-ef209dce96a7"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDayOfWeekOnStructureDefinitionDifferentialElementFixedTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1609,19 +1784,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "dayOfWeek",
-              "modificationPath": "StructureDefinition.differential.element.fixed.timing.repeat.dayOfWeek"
+              "modificationPath": "fixed.timing.repeat.dayOfWeek"
             }
           ],
-          "id": "c4364ef4-d6e4-4186-854f-fbc5fce39bd7"
+          "id": "74de6328-8756-41ce-b8b3-722bb4f714aa"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddWhenOnStructureDefinitionDifferentialElementDefaultValueTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1630,19 +1807,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "when",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.timing.repeat.when"
+              "modificationPath": "defaultValue.timing.repeat.when"
             }
           ],
-          "id": "00eac997-12cd-46bb-88a2-011de5dd9f99"
+          "id": "13b3929c-d6a4-4df9-86d8-93f368bd1109"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionDifferentialElementFixedCodeFilter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1651,19 +1830,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.differential.element.fixed.codeFilter.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "df8d50c2-9f35-48ee-9637-2b23e86f44d9"
+          "id": "a1c128a3-92bd-422b-be14-c2f2c02e1a48"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddSortOnStructureDefinitionDifferentialElementExampleValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1672,19 +1853,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "sort",
-              "modificationPath": "StructureDefinition.differential.element.example.value.data.sort"
+              "modificationPath": "sort"
             }
           ],
-          "id": "c055578b-d633-4326-8568-8dfd8eeb014b"
+          "id": "4576e376-88b9-4eba-90b5-c69d878581eb"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDayOfWeekOnStructureDefinitionDifferentialElementExampleValueTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1693,19 +1876,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "dayOfWeek",
-              "modificationPath": "StructureDefinition.differential.element.example.value.timing.repeat.dayOfWeek"
+              "modificationPath": "value.timing.repeat.dayOfWeek"
             }
           ],
-          "id": "f75a1f30-4c3d-4540-841a-cbfc71a9fdc6"
+          "id": "9d6518fb-998f-48c7-934c-8c54dc051d82"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementExampleValueDataSubject"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1714,19 +1899,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.example.value.data.subject.coding"
+              "modificationPath": "subject.coding"
             }
           ],
-          "id": "e1590adb-4bdb-424d-9cd7-a60cf3bf5d5f"
+          "id": "0d09a91c-ef03-417d-97f2-2fe2e80f0b49"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMustSupportOnStructureDefinitionDifferentialElementDefaultValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1735,19 +1922,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "mustSupport",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.mustSupport"
+              "modificationPath": "defaultValue.mustSupport"
             }
           ],
-          "id": "455885d5-a1d4-4833-a8dd-ab77d35419da"
+          "id": "e55ad92c-f67b-408b-b295-78dabd1ffbe7"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddWhenOnStructureDefinitionDifferentialElementPatternTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1756,19 +1945,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "when",
-              "modificationPath": "StructureDefinition.differential.element.pattern.timing.repeat.when"
+              "modificationPath": "pattern.timing.repeat.when"
             }
           ],
-          "id": "78568ab9-c6fa-4b5d-ba92-c66a3d03253a"
+          "id": "5d337b18-efec-48fb-9a0c-ccac33adbaa5"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionDifferentialElementFixed"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1777,19 +1968,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.differential.element.fixed.profile"
+              "modificationPath": "fixed.profile"
             }
           ],
-          "id": "acae830d-fdad-40d1-9b33-070435154954"
+          "id": "3a583a0a-efea-40f1-98f7-b6f5dde4a13e"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddSortOnStructureDefinitionDifferentialElementExampleValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1798,19 +1991,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "sort",
-              "modificationPath": "StructureDefinition.differential.element.example.value.sort"
+              "modificationPath": "value.sort"
             }
           ],
-          "id": "6f41e171-a1e5-4464-ad16-f1b630c5b4ba"
+          "id": "0ba188c0-4d97-4d9c-b2fe-11171ad65f2c"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionDifferentialElementDefaultValueDataCodeFilter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1819,19 +2014,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.data.codeFilter.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "aec1340f-553f-47db-b239-dfef9c072165"
+          "id": "1ea77301-4083-499d-be8a-932478549fe7"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddSortOnStructureDefinitionDifferentialElementDefaultValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1840,19 +2037,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "sort",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.sort"
+              "modificationPath": "defaultValue.sort"
             }
           ],
-          "id": "268fd5ac-fd7e-4372-bf59-5f8ec03bd52b"
+          "id": "6bb8efd2-73b3-4e2b-9fed-a7a3fdf84778"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementPatternType"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1861,19 +2060,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.pattern.type.coding"
+              "modificationPath": "pattern.type.coding"
             }
           ],
-          "id": "ea81dfea-590c-465b-b1cd-644830d120b3"
+          "id": "d4935ae6-5606-4fa0-a817-10610579b4d1"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionDifferentialElementPattern"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1882,19 +2083,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.differential.element.pattern.profile"
+              "modificationPath": "pattern.profile"
             }
           ],
-          "id": "178f65f8-8047-497c-9abc-f20ffb116a48"
+          "id": "c870a51c-5490-4963-b8e8-a2d2a71e28f4"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementExampleValueType"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1903,19 +2106,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.example.value.type.coding"
+              "modificationPath": "value.type.coding"
             }
           ],
-          "id": "184e80d0-cd6c-42f5-9eff-2b52cb4e8437"
+          "id": "7ee2f693-cff0-45a5-af6c-d37f8f3d059a"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDataOnStructureDefinitionDifferentialElementDefaultValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1924,19 +2129,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "data",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.data"
+              "modificationPath": "defaultValue.data"
             }
           ],
-          "id": "8891c390-0c37-4928-87c3-02342ea39534"
+          "id": "94d8d6ab-cd65-43a1-820d-3f0dd370777d"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMustSupportOnStructureDefinitionDifferentialElementExampleValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1945,19 +2152,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "mustSupport",
-              "modificationPath": "StructureDefinition.differential.element.example.value.data.mustSupport"
+              "modificationPath": "mustSupport"
             }
           ],
-          "id": "279acaf0-3348-433d-a912-d7007d675548"
+          "id": "ebff25b8-a23c-4480-80f5-08cac254f4e4"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddTimeOfDayOnStructureDefinitionDifferentialElementPatternTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1966,19 +2175,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "timeOfDay",
-              "modificationPath": "StructureDefinition.differential.element.pattern.timing.repeat.timeOfDay"
+              "modificationPath": "pattern.timing.repeat.timeOfDay"
             }
           ],
-          "id": "95daa70b-5275-47f8-8e6b-e311caaebc4f"
+          "id": "d24791d5-7269-4b35-9d14-3826730548d7"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionDifferentialElementExampleValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -1987,19 +2198,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.differential.element.example.value.profile"
+              "modificationPath": "value.profile"
             }
           ],
-          "id": "8e13a802-f444-4dcc-9834-1bc1675a17ed"
+          "id": "39f98591-b67e-4588-8b53-0992bd852eb4"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionDifferentialElementExampleValueDataCodeFilter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2008,19 +2221,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.differential.element.example.value.data.codeFilter.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "95347952-48f6-490a-a465-f9c96675fb96"
+          "id": "77a8be22-96fc-4f3e-8e25-93390adf7b8f"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDiscriminatorOnStructureDefinitionDifferentialElementSlicing"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2029,19 +2244,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "discriminator",
-              "modificationPath": "StructureDefinition.differential.element.slicing.discriminator"
+              "modificationPath": "slicing.discriminator"
             }
           ],
-          "id": "cdf7b3f3-8dcc-4a7f-8132-98ef712eb97f"
+          "id": "6fa29539-2632-43c2-9ebd-5f719341e9c0"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDataOnStructureDefinitionDifferentialElementFixed"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2050,19 +2267,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "data",
-              "modificationPath": "StructureDefinition.differential.element.fixed.data"
+              "modificationPath": "fixed.data"
             }
           ],
-          "id": "d4878510-e8d6-4e0c-a980-842baa498ee3"
+          "id": "62bc9b95-f291-4e4e-bfed-2433d3d48e01"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDayOfWeekOnStructureDefinitionDifferentialElementPatternTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2071,19 +2290,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "dayOfWeek",
-              "modificationPath": "StructureDefinition.differential.element.pattern.timing.repeat.dayOfWeek"
+              "modificationPath": "pattern.timing.repeat.dayOfWeek"
             }
           ],
-          "id": "e0ac1d60-578e-4c77-9bf8-b8124df354a0"
+          "id": "1fbcb8ca-036d-44eb-bba7-fc003d9230c1"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMustSupportOnStructureDefinitionDifferentialElementPatternData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2092,19 +2313,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "mustSupport",
-              "modificationPath": "StructureDefinition.differential.element.pattern.data.mustSupport"
+              "modificationPath": "mustSupport"
             }
           ],
-          "id": "208633f9-4a2a-4133-a7d6-bec7d947c5c8"
+          "id": "fd9bc875-febe-40d7-aebc-0118efb8fccb"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddExampleOnStructureDefinitionDifferentialElement"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2113,19 +2336,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "example",
-              "modificationPath": "StructureDefinition.differential.element.example"
+              "modificationPath": "example"
             }
           ],
-          "id": "bbb5e844-7ac0-4e78-994d-35df8663d1f4"
+          "id": "d94b5aff-8d72-4f52-94e6-9d55ad2c3d86"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDataOnStructureDefinitionDifferentialElementExampleValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2134,19 +2359,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "data",
-              "modificationPath": "StructureDefinition.differential.element.example.value.data"
+              "modificationPath": "value.data"
             }
           ],
-          "id": "e3e5019d-7310-4222-981f-cfb8c947aab6"
+          "id": "447b8ae8-06cd-4b8c-b83e-bc15d54907a7"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementDefaultValueDataSubject"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2155,19 +2382,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.data.subject.coding"
+              "modificationPath": "subject.coding"
             }
           ],
-          "id": "0e5d1101-8a5a-47ab-bd70-7eadbe4b7b29"
+          "id": "85b34597-07f7-48a1-abb5-e85a0d1a5d4d"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddConditionOnStructureDefinitionDifferentialElement"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2176,19 +2405,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "condition",
-              "modificationPath": "StructureDefinition.differential.element.condition"
+              "modificationPath": "condition"
             }
           ],
-          "id": "45854d6b-e929-4d35-8d12-339224eebe89"
+          "id": "594cac3c-9da0-4649-a23d-b82d0c41a05f"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementDefaultValueType"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2197,19 +2428,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.type.coding"
+              "modificationPath": "defaultValue.type.coding"
             }
           ],
-          "id": "76e6d570-db6c-4899-a75f-8d2be2eec339"
+          "id": "573c2370-183f-4b63-b8df-15a2b804ae1c"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementDefaultValueTimingCode"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2218,19 +2451,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.timing.code.coding"
+              "modificationPath": "defaultValue.timing.code.coding"
             }
           ],
-          "id": "d050f42d-7d2b-42ae-be65-272d6113b3e5"
+          "id": "46b6ea32-a474-4cda-a1b7-1393c40196cd"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementDefaultValueSubject"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2239,19 +2474,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.subject.coding"
+              "modificationPath": "defaultValue.subject.coding"
             }
           ],
-          "id": "62a6ec83-d7fa-4920-855a-765fb8520810"
+          "id": "2ba15b45-13de-4952-b94e-d717a9d670cf"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionDifferentialElementPatternData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2260,19 +2497,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.differential.element.pattern.data.profile"
+              "modificationPath": "profile"
             }
           ],
-          "id": "02c0a05c-af86-46ee-a3fd-7098abf31412"
+          "id": "182a1922-e68c-4690-9a40-d09b3ab6c2e2"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementExampleValueConcept"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2281,19 +2520,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.example.value.concept.coding"
+              "modificationPath": "value.concept.coding"
             }
           ],
-          "id": "27281a9f-8df3-4cb4-863d-b0d606d8f7ac"
+          "id": "df0a9597-5b01-45f6-b88c-fe640a44f5f6"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddAliasOnStructureDefinitionDifferentialElement"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2302,19 +2543,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "alias",
-              "modificationPath": "StructureDefinition.differential.element.alias"
+              "modificationPath": "alias"
             }
           ],
-          "id": "19eaf944-f9b2-446b-9cf2-484a58121e16"
+          "id": "7a88ae96-fbac-47e8-9049-6d2f943e4386"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionDifferentialElementDefaultValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2323,19 +2566,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.differential.element.defaultValue.profile"
+              "modificationPath": "defaultValue.profile"
             }
           ],
-          "id": "298e6946-3cbb-4233-aaa5-07500fe59728"
+          "id": "24838f9e-14d6-42d5-af57-75255a95fa69"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionDifferentialElementExampleValueTimingCode"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2344,19 +2589,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.differential.element.example.value.timing.code.coding"
+              "modificationPath": "value.timing.code.coding"
             }
           ],
-          "id": "7c5200c6-ead4-4e45-ae57-b4c3f10c297e"
+          "id": "906ddef4-f155-4ea4-8810-3843938714b8"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddTypeOnStructureDefinitionDifferentialElement"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2365,19 +2612,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "type",
-              "modificationPath": "StructureDefinition.differential.element.type"
+              "modificationPath": "type"
             }
           ],
-          "id": "81657f5c-5cd5-4263-ace7-16d1c6316b44"
+          "id": "19352b36-94ca-45a3-9d9b-0d1b3e14e4f2"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionIdentifierType"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2386,19 +2635,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "identifierId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.identifier.type.coding"
+              "modificationPath": "type.coding"
             }
           ],
-          "id": "1038591a-3eb3-44cd-be74-365ab65fc35b"
+          "id": "bd16a47a-c203-4b0b-9fec-8c66aa28713c"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionUseContextValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2407,19 +2658,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "useContextId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.useContext.value.coding"
+              "modificationPath": "value.coding"
             }
           ],
-          "id": "b3341131-32d3-4642-878f-28b3a98d862e"
+          "id": "143329af-4967-4a25-93aa-781e5d90a9b9"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMustSupportOnStructureDefinitionSnapshotElementExampleValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2428,19 +2681,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "mustSupport",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.data.mustSupport"
+              "modificationPath": "mustSupport"
             }
           ],
-          "id": "947b7641-e395-420a-a160-ff5523ea78ad"
+          "id": "33721aa5-e54f-4091-8482-9c126319833f"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDiscriminatorOnStructureDefinitionSnapshotElementSlicing"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2449,19 +2704,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "discriminator",
-              "modificationPath": "StructureDefinition.snapshot.element.slicing.discriminator"
+              "modificationPath": "slicing.discriminator"
             }
           ],
-          "id": "c54bd375-0be5-4279-a0a6-98a259c755a2"
+          "id": "ec39bac7-b543-4601-a38b-6ed4b9e55cdd"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddTimeOfDayOnStructureDefinitionSnapshotElementExampleValueTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2470,19 +2727,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "timeOfDay",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.timing.repeat.timeOfDay"
+              "modificationPath": "value.timing.repeat.timeOfDay"
             }
           ],
-          "id": "c2da0e7f-4976-463b-9b7f-3755a4012bf6"
+          "id": "c3b99545-ccf9-450a-8e31-da031a5eb0d1"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionSnapshotElementDefaultValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2491,19 +2750,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.profile"
+              "modificationPath": "defaultValue.profile"
             }
           ],
-          "id": "1ad41bee-2e7e-47a6-b42f-8af334309f8a"
+          "id": "22c96475-5214-46e0-bc6d-7b3397f7e5a5"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDateFilterOnStructureDefinitionSnapshotElementFixed"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2512,19 +2773,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "dateFilter",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.dateFilter"
+              "modificationPath": "fixed.dateFilter"
             }
           ],
-          "id": "1a9f3035-19a8-4fe7-86b0-6a99db0b63ec"
+          "id": "09d063e2-f7ed-442f-8f02-14851c30aa34"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementPatternConcept"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2533,19 +2796,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.concept.coding"
+              "modificationPath": "pattern.concept.coding"
             }
           ],
-          "id": "d5f235bd-8c41-489c-a719-f8f2f295e7be"
+          "id": "1ed61655-4331-4afd-a636-739f37fc1fef"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementDefaultValueType"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2554,19 +2819,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.type.coding"
+              "modificationPath": "defaultValue.type.coding"
             }
           ],
-          "id": "3ee04b57-b44c-459f-9c1e-dda8f6699b20"
+          "id": "a919a8cf-6223-488d-9842-bfc6b7a24653"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionSnapshotElementFixedCodeFilter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2575,19 +2842,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.codeFilter.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "dda7eeb3-74ae-416b-9a6f-535b25c65f4c"
+          "id": "e2b09529-2290-4729-b16b-c23d4891f6e9"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddEventOnStructureDefinitionSnapshotElementFixedTiming"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2596,19 +2865,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "event",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.timing.event"
+              "modificationPath": "fixed.timing.event"
             }
           ],
-          "id": "6dbb868e-9f98-466d-bfb5-9536dc0898b5"
+          "id": "662524fa-df56-4665-be55-9a5688849ab3"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDataOnStructureDefinitionSnapshotElementFixed"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2617,19 +2888,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "data",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.data"
+              "modificationPath": "fixed.data"
             }
           ],
-          "id": "77540614-6abe-4282-ad8b-1dde79f60778"
+          "id": "ade1398a-c3f5-4901-a4b0-f2304de6cc09"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMustSupportOnStructureDefinitionSnapshotElementDefaultValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2638,19 +2911,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "mustSupport",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.mustSupport"
+              "modificationPath": "defaultValue.mustSupport"
             }
           ],
-          "id": "63e873cc-3fd9-4fe8-9f8c-e078b75cd326"
+          "id": "0f36d4ac-f45c-48c7-a63f-8bf38f30ca58"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementPatternTimingCode"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2659,19 +2934,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.timing.code.coding"
+              "modificationPath": "pattern.timing.code.coding"
             }
           ],
-          "id": "2bc0ee78-b60b-403f-9f30-c3adf20cb1d5"
+          "id": "9cc357cb-6ceb-4248-a5be-60dcc5923fb3"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementPatternSubject"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2680,19 +2957,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.subject.coding"
+              "modificationPath": "pattern.subject.coding"
             }
           ],
-          "id": "5b70b095-f4dd-4098-b92f-f8d6cfce2ef5"
+          "id": "51dcc6db-dd57-4be9-a5ac-8197adb795c3"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddWhenOnStructureDefinitionSnapshotElementFixedTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2701,19 +2980,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "when",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.timing.repeat.when"
+              "modificationPath": "fixed.timing.repeat.when"
             }
           ],
-          "id": "ab67ff28-2f33-4fc6-9d84-f868c3384f73"
+          "id": "a2444b6a-1863-442b-b735-663c26ddfd32"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddSortOnStructureDefinitionSnapshotElementDefaultValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2722,19 +3003,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "sort",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.sort"
+              "modificationPath": "defaultValue.sort"
             }
           ],
-          "id": "a1ab15b1-f3d5-4158-b6c3-12bb05dff627"
+          "id": "ee48a71d-b2e8-4d49-bf2a-cc13dc6efcb7"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementFixedConcept"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2743,19 +3026,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.concept.coding"
+              "modificationPath": "fixed.concept.coding"
             }
           ],
-          "id": "fe5530f6-82d5-42e9-9570-2038b1048411"
+          "id": "1d4cfe3f-26bd-41e2-a964-86d63e59d71d"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDateFilterOnStructureDefinitionSnapshotElementPatternData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2764,19 +3049,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "dateFilter",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.data.dateFilter"
+              "modificationPath": "dateFilter"
             }
           ],
-          "id": "401c207d-691e-424f-8faf-f31da7314d2a"
+          "id": "8a0653df-9df0-46d1-89a5-05f4e6614815"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMustSupportOnStructureDefinitionSnapshotElementFixedData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2785,19 +3072,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "mustSupport",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.data.mustSupport"
+              "modificationPath": "mustSupport"
             }
           ],
-          "id": "7834d682-90f2-4065-a2a9-4ea66fd1d9a0"
+          "id": "5871f7ab-a042-4a88-84d6-fe1d7390b47b"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddTypeOnStructureDefinitionSnapshotElement"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2806,19 +3095,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "type",
-              "modificationPath": "StructureDefinition.snapshot.element.type"
+              "modificationPath": "type"
             }
           ],
-          "id": "f8d44443-7343-4739-8cbd-5c4bc9d2b54d"
+          "id": "c4289362-906a-42c6-bd93-e78e875e5399"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMustSupportOnStructureDefinitionSnapshotElementDefaultValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2827,19 +3118,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "mustSupport",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.data.mustSupport"
+              "modificationPath": "mustSupport"
             }
           ],
-          "id": "17e4f89f-d5cb-4e37-aca8-84b9888f6777"
+          "id": "260379b5-4d77-42cf-8b81-87b697b9b5d3"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddWhenOnStructureDefinitionSnapshotElementDefaultValueTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2848,19 +3141,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "when",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.timing.repeat.when"
+              "modificationPath": "defaultValue.timing.repeat.when"
             }
           ],
-          "id": "fdbdaef0-b1de-4323-a418-3586aa4df243"
+          "id": "837c5666-5f07-4311-b2d7-9eadf82b0faf"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementExampleValueTimingCode"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2869,19 +3164,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.timing.code.coding"
+              "modificationPath": "value.timing.code.coding"
             }
           ],
-          "id": "972eaf24-abea-4c99-915c-eb981d357ef0"
+          "id": "7e72f5c4-32c0-4865-a75c-b6c56f26ff98"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMustSupportOnStructureDefinitionSnapshotElementFixed"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2890,19 +3187,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "mustSupport",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.mustSupport"
+              "modificationPath": "fixed.mustSupport"
             }
           ],
-          "id": "c835e4fe-be3a-4c0e-9439-46288bf9bca8"
+          "id": "6f06b9d1-82cd-4924-a916-edbda5499a11"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionSnapshotElementExampleValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2911,19 +3210,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.profile"
+              "modificationPath": "value.profile"
             }
           ],
-          "id": "93ae9ed5-4d91-4f22-b582-a2f4c12d1ae2"
+          "id": "b62662c5-b7e4-4b7e-aaa0-b37de5de6352"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMustSupportOnStructureDefinitionSnapshotElementPatternData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2932,19 +3233,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "mustSupport",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.data.mustSupport"
+              "modificationPath": "mustSupport"
             }
           ],
-          "id": "aacc0e49-6f5d-455e-9bdb-c164dbed116c"
+          "id": "72833e4b-7601-4c2a-890d-a19240b9ca49"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddTimeOfDayOnStructureDefinitionSnapshotElementFixedTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2953,19 +3256,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "timeOfDay",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.timing.repeat.timeOfDay"
+              "modificationPath": "fixed.timing.repeat.timeOfDay"
             }
           ],
-          "id": "aa2116da-9975-49fe-8c36-88ab789612ea"
+          "id": "0213b65f-0a0f-4906-9aa3-7257af94011c"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddExampleOnStructureDefinitionSnapshotElement"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2974,19 +3279,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "example",
-              "modificationPath": "StructureDefinition.snapshot.element.example"
+              "modificationPath": "example"
             }
           ],
-          "id": "f0b37ed8-a6c4-4b05-a4c4-95c489597fdd"
+          "id": "6360e488-e8b7-4808-874f-d80468fb1dbd"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementExampleValueType"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -2995,19 +3302,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.type.coding"
+              "modificationPath": "value.type.coding"
             }
           ],
-          "id": "a5c98c0a-4b78-42f1-bc2c-bef3d35a472c"
+          "id": "121a3ce7-6e2c-4fa2-bd6b-f248e0511d85"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddSortOnStructureDefinitionSnapshotElementPatternData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3016,19 +3325,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "sort",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.data.sort"
+              "modificationPath": "sort"
             }
           ],
-          "id": "621bb183-069f-4c6f-81bc-0f61078856e4"
+          "id": "720cf529-9090-4664-929f-2693b5ef8974"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDateFilterOnStructureDefinitionSnapshotElementDefaultValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3037,19 +3348,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "dateFilter",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.dateFilter"
+              "modificationPath": "defaultValue.dateFilter"
             }
           ],
-          "id": "a052e4fb-9243-4ed7-82b3-610aee8c0821"
+          "id": "bc7c5db4-06db-4e08-9c0c-784b3244882c"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDateFilterOnStructureDefinitionSnapshotElementExampleValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3058,19 +3371,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "dateFilter",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.dateFilter"
+              "modificationPath": "value.dateFilter"
             }
           ],
-          "id": "7b01cd92-2c2a-4053-af79-25d54a4c56d1"
+          "id": "a042b9c8-3e88-4f11-b71d-c451e354217d"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementDefaultValueTimingCode"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3079,19 +3394,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.timing.code.coding"
+              "modificationPath": "defaultValue.timing.code.coding"
             }
           ],
-          "id": "0345f457-f7d7-47d4-9c68-bb855b4910c3"
+          "id": "bfb2780b-0fe7-43ee-972b-d522a499ef5d"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementDefaultValueSubject"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3100,19 +3417,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.subject.coding"
+              "modificationPath": "defaultValue.subject.coding"
             }
           ],
-          "id": "5ec0b6fb-f0f4-49e9-8750-34275b8829c5"
+          "id": "56ef0b49-1ef5-4d79-9b4f-802e9274dd9a"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionSnapshotElementType"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3121,19 +3440,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.snapshot.element.type.profile"
+              "modificationPath": "profile"
             }
           ],
-          "id": "159be0b6-c707-4261-b407-7809155add99"
+          "id": "80b7e016-3fea-43e9-9a76-4134258d7897"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeFilterOnStructureDefinitionSnapshotElementFixed"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3142,19 +3463,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "codeFilter",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.codeFilter"
+              "modificationPath": "fixed.codeFilter"
             }
           ],
-          "id": "a169591d-581d-4d1c-9dd2-9c133f066c7c"
+          "id": "fb047bb5-8b3e-4e17-a559-eee73ac7e925"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementFixedDataSubject"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3163,19 +3486,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.data.subject.coding"
+              "modificationPath": "subject.coding"
             }
           ],
-          "id": "50d434df-be1f-4fef-aa1b-63094ec47f33"
+          "id": "f5c856ee-fe63-40a5-a2d3-7c8bbbb2a559"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMustSupportOnStructureDefinitionSnapshotElementPattern"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3184,19 +3509,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "mustSupport",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.mustSupport"
+              "modificationPath": "pattern.mustSupport"
             }
           ],
-          "id": "fb8ddf87-1490-46da-bca1-8a227256bc13"
+          "id": "40971cab-5bc0-4f4b-bb61-4a83d0c7fd3b"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDayOfWeekOnStructureDefinitionSnapshotElementFixedTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3205,19 +3532,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "dayOfWeek",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.timing.repeat.dayOfWeek"
+              "modificationPath": "fixed.timing.repeat.dayOfWeek"
             }
           ],
-          "id": "e1e2d6e9-f1d4-44fd-b827-eeaa334882cf"
+          "id": "61b027dc-3de5-41b1-a290-4db66c44d2cc"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddTimeOfDayOnStructureDefinitionSnapshotElementPatternTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3226,19 +3555,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "timeOfDay",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.timing.repeat.timeOfDay"
+              "modificationPath": "pattern.timing.repeat.timeOfDay"
             }
           ],
-          "id": "90a8c04a-f98d-4abb-8358-d8ac7924d99a"
+          "id": "78833ff1-0fab-460d-af17-ef1b3828b47b"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddWhenOnStructureDefinitionSnapshotElementPatternTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3247,19 +3578,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "when",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.timing.repeat.when"
+              "modificationPath": "pattern.timing.repeat.when"
             }
           ],
-          "id": "aa5b5cce-36ea-4fc1-a082-019f710298ee"
+          "id": "0c7c78a0-2976-4c76-8171-20439f287e07"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddSortOnStructureDefinitionSnapshotElementPattern"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3268,19 +3601,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "sort",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.sort"
+              "modificationPath": "pattern.sort"
             }
           ],
-          "id": "997deb39-84dc-4936-a6c7-ea3967011203"
+          "id": "3d395188-1a6b-46ea-b46e-f3007a1b43e9"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementPattern"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3289,19 +3624,44 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.coding"
+              "modificationPath": "pattern.coding"
             }
           ],
-          "id": "018a7acc-0a17-49fc-9214-a43a59c6f2f7"
+          "id": "9c43f178-3ed4-45e9-ad83-ba8492e87d10"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTargetProfileRefOnStructureDefinitionSnapshotElementType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TargetProfileRefOnStructureDefinitionSnapshotElementTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
+              "inputValueParameterName": "targetProfileRef",
+              "modificationPath": "targetProfileRef"
+            }
+          ],
+          "id": "4eb94b2b-a5fe-4233-a37e-2a015415e30c"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeFilterOnStructureDefinitionSnapshotElementDefaultValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3310,19 +3670,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "codeFilter",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.data.codeFilter"
+              "modificationPath": "codeFilter"
             }
           ],
-          "id": "0243d9d7-dfa4-4afb-9620-19e32ee1e0e6"
+          "id": "585d8922-c208-434d-a70b-10f35e271571"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDayOfWeekOnStructureDefinitionSnapshotElementDefaultValueTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3331,19 +3693,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "dayOfWeek",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.timing.repeat.dayOfWeek"
+              "modificationPath": "defaultValue.timing.repeat.dayOfWeek"
             }
           ],
-          "id": "b36a2664-eab9-47a5-8a74-cc75b62c69c8"
+          "id": "a1441a2f-ba90-453d-a627-870bc0f8bea9"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionSnapshotElementDefaultValueDataCodeFilter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3352,19 +3716,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.data.codeFilter.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "530ca979-6d49-47cf-af54-cc39b1b23ca8"
+          "id": "58edbdd1-9f0a-43d7-b8af-1e8303dce803"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddSortOnStructureDefinitionSnapshotElementExampleValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3373,19 +3739,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "sort",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.data.sort"
+              "modificationPath": "sort"
             }
           ],
-          "id": "2aa6fd7a-8ac6-4a42-a181-3b26d867f745"
+          "id": "af190d34-4168-498d-bf13-cd5bad715911"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementExampleValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3394,19 +3762,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.coding"
+              "modificationPath": "value.coding"
             }
           ],
-          "id": "c6332f44-3b39-4f7c-a35d-3c2d89ee9864"
+          "id": "62afbe71-e0ca-4f6f-b263-a697e88c005a"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeFilterOnStructureDefinitionSnapshotElementExampleValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3415,19 +3785,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "codeFilter",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.data.codeFilter"
+              "modificationPath": "codeFilter"
             }
           ],
-          "id": "104549cc-3c9c-418f-9500-2c09a5286aa7"
+          "id": "4280d16f-e556-4bc1-a59f-5fcb3e535967"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionSnapshotElementExampleValueCodeFilter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3436,19 +3808,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.codeFilter.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "c93001eb-3431-4ed9-a3e0-9f9fe260b71e"
+          "id": "6a94e025-3b9f-4c21-809a-4b3d8c6c1b81"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeFilterOnStructureDefinitionSnapshotElementPattern"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3457,19 +3831,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "codeFilter",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.codeFilter"
+              "modificationPath": "pattern.codeFilter"
             }
           ],
-          "id": "c4ec69c6-9f83-42cf-ae26-63cf24e60864"
+          "id": "72a01eb8-1878-49ec-b5ba-9a5d82805211"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeFilterOnStructureDefinitionSnapshotElementPatternData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3478,19 +3854,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "codeFilter",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.data.codeFilter"
+              "modificationPath": "codeFilter"
             }
           ],
-          "id": "dbdec7ff-9939-4bc0-b0d4-1153d85932cb"
+          "id": "9cae9213-3e11-429b-9d63-844bde20ffac"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementDefaultValueConcept"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3499,19 +3877,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.concept.coding"
+              "modificationPath": "defaultValue.concept.coding"
             }
           ],
-          "id": "1ad0d14c-13c1-400f-8c14-d670bf0f9baa"
+          "id": "85b3fd9b-6c43-4ca3-a65c-5a63a21920c6"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionSnapshotElementDefaultValueCodeFilter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3520,19 +3900,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.codeFilter.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "78345843-c3bc-4373-937d-651fd7c44fe6"
+          "id": "e148f754-89e1-4ef6-9198-738846310b73"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionSnapshotElementExampleValueDataCodeFilter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3541,19 +3923,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.data.codeFilter.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "b7be654b-840e-43ac-9d6d-ffdb228bf372"
+          "id": "0d836c6a-4d10-493a-ae2a-3b6c20a0590a"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddSortOnStructureDefinitionSnapshotElementDefaultValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3562,19 +3946,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "sort",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.data.sort"
+              "modificationPath": "sort"
             }
           ],
-          "id": "ab9d4811-35ed-45ce-b94b-e19d0fed0274"
+          "id": "cad643a0-064b-4124-ae10-bb6cc541cc27"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementFixedTimingCode"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3583,19 +3969,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.timing.code.coding"
+              "modificationPath": "fixed.timing.code.coding"
             }
           ],
-          "id": "fd865a85-d4ca-4b99-8233-fd5655535e19"
+          "id": "e53cdb77-ac8a-4141-8d3a-5e242c1804de"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementDefaultValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3604,19 +3992,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.coding"
+              "modificationPath": "defaultValue.coding"
             }
           ],
-          "id": "4c47e03a-4346-4529-aee3-8f72042e5490"
+          "id": "a6c98bb3-5b16-445d-80d4-7c45742a1da5"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddSortOnStructureDefinitionSnapshotElementFixedData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3625,19 +4015,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "sort",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.data.sort"
+              "modificationPath": "sort"
             }
           ],
-          "id": "d93ca166-763d-4937-b559-14a83651acfd"
+          "id": "1f761264-5b11-4135-8a0e-bf6a51c4cf9a"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionSnapshotElementPatternCodeFilter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3646,19 +4038,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.codeFilter.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "49fe693f-e275-482f-b182-87cf298b5ee9"
+          "id": "e6be7e2a-9c29-4b9a-9724-e4e63b45b803"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDateFilterOnStructureDefinitionSnapshotElementFixedData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3667,19 +4061,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "dateFilter",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.data.dateFilter"
+              "modificationPath": "dateFilter"
             }
           ],
-          "id": "1a98bc0b-f311-450c-afa1-5a188a4c4d50"
+          "id": "27c7d582-a0ea-4bff-9c43-b47950122aff"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddTimeOfDayOnStructureDefinitionSnapshotElementDefaultValueTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3688,19 +4084,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "timeOfDay",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.timing.repeat.timeOfDay"
+              "modificationPath": "defaultValue.timing.repeat.timeOfDay"
             }
           ],
-          "id": "2c5a4422-b326-437f-aaa1-5a37ae228c65"
+          "id": "5b166902-15f9-4bb7-98b6-0136770560eb"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionSnapshotElementDefaultValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3709,19 +4107,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.data.profile"
+              "modificationPath": "profile"
             }
           ],
-          "id": "c6bb77b8-e979-4442-a7e7-a6369693ae9b"
+          "id": "1783ee58-4405-4f95-bb55-03c7a1c36414"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionSnapshotElementPatternDataCodeFilter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3730,19 +4130,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.data.codeFilter.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "ce9d8150-5c53-41be-910e-11de51b010bd"
+          "id": "c2d5c0d2-6661-4c47-b68b-c6cc4987d5dd"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddEventOnStructureDefinitionSnapshotElementDefaultValueTiming"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3751,19 +4153,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "event",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.timing.event"
+              "modificationPath": "defaultValue.timing.event"
             }
           ],
-          "id": "cbc50d67-6e04-43ab-87bf-391c27ce95b7"
+          "id": "fc7aab7a-4ceb-4532-bc6e-0d7b08e6e693"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementDefaultValueDataSubject"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3772,19 +4176,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.data.subject.coding"
+              "modificationPath": "subject.coding"
             }
           ],
-          "id": "d4d0beda-8924-4910-8a74-4b278eada20a"
+          "id": "d8ffb551-7a75-41af-a479-18791fd58c03"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeFilterOnStructureDefinitionSnapshotElementDefaultValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3793,19 +4199,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "codeFilter",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.codeFilter"
+              "modificationPath": "defaultValue.codeFilter"
             }
           ],
-          "id": "8fce6c4e-ac8d-4c36-a7ee-8bd13a49c055"
+          "id": "4d17c224-db39-4ad3-bec1-fdd5c5ea9de1"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeFilterOnStructureDefinitionSnapshotElementFixedData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3814,19 +4222,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "codeFilter",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.data.codeFilter"
+              "modificationPath": "codeFilter"
             }
           ],
-          "id": "a15e3bf6-34e6-4283-9d0d-2873d1c1493e"
+          "id": "a8073c24-3513-4abc-8786-9369ff465cb5"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementFixedType"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3835,19 +4245,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.type.coding"
+              "modificationPath": "fixed.type.coding"
             }
           ],
-          "id": "0000f39e-d465-456b-a2bc-dabc25960f0d"
+          "id": "a4df9d5e-d308-40b7-9846-3a7bb1cc25ae"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDataOnStructureDefinitionSnapshotElementPattern"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3856,19 +4268,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "data",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.data"
+              "modificationPath": "pattern.data"
             }
           ],
-          "id": "fde76d57-5f79-488d-9a0d-287a331363d3"
+          "id": "f4e37f42-4a89-4089-ab20-474cb380866f"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionSnapshotElementPatternData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3877,19 +4291,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.data.profile"
+              "modificationPath": "profile"
             }
           ],
-          "id": "3a37450c-af69-419a-aa78-e3a1d8f91e4a"
+          "id": "de37e1dd-9c21-4ff1-95fa-2afc5671b60c"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionSnapshotElementExampleValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3898,19 +4314,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.data.profile"
+              "modificationPath": "profile"
             }
           ],
-          "id": "b628ce91-2bf3-4582-9f70-77c07000bca5"
+          "id": "425f922f-0054-4a84-a3fa-d61af82d9503"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionSnapshotElementPattern"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3919,19 +4337,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.profile"
+              "modificationPath": "pattern.profile"
             }
           ],
-          "id": "2fa221db-e5df-4296-b6d9-1834fd1db6bb"
+          "id": "1cbd505a-2bce-46ec-91b8-15d15ca9da54"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddTargetProfileOnStructureDefinitionSnapshotElementType"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3940,19 +4360,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
               "inputValueParameterName": "targetProfile",
-              "modificationPath": "StructureDefinition.snapshot.element.type.targetProfile"
+              "modificationPath": "targetProfile"
             }
           ],
-          "id": "a220e340-3f75-479b-b072-a2485c805c89"
+          "id": "24dab5f7-cd90-4c6c-9730-d42d2f1cbcd3"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMappingOnStructureDefinitionSnapshotElement"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3961,19 +4383,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "mapping",
-              "modificationPath": "StructureDefinition.snapshot.element.mapping"
+              "modificationPath": "mapping"
             }
           ],
-          "id": "dd747c13-ae03-46b3-b4c1-9b06e3aed642"
+          "id": "7a53d69a-1933-416e-a1cc-cd569ec65f77"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementExampleValueConcept"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -3982,19 +4406,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.concept.coding"
+              "modificationPath": "value.concept.coding"
             }
           ],
-          "id": "940618c6-babd-4889-8f81-990fec481eff"
+          "id": "fde479b5-f551-4a99-a5d4-167a3dd861cd"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeFilterOnStructureDefinitionSnapshotElementExampleValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4003,19 +4429,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "codeFilter",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.codeFilter"
+              "modificationPath": "value.codeFilter"
             }
           ],
-          "id": "0b728065-8bb0-48d6-baa7-414e3c334e40"
+          "id": "0a85f95e-af0f-4b8b-849e-2cb87d824245"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionSnapshotElementFixedData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4024,19 +4452,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.data.profile"
+              "modificationPath": "profile"
             }
           ],
-          "id": "f8ae6402-fe6b-45c1-9fc5-1615ad71ded6"
+          "id": "b0bdd46d-2cf7-43b0-b9de-c03de4978c96"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDayOfWeekOnStructureDefinitionSnapshotElementPatternTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4045,19 +4475,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "dayOfWeek",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.timing.repeat.dayOfWeek"
+              "modificationPath": "pattern.timing.repeat.dayOfWeek"
             }
           ],
-          "id": "cd7baf78-9031-4423-b92e-f1035b008055"
+          "id": "102a5ea3-1424-48be-898e-de1e9a5e6a88"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddSortOnStructureDefinitionSnapshotElementFixed"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4066,19 +4498,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "sort",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.sort"
+              "modificationPath": "fixed.sort"
             }
           ],
-          "id": "053b287f-3e55-4ac2-9a4c-f27eaa7ae7be"
+          "id": "08a53f62-bc49-4d6d-b5b1-6615410f3dfc"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddWhenOnStructureDefinitionSnapshotElementExampleValueTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4087,19 +4521,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "when",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.timing.repeat.when"
+              "modificationPath": "value.timing.repeat.when"
             }
           ],
-          "id": "8620d37b-6954-4ac0-8cf8-d6444ebcfee4"
+          "id": "cf420434-05af-4219-9cb0-ca35547780f4"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDateFilterOnStructureDefinitionSnapshotElementDefaultValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4108,19 +4544,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "dateFilter",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.data.dateFilter"
+              "modificationPath": "dateFilter"
             }
           ],
-          "id": "0b6bea21-87d1-451b-b914-8e87ec9ee0e7"
+          "id": "151572a1-039d-4d3c-95a4-461d4cfc5be4"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddElementOnStructureDefinitionSnapshot"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4129,19 +4567,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
               "inputValueParameterName": "element",
-              "modificationPath": "StructureDefinition.snapshot.element"
+              "modificationPath": "snapshot.element"
             }
           ],
-          "id": "06c9e0c1-e869-4ac4-b7ab-033e5d1c5c18"
+          "id": "f0525e80-77fc-462c-9d9a-94bedfa2c5fb"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementExampleValueDataSubject"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4150,19 +4590,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.data.subject.coding"
+              "modificationPath": "subject.coding"
             }
           ],
-          "id": "a9a6d7c9-c3d9-42c6-bf80-fc925233f0aa"
+          "id": "b138ef97-3966-460e-9b36-702d2e0ae344"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddConstraintOnStructureDefinitionSnapshotElement"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4171,19 +4613,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "constraint",
-              "modificationPath": "StructureDefinition.snapshot.element.constraint"
+              "modificationPath": "constraint"
             }
           ],
-          "id": "f393b734-6d15-46b4-8b30-1674f88f309a"
+          "id": "e3db9e4f-dcbf-4005-805e-a6a4d2b7ee12"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddEventOnStructureDefinitionSnapshotElementExampleValueTiming"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4192,19 +4636,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "event",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.timing.event"
+              "modificationPath": "value.timing.event"
             }
           ],
-          "id": "1379d957-941c-40d7-9ea7-56e4494fa447"
+          "id": "dea52b98-1c06-4f2c-b8d0-9277f5d8db52"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddProfileOnStructureDefinitionSnapshotElementFixed"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4213,19 +4659,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "profile",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.profile"
+              "modificationPath": "fixed.profile"
             }
           ],
-          "id": "1cc94ed1-e865-4548-bd87-07fe89e6a536"
+          "id": "3729cc17-6c25-4ca2-935d-39df506ebeff"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddConditionOnStructureDefinitionSnapshotElement"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4234,19 +4682,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "condition",
-              "modificationPath": "StructureDefinition.snapshot.element.condition"
+              "modificationPath": "condition"
             }
           ],
-          "id": "5acffad5-8d35-4e16-8c30-c5e665331b0a"
+          "id": "ff27f7af-1083-49be-a883-492227ce060a"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementFixed"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4255,19 +4705,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.coding"
+              "modificationPath": "fixed.coding"
             }
           ],
-          "id": "b4454f12-ef7a-48e2-8304-54b9ad8b3b06"
+          "id": "fc99d417-c66c-45df-bdc1-c41f2f9943e3"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDayOfWeekOnStructureDefinitionSnapshotElementExampleValueTimingRepeat"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4276,19 +4728,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "dayOfWeek",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.timing.repeat.dayOfWeek"
+              "modificationPath": "value.timing.repeat.dayOfWeek"
             }
           ],
-          "id": "e3979d5e-ff88-4413-a5a0-9135c8b0d20c"
+          "id": "d6646309-da1b-4943-b62f-673ab5a68fef"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddAliasOnStructureDefinitionSnapshotElement"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4297,19 +4751,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "alias",
-              "modificationPath": "StructureDefinition.snapshot.element.alias"
+              "modificationPath": "alias"
             }
           ],
-          "id": "34fc6855-e527-47d0-a146-fe3815a61245"
+          "id": "009c280a-b0ca-45ec-b45f-4aaf3a2c6fb4"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionSnapshotElement"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4318,19 +4774,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.snapshot.element.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "31988a06-9c4f-4c0b-b305-f4d99ed248a5"
+          "id": "57c82171-6e16-469c-b09a-7e3ab54a37f3"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddMustSupportOnStructureDefinitionSnapshotElementExampleValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4339,19 +4797,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "mustSupport",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.mustSupport"
+              "modificationPath": "value.mustSupport"
             }
           ],
-          "id": "6524f3ab-bbc1-4a7d-9e38-3c90fb3a0934"
+          "id": "7b4dcfae-99ea-44e9-be81-3a49498e172e"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodeOnStructureDefinitionSnapshotElementFixedDataCodeFilter"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4360,19 +4820,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
               "inputValueParameterName": "code",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.data.codeFilter.code"
+              "modificationPath": "code"
             }
           ],
-          "id": "554ececf-c064-4b41-9455-4d8a2b1324af"
+          "id": "2d7dbe6e-3c03-4ec3-8b19-f7a04a7103ae"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDataOnStructureDefinitionSnapshotElementExampleValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4381,19 +4843,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "data",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.data"
+              "modificationPath": "value.data"
             }
           ],
-          "id": "97d05142-00bf-4ff5-95e4-4860adf2d5af"
+          "id": "4db334d2-9695-4891-bde4-eb8935c06024"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDateFilterOnStructureDefinitionSnapshotElementPattern"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4402,19 +4866,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "dateFilter",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.dateFilter"
+              "modificationPath": "pattern.dateFilter"
             }
           ],
-          "id": "6eaf8735-25fb-4d32-8bbe-54d0fa22ece5"
+          "id": "74520391-853e-4032-9172-fa8dfddd0f0e"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementFixedSubject"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4423,19 +4889,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.fixed.subject.coding"
+              "modificationPath": "fixed.subject.coding"
             }
           ],
-          "id": "61c5fc38-46de-49d1-9683-d758dd3f65e4"
+          "id": "324bad42-a1cf-4b82-b55f-ba52a78c9f88"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddSortOnStructureDefinitionSnapshotElementExampleValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4444,19 +4912,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "sort",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.sort"
+              "modificationPath": "value.sort"
             }
           ],
-          "id": "7c0bbc6f-9cd2-4e23-9133-0b9d9d6a8e5a"
+          "id": "fb179e61-8d88-46cd-a517-24581eae9f1b"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddAggregationOnStructureDefinitionSnapshotElementType"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4465,19 +4935,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
               "inputValueParameterName": "aggregation",
-              "modificationPath": "StructureDefinition.snapshot.element.type.aggregation"
+              "modificationPath": "aggregation"
             }
           ],
-          "id": "34aaa0fe-4d04-46b2-ad7a-343f186cb531"
+          "id": "a211629c-40fd-4285-8c6f-04051e6f8eb8"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementPatternType"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4486,19 +4958,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.type.coding"
+              "modificationPath": "pattern.type.coding"
             }
           ],
-          "id": "2bba56f2-2a58-4e6d-aa4b-776326084a8f"
+          "id": "9550e096-0e99-4193-ad9b-0164d652b0ff"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddEventOnStructureDefinitionSnapshotElementPatternTiming"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4507,19 +4981,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "event",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.timing.event"
+              "modificationPath": "pattern.timing.event"
             }
           ],
-          "id": "5e56da87-68c6-46f4-a6ff-eee8e1cbecff"
+          "id": "a84281e9-dd9d-4b2a-a213-f6c75d49f0a9"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDateFilterOnStructureDefinitionSnapshotElementExampleValueData"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4528,19 +5004,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "dateFilter",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.data.dateFilter"
+              "modificationPath": "dateFilter"
             }
           ],
-          "id": "fb05a13f-5267-46e1-8f32-7330bd0d30de"
+          "id": "cc196371-35e6-424c-aa11-2ee1a8530fcd"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddDataOnStructureDefinitionSnapshotElementDefaultValue"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4549,19 +5027,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "data",
-              "modificationPath": "StructureDefinition.snapshot.element.defaultValue.data"
+              "modificationPath": "defaultValue.data"
             }
           ],
-          "id": "8a9eebe4-d543-4950-9d03-33316dc0230f"
+          "id": "aef8f62a-b9f5-471b-accf-a3aeeb493eea"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddRepresentationOnStructureDefinitionSnapshotElement"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4570,19 +5050,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
               "inputValueParameterName": "representation",
-              "modificationPath": "StructureDefinition.snapshot.element.representation"
+              "modificationPath": "representation"
             }
           ],
-          "id": "1436d9f4-6271-47e4-b793-922870125c83"
+          "id": "a4b8fbaa-830d-4a6f-98e1-75e677bdf48b"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementPatternDataSubject"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4591,19 +5073,21 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.pattern.data.subject.coding"
+              "modificationPath": "subject.coding"
             }
           ],
-          "id": "dc5f5786-0115-40d6-b8e4-76be1ad5c079"
+          "id": "262d31f5-b077-474d-91fd-a7061c3e7a03"
         }
       ]
     },
     {
+      "creationalPolicy": "never",
       "operation": {
         "id": "AddCodingOnStructureDefinitionSnapshotElementExampleValueSubject"
       },
-      "creationalPolicy": "never",
       "eventFactory": [
         {
           "event": {
@@ -4612,11 +5096,13 @@
           "modification": [
             {
               "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
               "inputValueParameterName": "coding",
-              "modificationPath": "StructureDefinition.snapshot.element.example.value.subject.coding"
+              "modificationPath": "value.subject.coding"
             }
           ],
-          "id": "9830517b-e0ef-4d8b-84ae-f2666587874c"
+          "id": "bd3d8227-b34d-4a14-89bd-23578660f9c8"
         }
       ]
     }
