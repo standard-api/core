@@ -92,7 +92,6 @@ public class GraphLoaderConfiguration {
   }
   
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryGenericSearchOptionResolver inMemoryGenericSearchOptionResolver(
       List<SearchOptionResolver<InMemorySearchResolvingContext>> searchOptionResolvers
   ) {
@@ -100,7 +99,6 @@ public class GraphLoaderConfiguration {
   }
   
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryAscendingSortResolver inMemoryAscendingSortResolver(
       StructureSchemaFinder structureSchemaFinder,
       @Lazy InMemoryGraphLoader inMemoryGraphLoader
@@ -112,7 +110,6 @@ public class GraphLoaderConfiguration {
   }
 
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryDescendingSortResolver inMemoryDescendingSortResolver(
       StructureSchemaFinder structureSchemaFinder,
       @Lazy InMemoryGraphLoader inMemoryGraphLoader
@@ -124,7 +121,6 @@ public class GraphLoaderConfiguration {
   }
   
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryOffsetPaginationResolver inMemoryOffsetPaginationResolver(
       StructureSchemaFinder structureSchemaFinder
   ) {
@@ -132,7 +128,6 @@ public class GraphLoaderConfiguration {
   }
   
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public GenericInMemoryFilterOptionResolver genericInMemoryFilterOptionResolver(
       @Lazy List<InMemoryFilterResolver> inMemoryFilterResolvers
   ) {
@@ -140,7 +135,6 @@ public class GraphLoaderConfiguration {
   }
   
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryAndFilterResolver inMemoryAndFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       GenericInMemoryFilterOptionResolver genericInMemoryFilterOptionResolver
@@ -149,7 +143,6 @@ public class GraphLoaderConfiguration {
   }
 
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryOrFilterResolver inMemoryOrFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       GenericInMemoryFilterOptionResolver genericInMemoryFilterOptionResolver
@@ -158,7 +151,6 @@ public class GraphLoaderConfiguration {
   }
 
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryNotFilterResolver inMemoryNotFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       GenericInMemoryFilterOptionResolver genericInMemoryFilterOptionResolver
@@ -167,7 +159,6 @@ public class GraphLoaderConfiguration {
   }
   
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryAllMatchFilterResolver inMemoryAllMatchFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       GenericInMemoryFilterOptionResolver genericInMemoryFilterOptionResolver,
@@ -181,7 +172,6 @@ public class GraphLoaderConfiguration {
   }
 
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryAnyMatchFilterResolver inMemoryAnyMatchFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       GenericInMemoryFilterOptionResolver genericInMemoryFilterOptionResolver,
@@ -195,7 +185,6 @@ public class GraphLoaderConfiguration {
   }
 
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryNoneMatchFilterResolver inMemoryNoneMatchFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       GenericInMemoryFilterOptionResolver genericInMemoryFilterOptionResolver,
@@ -209,7 +198,6 @@ public class GraphLoaderConfiguration {
   }
   
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryContainsFilterResolver inMemoryContainsFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       @Lazy InMemoryGraphLoader inMemoryGraphLoader
@@ -221,7 +209,6 @@ public class GraphLoaderConfiguration {
   }
 
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryEndsWithFilterResolver inMemoryEndsWithFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       @Lazy InMemoryGraphLoader inMemoryGraphLoader
@@ -233,7 +220,6 @@ public class GraphLoaderConfiguration {
   }
 
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryEqualsFilterResolver inMemoryEqualsFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       @Lazy InMemoryGraphLoader inMemoryGraphLoader
@@ -245,7 +231,6 @@ public class GraphLoaderConfiguration {
   }
 
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryGreaterThanFilterResolver inMemoryGreaterThanFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       @Lazy InMemoryGraphLoader inMemoryGraphLoader
@@ -257,7 +242,6 @@ public class GraphLoaderConfiguration {
   }
 
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryGreaterThanOrEqualsFilterResolver inMemoryGreaterThanOrEqualsFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       @Lazy InMemoryGraphLoader inMemoryGraphLoader
@@ -269,7 +253,6 @@ public class GraphLoaderConfiguration {
   }
 
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryIsNullFilterResolver inMemoryIsNullFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       @Lazy InMemoryGraphLoader inMemoryGraphLoader
@@ -281,7 +264,6 @@ public class GraphLoaderConfiguration {
   }
 
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryLowerThanFilterResolver inMemoryLowerThanFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       @Lazy InMemoryGraphLoader inMemoryGraphLoader
@@ -293,7 +275,6 @@ public class GraphLoaderConfiguration {
   }
 
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryLowerThanOrEqualFilterResolver inMemoryLowerThanOrEqualFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       @Lazy InMemoryGraphLoader inMemoryGraphLoader
@@ -305,7 +286,6 @@ public class GraphLoaderConfiguration {
   }
 
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryNotNullFilterResolver inMemoryNotNullFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       @Lazy InMemoryGraphLoader inMemoryGraphLoader
@@ -317,7 +297,6 @@ public class GraphLoaderConfiguration {
   }
 
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryNotEqualsFilterResolver inMemoryNotEqualsFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       @Lazy InMemoryGraphLoader inMemoryGraphLoader
@@ -329,7 +308,6 @@ public class GraphLoaderConfiguration {
   }
 
   @Bean
-  @ConditionalOnBean(InMemoryGraphLoader.class)
   public InMemoryStartsWithFilterResolver inMemoryStartsWithFilterResolver(
       StructureSchemaFinder structureSchemaFinder,
       @Lazy InMemoryGraphLoader inMemoryGraphLoader
