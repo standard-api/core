@@ -22,9 +22,12 @@ import java.util.ArrayList;
 import java.util.List;
 import org.approvaltests.Approvals;
 import org.approvaltests.core.Options;
+import org.approvaltests.reporters.JunitReporter;
+import org.approvaltests.reporters.UseReporter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.function.Executable;
 
+@UseReporter(JunitReporter.class)
 public abstract class AbstractUnitTestCase implements FixtureFileLoadableTestTrait {
 
   private final TextAttributeContainerRenderer textAttributeContainerRenderer =
