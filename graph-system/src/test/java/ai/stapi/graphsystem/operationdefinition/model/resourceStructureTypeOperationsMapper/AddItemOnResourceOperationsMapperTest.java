@@ -203,4 +203,15 @@ class AddItemOnResourceOperationsMapperTest extends SystemSchemaIntegrationTestC
         RenderFeature.RENDER_GETTERS
     );
   }
+
+  @Test
+  void itCanDealWithContentReference() throws CannotProvideStructureSchema {
+    var input = this.schemaProvider.provideSpecific("ValueSet");
+    var actual = this.mapper.map((ResourceStructureType) input);
+    this.thenObjectApproved(
+        actual,
+        RenderFeature.SORT_FIELDS,
+        RenderFeature.RENDER_GETTERS
+    );
+  }
 }

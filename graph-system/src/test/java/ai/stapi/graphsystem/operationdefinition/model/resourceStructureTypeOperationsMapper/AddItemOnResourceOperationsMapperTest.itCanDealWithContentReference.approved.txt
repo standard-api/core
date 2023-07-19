@@ -1,0 +1,500 @@
+{
+  "newParameters" : [ ],
+  "operations" : [ {
+    "id" : "AddIdentifierOnValueSet",
+    "code" : "AddIdentifierOnValueSet",
+    "description" : "Generated command for adding identifier(Identifier) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Identifier on ValueSet",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "identifier",
+      "type" : "Identifier",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.identifier"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  }, {
+    "id" : "AddJurisdictionOnValueSet",
+    "code" : "AddJurisdictionOnValueSet",
+    "description" : "Generated command for adding jurisdiction(CodeableConcept) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Jurisdiction on ValueSet",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "jurisdiction",
+      "type" : "CodeableConcept",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.jurisdiction"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  }, {
+    "id" : "AddContactOnValueSet",
+    "code" : "AddContactOnValueSet",
+    "description" : "Generated command for adding contact(ContactDetail) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Contact on ValueSet",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "contact",
+      "type" : "ContactDetail",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.contact"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  }, {
+    "id" : "AddUseContextOnValueSet",
+    "code" : "AddUseContextOnValueSet",
+    "description" : "Generated command for adding useContext(UsageContext) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add UseContext on ValueSet",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "useContext",
+      "type" : "UsageContext",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.useContext"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  }, {
+    "id" : "AddCodingOnValueSetIdentifierType",
+    "code" : "AddCodingOnValueSetIdentifierType",
+    "description" : "Generated command for adding coding(Coding) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Coding on ValueSet.identifier.type",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "coding",
+      "type" : "Coding",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.identifier.type.coding"
+      } ],
+      "targetProfileRef" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "identifierId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.identifier.id"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  }, {
+    "id" : "AddCodingOnValueSetJurisdiction",
+    "code" : "AddCodingOnValueSetJurisdiction",
+    "description" : "Generated command for adding coding(Coding) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Coding on ValueSet.jurisdiction",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "coding",
+      "type" : "Coding",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.jurisdiction.coding"
+      } ],
+      "targetProfileRef" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "jurisdictionId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.jurisdiction.id"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  }, {
+    "id" : "AddParameterOnValueSetExpansion",
+    "code" : "AddParameterOnValueSetExpansion",
+    "description" : "Generated command for adding parameter(ValueSetExpansionParameter) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Parameter on ValueSet.expansion",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "parameter",
+      "type" : "ValueSetExpansionParameter",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.expansion.parameter"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  }, {
+    "id" : "AddDesignationOnValueSetExpansionContains",
+    "code" : "AddDesignationOnValueSetExpansionContains",
+    "description" : "Generated command for adding designation(ValueSetComposeIncludeConceptDesignation) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Designation on ValueSet.expansion.contains",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "designation",
+      "type" : "ValueSetComposeIncludeConceptDesignation",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.expansion.contains.designation"
+      } ],
+      "targetProfileRef" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "containsId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.expansion.contains.id"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  }, {
+    "id" : "AddContainsOnValueSetExpansion",
+    "code" : "AddContainsOnValueSetExpansion",
+    "description" : "Generated command for adding contains(ValueSetExpansionContains) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Contains on ValueSet.expansion",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "contains",
+      "type" : "ValueSetExpansionContains",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.expansion.contains"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  }, {
+    "id" : "AddContainsOnValueSetExpansionContains",
+    "code" : "AddContainsOnValueSetExpansionContains",
+    "description" : "Generated command for adding contains(ValueSetExpansionContains) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Contains on ValueSet.expansion.contains",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "contains",
+      "type" : "ValueSetExpansionContains",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.expansion.contains.contains"
+      } ],
+      "targetProfileRef" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "containsId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.expansion.contains.id"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  }, {
+    "id" : "AddConceptOnValueSetComposeInclude",
+    "code" : "AddConceptOnValueSetComposeInclude",
+    "description" : "Generated command for adding concept(ValueSetComposeIncludeConcept) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Concept on ValueSet.compose.include",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "concept",
+      "type" : "ValueSetComposeIncludeConcept",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.compose.include.concept"
+      } ],
+      "targetProfileRef" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "includeId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.compose.include.id"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  }, {
+    "id" : "AddFilterOnValueSetComposeInclude",
+    "code" : "AddFilterOnValueSetComposeInclude",
+    "description" : "Generated command for adding filter(ValueSetComposeIncludeFilter) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Filter on ValueSet.compose.include",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "filter",
+      "type" : "ValueSetComposeIncludeFilter",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.compose.include.filter"
+      } ],
+      "targetProfileRef" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "includeId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.compose.include.id"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  }, {
+    "id" : "AddIncludeOnValueSetCompose",
+    "code" : "AddIncludeOnValueSetCompose",
+    "description" : "Generated command for adding include(ValueSetComposeInclude) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Include on ValueSet.compose",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "include",
+      "type" : "ValueSetComposeInclude",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.compose.include"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  }, {
+    "id" : "AddValueSetOnValueSetComposeInclude",
+    "code" : "AddValueSetOnValueSetComposeInclude",
+    "description" : "Generated command for adding valueSet(canonical) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add ValueSet on ValueSet.compose.include",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "valueSet",
+      "type" : "canonical",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.compose.include.valueSet"
+      } ],
+      "targetProfileRef" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "includeId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.compose.include.id"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  }, {
+    "id" : "AddDesignationOnValueSetComposeIncludeConcept",
+    "code" : "AddDesignationOnValueSetComposeIncludeConcept",
+    "description" : "Generated command for adding designation(ValueSetComposeIncludeConceptDesignation) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Designation on ValueSet.compose.include.concept",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "designation",
+      "type" : "ValueSetComposeIncludeConceptDesignation",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.compose.include.concept.designation"
+      } ],
+      "targetProfileRef" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "conceptId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.compose.include.concept.id"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  }, {
+    "id" : "AddExcludeOnValueSetCompose",
+    "code" : "AddExcludeOnValueSetCompose",
+    "description" : "Generated command for adding exclude(ValueSetComposeInclude) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Exclude on ValueSet.compose",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "exclude",
+      "type" : "ValueSetComposeInclude",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.compose.exclude"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  }, {
+    "id" : "AddTelecomOnValueSetContact",
+    "code" : "AddTelecomOnValueSetContact",
+    "description" : "Generated command for adding telecom(ContactPoint) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Telecom on ValueSet.contact",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "telecom",
+      "type" : "ContactPoint",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.contact.telecom"
+      } ],
+      "targetProfileRef" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "contactId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.contact.id"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  }, {
+    "id" : "AddCodingOnValueSetUseContextValue",
+    "code" : "AddCodingOnValueSetUseContextValue",
+    "description" : "Generated command for adding coding(Coding) on ValueSet Aggregate",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Add Coding on ValueSet.useContext.value",
+    "status" : "draft",
+    "system" : false,
+    "type" : false,
+    "parameter" : [ {
+      "max" : "*",
+      "min" : 1,
+      "name" : "coding",
+      "type" : "Coding",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.useContext.value.coding"
+      } ],
+      "targetProfileRef" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 1,
+      "name" : "useContextId",
+      "type" : "id",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ValueSet.useContext.id"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ValueSet" ]
+  } ]
+}

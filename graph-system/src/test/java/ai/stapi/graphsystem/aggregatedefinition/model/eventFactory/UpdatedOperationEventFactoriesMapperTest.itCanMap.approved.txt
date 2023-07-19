@@ -16,15 +16,15 @@
     "destinationIndexParameterName" : null
   }, {
     "startIdParameterName" : null,
-    "inputValueParameterName" : "description",
-    "kind" : "replace",
-    "modificationPath" : "description",
-    "destinationIndexParameterName" : null
-  }, {
-    "startIdParameterName" : null,
     "inputValueParameterName" : "implicitRules",
     "kind" : "replace",
     "modificationPath" : "implicitRules",
+    "destinationIndexParameterName" : null
+  }, {
+    "startIdParameterName" : null,
+    "inputValueParameterName" : "description",
+    "kind" : "replace",
+    "modificationPath" : "description",
     "destinationIndexParameterName" : null
   }, {
     "startIdParameterName" : null,

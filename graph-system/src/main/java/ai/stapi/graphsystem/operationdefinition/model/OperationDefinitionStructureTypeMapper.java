@@ -15,6 +15,7 @@ import java.util.Map;
 import java.util.stream.Stream;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class OperationDefinitionStructureTypeMapper {
 
@@ -32,9 +33,9 @@ public class OperationDefinitionStructureTypeMapper {
     var operationName = operationDefinition.getId();
     var parameterGroups = this.createParameterGroups(operationDefinition);
     var fakeFields = new HashMap<String, FieldDefinition>();
-    parameterGroups.forEach((fieldName, parameters) -> {
+    parameterGroups.forEach((parameterGroupIdentifier, parameters) -> {
       var anyParameter = parameters.get(0);
-      var finalFieldName = parameters.size() == 1 ? anyParameter.getName() : fieldName;
+      var finalFieldName = parameters.size() == 1 ? anyParameter.getName() : parameterGroupIdentifier.fieldName();
       var fakeField = new FieldDefinitionWithSource(
           finalFieldName,
           anyParameter.getMin(),
@@ -62,10 +63,10 @@ public class OperationDefinitionStructureTypeMapper {
     );
   }
 
-  private Map<String, List<OperationDefinitionDTO.ParameterDTO>> createParameterGroups(
+  private Map<ParameterGroupIdentifier, List<OperationDefinitionDTO.ParameterDTO>> createParameterGroups(
       OperationDefinitionDTO operationDefinition
   ) {
-    var parameterGroups = new HashMap<String, List<OperationDefinitionDTO.ParameterDTO>>();
+    var parameterGroups = new HashMap<ParameterGroupIdentifier, List<OperationDefinitionDTO.ParameterDTO>>();
     operationDefinition.getParameter().forEach(parameter -> {
       if (!parameter.getUse().equals("in")) {
         return;
@@ -75,10 +76,14 @@ public class OperationDefinitionStructureTypeMapper {
           parameterName,
           StringUtils.capitalize(parameter.getType())
       );
-      var parameters = parameterGroups.getOrDefault(fieldName, new ArrayList<>());
+      var referencedFrom = parameter.getReferencedFrom();
+      var source = referencedFrom.size() > 0 ? referencedFrom.get(0).getSource() : null;
+      var key = new ParameterGroupIdentifier(fieldName, source);
+      var parameters = parameterGroups.getOrDefault(key, new ArrayList<>());
       parameters.add(parameter);
-      parameterGroups.put(fieldName, parameters);
+      parameterGroups.put(key, parameters);
     });
+
     return parameterGroups;
   }
 
@@ -114,11 +119,12 @@ public class OperationDefinitionStructureTypeMapper {
     AbstractStructureType structure;
     try {
       structure = this.structureSchemaProvider.provideSpecific(type);
-    } catch (CannotProvideStructureSchema e) {
+    } catch (CannotProvideStructureSchema exception) {
       throw new CannotMapOperationDefinitionToStructureType(
           operationName,
           parameterDTO.getName(),
-          type, e
+          type,
+          exception
       );
     }
     if (structure instanceof PrimitiveStructureType && isInUnion) {
@@ -129,8 +135,32 @@ public class OperationDefinitionStructureTypeMapper {
           )
       );
     }
-    return Stream.of(
-        new FieldType(type, type)
-    );
+    return Stream.of(new FieldType(type, type));
+  }
+
+  private record ParameterGroupIdentifier(String fieldName, @Nullable String referencedFrom) {
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (!(o instanceof ParameterGroupIdentifier that)) {
+        return false;
+      }
+
+      if (!fieldName().equals(that.fieldName())) {
+        return false;
+      }
+      return referencedFrom() != null ? referencedFrom().equals(that.referencedFrom()) :
+          that.referencedFrom() == null;
+    }
+
+    @Override
+    public int hashCode() {
+      int result = fieldName().hashCode();
+      result = 31 * result + (referencedFrom() != null ? referencedFrom().hashCode() : 0);
+      return result;
+    }
   }
 }

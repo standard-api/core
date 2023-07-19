@@ -40,15 +40,15 @@
     "destinationIndexParameterName" : null
   }, {
     "startIdParameterName" : null,
-    "inputValueParameterName" : "command",
-    "kind" : "add",
-    "modificationPath" : "command",
-    "destinationIndexParameterName" : null
-  }, {
-    "startIdParameterName" : null,
     "inputValueParameterName" : "structure",
     "kind" : "add",
     "modificationPath" : "structure",
+    "destinationIndexParameterName" : null
+  }, {
+    "startIdParameterName" : null,
+    "inputValueParameterName" : "command",
+    "kind" : "add",
+    "modificationPath" : "command",
     "destinationIndexParameterName" : null
   } ]
 } ]

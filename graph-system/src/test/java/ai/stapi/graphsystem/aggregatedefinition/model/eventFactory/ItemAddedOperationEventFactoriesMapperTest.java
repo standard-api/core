@@ -94,6 +94,49 @@ class ItemAddedOperationEventFactoriesMapperTest extends SystemSchemaIntegration
     this.thenObjectApproved(actual);
   }
 
+  @Test
+  public void itCanDealWithContentReference() throws JsonProcessingException {
+    var inputJson = """
+        {
+          "id" : "AddContainsOnValueSetExpansionContains",
+          "code" : "AddContainsOnValueSetExpansionContains",
+          "description" : "Generated command for adding contains(ValueSetExpansionContains) on ValueSet Aggregate",
+          "instance" : true,
+          "kind" : "operation",
+          "name" : "Add Contains on ValueSet.expansion.contains",
+          "status" : "draft",
+          "system" : false,
+          "type" : false,
+          "parameter" : [ {
+            "max" : "*",
+            "min" : 1,
+            "name" : "contains",
+            "type" : "ValueSetExpansionContains",
+            "use" : "in",
+            "referencedFrom" : [ {
+              "source" : "ValueSet.expansion.contains.contains"
+            } ],
+            "targetProfileRef" : [ ]
+          }, {
+            "max" : "1",
+            "min" : 1,
+            "name" : "containsId",
+            "type" : "id",
+            "use" : "in",
+            "referencedFrom" : [ {
+              "source" : "ValueSet.expansion.contains.id"
+            } ],
+            "targetProfileRef" : [ ]
+          } ],
+          "resource" : [ "ValueSet" ]
+        }
+        """;
+
+    var input = this.objectMapper.readValue(inputJson, OperationDefinitionDTO.class);
+    var actual = this.mapper.map(input);
+    this.thenObjectApproved(actual);
+  }
+
   private void testMapper(String operationName) {
     var input = this.provider.provide(operationName);
     var actual = this.mapper.map(input);

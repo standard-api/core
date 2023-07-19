@@ -1,0 +1,18 @@
+[ {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "event" : {
+    "id" : "ContainsOnValueSetExpansionContainsAdded",
+    "description" : "Generated Event for adding on ValueSet.",
+    "name" : "Contains on ValueSetExpansionContains Added",
+    "type" : {
+      "id" : "ValueSet"
+    }
+  },
+  "modification" : [ {
+    "startIdParameterName" : "containsId",
+    "inputValueParameterName" : "contains",
+    "kind" : "add",
+    "modificationPath" : "contains",
+    "destinationIndexParameterName" : null
+  } ]
+} ]
