@@ -1,0 +1,46 @@
+nodes:
+	node_type: Parameters
+	node_hash: 949D8
+	node_edges:
+		Parameters -> parameter -> ParametersParameter (949D8 -> 33EE9 -> DCF4A)
+		Parameters -> parameter -> ParametersParameter (949D8 -> 49018 -> 3CFEA)
+		Parameters -> parameter -> ParametersParameter (949D8 -> 54FD3 -> EDE4F)
+	attributes:
+		language -> cz
+
+	node_type: ParametersParameter
+	node_hash: 3CFEA
+	node_edges:
+		Parameters -> parameter -> ParametersParameter (949D8 -> 49018 -> 3CFEA)
+	attributes:
+		name -> someParameterName2
+
+	node_type: ParametersParameter
+	node_hash: DCF4A
+	node_edges:
+		Parameters -> parameter -> ParametersParameter (949D8 -> 33EE9 -> DCF4A)
+	attributes:
+		name -> someParameterName3
+
+	node_type: ParametersParameter
+	node_hash: EDE4F
+	node_edges:
+		Parameters -> parameter -> ParametersParameter (949D8 -> 54FD3 -> EDE4F)
+	attributes:
+		name -> someParameterName1
+
+edges:
+	edge_type: parameter
+	edge_hash: 33EE9
+	Parameters -> parameter -> ParametersParameter (949D8 -> 33EE9 -> DCF4A)
+	attributes:
+
+	edge_type: parameter
+	edge_hash: 49018
+	Parameters -> parameter -> ParametersParameter (949D8 -> 49018 -> 3CFEA)
+	attributes:
+
+	edge_type: parameter
+	edge_hash: 54FD3
+	Parameters -> parameter -> ParametersParameter (949D8 -> 54FD3 -> EDE4F)
+	attributes:

@@ -1,7 +1,7 @@
 package ai.stapi.graphsystem.aggregategraphstatemodifier.exceptions;
 
-import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification;
+import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.schema.structureSchema.ComplexStructureType;
 import java.util.Arrays;
 import java.util.List;
@@ -180,6 +180,53 @@ public class CannotAddToAggregateState extends RuntimeException {
     );
   }
 
+  public static CannotAddToAggregateState becauseThereIsNoNodeWithIdSpecifiedAtStartIdParameterName(
+      EventFactoryModification modificationDefinition,
+      ComplexStructureType operationStructureType,
+      String sourcePathOfId,
+      UniqueIdentifier id,
+      String startIdParameterName
+  ) {
+    return new CannotAddToAggregateState(
+        String.format(
+            "there is no node with id specified at start id parameter name.%n" +
+                "Operation name: '%s'%nNode path: '%s'%nId: '%s'%nModification kind: '%s'%n"
+                + "Start id parameter name: '%s'",
+            operationStructureType.getDefinitionType(),
+            sourcePathOfId,
+            id.getId(),
+            modificationDefinition.getKind(),
+            startIdParameterName
+        )
+    );
+  }
+
+  public static CannotAddToAggregateState becauseThereIsNoSourcePathAtStartIdParameterName(
+      EventFactoryModification modificationDefinition,
+      ComplexStructureType operationStructureType,
+      UniqueIdentifier id,
+      String startIdParameterName
+  ) {
+    return new CannotAddToAggregateState(
+        String.format(
+            "there is no node with source path specified at start id parameter name.%n" +
+                "Operation name: '%s'%nId: '%s'%nModification kind: '%s'%n"
+                + "Start id parameter name: '%s'",
+            operationStructureType.getDefinitionType(),
+            id.getId(),
+            modificationDefinition.getKind(),
+            startIdParameterName
+        )
+    );
+  }
+
+  public static CannotAddToAggregateState becauseThereIsNoIdInCommandAtStartIdParameterName() {
+    return new CannotAddToAggregateState(
+        "there is no id in command at start id parameter name. " +
+            "Should not ever happen, bcs validator already should prevent this."
+    );
+  }
+
   public static CannotAddToAggregateState becauseThereAreEdgesOnPathEvenThoughtThereShouldBeMaxOne(
       EventFactoryModification modificationDefinition,
       ComplexStructureType operationDefinition,
@@ -211,6 +258,25 @@ public class CannotAddToAggregateState extends RuntimeException {
             multipleEdgesPath,
             modificationDefinition.getKind(),
             modificationDefinition.getModificationPath()
+        )
+    );
+  }
+
+  public static CannotAddToAggregateState becauseStartIdIsNotOfCorrectFormat(
+      String startIdValue,
+      String startIdParameterName,
+      EventFactoryModification modificationDefinition,
+      ComplexStructureType operationStructureType
+  ) {
+    return new CannotAddToAggregateState(
+        String.format(
+            "start id found at start id parameter name is not of correct format (Id/Type).%n" +
+                "Operation name: '%s'%%nModification kind: '%s'%n"
+                + "Start id parameter name: '%s' Start id value: %s",
+            operationStructureType.getDefinitionType(),
+            modificationDefinition.getKind(),
+            startIdParameterName,
+            startIdValue
         )
     );
   }

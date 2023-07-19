@@ -1,0 +1,60 @@
+nodes:
+	node_type: Coding
+	node_hash: D6FDB
+	node_edges:
+		ParametersParameter -> value -> Coding (16E08 -> 6C6DE -> D6FDB)
+	attributes:
+		code -> SomeCode
+
+	node_type: Parameters
+	node_hash: 62A27
+	node_edges:
+		Parameters -> parameter -> ParametersParameter (62A27 -> 4D2D8 -> 16E08)
+		Parameters -> parameter -> ParametersParameter (62A27 -> E3687 -> D8096)
+		Parameters -> parameter -> ParametersParameter (62A27 -> ECD43 -> 646DF)
+	attributes:
+		language -> cz
+
+	node_type: ParametersParameter
+	node_hash: 16E08
+	node_edges:
+		Parameters -> parameter -> ParametersParameter (62A27 -> 4D2D8 -> 16E08)
+		ParametersParameter -> value -> Coding (16E08 -> 6C6DE -> D6FDB)
+	attributes:
+		name -> anotherParameterWithUnionName
+
+	node_type: ParametersParameter
+	node_hash: 646DF
+	node_edges:
+		Parameters -> parameter -> ParametersParameter (62A27 -> ECD43 -> 646DF)
+	attributes:
+		name -> basicParameterName
+
+	node_type: ParametersParameter
+	node_hash: D8096
+	node_edges:
+		Parameters -> parameter -> ParametersParameter (62A27 -> E3687 -> D8096)
+	attributes:
+		name -> parameterWithUnionName
+		value -> SomeValue
+
+edges:
+	edge_type: parameter
+	edge_hash: 4D2D8
+	Parameters -> parameter -> ParametersParameter (62A27 -> 4D2D8 -> 16E08)
+	attributes:
+
+	edge_type: parameter
+	edge_hash: E3687
+	Parameters -> parameter -> ParametersParameter (62A27 -> E3687 -> D8096)
+	attributes:
+
+	edge_type: parameter
+	edge_hash: ECD43
+	Parameters -> parameter -> ParametersParameter (62A27 -> ECD43 -> 646DF)
+	attributes:
+
+	edge_type: value
+	edge_hash: 6C6DE
+	ParametersParameter -> value -> Coding (16E08 -> 6C6DE -> D6FDB)
+	attributes:

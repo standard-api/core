@@ -1,6 +1,7 @@
 package ai.stapi.graphsystem.aggregategraphstatemodifier;
 
 import ai.stapi.graph.Graph;
+import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.GraphDescriptionBuilder;
@@ -62,31 +63,18 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
     var inputValue = command.getData().get(inputValueParameterName);
     if (inputValue == null) {
       return new GraphMappingResult(
-          new Graph(),
+          new Graph(new Node(command.getTargetIdentifier(), aggregateType)),
           List.of()
       );
     }
-    var resourceStructureType = (ResourceStructureType) this.structureSchemaFinder.getStructureType(
-        aggregateType
-    );
+    
     var modificationPath = modificationDefinition.getModificationPath();
     var splitPath = modificationPath.split("\\.");
-    var closestListNodePaths = this.findClosestListNodePaths(
-        resourceStructureType,
-        new String[] {aggregateType},
-        Arrays.copyOfRange(splitPath, 1, splitPath.length),
-        operationStructureType,
-        modificationDefinition
-    );
-    if (closestListNodePaths instanceof ErrorFindClosestListNodePathsOutput error) {
-      throw error.getError();
-    }
-    var successOutput = (HappyFindClosestListNodePathsOutput) closestListNodePaths;
-    var closestListPath = successOutput.getPathsAndTypes().toList().get(0);
     var aggregateRepo = currentAggregateState.traversable();
-
+    var startIdParameterName = modificationDefinition.getStartIdParameterName();
+    
     TraversableNode traversingStartNode;
-    if (closestListPath.getPath().length <= 1) {
+    if (startIdParameterName == null) {
       var aggregateId = command.getTargetIdentifier();
       if (aggregateRepo.nodeExists(aggregateId, aggregateType)) {
         traversingStartNode = aggregateRepo.loadNode(aggregateId, aggregateType);
@@ -94,23 +82,37 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
         traversingStartNode = new TraversableNode(aggregateId, aggregateType);
       }
     } else {
-      traversingStartNode = this.getTraversingStart(
-          command,
-          modificationDefinition,
-          operationStructureType,
-          closestListPath,
-          aggregateRepo
+      var startIdValue = command.getData().get(startIdParameterName);
+      if (!(startIdValue instanceof String stringStartId) ) {
+        throw CannotAddToAggregateState.becauseThereIsNoIdInCommandAtStartIdParameterName();
+      }
+      if (!stringStartId.contains("/")) {
+        throw CannotAddToAggregateState.becauseStartIdIsNotOfCorrectFormat(
+            stringStartId,
+            startIdParameterName,
+            modificationDefinition,
+            operationStructureType
+        );
+      }
+      var splitId = stringStartId.split("/");
+      if (splitId.length != 2) {
+        throw CannotAddToAggregateState.becauseStartIdIsNotOfCorrectFormat(
+            stringStartId,
+            startIdParameterName,
+            modificationDefinition,
+            operationStructureType
+        );
+      }
+      traversingStartNode = aggregateRepo.loadNode(
+          new UniqueIdentifier(splitId[0]),
+          splitId[1]
       );
     }
 
     var modifiedNode = this.traverseToModifiedNode(
         traversingStartNode,
-        Arrays.copyOfRange(
-            splitPath,
-            closestListPath.getPath().length,
-            splitPath.length
-        ),
-        Arrays.stream(closestListPath.getPath()).toList(),
+        modificationPath.split("\\."),
+        List.of(),
         operationStructureType,
         modificationDefinition
     );
@@ -168,8 +170,7 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
                 inputValueSchema.getParentDefinitionType()
             )
         );
-        var primitiveOgmBuilder = new GenericOGMBuilder()
-            .copyGraphMappingAsBuilder(primitiveOgm);
+        var primitiveOgmBuilder = new GenericOGMBuilder().copyGraphMappingAsBuilder(primitiveOgm);
         dataField.setOgmBuilder(primitiveOgmBuilder);
       }
     }
@@ -188,80 +189,6 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
   @Override
   public boolean supports(EventFactoryModification modificationDefinition) {
     return modificationDefinition.getKind().equals(EventFactoryModification.ADD);
-  }
-
-  private FindClosestListNodePathsOutput findClosestListNodePaths(
-      ComplexStructureType currentStructure,
-      String[] lastPathToList,
-      String[] pathToTraverse,
-      ComplexStructureType operationDefinition,
-      EventFactoryModification modificationDefinition
-  ) {
-    var currentLastPathToList = lastPathToList;
-    if (pathToTraverse.length < 2) {
-      return new HappyFindClosestListNodePathsOutput(
-          Stream.of(
-              new PathAndType(lastPathToList, currentStructure.getDefinitionType())
-          )
-      );
-    }
-    var fieldName = pathToTraverse[0];
-    var restOfPath = Arrays.copyOfRange(pathToTraverse, 1, pathToTraverse.length);
-    var fieldDefinition = currentStructure.getAllFields().get(fieldName);
-    if (fieldDefinition == null) {
-      return new ErrorFindClosestListNodePathsOutput(
-          CannotAddToAggregateState.becauseModificationPathContainsFieldNameNotPresentInSchema(
-              modificationDefinition,
-              operationDefinition
-          )
-      );
-    }
-    if (fieldDefinition.isList()) {
-      var wholePath = modificationDefinition.getModificationPath().split("\\.");
-      currentLastPathToList = Arrays.copyOfRange(
-          wholePath,
-          0,
-          wholePath.length - restOfPath.length
-      );
-    }
-    var finalCurrentLastPathToList = currentLastPathToList;
-    var typeResults = fieldDefinition.getTypes().stream().map(fieldType -> {
-      if (fieldType.isPrimitiveType()) {
-        return new ErrorFindClosestListNodePathsOutput(
-            CannotAddToAggregateState.becauseModificationPathContainsFieldNameWhichIsPrimitiveButItShouldNot(
-                modificationDefinition,
-                operationDefinition
-            )
-        );
-      }
-      var type = fieldType.getType();
-      var structureType = (ComplexStructureType) this.structureSchemaFinder.getStructureType(
-          type
-      );
-      return this.findClosestListNodePaths(
-          structureType,
-          finalCurrentLastPathToList,
-          restOfPath,
-          operationDefinition,
-          modificationDefinition
-      );
-    }).toList();
-    if (typeResults.stream().allMatch(ErrorFindClosestListNodePathsOutput.class::isInstance)) {
-      return new ErrorFindClosestListNodePathsOutput(
-          new CannotAddToAggregateState(
-              typeResults.stream()
-                  .map(ErrorFindClosestListNodePathsOutput.class::cast)
-                  .map(ErrorFindClosestListNodePathsOutput::getError)
-                  .toList()
-          )
-      );
-    }
-    return new HappyFindClosestListNodePathsOutput(
-        typeResults.stream()
-            .filter(HappyFindClosestListNodePathsOutput.class::isInstance)
-            .map(HappyFindClosestListNodePathsOutput.class::cast)
-            .flatMap(HappyFindClosestListNodePathsOutput::getPathsAndTypes)
-    );
   }
 
   private TraversableNode traverseToModifiedNode(
@@ -299,109 +226,5 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
         operationDefinition,
         modificationDefinition
     );
-  }
-
-  private TraversableNode getTraversingStart(
-      DynamicCommand command,
-      EventFactoryModification modificationDefinition,
-      ComplexStructureType operationStructureType,
-      PathAndType closestListPath,
-      InMemoryGraphRepository aggregateRepo
-  ) {
-    var sourcePathOfId = String.format(
-        "%s.id",
-        String.join(".", closestListPath.getPath())
-    );
-    var idParametersWithSameSourcePath = operationStructureType.getAllFields()
-        .values()
-        .stream()
-        .map(FieldDefinitionWithSource.class::cast)
-        .filter(fieldDefinition -> fieldDefinition.getSource().equals(sourcePathOfId))
-        .toList();
-
-    if (idParametersWithSameSourcePath.isEmpty()) {
-      throw CannotAddToAggregateState.becauseThereAreIndistinguishableNodes(
-          modificationDefinition,
-          operationStructureType,
-          sourcePathOfId
-      );
-    }
-    if (idParametersWithSameSourcePath.size() > 1) {
-      throw CannotAddToAggregateState.becauseThereAreMoreWaysToDistinguisNodes(
-          modificationDefinition,
-          operationStructureType,
-          sourcePathOfId
-      );
-    }
-    var idParameter = idParametersWithSameSourcePath.get(0);
-    var idValue = command.getData().get(idParameter.getName());
-    if (!(idValue instanceof String stringIdValue)) {
-      throw new CannotAddToAggregateState(List.of());
-    }
-    var id = new UniqueIdentifier(stringIdValue);
-    if (aggregateRepo.nodeExists(id, closestListPath.getType())) {
-      return aggregateRepo.loadNode(id, closestListPath.getType());
-    } else {
-      throw CannotAddToAggregateState.becauseThereIsNoNodeWithIdSpecifiedAtSourcePath(
-          modificationDefinition,
-          operationStructureType,
-          String.join(".", closestListPath.getPath()),
-          id
-      );
-    }
-  }
-
-  private record ClosestJoinInfo(String nodeId, String nodeType, String fieldName) {
-
-  }
-
-  private interface FindClosestListNodePathsOutput {
-
-  }
-
-  private static class HappyFindClosestListNodePathsOutput implements FindClosestListNodePathsOutput {
-
-    private final Stream<PathAndType> pathAndTypes;
-
-    public HappyFindClosestListNodePathsOutput(Stream<PathAndType> pathAndTypes) {
-      this.pathAndTypes = pathAndTypes;
-    }
-
-    public Stream<PathAndType> getPathsAndTypes() {
-      return pathAndTypes;
-    }
-  }
-
-  private static class ErrorFindClosestListNodePathsOutput
-      implements FindClosestListNodePathsOutput {
-
-    private final CannotAddToAggregateState error;
-
-    public ErrorFindClosestListNodePathsOutput(CannotAddToAggregateState error) {
-      this.error = error;
-    }
-
-    public CannotAddToAggregateState getError() {
-      return error;
-    }
-  }
-
-  private static class PathAndType {
-
-    private final String[] path;
-    private final String type;
-
-    public PathAndType(String[] path, String type) {
-      this.path = path;
-      this.type = type;
-    }
-
-    public String[] getPath() {
-      return path;
-    }
-
-    public String getType() {
-      return type;
-    }
   }
 }

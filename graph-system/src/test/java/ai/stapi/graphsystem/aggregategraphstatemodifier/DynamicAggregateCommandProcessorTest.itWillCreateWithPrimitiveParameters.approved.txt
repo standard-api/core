@@ -1,0 +1,9 @@
+nodes:
+	node_type: Parameters
+	node_hash: D1B15
+	node_edges:
+	attributes:
+		implicitRules -> http://some.uri.com
+		language -> cz
+
+edges:

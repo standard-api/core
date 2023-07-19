@@ -13,8 +13,11 @@ public interface SpecificDynamicCommandProcessor {
       AbstractCommand<? extends UniqueIdentifier> command,
       Graph currentAggregateState
   ) {
-    return this.processCommand(command, currentAggregateState,
-        MissingFieldResolvingStrategy.STRICT);
+    return this.processCommand(
+        command, 
+        currentAggregateState,
+        MissingFieldResolvingStrategy.STRICT
+    );
   }
 
   List<? extends AggregateGraphUpdatedEvent<? extends UniqueIdentifier>> processCommand(
