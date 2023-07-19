@@ -10,8 +10,16 @@
       "type": [
         {
           "code": "Reference",
+          "codeRef": {
+            "id": "Reference"
+          },
           "targetProfile": [
             "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
+          ],
+          "targetProfileRef": [
+            {
+              "id": "StructureDefinition"
+            }
           ]
         }
       ]

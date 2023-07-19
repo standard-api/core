@@ -164,6 +164,11 @@ public class StructureDefinitionNormalizer {
           "type",
           fixedTypes
       );
+      var id = (String) element.get("id");
+      fixedElement.put(
+          "id",
+          id.replace("[x]", "")
+      );
       return fixedElement;
     }).collect(Collectors.toCollection(ArrayList::new));
   }
