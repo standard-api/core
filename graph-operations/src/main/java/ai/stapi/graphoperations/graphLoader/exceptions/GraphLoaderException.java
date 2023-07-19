@@ -27,8 +27,7 @@ public class GraphLoaderException extends RuntimeException {
     return new GraphLoaderException(
         "because specified graph element does not exist in graph." +
             "\nUUID: " + uuid +
-            "\nGraphDescription: " + graphDescription.getClass().getSimpleName() +
-            "\n" + Stringifier.convertToString(graphDescription)
+            "\nGraphDescription: " + graphDescription.getClass().getSimpleName()
     );
   }
 
