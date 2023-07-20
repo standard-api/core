@@ -1,0 +1,5 @@
+Cannot add to aggregate state, because there already is such singular complex type, but add operation cannot modify existing data. Use command with upsert modification instead.
+Operation name: 'CreateParameters'
+Modification kind: 'add'
+Modification path: 'meta'
+Modified node identifier: 'Parameters/SomeId'

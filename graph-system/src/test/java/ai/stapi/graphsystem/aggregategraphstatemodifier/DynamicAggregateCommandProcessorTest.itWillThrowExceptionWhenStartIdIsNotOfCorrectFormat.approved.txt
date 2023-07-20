@@ -1,0 +1,5 @@
+Cannot add to aggregate state, because start id found at start id parameter name is not of correct format (Type/Id).
+Operation name: 'AddPartOnParametersParameter'
+Modification kind: 'add'
+Start id parameter name: 'parameterId'
+Start id value: 'BadStartId'

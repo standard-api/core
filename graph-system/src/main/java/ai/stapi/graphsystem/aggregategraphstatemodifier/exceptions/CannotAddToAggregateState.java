@@ -1,5 +1,7 @@
 package ai.stapi.graphsystem.aggregategraphstatemodifier.exceptions;
 
+import ai.stapi.graph.traversableGraphElements.TraversableNode;
+import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO;
 import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification;
 import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.schema.structureSchema.ComplexStructureType;
@@ -183,17 +185,15 @@ public class CannotAddToAggregateState extends RuntimeException {
   public static CannotAddToAggregateState becauseThereIsNoNodeWithIdSpecifiedAtStartIdParameterName(
       EventFactoryModification modificationDefinition,
       ComplexStructureType operationStructureType,
-      String sourcePathOfId,
       UniqueIdentifier id,
       String startIdParameterName
   ) {
     return new CannotAddToAggregateState(
         String.format(
             "there is no node with id specified at start id parameter name.%n" +
-                "Operation name: '%s'%nNode path: '%s'%nId: '%s'%nModification kind: '%s'%n"
+                "Operation name: '%s'%nId: '%s'%nModification kind: '%s'%n"
                 + "Start id parameter name: '%s'",
             operationStructureType.getDefinitionType(),
-            sourcePathOfId,
             id.getId(),
             modificationDefinition.getKind(),
             startIdParameterName
@@ -220,10 +220,21 @@ public class CannotAddToAggregateState extends RuntimeException {
     );
   }
 
-  public static CannotAddToAggregateState becauseThereIsNoIdInCommandAtStartIdParameterName() {
+  public static CannotAddToAggregateState becauseThereIsNoIdInCommandAtStartIdParameterName(
+      String startIdParameterName,
+      EventFactoryModification modificationDefinition,
+      ComplexStructureType operationStructureType
+  ) {
     return new CannotAddToAggregateState(
-        "there is no id in command at start id parameter name. " +
-            "Should not ever happen, bcs validator already should prevent this."
+        String.format(
+            "there is no start id value in command at specified start id parameter name. " +
+                "Probably there is a mistake in modification definition.%n" +
+                "Operation name: '%s'%nModification kind: '%s'%n"
+                + "Start id parameter name: '%s'",
+            operationStructureType.getDefinitionType(),
+            modificationDefinition.getKind(),
+            startIdParameterName
+        )
     );
   }
 
@@ -270,13 +281,51 @@ public class CannotAddToAggregateState extends RuntimeException {
   ) {
     return new CannotAddToAggregateState(
         String.format(
-            "start id found at start id parameter name is not of correct format (Id/Type).%n" +
-                "Operation name: '%s'%%nModification kind: '%s'%n"
-                + "Start id parameter name: '%s' Start id value: %s",
+            "start id found at start id parameter name is not of correct format (Type/Id).%n" +
+                "Operation name: '%s'%nModification kind: '%s'%n"
+                + "Start id parameter name: '%s'%nStart id value: '%s'",
             operationStructureType.getDefinitionType(),
             modificationDefinition.getKind(),
             startIdParameterName,
             startIdValue
+        )
+    );
+  }
+
+  public static CannotAddToAggregateState becauseThereAlreadyIsSuchLeafComplexType(
+      EventFactoryModification modificationDefinition, 
+      ComplexStructureType operationStructureType,
+      TraversableNode modifiedNode
+  ) {
+    return new CannotAddToAggregateState(
+        String.format(
+            "there already is such singular complex type, but add operation cannot modify existing data. " +
+                "Use command with upsert modification instead.%n" +
+                "Operation name: '%s'%nModification kind: '%s'%nModification path: '%s'%nModified node identifier: '%s/%s'",
+            operationStructureType.getDefinitionType(),
+            modificationDefinition.getKind(),
+            modificationDefinition.getModificationPath(),
+            modifiedNode.getType(),
+            modifiedNode.getId().getId()
+        )
+    );
+  }
+
+  public static CannotAddToAggregateState becauseThereAlreadyIsSuchLeafAttribute(
+      EventFactoryModification modificationDefinition,
+      ComplexStructureType operationStructureType,
+      TraversableNode modifiedNode
+  ) {
+    return new CannotAddToAggregateState(
+        String.format(
+            "there already is such leaf attribute, but add operation cannot modify existing data. " +
+                "Use command with upsert modification instead.%n" +
+                "Operation name: '%s'%nModification kind: '%s'%nModification path: '%s'%nModified node identifier: '%s/%s'",
+            operationStructureType.getDefinitionType(),
+            modificationDefinition.getKind(),
+            modificationDefinition.getModificationPath(),
+            modifiedNode.getType(),
+            modifiedNode.getId().getId()
         )
     );
   }

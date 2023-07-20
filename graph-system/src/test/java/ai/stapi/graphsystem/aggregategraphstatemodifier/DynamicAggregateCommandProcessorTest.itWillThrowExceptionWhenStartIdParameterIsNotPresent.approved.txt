@@ -1,0 +1,4 @@
+Cannot add to aggregate state, because there is no start id value in command at specified start id parameter name. Probably there is a mistake in modification definition.
+Operation name: 'AddPartOnParametersParameter'
+Modification kind: 'add'
+Start id parameter name: 'parameterId'

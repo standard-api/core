@@ -1,6 +1,7 @@
 package ai.stapi.graphsystem.aggregategraphstatemodifier;
 
 import ai.stapi.graph.Graph;
+import ai.stapi.graph.exceptions.NodeNotFound;
 import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
@@ -84,7 +85,11 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
     } else {
       var startIdValue = command.getData().get(startIdParameterName);
       if (!(startIdValue instanceof String stringStartId) ) {
-        throw CannotAddToAggregateState.becauseThereIsNoIdInCommandAtStartIdParameterName();
+        throw CannotAddToAggregateState.becauseThereIsNoIdInCommandAtStartIdParameterName(
+            startIdParameterName,
+            modificationDefinition,
+            operationStructureType
+        );
       }
       if (!stringStartId.contains("/")) {
         throw CannotAddToAggregateState.becauseStartIdIsNotOfCorrectFormat(
@@ -103,10 +108,19 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
             operationStructureType
         );
       }
-      traversingStartNode = aggregateRepo.loadNode(
-          new UniqueIdentifier(splitId[0]),
-          splitId[1]
-      );
+      try {
+        traversingStartNode = aggregateRepo.loadNode(
+            new UniqueIdentifier(splitId[1]),
+            splitId[0]
+        );
+      } catch (NodeNotFound nodeNotFound) {
+        throw CannotAddToAggregateState.becauseThereIsNoNodeWithIdSpecifiedAtStartIdParameterName(
+            modificationDefinition,
+            operationStructureType,
+            new UniqueIdentifier(stringStartId),
+            startIdParameterName
+        );
+      }
     }
 
     var modifiedNode = this.traverseToModifiedNode(
@@ -116,8 +130,27 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
         operationStructureType,
         modificationDefinition
     );
+    
+    
     var inputValueSchema = operationStructureType.getField(inputValueParameterName);
-
+    var fieldName = splitPath[splitPath.length - 1];
+    if (inputValueSchema.getFloatMax() < 2) {
+      if (!modifiedNode.getEdges(fieldName).isEmpty()) {
+        throw CannotAddToAggregateState.becauseThereAlreadyIsSuchLeafComplexType(
+            modificationDefinition,
+            operationStructureType,
+            modifiedNode
+        );
+      }
+      if (modifiedNode.hasAttribute(fieldName)) {
+        throw CannotAddToAggregateState.becauseThereAlreadyIsSuchLeafAttribute(
+            modificationDefinition,
+            operationStructureType,
+            modifiedNode
+        );
+      }
+    }
+    
     var objectOgm = new ObjectGraphMappingBuilder().setGraphDescription(
         new GraphDescriptionBuilder().addNodeDescription(modifiedNode.getType())
     );
@@ -126,7 +159,7 @@ public class AddAggregateGraphStateModificator implements AggregateGraphStateMod
         .addLeafAsObjectFieldMapping()
         .setGraphDescription(new UuidIdentityDescription());
 
-    var fieldName = splitPath[splitPath.length - 1];
+    
     var dataField = objectOgm.addField(fieldName);
 
     var edge = new GraphDescriptionBuilder().addOutgoingEdge(fieldName);
