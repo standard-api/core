@@ -84,15 +84,25 @@ public class JsonSchemaMapper {
   }
 
   public Map<String, Object> map(OperationDefinitionDTO operationDefinitionDTO) {
-    var fakedStructureType = this.operationDefinitionStructureTypeMapper.map(operationDefinitionDTO);
+    return this.map(operationDefinitionDTO, true);
+  }
+
+  public Map<String, Object> map(
+      OperationDefinitionDTO operationDefinitionDTO,
+      Boolean omitExtension
+  ) {
+    var fakedStructureType = this.operationDefinitionStructureTypeMapper.map(
+        operationDefinitionDTO
+    );
     var formMapperContext = new FormMapperContext();
-    var schema = this.getObjectSchema(fakedStructureType, formMapperContext);
+    var schema = this.getObjectSchema(fakedStructureType, formMapperContext, omitExtension);
     return this.printSchema(schema, formMapperContext);
   }
 
   private ObjectSchema getObjectSchema(
       ComplexStructureType complexStructureType,
-      FormMapperContext formMapperContext
+      FormMapperContext formMapperContext,
+      Boolean omitExtension
   ) {
     var builder = new ObjectSchema.Builder();
     builder.title(complexStructureType.getDefinitionType());
@@ -102,8 +112,10 @@ public class JsonSchemaMapper {
     complexStructureType.getAllFields()
         .values()
         .stream()
+        .filter(field -> !omitExtension || (!field.getName().equals("extension") &&
+            !field.getName().equals("modifierExtension")))
         .sorted(Comparator.comparing(FieldDefinition::getName))
-        .forEach(field -> this.mapField(field, builder, formMapperContext));
+        .forEach(field -> this.mapField(field, builder, formMapperContext, omitExtension));
 
     return builder.build();
   }
@@ -111,7 +123,8 @@ public class JsonSchemaMapper {
   private void mapField(
       FieldDefinition field,
       ObjectSchema.Builder builder,
-      FormMapperContext formMapperContext
+      FormMapperContext formMapperContext,
+      Boolean omitExtension
   ) {
     var parameterName = field.getName();
     if (field.getMin() > 0) {
@@ -121,30 +134,35 @@ public class JsonSchemaMapper {
       return;
     }
     if (field.getFloatMax() > 1) {
-      this.mapArrayField(field, builder, formMapperContext);
+      this.mapArrayField(field, builder, formMapperContext, omitExtension);
       return;
     }
-    var schema = this.getSchema(field, formMapperContext);
+    var schema = this.getSchema(field, formMapperContext, omitExtension);
     builder.addPropertySchema(parameterName, schema);
   }
 
-  private Schema getSchema(FieldDefinition field, FormMapperContext formMapperContext) {
+  private Schema getSchema(
+      FieldDefinition field,
+      FormMapperContext formMapperContext,
+      Boolean omitExtension
+  ) {
     if (field.getTypes().size() > 1) {
       var schemaBuilder = new CombinedSchema.Builder().criterion(CombinedSchema.ONE_CRITERION);
       field.getTypes().stream()
-          .map(type -> this.getMemberSchema(type, field, formMapperContext))
+          .map(type -> this.getMemberSchema(type, field, formMapperContext, omitExtension))
           .forEach(schemaBuilder::subschema);
 
       return schemaBuilder.build();
     }
     var type = field.getTypes().get(0);
-    return this.getMemberSchema(type, field, formMapperContext);
+    return this.getMemberSchema(type, field, formMapperContext, omitExtension);
   }
 
   private Schema getMemberSchema(
       FieldType type,
       FieldDefinition fieldDefinition,
-      FormMapperContext formMapperContext
+      FormMapperContext formMapperContext,
+      Boolean omitExtension
   ) {
     var typeName = type.getType();
     if (type.isPrimitiveType()) {
@@ -154,8 +172,9 @@ public class JsonSchemaMapper {
     } else {
       if (!formMapperContext.hasType(typeName)) {
         formMapperContext.addType(typeName);
-        var structureType = (ComplexStructureType) this.structureSchemaFinder.getStructureType(typeName);
-        var objectSchema = this.getObjectSchema(structureType, formMapperContext);
+        var structureType = (ComplexStructureType) this.structureSchemaFinder.getStructureType(
+            typeName);
+        var objectSchema = this.getObjectSchema(structureType, formMapperContext, omitExtension);
         formMapperContext.putSchema(typeName, objectSchema);
       }
       return new ReferenceSchema.Builder()
@@ -191,9 +210,10 @@ public class JsonSchemaMapper {
   private void mapArrayField(
       FieldDefinition field,
       ObjectSchema.Builder builder,
-      FormMapperContext formMapperContext
+      FormMapperContext formMapperContext,
+      Boolean omitExtension
   ) {
-    var itemSchema = this.getSchema(field, formMapperContext);
+    var itemSchema = this.getSchema(field, formMapperContext, omitExtension);
     builder.addPropertySchema(
         field.getName(),
         new ArraySchema.Builder().allItemSchema(itemSchema).build()
