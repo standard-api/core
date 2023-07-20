@@ -182,25 +182,6 @@ public class CannotAddToAggregateState extends RuntimeException {
     );
   }
 
-  public static CannotAddToAggregateState becauseThereIsNoNodeWithIdSpecifiedAtStartIdParameterName(
-      EventFactoryModification modificationDefinition,
-      ComplexStructureType operationStructureType,
-      UniqueIdentifier id,
-      String startIdParameterName
-  ) {
-    return new CannotAddToAggregateState(
-        String.format(
-            "there is no node with id specified at start id parameter name.%n" +
-                "Operation name: '%s'%nId: '%s'%nModification kind: '%s'%n"
-                + "Start id parameter name: '%s'",
-            operationStructureType.getDefinitionType(),
-            id.getId(),
-            modificationDefinition.getKind(),
-            startIdParameterName
-        )
-    );
-  }
-
   public static CannotAddToAggregateState becauseThereIsNoSourcePathAtStartIdParameterName(
       EventFactoryModification modificationDefinition,
       ComplexStructureType operationStructureType,
@@ -216,78 +197,6 @@ public class CannotAddToAggregateState extends RuntimeException {
             id.getId(),
             modificationDefinition.getKind(),
             startIdParameterName
-        )
-    );
-  }
-
-  public static CannotAddToAggregateState becauseThereIsNoIdInCommandAtStartIdParameterName(
-      String startIdParameterName,
-      EventFactoryModification modificationDefinition,
-      ComplexStructureType operationStructureType
-  ) {
-    return new CannotAddToAggregateState(
-        String.format(
-            "there is no start id value in command at specified start id parameter name. " +
-                "Probably there is a mistake in modification definition.%n" +
-                "Operation name: '%s'%nModification kind: '%s'%n"
-                + "Start id parameter name: '%s'",
-            operationStructureType.getDefinitionType(),
-            modificationDefinition.getKind(),
-            startIdParameterName
-        )
-    );
-  }
-
-  public static CannotAddToAggregateState becauseThereAreEdgesOnPathEvenThoughtThereShouldBeMaxOne(
-      EventFactoryModification modificationDefinition,
-      ComplexStructureType operationDefinition,
-      String multipleEdgesPath
-  ) {
-    return new CannotAddToAggregateState(
-        String.format(
-            "there are multiple edge on path event thought ther should be max one by schema.%n" +
-                "Operation name: '%s'%nModification kind: '%s'%nMultiple edges path: '%s'%nModification path: '%s'",
-            operationDefinition.getDefinitionType(),
-            modificationDefinition.getKind(),
-            multipleEdgesPath,
-            modificationDefinition.getModificationPath()
-        )
-    );
-  }
-
-  public static CannotAddToAggregateState becauseThereAreIsNodeEdgeOnPathEvenThoughtThereShouldBeOne(
-      EventFactoryModification modificationDefinition,
-      ComplexStructureType operationDefinition,
-      String multipleEdgesPath
-  ) {
-    return new CannotAddToAggregateState(
-        String.format(
-            "the node you are trying to modify should already exist. Please add it first with appropriate command.%n"
-                +
-                "Operation name: '%s'%nMissing node path: '%s'%nModification kind: '%s'%nModification path: '%s'",
-            operationDefinition.getDefinitionType(),
-            multipleEdgesPath,
-            modificationDefinition.getKind(),
-            modificationDefinition.getModificationPath()
-        )
-    );
-  }
-
-  public static CannotAddToAggregateState becauseStartIdIsNotOfCorrectFormat(
-      String startIdValue,
-      String startIdParameterName,
-      EventFactoryModification modificationDefinition,
-      ComplexStructureType operationStructureType
-  ) {
-    return new CannotAddToAggregateState(
-        String.format(
-            "start id found at start id parameter name is not of correct format (Type/Id).%n" +
-                "Operation name: '%s'%nModification kind: '%s'%n"
-                + "Start id parameter name: '%s'%nStart id value: '%s'",
-            operationStructureType.getDefinitionType(),
-            modificationDefinition.getKind(),
-            startIdParameterName,
-            startIdValue
         )
     );
   }

@@ -114,8 +114,7 @@ public class AdHocAggregateDefinitionProvider implements AggregateDefinitionProv
             var foundEventFactory = aggregate.getCommand()
                 .stream()
                 .flatMap(command -> command.getEventFactory().stream())
-                .filter(eventFactory -> eventFactory.getId()
-                    .equals(addModification.getEventFactoryId()))
+                .filter(eventFactory -> eventFactory.getId().equals(addModification.getEventFactoryId()))
                 .findFirst()
                 .get();
 

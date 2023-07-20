@@ -225,13 +225,6 @@
               "kind": "add",
               "destinationIndexParameterName": null,
               "startIdParameterName": null,
-              "inputValueParameterName": "baseDefinitionRef",
-              "modificationPath": "baseDefinitionRef"
-            },
-            {
-              "kind": "add",
-              "destinationIndexParameterName": null,
-              "startIdParameterName": null,
               "inputValueParameterName": "useContext",
               "modificationPath": "useContext"
             },

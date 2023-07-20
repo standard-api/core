@@ -74,7 +74,7 @@ public class CommandHandlerDefinitionDTO {
     }
 
     public void addModifications(List<EventFactoryModification> modifications) {
-      this.getModification().addAll(modification);
+      this.getModification().addAll(modifications);
     }
 
     public EventMessageDefinitionData getEvent() {

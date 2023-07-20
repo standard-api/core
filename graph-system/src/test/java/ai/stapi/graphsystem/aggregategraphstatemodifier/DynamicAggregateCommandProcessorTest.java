@@ -2,12 +2,15 @@ package ai.stapi.graphsystem.aggregategraphstatemodifier;
 
 import ai.stapi.graph.Graph;
 import ai.stapi.graph.attribute.LeafAttribute;
+import ai.stapi.graph.attribute.attributeValue.CanonicalAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.StringAttributeValue;
 import ai.stapi.graph.attribute.attributeValue.UriAttributeValue;
 import ai.stapi.graph.graphelements.Edge;
 import ai.stapi.graph.graphelements.Node;
 import ai.stapi.graphoperations.objectGraphMapper.model.MissingFieldResolvingStrategy;
 import ai.stapi.graphsystem.aggregategraphstatemodifier.exceptions.CannotAddToAggregateState;
+import ai.stapi.graphsystem.aggregategraphstatemodifier.exceptions.CannotModifyAggregateState;
+import ai.stapi.graphsystem.aggregategraphstatemodifier.exceptions.CannotUpsertToAggregateState;
 import ai.stapi.graphsystem.messaging.command.DynamicCommand;
 import ai.stapi.graphsystem.systemfixtures.model.SystemModelDefinitionsLoader;
 import ai.stapi.identity.UniqueIdentifier;
@@ -232,7 +235,7 @@ class DynamicAggregateCommandProcessorTest extends SchemaIntegrationTestCase {
         new Graph(),
         MissingFieldResolvingStrategy.LENIENT
     );
-    this.thenExceptionMessageApproved(CannotAddToAggregateState.class, throwable);
+    this.thenExceptionMessageApproved(CannotModifyAggregateState.class, throwable);
   }
 
   @Test
@@ -252,7 +255,7 @@ class DynamicAggregateCommandProcessorTest extends SchemaIntegrationTestCase {
         new Graph(),
         MissingFieldResolvingStrategy.LENIENT
     );
-    this.thenExceptionMessageApproved(CannotAddToAggregateState.class, throwable);
+    this.thenExceptionMessageApproved(CannotModifyAggregateState.class, throwable);
   }
 
   @Test
@@ -272,7 +275,7 @@ class DynamicAggregateCommandProcessorTest extends SchemaIntegrationTestCase {
         new Graph(),
         MissingFieldResolvingStrategy.LENIENT
     );
-    this.thenExceptionMessageApproved(CannotAddToAggregateState.class, throwable);
+    this.thenExceptionMessageApproved(CannotModifyAggregateState.class, throwable);
   }
 
   @Test
@@ -348,5 +351,59 @@ class DynamicAggregateCommandProcessorTest extends SchemaIntegrationTestCase {
         new Graph(mainNode, alreadyExistingComplex, edge)
     );
     this.thenExceptionMessageApproved(CannotAddToAggregateState.class, throwable);
+  }
+
+  @Test
+  public void itWillThrowExceptionWhenTryingToUpsertOnAggregateWhichDoesntExistYet() {
+    Executable throwable = () -> this.dynamicAggregateCommandProcessor.processCommand(
+        new DynamicCommand(
+            new UniqueIdentifier("SomeId"),
+            "UpdateParameters",
+            Map.of(
+                "language", "cz"
+            )
+        ),
+        new Graph()
+    );
+    this.thenExceptionMessageApproved(CannotUpsertToAggregateState.class, throwable);
+  }
+
+  @Test
+  public void itCanUpsertPrimitiveFieldWhichDoesntExistYet() {
+    var someId = new UniqueIdentifier("SomeId");
+    var mainNode = new Node(someId, "Parameters");
+    var actualEvent = this.dynamicAggregateCommandProcessor.processCommand(
+        new DynamicCommand(
+            someId,
+            "UpdateParameters",
+            Map.of(
+                "language", "cz"
+            )
+        ),
+        new Graph(mainNode)
+    );
+    Assertions.assertEquals(1, actualEvent.size());
+    this.thenGraphApproved(actualEvent.get(0).getSynchronizedGraph());
+  }
+
+  @Test
+  public void itCanUpsertPrimitiveFieldWhichAlreadyExists() {
+    var someId = new UniqueIdentifier("SomeId");
+    var mainNode = new Node(someId, 
+        "Parameters",
+        new LeafAttribute<>("language", new CanonicalAttributeValue("eng"))
+    );
+    var actualEvent = this.dynamicAggregateCommandProcessor.processCommand(
+        new DynamicCommand(
+            someId,
+            "UpdateParameters",
+            Map.of(
+                "language", "cz"
+            )
+        ),
+        new Graph(mainNode)
+    );
+    Assertions.assertEquals(1, actualEvent.size());
+    this.thenGraphApproved(actualEvent.get(0).getSynchronizedGraph());
   }
 }
