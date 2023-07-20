@@ -1,4 +1,5 @@
 {
+  "formData" : { },
   "formSchema" : {
     "description" : "Generated command for creating StructureDefinition with all fields.",
     "title" : "CreateStructureDefinition",
@@ -13,14 +14,6 @@
             "description" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "value" : {
             "description" : "Primitive value for BoxedId",
@@ -38,14 +31,6 @@
             "description" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "period" : {
             "$ref" : "#/definitions/Period",
@@ -84,14 +69,6 @@
             "title" : "string",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "value" : {
             "description" : "Primitive value for BoxedBase64Binary",
             "title" : "base64Binary",
@@ -108,14 +85,6 @@
             "description" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "value" : {
             "description" : "Primitive value for BoxedBoolean",
@@ -134,14 +103,6 @@
             "title" : "string",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "value" : {
             "description" : "Primitive value for BoxedCanonical",
             "title" : "canonical",
@@ -158,14 +119,6 @@
             "description" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "value" : {
             "description" : "Primitive value for BoxedCode",
@@ -184,14 +137,6 @@
             "title" : "string",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "value" : {
             "description" : "Primitive value for BoxedDate",
             "title" : "date",
@@ -208,14 +153,6 @@
             "description" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "value" : {
             "description" : "Primitive value for BoxedDateTime",
@@ -234,14 +171,6 @@
             "title" : "string",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "value" : {
             "description" : "Primitive value for BoxedDecimal",
             "title" : "decimal",
@@ -258,14 +187,6 @@
             "description" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "value" : {
             "description" : "Primitive value for BoxedInstant",
@@ -284,14 +205,6 @@
             "title" : "string",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "value" : {
             "description" : "Primitive value for BoxedInteger",
             "title" : "integer",
@@ -308,14 +221,6 @@
             "description" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "value" : {
             "description" : "Primitive value for BoxedMarkdown",
@@ -334,14 +239,6 @@
             "title" : "string",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "value" : {
             "description" : "Primitive value for BoxedOid",
             "title" : "oid",
@@ -358,14 +255,6 @@
             "description" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "value" : {
             "description" : "Primitive value for BoxedPositiveInt",
@@ -384,14 +273,6 @@
             "title" : "string",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "value" : {
             "description" : "Primitive value for BoxedString",
             "title" : "string",
@@ -408,14 +289,6 @@
             "description" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "value" : {
             "description" : "Primitive value for BoxedTime",
@@ -434,14 +307,6 @@
             "title" : "string",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "value" : {
             "description" : "Primitive value for BoxedUnsignedInt",
             "title" : "unsignedInt",
@@ -458,14 +323,6 @@
             "description" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "value" : {
             "description" : "Primitive value for BoxedUri",
@@ -484,14 +341,6 @@
             "title" : "string",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "value" : {
             "description" : "Primitive value for BoxedUrl",
             "title" : "url",
@@ -508,14 +357,6 @@
             "description" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "value" : {
             "description" : "Primitive value for BoxedUuid",
@@ -542,14 +383,6 @@
               "title" : "Coding"
             }
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "text" : {
             "description" : "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.",
             "title" : "string",
@@ -571,14 +404,6 @@
             "$ref" : "#/definitions/CodeableConcept",
             "description" : "A reference to a concept - e.g. the information is identified by its general class to the degree of precision found in the terminology.",
             "title" : "CodeableConcept"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "reference" : {
             "description" : "A reference to a resource the provides exact details about the information being referenced.",
@@ -606,14 +431,6 @@
             "description" : "A representation of the meaning of the code in the system, following the rules of the system.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "system" : {
             "description" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -656,14 +473,6 @@
               "$ref" : "#/definitions/DataRequirementDateFilter",
               "description" : "Date filters specify additional constraints on the data in terms of the applicable date range for specific elements. Each date filter specifies an additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.",
               "title" : "DataRequirementDateFilter"
-            }
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
             }
           },
           "limit" : {
@@ -728,14 +537,6 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
               "title" : "Coding"
             }
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "path" : {
             "description" : "The code-valued attribute of the filter. The specified path SHALL be a FHIRPath resolveable on the specified type of the DataRequirement, and SHALL consist only of identifiers, constant indexers, and .resolve(). The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details). Note that the index must be an integer constant. The path must resolve to an element of type code, Coding, or CodeableConcept.",
             "title" : "string",
@@ -762,14 +563,6 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
             "description" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "path" : {
             "description" : "The date-valued attribute of the filter. The specified path SHALL be a FHIRPath resolveable on the specified type of the DataRequirement, and SHALL consist only of identifiers, constant indexers, and .resolve(). The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details). Note that the index must be an integer constant. The path must resolve to an element of type date, dateTime, Period, Schedule, or Timing.",
@@ -813,14 +606,6 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
             "title" : "code",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "path" : {
             "description" : "The attribute of the sort. The specified path must be resolvable from the type of the required data. The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements. Note that the index must be an integer constant.",
             "title" : "string",
@@ -848,14 +633,6 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
             "description" : "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \"<\" , then the real value is < stated value.",
             "title" : "code",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "system" : {
             "description" : "The identification of the system that provides the coded form of the unit.",
@@ -1062,14 +839,6 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
               "$ref" : "#/definitions/ElementDefinitionExample",
               "description" : "A sample value for this element demonstrating the type of information that would typically be found in the element.",
               "title" : "ElementDefinitionExample"
-            }
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
             }
           },
           "fixed" : {
@@ -1304,16 +1073,6 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
               "description" : "The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity.",
               "title" : "BoxedUnsignedInt"
             } ]
-          },
-          "modifierExtension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
-
-Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
-              "title" : "Extension"
-            }
           },
           "mustSupport" : {
             "description" : "If true, implementations that produce or consume resources SHALL provide \"support\" for the element in some meaningful way.  If false, the element may be ignored and not supported. If false, whether to populate or use the data element in any way is at the discretion of the implementation.",
@@ -1779,14 +1538,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
             "title" : "string",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "max" : {
             "description" : "Maximum cardinality of the base element identified by the path.",
             "title" : "string",
@@ -1820,14 +1571,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
             "title" : "string",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "strength" : {
             "description" : "Indicates the degree of conformance expectations associated with this binding - that is, the degree to which the provided value set must be adhered to in the instances.",
             "title" : "code",
@@ -1855,14 +1598,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
             "description" : "A [FHIRPath](fhirpath.html) expression of constraint that can be executed to see if this constraint is met.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "human" : {
             "description" : "Text that can be used to describe the constraint in messages identifying that the constraint has been violated.",
@@ -1906,14 +1641,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
             "description" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "label" : {
             "description" : "Describes the purpose of this example amoung the set of examples.",
@@ -2053,14 +1780,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
             "title" : "string",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "identity" : {
             "description" : "An internal reference to the definition of a mapping.",
             "title" : "id",
@@ -2102,14 +1821,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
               "title" : "ElementDefinitionSlicingDiscriminator"
             }
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "ordered" : {
             "description" : "If the matching elements have to occur in the same order as defined in the profile.",
             "title" : "boolean",
@@ -2132,14 +1843,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
             "description" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "path" : {
             "description" : "A FHIRPath expression, using [the simple subset of FHIRPath](fhirpath.html#simple), that is used to identify the element on which discrimination is based.",
@@ -2181,14 +1884,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
             "description" : "Reference Data type or Resource that is a(or the) type used for this element. References are URLs that are relative to http://hl7.org/fhir/StructureDefinition e.g. \"string\" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.",
             "title" : "StructureDefinition",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "profile" : {
             "type" : "array",
@@ -2242,14 +1937,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
             "title" : "string",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "language" : {
             "description" : "The media type of the language for the expression.",
             "title" : "code",
@@ -2268,159 +1955,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
         },
         "required" : [ "language" ]
       },
-      "Extension" : {
-        "description" : "Base StructureDefinition for Extension Type: Optional Extension Element - found in all resources.",
-        "title" : "Extension",
-        "type" : "object",
-        "properties" : {
-          "id" : {
-            "description" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-            "title" : "string",
-            "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
-          "url" : {
-            "description" : "Source of the definition for the extension code - a logical name or a URL.",
-            "title" : "string",
-            "type" : "string"
-          },
-          "value" : {
-            "oneOf" : [ {
-              "$ref" : "#/definitions/BoxedBase64Binary",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedBase64Binary"
-            }, {
-              "$ref" : "#/definitions/BoxedBoolean",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedBoolean"
-            }, {
-              "$ref" : "#/definitions/BoxedCanonical",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedCanonical"
-            }, {
-              "$ref" : "#/definitions/BoxedCode",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedCode"
-            }, {
-              "$ref" : "#/definitions/BoxedDate",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedDate"
-            }, {
-              "$ref" : "#/definitions/BoxedDateTime",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedDateTime"
-            }, {
-              "$ref" : "#/definitions/BoxedDecimal",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedDecimal"
-            }, {
-              "$ref" : "#/definitions/BoxedId",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedId"
-            }, {
-              "$ref" : "#/definitions/BoxedInstant",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedInstant"
-            }, {
-              "$ref" : "#/definitions/BoxedInteger",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedInteger"
-            }, {
-              "$ref" : "#/definitions/BoxedMarkdown",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedMarkdown"
-            }, {
-              "$ref" : "#/definitions/BoxedOid",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedOid"
-            }, {
-              "$ref" : "#/definitions/BoxedPositiveInt",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedPositiveInt"
-            }, {
-              "$ref" : "#/definitions/BoxedString",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedString"
-            }, {
-              "$ref" : "#/definitions/BoxedTime",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedTime"
-            }, {
-              "$ref" : "#/definitions/BoxedUnsignedInt",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedUnsignedInt"
-            }, {
-              "$ref" : "#/definitions/BoxedUri",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedUri"
-            }, {
-              "$ref" : "#/definitions/BoxedUrl",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedUrl"
-            }, {
-              "$ref" : "#/definitions/BoxedUuid",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "BoxedUuid"
-            }, {
-              "$ref" : "#/definitions/CodeableConcept",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "CodeableConcept"
-            }, {
-              "$ref" : "#/definitions/CodeableReference",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "CodeableReference"
-            }, {
-              "$ref" : "#/definitions/Coding",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "Coding"
-            }, {
-              "$ref" : "#/definitions/DataRequirement",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "DataRequirement"
-            }, {
-              "$ref" : "#/definitions/Expression",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "Expression"
-            }, {
-              "$ref" : "#/definitions/Identifier",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "Identifier"
-            }, {
-              "$ref" : "#/definitions/ParameterDefinition",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "ParameterDefinition"
-            }, {
-              "$ref" : "#/definitions/Period",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "Period"
-            }, {
-              "$ref" : "#/definitions/Quantity",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "Quantity"
-            }, {
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "Reference",
-              "type" : "string"
-            }, {
-              "$ref" : "#/definitions/SimpleQuantity",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "SimpleQuantity"
-            }, {
-              "$ref" : "#/definitions/TriggerDefinition",
-              "description" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-              "title" : "TriggerDefinition"
-            } ]
-          }
-        },
-        "required" : [ "url" ]
-      },
       "Meta" : {
         "description" : "Base StructureDefinition for Meta Type: The metadata about a resource. This is content in the resource that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.",
         "title" : "Meta",
@@ -2435,14 +1969,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
             "description" : "The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted.",
             "title" : "id",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "lastUpdated" : {
             "description" : "When the resource last changed - e.g. when the version changed.",
@@ -2495,14 +2021,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
             "title" : "xhtml",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "status" : {
             "description" : "The status of the narrative - whether it's entirely generated (from just the defined data or the extensions too), or whether a human authored it and it may contain additional data.",
             "title" : "code",
@@ -2525,14 +2043,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
             "description" : "A brief discussion of what the parameter is for and how it is used by the module.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "max" : {
             "description" : "The maximum number of times this element is permitted to appear in the request or response.",
@@ -2582,14 +2092,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
             "title" : "dateTime",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "start" : {
             "description" : "The start of the period. The boundary is inclusive.",
             "title" : "dateTime",
@@ -2617,14 +2119,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
             "title" : "code",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "system" : {
             "description" : "The identification of the system that provides the coded form of the unit.",
             "title" : "uri",
@@ -2651,14 +2145,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
             "description" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "high" : {
             "$ref" : "#/definitions/Quantity",
@@ -2699,46 +2185,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
           }
         }
       },
-      "SimpleQuantity" : {
-        "description" : "A fixed quantity (no comparator)",
-        "title" : "SimpleQuantity",
-        "type" : "object",
-        "properties" : {
-          "id" : {
-            "description" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-            "title" : "string",
-            "type" : "string"
-          },
-          "code" : {
-            "description" : "A computer processable form of the unit in some unit representation system.",
-            "title" : "code",
-            "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
-          "system" : {
-            "description" : "The identification of the system that provides the coded form of the unit.",
-            "title" : "uri",
-            "type" : "string"
-          },
-          "unit" : {
-            "description" : "A human-readable form of the unit.",
-            "title" : "string",
-            "type" : "string"
-          },
-          "value" : {
-            "description" : "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
-            "title" : "decimal",
-            "type" : "number"
-          }
-        }
-      },
       "StructureDefinitionContext" : {
         "description" : "Type for anonymous field contained in StructureDefinition",
         "title" : "StructureDefinitionContext",
@@ -2753,24 +2199,6 @@ When pattern[x] is used to constrain a complex object, it means that each proper
             "description" : "An expression that defines where an extension can be used in resources.",
             "title" : "string",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
-          "modifierExtension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
-
-Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
-              "title" : "Extension"
-            }
           },
           "type" : {
             "description" : "Defines how to interpret the expression that defines what the context of the extension is.",
@@ -2797,24 +2225,6 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
               "description" : "Captures constraints on each element within the resource.",
               "title" : "ElementDefinition"
             }
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
-          "modifierExtension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
-
-Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
-              "title" : "Extension"
-            }
           }
         },
         "required" : [ "element" ]
@@ -2834,28 +2244,10 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
             "title" : "string",
             "type" : "string"
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "identity" : {
             "description" : "An Internal id that is used to identify this mapping set when specific mappings are made.",
             "title" : "id",
             "type" : "string"
-          },
-          "modifierExtension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
-
-Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
-              "title" : "Extension"
-            }
           },
           "name" : {
             "description" : "A name for the specification that is being mapped to.",
@@ -2887,24 +2279,6 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
               "description" : "Captures constraints on each element within the resource.",
               "title" : "ElementDefinition"
             }
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
-          "modifierExtension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
-
-Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
-              "title" : "Extension"
-            }
           }
         },
         "required" : [ "element" ]
@@ -2930,24 +2304,6 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
               "description" : "Identifies specific times when the event occurs.",
               "title" : "dateTime",
               "type" : "string"
-            }
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
-          "modifierExtension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
-
-Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
-              "title" : "Extension"
             }
           },
           "repeat" : {
@@ -3014,14 +2370,6 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
             "description" : "The units of time for the duration, in UCUM units.",
             "title" : "code",
             "type" : "string"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "frequency" : {
             "description" : "The number of times to repeat the action within the specified period. If frequencyMax is present, this element indicates the lower bound of the allowed range of the frequency.",
@@ -3094,14 +2442,6 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
               "title" : "DataRequirement"
             }
           },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
-          },
           "name" : {
             "description" : "A formal name for the event. This may be an absolute URI that identifies the event formally (e.g. from a trigger registry), or a simple relative URI that identifies the event in a local context.",
             "title" : "string",
@@ -3144,14 +2484,6 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
             "$ref" : "#/definitions/Coding",
             "description" : "A code that identifies the type of context being specified by this usage context.",
             "title" : "Coding"
-          },
-          "extension" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/Extension",
-              "description" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-              "title" : "Extension"
-            }
           },
           "value" : {
             "oneOf" : [ {
@@ -3242,14 +2574,6 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
         "title" : "boolean",
         "type" : "boolean"
       },
-      "extension" : {
-        "type" : "array",
-        "items" : {
-          "$ref" : "#/definitions/Extension",
-          "description" : "",
-          "title" : "Extension"
-        }
-      },
       "fhirVersion" : {
         "description" : "",
         "title" : "code",
@@ -3306,14 +2630,6 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
         "$ref" : "#/definitions/Meta",
         "description" : "",
         "title" : "Meta"
-      },
-      "modifierExtension" : {
-        "type" : "array",
-        "items" : {
-          "$ref" : "#/definitions/Extension",
-          "description" : "",
-          "title" : "Extension"
-        }
       },
       "name" : {
         "description" : "",
