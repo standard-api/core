@@ -1,0 +1,18 @@
+[ {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "event" : {
+    "id" : "ExampleResourceTypeUpdated",
+    "description" : "Generated Event for updated ExampleResourceType.",
+    "name" : "ExampleResourceType Updated",
+    "type" : {
+      "id" : "ExampleResourceType"
+    }
+  },
+  "modification" : [ {
+    "startIdParameterName" : null,
+    "inputValueParameterName" : "exampleUnionField",
+    "kind" : "upsert",
+    "modificationPath" : "exampleUnionField",
+    "destinationIndexParameterName" : null
+  } ]
+} ]

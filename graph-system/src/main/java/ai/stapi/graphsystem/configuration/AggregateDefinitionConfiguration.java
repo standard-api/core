@@ -5,7 +5,7 @@ import ai.stapi.graphsystem.aggregatedefinition.model.AggregateDefinitionProvide
 import ai.stapi.graphsystem.aggregatedefinition.model.ResourceAggregateDefinitionMapper;
 import ai.stapi.graphsystem.aggregatedefinition.model.eventFactory.CreatedOperationEventFactoriesMapper;
 import ai.stapi.graphsystem.aggregatedefinition.model.eventFactory.ItemAddedOperationEventFactoriesMapper;
-import ai.stapi.graphsystem.operationdefinition.infrastructure.AdHocOperationDefinitionProvider;
+import ai.stapi.graphsystem.aggregatedefinition.model.eventFactory.UpdatedOperationEventFactoriesMapper;
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionProvider;
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionStructureTypeMapper;
 import ai.stapi.schema.adHocLoaders.GenericAdHocModelDefinitionsLoader;
@@ -53,5 +53,16 @@ public class AggregateDefinitionConfiguration {
       OperationDefinitionStructureTypeMapper operationDefinitionStructureTypeMapper
   ) {
     return new ItemAddedOperationEventFactoriesMapper(operationDefinitionStructureTypeMapper);
+  }
+
+  @Bean
+  public UpdatedOperationEventFactoriesMapper updatedOperationEventFactoriesMapper(
+      OperationDefinitionStructureTypeMapper operationDefinitionStructureTypeMapper,
+      @Lazy AggregateDefinitionProvider aggregateDefinitionProvider
+  ) {
+    return new UpdatedOperationEventFactoriesMapper(
+        operationDefinitionStructureTypeMapper,
+        aggregateDefinitionProvider
+    );
   }
 }

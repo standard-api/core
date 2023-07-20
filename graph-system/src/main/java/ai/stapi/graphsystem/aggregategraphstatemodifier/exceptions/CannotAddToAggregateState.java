@@ -1,7 +1,9 @@
 package ai.stapi.graphsystem.aggregategraphstatemodifier.exceptions;
 
-import ai.stapi.identity.UniqueIdentifier;
+import ai.stapi.graph.traversableGraphElements.TraversableNode;
+import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO;
 import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification;
+import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.schema.structureSchema.ComplexStructureType;
 import java.util.Arrays;
 import java.util.List;
@@ -180,37 +182,59 @@ public class CannotAddToAggregateState extends RuntimeException {
     );
   }
 
-  public static CannotAddToAggregateState becauseThereAreEdgesOnPathEvenThoughtThereShouldBeMaxOne(
+  public static CannotAddToAggregateState becauseThereIsNoSourcePathAtStartIdParameterName(
       EventFactoryModification modificationDefinition,
-      ComplexStructureType operationDefinition,
-      String multipleEdgesPath
+      ComplexStructureType operationStructureType,
+      UniqueIdentifier id,
+      String startIdParameterName
   ) {
     return new CannotAddToAggregateState(
         String.format(
-            "there are multiple edge on path event thought ther should be max one by schema.%n" +
-                "Operation name: '%s'%nModification kind: '%s'%nMultiple edges path: '%s'%nModification path: '%s'",
-            operationDefinition.getDefinitionType(),
+            "there is no node with source path specified at start id parameter name.%n" +
+                "Operation name: '%s'%nId: '%s'%nModification kind: '%s'%n"
+                + "Start id parameter name: '%s'",
+            operationStructureType.getDefinitionType(),
+            id.getId(),
             modificationDefinition.getKind(),
-            multipleEdgesPath,
-            modificationDefinition.getModificationPath()
+            startIdParameterName
         )
     );
   }
 
-  public static CannotAddToAggregateState becauseThereAreIsNodeEdgeOnPathEvenThoughtThereShouldBeOne(
-      EventFactoryModification modificationDefinition,
-      ComplexStructureType operationDefinition,
-      String multipleEdgesPath
+  public static CannotAddToAggregateState becauseThereAlreadyIsSuchLeafComplexType(
+      EventFactoryModification modificationDefinition, 
+      ComplexStructureType operationStructureType,
+      TraversableNode modifiedNode
   ) {
     return new CannotAddToAggregateState(
         String.format(
-            "the node you are trying to modify should already exist. Please add it first with appropriate command.%n"
-                +
-                "Operation name: '%s'%nMissing node path: '%s'%nModification kind: '%s'%nModification path: '%s'",
-            operationDefinition.getDefinitionType(),
-            multipleEdgesPath,
+            "there already is such singular complex type, but add operation cannot modify existing data. " +
+                "Use command with upsert modification instead.%n" +
+                "Operation name: '%s'%nModification kind: '%s'%nModification path: '%s'%nModified node identifier: '%s/%s'",
+            operationStructureType.getDefinitionType(),
             modificationDefinition.getKind(),
-            modificationDefinition.getModificationPath()
+            modificationDefinition.getModificationPath(),
+            modifiedNode.getType(),
+            modifiedNode.getId().getId()
+        )
+    );
+  }
+
+  public static CannotAddToAggregateState becauseThereAlreadyIsSuchLeafAttribute(
+      EventFactoryModification modificationDefinition,
+      ComplexStructureType operationStructureType,
+      TraversableNode modifiedNode
+  ) {
+    return new CannotAddToAggregateState(
+        String.format(
+            "there already is such leaf attribute, but add operation cannot modify existing data. " +
+                "Use command with upsert modification instead.%n" +
+                "Operation name: '%s'%nModification kind: '%s'%nModification path: '%s'%nModified node identifier: '%s/%s'",
+            operationStructureType.getDefinitionType(),
+            modificationDefinition.getKind(),
+            modificationDefinition.getModificationPath(),
+            modifiedNode.getType(),
+            modifiedNode.getId().getId()
         )
     );
   }

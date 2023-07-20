@@ -1,0 +1,5111 @@
+{
+  "command": [
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddJurisdictionOnStructureDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "JurisdictionOnStructureDefinitionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "jurisdiction",
+              "modificationPath": "jurisdiction"
+            }
+          ],
+          "id": "a1693802-0ff7-4a30-b051-e46312175e39"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddContextOnStructureDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ContextOnStructureDefinitionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "context",
+              "modificationPath": "context"
+            }
+          ],
+          "id": "0df841be-d73f-4f68-abed-706d3441bb8a"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddKeywordOnStructureDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "KeywordOnStructureDefinitionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "keyword",
+              "modificationPath": "keyword"
+            }
+          ],
+          "id": "290ea702-0ad5-4b8d-b365-eec42cba4d39"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddIdentifierOnStructureDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "IdentifierOnStructureDefinitionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "identifier",
+              "modificationPath": "identifier"
+            }
+          ],
+          "id": "a1ce24c9-0234-4e0c-b93d-046f484d67ab"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMappingOnStructureDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MappingOnStructureDefinitionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "mapping",
+              "modificationPath": "mapping"
+            }
+          ],
+          "id": "164dff50-8291-4465-a54b-e6d9a66747e2"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddContextInvariantOnStructureDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ContextInvariantOnStructureDefinitionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "contextInvariant",
+              "modificationPath": "contextInvariant"
+            }
+          ],
+          "id": "59ef025a-fd45-4f7e-9d66-add09659bd7c"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddUseContextOnStructureDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "UseContextOnStructureDefinitionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "useContext",
+              "modificationPath": "useContext"
+            }
+          ],
+          "id": "332410c2-fa96-4652-bf81-8da6a4ca02c7"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionJurisdiction"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionJurisdictionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "jurisdictionId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "coding"
+            }
+          ],
+          "id": "b634f971-fb51-4ba5-b9bf-f5a63f7100c6"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnStructureDefinitionDifferentialElementFixedData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnStructureDefinitionDifferentialElementFixedDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "mustSupport"
+            }
+          ],
+          "id": "b22d8a23-11e8-4089-bd94-def48f5f1509"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementFixedTimingCode"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementFixedTimingCodeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "fixed.timing.code.coding"
+            }
+          ],
+          "id": "b9a5f8fa-54bb-4c37-b4a4-952140dd437f"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDataOnStructureDefinitionDifferentialElementPattern"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DataOnStructureDefinitionDifferentialElementPatternAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "data",
+              "modificationPath": "pattern.data"
+            }
+          ],
+          "id": "927ee89f-7dcc-4db1-92bf-dda5137f51f9"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionDifferentialElementFixedData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionDifferentialElementFixedDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "profile"
+            }
+          ],
+          "id": "e88880a1-9148-4e8a-8838-478808754cd2"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnStructureDefinitionDifferentialElementFixed"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnStructureDefinitionDifferentialElementFixedAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "fixed.mustSupport"
+            }
+          ],
+          "id": "350448d3-0823-4049-b8f7-cd6fe0ee0810"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnStructureDefinitionDifferentialElementExampleValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnStructureDefinitionDifferentialElementExampleValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "value.dateFilter"
+            }
+          ],
+          "id": "f659bf68-4cdf-4e3c-931e-a6cf8c4cc390"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementDefaultValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementDefaultValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "defaultValue.coding"
+            }
+          ],
+          "id": "3fb2a8ba-d52f-44d3-bd49-51f86264c22b"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementDefaultValueConcept"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementDefaultValueConceptAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "defaultValue.concept.coding"
+            }
+          ],
+          "id": "4c384d02-5227-47de-ab07-08340f52eab7"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementPatternTimingCode"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementPatternTimingCodeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "pattern.timing.code.coding"
+            }
+          ],
+          "id": "ccce510a-8583-413b-b4e6-6cf5e387c60d"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementFixedDataSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementFixedDataSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "subject.coding"
+            }
+          ],
+          "id": "f2e986e4-b4c2-4b9b-a52c-6572f42e92a5"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTargetProfileOnStructureDefinitionDifferentialElementType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TargetProfileOnStructureDefinitionDifferentialElementTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
+              "inputValueParameterName": "targetProfile",
+              "modificationPath": "targetProfile"
+            }
+          ],
+          "id": "8ad9f0ed-1b6e-41c7-8708-c679dacd2e19"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnStructureDefinitionDifferentialElementDefaultValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnStructureDefinitionDifferentialElementDefaultValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "mustSupport"
+            }
+          ],
+          "id": "80dd335c-3a41-43f2-80cb-9be0addbfb0e"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionDifferentialElementPatternCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionDifferentialElementPatternCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "a7fcd3d1-42bd-42dc-bd0b-130c5fece6ec"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionDifferentialElement"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionDifferentialElementAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "dd811c43-8de5-47dd-95a1-b18cbe93e587"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddRepresentationOnStructureDefinitionDifferentialElement"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "RepresentationOnStructureDefinitionDifferentialElementAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "representation",
+              "modificationPath": "representation"
+            }
+          ],
+          "id": "daae2a0b-69d6-49c3-a5fe-83a1da3ab4b5"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDayOfWeekOnStructureDefinitionDifferentialElementDefaultValueTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DayOfWeekOnStructureDefinitionDifferentialElementDefaultValueTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "dayOfWeek",
+              "modificationPath": "defaultValue.timing.repeat.dayOfWeek"
+            }
+          ],
+          "id": "7149df41-96bd-4229-9751-01de6077cd2e"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionDifferentialElementPatternDataCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionDifferentialElementPatternDataCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "9a8ffbba-5142-48aa-9a5e-f2831eea218d"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddWhenOnStructureDefinitionDifferentialElementExampleValueTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "WhenOnStructureDefinitionDifferentialElementExampleValueTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "when",
+              "modificationPath": "value.timing.repeat.when"
+            }
+          ],
+          "id": "144ac6a8-4dff-41a6-8f76-0292cdd18de0"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddWhenOnStructureDefinitionDifferentialElementFixedTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "WhenOnStructureDefinitionDifferentialElementFixedTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "when",
+              "modificationPath": "fixed.timing.repeat.when"
+            }
+          ],
+          "id": "7960c575-f934-4959-b2b8-5ab345f843f8"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnStructureDefinitionDifferentialElementPattern"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnStructureDefinitionDifferentialElementPatternAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "pattern.sort"
+            }
+          ],
+          "id": "1521846c-078c-4571-a767-e5a43f30c2a1"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnStructureDefinitionDifferentialElementDefaultValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnStructureDefinitionDifferentialElementDefaultValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "defaultValue.dateFilter"
+            }
+          ],
+          "id": "9079b06b-60c4-4956-9ce9-5859760c98be"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementExampleValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementExampleValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "value.coding"
+            }
+          ],
+          "id": "4eafc71b-b389-408d-9738-bca847111a6d"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTimeOfDayOnStructureDefinitionDifferentialElementFixedTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TimeOfDayOnStructureDefinitionDifferentialElementFixedTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "timeOfDay",
+              "modificationPath": "fixed.timing.repeat.timeOfDay"
+            }
+          ],
+          "id": "431fcf57-4886-42de-bdb2-991f07271e23"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMappingOnStructureDefinitionDifferentialElement"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MappingOnStructureDefinitionDifferentialElementAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "mapping",
+              "modificationPath": "mapping"
+            }
+          ],
+          "id": "7e7fe3b2-aa60-47d2-bf6c-17858d4cb270"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddAggregationOnStructureDefinitionDifferentialElementType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "AggregationOnStructureDefinitionDifferentialElementTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
+              "inputValueParameterName": "aggregation",
+              "modificationPath": "aggregation"
+            }
+          ],
+          "id": "6a0736b7-d095-46cf-9011-a4e8e739443c"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementPattern"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementPatternAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "pattern.coding"
+            }
+          ],
+          "id": "21b2c28d-257d-47b9-ac76-d66cd5cc61e2"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementFixed"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementFixedAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "fixed.coding"
+            }
+          ],
+          "id": "815881d6-8482-4b22-a096-ea20587c7e77"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddEventOnStructureDefinitionDifferentialElementPatternTiming"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "EventOnStructureDefinitionDifferentialElementPatternTimingAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "event",
+              "modificationPath": "pattern.timing.event"
+            }
+          ],
+          "id": "aea6ff9f-1409-441f-b295-b5892f396821"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddElementOnStructureDefinitionDifferential"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ElementOnStructureDefinitionDifferentialAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "element",
+              "modificationPath": "differential.element"
+            }
+          ],
+          "id": "f768f4dd-1c53-42a1-bbb0-43c08150c772"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionDifferentialElementDefaultValueCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionDifferentialElementDefaultValueCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "65db4a5c-89aa-4b81-a3d9-6ba587b765ed"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTargetProfileRefOnStructureDefinitionDifferentialElementType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TargetProfileRefOnStructureDefinitionDifferentialElementTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
+              "inputValueParameterName": "targetProfileRef",
+              "modificationPath": "targetProfileRef"
+            }
+          ],
+          "id": "466bae96-1726-4e5b-9586-e93eae41ed16"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnStructureDefinitionDifferentialElementPattern"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnStructureDefinitionDifferentialElementPatternAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "pattern.mustSupport"
+            }
+          ],
+          "id": "6043d93e-5a68-4cdd-9018-967c4db51c8a"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnStructureDefinitionDifferentialElementFixedData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnStructureDefinitionDifferentialElementFixedDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "sort"
+            }
+          ],
+          "id": "2b650669-194f-48f9-81a5-09f338b4f0ff"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTimeOfDayOnStructureDefinitionDifferentialElementDefaultValueTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TimeOfDayOnStructureDefinitionDifferentialElementDefaultValueTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "timeOfDay",
+              "modificationPath": "defaultValue.timing.repeat.timeOfDay"
+            }
+          ],
+          "id": "b4ff8e1e-ea1d-4861-b216-56deabcb8131"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementFixedSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementFixedSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "fixed.subject.coding"
+            }
+          ],
+          "id": "a91a61c2-dfe1-44a0-baa0-76070cc0eaf8"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionDifferentialElementFixedDataCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionDifferentialElementFixedDataCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "db8fea5d-049e-4bcf-8389-a0943565dd12"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnStructureDefinitionDifferentialElementFixed"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnStructureDefinitionDifferentialElementFixedAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "fixed.codeFilter"
+            }
+          ],
+          "id": "0d3c0021-0365-4356-a46d-16b40829c5d8"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnStructureDefinitionDifferentialElementFixedData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnStructureDefinitionDifferentialElementFixedDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "codeFilter"
+            }
+          ],
+          "id": "55feed09-a2a1-4f93-b6a5-3f69953de2a3"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionDifferentialElementExampleValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionDifferentialElementExampleValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "profile"
+            }
+          ],
+          "id": "41d83454-f579-418f-af1c-a7b7f3e4248f"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddEventOnStructureDefinitionDifferentialElementExampleValueTiming"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "EventOnStructureDefinitionDifferentialElementExampleValueTimingAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "event",
+              "modificationPath": "value.timing.event"
+            }
+          ],
+          "id": "84d09315-68e4-4f76-a0b3-a460c2bbfead"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionDifferentialElementType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionDifferentialElementTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "profile"
+            }
+          ],
+          "id": "9f923015-9233-4fe6-9bf2-4ea465c23a43"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddConstraintOnStructureDefinitionDifferentialElement"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ConstraintOnStructureDefinitionDifferentialElementAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "constraint",
+              "modificationPath": "constraint"
+            }
+          ],
+          "id": "8e0c25a7-0284-41bb-a3a8-e5a98e53013d"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnStructureDefinitionDifferentialElementFixed"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnStructureDefinitionDifferentialElementFixedAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "fixed.sort"
+            }
+          ],
+          "id": "439ed74a-92fe-4a5e-9755-20d92ee40747"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionDifferentialElementDefaultValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionDifferentialElementDefaultValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "profile"
+            }
+          ],
+          "id": "e69dfd4a-c2cf-441e-8be5-563715af1c23"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnStructureDefinitionDifferentialElementExampleValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnStructureDefinitionDifferentialElementExampleValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "dateFilter"
+            }
+          ],
+          "id": "c1aa8bbc-227a-478a-a425-9790feb53f90"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnStructureDefinitionDifferentialElementPatternData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnStructureDefinitionDifferentialElementPatternDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "dateFilter"
+            }
+          ],
+          "id": "a67245c5-7b54-4ea3-924f-04a696c63613"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnStructureDefinitionDifferentialElementFixed"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnStructureDefinitionDifferentialElementFixedAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "fixed.dateFilter"
+            }
+          ],
+          "id": "a3e59cb6-c860-453d-9067-188c0d2c15fc"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddEventOnStructureDefinitionDifferentialElementFixedTiming"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "EventOnStructureDefinitionDifferentialElementFixedTimingAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "event",
+              "modificationPath": "fixed.timing.event"
+            }
+          ],
+          "id": "92453467-0c0d-440e-a998-d20214819270"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionDifferentialElementExampleValueCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionDifferentialElementExampleValueCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "6ed6ae8b-2a9b-4507-aec6-ff9990389031"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnStructureDefinitionDifferentialElementPatternData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnStructureDefinitionDifferentialElementPatternDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "codeFilter"
+            }
+          ],
+          "id": "c164428d-879a-4998-9067-9e63e0cfc0e5"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnStructureDefinitionDifferentialElementFixedData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnStructureDefinitionDifferentialElementFixedDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "dateFilter"
+            }
+          ],
+          "id": "4a11890d-98b8-4f44-a0a5-bd6c02323d04"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnStructureDefinitionDifferentialElementPattern"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnStructureDefinitionDifferentialElementPatternAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "pattern.dateFilter"
+            }
+          ],
+          "id": "347ca205-5771-4a47-b932-f67a726cfacc"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddEventOnStructureDefinitionDifferentialElementDefaultValueTiming"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "EventOnStructureDefinitionDifferentialElementDefaultValueTimingAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "event",
+              "modificationPath": "defaultValue.timing.event"
+            }
+          ],
+          "id": "25bc0b67-044a-48ac-95c6-356de33e9638"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnStructureDefinitionDifferentialElementDefaultValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnStructureDefinitionDifferentialElementDefaultValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "sort"
+            }
+          ],
+          "id": "7f646eaf-13a6-45b7-aed4-00b70666e0a3"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnStructureDefinitionDifferentialElementDefaultValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnStructureDefinitionDifferentialElementDefaultValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "defaultValue.codeFilter"
+            }
+          ],
+          "id": "bdfefbff-ad83-46ee-af38-dc89ad264c84"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementFixedConcept"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementFixedConceptAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "fixed.concept.coding"
+            }
+          ],
+          "id": "9cd708b2-75af-4c6b-b13d-7a5a2ffe3ba0"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementPatternDataSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementPatternDataSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "subject.coding"
+            }
+          ],
+          "id": "bb12990d-3217-4c0f-b4ba-429dbb1ec7d3"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementExampleValueSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementExampleValueSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "value.subject.coding"
+            }
+          ],
+          "id": "7b35ab1e-6a24-4f94-bcea-469345346297"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnStructureDefinitionDifferentialElementExampleValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnStructureDefinitionDifferentialElementExampleValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "value.codeFilter"
+            }
+          ],
+          "id": "cee049b8-6860-4f30-a200-e2c752546c88"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnStructureDefinitionDifferentialElementExampleValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnStructureDefinitionDifferentialElementExampleValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "codeFilter"
+            }
+          ],
+          "id": "a0833716-8d32-44eb-97dd-67bc5f47eec2"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnStructureDefinitionDifferentialElementPatternData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnStructureDefinitionDifferentialElementPatternDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "sort"
+            }
+          ],
+          "id": "1e2f2f7f-9269-4c13-93a7-b264ef47fd2d"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementFixedType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementFixedTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "fixed.type.coding"
+            }
+          ],
+          "id": "9fbd6e53-fcda-4fc7-9f0b-bdb11e07ada9"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementPatternSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementPatternSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "pattern.subject.coding"
+            }
+          ],
+          "id": "02da2a6c-f6a6-4915-afc5-58ac1d42ac6c"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnStructureDefinitionDifferentialElementPattern"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnStructureDefinitionDifferentialElementPatternAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "pattern.codeFilter"
+            }
+          ],
+          "id": "2841e7fc-14a5-4e48-9da5-5a22123932be"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnStructureDefinitionDifferentialElementDefaultValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnStructureDefinitionDifferentialElementDefaultValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "dateFilter"
+            }
+          ],
+          "id": "151a4ef0-6b2b-4c5d-bd5b-6de864fbd019"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnStructureDefinitionDifferentialElementDefaultValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnStructureDefinitionDifferentialElementDefaultValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "codeFilter"
+            }
+          ],
+          "id": "3e58ad42-6172-4f16-bf84-d349d936bfd0"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnStructureDefinitionDifferentialElementExampleValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnStructureDefinitionDifferentialElementExampleValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "value.mustSupport"
+            }
+          ],
+          "id": "f3d30be9-c891-43f2-b143-e421f5a0e83d"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementPatternConcept"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementPatternConceptAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "pattern.concept.coding"
+            }
+          ],
+          "id": "9d2a17fb-a1c9-4d44-88a8-f1bd9b497891"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTimeOfDayOnStructureDefinitionDifferentialElementExampleValueTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TimeOfDayOnStructureDefinitionDifferentialElementExampleValueTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "timeOfDay",
+              "modificationPath": "value.timing.repeat.timeOfDay"
+            }
+          ],
+          "id": "f77c9839-773d-46f0-8002-ef209dce96a7"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDayOfWeekOnStructureDefinitionDifferentialElementFixedTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DayOfWeekOnStructureDefinitionDifferentialElementFixedTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "dayOfWeek",
+              "modificationPath": "fixed.timing.repeat.dayOfWeek"
+            }
+          ],
+          "id": "74de6328-8756-41ce-b8b3-722bb4f714aa"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddWhenOnStructureDefinitionDifferentialElementDefaultValueTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "WhenOnStructureDefinitionDifferentialElementDefaultValueTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "when",
+              "modificationPath": "defaultValue.timing.repeat.when"
+            }
+          ],
+          "id": "13b3929c-d6a4-4df9-86d8-93f368bd1109"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionDifferentialElementFixedCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionDifferentialElementFixedCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "a1c128a3-92bd-422b-be14-c2f2c02e1a48"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnStructureDefinitionDifferentialElementExampleValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnStructureDefinitionDifferentialElementExampleValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "sort"
+            }
+          ],
+          "id": "4576e376-88b9-4eba-90b5-c69d878581eb"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDayOfWeekOnStructureDefinitionDifferentialElementExampleValueTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DayOfWeekOnStructureDefinitionDifferentialElementExampleValueTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "dayOfWeek",
+              "modificationPath": "value.timing.repeat.dayOfWeek"
+            }
+          ],
+          "id": "9d6518fb-998f-48c7-934c-8c54dc051d82"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementExampleValueDataSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementExampleValueDataSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "subject.coding"
+            }
+          ],
+          "id": "0d09a91c-ef03-417d-97f2-2fe2e80f0b49"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnStructureDefinitionDifferentialElementDefaultValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnStructureDefinitionDifferentialElementDefaultValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "defaultValue.mustSupport"
+            }
+          ],
+          "id": "e55ad92c-f67b-408b-b295-78dabd1ffbe7"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddWhenOnStructureDefinitionDifferentialElementPatternTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "WhenOnStructureDefinitionDifferentialElementPatternTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "when",
+              "modificationPath": "pattern.timing.repeat.when"
+            }
+          ],
+          "id": "5d337b18-efec-48fb-9a0c-ccac33adbaa5"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionDifferentialElementFixed"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionDifferentialElementFixedAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "fixed.profile"
+            }
+          ],
+          "id": "3a583a0a-efea-40f1-98f7-b6f5dde4a13e"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnStructureDefinitionDifferentialElementExampleValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnStructureDefinitionDifferentialElementExampleValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "value.sort"
+            }
+          ],
+          "id": "0ba188c0-4d97-4d9c-b2fe-11171ad65f2c"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionDifferentialElementDefaultValueDataCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionDifferentialElementDefaultValueDataCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "1ea77301-4083-499d-be8a-932478549fe7"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnStructureDefinitionDifferentialElementDefaultValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnStructureDefinitionDifferentialElementDefaultValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "defaultValue.sort"
+            }
+          ],
+          "id": "6bb8efd2-73b3-4e2b-9fed-a7a3fdf84778"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementPatternType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementPatternTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "pattern.type.coding"
+            }
+          ],
+          "id": "d4935ae6-5606-4fa0-a817-10610579b4d1"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionDifferentialElementPattern"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionDifferentialElementPatternAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "pattern.profile"
+            }
+          ],
+          "id": "c870a51c-5490-4963-b8e8-a2d2a71e28f4"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementExampleValueType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementExampleValueTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "value.type.coding"
+            }
+          ],
+          "id": "7ee2f693-cff0-45a5-af6c-d37f8f3d059a"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDataOnStructureDefinitionDifferentialElementDefaultValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DataOnStructureDefinitionDifferentialElementDefaultValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "data",
+              "modificationPath": "defaultValue.data"
+            }
+          ],
+          "id": "94d8d6ab-cd65-43a1-820d-3f0dd370777d"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnStructureDefinitionDifferentialElementExampleValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnStructureDefinitionDifferentialElementExampleValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "mustSupport"
+            }
+          ],
+          "id": "ebff25b8-a23c-4480-80f5-08cac254f4e4"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTimeOfDayOnStructureDefinitionDifferentialElementPatternTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TimeOfDayOnStructureDefinitionDifferentialElementPatternTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "timeOfDay",
+              "modificationPath": "pattern.timing.repeat.timeOfDay"
+            }
+          ],
+          "id": "d24791d5-7269-4b35-9d14-3826730548d7"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionDifferentialElementExampleValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionDifferentialElementExampleValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "value.profile"
+            }
+          ],
+          "id": "39f98591-b67e-4588-8b53-0992bd852eb4"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionDifferentialElementExampleValueDataCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionDifferentialElementExampleValueDataCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "77a8be22-96fc-4f3e-8e25-93390adf7b8f"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDiscriminatorOnStructureDefinitionDifferentialElementSlicing"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DiscriminatorOnStructureDefinitionDifferentialElementSlicingAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "discriminator",
+              "modificationPath": "slicing.discriminator"
+            }
+          ],
+          "id": "6fa29539-2632-43c2-9ebd-5f719341e9c0"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDataOnStructureDefinitionDifferentialElementFixed"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DataOnStructureDefinitionDifferentialElementFixedAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "data",
+              "modificationPath": "fixed.data"
+            }
+          ],
+          "id": "62bc9b95-f291-4e4e-bfed-2433d3d48e01"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDayOfWeekOnStructureDefinitionDifferentialElementPatternTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DayOfWeekOnStructureDefinitionDifferentialElementPatternTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "dayOfWeek",
+              "modificationPath": "pattern.timing.repeat.dayOfWeek"
+            }
+          ],
+          "id": "1fbcb8ca-036d-44eb-bba7-fc003d9230c1"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnStructureDefinitionDifferentialElementPatternData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnStructureDefinitionDifferentialElementPatternDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "mustSupport"
+            }
+          ],
+          "id": "fd9bc875-febe-40d7-aebc-0118efb8fccb"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddExampleOnStructureDefinitionDifferentialElement"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ExampleOnStructureDefinitionDifferentialElementAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "example",
+              "modificationPath": "example"
+            }
+          ],
+          "id": "d94b5aff-8d72-4f52-94e6-9d55ad2c3d86"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDataOnStructureDefinitionDifferentialElementExampleValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DataOnStructureDefinitionDifferentialElementExampleValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "data",
+              "modificationPath": "value.data"
+            }
+          ],
+          "id": "447b8ae8-06cd-4b8c-b83e-bc15d54907a7"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementDefaultValueDataSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementDefaultValueDataSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "subject.coding"
+            }
+          ],
+          "id": "85b34597-07f7-48a1-abb5-e85a0d1a5d4d"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddConditionOnStructureDefinitionDifferentialElement"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ConditionOnStructureDefinitionDifferentialElementAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "condition",
+              "modificationPath": "condition"
+            }
+          ],
+          "id": "594cac3c-9da0-4649-a23d-b82d0c41a05f"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementDefaultValueType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementDefaultValueTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "defaultValue.type.coding"
+            }
+          ],
+          "id": "573c2370-183f-4b63-b8df-15a2b804ae1c"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementDefaultValueTimingCode"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementDefaultValueTimingCodeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "defaultValue.timing.code.coding"
+            }
+          ],
+          "id": "46b6ea32-a474-4cda-a1b7-1393c40196cd"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementDefaultValueSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementDefaultValueSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "defaultValue.subject.coding"
+            }
+          ],
+          "id": "2ba15b45-13de-4952-b94e-d717a9d670cf"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionDifferentialElementPatternData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionDifferentialElementPatternDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "profile"
+            }
+          ],
+          "id": "182a1922-e68c-4690-9a40-d09b3ab6c2e2"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementExampleValueConcept"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementExampleValueConceptAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "value.concept.coding"
+            }
+          ],
+          "id": "df0a9597-5b01-45f6-b88c-fe640a44f5f6"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddAliasOnStructureDefinitionDifferentialElement"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "AliasOnStructureDefinitionDifferentialElementAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "alias",
+              "modificationPath": "alias"
+            }
+          ],
+          "id": "7a88ae96-fbac-47e8-9049-6d2f943e4386"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionDifferentialElementDefaultValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionDifferentialElementDefaultValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "defaultValue.profile"
+            }
+          ],
+          "id": "24838f9e-14d6-42d5-af57-75255a95fa69"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionDifferentialElementExampleValueTimingCode"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionDifferentialElementExampleValueTimingCodeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "value.timing.code.coding"
+            }
+          ],
+          "id": "906ddef4-f155-4ea4-8810-3843938714b8"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTypeOnStructureDefinitionDifferentialElement"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TypeOnStructureDefinitionDifferentialElementAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "type",
+              "modificationPath": "type"
+            }
+          ],
+          "id": "19352b36-94ca-45a3-9d9b-0d1b3e14e4f2"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionIdentifierType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionIdentifierTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "identifierId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "type.coding"
+            }
+          ],
+          "id": "bd16a47a-c203-4b0b-9fec-8c66aa28713c"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionUseContextValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionUseContextValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "useContextId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "value.coding"
+            }
+          ],
+          "id": "143329af-4967-4a25-93aa-781e5d90a9b9"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnStructureDefinitionSnapshotElementExampleValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnStructureDefinitionSnapshotElementExampleValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "mustSupport"
+            }
+          ],
+          "id": "33721aa5-e54f-4091-8482-9c126319833f"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDiscriminatorOnStructureDefinitionSnapshotElementSlicing"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DiscriminatorOnStructureDefinitionSnapshotElementSlicingAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "discriminator",
+              "modificationPath": "slicing.discriminator"
+            }
+          ],
+          "id": "ec39bac7-b543-4601-a38b-6ed4b9e55cdd"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTimeOfDayOnStructureDefinitionSnapshotElementExampleValueTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TimeOfDayOnStructureDefinitionSnapshotElementExampleValueTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "timeOfDay",
+              "modificationPath": "value.timing.repeat.timeOfDay"
+            }
+          ],
+          "id": "c3b99545-ccf9-450a-8e31-da031a5eb0d1"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionSnapshotElementDefaultValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionSnapshotElementDefaultValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "defaultValue.profile"
+            }
+          ],
+          "id": "22c96475-5214-46e0-bc6d-7b3397f7e5a5"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnStructureDefinitionSnapshotElementFixed"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnStructureDefinitionSnapshotElementFixedAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "fixed.dateFilter"
+            }
+          ],
+          "id": "09d063e2-f7ed-442f-8f02-14851c30aa34"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementPatternConcept"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementPatternConceptAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "pattern.concept.coding"
+            }
+          ],
+          "id": "1ed61655-4331-4afd-a636-739f37fc1fef"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementDefaultValueType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementDefaultValueTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "defaultValue.type.coding"
+            }
+          ],
+          "id": "a919a8cf-6223-488d-9842-bfc6b7a24653"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionSnapshotElementFixedCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionSnapshotElementFixedCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "e2b09529-2290-4729-b16b-c23d4891f6e9"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddEventOnStructureDefinitionSnapshotElementFixedTiming"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "EventOnStructureDefinitionSnapshotElementFixedTimingAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "event",
+              "modificationPath": "fixed.timing.event"
+            }
+          ],
+          "id": "662524fa-df56-4665-be55-9a5688849ab3"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDataOnStructureDefinitionSnapshotElementFixed"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DataOnStructureDefinitionSnapshotElementFixedAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "data",
+              "modificationPath": "fixed.data"
+            }
+          ],
+          "id": "ade1398a-c3f5-4901-a4b0-f2304de6cc09"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnStructureDefinitionSnapshotElementDefaultValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnStructureDefinitionSnapshotElementDefaultValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "defaultValue.mustSupport"
+            }
+          ],
+          "id": "0f36d4ac-f45c-48c7-a63f-8bf38f30ca58"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementPatternTimingCode"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementPatternTimingCodeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "pattern.timing.code.coding"
+            }
+          ],
+          "id": "9cc357cb-6ceb-4248-a5be-60dcc5923fb3"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementPatternSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementPatternSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "pattern.subject.coding"
+            }
+          ],
+          "id": "51dcc6db-dd57-4be9-a5ac-8197adb795c3"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddWhenOnStructureDefinitionSnapshotElementFixedTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "WhenOnStructureDefinitionSnapshotElementFixedTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "when",
+              "modificationPath": "fixed.timing.repeat.when"
+            }
+          ],
+          "id": "a2444b6a-1863-442b-b735-663c26ddfd32"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnStructureDefinitionSnapshotElementDefaultValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnStructureDefinitionSnapshotElementDefaultValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "defaultValue.sort"
+            }
+          ],
+          "id": "ee48a71d-b2e8-4d49-bf2a-cc13dc6efcb7"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementFixedConcept"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementFixedConceptAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "fixed.concept.coding"
+            }
+          ],
+          "id": "1d4cfe3f-26bd-41e2-a964-86d63e59d71d"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnStructureDefinitionSnapshotElementPatternData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnStructureDefinitionSnapshotElementPatternDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "dateFilter"
+            }
+          ],
+          "id": "8a0653df-9df0-46d1-89a5-05f4e6614815"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnStructureDefinitionSnapshotElementFixedData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnStructureDefinitionSnapshotElementFixedDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "mustSupport"
+            }
+          ],
+          "id": "5871f7ab-a042-4a88-84d6-fe1d7390b47b"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTypeOnStructureDefinitionSnapshotElement"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TypeOnStructureDefinitionSnapshotElementAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "type",
+              "modificationPath": "type"
+            }
+          ],
+          "id": "c4289362-906a-42c6-bd93-e78e875e5399"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnStructureDefinitionSnapshotElementDefaultValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnStructureDefinitionSnapshotElementDefaultValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "mustSupport"
+            }
+          ],
+          "id": "260379b5-4d77-42cf-8b81-87b697b9b5d3"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddWhenOnStructureDefinitionSnapshotElementDefaultValueTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "WhenOnStructureDefinitionSnapshotElementDefaultValueTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "when",
+              "modificationPath": "defaultValue.timing.repeat.when"
+            }
+          ],
+          "id": "837c5666-5f07-4311-b2d7-9eadf82b0faf"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementExampleValueTimingCode"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementExampleValueTimingCodeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "value.timing.code.coding"
+            }
+          ],
+          "id": "7e72f5c4-32c0-4865-a75c-b6c56f26ff98"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnStructureDefinitionSnapshotElementFixed"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnStructureDefinitionSnapshotElementFixedAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "fixed.mustSupport"
+            }
+          ],
+          "id": "6f06b9d1-82cd-4924-a916-edbda5499a11"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionSnapshotElementExampleValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionSnapshotElementExampleValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "value.profile"
+            }
+          ],
+          "id": "b62662c5-b7e4-4b7e-aaa0-b37de5de6352"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnStructureDefinitionSnapshotElementPatternData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnStructureDefinitionSnapshotElementPatternDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "mustSupport"
+            }
+          ],
+          "id": "72833e4b-7601-4c2a-890d-a19240b9ca49"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTimeOfDayOnStructureDefinitionSnapshotElementFixedTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TimeOfDayOnStructureDefinitionSnapshotElementFixedTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "timeOfDay",
+              "modificationPath": "fixed.timing.repeat.timeOfDay"
+            }
+          ],
+          "id": "0213b65f-0a0f-4906-9aa3-7257af94011c"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddExampleOnStructureDefinitionSnapshotElement"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ExampleOnStructureDefinitionSnapshotElementAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "example",
+              "modificationPath": "example"
+            }
+          ],
+          "id": "6360e488-e8b7-4808-874f-d80468fb1dbd"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementExampleValueType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementExampleValueTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "value.type.coding"
+            }
+          ],
+          "id": "121a3ce7-6e2c-4fa2-bd6b-f248e0511d85"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnStructureDefinitionSnapshotElementPatternData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnStructureDefinitionSnapshotElementPatternDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "sort"
+            }
+          ],
+          "id": "720cf529-9090-4664-929f-2693b5ef8974"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnStructureDefinitionSnapshotElementDefaultValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnStructureDefinitionSnapshotElementDefaultValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "defaultValue.dateFilter"
+            }
+          ],
+          "id": "bc7c5db4-06db-4e08-9c0c-784b3244882c"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnStructureDefinitionSnapshotElementExampleValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnStructureDefinitionSnapshotElementExampleValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "value.dateFilter"
+            }
+          ],
+          "id": "a042b9c8-3e88-4f11-b71d-c451e354217d"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementDefaultValueTimingCode"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementDefaultValueTimingCodeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "defaultValue.timing.code.coding"
+            }
+          ],
+          "id": "bfb2780b-0fe7-43ee-972b-d522a499ef5d"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementDefaultValueSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementDefaultValueSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "defaultValue.subject.coding"
+            }
+          ],
+          "id": "56ef0b49-1ef5-4d79-9b4f-802e9274dd9a"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionSnapshotElementType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionSnapshotElementTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "profile"
+            }
+          ],
+          "id": "80b7e016-3fea-43e9-9a76-4134258d7897"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnStructureDefinitionSnapshotElementFixed"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnStructureDefinitionSnapshotElementFixedAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "fixed.codeFilter"
+            }
+          ],
+          "id": "fb047bb5-8b3e-4e17-a559-eee73ac7e925"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementFixedDataSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementFixedDataSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "subject.coding"
+            }
+          ],
+          "id": "f5c856ee-fe63-40a5-a2d3-7c8bbbb2a559"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnStructureDefinitionSnapshotElementPattern"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnStructureDefinitionSnapshotElementPatternAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "pattern.mustSupport"
+            }
+          ],
+          "id": "40971cab-5bc0-4f4b-bb61-4a83d0c7fd3b"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDayOfWeekOnStructureDefinitionSnapshotElementFixedTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DayOfWeekOnStructureDefinitionSnapshotElementFixedTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "dayOfWeek",
+              "modificationPath": "fixed.timing.repeat.dayOfWeek"
+            }
+          ],
+          "id": "61b027dc-3de5-41b1-a290-4db66c44d2cc"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTimeOfDayOnStructureDefinitionSnapshotElementPatternTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TimeOfDayOnStructureDefinitionSnapshotElementPatternTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "timeOfDay",
+              "modificationPath": "pattern.timing.repeat.timeOfDay"
+            }
+          ],
+          "id": "78833ff1-0fab-460d-af17-ef1b3828b47b"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddWhenOnStructureDefinitionSnapshotElementPatternTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "WhenOnStructureDefinitionSnapshotElementPatternTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "when",
+              "modificationPath": "pattern.timing.repeat.when"
+            }
+          ],
+          "id": "0c7c78a0-2976-4c76-8171-20439f287e07"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnStructureDefinitionSnapshotElementPattern"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnStructureDefinitionSnapshotElementPatternAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "pattern.sort"
+            }
+          ],
+          "id": "3d395188-1a6b-46ea-b46e-f3007a1b43e9"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementPattern"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementPatternAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "pattern.coding"
+            }
+          ],
+          "id": "9c43f178-3ed4-45e9-ad83-ba8492e87d10"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTargetProfileRefOnStructureDefinitionSnapshotElementType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TargetProfileRefOnStructureDefinitionSnapshotElementTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
+              "inputValueParameterName": "targetProfileRef",
+              "modificationPath": "targetProfileRef"
+            }
+          ],
+          "id": "4eb94b2b-a5fe-4233-a37e-2a015415e30c"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnStructureDefinitionSnapshotElementDefaultValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnStructureDefinitionSnapshotElementDefaultValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "codeFilter"
+            }
+          ],
+          "id": "585d8922-c208-434d-a70b-10f35e271571"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDayOfWeekOnStructureDefinitionSnapshotElementDefaultValueTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DayOfWeekOnStructureDefinitionSnapshotElementDefaultValueTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "dayOfWeek",
+              "modificationPath": "defaultValue.timing.repeat.dayOfWeek"
+            }
+          ],
+          "id": "a1441a2f-ba90-453d-a627-870bc0f8bea9"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionSnapshotElementDefaultValueDataCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionSnapshotElementDefaultValueDataCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "58edbdd1-9f0a-43d7-b8af-1e8303dce803"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnStructureDefinitionSnapshotElementExampleValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnStructureDefinitionSnapshotElementExampleValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "sort"
+            }
+          ],
+          "id": "af190d34-4168-498d-bf13-cd5bad715911"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementExampleValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementExampleValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "value.coding"
+            }
+          ],
+          "id": "62afbe71-e0ca-4f6f-b263-a697e88c005a"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnStructureDefinitionSnapshotElementExampleValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnStructureDefinitionSnapshotElementExampleValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "codeFilter"
+            }
+          ],
+          "id": "4280d16f-e556-4bc1-a59f-5fcb3e535967"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionSnapshotElementExampleValueCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionSnapshotElementExampleValueCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "6a94e025-3b9f-4c21-809a-4b3d8c6c1b81"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnStructureDefinitionSnapshotElementPattern"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnStructureDefinitionSnapshotElementPatternAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "pattern.codeFilter"
+            }
+          ],
+          "id": "72a01eb8-1878-49ec-b5ba-9a5d82805211"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnStructureDefinitionSnapshotElementPatternData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnStructureDefinitionSnapshotElementPatternDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "codeFilter"
+            }
+          ],
+          "id": "9cae9213-3e11-429b-9d63-844bde20ffac"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementDefaultValueConcept"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementDefaultValueConceptAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "defaultValue.concept.coding"
+            }
+          ],
+          "id": "85b3fd9b-6c43-4ca3-a65c-5a63a21920c6"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionSnapshotElementDefaultValueCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionSnapshotElementDefaultValueCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "e148f754-89e1-4ef6-9198-738846310b73"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionSnapshotElementExampleValueDataCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionSnapshotElementExampleValueDataCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "0d836c6a-4d10-493a-ae2a-3b6c20a0590a"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnStructureDefinitionSnapshotElementDefaultValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnStructureDefinitionSnapshotElementDefaultValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "sort"
+            }
+          ],
+          "id": "cad643a0-064b-4124-ae10-bb6cc541cc27"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementFixedTimingCode"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementFixedTimingCodeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "fixed.timing.code.coding"
+            }
+          ],
+          "id": "e53cdb77-ac8a-4141-8d3a-5e242c1804de"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementDefaultValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementDefaultValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "defaultValue.coding"
+            }
+          ],
+          "id": "a6c98bb3-5b16-445d-80d4-7c45742a1da5"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnStructureDefinitionSnapshotElementFixedData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnStructureDefinitionSnapshotElementFixedDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "sort"
+            }
+          ],
+          "id": "1f761264-5b11-4135-8a0e-bf6a51c4cf9a"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionSnapshotElementPatternCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionSnapshotElementPatternCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "e6be7e2a-9c29-4b9a-9724-e4e63b45b803"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnStructureDefinitionSnapshotElementFixedData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnStructureDefinitionSnapshotElementFixedDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "dateFilter"
+            }
+          ],
+          "id": "27c7d582-a0ea-4bff-9c43-b47950122aff"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTimeOfDayOnStructureDefinitionSnapshotElementDefaultValueTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TimeOfDayOnStructureDefinitionSnapshotElementDefaultValueTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "timeOfDay",
+              "modificationPath": "defaultValue.timing.repeat.timeOfDay"
+            }
+          ],
+          "id": "5b166902-15f9-4bb7-98b6-0136770560eb"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionSnapshotElementDefaultValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionSnapshotElementDefaultValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "profile"
+            }
+          ],
+          "id": "1783ee58-4405-4f95-bb55-03c7a1c36414"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionSnapshotElementPatternDataCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionSnapshotElementPatternDataCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "c2d5c0d2-6661-4c47-b68b-c6cc4987d5dd"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddEventOnStructureDefinitionSnapshotElementDefaultValueTiming"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "EventOnStructureDefinitionSnapshotElementDefaultValueTimingAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "event",
+              "modificationPath": "defaultValue.timing.event"
+            }
+          ],
+          "id": "fc7aab7a-4ceb-4532-bc6e-0d7b08e6e693"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementDefaultValueDataSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementDefaultValueDataSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "subject.coding"
+            }
+          ],
+          "id": "d8ffb551-7a75-41af-a479-18791fd58c03"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnStructureDefinitionSnapshotElementDefaultValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnStructureDefinitionSnapshotElementDefaultValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "defaultValue.codeFilter"
+            }
+          ],
+          "id": "4d17c224-db39-4ad3-bec1-fdd5c5ea9de1"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnStructureDefinitionSnapshotElementFixedData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnStructureDefinitionSnapshotElementFixedDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "codeFilter"
+            }
+          ],
+          "id": "a8073c24-3513-4abc-8786-9369ff465cb5"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementFixedType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementFixedTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "fixed.type.coding"
+            }
+          ],
+          "id": "a4df9d5e-d308-40b7-9846-3a7bb1cc25ae"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDataOnStructureDefinitionSnapshotElementPattern"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DataOnStructureDefinitionSnapshotElementPatternAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "data",
+              "modificationPath": "pattern.data"
+            }
+          ],
+          "id": "f4e37f42-4a89-4089-ab20-474cb380866f"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionSnapshotElementPatternData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionSnapshotElementPatternDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "profile"
+            }
+          ],
+          "id": "de37e1dd-9c21-4ff1-95fa-2afc5671b60c"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionSnapshotElementExampleValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionSnapshotElementExampleValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "profile"
+            }
+          ],
+          "id": "425f922f-0054-4a84-a3fa-d61af82d9503"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionSnapshotElementPattern"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionSnapshotElementPatternAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "pattern.profile"
+            }
+          ],
+          "id": "1cbd505a-2bce-46ec-91b8-15d15ca9da54"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTargetProfileOnStructureDefinitionSnapshotElementType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TargetProfileOnStructureDefinitionSnapshotElementTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
+              "inputValueParameterName": "targetProfile",
+              "modificationPath": "targetProfile"
+            }
+          ],
+          "id": "24dab5f7-cd90-4c6c-9730-d42d2f1cbcd3"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMappingOnStructureDefinitionSnapshotElement"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MappingOnStructureDefinitionSnapshotElementAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "mapping",
+              "modificationPath": "mapping"
+            }
+          ],
+          "id": "7a53d69a-1933-416e-a1cc-cd569ec65f77"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementExampleValueConcept"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementExampleValueConceptAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "value.concept.coding"
+            }
+          ],
+          "id": "fde479b5-f551-4a99-a5d4-167a3dd861cd"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnStructureDefinitionSnapshotElementExampleValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnStructureDefinitionSnapshotElementExampleValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "value.codeFilter"
+            }
+          ],
+          "id": "0a85f95e-af0f-4b8b-849e-2cb87d824245"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionSnapshotElementFixedData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionSnapshotElementFixedDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "profile"
+            }
+          ],
+          "id": "b0bdd46d-2cf7-43b0-b9de-c03de4978c96"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDayOfWeekOnStructureDefinitionSnapshotElementPatternTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DayOfWeekOnStructureDefinitionSnapshotElementPatternTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "dayOfWeek",
+              "modificationPath": "pattern.timing.repeat.dayOfWeek"
+            }
+          ],
+          "id": "102a5ea3-1424-48be-898e-de1e9a5e6a88"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnStructureDefinitionSnapshotElementFixed"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnStructureDefinitionSnapshotElementFixedAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "fixed.sort"
+            }
+          ],
+          "id": "08a53f62-bc49-4d6d-b5b1-6615410f3dfc"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddWhenOnStructureDefinitionSnapshotElementExampleValueTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "WhenOnStructureDefinitionSnapshotElementExampleValueTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "when",
+              "modificationPath": "value.timing.repeat.when"
+            }
+          ],
+          "id": "cf420434-05af-4219-9cb0-ca35547780f4"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnStructureDefinitionSnapshotElementDefaultValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnStructureDefinitionSnapshotElementDefaultValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "dateFilter"
+            }
+          ],
+          "id": "151572a1-039d-4d3c-95a4-461d4cfc5be4"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddElementOnStructureDefinitionSnapshot"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ElementOnStructureDefinitionSnapshotAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "element",
+              "modificationPath": "snapshot.element"
+            }
+          ],
+          "id": "f0525e80-77fc-462c-9d9a-94bedfa2c5fb"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementExampleValueDataSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementExampleValueDataSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "subject.coding"
+            }
+          ],
+          "id": "b138ef97-3966-460e-9b36-702d2e0ae344"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddConstraintOnStructureDefinitionSnapshotElement"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ConstraintOnStructureDefinitionSnapshotElementAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "constraint",
+              "modificationPath": "constraint"
+            }
+          ],
+          "id": "e3db9e4f-dcbf-4005-805e-a6a4d2b7ee12"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddEventOnStructureDefinitionSnapshotElementExampleValueTiming"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "EventOnStructureDefinitionSnapshotElementExampleValueTimingAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "event",
+              "modificationPath": "value.timing.event"
+            }
+          ],
+          "id": "dea52b98-1c06-4f2c-b8d0-9277f5d8db52"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnStructureDefinitionSnapshotElementFixed"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnStructureDefinitionSnapshotElementFixedAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "fixed.profile"
+            }
+          ],
+          "id": "3729cc17-6c25-4ca2-935d-39df506ebeff"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddConditionOnStructureDefinitionSnapshotElement"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ConditionOnStructureDefinitionSnapshotElementAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "condition",
+              "modificationPath": "condition"
+            }
+          ],
+          "id": "ff27f7af-1083-49be-a883-492227ce060a"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementFixed"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementFixedAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "fixed.coding"
+            }
+          ],
+          "id": "fc99d417-c66c-45df-bdc1-c41f2f9943e3"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDayOfWeekOnStructureDefinitionSnapshotElementExampleValueTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DayOfWeekOnStructureDefinitionSnapshotElementExampleValueTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "dayOfWeek",
+              "modificationPath": "value.timing.repeat.dayOfWeek"
+            }
+          ],
+          "id": "d6646309-da1b-4943-b62f-673ab5a68fef"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddAliasOnStructureDefinitionSnapshotElement"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "AliasOnStructureDefinitionSnapshotElementAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "alias",
+              "modificationPath": "alias"
+            }
+          ],
+          "id": "009c280a-b0ca-45ec-b45f-4aaf3a2c6fb4"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionSnapshotElement"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionSnapshotElementAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "57c82171-6e16-469c-b09a-7e3ab54a37f3"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnStructureDefinitionSnapshotElementExampleValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnStructureDefinitionSnapshotElementExampleValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "value.mustSupport"
+            }
+          ],
+          "id": "7b4dcfae-99ea-44e9-be81-3a49498e172e"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnStructureDefinitionSnapshotElementFixedDataCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnStructureDefinitionSnapshotElementFixedDataCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "2d7dbe6e-3c03-4ec3-8b19-f7a04a7103ae"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDataOnStructureDefinitionSnapshotElementExampleValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DataOnStructureDefinitionSnapshotElementExampleValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "data",
+              "modificationPath": "value.data"
+            }
+          ],
+          "id": "4db334d2-9695-4891-bde4-eb8935c06024"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnStructureDefinitionSnapshotElementPattern"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnStructureDefinitionSnapshotElementPatternAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "pattern.dateFilter"
+            }
+          ],
+          "id": "74520391-853e-4032-9172-fa8dfddd0f0e"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementFixedSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementFixedSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "fixed.subject.coding"
+            }
+          ],
+          "id": "324bad42-a1cf-4b82-b55f-ba52a78c9f88"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnStructureDefinitionSnapshotElementExampleValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnStructureDefinitionSnapshotElementExampleValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "value.sort"
+            }
+          ],
+          "id": "fb179e61-8d88-46cd-a517-24581eae9f1b"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddAggregationOnStructureDefinitionSnapshotElementType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "AggregationOnStructureDefinitionSnapshotElementTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
+              "inputValueParameterName": "aggregation",
+              "modificationPath": "aggregation"
+            }
+          ],
+          "id": "a211629c-40fd-4285-8c6f-04051e6f8eb8"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementPatternType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementPatternTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "pattern.type.coding"
+            }
+          ],
+          "id": "9550e096-0e99-4193-ad9b-0164d652b0ff"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddEventOnStructureDefinitionSnapshotElementPatternTiming"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "EventOnStructureDefinitionSnapshotElementPatternTimingAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "event",
+              "modificationPath": "pattern.timing.event"
+            }
+          ],
+          "id": "a84281e9-dd9d-4b2a-a213-f6c75d49f0a9"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnStructureDefinitionSnapshotElementExampleValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnStructureDefinitionSnapshotElementExampleValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "dateFilter"
+            }
+          ],
+          "id": "cc196371-35e6-424c-aa11-2ee1a8530fcd"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDataOnStructureDefinitionSnapshotElementDefaultValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DataOnStructureDefinitionSnapshotElementDefaultValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "data",
+              "modificationPath": "defaultValue.data"
+            }
+          ],
+          "id": "aef8f62a-b9f5-471b-accf-a3aeeb493eea"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddRepresentationOnStructureDefinitionSnapshotElement"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "RepresentationOnStructureDefinitionSnapshotElementAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "elementId",
+              "inputValueParameterName": "representation",
+              "modificationPath": "representation"
+            }
+          ],
+          "id": "a4b8fbaa-830d-4a6f-98e1-75e677bdf48b"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementPatternDataSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementPatternDataSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "subject.coding"
+            }
+          ],
+          "id": "262d31f5-b077-474d-91fd-a7061c3e7a03"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnStructureDefinitionSnapshotElementExampleValueSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnStructureDefinitionSnapshotElementExampleValueSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "exampleId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "value.subject.coding"
+            }
+          ],
+          "id": "bd3d8227-b34d-4a14-89bd-23578660f9c8"
+        }
+      ]
+    }
+  ],
+  "id": "StructureDefinitionAggregate"
+}

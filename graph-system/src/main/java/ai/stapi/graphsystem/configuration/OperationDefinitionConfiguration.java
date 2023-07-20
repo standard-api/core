@@ -5,6 +5,7 @@ import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionProvide
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionStructureTypeMapper;
 import ai.stapi.graphsystem.operationdefinition.model.resourceStructureTypeOperationsMapper.AddItemOnResourceOperationsMapper;
 import ai.stapi.graphsystem.operationdefinition.model.resourceStructureTypeOperationsMapper.CreationalResourceOperationMapper;
+import ai.stapi.graphsystem.operationdefinition.model.resourceStructureTypeOperationsMapper.UpdateResourceOperationMapper;
 import ai.stapi.schema.adHocLoaders.GenericAdHocModelDefinitionsLoader;
 import ai.stapi.schema.scopeProvider.ScopeCacher;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
@@ -47,5 +48,12 @@ public class OperationDefinitionConfiguration {
       StructureSchemaFinder structureSchemaFinder
   ) {
     return new CreationalResourceOperationMapper(structureSchemaFinder);
+  }
+
+  @Bean
+  public UpdateResourceOperationMapper updateResourceOperationMapper(
+      StructureSchemaFinder structureSchemaFinder
+  ) {
+    return new UpdateResourceOperationMapper(structureSchemaFinder);
   }
 }

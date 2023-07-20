@@ -1,0 +1,46 @@
+{
+  "code": "AddTargetProfileRefOnStructureDefinitionDifferentialElementType",
+  "system": false,
+  "instance": true,
+  "resource": [
+    "StructureDefinition"
+  ],
+  "kind": "operation",
+  "parameter": [
+    {
+      "name": "targetProfileRef",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "type": "Reference",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.type.targetProfileRef"
+        }
+      ],
+      "targetProfileRef": [
+        {
+          "id": "StructureDefinition"
+        }
+      ]
+    },
+    {
+      "name": "typeId",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "id",
+      "referencedFrom": [
+        {
+          "source": "StructureDefinition.differential.element.type.id"
+        }
+      ],
+      "targetProfileRef": []
+    }
+  ],
+  "name": "Add TargetProfileRef on StructureDefinition.differential.element.type",
+  "description": "Generated command for adding targetProfileRef(Reference) on StructureDefinition Aggregate",
+  "id": "AddTargetProfileRefOnStructureDefinitionDifferentialElementType",
+  "type": false,
+  "status": "draft"
+}

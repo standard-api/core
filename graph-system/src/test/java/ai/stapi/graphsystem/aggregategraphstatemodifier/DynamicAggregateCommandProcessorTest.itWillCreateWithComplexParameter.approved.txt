@@ -1,0 +1,20 @@
+nodes:
+	node_type: Meta
+	node_hash: CCE79
+	node_edges:
+		Parameters -> meta -> Meta (A5E66 -> 234AE -> CCE79)
+	attributes:
+		source -> http://some.source.uri
+
+	node_type: Parameters
+	node_hash: A5E66
+	node_edges:
+		Parameters -> meta -> Meta (A5E66 -> 234AE -> CCE79)
+	attributes:
+		language -> cz
+
+edges:
+	edge_type: meta
+	edge_hash: 234AE
+	Parameters -> meta -> Meta (A5E66 -> 234AE -> CCE79)
+	attributes:

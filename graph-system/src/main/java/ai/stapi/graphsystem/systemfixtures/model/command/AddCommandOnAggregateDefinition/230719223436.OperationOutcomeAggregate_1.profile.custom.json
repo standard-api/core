@@ -1,0 +1,77 @@
+{
+  "command": [
+    {
+      "creationalPolicy": "if_missing",
+      "operation": {
+        "id": "CreateOperationOutcome"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "OperationOutcomeCreated"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "extension",
+              "modificationPath": "extension"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "contained",
+              "modificationPath": "contained"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "issue",
+              "modificationPath": "issue"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "meta",
+              "modificationPath": "meta"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "modifierExtension",
+              "modificationPath": "modifierExtension"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "implicitRules",
+              "modificationPath": "implicitRules"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "language",
+              "modificationPath": "language"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "text",
+              "modificationPath": "text"
+            }
+          ],
+          "id": "e633a7a4-bd1a-45bc-99e7-684eccdc42eb"
+        }
+      ]
+    }
+  ],
+  "id": "OperationOutcomeAggregate"
+}

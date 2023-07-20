@@ -19,5 +19,4 @@ public interface AggregateGraphStateModificator {
   );
 
   boolean supports(EventFactoryModification modificationDefinition);
-
 }

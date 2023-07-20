@@ -1,9 +1,10 @@
 [ {
   "eventFactoryId" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
   "eventFactoryModifications" : [ {
+    "startIdParameterName" : null,
     "inputValueParameterName" : "exampleParameter",
     "kind" : "add",
-    "modificationPath" : "AggregateDefinition.exampleParameter",
+    "modificationPath" : "exampleParameter",
     "destinationIndexParameterName" : null
   } ]
 } ]

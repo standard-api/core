@@ -9,9 +9,10 @@
     }
   },
   "modification" : [ {
+    "startIdParameterName" : null,
     "inputValueParameterName" : "element",
     "kind" : "add",
-    "modificationPath" : "StructureDefinition.differential.element",
+    "modificationPath" : "differential.element",
     "destinationIndexParameterName" : null
   } ]
 } ]

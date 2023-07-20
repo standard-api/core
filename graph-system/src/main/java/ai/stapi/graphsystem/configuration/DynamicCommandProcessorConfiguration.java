@@ -7,6 +7,7 @@ import ai.stapi.graphsystem.aggregategraphstatemodifier.AddAggregateGraphStateMo
 import ai.stapi.graphsystem.aggregategraphstatemodifier.AggregateGraphStateModificator;
 import ai.stapi.graphsystem.aggregategraphstatemodifier.DynamicAggregateCommandProcessor;
 import ai.stapi.graphsystem.aggregategraphstatemodifier.GenericAggregateGraphStateModificator;
+import ai.stapi.graphsystem.aggregategraphstatemodifier.UpsertAggregateGraphStateModificator;
 import ai.stapi.graphsystem.commandEventGraphMappingProvider.GenericCommandEventGraphMappingProvider;
 import ai.stapi.graphsystem.commandEventGraphMappingProvider.specific.SpecificCommandEventGraphMappingProvider;
 import ai.stapi.graphsystem.dynamiccommandprocessor.BasicDynamicCommandProcessor;
@@ -96,6 +97,20 @@ public class DynamicCommandProcessorConfiguration {
       GenericObjectGraphMapper objectGraphMapper
   ) {
     return new AddAggregateGraphStateModificator(
+        structureSchemaFinder,
+        dynamicOgmProvider,
+        objectGraphMapper
+    );
+  }
+
+  @Bean
+  @ConditionalOnBean(GenericAggregateGraphStateModificator.class)
+  public UpsertAggregateGraphStateModificator upsertAggregateGraphStateModificator(
+      StructureSchemaFinder structureSchemaFinder,
+      DynamicOgmProvider dynamicOgmProvider,
+      GenericObjectGraphMapper objectGraphMapper
+  ) {
+    return new UpsertAggregateGraphStateModificator(
         structureSchemaFinder,
         dynamicOgmProvider,
         objectGraphMapper

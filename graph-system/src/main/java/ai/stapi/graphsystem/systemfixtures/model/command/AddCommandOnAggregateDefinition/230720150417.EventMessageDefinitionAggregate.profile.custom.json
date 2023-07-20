@@ -1,0 +1,49 @@
+{
+  "command": [
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "UpdateEventMessageDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "EventMessageDefinitionUpdated"
+          },
+          "modification": [
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "name",
+              "modificationPath": "name"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "description",
+              "modificationPath": "description"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "implicitRules",
+              "modificationPath": "implicitRules"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "language",
+              "modificationPath": "language"
+            }
+          ],
+          "id": "2ac75e02-f831-4c9c-984d-4c5a8e6da5e5"
+        }
+      ]
+    }
+  ],
+  "id": "EventMessageDefinitionAggregate"
+}

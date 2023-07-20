@@ -1,0 +1,196 @@
+{
+  "command": [
+    {
+      "creationalPolicy": "if_missing",
+      "operation": {
+        "id": "CreateValueSet"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ValueSetCreated"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "date",
+              "modificationPath": "date"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "copyright",
+              "modificationPath": "copyright"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "extension",
+              "modificationPath": "extension"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "purpose",
+              "modificationPath": "purpose"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "jurisdiction",
+              "modificationPath": "jurisdiction"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "modifierExtension",
+              "modificationPath": "modifierExtension"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "description",
+              "modificationPath": "description"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "language",
+              "modificationPath": "language"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "experimental",
+              "modificationPath": "experimental"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "title",
+              "modificationPath": "title"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "contact",
+              "modificationPath": "contact"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "text",
+              "modificationPath": "text"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "identifier",
+              "modificationPath": "identifier"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "version",
+              "modificationPath": "version"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "url",
+              "modificationPath": "url"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "expansion",
+              "modificationPath": "expansion"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "immutable",
+              "modificationPath": "immutable"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "contained",
+              "modificationPath": "contained"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "compose",
+              "modificationPath": "compose"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "meta",
+              "modificationPath": "meta"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "name",
+              "modificationPath": "name"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "implicitRules",
+              "modificationPath": "implicitRules"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "publisher",
+              "modificationPath": "publisher"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "useContext",
+              "modificationPath": "useContext"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "status",
+              "modificationPath": "status"
+            }
+          ],
+          "id": "c9128429-95fc-4d81-8718-8b2b45db7122"
+        }
+      ]
+    }
+  ],
+  "id": "ValueSetAggregate"
+}

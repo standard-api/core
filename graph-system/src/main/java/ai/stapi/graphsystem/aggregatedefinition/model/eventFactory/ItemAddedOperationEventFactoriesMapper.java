@@ -7,8 +7,11 @@ import ai.stapi.graphsystem.operationdefinition.model.FieldDefinitionWithSource;
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionDTO;
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionStructureTypeMapper;
 import ai.stapi.graphsystem.operationdefinition.model.resourceStructureTypeOperationsMapper.OperationDefinitionParameters;
+import ai.stapi.schema.structureSchema.FieldDefinition;
 import ai.stapi.schema.structuredefinition.StructureDefinitionId;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class ItemAddedOperationEventFactoriesMapper implements OperationEventFactoriesMapper {
 
@@ -24,6 +27,11 @@ public class ItemAddedOperationEventFactoriesMapper implements OperationEventFac
     var itemAddedEventId = this.createItemAddedEventId(operationDefinition.getId());
     var itemAddedEventName = this.createItemAddedEventName(operationDefinition.getId());
     var fakedStructure = this.mapper.map(operationDefinition);
+    var idParameter = fakedStructure.getAllFields().values().stream()
+        .map(FieldDefinitionWithSource.class::cast)
+        .filter(field -> field.getLastSourcePath().equals("id"))
+        .findFirst();
+    
     return List.of(
         new EventFactory(
             new EventMessageDefinitionData(
@@ -36,7 +44,8 @@ public class ItemAddedOperationEventFactoriesMapper implements OperationEventFac
                 .map(FieldDefinitionWithSource.class::cast)
                 .filter(field -> !field.getLastSourcePath().equals("id"))
                 .map(fieldDefinition -> this.createModification(
-                    fieldDefinition.getSource(),
+                    this.createModificationPath(fieldDefinition, idParameter),
+                    idParameter.map(FieldDefinition::getName).orElse(null),
                     fieldDefinition.getName()
                 )).toList()
         )
@@ -50,12 +59,26 @@ public class ItemAddedOperationEventFactoriesMapper implements OperationEventFac
     return List.of();
   }
 
+  private String createModificationPath(
+      FieldDefinitionWithSource fieldDefinition,
+      Optional<FieldDefinitionWithSource> idParameter
+  ) {
+    var source = fieldDefinition.getSource().split("\\.");
+    var startIndex = idParameter
+        .map(fieldDefinitionWithSource -> fieldDefinitionWithSource.getSourceLength() - 1)
+        .orElse(1);
+    
+    return String.join(".", Arrays.copyOfRange(source, startIndex, source.length));
+  }
+
   private EventFactoryModification createModification(
       String sourcePath,
+      String startIdParameterName,
       String parameterName
   ) {
     return EventFactoryModification.add(
         sourcePath,
+        startIdParameterName,
         parameterName
     );
   }

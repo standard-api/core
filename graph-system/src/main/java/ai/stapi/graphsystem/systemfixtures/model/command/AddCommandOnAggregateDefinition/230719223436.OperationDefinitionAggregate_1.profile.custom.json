@@ -1,0 +1,252 @@
+{
+  "command": [
+    {
+      "creationalPolicy": "if_missing",
+      "operation": {
+        "id": "CreateOperationDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "OperationDefinitionCreated"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "date",
+              "modificationPath": "date"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "extension",
+              "modificationPath": "extension"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "instance",
+              "modificationPath": "instance"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "purpose",
+              "modificationPath": "purpose"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "jurisdiction",
+              "modificationPath": "jurisdiction"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "modifierExtension",
+              "modificationPath": "modifierExtension"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "description",
+              "modificationPath": "description"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "language",
+              "modificationPath": "language"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "experimental",
+              "modificationPath": "experimental"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "type",
+              "modificationPath": "type"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "title",
+              "modificationPath": "title"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "parameter",
+              "modificationPath": "parameter"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "contact",
+              "modificationPath": "contact"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "text",
+              "modificationPath": "text"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "resource",
+              "modificationPath": "resource"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "kind",
+              "modificationPath": "kind"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "inputProfile",
+              "modificationPath": "inputProfile"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "version",
+              "modificationPath": "version"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "affectsState",
+              "modificationPath": "affectsState"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "url",
+              "modificationPath": "url"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "overload",
+              "modificationPath": "overload"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "outputProfile",
+              "modificationPath": "outputProfile"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "contained",
+              "modificationPath": "contained"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "system",
+              "modificationPath": "system"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "meta",
+              "modificationPath": "meta"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "name",
+              "modificationPath": "name"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "publisher",
+              "modificationPath": "publisher"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "implicitRules",
+              "modificationPath": "implicitRules"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "comment",
+              "modificationPath": "comment"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "useContext",
+              "modificationPath": "useContext"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "status",
+              "modificationPath": "status"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "base",
+              "modificationPath": "base"
+            }
+          ],
+          "id": "7b14e1ec-9894-491a-bdcd-6b9cb2a1659c"
+        }
+      ]
+    }
+  ],
+  "id": "OperationDefinitionAggregate"
+}

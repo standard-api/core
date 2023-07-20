@@ -1,0 +1,19 @@
+nodes:
+	node_type: Parameters
+	node_hash: 9590D
+	node_edges:
+		Parameters -> parameter -> ParametersParameter (9590D -> 9B81D -> A69A4)
+	attributes:
+
+	node_type: ParametersParameter
+	node_hash: A69A4
+	node_edges:
+		Parameters -> parameter -> ParametersParameter (9590D -> 9B81D -> A69A4)
+	attributes:
+		name -> someNewParameter
+
+edges:
+	edge_type: parameter
+	edge_hash: 9B81D
+	Parameters -> parameter -> ParametersParameter (9590D -> 9B81D -> A69A4)
+	attributes:

@@ -1,0 +1,419 @@
+{
+  "command": [
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddIdentifierOnValueSet"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "IdentifierOnValueSetAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "identifier",
+              "modificationPath": "identifier"
+            }
+          ],
+          "id": "94048c99-2c19-4643-bde2-4318dc66efae"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddJurisdictionOnValueSet"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "JurisdictionOnValueSetAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "jurisdiction",
+              "modificationPath": "jurisdiction"
+            }
+          ],
+          "id": "b165dcf2-8410-4009-9c01-e8f296bebb4b"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddContactOnValueSet"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ContactOnValueSetAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "contact",
+              "modificationPath": "contact"
+            }
+          ],
+          "id": "38b47f98-f99f-46e3-87d1-3630edd16f36"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddUseContextOnValueSet"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "UseContextOnValueSetAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "useContext",
+              "modificationPath": "useContext"
+            }
+          ],
+          "id": "0c8178a6-278f-438b-a180-0319f41a6c5f"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnValueSetIdentifierType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnValueSetIdentifierTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "identifierId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "type.coding"
+            }
+          ],
+          "id": "54447ae9-f62f-45af-81c6-39bd903d1899"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnValueSetJurisdiction"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnValueSetJurisdictionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "jurisdictionId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "coding"
+            }
+          ],
+          "id": "751a3e02-b31c-4f62-8830-c99c1bce6d7c"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddParameterOnValueSetExpansion"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ParameterOnValueSetExpansionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "parameter",
+              "modificationPath": "expansion.parameter"
+            }
+          ],
+          "id": "9d88c174-3645-4de0-8685-c2d36f6e8587"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDesignationOnValueSetExpansionContains"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DesignationOnValueSetExpansionContainsAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "containsId",
+              "inputValueParameterName": "designation",
+              "modificationPath": "designation"
+            }
+          ],
+          "id": "57e8b38f-6369-404d-8eb8-c58ff349a36b"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddContainsOnValueSetExpansion"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ContainsOnValueSetExpansionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "contains",
+              "modificationPath": "expansion.contains"
+            }
+          ],
+          "id": "5a9a11bb-f706-4307-a8ab-67995926daf6"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddContainsOnValueSetExpansionContains"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ContainsOnValueSetExpansionContainsAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "containsId",
+              "inputValueParameterName": "contains",
+              "modificationPath": "contains"
+            }
+          ],
+          "id": "2b914acb-b846-4278-8a9c-5a17e312785e"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddConceptOnValueSetComposeInclude"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ConceptOnValueSetComposeIncludeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "includeId",
+              "inputValueParameterName": "concept",
+              "modificationPath": "concept"
+            }
+          ],
+          "id": "9841f212-94da-4a8f-80c9-7987bee42f5e"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddFilterOnValueSetComposeInclude"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "FilterOnValueSetComposeIncludeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "includeId",
+              "inputValueParameterName": "filter",
+              "modificationPath": "filter"
+            }
+          ],
+          "id": "0a69a0ae-5886-4dee-958b-662492703c10"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddIncludeOnValueSetCompose"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "IncludeOnValueSetComposeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "include",
+              "modificationPath": "compose.include"
+            }
+          ],
+          "id": "a52a26e5-e6df-418c-a0c3-a0d81fef45c4"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddValueSetOnValueSetComposeInclude"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ValueSetOnValueSetComposeIncludeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "includeId",
+              "inputValueParameterName": "valueSet",
+              "modificationPath": "valueSet"
+            }
+          ],
+          "id": "54057172-5f14-4bd1-82b7-719e25371fbe"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDesignationOnValueSetComposeIncludeConcept"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DesignationOnValueSetComposeIncludeConceptAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "conceptId",
+              "inputValueParameterName": "designation",
+              "modificationPath": "designation"
+            }
+          ],
+          "id": "e8b35295-fe8e-4afb-9f3f-bf6912984925"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddExcludeOnValueSetCompose"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ExcludeOnValueSetComposeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "exclude",
+              "modificationPath": "compose.exclude"
+            }
+          ],
+          "id": "bc4e8731-6baf-49d1-98b4-8b6211184ead"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTelecomOnValueSetContact"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TelecomOnValueSetContactAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "contactId",
+              "inputValueParameterName": "telecom",
+              "modificationPath": "telecom"
+            }
+          ],
+          "id": "7ede070d-7cdb-4b45-9ba0-a9d1f47b8276"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnValueSetUseContextValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnValueSetUseContextValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "useContextId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "value.coding"
+            }
+          ],
+          "id": "40ad0f61-6d3c-4499-9367-e88363e10fba"
+        }
+      ]
+    }
+  ],
+  "id": "ValueSetAggregate"
+}

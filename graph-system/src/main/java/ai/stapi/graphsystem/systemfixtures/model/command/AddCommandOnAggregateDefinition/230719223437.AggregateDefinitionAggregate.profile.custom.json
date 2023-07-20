@@ -1,0 +1,74 @@
+{
+  "command": [
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCommandOnAggregateDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CommandOnAggregateDefinitionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "command",
+              "modificationPath": "command"
+            }
+          ],
+          "id": "ba4057eb-9f4b-4b81-9d04-578849d4cb37"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddModificationOnAggregateDefinitionCommandEventFactory"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ModificationOnAggregateDefinitionCommandEventFactoryAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "eventFactoryId",
+              "inputValueParameterName": "modification",
+              "modificationPath": "modification"
+            }
+          ],
+          "id": "ce55c664-3c82-42be-a756-feb6fdcdfd1a"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddEventFactoryOnAggregateDefinitionCommand"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "EventFactoryOnAggregateDefinitionCommandAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "commandId",
+              "inputValueParameterName": "eventFactory",
+              "modificationPath": "eventFactory"
+            }
+          ],
+          "id": "7c1d4a85-190e-4db2-a72b-5dd58d6260bb"
+        }
+      ]
+    }
+  ],
+  "id": "AggregateDefinitionAggregate"
+}

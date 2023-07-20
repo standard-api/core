@@ -1,8 +1,0 @@
-{
-  "name": "EventMessageDefinition",
-  "id": "EventMessageDefinitionAggregate",
-  "command": [],
-  "structure": {
-    "id": "EventMessageDefinition"
-  }
-}

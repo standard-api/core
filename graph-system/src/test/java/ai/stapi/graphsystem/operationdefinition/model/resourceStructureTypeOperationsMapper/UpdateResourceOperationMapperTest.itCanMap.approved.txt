@@ -1,0 +1,56 @@
+{
+  "newParameters" : [ ],
+  "operations" : [ {
+    "id" : "UpdateAggregateDefinition",
+    "code" : "Update AggregateDefinition",
+    "description" : "Generated command for updating AggregateDefinition with only primitive fields.",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Update AggregateDefinition",
+    "status" : "draft",
+    "system" : false,
+    "type" : true,
+    "parameter" : [ {
+      "max" : "1",
+      "min" : 0,
+      "name" : "name",
+      "type" : "string",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "AggregateDefinition.name"
+      } ],
+      "targetProfileRef" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "name" : "description",
+      "type" : "string",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "AggregateDefinition.description"
+      } ],
+      "targetProfileRef" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "name" : "implicitRules",
+      "type" : "uri",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "AggregateDefinition.implicitRules"
+      } ],
+      "targetProfileRef" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "name" : "language",
+      "type" : "code",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "AggregateDefinition.language"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "AggregateDefinition" ]
+  } ]
+}

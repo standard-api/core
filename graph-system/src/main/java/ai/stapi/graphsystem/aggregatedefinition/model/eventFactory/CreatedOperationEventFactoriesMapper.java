@@ -12,8 +12,6 @@ import ai.stapi.schema.structuredefinition.StructureDefinitionId;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
 
 public class CreatedOperationEventFactoriesMapper implements OperationEventFactoriesMapper {
 
@@ -46,7 +44,7 @@ public class CreatedOperationEventFactoriesMapper implements OperationEventFacto
             ),
             fakedStructure.getAllFields().values().stream()
                 .map(param -> this.createModification(
-                    String.format("%s.%s", resourceName, param.getName()),
+                    param.getName(),
                     param.getName()
                 )).toList()
         )
@@ -68,7 +66,7 @@ public class CreatedOperationEventFactoriesMapper implements OperationEventFacto
             fakedStructure.getAllFields().values().stream()
                 .map(FieldDefinitionWithSource.class::cast)
                 .map(param -> this.createModification(
-                    param.getSource(),
+                    param.getName(),
                     param.getName()
                 )).toList()
         )
@@ -101,6 +99,7 @@ public class CreatedOperationEventFactoriesMapper implements OperationEventFacto
   ) {
     return EventFactoryModification.add(
         modificationPath,
+        null,
         parameterName
     );
   }

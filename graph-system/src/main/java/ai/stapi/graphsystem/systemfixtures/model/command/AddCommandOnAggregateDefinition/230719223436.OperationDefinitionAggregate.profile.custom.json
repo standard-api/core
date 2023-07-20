@@ -1,0 +1,304 @@
+{
+  "command": [
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddJurisdictionOnOperationDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "JurisdictionOnOperationDefinitionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "jurisdiction",
+              "modificationPath": "jurisdiction"
+            }
+          ],
+          "id": "44985aa8-301d-460b-9bfd-cb2ad259ea00"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddContactOnOperationDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ContactOnOperationDefinitionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "contact",
+              "modificationPath": "contact"
+            }
+          ],
+          "id": "be505743-a53d-4726-84be-127e99e65e53"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddParameterOnOperationDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ParameterOnOperationDefinitionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "parameter",
+              "modificationPath": "parameter"
+            }
+          ],
+          "id": "b1147454-0cc3-476b-ac77-06c03dd5e332"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddResourceOnOperationDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ResourceOnOperationDefinitionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "resource",
+              "modificationPath": "resource"
+            }
+          ],
+          "id": "871525ef-764f-409b-85a6-50b77c3a18b5"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddOverloadOnOperationDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "OverloadOnOperationDefinitionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "overload",
+              "modificationPath": "overload"
+            }
+          ],
+          "id": "ec457fa7-e707-422f-8a70-f0efd569901a"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddUseContextOnOperationDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "UseContextOnOperationDefinitionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "useContext",
+              "modificationPath": "useContext"
+            }
+          ],
+          "id": "3a26fd4d-cf8c-4258-8716-7556ecde0697"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnOperationDefinitionJurisdiction"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnOperationDefinitionJurisdictionAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "jurisdictionId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "coding"
+            }
+          ],
+          "id": "a32da496-15fc-43da-80c0-a50ba9a2a577"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddReferencedFromOnOperationDefinitionParameter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ReferencedFromOnOperationDefinitionParameterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "referencedFrom",
+              "modificationPath": "referencedFrom"
+            }
+          ],
+          "id": "b7c7850d-ad3b-4ad4-ae22-b46bb5d908d7"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTargetProfileOnOperationDefinitionParameter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TargetProfileOnOperationDefinitionParameterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "targetProfile",
+              "modificationPath": "targetProfile"
+            }
+          ],
+          "id": "49991b27-dab7-490c-8d31-23e72e9409c1"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddPartOnOperationDefinitionParameter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "PartOnOperationDefinitionParameterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "part",
+              "modificationPath": "part"
+            }
+          ],
+          "id": "a1fe42a7-4989-44b5-baa4-4c175548e99a"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTargetProfileRefOnOperationDefinitionParameter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TargetProfileRefOnOperationDefinitionParameterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "targetProfileRef",
+              "modificationPath": "targetProfileRef"
+            }
+          ],
+          "id": "5d754315-e44d-4aed-82e8-5c2b2f7f23b4"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddParameterNameOnOperationDefinitionOverload"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ParameterNameOnOperationDefinitionOverloadAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "overloadId",
+              "inputValueParameterName": "parameterName",
+              "modificationPath": "parameterName"
+            }
+          ],
+          "id": "8c6e8b5d-7be8-4536-a0d7-dc0e1b39e835"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnOperationDefinitionUseContextValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnOperationDefinitionUseContextValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "useContextId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "value.coding"
+            }
+          ],
+          "id": "5d05562b-f922-4e9b-a41f-29ec6f538221"
+        }
+      ]
+    }
+  ],
+  "id": "OperationDefinitionAggregate"
+}

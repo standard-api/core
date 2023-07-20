@@ -1,0 +1,51 @@
+{
+  "command": [
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTargetProfileRefOnStructureDefinitionDifferentialElementType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TargetProfileRefOnStructureDefinitionDifferentialElementTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
+              "inputValueParameterName": "targetProfileRef",
+              "modificationPath": "targetProfileRef"
+            }
+          ],
+          "id": "49c89dad-e5c2-4491-ba19-50f4388bf8e4"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTargetProfileRefOnStructureDefinitionSnapshotElementType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TargetProfileRefOnStructureDefinitionSnapshotElementTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "typeId",
+              "inputValueParameterName": "targetProfileRef",
+              "modificationPath": "targetProfileRef"
+            }
+          ],
+          "id": "273a9209-d263-48f5-b714-f4bd0e022b72"
+        }
+      ]
+    }
+  ],
+  "id": "StructureDefinitionAggregate"
+}

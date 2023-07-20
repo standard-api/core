@@ -1,0 +1,46 @@
+nodes:
+	node_type: Parameters
+	node_hash: C8637
+	node_edges:
+		Parameters -> parameter -> ParametersParameter (C8637 -> 42049 -> 116F6)
+		Parameters -> parameter -> ParametersParameter (C8637 -> ECD43 -> 646DF)
+	attributes:
+		language -> cz
+
+	node_type: ParametersParameter
+	node_hash: 116F6
+	node_edges:
+		Parameters -> parameter -> ParametersParameter (C8637 -> 42049 -> 116F6)
+		ParametersParameter -> part -> ParametersParameter (116F6 -> 1FC54 -> 7E2FE)
+	attributes:
+		name -> compositeParameter
+
+	node_type: ParametersParameter
+	node_hash: 646DF
+	node_edges:
+		Parameters -> parameter -> ParametersParameter (C8637 -> ECD43 -> 646DF)
+	attributes:
+		name -> basicParameterName
+
+	node_type: ParametersParameter
+	node_hash: 7E2FE
+	node_edges:
+		ParametersParameter -> part -> ParametersParameter (116F6 -> 1FC54 -> 7E2FE)
+	attributes:
+		name -> childParameter
+
+edges:
+	edge_type: parameter
+	edge_hash: 42049
+	Parameters -> parameter -> ParametersParameter (C8637 -> 42049 -> 116F6)
+	attributes:
+
+	edge_type: parameter
+	edge_hash: ECD43
+	Parameters -> parameter -> ParametersParameter (C8637 -> ECD43 -> 646DF)
+	attributes:
+
+	edge_type: part
+	edge_hash: 1FC54
+	ParametersParameter -> part -> ParametersParameter (116F6 -> 1FC54 -> 7E2FE)
+	attributes:

@@ -1,0 +1,8 @@
+nodes:
+	node_type: Parameters
+	node_hash: 06FDC
+	node_edges:
+	attributes:
+		language -> cz
+
+edges:

@@ -1,0 +1,175 @@
+{
+  "command": [
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "UpdateOperationDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "OperationDefinitionUpdated"
+          },
+          "modification": [
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "date",
+              "modificationPath": "date"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "instance",
+              "modificationPath": "instance"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "purpose",
+              "modificationPath": "purpose"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "kind",
+              "modificationPath": "kind"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "inputProfile",
+              "modificationPath": "inputProfile"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "description",
+              "modificationPath": "description"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "language",
+              "modificationPath": "language"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "experimental",
+              "modificationPath": "experimental"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "type",
+              "modificationPath": "type"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "title",
+              "modificationPath": "title"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "version",
+              "modificationPath": "version"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "affectsState",
+              "modificationPath": "affectsState"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "url",
+              "modificationPath": "url"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "outputProfile",
+              "modificationPath": "outputProfile"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "system",
+              "modificationPath": "system"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "name",
+              "modificationPath": "name"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "implicitRules",
+              "modificationPath": "implicitRules"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "publisher",
+              "modificationPath": "publisher"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "comment",
+              "modificationPath": "comment"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "status",
+              "modificationPath": "status"
+            },
+            {
+              "kind": "upsert",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "base",
+              "modificationPath": "base"
+            }
+          ],
+          "id": "6800e0ab-0a3c-4504-b63b-7018a9c83bc5"
+        }
+      ]
+    }
+  ],
+  "id": "OperationDefinitionAggregate"
+}

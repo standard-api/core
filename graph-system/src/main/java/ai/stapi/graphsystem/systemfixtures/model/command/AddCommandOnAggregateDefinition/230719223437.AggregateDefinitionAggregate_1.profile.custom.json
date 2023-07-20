@@ -1,0 +1,70 @@
+{
+  "command": [
+    {
+      "creationalPolicy": "if_missing",
+      "operation": {
+        "id": "CreateAggregateDefinition"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "AggregateDefinitionCreated"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "meta",
+              "modificationPath": "meta"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "name",
+              "modificationPath": "name"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "implicitRules",
+              "modificationPath": "implicitRules"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "description",
+              "modificationPath": "description"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "language",
+              "modificationPath": "language"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "structure",
+              "modificationPath": "structure"
+            },
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "command",
+              "modificationPath": "command"
+            }
+          ],
+          "id": "99f01c3e-f5fc-4d74-b5f4-a01cfd3b3180"
+        }
+      ]
+    }
+  ],
+  "id": "AggregateDefinitionAggregate"
+}

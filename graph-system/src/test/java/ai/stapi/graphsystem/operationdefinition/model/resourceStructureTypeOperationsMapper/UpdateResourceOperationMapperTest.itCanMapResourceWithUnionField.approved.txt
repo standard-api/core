@@ -1,0 +1,36 @@
+{
+  "newParameters" : [ ],
+  "operations" : [ {
+    "id" : "UpdateExampleResourceType",
+    "code" : "Update ExampleResourceType",
+    "description" : "Generated command for updating ExampleResourceType with only primitive fields.",
+    "instance" : true,
+    "kind" : "operation",
+    "name" : "Update ExampleResourceType",
+    "status" : "draft",
+    "system" : false,
+    "type" : true,
+    "parameter" : [ {
+      "max" : "1",
+      "min" : 0,
+      "name" : "exampleUnionFieldDecimal",
+      "type" : "decimal",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField"
+      } ],
+      "targetProfileRef" : [ ]
+    }, {
+      "max" : "1",
+      "min" : 0,
+      "name" : "exampleUnionFieldString",
+      "type" : "string",
+      "use" : "in",
+      "referencedFrom" : [ {
+        "source" : "ExampleResourceType.exampleUnionField"
+      } ],
+      "targetProfileRef" : [ ]
+    } ],
+    "resource" : [ "ExampleResourceType" ]
+  } ]
+}

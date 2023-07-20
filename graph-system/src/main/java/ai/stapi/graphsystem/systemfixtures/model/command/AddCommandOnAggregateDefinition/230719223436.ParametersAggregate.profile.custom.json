@@ -1,0 +1,626 @@
+{
+  "command": [
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddParameterOnParameters"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ParameterOnParametersAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "parameter",
+              "modificationPath": "parameter"
+            }
+          ],
+          "id": "93289917-0214-448f-bdb3-184532751fbc"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnParametersParameterValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnParametersParameterValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "value.codeFilter"
+            }
+          ],
+          "id": "4b550bdf-0fd1-4680-867c-9609a83f821e"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeFilterOnParametersParameterValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeFilterOnParametersParameterValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "codeFilter",
+              "modificationPath": "codeFilter"
+            }
+          ],
+          "id": "63985890-1924-4e17-8b95-1b6f3eb4b2d4"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnParametersParameterValueDataSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnParametersParameterValueDataSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "subject.coding"
+            }
+          ],
+          "id": "64d30c7b-a187-423b-885b-c6b0ab2a858a"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnParametersParameterResourceMeta"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnParametersParameterResourceMetaAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "resource.meta.profile"
+            }
+          ],
+          "id": "8a555951-7385-4bf9-b42a-bc46cd6cc1dd"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnParametersParameterValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnParametersParameterValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "mustSupport"
+            }
+          ],
+          "id": "eb7e110e-53d4-455c-8c7f-c5777fa7e3e2"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnParametersParameterValueSubject"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnParametersParameterValueSubjectAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "value.subject.coding"
+            }
+          ],
+          "id": "b51a1704-e5dd-4904-af68-82dfe41305f1"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTagOnParametersParameterResourceMeta"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TagOnParametersParameterResourceMetaAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "tag",
+              "modificationPath": "resource.meta.tag"
+            }
+          ],
+          "id": "b76d77f6-d92a-4cba-9523-6e9f33cda80d"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddMustSupportOnParametersParameterValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "MustSupportOnParametersParameterValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "mustSupport",
+              "modificationPath": "value.mustSupport"
+            }
+          ],
+          "id": "339a7e4d-d0e3-4b0d-b813-1dd1a2665062"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnParametersParameterValueCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnParametersParameterValueCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "ffaa7ab1-d389-4f1a-9734-611edd424fe2"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnParametersParameterValueTimingCode"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnParametersParameterValueTimingCodeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "value.timing.code.coding"
+            }
+          ],
+          "id": "4a9f8eb9-1ad6-4c39-a694-64a87f1ce9c2"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnParametersParameterValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnParametersParameterValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "sort"
+            }
+          ],
+          "id": "ff59934e-c1bd-45ff-a307-5aa32b9c3248"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddEventOnParametersParameterValueTiming"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "EventOnParametersParameterValueTimingAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "event",
+              "modificationPath": "value.timing.event"
+            }
+          ],
+          "id": "af934efd-b2ef-4aa9-8423-2e1305e32753"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddWhenOnParametersParameterValueTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "WhenOnParametersParameterValueTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "when",
+              "modificationPath": "value.timing.repeat.when"
+            }
+          ],
+          "id": "b8557b7c-5f18-4cdf-8cf0-c578fa8a51cc"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddPartOnParametersParameter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "PartOnParametersParameterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "part",
+              "modificationPath": "part"
+            }
+          ],
+          "id": "ece52154-6768-4286-aa20-177403c06cd5"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnParametersParameterValueType"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnParametersParameterValueTypeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "value.type.coding"
+            }
+          ],
+          "id": "685b6d18-b737-4009-a683-268e0e15d886"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSortOnParametersParameterValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SortOnParametersParameterValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "sort",
+              "modificationPath": "value.sort"
+            }
+          ],
+          "id": "068e31d1-282e-4736-99c2-5e91d3d30474"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddTimeOfDayOnParametersParameterValueTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "TimeOfDayOnParametersParameterValueTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "timeOfDay",
+              "modificationPath": "value.timing.repeat.timeOfDay"
+            }
+          ],
+          "id": "7c35b0e2-a04c-4ddd-8122-e34a36c08399"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodeOnParametersParameterValueDataCodeFilter"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodeOnParametersParameterValueDataCodeFilterAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "codeFilterId",
+              "inputValueParameterName": "code",
+              "modificationPath": "code"
+            }
+          ],
+          "id": "411fd7f6-28e9-40ab-a8f6-3516a19bc22c"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnParametersParameterValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnParametersParameterValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "value.coding"
+            }
+          ],
+          "id": "e06dad3a-d53e-4d40-a6cb-68706d25bb84"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddSecurityOnParametersParameterResourceMeta"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "SecurityOnParametersParameterResourceMetaAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "security",
+              "modificationPath": "resource.meta.security"
+            }
+          ],
+          "id": "60484553-f163-45a5-ae29-176dbfc128ea"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnParametersParameterValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnParametersParameterValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "profile"
+            }
+          ],
+          "id": "67e334bc-3508-4d8c-8f39-cf5214bcbe67"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnParametersParameterValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnParametersParameterValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "value.dateFilter"
+            }
+          ],
+          "id": "6ec2042b-2151-4cfd-b511-d2d79d6e897b"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDataOnParametersParameterValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DataOnParametersParameterValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "data",
+              "modificationPath": "value.data"
+            }
+          ],
+          "id": "8db65ae5-3d1e-4d60-bbf6-f1425a64cf0c"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDayOfWeekOnParametersParameterValueTimingRepeat"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DayOfWeekOnParametersParameterValueTimingRepeatAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "dayOfWeek",
+              "modificationPath": "value.timing.repeat.dayOfWeek"
+            }
+          ],
+          "id": "ece4df2f-6a69-4bd3-8a0b-f2faf4574e57"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddProfileOnParametersParameterValue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ProfileOnParametersParameterValueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "parameterId",
+              "inputValueParameterName": "profile",
+              "modificationPath": "value.profile"
+            }
+          ],
+          "id": "e6947cfb-fd11-4bf7-beb4-bfcc4622bb32"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddDateFilterOnParametersParameterValueData"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "DateFilterOnParametersParameterValueDataAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "dataId",
+              "inputValueParameterName": "dateFilter",
+              "modificationPath": "dateFilter"
+            }
+          ],
+          "id": "a1832f2f-3984-41c9-862e-8e10fe97b723"
+        }
+      ]
+    }
+  ],
+  "id": "ParametersAggregate"
+}

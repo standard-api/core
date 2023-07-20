@@ -74,7 +74,7 @@ public class CommandHandlerDefinitionDTO {
     }
 
     public void addModifications(List<EventFactoryModification> modifications) {
-      this.getModification().addAll(modification);
+      this.getModification().addAll(modifications);
     }
 
     public EventMessageDefinitionData getEvent() {
@@ -92,12 +92,15 @@ public class CommandHandlerDefinitionDTO {
     public static class EventFactoryModification {
 
       public static final String ADD = "add";
-      public static final String REPLACE = "replace";
+      public static final String UPSERT = "upsert";
       public static final String REMOVE = "remove";
       public static final String INSERT = "insert";
       public static final String MOVE = "move";
       private String kind;
       private String modificationPath;
+      
+      @Nullable
+      private String startIdParameterName;
 
       @Nullable
       private String inputValueParameterName;
@@ -111,34 +114,40 @@ public class CommandHandlerDefinitionDTO {
       private EventFactoryModification(
           String kind,
           String modificationPath,
+          @Nullable String startIdParameterName,
           @Nullable String inputValueParameterName,
           @Nullable String destinationIndexParameterName
       ) {
         this.kind = kind;
         this.modificationPath = modificationPath;
+        this.startIdParameterName = startIdParameterName;
         this.inputValueParameterName = inputValueParameterName;
         this.destinationIndexParameterName = destinationIndexParameterName;
       }
 
       public static EventFactoryModification add(
           String modificationPath,
+          @Nullable String startIdParameterName,
           @Nullable String inputValueParameterName
       ) {
         return new EventFactoryModification(
             ADD,
             modificationPath,
+            startIdParameterName,
             inputValueParameterName,
             null
         );
       }
 
-      public static EventFactoryModification replace(
+      public static EventFactoryModification upsert(
           String modificationPath,
+          @Nullable String startIdParameterName,
           @Nullable String inputValueParameterName
       ) {
         return new EventFactoryModification(
-            REPLACE,
+            UPSERT,
             modificationPath,
+            startIdParameterName,
             inputValueParameterName,
             null
         );
@@ -146,11 +155,13 @@ public class CommandHandlerDefinitionDTO {
 
       public static EventFactoryModification remove(
           String modificationPath,
+          @Nullable String startIdParameterName,
           @Nullable String inputValueParameterName
       ) {
         return new EventFactoryModification(
             REMOVE,
             modificationPath,
+            startIdParameterName,
             inputValueParameterName,
             null
         );
@@ -158,12 +169,14 @@ public class CommandHandlerDefinitionDTO {
 
       public static EventFactoryModification insert(
           String modificationPath,
+          @Nullable String startIdParameterName,
           @Nullable String inputValueParameterName,
           @Nullable String destinationIndexParameterName
       ) {
         return new EventFactoryModification(
             INSERT,
             modificationPath,
+            startIdParameterName,
             inputValueParameterName,
             destinationIndexParameterName
         );
@@ -171,12 +184,14 @@ public class CommandHandlerDefinitionDTO {
 
       public static EventFactoryModification move(
           String modificationPath,
+          @Nullable String startIdParameterName,
           @Nullable String inputValueParameterName,
           @Nullable String destinationIndexParameterName
       ) {
         return new EventFactoryModification(
             MOVE,
             modificationPath,
+            startIdParameterName,
             inputValueParameterName,
             destinationIndexParameterName
         );
@@ -188,6 +203,10 @@ public class CommandHandlerDefinitionDTO {
 
       public String getModificationPath() {
         return modificationPath;
+      }
+
+      public String getStartIdParameterName() {
+        return startIdParameterName;
       }
 
       @Nullable

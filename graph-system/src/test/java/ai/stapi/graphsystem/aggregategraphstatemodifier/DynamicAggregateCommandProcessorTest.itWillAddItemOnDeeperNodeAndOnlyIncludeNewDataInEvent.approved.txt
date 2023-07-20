@@ -1,0 +1,19 @@
+nodes:
+	node_type: ParametersParameter
+	node_hash: 9BD00
+	node_edges:
+		ParametersParameter -> part -> ParametersParameter (9BD00 -> 5CD49 -> FEF33)
+	attributes:
+
+	node_type: ParametersParameter
+	node_hash: FEF33
+	node_edges:
+		ParametersParameter -> part -> ParametersParameter (9BD00 -> 5CD49 -> FEF33)
+	attributes:
+		name -> someNewDeeperParameter
+
+edges:
+	edge_type: part
+	edge_hash: 5CD49
+	ParametersParameter -> part -> ParametersParameter (9BD00 -> 5CD49 -> FEF33)
+	attributes:

@@ -181,7 +181,7 @@ public class Graph {
   public Node getNode(UniqueIdentifier uniqueIdentifier, String nodeType) {
     var globallyUniqueIdentifier = new GloballyUniqueIdentifier(uniqueIdentifier, nodeType);
     if (!this.nodeMap.containsKey(globallyUniqueIdentifier)) {
-      throw new NodeNotFound(uniqueIdentifier);
+      throw new NodeNotFound(uniqueIdentifier, nodeType);
     }
     var foundNode = this.nodeMap.get(globallyUniqueIdentifier);
     if (foundNode == null || !foundNode.getType().equals(nodeType)) {
@@ -193,7 +193,7 @@ public class Graph {
   public Edge getEdge(UniqueIdentifier id, String edgeType) {
     var globallyUniqueIdentifier = new GloballyUniqueIdentifier(id, edgeType);
     if (!this.edgeMap.containsKey(globallyUniqueIdentifier)) {
-      throw new EdgeNotFound(id);
+      throw new EdgeNotFound(id, edgeType);
     }
     var foundEdge = this.edgeMap.get(globallyUniqueIdentifier);
     if (foundEdge == null || !foundEdge.getType().equals(edgeType)) {

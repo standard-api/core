@@ -9,39 +9,46 @@
     }
   },
   "modification" : [ {
+    "startIdParameterName" : null,
     "inputValueParameterName" : "meta",
     "kind" : "add",
-    "modificationPath" : "AggregateDefinition.meta",
+    "modificationPath" : "meta",
     "destinationIndexParameterName" : null
   }, {
+    "startIdParameterName" : null,
     "inputValueParameterName" : "name",
     "kind" : "add",
-    "modificationPath" : "AggregateDefinition.name",
+    "modificationPath" : "name",
     "destinationIndexParameterName" : null
   }, {
+    "startIdParameterName" : null,
     "inputValueParameterName" : "implicitRules",
     "kind" : "add",
-    "modificationPath" : "AggregateDefinition.implicitRules",
+    "modificationPath" : "implicitRules",
     "destinationIndexParameterName" : null
   }, {
+    "startIdParameterName" : null,
     "inputValueParameterName" : "description",
     "kind" : "add",
-    "modificationPath" : "AggregateDefinition.description",
+    "modificationPath" : "description",
     "destinationIndexParameterName" : null
   }, {
+    "startIdParameterName" : null,
     "inputValueParameterName" : "language",
     "kind" : "add",
-    "modificationPath" : "AggregateDefinition.language",
+    "modificationPath" : "language",
     "destinationIndexParameterName" : null
   }, {
-    "inputValueParameterName" : "command",
-    "kind" : "add",
-    "modificationPath" : "AggregateDefinition.command",
-    "destinationIndexParameterName" : null
-  }, {
+    "startIdParameterName" : null,
     "inputValueParameterName" : "structure",
     "kind" : "add",
-    "modificationPath" : "AggregateDefinition.structure",
+    "modificationPath" : "structure",
+    "destinationIndexParameterName" : null
+  }, {
+    "startIdParameterName" : null,
+    "inputValueParameterName" : "command",
+    "kind" : "add",
+    "modificationPath" : "command",
     "destinationIndexParameterName" : null
   } ]
 } ]

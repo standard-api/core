@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>form-api</artifactId>
-    <name>Stapi.ai From API</name>
+    <name>Stapi.ai Form API</name>
     <dependencies>
         <dependency>
             <groupId>ai.stapi</groupId>

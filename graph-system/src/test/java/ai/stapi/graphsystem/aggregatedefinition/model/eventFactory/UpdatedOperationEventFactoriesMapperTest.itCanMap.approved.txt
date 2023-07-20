@@ -1,0 +1,36 @@
+[ {
+  "id" : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "event" : {
+    "id" : "AggregateDefinitionUpdated",
+    "description" : "Generated Event for updated AggregateDefinition.",
+    "name" : "AggregateDefinition Updated",
+    "type" : {
+      "id" : "AggregateDefinition"
+    }
+  },
+  "modification" : [ {
+    "startIdParameterName" : null,
+    "inputValueParameterName" : "name",
+    "kind" : "upsert",
+    "modificationPath" : "name",
+    "destinationIndexParameterName" : null
+  }, {
+    "startIdParameterName" : null,
+    "inputValueParameterName" : "implicitRules",
+    "kind" : "upsert",
+    "modificationPath" : "implicitRules",
+    "destinationIndexParameterName" : null
+  }, {
+    "startIdParameterName" : null,
+    "inputValueParameterName" : "description",
+    "kind" : "upsert",
+    "modificationPath" : "description",
+    "destinationIndexParameterName" : null
+  }, {
+    "startIdParameterName" : null,
+    "inputValueParameterName" : "language",
+    "kind" : "upsert",
+    "modificationPath" : "language",
+    "destinationIndexParameterName" : null
+  } ]
+} ]

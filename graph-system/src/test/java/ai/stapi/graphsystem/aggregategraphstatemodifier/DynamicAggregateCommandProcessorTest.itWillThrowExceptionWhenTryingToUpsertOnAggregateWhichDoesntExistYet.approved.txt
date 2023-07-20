@@ -1,0 +1,4 @@
+Cannot upsert to Aggregate state, because main aggregate node doesnt exist.
+Operation name: 'UpdateParameters'
+Modification path: 'language'
+Main node id: 'SomeId'

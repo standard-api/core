@@ -1,0 +1,5 @@
+Cannot modify aggregate state, because there is no node with id specified at start id parameter name.
+Operation name: 'AddPartOnParametersParameter'
+Id: 'ParametersParameter/NonExistingParameterId'
+Modification kind: 'add'
+Start id parameter name: 'parameterId'

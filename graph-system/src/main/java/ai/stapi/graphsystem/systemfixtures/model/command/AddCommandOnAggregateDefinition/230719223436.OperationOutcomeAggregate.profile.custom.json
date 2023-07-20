@@ -1,0 +1,97 @@
+{
+  "command": [
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddIssueOnOperationOutcome"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "IssueOnOperationOutcomeAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": null,
+              "inputValueParameterName": "issue",
+              "modificationPath": "issue"
+            }
+          ],
+          "id": "cfc89ecc-d7dd-4d50-ac8f-97d3c6966546"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddCodingOnOperationOutcomeIssueDetails"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "CodingOnOperationOutcomeIssueDetailsAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "issueId",
+              "inputValueParameterName": "coding",
+              "modificationPath": "details.coding"
+            }
+          ],
+          "id": "a68a6072-013d-4789-8949-7ea24bc20598"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddLocationOnOperationOutcomeIssue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "LocationOnOperationOutcomeIssueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "issueId",
+              "inputValueParameterName": "location",
+              "modificationPath": "location"
+            }
+          ],
+          "id": "035c7b25-cbc0-4189-a030-76733780e7a3"
+        }
+      ]
+    },
+    {
+      "creationalPolicy": "never",
+      "operation": {
+        "id": "AddExpressionOnOperationOutcomeIssue"
+      },
+      "eventFactory": [
+        {
+          "event": {
+            "id": "ExpressionOnOperationOutcomeIssueAdded"
+          },
+          "modification": [
+            {
+              "kind": "add",
+              "destinationIndexParameterName": null,
+              "startIdParameterName": "issueId",
+              "inputValueParameterName": "expression",
+              "modificationPath": "expression"
+            }
+          ],
+          "id": "2bbe8635-9fa2-41e2-85dd-1d14f0e43f77"
+        }
+      ]
+    }
+  ],
+  "id": "OperationOutcomeAggregate"
+}

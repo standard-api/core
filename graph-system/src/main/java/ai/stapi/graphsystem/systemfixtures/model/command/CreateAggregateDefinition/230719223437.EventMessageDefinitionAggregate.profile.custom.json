@@ -1,0 +1,9 @@
+{
+  "name": "EventMessageDefinition",
+  "description": null,
+  "id": "EventMessageDefinitionAggregate",
+  "command": [],
+  "structure": {
+    "id": "EventMessageDefinition"
+  }
+}

@@ -5,8 +5,7 @@ import ai.stapi.graph.Graph;
 import ai.stapi.identity.UniqueIdentifier;
 import java.util.List;
 
-public abstract class AggregateGraphUpdatedEvent<T extends UniqueIdentifier>
-    extends GraphUpdatedEvent {
+public abstract class AggregateGraphUpdatedEvent<T extends UniqueIdentifier> extends GraphUpdatedEvent {
 
   private T identity;
 
