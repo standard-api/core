@@ -97,7 +97,7 @@ public class UpdatedOperationEventFactoriesMapper implements OperationEventFacto
       String modificationPath,
       String parameterName
   ) {
-    return EventFactoryModification.replace(
+    return EventFactoryModification.upsert(
         modificationPath,
         null,
         parameterName

@@ -11,25 +11,25 @@
   "modification" : [ {
     "startIdParameterName" : null,
     "inputValueParameterName" : "name",
-    "kind" : "replace",
+    "kind" : "upsert",
     "modificationPath" : "name",
     "destinationIndexParameterName" : null
   }, {
     "startIdParameterName" : null,
     "inputValueParameterName" : "implicitRules",
-    "kind" : "replace",
+    "kind" : "upsert",
     "modificationPath" : "implicitRules",
     "destinationIndexParameterName" : null
   }, {
     "startIdParameterName" : null,
     "inputValueParameterName" : "description",
-    "kind" : "replace",
+    "kind" : "upsert",
     "modificationPath" : "description",
     "destinationIndexParameterName" : null
   }, {
     "startIdParameterName" : null,
     "inputValueParameterName" : "language",
-    "kind" : "replace",
+    "kind" : "upsert",
     "modificationPath" : "language",
     "destinationIndexParameterName" : null
   } ]

@@ -92,7 +92,7 @@ public class CommandHandlerDefinitionDTO {
     public static class EventFactoryModification {
 
       public static final String ADD = "add";
-      public static final String REPLACE = "replace";
+      public static final String UPSERT = "upsert";
       public static final String REMOVE = "remove";
       public static final String INSERT = "insert";
       public static final String MOVE = "move";
@@ -139,13 +139,13 @@ public class CommandHandlerDefinitionDTO {
         );
       }
 
-      public static EventFactoryModification replace(
+      public static EventFactoryModification upsert(
           String modificationPath,
           @Nullable String startIdParameterName,
           @Nullable String inputValueParameterName
       ) {
         return new EventFactoryModification(
-            REPLACE,
+            UPSERT,
             modificationPath,
             startIdParameterName,
             inputValueParameterName,

@@ -3,7 +3,7 @@
   "eventFactoryModifications" : [ {
     "startIdParameterName" : null,
     "inputValueParameterName" : "exampleParameter",
-    "kind" : "replace",
+    "kind" : "upsert",
     "modificationPath" : "exampleParameter",
     "destinationIndexParameterName" : null
   } ]

@@ -11,7 +11,7 @@
   "modification" : [ {
     "startIdParameterName" : null,
     "inputValueParameterName" : "exampleUnionField",
-    "kind" : "replace",
+    "kind" : "upsert",
     "modificationPath" : "exampleUnionField",
     "destinationIndexParameterName" : null
   } ]
