@@ -1,6 +1,7 @@
 package ai.stapi.formapi;
 
 import ai.stapi.formapi.formmapper.JsonSchemaMapper;
+import ai.stapi.formapi.formmapper.UISchemaLoader;
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionProvider;
 import java.util.Map;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,15 +11,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class FormEndpoint {
-  
+
   private final JsonSchemaMapper jsonSchemaMapper;
+  private final UISchemaLoader uiSchemaLoader;
   private final OperationDefinitionProvider operationDefinitionProvider;
 
   public FormEndpoint(
-      JsonSchemaMapper jsonSchemaMapper, 
+      JsonSchemaMapper jsonSchemaMapper,
+      UISchemaLoader uiSchemaLoader,
       OperationDefinitionProvider operationDefinitionProvider
   ) {
     this.jsonSchemaMapper = jsonSchemaMapper;
+    this.uiSchemaLoader = uiSchemaLoader;
     this.operationDefinitionProvider = operationDefinitionProvider;
   }
 
@@ -26,6 +30,9 @@ public class FormEndpoint {
   @ResponseBody
   public Map<String, Object> form(@PathVariable String operationId) {
     var operation = this.operationDefinitionProvider.provide(operationId);
-    return this.jsonSchemaMapper.map(operation);
+    return Map.of(
+        "formSchema", this.jsonSchemaMapper.map(operation),
+        "uiSchema", this.uiSchemaLoader.load(operation)
+    );
   }
 }
