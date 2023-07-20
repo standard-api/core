@@ -1,6 +1,8 @@
 package ai.stapi.formapi.configuration;
 
+import ai.stapi.formapi.formmapper.FormDataLoader;
 import ai.stapi.formapi.formmapper.JsonSchemaMapper;
+import ai.stapi.formapi.formmapper.NullFormDataLoader;
 import ai.stapi.formapi.formmapper.NullUISchemaLoader;
 import ai.stapi.formapi.formmapper.UISchemaLoader;
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionStructureTypeMapper;
@@ -26,6 +28,12 @@ public class FormApiConfiguration {
   @ConditionalOnMissingBean(UISchemaLoader.class)
   public UISchemaLoader schemaLoader() {
     return new NullUISchemaLoader();
+  }
+
+  @Bean
+  @ConditionalOnMissingBean(FormDataLoader.class)
+  public FormDataLoader formDataLoader() {
+    return new NullFormDataLoader();
   }
 
 }
