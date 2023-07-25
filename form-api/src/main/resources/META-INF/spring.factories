@@ -1,2 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  ai.stapi.formapi.configuration.FormApiConfiguration
