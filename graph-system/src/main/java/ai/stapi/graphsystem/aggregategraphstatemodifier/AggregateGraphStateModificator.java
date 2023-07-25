@@ -1,7 +1,7 @@
 package ai.stapi.graphsystem.aggregategraphstatemodifier;
 
 import ai.stapi.graph.Graph;
-import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification;
+import ai.stapi.graphsystem.aggregatedefinition.model.EventFactoryModification;
 import ai.stapi.graphsystem.messaging.command.DynamicCommand;
 import ai.stapi.graphoperations.objectGraphMapper.model.GraphMappingResult;
 import ai.stapi.graphoperations.objectGraphMapper.model.MissingFieldResolvingStrategy;

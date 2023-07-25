@@ -2,7 +2,7 @@ package ai.stapi.graphsystem.aggregategraphstatemodifier.exceptions;
 
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
 import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO;
-import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification;
+import ai.stapi.graphsystem.aggregatedefinition.model.EventFactoryModification;
 import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.schema.structureSchema.ComplexStructureType;
 import java.util.Arrays;

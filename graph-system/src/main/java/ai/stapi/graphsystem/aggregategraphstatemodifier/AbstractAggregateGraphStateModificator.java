@@ -11,6 +11,7 @@ import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.sp
 import ai.stapi.graphoperations.objectGraphMapper.model.GenericObjectGraphMapper;
 import ai.stapi.graphoperations.ogmProviders.specific.dynamicObjectGraphMappingProvider.DynamicOgmProvider;
 import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO;
+import ai.stapi.graphsystem.aggregatedefinition.model.EventFactoryModification;
 import ai.stapi.graphsystem.aggregategraphstatemodifier.exceptions.CannotModifyAggregateState;
 import ai.stapi.graphsystem.messaging.command.DynamicCommand;
 import ai.stapi.identity.UniqueIdentifier;
@@ -121,7 +122,7 @@ public abstract class AbstractAggregateGraphStateModificator implements Aggregat
   protected TraversableNode getTraversingStartNode(
       String aggregateType,
       DynamicCommand command,
-      CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification modificationDefinition,
+      EventFactoryModification modificationDefinition,
       ComplexStructureType operationStructureType,
       InMemoryGraphRepository aggregateRepo
   ) {
@@ -180,7 +181,7 @@ public abstract class AbstractAggregateGraphStateModificator implements Aggregat
       String[] pathToTraverse,
       List<String> alreadyTraversedPath,
       ComplexStructureType operationDefinition,
-      CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification modificationDefinition
+      EventFactoryModification modificationDefinition
   ) {
     if (pathToTraverse.length < 2) {
       return currentNode;

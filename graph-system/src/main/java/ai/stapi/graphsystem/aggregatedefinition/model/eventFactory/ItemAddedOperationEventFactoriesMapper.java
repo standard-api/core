@@ -1,7 +1,7 @@
 package ai.stapi.graphsystem.aggregatedefinition.model.eventFactory;
 
 import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO.EventFactory;
-import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification;
+import ai.stapi.graphsystem.aggregatedefinition.model.EventFactoryModification;
 import ai.stapi.graphsystem.eventdefinition.EventMessageDefinitionData;
 import ai.stapi.graphsystem.operationdefinition.model.FieldDefinitionWithSource;
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionDTO;

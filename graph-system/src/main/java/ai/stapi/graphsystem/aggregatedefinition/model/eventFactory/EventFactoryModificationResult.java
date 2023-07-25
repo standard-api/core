@@ -1,6 +1,6 @@
 package ai.stapi.graphsystem.aggregatedefinition.model.eventFactory;
 
-import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification;
+import ai.stapi.graphsystem.aggregatedefinition.model.EventFactoryModification;
 import java.util.List;
 
 public class EventFactoryModificationResult {

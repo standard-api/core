@@ -12,7 +12,7 @@ import ai.stapi.graphoperations.objectGraphMapper.model.GenericObjectGraphMapper
 import ai.stapi.graphoperations.objectGraphMapper.model.GraphMappingResult;
 import ai.stapi.graphoperations.objectGraphMapper.model.MissingFieldResolvingStrategy;
 import ai.stapi.graphoperations.ogmProviders.specific.dynamicObjectGraphMappingProvider.DynamicOgmProvider;
-import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification;
+import ai.stapi.graphsystem.aggregatedefinition.model.EventFactoryModification;
 import ai.stapi.graphsystem.aggregategraphstatemodifier.exceptions.CannotAddToAggregateState;
 import ai.stapi.graphsystem.messaging.command.DynamicCommand;
 import ai.stapi.schema.structureSchema.ComplexStructureType;
