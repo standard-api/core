@@ -2,12 +2,6 @@ package ai.stapi.graphsystem.aggregategraphstatemodifier;
 
 import ai.stapi.graph.Graph;
 import ai.stapi.graph.graphelements.Node;
-import ai.stapi.graph.traversableGraphElements.TraversableNode;
-import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.GraphDescriptionBuilder;
-import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.UuidIdentityDescription;
-import ai.stapi.graphoperations.objectGraphLanguage.ObjectGraphMapping;
-import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.GenericOGMBuilder;
-import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.specific.ogm.ObjectGraphMappingBuilder;
 import ai.stapi.graphoperations.objectGraphMapper.model.GenericObjectGraphMapper;
 import ai.stapi.graphoperations.objectGraphMapper.model.GraphMappingResult;
 import ai.stapi.graphoperations.objectGraphMapper.model.MissingFieldResolvingStrategy;
@@ -16,21 +10,19 @@ import ai.stapi.graphsystem.aggregatedefinition.model.EventFactoryModification;
 import ai.stapi.graphsystem.aggregategraphstatemodifier.exceptions.CannotAddToAggregateState;
 import ai.stapi.graphsystem.messaging.command.DynamicCommand;
 import ai.stapi.schema.structureSchema.ComplexStructureType;
-import ai.stapi.schema.structureSchema.FieldDefinition;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
-import org.jetbrains.annotations.NotNull;
 
 public class AddAggregateGraphStateModificator extends AbstractAggregateGraphStateModificator {
 
   public AddAggregateGraphStateModificator(
       StructureSchemaFinder structureSchemaFinder,
       DynamicOgmProvider dynamicOgmProvider,
-      GenericObjectGraphMapper objectGraphMapper
+      GenericObjectGraphMapper objectGraphMapper,
+      EventFactoryModificationTraverser eventFactoryModificationTraverser
   ) {
-    super(structureSchemaFinder, dynamicOgmProvider, objectGraphMapper);
+    super(structureSchemaFinder, dynamicOgmProvider, objectGraphMapper, eventFactoryModificationTraverser);
   }
 
   @Override
@@ -58,7 +50,7 @@ public class AddAggregateGraphStateModificator extends AbstractAggregateGraphSta
     }
 
     var aggregateRepo = currentAggregateState.traversable();
-    var traversingStartNode = this.getTraversingStartNode(
+    var traversingStartNode = this.eventFactoryModificationTraverser.getTraversingStartNode(
         aggregateType,
         command,
         modificationDefinition,
@@ -68,7 +60,7 @@ public class AddAggregateGraphStateModificator extends AbstractAggregateGraphSta
 
 
     var modificationPath = modificationDefinition.getModificationPath();
-    var modifiedNode = this.traverseToModifiedNode(
+    var modifiedNode = this.eventFactoryModificationTraverser.traverseToModifiedNode(
         traversingStartNode,
         modificationPath.split("\\."),
         List.of(),

@@ -1,7 +1,5 @@
 package ai.stapi.graphsystem.aggregategraphstatemodifier;
 
-import ai.stapi.graph.exceptions.NodeNotFound;
-import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.GraphDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.UuidIdentityDescription;
@@ -10,18 +8,10 @@ import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.Ge
 import ai.stapi.graphoperations.objectGraphLanguage.objectGraphMappingBuilder.specific.ogm.ObjectGraphMappingBuilder;
 import ai.stapi.graphoperations.objectGraphMapper.model.GenericObjectGraphMapper;
 import ai.stapi.graphoperations.ogmProviders.specific.dynamicObjectGraphMappingProvider.DynamicOgmProvider;
-import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO;
-import ai.stapi.graphsystem.aggregatedefinition.model.EventFactoryModification;
-import ai.stapi.graphsystem.aggregategraphstatemodifier.exceptions.CannotModifyAggregateState;
-import ai.stapi.graphsystem.messaging.command.DynamicCommand;
-import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.schema.structureSchema.ComplexStructureType;
 import ai.stapi.schema.structureSchema.FieldDefinition;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
 
@@ -30,15 +20,18 @@ public abstract class AbstractAggregateGraphStateModificator implements Aggregat
   protected final StructureSchemaFinder structureSchemaFinder;
   protected final DynamicOgmProvider dynamicOgmProvider;
   protected final GenericObjectGraphMapper objectGraphMapper;
+  protected final EventFactoryModificationTraverser eventFactoryModificationTraverser;
 
   public AbstractAggregateGraphStateModificator(
       StructureSchemaFinder structureSchemaFinder,
       DynamicOgmProvider dynamicOgmProvider,
-      GenericObjectGraphMapper objectGraphMapper
+      GenericObjectGraphMapper objectGraphMapper,
+      EventFactoryModificationTraverser eventFactoryModificationTraverser
   ) {
     this.structureSchemaFinder = structureSchemaFinder;
     this.dynamicOgmProvider = dynamicOgmProvider;
     this.objectGraphMapper = objectGraphMapper;
+    this.eventFactoryModificationTraverser = eventFactoryModificationTraverser;
   }
 
   @NotNull
@@ -117,99 +110,5 @@ public abstract class AbstractAggregateGraphStateModificator implements Aggregat
       }
     }
     return objectOgm.build();
-  }
-
-  protected TraversableNode getTraversingStartNode(
-      String aggregateType,
-      DynamicCommand command,
-      EventFactoryModification modificationDefinition,
-      ComplexStructureType operationStructureType,
-      InMemoryGraphRepository aggregateRepo
-  ) {
-    var startIdParameterName = modificationDefinition.getStartIdParameterName();
-    if (startIdParameterName == null) {
-      var aggregateId = command.getTargetIdentifier();
-      if (aggregateRepo.nodeExists(aggregateId, aggregateType)) {
-        return aggregateRepo.loadNode(aggregateId, aggregateType);
-      } else {
-        return new TraversableNode(aggregateId, aggregateType);
-      }
-    } else {
-      var startIdValue = command.getData().get(startIdParameterName);
-      if (!(startIdValue instanceof String stringStartId)) {
-        throw CannotModifyAggregateState.becauseThereIsNoIdInCommandAtStartIdParameterName(
-            startIdParameterName,
-            modificationDefinition,
-            operationStructureType
-        );
-      }
-      if (!stringStartId.contains("/")) {
-        throw CannotModifyAggregateState.becauseStartIdIsNotOfCorrectFormat(
-            stringStartId,
-            startIdParameterName,
-            modificationDefinition,
-            operationStructureType
-        );
-      }
-      var splitId = stringStartId.split("/");
-      if (splitId.length != 2) {
-        throw CannotModifyAggregateState.becauseStartIdIsNotOfCorrectFormat(
-            stringStartId,
-            startIdParameterName,
-            modificationDefinition,
-            operationStructureType
-        );
-      }
-      try {
-        return aggregateRepo.loadNode(
-            new UniqueIdentifier(splitId[1]),
-            splitId[0]
-        );
-      } catch (NodeNotFound nodeNotFound) {
-        throw CannotModifyAggregateState.becauseThereIsNoNodeWithIdSpecifiedAtStartIdParameterName(
-            modificationDefinition,
-            operationStructureType,
-            new UniqueIdentifier(stringStartId),
-            startIdParameterName
-        );
-      }
-    }
-  }
-
-  protected TraversableNode traverseToModifiedNode(
-      TraversableNode currentNode,
-      String[] pathToTraverse,
-      List<String> alreadyTraversedPath,
-      ComplexStructureType operationDefinition,
-      EventFactoryModification modificationDefinition
-  ) {
-    if (pathToTraverse.length < 2) {
-      return currentNode;
-    }
-    var fieldName = pathToTraverse[0];
-    var edges = currentNode.getEdges(fieldName);
-    var newAlreadyTraversedPath = new ArrayList<>(alreadyTraversedPath);
-    newAlreadyTraversedPath.add(fieldName);
-    if (edges.size() > 1) {
-      throw CannotModifyAggregateState.becauseThereAreEdgesOnPathEvenThoughtThereShouldBeMaxOne(
-          modificationDefinition,
-          operationDefinition,
-          String.join(".", newAlreadyTraversedPath)
-      );
-    }
-    if (edges.isEmpty()) {
-      throw CannotModifyAggregateState.becauseThereAreIsNodeEdgeOnPathEvenThoughtThereShouldBeOne(
-          modificationDefinition,
-          operationDefinition,
-          String.join(".", newAlreadyTraversedPath)
-      );
-    }
-    return this.traverseToModifiedNode(
-        edges.get(0).getNodeTo(),
-        Arrays.copyOfRange(pathToTraverse, 1, pathToTraverse.length),
-        newAlreadyTraversedPath,
-        operationDefinition,
-        modificationDefinition
-    );
   }
 }

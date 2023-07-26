@@ -3,11 +3,7 @@ package ai.stapi.graphsystem.configuration;
 import ai.stapi.graphoperations.objectGraphMapper.model.GenericObjectGraphMapper;
 import ai.stapi.graphoperations.ogmProviders.specific.dynamicObjectGraphMappingProvider.DynamicOgmProvider;
 import ai.stapi.graphsystem.aggregatedefinition.model.AggregateDefinitionProvider;
-import ai.stapi.graphsystem.aggregategraphstatemodifier.AddAggregateGraphStateModificator;
-import ai.stapi.graphsystem.aggregategraphstatemodifier.AggregateGraphStateModificator;
-import ai.stapi.graphsystem.aggregategraphstatemodifier.DynamicAggregateCommandProcessor;
-import ai.stapi.graphsystem.aggregategraphstatemodifier.GenericAggregateGraphStateModificator;
-import ai.stapi.graphsystem.aggregategraphstatemodifier.UpsertAggregateGraphStateModificator;
+import ai.stapi.graphsystem.aggregategraphstatemodifier.*;
 import ai.stapi.graphsystem.commandEventGraphMappingProvider.GenericCommandEventGraphMappingProvider;
 import ai.stapi.graphsystem.commandEventGraphMappingProvider.specific.SpecificCommandEventGraphMappingProvider;
 import ai.stapi.graphsystem.dynamiccommandprocessor.BasicDynamicCommandProcessor;
@@ -90,16 +86,23 @@ public class DynamicCommandProcessorConfiguration {
   }
   
   @Bean
+  public EventFactoryModificationTraverser eventFactoryModificationTraverser() {
+    return new EventFactoryModificationTraverser();
+  }
+  
+  @Bean
   @ConditionalOnBean(GenericAggregateGraphStateModificator.class)
   public AddAggregateGraphStateModificator addAggregateGraphStateModificator(
       StructureSchemaFinder structureSchemaFinder,
       DynamicOgmProvider dynamicOgmProvider,
-      GenericObjectGraphMapper objectGraphMapper
+      GenericObjectGraphMapper objectGraphMapper,
+      EventFactoryModificationTraverser eventFactoryModificationTraverser
   ) {
     return new AddAggregateGraphStateModificator(
         structureSchemaFinder,
         dynamicOgmProvider,
-        objectGraphMapper
+        objectGraphMapper,
+        eventFactoryModificationTraverser
     );
   }
 
@@ -108,12 +111,14 @@ public class DynamicCommandProcessorConfiguration {
   public UpsertAggregateGraphStateModificator upsertAggregateGraphStateModificator(
       StructureSchemaFinder structureSchemaFinder,
       DynamicOgmProvider dynamicOgmProvider,
-      GenericObjectGraphMapper objectGraphMapper
+      GenericObjectGraphMapper objectGraphMapper,
+      EventFactoryModificationTraverser eventFactoryModificationTraverser
   ) {
     return new UpsertAggregateGraphStateModificator(
         structureSchemaFinder,
         dynamicOgmProvider,
-        objectGraphMapper
+        objectGraphMapper,
+        eventFactoryModificationTraverser
     );
   }
 }
