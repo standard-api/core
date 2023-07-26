@@ -5,7 +5,6 @@ import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
 import ai.stapi.graphsystem.aggregatedefinition.model.EventFactoryModification;
 import ai.stapi.graphsystem.aggregategraphstatemodifier.exceptions.CannotModifyAggregateState;
-import ai.stapi.graphsystem.messaging.command.DynamicCommand;
 import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.schema.structureSchema.ComplexStructureType;
 
