@@ -32,6 +32,7 @@ import ai.stapi.graphoperations.graphLoader.GraphLoaderGetAsObjectOutput;
 import ai.stapi.graphoperations.graphLoader.GraphLoaderReturnType;
 import ai.stapi.graphoperations.graphLoader.exceptions.GraphLoaderException;
 import ai.stapi.graphoperations.graphLoader.search.SearchQueryParameters;
+import ai.stapi.graphoperations.objectGraphLanguage.ObjectObjectGraphMapping;
 import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.schema.structureSchema.exception.FieldsNotFoundException;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
@@ -113,6 +114,25 @@ public class InMemoryGraphLoader implements GraphLoader {
       elementType = ((EdgeDescriptionParameters) graphDescription.getParameters()).getEdgeType();
     }
     return graph.getGraph().loadGraphElement(elementId, elementType);
+  }
+
+  @Override
+  public <T> GraphLoaderFindAsObjectOutput<T> find(
+      ObjectObjectGraphMapping objectObjectGraphMapping, 
+      Class<T> objectClass, 
+      GraphLoaderReturnType... returnTypes
+  ) {
+    return null;
+  }
+
+  @Override
+  public <T> GraphLoaderGetAsObjectOutput<T> get(
+      UniqueIdentifier elementId, 
+      ObjectObjectGraphMapping objectObjectGraphMapping, 
+      Class<T> objectClass, 
+      GraphLoaderReturnType... returnTypes
+  ) {
+    return null;
   }
 
   @Override

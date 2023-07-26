@@ -4,7 +4,7 @@ import ai.stapi.configuration.SerializationConfiguration;
 import ai.stapi.graph.configuration.GraphRepositoryConfiguration;
 import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.graphoperations.graphLoader.GraphLoader;
-import ai.stapi.graphoperations.graphLoader.graphLoaderOGMFactory.GraphLoaderOgmFactory;
+import ai.stapi.graphoperations.graphLoader.graphLoaderOgm.GraphLoaderOgmFactory;
 import ai.stapi.graphoperations.graphLoader.inmemory.InMemoryAscendingSortResolver;
 import ai.stapi.graphoperations.graphLoader.inmemory.InMemoryDescendingSortResolver;
 import ai.stapi.graphoperations.graphLoader.inmemory.InMemoryGenericSearchOptionResolver;

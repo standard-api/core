@@ -1,4 +1,4 @@
-package ai.stapi.graphoperations.graphLoader.graphLoaderOGMFactory;
+package ai.stapi.graphoperations.graphLoader.graphLoaderOgm;
 
 import ai.stapi.graphoperations.graphLanguage.graphDescription.GraphDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.GraphDescriptionBuilder;
@@ -21,8 +21,7 @@ public class GraphLoaderOgmFactory {
 
   public ObjectGraphMapping create(GraphDescription graphDescription) {
     var ogmBuilder = new ObjectGraphMappingBuilder();
-    ogmBuilder.setGraphDescription(
-        new GraphDescriptionBuilder().copyWithNewChildren(graphDescription));
+    ogmBuilder.setGraphDescription(new GraphDescriptionBuilder().copyWithNewChildren(graphDescription));
     graphDescription.getChildGraphDescriptions().forEach(childDescription ->
         this.resolveChildGraphDescription(childDescription, ogmBuilder)
     );
@@ -35,8 +34,7 @@ public class GraphLoaderOgmFactory {
   ) {
     if (graphDescription instanceof AbstractNodeDescription) {
       var nodeParam = (NodeDescriptionParameters) graphDescription.getParameters();
-      var childOgmBuilder = ogmBuilder.addField(nodeParam.getNodeType())
-          .addObjectAsObjectFieldMapping();
+      var childOgmBuilder = ogmBuilder.addField(nodeParam.getNodeType()).addObjectAsObjectFieldMapping();
       if (graphDescription instanceof NodeQueryGraphDescription nodeQueryGraphDescription) {
         childOgmBuilder.setGraphDescription(
             new NodeQueryGraphDescription(
