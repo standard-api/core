@@ -52,7 +52,8 @@ public class AddAggregateGraphStateModificator extends AbstractAggregateGraphSta
     var aggregateRepo = currentAggregateState.traversable();
     var traversingStartNode = this.eventFactoryModificationTraverser.getTraversingStartNode(
         aggregateType,
-        command,
+        command.getTargetIdentifier(),
+        command.getData(),
         modificationDefinition,
         operationStructureType,
         aggregateRepo
@@ -60,16 +61,14 @@ public class AddAggregateGraphStateModificator extends AbstractAggregateGraphSta
 
 
     var modificationPath = modificationDefinition.getModificationPath();
+    var splitPath = modificationPath.split("\\.");
     var modifiedNode = this.eventFactoryModificationTraverser.traverseToModifiedNode(
         traversingStartNode,
-        modificationPath.split("\\."),
-        List.of(),
+        splitPath,
         operationStructureType,
         modificationDefinition
     );
 
-
-    var splitPath = modificationPath.split("\\.");
     var inputValueSchema = operationStructureType.getField(inputValueParameterName);
     var fieldName = splitPath[splitPath.length - 1];
     if (inputValueSchema.getFloatMax() < 2) {

@@ -60,7 +60,8 @@ public class UpsertAggregateGraphStateModificator extends AbstractAggregateGraph
     }
     var traversingStartNode = this.eventFactoryModificationTraverser.getTraversingStartNode(
         aggregateType,
-        command,
+        command.getTargetIdentifier(),
+        command.getData(),
         modificationDefinition,
         operationStructureType,
         aggregateRepo
@@ -71,7 +72,6 @@ public class UpsertAggregateGraphStateModificator extends AbstractAggregateGraph
     var modifiedNode = this.eventFactoryModificationTraverser.traverseToModifiedNode(
         traversingStartNode,
         splitPath,
-        List.of(),
         operationStructureType,
         modificationDefinition
     );

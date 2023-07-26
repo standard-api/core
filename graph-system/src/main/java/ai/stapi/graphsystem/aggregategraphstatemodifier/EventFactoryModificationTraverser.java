@@ -12,26 +12,27 @@ import ai.stapi.schema.structureSchema.ComplexStructureType;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 public class EventFactoryModificationTraverser {
 
     public TraversableNode getTraversingStartNode(
         String aggregateType,
-        DynamicCommand command,
+        UniqueIdentifier aggregateId,
+        Map<String, Object> possibleStartIds,
         EventFactoryModification modificationDefinition,
         ComplexStructureType operationStructureType,
         InMemoryGraphRepository aggregateRepo
     ) {
         var startIdParameterName = modificationDefinition.getStartIdParameterName();
         if (startIdParameterName == null) {
-            var aggregateId = command.getTargetIdentifier();
             if (aggregateRepo.nodeExists(aggregateId, aggregateType)) {
                 return aggregateRepo.loadNode(aggregateId, aggregateType);
             } else {
                 return new TraversableNode(aggregateId, aggregateType);
             }
         } else {
-            var startIdValue = command.getData().get(startIdParameterName);
+            var startIdValue = possibleStartIds.get(startIdParameterName);
             if (!(startIdValue instanceof String stringStartId)) {
                 throw CannotModifyAggregateState.becauseThereIsNoIdInCommandAtStartIdParameterName(
                     startIdParameterName,
@@ -75,9 +76,9 @@ public class EventFactoryModificationTraverser {
     public TraversableNode traverseToModifiedNode(
         TraversableNode currentNode,
         String[] pathToTraverse,
-        List<String> alreadyTraversedPath,
         ComplexStructureType operationDefinition,
-        EventFactoryModification modificationDefinition
+        EventFactoryModification modificationDefinition,
+        List<String> alreadyTraversedPath
     ) {
         if (pathToTraverse.length < 2) {
             return currentNode;
@@ -103,9 +104,24 @@ public class EventFactoryModificationTraverser {
         return this.traverseToModifiedNode(
             edges.get(0).getNodeTo(),
             Arrays.copyOfRange(pathToTraverse, 1, pathToTraverse.length),
-            newAlreadyTraversedPath,
             operationDefinition,
-            modificationDefinition
+            modificationDefinition,
+            newAlreadyTraversedPath
+        );
+    }
+
+    public TraversableNode traverseToModifiedNode(
+        TraversableNode currentNode,
+        String[] pathToTraverse,
+        ComplexStructureType operationDefinition,
+        EventFactoryModification modificationDefinition
+    ) {
+        return this.traverseToModifiedNode(
+            currentNode,
+            pathToTraverse,
+            operationDefinition,
+            modificationDefinition,
+            List.of()
         );
     }
 }
