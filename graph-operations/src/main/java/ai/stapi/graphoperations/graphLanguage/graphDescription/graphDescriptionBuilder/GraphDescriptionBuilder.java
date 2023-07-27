@@ -41,11 +41,14 @@ import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionB
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.removal.RemovalEdgeDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.removal.RemovalNodeDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.AbstractAttributeDescription;
+import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.NullGraphDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.PositiveGraphDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.UuidIdentityDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.removal.RemovalGraphDescription;
 import ai.stapi.graphoperations.graphbuilder.specific.positive.EdgeDirection;
 import ai.stapi.utils.Classifier;
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -174,6 +177,15 @@ public class GraphDescriptionBuilder {
         return supportingBuilder.copyWithNewChildren(graphDescription, newChildren);
     }
 
+    public GraphDescription copyWithNewChildren(
+        GraphDescription graphDescription,
+        GraphDescription... newChildren
+    ) {
+        var supportingBuilder = this.getRepresentingBuilder(graphDescription);
+        return supportingBuilder.copyWithNewChildren(graphDescription,
+            Arrays.stream(newChildren).collect(Collectors.toCollection(ArrayList::new)));
+    }
+
     public GraphDescription addToDeepestDescription(
         GraphDescription mainDescription,
         List<GraphDescription> childDescriptions
@@ -206,14 +218,25 @@ public class GraphDescriptionBuilder {
         );
     }
 
+    public GraphDescription filterOutNullDescriptions(GraphDescription graphDescription) {
+        return new GraphDescriptionBuilder().copyWithNewChildren(
+            graphDescription,
+            graphDescription.getChildGraphDescriptions()
+                .stream()
+                .flatMap(GraphDescriptionBuilder::filterOutNull)
+                .toList()
+        );
+    }
 
-    public GraphDescription copyWithNewChildren(
-        GraphDescription graphDescription,
-        GraphDescription... newChildren
-    ) {
-        var supportingBuilder = this.getRepresentingBuilder(graphDescription);
-        return supportingBuilder.copyWithNewChildren(graphDescription,
-            Arrays.stream(newChildren).collect(Collectors.toCollection(ArrayList::new)));
+    @NotNull
+    private static Stream<GraphDescription> filterOutNull(GraphDescription child) {
+        var builder = new GraphDescriptionBuilder();
+        if (child instanceof NullGraphDescription) {
+            return child.getChildGraphDescriptions()
+                .stream()
+                .flatMap(GraphDescriptionBuilder::filterOutNull);
+        }
+        return Stream.of(builder.filterOutNullDescriptions(child));
     }
 
     public GraphDescriptionBuilder addNodeDescription(String nodeType) {
