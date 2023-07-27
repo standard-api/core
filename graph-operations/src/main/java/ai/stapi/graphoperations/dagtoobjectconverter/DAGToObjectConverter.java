@@ -1,5 +1,6 @@
 package ai.stapi.graphoperations.dagtoobjectconverter;
 
+import ai.stapi.graph.traversableGraphElements.TraversableEdge;
 import ai.stapi.graph.traversableGraphElements.TraversableNode;
 import ai.stapi.graphoperations.dagtoobjectconverter.exceptions.CannotConvertDAGToObject;
 import ai.stapi.identity.UniqueIdentifier;
@@ -9,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 public class DAGToObjectConverter {
-    
+
     private static final String ID_FIELD_NAME = "id";
 
     private final StructureSchemaFinder structureSchemaFinder;
@@ -26,7 +27,7 @@ public class DAGToObjectConverter {
 
         private final NodeSet nodeSet;
         private final StructureSchemaFinder structureSchemaFinder;
-        
+
         public Convertor(StructureSchemaFinder structureSchemaFinder) {
             this.nodeSet = new NodeSet();
             this.structureSchemaFinder = structureSchemaFinder;
@@ -35,23 +36,26 @@ public class DAGToObjectConverter {
         public Map<String, Object> convert(TraversableNode startNode) throws CannotConvertDAGToObject {
             this.nodeSet.saveNode(startNode);
             var object = this.convertNodeToObject(startNode);
-            startNode.getOutgoingEdges().forEach(edge -> {
-                var nodeTo = edge.getNodeTo();
-                if (this.nodeSet.hasNode(nodeTo)) {
-                    throw CannotConvertDAGToObject.becauseItContainsCycle(nodeTo);
-                }
-                var fieldDefinition = this.structureSchemaFinder.getFieldDefinitionOrFallback(
-                    startNode.getType(),
-                    edge.getType()
-                );
-                if (fieldDefinition.isList()) {
-                    var list = (List<Object>) object.computeIfAbsent(edge.getType(), key -> new ArrayList<>());
-                    list.add(this.convert(nodeTo));
-                } else {
-                    object.put(edge.getType(), this.convert(nodeTo));
-                }
-            });
-                
+            startNode.getOutgoingEdges()
+                .stream()
+                .sorted(Comparator.comparingInt(TraversableEdge::hashCode))
+                .forEach(edge -> {
+                    var nodeTo = edge.getNodeTo();
+                    if (this.nodeSet.hasNode(nodeTo)) {
+                        throw CannotConvertDAGToObject.becauseItContainsCycle(nodeTo);
+                    }
+                    var fieldDefinition = this.structureSchemaFinder.getFieldDefinitionOrFallback(
+                        startNode.getType(),
+                        edge.getType()
+                    );
+                    if (fieldDefinition.isList()) {
+                        var list = (List<Object>) object.computeIfAbsent(edge.getType(), key -> new ArrayList<>());
+                        list.add(this.convert(nodeTo));
+                    } else {
+                        object.put(edge.getType(), this.convert(nodeTo));
+                    }
+                });
+
             return object;
         }
 
@@ -81,7 +85,7 @@ public class DAGToObjectConverter {
                 .computeIfAbsent(node.getType(), key -> new HashSet<>())
                 .add(node.getId());
         }
-        
+
         public boolean hasNode(TraversableNode node) {
             var nodesByType = this.visitedNodes.get(node.getType());
             return nodesByType != null && nodesByType.contains(node.getId());
