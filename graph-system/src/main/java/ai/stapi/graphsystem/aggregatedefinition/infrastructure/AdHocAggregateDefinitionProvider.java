@@ -3,6 +3,7 @@ package ai.stapi.graphsystem.aggregatedefinition.infrastructure;
 import ai.stapi.graphsystem.aggregatedefinition.model.AggregateDefinitionDTO;
 import ai.stapi.graphsystem.aggregatedefinition.model.AggregateDefinitionProvider;
 import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO;
+import ai.stapi.graphsystem.aggregatedefinition.model.EventFactoryModification;
 import ai.stapi.graphsystem.aggregatedefinition.model.exceptions.CannotProvideAggregateDefinition;
 import ai.stapi.schema.adHocLoaders.GenericAdHocModelDefinitionsLoader;
 import ai.stapi.schema.scopeProvider.ScopeCacher;
@@ -11,7 +12,6 @@ import ai.stapi.graphsystem.operationdefinition.exceptions.CannotProvideOperatio
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionProvider;
 import java.util.List;
 import java.util.stream.Collectors;
-import org.springframework.stereotype.Service;
 
 public class AdHocAggregateDefinitionProvider implements AggregateDefinitionProvider {
 
@@ -250,7 +250,7 @@ public class AdHocAggregateDefinitionProvider implements AggregateDefinitionProv
 
     private String id;
     private String eventFactoryId;
-    private List<CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification> modification;
+    private List<EventFactoryModification> modification;
 
     private AddModificationOnAggregateDefinitionDTO() {
     }
@@ -258,7 +258,7 @@ public class AdHocAggregateDefinitionProvider implements AggregateDefinitionProv
     public AddModificationOnAggregateDefinitionDTO(
         String id,
         String eventFactoryId,
-        List<CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification> modification
+        List<EventFactoryModification> modification
     ) {
       this.id = id;
       this.eventFactoryId = eventFactoryId;
@@ -273,7 +273,7 @@ public class AdHocAggregateDefinitionProvider implements AggregateDefinitionProv
       return eventFactoryId;
     }
 
-    public List<CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification> getModification() {
+    public List<EventFactoryModification> getModification() {
       return modification;
     }
   }

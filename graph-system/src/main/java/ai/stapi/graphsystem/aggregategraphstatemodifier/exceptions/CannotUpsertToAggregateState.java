@@ -1,6 +1,7 @@
 package ai.stapi.graphsystem.aggregategraphstatemodifier.exceptions;
 
 import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO;
+import ai.stapi.graphsystem.aggregatedefinition.model.EventFactoryModification;
 import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.schema.structureSchema.ComplexStructureType;
 
@@ -12,7 +13,7 @@ public class CannotUpsertToAggregateState extends RuntimeException {
   
   public static CannotUpsertToAggregateState becauseMainAggregateNodeDoesntExist(
       ComplexStructureType operationStructureType,
-      CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification modificationDefinition,
+      EventFactoryModification modificationDefinition,
       UniqueIdentifier mainNodeId
   ) {
     return new CannotUpsertToAggregateState(
@@ -26,7 +27,7 @@ public class CannotUpsertToAggregateState extends RuntimeException {
   }
 
   public static CannotUpsertToAggregateState becauseModificationDefinitionDoesNotHaveInputValueParameterNameSpecified(
-      CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification modificationDefinition,
+      EventFactoryModification modificationDefinition,
       ComplexStructureType operationStructureType,
       UniqueIdentifier mainNodeId
   ) {

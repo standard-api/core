@@ -26,7 +26,7 @@ public class NullSpecificDescriptionBuilder extends AbstractPositiveDescriptionB
       GraphDescription graphDescription,
       List<GraphDescription> newChildren
   ) {
-    return new NullGraphDescription();
+    return new NullGraphDescription(newChildren);
   }
 
   @Override

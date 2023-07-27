@@ -1,0 +1,50 @@
+{
+  "serializationType" : "NodeDescription",
+  "traversingType" : "node",
+  "childGraphDescriptions" : [ {
+    "serializationType" : "OutgoingEdgeDescription",
+    "traversingType" : "edge",
+    "childGraphDescriptions" : [ {
+      "serializationType" : "NodeDescription",
+      "traversingType" : "node",
+      "childGraphDescriptions" : [ {
+        "serializationType" : "OutgoingEdgeDescription",
+        "traversingType" : "edge",
+        "childGraphDescriptions" : [ {
+          "serializationType" : "NodeDescription",
+          "traversingType" : "node",
+          "childGraphDescriptions" : [ ],
+          "parameters" : {
+            "nodeType" : "ChildNode1"
+          }
+        }, {
+          "serializationType" : "NodeDescription",
+          "traversingType" : "node",
+          "childGraphDescriptions" : [ ],
+          "parameters" : {
+            "nodeType" : "ChildNode2"
+          }
+        }, {
+          "serializationType" : "NodeDescription",
+          "traversingType" : "node",
+          "childGraphDescriptions" : [ ],
+          "parameters" : {
+            "nodeType" : "ChildNode3"
+          }
+        } ],
+        "parameters" : {
+          "edgeType" : "deeperEdge"
+        }
+      } ],
+      "parameters" : {
+        "nodeType" : "Other"
+      }
+    } ],
+    "parameters" : {
+      "edgeType" : "edge"
+    }
+  } ],
+  "parameters" : {
+    "nodeType" : "Main"
+  }
+}

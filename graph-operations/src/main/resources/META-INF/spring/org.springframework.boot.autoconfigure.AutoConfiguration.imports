@@ -7,3 +7,4 @@ ai.stapi.graphoperations.configuration.GraphSynchronizationConfiguration
 ai.stapi.graphoperations.configuration.GraphToMapObjectMapperConfiguration
 ai.stapi.graphoperations.configuration.GraphWriterConfiguration
 ai.stapi.graphoperations.configuration.ObjectGraphMapperConfiguration
+ai.stapi.graphoperations.configuration.DAGToObjectConverterConfiguration

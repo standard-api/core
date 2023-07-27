@@ -109,6 +109,24 @@ public class TraversableNode extends AbstractAttributeContainer implements Trave
     );
   }
 
+  public List<TraversableEdge> getOutgoingEdges() {
+    return this.edgeLoader.loadEdges(
+            this.id,
+            this.nodeType
+        ).stream()
+        .filter(edge -> edge.getNodeFromId().equals(this.id))
+        .toList();
+  }
+
+  public List<TraversableEdge> getIngoingEdges() {
+    return this.edgeLoader.loadEdges(
+            this.id,
+            this.nodeType
+        ).stream()
+        .filter(edge -> edge.getNodeToId().equals(this.id))
+        .toList();
+  }
+
   @Override
   protected AttributeContainer withNewAttributes(VersionedAttributeGroup newAttributes) {
     return new TraversableNode(

@@ -1,6 +1,6 @@
 package ai.stapi.graphsystem.aggregategraphstatemodifier.exceptions;
 
-import ai.stapi.graphsystem.aggregatedefinition.model.CommandHandlerDefinitionDTO.EventFactory.EventFactoryModification;
+import ai.stapi.graphsystem.aggregatedefinition.model.EventFactoryModification;
 import ai.stapi.graphsystem.operationdefinition.model.OperationDefinitionDTO;
 import ai.stapi.identity.UniqueIdentifier;
 import ai.stapi.schema.structureSchema.ComplexStructureType;

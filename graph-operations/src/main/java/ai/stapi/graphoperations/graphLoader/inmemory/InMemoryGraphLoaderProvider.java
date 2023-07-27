@@ -1,6 +1,7 @@
 package ai.stapi.graphoperations.graphLoader.inmemory;
 
 import ai.stapi.graph.Graph;
+import ai.stapi.graph.inMemoryGraph.InMemoryGraphRepository;
 import ai.stapi.schema.structureSchemaProvider.StructureSchemaFinder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -27,5 +28,14 @@ public class InMemoryGraphLoaderProvider {
          this.structureSchemaFinder,
          this.objectMapper
      );
+  }
+
+  public InMemoryGraphLoader provide(InMemoryGraphRepository inMemoryGraphRepository) {
+    return new InMemoryGraphLoader(
+        inMemoryGraphRepository,
+        this.searchOptionResolver,
+        this.structureSchemaFinder,
+        this.objectMapper
+    );
   }
 }

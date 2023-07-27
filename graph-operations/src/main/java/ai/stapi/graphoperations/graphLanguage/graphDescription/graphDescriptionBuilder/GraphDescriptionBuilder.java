@@ -41,11 +41,14 @@ import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionB
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.removal.RemovalEdgeDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.graphDescriptionBuilder.specificDescriptionBuilders.removal.RemovalNodeDescriptionBuilder;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.AbstractAttributeDescription;
+import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.NullGraphDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.PositiveGraphDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.positive.UuidIdentityDescription;
 import ai.stapi.graphoperations.graphLanguage.graphDescription.specific.removal.RemovalGraphDescription;
 import ai.stapi.graphoperations.graphbuilder.specific.positive.EdgeDirection;
 import ai.stapi.utils.Classifier;
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -159,8 +162,10 @@ public class GraphDescriptionBuilder {
         listOfGraphDescriptions.add(graphDescription);
         graphDescription.getChildGraphDescriptions()
             .forEach(
-                child -> GraphDescriptionBuilder.addAllGraphDescriptionsInComposite(child,
-                    listOfGraphDescriptions)
+                child -> GraphDescriptionBuilder.addAllGraphDescriptionsInComposite(
+                    child,
+                    listOfGraphDescriptions
+                )
             );
     }
 
@@ -179,6 +184,59 @@ public class GraphDescriptionBuilder {
         var supportingBuilder = this.getRepresentingBuilder(graphDescription);
         return supportingBuilder.copyWithNewChildren(graphDescription,
             Arrays.stream(newChildren).collect(Collectors.toCollection(ArrayList::new)));
+    }
+
+    public GraphDescription addToDeepestDescription(
+        GraphDescription mainDescription,
+        List<GraphDescription> childDescriptions
+    ) {
+        if (!GraphDescriptionBuilder.isGraphDescriptionSinglePath(mainDescription)) {
+            throw GraphDescriptionBuilderException.becauseToAddToDeepestGraphDescriptionItMustBeSinglePath(
+                mainDescription
+            );
+        }
+        return this.privateAddToDeepestDescription(mainDescription, childDescriptions);
+    }
+
+    private GraphDescription privateAddToDeepestDescription(
+        GraphDescription mainDescription,
+        List<GraphDescription> childDescriptions
+    ) {
+        var supportingBuilder = this.getRepresentingBuilder(mainDescription);
+        if (mainDescription.getChildGraphDescriptions().isEmpty()) {
+            return supportingBuilder.copyWithNewChildren(mainDescription, childDescriptions);
+        }
+
+        return supportingBuilder.copyWithNewChildren(
+            mainDescription,
+            List.of(
+                this.privateAddToDeepestDescription(
+                    mainDescription.getChildGraphDescriptions().get(0),
+                    childDescriptions
+                )
+            )
+        );
+    }
+
+    public GraphDescription filterOutNullDescriptions(GraphDescription graphDescription) {
+        return new GraphDescriptionBuilder().copyWithNewChildren(
+            graphDescription,
+            graphDescription.getChildGraphDescriptions()
+                .stream()
+                .flatMap(GraphDescriptionBuilder::filterOutNull)
+                .toList()
+        );
+    }
+
+    @NotNull
+    private static Stream<GraphDescription> filterOutNull(GraphDescription child) {
+        var builder = new GraphDescriptionBuilder();
+        if (child instanceof NullGraphDescription) {
+            return child.getChildGraphDescriptions()
+                .stream()
+                .flatMap(GraphDescriptionBuilder::filterOutNull);
+        }
+        return Stream.of(builder.filterOutNullDescriptions(child));
     }
 
     public GraphDescriptionBuilder addNodeDescription(String nodeType) {

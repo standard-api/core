@@ -85,4 +85,16 @@ public class GraphDescriptionBuilderException extends RuntimeException {
             + "' and that is not allowed when calling 'getOnlyPositiveGraphDescriptions()'."
     );
   }
+  
+  public static GraphDescriptionBuilderException becauseToAddToDeepestGraphDescriptionItMustBeSinglePath(
+      GraphDescription mainGraphDescription
+  ) {
+    return new GraphDescriptionBuilderException(
+        String.format(
+            "Cannot add child descriptions to composite graph description to the end." +
+                "Main graph description has to be single path.%nInvalid main description: %s",
+            Stringifier.convertToString(mainGraphDescription)
+        )
+    );
+  }
 }

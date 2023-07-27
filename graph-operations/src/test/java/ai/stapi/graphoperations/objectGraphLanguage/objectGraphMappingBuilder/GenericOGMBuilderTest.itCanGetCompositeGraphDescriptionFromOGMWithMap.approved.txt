@@ -1,0 +1,41 @@
+{
+  "serializationType" : "NodeDescription",
+  "traversingType" : "node",
+  "childGraphDescriptions" : [ {
+    "serializationType" : "NullGraphDescription",
+    "traversingType" : "null",
+    "childGraphDescriptions" : [ {
+      "serializationType" : "NullGraphDescription",
+      "traversingType" : "null",
+      "childGraphDescriptions" : [ {
+        "serializationType" : "NodeDescription",
+        "traversingType" : "node",
+        "childGraphDescriptions" : [ ],
+        "parameters" : {
+          "nodeType" : "child"
+        }
+      } ]
+    } ]
+  }, {
+    "serializationType" : "NullGraphDescription",
+    "traversingType" : "null",
+    "childGraphDescriptions" : [ {
+      "serializationType" : "LeafAttributeDescription",
+      "describedStructureType" : "LeafAttribute",
+      "traversingType" : "attribute",
+      "childGraphDescriptions" : [ {
+        "serializationType" : "StringAttributeValueDescription",
+        "describedAttributeDataTypeId" : "string",
+        "traversingType" : "value",
+        "childGraphDescriptions" : [ ],
+        "parameters" : { }
+      } ],
+      "parameters" : {
+        "attributeName" : "name"
+      }
+    } ]
+  } ],
+  "parameters" : {
+    "nodeType" : "entity"
+  }
+}
