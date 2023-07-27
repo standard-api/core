@@ -1,0 +1,30 @@
+Cannot add child descriptions to composite graph description to the end.Main graph description has to be single path.
+Invalid main description: {
+  "serializationType" : "NodeDescription",
+  "childGraphDescriptions" : [ {
+    "serializationType" : "OutgoingEdgeDescription",
+    "childGraphDescriptions" : [ ],
+    "parameters" : {
+      "edgeType" : "edge1"
+    },
+    "outgoing" : true,
+    "ingoing" : false,
+    "declarationType" : "PositiveGraphDescription",
+    "graphTraversingType" : "edge"
+  }, {
+    "serializationType" : "OutgoingEdgeDescription",
+    "childGraphDescriptions" : [ ],
+    "parameters" : {
+      "edgeType" : "edge2"
+    },
+    "outgoing" : true,
+    "ingoing" : false,
+    "declarationType" : "PositiveGraphDescription",
+    "graphTraversingType" : "edge"
+  } ],
+  "parameters" : {
+    "nodeType" : "Main"
+  },
+  "declarationType" : "PositiveGraphDescription",
+  "graphTraversingType" : "node"
+}
