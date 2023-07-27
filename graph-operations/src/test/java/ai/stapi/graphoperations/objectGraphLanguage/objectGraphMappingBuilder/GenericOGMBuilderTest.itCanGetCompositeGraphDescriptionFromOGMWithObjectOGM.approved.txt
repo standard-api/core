@@ -1,0 +1,62 @@
+{
+  "serializationType" : "NodeDescription",
+  "traversingType" : "node",
+  "childGraphDescriptions" : [ {
+    "serializationType" : "NullGraphDescription",
+    "traversingType" : "null",
+    "childGraphDescriptions" : [ {
+      "serializationType" : "OutgoingEdgeDescription",
+      "traversingType" : "edge",
+      "childGraphDescriptions" : [ {
+        "serializationType" : "NodeDescription",
+        "traversingType" : "node",
+        "childGraphDescriptions" : [ {
+          "serializationType" : "NullGraphDescription",
+          "traversingType" : "null",
+          "childGraphDescriptions" : [ {
+            "serializationType" : "LeafAttributeDescription",
+            "describedStructureType" : "LeafAttribute",
+            "traversingType" : "attribute",
+            "childGraphDescriptions" : [ {
+              "serializationType" : "StringAttributeValueDescription",
+              "describedAttributeDataTypeId" : "string",
+              "traversingType" : "value",
+              "childGraphDescriptions" : [ ],
+              "parameters" : { }
+            } ],
+            "parameters" : {
+              "attributeName" : "innerName"
+            }
+          } ]
+        } ],
+        "parameters" : {
+          "nodeType" : "InnerEntity"
+        }
+      } ],
+      "parameters" : {
+        "edgeType" : "edge"
+      }
+    } ]
+  }, {
+    "serializationType" : "NullGraphDescription",
+    "traversingType" : "null",
+    "childGraphDescriptions" : [ {
+      "serializationType" : "LeafAttributeDescription",
+      "describedStructureType" : "LeafAttribute",
+      "traversingType" : "attribute",
+      "childGraphDescriptions" : [ {
+        "serializationType" : "StringAttributeValueDescription",
+        "describedAttributeDataTypeId" : "string",
+        "traversingType" : "value",
+        "childGraphDescriptions" : [ ],
+        "parameters" : { }
+      } ],
+      "parameters" : {
+        "attributeName" : "name"
+      }
+    } ]
+  } ],
+  "parameters" : {
+    "nodeType" : "Entity"
+  }
+}

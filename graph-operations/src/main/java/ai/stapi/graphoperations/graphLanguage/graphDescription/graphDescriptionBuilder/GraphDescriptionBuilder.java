@@ -159,8 +159,10 @@ public class GraphDescriptionBuilder {
         listOfGraphDescriptions.add(graphDescription);
         graphDescription.getChildGraphDescriptions()
             .forEach(
-                child -> GraphDescriptionBuilder.addAllGraphDescriptionsInComposite(child,
-                    listOfGraphDescriptions)
+                child -> GraphDescriptionBuilder.addAllGraphDescriptionsInComposite(
+                    child,
+                    listOfGraphDescriptions
+                )
             );
     }
 
@@ -171,6 +173,39 @@ public class GraphDescriptionBuilder {
         var supportingBuilder = this.getRepresentingBuilder(graphDescription);
         return supportingBuilder.copyWithNewChildren(graphDescription, newChildren);
     }
+
+    public GraphDescription addToDeepestDescription(
+        GraphDescription mainDescription,
+        List<GraphDescription> childDescriptions
+    ) {
+        if (!GraphDescriptionBuilder.isGraphDescriptionSinglePath(mainDescription)) {
+            throw GraphDescriptionBuilderException.becauseToAddToDeepestGraphDescriptionItMustBeSinglePath(
+                mainDescription
+            );
+        }
+        return this.privateAddToDeepestDescription(mainDescription, childDescriptions);
+    }
+
+    private GraphDescription privateAddToDeepestDescription(
+        GraphDescription mainDescription,
+        List<GraphDescription> childDescriptions
+    ) {
+        var supportingBuilder = this.getRepresentingBuilder(mainDescription);
+        if (mainDescription.getChildGraphDescriptions().isEmpty()) {
+            return supportingBuilder.copyWithNewChildren(mainDescription, childDescriptions);
+        }
+
+        return supportingBuilder.copyWithNewChildren(
+            mainDescription,
+            List.of(
+                this.privateAddToDeepestDescription(
+                    mainDescription.getChildGraphDescriptions().get(0),
+                    childDescriptions
+                )
+            )
+        );
+    }
+
 
     public GraphDescription copyWithNewChildren(
         GraphDescription graphDescription,
