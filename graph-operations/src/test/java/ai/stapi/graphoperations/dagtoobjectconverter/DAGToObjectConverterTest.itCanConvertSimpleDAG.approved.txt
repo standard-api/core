@@ -1,0 +1,18 @@
+{
+  "id" : "id-1",
+  "height" : 500,
+  "title" : "mohykan",
+  "hasDoor" : [ {
+    "id" : "id-3",
+    "closable" : true,
+    "width" : 15
+  }, {
+    "id" : "id-2",
+    "closable" : false,
+    "width" : 20,
+    "hasHandle" : [ {
+      "id" : "id-4",
+      "color" : "red"
+    } ]
+  } ]
+}
