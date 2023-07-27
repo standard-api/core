@@ -17,12 +17,11 @@ import java.util.List;
 public class AddAggregateGraphStateModificator extends AbstractAggregateGraphStateModificator {
 
   public AddAggregateGraphStateModificator(
-      StructureSchemaFinder structureSchemaFinder,
-      DynamicOgmProvider dynamicOgmProvider,
       GenericObjectGraphMapper objectGraphMapper,
-      EventFactoryModificationTraverser eventFactoryModificationTraverser
+      EventFactoryModificationTraverser eventFactoryModificationTraverser,
+      EventModificatorOgmProvider eventModificatorOgmProvider
   ) {
-    super(structureSchemaFinder, dynamicOgmProvider, objectGraphMapper, eventFactoryModificationTraverser);
+    super(objectGraphMapper, eventFactoryModificationTraverser, eventModificatorOgmProvider);
   }
 
   @Override
@@ -88,7 +87,7 @@ public class AddAggregateGraphStateModificator extends AbstractAggregateGraphSta
       }
     }
 
-    var objectOgm = this.getOgm(modifiedNode, inputValueSchema, fieldName);
+    var objectOgm = this.eventModificatorOgmProvider.getOgm(modifiedNode, inputValueSchema, fieldName);
     var fakedObject = this.getMappedObject(inputValue, modifiedNode, fieldName);
     
     return this.objectGraphMapper.mapToGraph(

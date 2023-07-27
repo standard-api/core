@@ -16,12 +16,11 @@ import java.util.List;
 public class UpsertAggregateGraphStateModificator extends AbstractAggregateGraphStateModificator {
 
   public UpsertAggregateGraphStateModificator(
-      StructureSchemaFinder structureSchemaFinder,
-      DynamicOgmProvider dynamicOgmProvider,
-      GenericObjectGraphMapper objectGraphMapper,
-      EventFactoryModificationTraverser eventFactoryModificationTraverser
+      GenericObjectGraphMapper objectGraphMapper, 
+      EventFactoryModificationTraverser eventFactoryModificationTraverser, 
+      EventModificatorOgmProvider eventModificatorOgmProvider
   ) {
-    super(structureSchemaFinder, dynamicOgmProvider, objectGraphMapper, eventFactoryModificationTraverser);
+    super(objectGraphMapper, eventFactoryModificationTraverser, eventModificatorOgmProvider);
   }
 
   @Override
@@ -78,7 +77,7 @@ public class UpsertAggregateGraphStateModificator extends AbstractAggregateGraph
     
     var inputValueSchema = operationStructureType.getField(inputValueParameterName);
     var fieldName = splitPath[splitPath.length - 1];
-    var objectOgm = this.getOgm(modifiedNode, inputValueSchema, fieldName);
+    var objectOgm = this.eventModificatorOgmProvider.getOgm(modifiedNode, inputValueSchema, fieldName);
     var fakedObject = this.getMappedObject(inputValue, modifiedNode, fieldName);
 
     return this.objectGraphMapper.mapToGraph(

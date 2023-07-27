@@ -91,34 +91,38 @@ public class DynamicCommandProcessorConfiguration {
   }
   
   @Bean
+  public EventModificatorOgmProvider eventModificatorOgmProvider(
+      StructureSchemaFinder structureSchemaFinder,
+      DynamicOgmProvider dynamicOgmProvider
+  ) {
+    return new EventModificatorOgmProvider(structureSchemaFinder, dynamicOgmProvider);
+  }
+  
+  @Bean
   @ConditionalOnBean(GenericAggregateGraphStateModificator.class)
   public AddAggregateGraphStateModificator addAggregateGraphStateModificator(
-      StructureSchemaFinder structureSchemaFinder,
-      DynamicOgmProvider dynamicOgmProvider,
       GenericObjectGraphMapper objectGraphMapper,
-      EventFactoryModificationTraverser eventFactoryModificationTraverser
+      EventFactoryModificationTraverser eventFactoryModificationTraverser,
+      EventModificatorOgmProvider eventModificatorOgmProvider
   ) {
     return new AddAggregateGraphStateModificator(
-        structureSchemaFinder,
-        dynamicOgmProvider,
         objectGraphMapper,
-        eventFactoryModificationTraverser
+        eventFactoryModificationTraverser,
+        eventModificatorOgmProvider
     );
   }
 
   @Bean
   @ConditionalOnBean(GenericAggregateGraphStateModificator.class)
   public UpsertAggregateGraphStateModificator upsertAggregateGraphStateModificator(
-      StructureSchemaFinder structureSchemaFinder,
-      DynamicOgmProvider dynamicOgmProvider,
       GenericObjectGraphMapper objectGraphMapper,
-      EventFactoryModificationTraverser eventFactoryModificationTraverser
+      EventFactoryModificationTraverser eventFactoryModificationTraverser,
+      EventModificatorOgmProvider eventModificatorOgmProvider
   ) {
     return new UpsertAggregateGraphStateModificator(
-        structureSchemaFinder,
-        dynamicOgmProvider,
         objectGraphMapper,
-        eventFactoryModificationTraverser
+        eventFactoryModificationTraverser,
+        eventModificatorOgmProvider
     );
   }
 }
