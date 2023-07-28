@@ -1,8 +1,0 @@
-{
-  "name": "TargetProfileRef on StructureDefinitionSnapshotElementType Added",
-  "description": "Generated Event for adding on StructureDefinition.",
-  "id": "TargetProfileRefOnStructureDefinitionSnapshotElementTypeAdded",
-  "type": {
-    "id": "StructureDefinition"
-  }
-}
