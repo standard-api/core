@@ -114,7 +114,11 @@ public class AdHocAggregateDefinitionProvider implements AggregateDefinitionProv
             var foundEventFactory = aggregate.getCommand()
                 .stream()
                 .flatMap(command -> command.getEventFactory().stream())
-                .filter(eventFactory -> eventFactory.getId().equals(addModification.getEventFactoryId()))
+                .filter(
+                    eventFactory -> eventFactory.getId().equals(
+                        addModification.getEventFactoryId().split("/")[1]
+                    )
+                )
                 .findFirst()
                 .get();
 
@@ -216,7 +220,9 @@ public class AdHocAggregateDefinitionProvider implements AggregateDefinitionProv
     }
     return foundAggregate.get().getCommand().stream().anyMatch(
         command -> command.getEventFactory().stream().anyMatch(
-            eventFactory -> eventFactory.getId().equals(addModification.getEventFactoryId())
+            eventFactory -> eventFactory.getId().equals(
+                addModification.getEventFactoryId().split("/")[1]
+            )
         )
     );
   }

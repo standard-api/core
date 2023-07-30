@@ -8,6 +8,6 @@
       "modificationPath": "baseDefinitionRef"
     }
   ],
-  "eventFactoryId": "cd43acdb-0818-4ae2-8f52-a5d6b289c8a6",
+  "eventFactoryId": "CommandHandlerDefinitionEventFactory/cd43acdb-0818-4ae2-8f52-a5d6b289c8a6",
   "id": "StructureDefinitionAggregate"
 }
